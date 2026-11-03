@@ -1,8 +1,10 @@
-# wowf-data.json: data contract (v1, 2026-11-03)
+# wowf-feed contract: data (v1) and page code (v2, 2026-11-03)
 
 The research feed for Jason's self-hosted WoW Forever Command Table. The WoW Forever Bot (Grok) writes ONE file, `wowf-data.json`, to the public repo `I3andit/wowf-feed` on branch `main`. Jason's EliteDesk pulls it every 15 minutes, checks it, and only then shows it. A file that fails the check is ignored and the page keeps the last good copy, so a bad push never breaks the page, but it also never shows up.
 
-Source of truth for this contract: `Fun Builds/WoW Forever/command-table-site/DATA_CONTRACT.md` in Jason's vault. The checker is `server/validate.py` next to it.
+Since v2 the Bot also owns the page itself: its code lives in this repo under `site/`, and the EliteDesk rebuilds the page when `site/` changes (see **Page code** at the end).
+
+Source of truth for this contract: `Fun Builds/WoW Forever/command-table-site/DATA_CONTRACT.md` in Jason's vault. The data checker is `server/validate.py` next to it; the page build gate is `server/site_builder.py`.
 
 ## Shape
 
@@ -58,5 +60,48 @@ Items may carry extra `_source` / `_date` fields; the page ignores unknown field
 
 - Every claim keeps its source and the date read, exactly as your standing rules say. Official / Unofficial tags and the pre-launch tags (`PRE_MARKS`) stay as they are.
 - Never rename a key or change a structure; add fields if needed, the page ignores unknown ones.
-- One commit per run, message `research: <date> <one-line summary>`, only `wowf-data.json` changes (plus this contract if Jason updates it).
+- One commit per research run, message `research: <date> <one-line summary>`, only `wowf-data.json` changes (plus this contract if Jason updates it). Page changes go in their own commits (below).
 - Never put anything personal, tokens or links with credentials in the file. The repo is public.
+
+## Page code (v2, 2026-11-03)
+
+The Bot owns the Command Table's look and features. The page source is in `site/`; Claude owns the server, the build, game sync and the safety checks on the EliteDesk.
+
+### What you may edit
+
+- `site/src/*.tsx` (and `.ts`, `.css`, `.json` next to them): `app.tsx` is the page, `kit.tsx` the building blocks, `main.tsx` the bootstrap.
+- `site/public/*`: `index.html`, plus images, icons and font files the page uses (`.png .jpg .webp .avif .gif .svg .ico .woff .woff2 .css .js .json .txt .webmanifest`). Real image files are fine now; put them here and load them by path, for example `/icons/bloodlust.avif`.
+- Nothing else in `site/`. The build refuses `package.json`, lockfiles, `tsconfig.json`, `.npmrc` and any other file type, and never runs npm with anything from this repo. Dependencies are fixed by Claude: React 18.3.1, react-dom 18.3.1, esbuild 0.24.2.
+
+### Rules the build checks (a change that breaks one is not built, and the page stays as it was)
+
+1. `site/src/main.tsx` and `site/public/index.html` exist; `index.html` loads `/app.js` and keeps `<div id="root">`.
+2. The bundle only imports files in `site/src`, the seed data `../../wowf-data.json` (from `main.tsx`), `react`, `react-dom/client` and `react/jsx-runtime`. No other packages, no paths outside `site/src`.
+3. It compiles with: `esbuild site/src/main.tsx --bundle --minify --format=esm --splitting --outdir=<out> --entry-names=app --chunk-names=chunk-[hash] --loader:.json=json --jsx=automatic --target=es2020 --tsconfig-raw={}`. No other loaders or plugins exist.
+4. `site/public` must not contain `app.js`, `chunk-*` or `wf-guard.js` (those names belong to the build and the server). `site/` stays under 20 MB, 8 MB per file.
+
+### Rules the page must keep (the browser enforces some, the rest are on you)
+
+- **`WF_DATA` and `WF_STORE` keep working.** `main.tsx` loads `/data/wowf-data.json` into `globalThis.WF_DATA` (the bundled seed is the fallback) and saved progress into `globalThis.WF_STORE` = `{initial, online, save(part, value), onStatus(fn)}` before `app.tsx` loads. `app.tsx` reads every research constant from `WF_DATA` and saves through `WF_STORE.save("st" | "first", value)`. Keep those names and shapes; the server stores whatever `WF_STORE` sends in `/api/state`, and game sync writes `st.lvV`, `st.lvC` and `st.sk` into it.
+- **Keep the `Guard` error boundary around `<App />` in `main.tsx`**, and keep the `report("boot", ...)` call in its `catch`.
+- **Network:** the page may call only its own `/api/*` and `/data/*`. The server sends a Content-Security-Policy, so anything else is blocked in the browser: no external scripts at all, styles and fonts only from Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`), images only from the page's own files, `data:` or `blob:`. Links (`<a href>`) to Wowhead and others are fine, they are navigation, not loads.
+- No `eval` or `new Function` (also blocked).
+- Nothing personal, no tokens: the repo is public.
+
+### Component names the kit provides (`site/src/kit.tsx`)
+
+Write the same component calls you use on the canvas, imported from `./kit` instead of `grok/canvas`:
+`Page`, `Section`, `Text`, `Callout`, `Table`, `Status`, `Rows`, `Properties`, `Grid`, `Segmented`, `Steps`, `LinkCards`, `TableOfContents`, `BulletList`, `Toggle`, the hook `useGrokTheme`, React's `useState`, `useEffect`, `useMemo`, the type `ReactNode`, and `KIT_CSS` (the kit's stylesheet, injected by `main.tsx`). `Checklist` is not in the kit (the page imports the name but never uses it); add it to `kit.tsx` before using it. You may restyle or extend the kit; keep the existing props working or update every call site in the same commit.
+
+### How a change goes live, and how rollback works
+
+1. Commit to `main` touching only `site/`, message `page: <date> <one-line summary>`. One logical change per commit.
+2. The EliteDesk checks the repo every 15 minutes. If the `site/` folder changed, it builds it. A data-only commit never rebuilds the page.
+3. **Build fails:** the old page keeps serving, the error is recorded, and that exact `site/` content is not tried again. Push a fix as a new commit.
+4. **Build passes:** it goes live; the previous build is kept.
+5. **Crash in the browser:** the server adds a small crash reporter to every page load. For 72 hours after a build goes live, an uncaught error, a crash caught by `Guard`, a failed start, or nothing rendered into `#root` within 15 seconds switches the page back to the previous build, and the page reloads once. That `site/` content is then never rebuilt; push a fix. (Unhandled promise rejections are logged, not rolled back.)
+6. `http://192.168.1.205:8484/api/status` (home network only) shows it all under `site`: `live` (commit, message, when), `last_build` (ok or the error), `last_rollback` (from, to, reason), `last_client_error`, `last_clean_load`. Jason or Claude can paste it to you.
+
+### Check before you commit (if your sandbox has Node)
+
+In a scratch folder outside the repo clone: `npm init -y && npm install react@18.3.1 react-dom@18.3.1 esbuild@0.24.2`, then copy the repo's `site/` and `wowf-data.json` into it and run the rule 3 command from that folder. If it compiles, the EliteDesk build will too. If you can't run Node, read your diff for missing imports, renamed components and broken JSX before committing; a failed build costs nothing but time, the page stays up.
