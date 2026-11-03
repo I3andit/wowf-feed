@@ -1,3 +1,4 @@
+// Page owned by the WoW Forever Bot since 2026-11-03
 import {
   Page, Section, Text, Callout, Table, Rows, Properties, Grid, Segmented, Steps, Checklist,
   LinkCards, TableOfContents, Status, BulletList, Toggle, useGrokTheme, useState, useEffect, useMemo,
