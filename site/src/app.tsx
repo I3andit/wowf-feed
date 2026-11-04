@@ -1041,8 +1041,20 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC }: { skills: Record<st
   );
 }
 
-type RStep = { icon: string; name: string; tip: string; lvl?: number };
-type Rot = { prep: RStep[]; steps: RStep[]; notes: string[]; src: { label: string; date: string; url: string }[]; caveat?: string };
+type RUp = { lvl?: number; talent?: string; at?: number; text: string };
+type RStep = { icon: string; name: string; tip: string; lvl?: number; talent?: string; at?: number; until?: number; ups?: RUp[] };
+type RUnlock = { lvl?: number; talent?: string; at?: number; icon: string; name: string; text: string };
+type Rot = { prep: RStep[]; steps: RStep[]; notes: string[]; src: { label: string; date: string; url: string }[]; caveat?: string; seq?: string; unlocks?: RUnlock[] };
+// Level-aware rotations (Nov 4): a step's level comes from its talent in the talent order (seq) when it names one, else its lvl.
+// "until" drops a step from that level on; "ups" are level-gated notes; "unlocks" feed the Next unlock strip.
+function rotLv(x: { lvl?: number; talent?: string; at?: number }, seq?: string): number | undefined {
+  if (x.talent && seq && SEQ[seq]) {
+    const q = SEQ[seq];
+    let n = 0;
+    for (let i = 0; i < q.length; i++) { if (q[i] === x.talent) { n++; if (n >= (x.at ?? 1)) return i + 10; } }
+  }
+  return x.lvl;
+}
 const ROT: Record<string, Record<string, Rot>> = WF_DATA.rotations.ROT;
 
 function RotationBoard({ lvV, lvC }: { lvV: number; lvC: number }) {
@@ -1054,15 +1066,24 @@ function RotationBoard({ lvV, lvC }: { lvV: number; lvC: number }) {
   const r = ROT[spec][mode];
   const color = spec === "enh" ? SHAMAN : WARLOCK;
   const specs: [string, string, string][] = [["aff", "Affliction", "spell_shadow_deathcoil"], ["demo", "Demonology", "spell_shadow_metamorphosis"], ["enh", "Enhancement", "spell_nature_lightningshield"]];
-  const chip = (st: RStep, i: number, numbered: boolean) => (st.lvl && st.lvl > lv && hideLocked) ? null : (
+  const rs = (st: RStep): RStep => ({ ...st, lvl: rotLv(st, r.seq) });
+  const allPrep = r.prep.map(rs).filter((st: RStep) => !(st.until && lv >= st.until));
+  const allSteps = r.steps.map(rs).filter((st: RStep) => !(st.until && lv >= st.until));
+  const shown = (st: RStep) => !(hideLocked && st.lvl && st.lvl > lv);
+  const prep = allPrep.filter(shown);
+  const steps = allSteps.filter(shown);
+  const nextUn = (r.unlocks ?? []).map((u: RUnlock) => ({ ...u, lvl: rotLv(u, r.seq) ?? 0 })).filter((u: RUnlock) => (u.lvl ?? 0) > lv).sort((a: RUnlock, b: RUnlock) => (a.lvl ?? 0) - (b.lvl ?? 0)).slice(0, 3);
+  const ups = (st: RStep) => (st.ups ?? []).map((u: RUp) => ({ l: rotLv(u, r.seq) ?? 0, t: u.text }));
+  const upLines = (st: RStep) => ups(st).map((u: { l: number; t: string }) => <div key={u.t} style={{ color: u.l <= lv ? "#9fe39f" : "#b3cbe8", marginTop: 2 }}>{u.l <= lv ? `✓ ${u.t} (from ${u.l})` : `Lv ${u.l}: ${u.t}`}</div>);
+  const chip = (st: RStep, i: number, numbered: boolean) => (
     <div key={`${st.name}-${i}`} style={{ display: "flex", alignItems: "center", gap: 4, opacity: st.lvl && st.lvl > lv ? 0.55 : 1 }}>
       <button type="button" className="wf-cell wf-btn" onClick={() => setSel(numbered ? (sel === i ? -1 : i) : -1)} style={{ position: "relative", padding: 0, border: "none", background: "transparent" }}>
         <Icon icon={st.icon} size={numbered ? 48 : 36} ring={numbered && sel === i ? GOLD_HI : color} dim={!!st.lvl && st.lvl > lv} />
         {numbered ? <span style={{ position: "absolute", top: -6, left: -6, width: 20, height: 20, borderRadius: 10, background: GOLD, color: "#000", fontSize: 11, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>{i + 1}</span> : null}
         {st.lvl ? <span style={{ position: "absolute", bottom: -6, right: -6, fontSize: 9, padding: "0 4px", borderRadius: 4, background: "#000", border: `1px solid ${st.lvl > lv ? "#ff4040" : GOLD}`, color: st.lvl > lv ? "#ff8080" : GOLD_HI }}>{st.lvl > lv ? `Lv ${st.lvl}` : `${st.lvl}+`}</span> : null}
-        <div className="wf-tt" style={{ width: 220 }}><div style={{ color: GOLD_HI, fontWeight: 700 }}>{st.name}</div><div>{st.tip}</div>{st.lvl && st.lvl > 30 ? <div style={{ color: "#b3cbe8", marginTop: 2 }}>Guide theorycraft, Classic-based (sources below)</div> : null}</div>
+        <div className="wf-tt" style={{ width: 220 }}><div style={{ color: GOLD_HI, fontWeight: 700 }}>{st.name}</div><div>{st.tip}</div>{upLines(st)}{st.until ? <div style={{ color: MUTED, marginTop: 2 }}>Until level {st.until}</div> : null}{st.lvl && st.lvl > 30 ? <div style={{ color: "#b3cbe8", marginTop: 2 }}>Guide theorycraft, Classic-based (sources below)</div> : null}</div>
       </button>
-      {numbered && i < r.steps.length - 1 ? <span style={{ color: GOLD, fontSize: 18 }}>›</span> : null}
+      {numbered && i < steps.length - 1 ? <span style={{ color: GOLD, fontSize: 18 }}>›</span> : null}
     </div>
   );
   return (
@@ -1077,23 +1098,34 @@ function RotationBoard({ lvV, lvC }: { lvV: number; lvC: number }) {
         ))}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", fontSize: 12, color: MUTED, marginBottom: 4 }}>
-        <span>For <span style={{ color: spec === "enh" ? "#5fb0ff" : "#b9baff" }}>{spec === "enh" ? "Vorgash" : "Corvin"}</span> at level <span style={{ color: GOLD_HI }}>{lv}</span>: steps above it are grayed with their level.</span>
+        <span>For <span style={{ color: spec === "enh" ? "#5fb0ff" : "#b9baff" }}>{spec === "enh" ? "Vorgash" : "Corvin"}</span> at level <span style={{ color: GOLD_HI }}>{lv}</span>: the priority uses the spells and talents learned by this level; later steps are grayed with their level.</span>
         <button type="button" className="wf-btn" onClick={() => setHideLocked(!hideLocked)} style={{ padding: "2px 10px", borderRadius: 999, border: `1px solid ${hideLocked ? GOLD : "#4a3d22"}`, background: hideLocked ? "rgba(245,215,122,.15)" : "transparent", color: hideLocked ? GOLD_HI : INK, fontSize: 12 }}>{hideLocked ? "Show locked steps" : "Hide locked steps"}</button>
       </div>
       <div className="wf-pop" key={`${spec}-${mode}`}>
         <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", margin: "6px 0" }}>Before the pull</div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 12, paddingTop: 4 }}>{r.prep.map((st: RStep, i: number) => chip(st, i, false))}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 12, paddingTop: 4 }}>{prep.map((st: RStep, i: number) => chip(st, i, false))}</div>
         <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", margin: "6px 0" }}>Priority · hover or tap an icon</div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", padding: "10px 8px", borderRadius: 8, background: "rgba(0,0,0,.35)", border: "1px solid #3a3020" }}>{r.steps.map((st: RStep, i: number) => chip(st, i, true))}</div>
-        {sel >= 0 && r.steps[sel] ? (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", padding: "10px 8px", borderRadius: 8, background: "rgba(0,0,0,.35)", border: "1px solid #3a3020" }}>{steps.map((st: RStep, i: number) => chip(st, i, true))}</div>
+        <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", margin: "12px 0 6px" }}>Next unlock</div>
+        {nextUn.length ? (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {nextUn.map((u: RUnlock) => (
+              <div key={`${u.name}-${u.lvl}`} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 10px 6px 6px", borderRadius: 8, border: "1px solid #3a3020", background: "rgba(0,0,0,.35)" }}>
+                <Icon icon={u.icon} size={30} ring={color} />
+                <div style={{ fontSize: 12 }}><span style={{ color: GOLD_HI, fontWeight: 700 }}>Lv {u.lvl}</span> <span style={{ color: "#fff" }}>{u.name}</span><div style={{ fontSize: 11, color: MUTED }}>{u.text}</div></div>
+              </div>
+            ))}
+          </div>
+        ) : <div style={{ fontSize: 12, color: MUTED }}>Every rotation unlock is learned by level {lv}.</div>}
+        {sel >= 0 && steps[sel] ? (
           <div className="wf-pop" key={sel} style={{ marginTop: 10, padding: 10, borderRadius: 8, border: `1px solid ${GOLD}`, display: "flex", gap: 10, alignItems: "center", background: "rgba(245,215,122,.08)" }}>
-            <Icon icon={r.steps[sel].icon} size={40} ring={GOLD_HI} />
-            <div><div style={{ fontFamily: SERIF, color: GOLD_HI }}>{sel + 1}. {r.steps[sel].name}</div><div style={{ fontSize: 13, color: INK }}>{r.steps[sel].tip}</div></div>
+            <Icon icon={steps[sel].icon} size={40} ring={GOLD_HI} />
+            <div><div style={{ fontFamily: SERIF, color: GOLD_HI }}>{sel + 1}. {steps[sel].name}</div><div style={{ fontSize: 13, color: INK }}>{steps[sel].tip}</div><div style={{ fontSize: 12 }}>{upLines(steps[sel])}</div></div>
           </div>
         ) : null}
         {r.caveat ? <div style={{ fontSize: 12, color: ORANGE, marginTop: 8 }}>⚠ {r.caveat}</div> : null}
         {r.notes.map((n: string) => <div key={n} style={{ fontSize: 12, color: INK, marginTop: 6 }}>◆ {n}</div>)}
-        {r.caveat || [...r.prep, ...r.steps].some((x: RStep) => (x.lvl ?? 0) > 30) ? <PreLine lead={r.caveat ? "Level-60 priority and steps past 30:" : "Steps past level 30:"} mark="guide" src={r.src.map((x: { label: string; date: string }) => `${x.label}, ${x.date}`).join(" · ")} /> : null}
+        {r.caveat || [...allPrep, ...allSteps].some((x: RStep) => (x.lvl ?? 0) > 30) ? <PreLine lead={r.caveat ? "Level-60 priority and steps past 30:" : "Steps past level 30:"} mark="guide" src={r.src.map((x: { label: string; date: string }) => `${x.label}, ${x.date}`).join(" · ")} /> : null}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}>
           {r.src.map((s: { label: string; date: string; url: string }) => (
             <a key={s.url} href={s.url} target="_blank" rel="noreferrer" style={{ fontSize: 11, padding: "3px 8px", borderRadius: 999, border: "1px solid #4a3d22", color: GOLD_HI, textDecoration: "none" }}>{s.label} · {s.date}</a>
