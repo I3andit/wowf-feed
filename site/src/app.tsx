@@ -1677,7 +1677,7 @@ function NextDing({ who, level, setLevel, skills }: { who: "V" | "C"; level: num
   const head = (t: string, icon: string) => (
     <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".12em", margin: "10px 0 6px" }}><Icon icon={icon} size={18} />{t}</div>
   );
-  const buildLabel = who === "V" ? "Enhancement leveling (Icy Veins order)" : level >= 40 ? "Spec 1 Affliction (Mobalytics order); Spec 2 Demonology gets all its points at 40" : "Spec 1 Affliction (Mobalytics order)";
+  const buildLabel = who === "V" ? "Enhancement leveling (Icy Veins order)" : level >= 40 ? "Spec 1 Affliction (Icy Veins order); Spec 2 Demonology gets all its points at 40" : "Spec 1 Affliction (Icy Veins order)";
   return (
     <div className="wf-card" style={{ position: "relative", borderRadius: 12, padding: 14, border: `1px solid ${GOLD}`, background: `radial-gradient(ellipse 70% 60% at 50% 0%, ${c.color}30, transparent 70%), linear-gradient(180deg, #1c1711, #0a0907)`, boxShadow: `0 0 0 1px #000, 0 6px 24px rgba(0,0,0,.5), 0 0 30px ${c.color}22`, color: INK, overflow: "hidden" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
@@ -1700,7 +1700,7 @@ function NextDing({ who, level, setLevel, skills }: { who: "V" | "C"; level: num
           <div style={{ fontSize: 12 }}>
             <div><span style={{ fontFamily: SERIF, color: "#fff", fontSize: 14 }}>{nt.name}</span> <span style={{ color: GOLD_HI }}>rank {nt.rank}{nt.tal ? `/${nt.tal.max}` : ""}</span> <span style={{ color: MUTED }}>at level {nt.lv}</span></div>
             <div style={{ color: INK }}>{nt.why}</div>
-            {nt.lv > 30 ? <div style={{ marginTop: 3 }}><PreTag mark="guide" small src={who === "V" ? "Icy Veins (Wordup), Oct 17" : "Mobalytics (Crix), Oct 30"} /></div> : null}
+            {nt.lv > 30 ? <div style={{ marginTop: 3 }}><PreTag mark="guide" small src={who === "V" ? "Icy Veins (Wordup), Oct 17" : "Icy Veins (Abide), Nov 3"} /></div> : null}
             <div style={{ color: MUTED, fontSize: 11 }}>{buildLabel}; without Legacy Talented.</div>
           </div>
         </div>
@@ -1934,8 +1934,8 @@ function CorvinFirstSession({ level }: { level: number }) {
                     <div><span style={{ color: MUTED }}>Level {t.lv}:</span> <span style={{ color: "#fff", fontFamily: SERIF }}>{t.name}</span> <span style={{ color: GOLD_HI }}>{t.rank}{t.tal ? `/${t.tal.max}` : ""}</span></div>
                   </div>
                 ))}
-                <div style={{ fontSize: 12 }}>{WHY["Improved Corruption"] ?? ""}</div>
-                <div style={{ fontSize: 10, color: MUTED }}>Mobalytics (Crix) Affliction leveling order, Oct 30, as in Talent trees. Without Legacy Talented; with Talented 5/5 the first point comes at 5 (your Class Hub note).</div>
+                <div style={{ fontSize: 12 }}>{WHY[tals[0].name] ?? ""}</div>
+                <div style={{ fontSize: 10, color: MUTED }}>Icy Veins (Abide) Affliction leveling order, Nov 3, as in Talent trees. Without Legacy Talented; with Talented 5/5 the first point comes at 5 (your Class Hub note).</div>
               </div>
             ))}
 
@@ -2087,7 +2087,8 @@ export default function App() {
   const nagaColor = nagaSpec === "enh" ? SHAMAN : WARLOCK;
   const [prev12V, setPrev12V] = useState<boolean>(false);
   const [prev12C, setPrev12C] = useState<boolean>(false);
-  const n12 = NAGA12[nagaSpec];
+  const n12raw = NAGA12[nagaSpec];
+  const n12 = nagaSpec === "aff" && lvC < wrackLv ? { ...n12raw, buttons: n12raw.buttons.map((b: any) => b.spell === "Wrack" ? { ...b, spell: "Drain Life", icon: "spell_shadow_lifedrain02", note: `Wrack goes here at ${wrackLv < 99 ? wrackLv : 51}` } : b) } : n12raw;
   const nagaWho = nagaSpec === "enh" ? "Vorgash" : "Corvin";
   const prev12 = nagaSpec === "enh" ? prev12V : prev12C;
   const setPrev12 = nagaSpec === "enh" ? setPrev12V : setPrev12C;
