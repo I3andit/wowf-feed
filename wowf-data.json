@@ -2131,7 +2131,7 @@
   "WHY": {
    "Improved Corruption": "Every Affliction guide opens here: an instant Corruption.",
    "Soul Siphon": "Mobalytics' drain-tank core: Drain Life heals more for each of your effects on the target.",
-   "Shadow Mastery": "Your biggest Shadow damage boost; Mobalytics takes it at 35–39.",
+   "Shadow Mastery": "Your biggest Shadow damage boost; Icy Veins' leveling order takes it at 46–50 (Mobalytics at 35–39).",
    "Soul Link": "The 21-point talent. wowfdb: until you have it, Demonology is “a worse Affliction”.",
    "Demonic Pact": "The 31-point talent: your Sacrifice buff survives summoning a new demon (wowfdb).",
    "Demonic Brand": "Searing Pain marks the target for your pet's next 6 attacks (wording changed Oct 9).",
@@ -2441,7 +2441,7 @@
      ],
      "notes": [
       "Icy Veins: aim for mobs dying right as your DoTs fall off.",
-      "Wrack only if your build has it (Icy's alt build takes it at 51; Crix's skips it)."
+      "Wrack from 51 (Icy Veins order); before that, Drain Life/Drain Soul."
      ],
      "src": [
       {
@@ -3323,7 +3323,7 @@
     "who": "Corvin",
     "title": "Spec 1 · Affliction · 12-button layout (40+)",
     "src": "Warlock - Affliction.md › 12-button layout (40+)",
-    "intro": "Swap at 40, the same day Wrack arrives, so the layout only changes once. Death Coil gets its own thumb button.",
+    "intro": "Swap at 40. Wrack arrives at 51 on the Icy Veins path, so until then button 3 holds Drain Life (the page fills Wrack in automatically at 51). Death Coil gets its own thumb button.",
     "buttons": [
      {
       "n": 1,
@@ -3435,7 +3435,7 @@
     "who": "Corvin",
     "title": "Spec 2 · Demonology · 12-button layout (40+)",
     "src": "Warlock - Demonology.md › 12-button layout (40+)",
-    "intro": "If Corvin Dual Specs into Demonology at 40, swap the plate that day and build both layouts at once; rows 1 and 4 line up between the two specs where they can (Bane on 2, Corruption close by, Life Tap on 10, Fear on 12).",
+    "intro": "When Corvin adds Demonology as Spec 2 at 40 (for groups), swap the plate that day and build both layouts at once; rows 1 and 4 line up between the two specs where they can (Bane on 2, Corruption close by, Life Tap on 10, Fear on 12).",
     "buttons": [
      {
       "n": 1,
@@ -3634,7 +3634,7 @@
     "lvl": 40,
     "src": "wowfdb Affliction macros (marked Untested)",
     "url": "https://wowfdb.com/classes/warlock/affliction/macros/",
-    "flag": "Needs the Wrack talent. Crix's leveling build skips it: use the Drain Life macro instead."
+    "flag": "Needs the Wrack talent (level 51 on Corvin's Icy Veins path); before 51 use the Drain Life macro."
    },
    {
     "title": "Healthstone",
@@ -8632,7 +8632,7 @@
    {
     "lead": "Oct 31",
     "title": "Corvin: Improved Drains now boosts Drain Mana instead of Wrack",
-    "detail": "Oct 30 launch-realm hotfix data: Improved Drains (3/3 in Corvin's 10-12 leveling points) still gives +20% to Drain Life and Drain Soul, but Drain Mana replaces Wrack. Wrack at 40 no longer gets the 20%. No other Warlock or Shaman spell changes. Read Oct 31, 9 AM ET.",
+    "detail": "Oct 30 launch-realm hotfix data: Improved Drains (3/3 in Corvin's 10-12 leveling points) still gives +20% to Drain Life and Drain Soul, but Drain Mana replaces Wrack. Wrack (51 on Corvin's path) no longer gets the 20%. No other Warlock or Shaman spell changes. Read Oct 31, 9 AM ET.",
     "meta": "Forever Changes + wowforevertalents.com (two datamines)",
     "status": {
      "label": "Unofficial",
@@ -8920,7 +8920,7 @@
   "talents_level60": {
    "lead": "Level 60",
    "tone": "info",
-   "text": "Your notes' 40/11 Wrack build is superseded: Mobalytics' Oct 30 sim puts Shadow Mastery + Ruin (30/0/21) ahead. Malediction is gone from every row."
+   "text": "Leveling uses the 40/11 Wrack build (Icy Veins, Nov 3; Wrack at 51). At 60 for raids, Mobalytics' Oct 30 sim puts Shadow Mastery + Ruin (30/0/21) ahead. Malediction is gone from every row."
   },
   "talents_brand": {
    "lead": "Brand",
@@ -8930,7 +8930,7 @@
   "naga_when_to_swap": {
    "lead": "When to swap",
    "tone": "info",
-   "text": "When three or more Shift binds feel like they should be one press (Enhancement around 32–40, Warlocks around 40 with Wrack, Death Coil and Howl of Terror). Swap once, at a rest stop, not mid-dungeon. The 12-plate is a 4-row grid, not two columns, so every thumb position is new: expect a couple of sessions of fumbling, which is why the old 1–6 slots stay as close to the top as possible."
+   "text": "When three or more Shift binds feel like they should be one press (Enhancement around 32–40, Warlocks at 40 with Death Coil and Howl of Terror, Wrack joining at 51). Swap once, at a rest stop, not mid-dungeon. The 12-plate is a 4-row grid, not two columns, so every thumb position is new: expect a couple of sessions of fumbling, which is why the old 1–6 slots stay as close to the top as possible."
   },
   "naga_setup6": [
    {
@@ -9117,7 +9117,7 @@
   }
  },
  "_meta": {
-  "version": 5,
+  "version": 6,
   "generated_at": "2026-11-04T12:19-05:00",
   "source": "WoW Forever Bot research run, Nov 4 2026 9 AM ET",
   "notes_commit": "21a5969",
