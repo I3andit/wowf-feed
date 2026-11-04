@@ -30,7 +30,7 @@
     "color": "#0070DE",
     "classIcon": "classicon_shaman",
     "line": "Orc · Shaman · Enhancement",
-    "role": "Main for now",
+    "role": "Alt",
     "level": 1,
     "profs": [
      {
@@ -80,8 +80,8 @@
     "name": "Corvin Ashmourne",
     "color": "#8788EE",
     "classIcon": "classicon_warlock",
-    "line": "Undead · Warlock · Affliction or Demonology",
-    "role": "Alt, could become main",
+    "line": "Undead · Warlock · Affliction (Spec 2 Demonology at 40)",
+    "role": "Main",
     "level": 1,
     "profs": [
      {
@@ -2077,14 +2077,14 @@
    },
    {
     "key": "path",
-    "label": "Affliction → Demo path",
+    "label": "Affliction to 60 + Spec 2 Demo",
     "cls": "warlock",
     "path": true,
     "seq": "aff_lvl",
     "src": "Spec 1: Icy Veins Affliction (Abide, Nov 3) · Spec 2: Icy Veins Demonology (Abide)",
     "date": "Nov 3 / Oct 21",
     "url": "https://wowfdb.com/classes/warlock/demonology/leveling/",
-    "blurb": "Spec 1 levels Affliction. At 40, Dual Spec gives a second spec with all 31 points: Icy Veins' Demonology order reaches Demonic Pact at exactly 31 points.",
+    "blurb": "Spec 1 levels Affliction to 60 on Icy Veins' 40/11 order (Demonic Sacrifice 41, Wrack 51). At 40, Dual Spec adds a Demonology Spec 2 for groups: Icy Veins' Demonology order reaches Demonic Pact at exactly 31 points.",
     "tag": "Pairing is mine"
    },
    {
@@ -2168,33 +2168,42 @@
     "lv": "30",
     "at": 30,
     "spec": 1,
-    "icon": "spell_shadow_gathershadows",
-    "title": "Earliest switch (one respec)",
-    "body": "21 points is enough for Soul Link, the first Demonology talent that changes play. Before this, Demonology is weaker.",
-    "quote": "Until you have its 21 points, Demonology is a worse Affliction, so do not pick it for the first thirty levels without a reason.",
-    "src": "wowfdb Demonology leveling",
-    "url": "https://wowfdb.com/classes/warlock/demonology/leveling/"
+    "icon": "spell_shadow_requiem",
+    "title": "Siphon Life",
+    "body": "Siphon Life at 30: another instant Shadow DoT that heals you. Weak when first taken, so use it on mobs that will live through most of it. Felhunter class quest at 30.",
+    "src": "Icy Veins Affliction leveling (Abide), Nov 3",
+    "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
    },
    {
     "lv": "40",
     "at": 40,
     "spec": 2,
     "icon": "inv_ability_soulharvesterwarlock_demonicsoul",
-    "title": "Best switch: Dual Spec",
-    "body": "Keep Affliction in Spec 1 for questing; put Icy Veins' pure Demonology (31 points, Demonic Pact) in Spec 2 for dungeons. No respec cost after this.",
+    "title": "Dual Spec: Demonology as Spec 2 for groups",
+    "body": "Not a leveling switch. Spec 1 stays Affliction for questing; Spec 2 gets Icy Veins' Demonology order (31 points, Demonic Pact) for dungeons and raids. No respec cost after this.",
     "quote": "keep Affliction to 40, take dual specialization when it unlocks, and treat your second spec as the group spec.",
     "src": "wowforevertierlist.com Warlock leveling",
     "url": "https://wowforevertierlist.com/classes/warlock/leveling"
    },
    {
-    "lv": "45–60",
-    "at": 50,
+    "lv": "41",
+    "at": 41,
     "spec": 1,
-    "icon": "spell_shadow_deathcoil",
-    "title": "Stay Affliction for solo",
-    "body": "Warlock Lab's sim has Affliction fastest through 55; a 28/23 Demonic Knowledge splash from 56 is 3–5% faster. 5/31/0 Succubus is within 4% from 45 to 60. Sim only, untested.",
-    "src": "Warlock Lab v8.6 (sim), Oct 4",
-    "url": "https://opitaru-sys.github.io/forever-warlock-lab/"
+    "icon": "spell_shadow_psychicscream",
+    "title": "Demonic Sacrifice",
+    "body": "Spec 1's 11-point Demonology dip ends here. For solo play sacrifice a Felhunter: 3% of max health every 4 sec for 2 hours, removed when you summon a demon.",
+    "src": "Icy Veins Affliction leveling (Abide), Nov 3",
+    "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
+   },
+   {
+    "lv": "51",
+    "at": 51,
+    "spec": 1,
+    "icon": "ability_deathknight_hemorrhagicfever",
+    "title": "Wrack, the Affliction capstone",
+    "body": "A 6-second Shadow channel that also makes your other Shadow DoTs deal 10% more while it's up. Best with Corruption, Bane of Agony and Siphon Life ticking. It doesn't heal, so keep Drain Life for health.",
+    "src": "Icy Veins Affliction leveling (Abide), Nov 3",
+    "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
    },
    {
     "lv": "60",
@@ -9108,10 +9117,10 @@
   }
  },
  "_meta": {
-  "version": 4,
-  "generated_at": "2026-11-04T12:10-05:00",
+  "version": 5,
+  "generated_at": "2026-11-04T12:19-05:00",
   "source": "WoW Forever Bot research run, Nov 4 2026 9 AM ET",
   "notes_commit": "21a5969",
-  "notes": "Nov 4: Corvin's Affliction path now Icy Veins Nov 3 (40/11, Demonic Sacrifice 41, Wrack 51); Mobalytics kept as alt"
+  "notes": "Nov 4: Corvin's path reframed: Affliction to 60, Dual Spec 40 adds Demonology for groups; Soul Link respec optional"
  }
 }
