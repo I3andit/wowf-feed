@@ -159,62 +159,72 @@
     "spec": "Demonology Warlock",
     "icon": "spell_shadow_metamorphosis",
     "mine": true,
-    "mythic": 4,
-    "mythicNote": "985 DPS (was #2)",
-    "broken": "B",
+    "mythic": 8,
+    "mythicNote": "980 DPS (was #4)",
+    "broken": "C",
     "tVoid": "A",
     "cogm": "S",
     "lfc": "A",
-    "wowhead": "S"
+    "wowhead": "S",
+    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 4"
    },
    {
     "spec": "Affliction Warlock",
     "icon": "spell_shadow_deathcoil",
     "mine": true,
-    "mythic": 13,
-    "mythicNote": "875 DPS (was #8)",
+    "mythic": 11,
+    "mythicNote": "934 DPS, Wrack build (was #13)",
     "broken": "S",
-    "brokenNote": "#1",
-    "tVoid": "A",
+    "brokenNote": "#1, 907 DPS",
+    "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
-    "wowhead": "S"
+    "wowhead": "A",
+    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 4"
    },
    {
     "spec": "Destruction Warlock",
     "icon": "spell_shadow_rainoffire",
     "mine": false,
-    "mythic": 11,
-    "mythicNote": "929 DPS (was #9)",
-    "broken": "A",
+    "mythic": 12,
+    "mythicNote": "929 DPS (was #11)",
+    "broken": "C",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
-    "wowhead": "S"
+    "wowhead": "S",
+    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 4"
    },
    {
     "spec": "Enhancement Shaman",
     "icon": "ability_shaman_stormstrike",
     "mine": true,
-    "mythic": 5,
-    "mythicNote": "982 DPS (was #16)",
-    "broken": "C",
-    "tVoid": "B",
+    "mythic": 3,
+    "mythicNote": "1,066 DPS (was #5)",
+    "broken": "B",
+    "tVoid": "S",
     "cogm": "S",
     "lfc": "S",
-    "wowhead": "S"
+    "wowhead": "A",
+    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 4"
    },
    {
     "spec": "Elemental Shaman",
     "icon": "spell_nature_lightning",
     "mine": false,
-    "mythic": 22,
-    "mythicNote": "last, 643 DPS",
-    "broken": "D",
-    "tVoid": "C",
+    "mythic": 20,
+    "mythicNote": "823 DPS (was #22)",
+    "broken": "C",
+    "tVoid": "B",
     "cogm": "A",
     "lfc": "A",
-    "wowhead": "B"
+    "wowhead": "C",
+    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 4"
    }
   ]
  },
@@ -8373,32 +8383,34 @@
   "meta_raid_watch": {
    "lead": "Raid watch",
    "tone": "warning",
-   "text": "Enhancement looks strong for leveling and dungeons, but beta testers call it undercooked for raids (weak procs, no totem twisting). Demonology is the most consistent high pick across sources."
+   "text": "Enhancement now sims near the top after the Nov 2 buffs (voidsim #2 and MythicSim #3 on Nov 4), but Wowhead moved it to A on Nov 3 and beta testers called its raid kit undercooked. Demonology stays S on Wowhead but slid on MythicSim (#8) and BrokenMeta (C); Affliction is #1 on BrokenMeta but A on Wowhead and B on voidsim. All pre-launch sims until Forever Logs has level-60 data.",
+   "_source": "Wowhead Nov 3, MythicSim Nov 4, voidsim Nov 4, BrokenMeta Nov 3, community leads",
+   "_date": "Nov 4"
   },
   "meta_links": [
    {
-    "title": "MythicSim tier list (partly updated for the Nov 2 notes: Enhancement +24%, Affliction and Demonology not yet re-simmed)",
+    "title": "MythicSim tier list (Nov 4 snapshot, re-simmed for the Nov 2 notes)",
     "site": "mythicsim.com",
-    "date": "Nov 3",
+    "date": "Nov 4",
     "href": "https://mythicsim.com/wow-forever/tier-list",
     "_source": "mythicsim.com",
-    "_date": "Nov 3"
+    "_date": "Nov 4"
    },
    {
-    "title": "BrokenMeta tier list",
+    "title": "BrokenMeta tier list (build 70753)",
     "site": "brokenmeta.gg",
-    "date": "Oct 28",
+    "date": "Nov 3",
     "href": "https://brokenmeta.gg/en/wow-forever/tier-list/",
     "_source": "brokenmeta.gg",
-    "_date": "Oct 28"
+    "_date": "Nov 3"
    },
    {
     "title": "voidsim.io tier list",
     "site": "voidsim.io",
-    "date": "Oct 29",
+    "date": "Nov 4",
     "href": "https://voidsim.io/forever/tier-list",
     "_source": "voidsim.io",
-    "_date": "Oct 29"
+    "_date": "Nov 4"
    },
    {
     "title": "CoGM DPS tier list",
@@ -8415,11 +8427,12 @@
     "_date": null
    },
    {
-    "title": "Wowhead DPS rankings",
+    "title": "Wowhead DPS rankings (level 60, Nov 3)",
     "site": "wowhead.com",
     "href": "https://www.wowhead.com/forever/guide/classes/tier-lists/dps-pve-rankings",
     "_source": "wowhead.com",
-    "_date": null
+    "_date": "Nov 3",
+    "date": "Nov 3"
    },
    {
     "title": "Enhancement raid concern",
@@ -8483,6 +8496,66 @@
    }
   ],
   "feed_rows": [
+   {
+    "lead": "Nov 4",
+    "title": "MythicSim: Enhancement up to #3, Demonology slides to #8",
+    "detail": "Nov 4 snapshot, re-simmed for the Nov 2 notes on engine a667dce. Enhancement #3 (1,066 DPS, was #5 at 982). Demonology #8 (980, was #4): MythicSim now reads Orc Command from the live client as +5% on the Imp's Firebolt and Succubus' Lash of Pain only, and switched the Demonology reference race to Undead. Affliction #11 (934, was #13) after its reference moved to a 35/11/5 Wrack build. Destruction #12 (929, was #11). Elemental #20 (823, was #22). Survival Hunter leads at 1,288. Sims are pre-launch and unverified against the live game. Read Nov 4, 9:30 AM ET.",
+    "meta": "MythicSim, Nov 4 snapshot",
+    "status": {
+     "label": "Sim, pre-launch",
+     "tone": "warning"
+    },
+    "_source": "https://mythicsim.com/wow-forever/tier-list",
+    "_date": "Nov 4"
+   },
+   {
+    "lead": "Nov 4",
+    "title": "voidsim: Enhancement jumps to S (#2), Affliction down to B",
+    "detail": "Nov 4 list on engine 77a73a2. Enhancement S at 863 DPS (#2 behind Beast Mastery Hunter 880; was B). Demonology A (737). Destruction B (718). Affliction B (684, was A). Elemental B (678, was C). Read Nov 4, 9:30 AM ET.",
+    "meta": "voidsim.io, Nov 4",
+    "status": {
+     "label": "Sim, pre-launch",
+     "tone": "warning"
+    },
+    "_source": "https://voidsim.io/forever/tier-list",
+    "_date": "Nov 4"
+   },
+   {
+    "lead": "Nov 3",
+    "title": "Wowhead level-60 tier list: Affliction and Enhancement drop to A",
+    "detail": "Wowhead's DPS list was updated for level 60 on Nov 3. Demonology and Destruction stay S (Demonology called the best Warlock spec, Shadow Brand build). Affliction drops S to A (slightly lower throughput, behind Demo and Destro in most fights). Enhancement drops S to A (strong single target and cleave, scales with Spell Power, top totem buffs). Elemental drops B to C. Read Nov 4, 9:30 AM ET.",
+    "meta": "Wowhead DPS tier list, updated Nov 3",
+    "status": {
+     "label": "Unofficial",
+     "tone": "warning"
+    },
+    "_source": "https://www.wowhead.com/forever/guide/classes/tier-lists/dps-pve-rankings",
+    "_date": "Nov 3"
+   },
+   {
+    "lead": "Nov 3",
+    "title": "BrokenMeta: Affliction still #1, Enhancement up to B, Demonology and Destruction to C",
+    "detail": "BrokenMeta re-simmed on build 70753 with the Nov 2/3 notes applied. Affliction S, #1 at 907 DPS. Enhancement B (754, was C). Destruction C (711, was A). Elemental C (669, was D). Demonology C (659, was B). Read Nov 4, 9:30 AM ET.",
+    "meta": "BrokenMeta, updated Nov 3 (build 70753)",
+    "status": {
+     "label": "Sim, pre-launch",
+     "tone": "warning"
+    },
+    "_source": "https://brokenmeta.gg/en/wow-forever/tier-list/",
+    "_date": "Nov 3"
+   },
+   {
+    "lead": "Nov 4",
+    "title": "Datamine: 1,265 hotfix rows and 85 new items on build 70755, no Shaman or Warlock spell changes",
+    "detail": "1mw.io found 1,265 hotfix changes in the client cache (497 items, 538 spells, 211 creatures) and 85 new items, mostly raid legendaries and epics such as Thunderfury, Sulfuras, Benediction, Anathema and Rhok'delar. Its Nov 4 patch-notes diff shows no spell, talent or item tooltip changes. No new Blizzard Forever hotfix post before launch. Read Nov 4, 9:30 AM ET.",
+    "meta": "1mw.io, Nov 4 04:56 UTC",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://1mw.io/en/news",
+    "_date": "Nov 4"
+   },
    {
     "lead": "Nov 2",
     "title": "Corvin: Wrack more than doubled, Amplify Curse fixed, Drain Soul shards need kills",
@@ -9031,10 +9104,10 @@
   }
  },
  "_meta": {
-  "version": 2,
-  "generated_at": "2026-11-03",
-  "source": "Grok Command Table export, Nov 3 2026",
-  "notes_commit": null,
-  "notes": "first commit from the Bot"
+  "version": 3,
+  "generated_at": "2026-11-04T09:40-05:00",
+  "source": "WoW Forever Bot research run, Nov 4 2026 9 AM ET",
+  "notes_commit": "21a5969",
+  "notes": "Nov 4: tier lists re-read (Wowhead L60, BrokenMeta, voidsim, MythicSim); no new Blizzard posts"
  }
 }
