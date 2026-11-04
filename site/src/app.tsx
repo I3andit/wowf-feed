@@ -354,7 +354,7 @@ function Hero() {
       <div className="wf-shimmer" style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 2 }} />
       <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
         <div style={{ display: "flex", gap: 8 }}>
-          <Icon icon="classicon_warlock" size={52} ring={WARLOCK} name="Corvin Ashmourne" tip="Undead Warlock, Affliction or Demonology · Guild main" />
+          <Icon icon="classicon_warlock" size={52} ring={WARLOCK} name="Corvin Ashmourne" tip="Undead Warlock, Affliction leveling, Demonology Spec 2 · Guild main" />
           <Icon icon="classicon_shaman" size={52} ring={SHAMAN} name="Vorgash Stormcleft" tip="Orc Shaman, Enhancement · Alt" />
         </div>
         <div style={{ flex: "1 1 260px" }}>
@@ -1108,23 +1108,25 @@ type PNode = { lv: string; at: number; spec: number; icon: string; title: string
 const PATH_NODES: PNode[] = WF_DATA.talents.PATH_NODES;
 
 function PathTimeline({ go }: { go: (level: number, spec: number) => void }) {
-  const [pick, setPick] = useState<number>(3);
-  const n = PATH_NODES[pick];
+  const hl = Math.max(0, PATH_NODES.findIndex((p: PNode) => p.title.indexOf("Wrack") === 0));
+  const wrackAt = SEQ.aff_lvl.indexOf("Wrack") >= 0 ? SEQ.aff_lvl.indexOf("Wrack") + 10 : 51;
+  const [pick, setPick] = useState<number>(hl);
+  const n = PATH_NODES[pick] ?? PATH_NODES[0];
   return (
-    <Frame accent={WARLOCK} title="Corvin's leveling path" icon="classicon_warlock" right={<span style={{ fontSize: 12, color: FEL, fontFamily: SERIF }}>Switch at 40 · Dual Spec</span>}>
+    <Frame accent={WARLOCK} title="Corvin's leveling path" icon="classicon_warlock" right={<span style={{ fontSize: 12, color: GOLD_HI, fontFamily: SERIF }}>Affliction to 60 · Wrack at {wrackAt}</span>}>
       <div style={{ position: "relative", padding: "18px 6px 6px" }}>
-        <div style={{ position: "absolute", left: 20, right: 20, top: 42, height: 6, borderRadius: 3, background: `linear-gradient(90deg, ${WARLOCK} 0%, ${WARLOCK} 55%, ${FEL} 62%, ${FEL} 100%)`, opacity: 0.8 }} />
+        <div style={{ position: "absolute", left: 20, right: 20, top: 42, height: 6, borderRadius: 3, background: WARLOCK, opacity: 0.8 }} />
         <div style={{ position: "relative", display: "flex", justifyContent: "space-between", gap: 4 }}>
           {PATH_NODES.map((p: PNode, i: number) => (
-            <button key={p.lv} type="button" className={`wf-btn${i === 3 ? " wf-glow" : ""}`} onClick={() => setPick(i)} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, border: "none", background: "transparent", padding: 0, minWidth: 48, cursor: "pointer" }}>
+            <button key={p.lv} type="button" className={`wf-btn${i === hl ? " wf-glow" : ""}`} onClick={() => setPick(i)} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, border: "none", background: "transparent", padding: 0, minWidth: 48, cursor: "pointer" }}>
               <div style={{ transform: pick === i ? "scale(1.15)" : "scale(1)", transition: "transform .15s ease" }}><Icon icon={p.icon} size={48} ring={pick === i ? GOLD_HI : p.spec === 2 ? FEL : WARLOCK} /></div>
               <span style={{ fontFamily: SERIF, fontSize: 13, color: pick === i ? GOLD_HI : INK }}>Lv {p.lv}</span>
             </button>
           ))}
         </div>
       </div>
-      <div className="wf-pop" key={pick} style={{ marginTop: 10, padding: 12, borderRadius: 8, border: `1px solid ${pick === 3 ? FEL : GOLD}`, background: "linear-gradient(180deg, rgba(135,136,238,.12), rgba(0,0,0,.3))" }}>
-        <div style={{ fontFamily: SERIF, fontSize: 18, color: pick === 3 ? FEL : GOLD_HI }}>{n.title}</div>
+      <div className="wf-pop" key={pick} style={{ marginTop: 10, padding: 12, borderRadius: 8, border: `1px solid ${n.spec === 2 ? FEL : GOLD}`, background: "linear-gradient(180deg, rgba(135,136,238,.12), rgba(0,0,0,.3))" }}>
+        <div style={{ fontFamily: SERIF, fontSize: 18, color: n.spec === 2 ? FEL : GOLD_HI }}>{n.title}</div>
         <div style={{ fontSize: 13, color: INK, marginTop: 4 }}>{n.body}</div>
         {n.quote ? <div style={{ fontSize: 13, color: "#fff", fontStyle: "italic", borderLeft: `3px solid ${GOLD}`, paddingLeft: 8, marginTop: 8 }}>“{n.quote}”</div> : null}
         {n.at > 30 ? <div style={{ marginTop: 8 }}><PreTag mark="guide" src={n.src ? (/(Oct|Nov) \d/.test(n.src) ? n.src : `${n.src}, read Oct 30`) : "read Oct 30"} /></div> : null}
@@ -1134,9 +1136,10 @@ function PathTimeline({ go }: { go: (level: number, spec: number) => void }) {
         </div>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 10, marginTop: 12 }}>
-        <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020", fontSize: 12, color: INK }}><span style={{ color: GOLD_HI, fontWeight: 700 }}>Why not respec at 30?</span> Respec costs climb with each use and only decay once a week at launch (TechRadar interview, Oct 10; on beta it was 1 silver). One respec at 30 is fine; flipping back and forth isn't.</div>
-        <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020", fontSize: 12, color: INK }}><span style={{ color: GOLD_HI, fontWeight: 700 }}>What Spec 2 looks like at 40:</span> 0/31/0 Demonology per Icy Veins' order (Soul Link 30, Demonic Pact 40), then Affliction. Sacrifice a Felhunter, keep a Voidwalker or Succubus out.</div>
-        <div className="wf-prelabel"><span style={{ color: ORANGE, fontWeight: 700 }}>Spec 1 + Spec 2 pairing at 40:</span> <span className="wf-pre">{PRE_LABEL}</span><div style={{ fontSize: 11, color: MUTED, marginTop: 4 }}>The pairing was my own theorycraft, so it is replaced by this label until Forever data past 30 exists. Each half is a published guide order (tagged in the planner). Dual Spec's gold cost: not in any source.</div></div>
+        <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020", fontSize: 12, color: INK }}><span style={{ color: GOLD_HI, fontWeight: 700 }}>Optional: Soul Link safety respec.</span> Not the plan. Only if you keep dying or losing your demon: one respec into Demonology at 30 reaches Soul Link (21 points). wowfdb: “Until you have its 21 points, Demonology is a worse Affliction.” <a href="https://wowfdb.com/classes/warlock/demonology/leveling/" target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>wowfdb Demonology</a> · <a href="https://wowfdb.com/classes/warlock/affliction/leveling/" target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>wowfdb Affliction</a></div>
+        <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020", fontSize: 12, color: INK }}><span style={{ color: GOLD_HI, fontWeight: 700 }}>Respec cost:</span> Respec costs climb with each use and only decay once a week at launch (TechRadar interview, Oct 10; on beta it was 1 silver). Leveling Affliction all the way and holding Demonology in Dual Spec needs no respec at all.</div>
+        <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020", fontSize: 12, color: INK }}><span style={{ color: GOLD_HI, fontWeight: 700 }}>Spec 2 at 40 (groups, not leveling):</span> 0/31/0 Demonology per Icy Veins' order (Soul Link 30, Demonic Pact 40), then Affliction, for dungeons and raids. Sacrifice a Felhunter, keep a Voidwalker or Succubus out.</div>
+        <div className="wf-prelabel"><span style={{ color: ORANGE, fontWeight: 700 }}>Spec 1 + Spec 2 pairing at 40 (group spec):</span> <span className="wf-pre">{PRE_LABEL}</span><div style={{ fontSize: 11, color: MUTED, marginTop: 4 }}>The pairing was my own theorycraft, so it is replaced by this label until Forever data past 30 exists. Each half is a published guide order (tagged in the planner). Dual Spec's gold cost: not in any source.</div></div>
       </div>
     </Frame>
   );
@@ -2095,7 +2098,7 @@ export default function App() {
   return (
     <Page
       title="WoW Forever Command Table"
-      summary="Your WoW Forever dashboard for Vorgash (Orc Enhancement Shaman) and Corvin (Undead Warlock): launch countdown, meta, patch feed, Corvin’s Affliction-to-Demonology path, live talent trees with a level slider, rotations, Naga binds, profession windows with a skill slider, gear, macro book, addons and progress. WoW-inspired design, not affiliated with Blizzard."
+      summary="Your WoW Forever dashboard for Vorgash (Orc Enhancement Shaman) and Corvin (Undead Warlock): launch countdown, meta, patch feed, Corvin’s Affliction leveling path (Demonology Spec 2 at 40), live talent trees with a level slider, rotations, Naga binds, profession windows with a skill slider, gear, macro book, addons and progress. WoW-inspired design, not affiliated with Blizzard."
       width="wide"
     >
       <Hero />
@@ -2146,11 +2149,11 @@ export default function App() {
         <LinkCards links={PL.feed_links} />
       </Section>
 
-      <Section heading="Corvin’s leveling path" id="path" caption="Level Affliction; switch to Demonology at 40 with Dual Spec, or at 30 with one respec. Click a level to see it in the talent tree.">
+      <Section heading="Corvin’s leveling path" id="path" caption="Level Affliction all the way to 60 on Icy Veins' 40/11 order (Demonic Sacrifice 41, Wrack 51). Dual Spec at 40 adds Demonology as Spec 2 for dungeons and raids. Click a level to see it in the talent tree.">
         <PathTimeline go={goPath} />
       </Section>
 
-      <Section heading="Talent trees" id="builds" caption="Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: Vorgash, Warlock builds: Corvin); moving it previews another level without changing the character. Corvin's path is Spec 1 Affliction below 40; Spec 2 unlocks at 40.">
+      <Section heading="Talent trees" id="builds" caption="Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: Vorgash, Warlock builds: Corvin); moving it previews another level without changing the character. Corvin's path levels Spec 1 Affliction to 60; Spec 2 (Demonology, for groups) unlocks at 40.">
         {preview !== null ? (
           <div className="wf-pop" style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${ORANGE}`, background: "rgba(255,128,0,.08)", color: INK, fontSize: 13 }}>
             <span>Previewing level <b style={{ color: GOLD_HI }}>{preview}</b>. {charName} is level {charLevel}.</span>
