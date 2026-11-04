@@ -3631,7 +3631,7 @@
     "code": "#showtooltip Wrack\n/stopattack\n/cast [mod:shift] Drain Soul; [mod:ctrl] Drain Life; Wrack",
     "does": "Plain casts Wrack; Shift for Drain Soul on a dying mob; Ctrl for Drain Life when you need health.",
     "tag": "NEW",
-    "lvl": 40,
+    "lvl": 51,
     "src": "wowfdb Affliction macros (marked Untested)",
     "url": "https://wowfdb.com/classes/warlock/affliction/macros/",
     "flag": "Needs the Wrack talent (level 51 on Corvin's Icy Veins path); before 51 use the Drain Life macro."
@@ -9117,7 +9117,7 @@
   }
  },
  "_meta": {
-  "version": 6,
+  "version": 7,
   "generated_at": "2026-11-04T12:19-05:00",
   "source": "WoW Forever Bot research run, Nov 4 2026 9 AM ET",
   "notes_commit": "21a5969",
