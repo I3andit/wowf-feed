@@ -2068,7 +2068,9 @@ export default function App() {
   const togglePreset = (i: number) => setPresetOpen((o: number[]) => o.indexOf(i) >= 0 ? o.filter((x: number) => x !== i) : [...o, i]);
   const ssLv = SEQ.enh_lvl.indexOf("Stormstrike") + 10;
   const brandLv = SEQ.demo_lvl.indexOf("Demonic Brand") + 10;
-  const autoStage = nagaSpec === "enh" ? (lvV >= ssLv ? "ss" : "early") : nagaSpec === "aff" ? (lvC >= 14 ? "a2" : "a1") : (lvC >= brandLv ? "d2" : "d1");
+  const wrackIdx = SEQ.aff_lvl.indexOf("Wrack");
+  const wrackLv = wrackIdx >= 0 ? wrackIdx + 10 : 99;
+  const autoStage = nagaSpec === "enh" ? (lvV >= ssLv ? "ss" : "early") : nagaSpec === "aff" ? (lvC >= wrackLv ? "a3" : lvC >= 14 ? "a2" : "a1") : (lvC >= brandLv ? "d2" : "d1");
   useEffect(() => { setStagePick(null); }, [lvV, lvC, nagaSpec]);
   const stageId = stagePick ?? autoStage;
   const goPath = (lv: number, sp: number) => {
@@ -2182,7 +2184,7 @@ export default function App() {
           )}
         </div>
         {use12 ? null : <Segmented options={spec.stages.map((s: Stage) => ({ value: s.id, label: s.label }))} value={stage.id} onChange={(v: string) => setStagePick(v)} />}
-        {use12 ? null : <Text>{stagePick ? `Manual pick. Change ${nagaSpec === "enh" ? "Vorgash's" : "Corvin's"} level to go back to automatic.` : `Automatic for ${nagaSpec === "enh" ? "Vorgash" : "Corvin"} at level ${nagaLv}${nagaSpec === "enh" ? ` (Stormstrike at ${ssLv} in the Icy Veins order)` : nagaSpec === "demo" ? ` (Demonic Brand at ${brandLv} in the Icy Veins order)` : " (the Wrack layout stays manual: Wrack isn't in Corvin's Affliction leveling build)"}.`}</Text>}
+        {use12 ? null : <Text>{stagePick ? `Manual pick. Change ${nagaSpec === "enh" ? "Vorgash's" : "Corvin's"} level to go back to automatic.` : `Automatic for ${nagaSpec === "enh" ? "Vorgash" : "Corvin"} at level ${nagaLv}${nagaSpec === "enh" ? ` (Stormstrike at ${ssLv} in the Icy Veins order)` : nagaSpec === "demo" ? ` (Demonic Brand at ${brandLv} in the Icy Veins order)` : wrackLv < 99 ? ` (Wrack layout from ${wrackLv}, when the Icy Veins order takes Wrack)` : " (the Wrack layout stays manual: Wrack isn't in Corvin's Affliction leveling build)"}.`}</Text>}
         {use12 ? <NagaPad12 layout={n12} fkeys={spec.fkeys} color={nagaColor} preview={!reached12} /> : <NagaPad base={stage.base} shift={spec.shift} fkeys={spec.fkeys} color={nagaColor} />}
         {use12 ? (
           <Callout tone={PL.naga_when_to_swap.tone} lead={PL.naga_when_to_swap.lead}>{PL.naga_when_to_swap.text}</Callout>
