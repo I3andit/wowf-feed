@@ -2221,72 +2221,158 @@
   "ROT": {
    "enh": {
     "quest": {
+     "seq": "enh_lvl",
      "prep": [
       {
        "icon": "spell_nature_rockbiter",
        "name": "Rockbiter Weapon",
-       "tip": "Before 30."
+       "tip": "Always imbued; Rockbiter until Windfury Weapon.",
+       "until": 30
       },
       {
        "icon": "spell_nature_cyclone",
        "name": "Windfury Weapon",
-       "tip": "From 30.",
+       "tip": "20% per swing for two extra hits; one hour, always on.",
        "lvl": 30
       },
       {
        "icon": "spell_nature_lightningshield",
        "name": "Lightning Shield",
-       "tip": "Keep it up; Shamanistic Focus makes it cheap."
+       "tip": "Between pulls.",
+       "lvl": 8
       },
       {
-       "icon": "spell_nature_earthbindtotem",
-       "name": "Strength of Earth Totem",
-       "tip": "On longer fights or pulls of several mobs."
+       "icon": "spell_nature_strengthofearthtotem02",
+       "name": "Totems on the way in",
+       "tip": "Strength of Earth (or Stoneskin), Searing (Magma if mana allows), Mana Spring. Totemic Recall when moving on; it restores mana again (Nov 3 fix).",
+       "lvl": 10
       }
      ],
      "steps": [
       {
        "icon": "spell_nature_lightning",
        "name": "Lightning Bolt (Rank 1)",
-       "tip": "Cheap pull so the mob runs to you."
+       "tip": "Pull mobs from range."
       },
       {
        "icon": "ability_shaman_stormstrike",
        "name": "Stormstrike",
-       "tip": "On cooldown, and again whenever Improved Stormstrike resets it.",
-       "lvl": 25
-      },
-      {
-       "icon": "spell_nature_earthshock",
-       "name": "Earth Shock",
-       "tip": "Straight after Stormstrike to use its Nature bonus. Frost Shock if a runner or threat is a problem."
-      },
-      {
-       "icon": "spell_fire_flameshock",
-       "name": "Flame Shock",
-       "tip": "Only on mobs that live long enough for the ticks."
-      },
-      {
-       "icon": "spell_shaman_maelstromweapon",
-       "name": "Lightning Bolt at 5 Maelstrom",
-       "tip": "Instant and free at 5 stacks: damage or swap to a heal.",
-       "lvl": 47
+       "tip": "On cooldown; react to Improved Stormstrike resets.",
+       "talent": "Stormstrike",
+       "ups": [
+        {
+         "talent": "Improved Stormstrike",
+         "text": "resets and in-combat mana"
+        }
+       ]
       },
       {
        "icon": "spell_nature_bloodlust",
        "name": "Rage of the Farseer",
-       "tip": "Save for dangerous pulls or elites.",
-       "lvl": 52
+       "tip": "Against dangerous foes.",
+       "talent": "Rage of the Farseer"
+      },
+      {
+       "icon": "spell_shaman_maelstromweapon",
+       "name": "Lightning Bolt at 5 Maelstrom",
+       "tip": "Max rank, instant at 5 stacks.",
+       "talent": "Maelstrom Weapon"
+      },
+      {
+       "icon": "spell_nature_earthshock",
+       "name": "Earth Shock",
+       "tip": "On cooldown; it also interrupts. Frost Shock instead if threat is an issue.",
+       "lvl": 4,
+       "ups": [
+        {
+         "talent": "Shamanistic Focus",
+         "text": "Shocks cost 45% less"
+        }
+       ]
+      },
+      {
+       "icon": "spell_fire_flameshock",
+       "name": "Flame Shock",
+       "tip": "Alternate with Earth Shock in groups.",
+       "lvl": 10
       },
       {
        "icon": "spell_fire_sealoffire",
        "name": "Fire Nova",
-       "tip": "With a fire totem down, on packs."
+       "tip": "With a Fire Totem down and spare mana.",
+       "lvl": 12
+      },
+      {
+       "icon": "ability_parry",
+       "name": "Auto-attack",
+       "tip": "Let swings finish a mob instead of overspending mana."
       },
       {
        "icon": "spell_nature_magicimmunity",
        "name": "Healing Wave",
-       "tip": "Between pulls or at 5 Maelstrom."
+       "tip": "After the pull, then drink if mana is low."
+      }
+     ],
+     "unlocks": [
+      {
+       "lvl": 10,
+       "icon": "spell_fire_flameshock",
+       "name": "Flame Shock + Fire Totem quest",
+       "text": "Searing Totem, Strength of Earth"
+      },
+      {
+       "lvl": 12,
+       "icon": "spell_fire_sealoffire",
+       "name": "Fire Nova",
+       "text": "AoE off your Fire Totem"
+      },
+      {
+       "talent": "Shamanistic Focus",
+       "icon": "spell_nature_earthshock",
+       "name": "Shamanistic Focus",
+       "text": "Shocks 45% cheaper; Ghost Wolf at 20"
+      },
+      {
+       "talent": "Stormstrike",
+       "icon": "ability_shaman_stormstrike",
+       "name": "Stormstrike",
+       "text": "Your main strike"
+      },
+      {
+       "lvl": 30,
+       "icon": "spell_nature_cyclone",
+       "name": "Windfury Weapon",
+       "text": "Replaces Rockbiter; Improved Stormstrike mana"
+      },
+      {
+       "lvl": 32,
+       "icon": "spell_nature_windfury",
+       "name": "Windfury Totem",
+       "text": "Groups"
+      },
+      {
+       "talent": "Mindfulness",
+       "icon": "spell_nature_mentalquickness",
+       "name": "Mindfulness",
+       "text": "More in-combat mana regen"
+      },
+      {
+       "talent": "Water Shield",
+       "icon": "ability_shaman_watershield",
+       "name": "Water Shield",
+       "text": "Mana when struck or on crit"
+      },
+      {
+       "talent": "Maelstrom Weapon",
+       "icon": "spell_shaman_maelstromweapon",
+       "name": "Maelstrom Weapon",
+       "text": "Instant Lightning Bolts"
+      },
+      {
+       "talent": "Rage of the Farseer",
+       "icon": "spell_nature_bloodlust",
+       "name": "Rage of the Farseer",
+       "text": "Cooldown for dangerous foes"
       }
      ],
      "notes": [
@@ -2294,8 +2380,8 @@
      ],
      "src": [
       {
-       "label": "Icy Veins Enhancement leveling",
-       "date": "Oct 17",
+       "label": "Icy Veins Enhancement leveling (Wordup)",
+       "date": "Nov 3",
        "url": "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling"
       },
       {
@@ -2310,27 +2396,32 @@
       {
        "icon": "spell_nature_cyclone",
        "name": "Windfury Weapon",
-       "tip": "No Rockbiter in dungeons (Mobalytics)."
+       "tip": "No Rockbiter in dungeons (Mobalytics).",
+       "lvl": 30
       },
       {
        "icon": "spell_nature_lightningshield",
        "name": "Lightning Shield",
-       "tip": "Keep it up."
+       "tip": "Keep it up.",
+       "lvl": 8
       },
       {
        "icon": "spell_nature_earthbindtotem",
        "name": "Strength of Earth Totem",
-       "tip": "Melee groups."
+       "tip": "Melee groups.",
+       "lvl": 10
       },
       {
        "icon": "spell_nature_windfury",
        "name": "Windfury Totem",
-       "tip": "When the group has other melee."
+       "tip": "When the group has other melee.",
+       "lvl": 32
       },
       {
        "icon": "spell_fire_searingtotem",
        "name": "Searing / Magma Totem",
-       "tip": "Searing on single targets, Magma on packs."
+       "tip": "Searing on single targets, Magma on packs.",
+       "lvl": 10
       }
      ],
      "steps": [
@@ -2342,7 +2433,8 @@
       {
        "icon": "ability_shaman_stormstrike",
        "name": "Stormstrike",
-       "tip": "On cooldown."
+       "tip": "On cooldown.",
+       "talent": "Stormstrike"
       },
       {
        "icon": "spell_nature_earthshock",
@@ -2352,23 +2444,32 @@
       {
        "icon": "spell_shaman_maelstromweapon",
        "name": "Lightning Bolt at 5 Maelstrom",
-       "tip": "Spend stacks as they hit 5."
+       "tip": "Spend stacks as they hit 5.",
+       "talent": "Maelstrom Weapon"
       },
       {
        "icon": "spell_fire_sealoffire",
        "name": "Fire Nova",
-       "tip": "On packs."
+       "tip": "On packs.",
+       "lvl": 12
       },
       {
        "icon": "spell_nature_strengthofearthtotem02",
        "name": "Earthbind Totem",
-       "tip": "Utility for runners and kiting."
+       "tip": "Utility for runners and kiting.",
+       "lvl": 6
       }
      ],
      "notes": [
+      "Icy Veins: alternate Flame and Earth Shock in groups; Frost Shock if threat is an issue. Windfury Totem replaces your imbue's effect for the party.",
       "Hit cap 8%, Expertise 6.5% (Mobalytics)."
      ],
      "src": [
+      {
+       "label": "Icy Veins Enhancement leveling (Wordup)",
+       "date": "Nov 3",
+       "url": "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling"
+      },
       {
        "label": "wowfdb Enhancement rotation",
        "date": "read Oct 30",
@@ -2379,64 +2480,220 @@
        "date": "Oct 28",
        "url": "https://mobalytics.gg/wow-forever/classes/enhancement-shaman-guide"
       }
-     ]
+     ],
+     "seq": "enh_lvl"
     }
    },
    "aff": {
     "quest": {
+     "seq": "aff_lvl",
      "prep": [
       {
        "icon": "spell_shadow_ragingscream",
        "name": "Demon Skin / Demon Armor",
-       "tip": "Demon Skin early, Demon Armor after 20."
+       "tip": "Demon Skin early; Demon Armor from 20 (Demonic Aegis boosts it 30% by 37)."
+      },
+      {
+       "icon": "spell_shadow_summonimp",
+       "name": "Imp",
+       "tip": "Your only demon until the level 10 quest; it attacks from range.",
+       "until": 10
       },
       {
        "icon": "spell_shadow_summonvoidwalker",
        "name": "Voidwalker",
-       "tip": "Holds mobs while you cast. Send it in as you start."
+       "tip": "Holds mobs while you cast; send it in as you start. Pets are squishier since Blizzard's Nov 2 change (2 Health per Stamina).",
+       "lvl": 10,
+       "until": 41
+      },
+      {
+       "icon": "spell_shadow_summonsuccubus",
+       "name": "Succubus / Incubus (damage option)",
+       "tip": "More melee damage than the Voidwalker; same abilities either way.",
+       "lvl": 20,
+       "until": 41
+      },
+      {
+       "icon": "spell_shadow_psychicscream",
+       "name": "Demonic Sacrifice: Felhunter",
+       "tip": "Sacrifice the Felhunter for 3% max Health every 4 s (2 hours). Summoning any demon removes it.",
+       "talent": "Demonic Sacrifice"
       }
      ],
      "steps": [
+      {
+       "icon": "spell_shadow_shadowbolt",
+       "name": "Shadow Bolt opener",
+       "tip": "Early levels only: opening cast or direct damage between DoTs. Once you have a wand, shoot instead."
+      },
       {
        "icon": "spell_fire_immolation",
        "name": "Immolate (optional)",
        "tip": "Precast from range on tougher mobs, before the instant DoTs."
       },
       {
-       "icon": "spell_shadow_abominationexplosion",
-       "name": "Corruption",
-       "tip": "Early. Instant once Improved Corruption is done."
+       "icon": "spell_shadow_chilltouch",
+       "name": "Curse of Weakness",
+       "tip": "Elite melee mobs that hit hard; stays up alongside Bane of Agony.",
+       "lvl": 4,
+       "until": 20
+      },
+      {
+       "icon": "spell_shadow_chilltouch",
+       "name": "Curse of the Elements",
+       "tip": "Durable enemies: more Magic damage taken. Use Curse of Weakness instead when melee damage is the problem.",
+       "lvl": 20
       },
       {
        "icon": "spell_shadow_curseofsargeras",
        "name": "Bane of Agony",
-       "tip": "Only if the mob lives most of the duration; don't refresh early, the last ticks are the big ones."
+       "tip": "Only if the mob lives most of the duration; don't refresh early, the last ticks are the big ones.",
+       "lvl": 8,
+       "ups": [
+        {
+         "talent": "Amplify Curse",
+         "text": "Amplify Curse before a new Bane on a durable mob"
+        }
+       ]
+      },
+      {
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Corruption",
+       "tip": "Apply early; reapply if the mob will live long enough.",
+       "lvl": 4,
+       "ups": [
+        {
+         "talent": "Improved Corruption",
+         "at": 5,
+         "text": "instant (Improved Corruption 5/5), cast it while moving"
+        },
+        {
+         "talent": "Nightfall",
+         "text": "its ticks can proc Nightfall"
+        }
+       ]
       },
       {
        "icon": "spell_shadow_requiem",
        "name": "Siphon Life",
-       "tip": "On durable mobs, when the healing pays for its mana.",
-       "lvl": 30
+       "tip": "Only on mobs that survive most of its 30 s; the healing pays for Life Tap.",
+       "talent": "Siphon Life"
       },
       {
        "icon": "spell_shadow_twilight",
        "name": "Nightfall Shadow Bolt",
-       "tip": "Instant on a proc; use it before it expires."
+       "tip": "Instant on a proc; use it before it expires, on the healthiest mob.",
+       "talent": "Nightfall"
       },
       {
        "icon": "spell_shadow_lifedrain02",
        "name": "Drain Life",
-       "tip": "When you need health; your DoTs keep ticking."
+       "tip": "When you need health; your DoTs keep ticking.",
+       "lvl": 14
+      },
+      {
+       "icon": "ability_deathknight_hemorrhagicfever",
+       "name": "Wrack",
+       "tip": "Damage channel when you don't need health: DoTs first, it adds 10% to your Shadow DoTs while channeling. No healing, so Drain Life when low.",
+       "talent": "Wrack"
       },
       {
        "icon": "ability_shootwand",
        "name": "Wand",
-       "tip": "Finish low mobs without spending mana."
+       "tip": "Finish low mobs without spending mana; let the DoTs tick while you shoot."
       },
       {
        "icon": "spell_shadow_burningspirit",
        "name": "Life Tap",
-       "tip": "Between DoTs or while moving."
+       "tip": "Between DoTs or while moving, once or twice at a time, then heal back up.",
+       "lvl": 6
+      },
+      {
+       "icon": "spell_shadow_haunting",
+       "name": "Drain Soul (shards)",
+       "tip": "Channel as the mob dies for a guaranteed shard. Blizzard Nov 2: the no-kill tick chance is cut a lot; Nov 3: casting another spell interrupts it.",
+       "lvl": 10
+      }
+     ],
+     "unlocks": [
+      {
+       "lvl": 4,
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Corruption + Curse of Weakness",
+       "text": "Your first DoT"
+      },
+      {
+       "lvl": 6,
+       "icon": "spell_shadow_burningspirit",
+       "name": "Life Tap",
+       "text": "Health into mana"
+      },
+      {
+       "lvl": 8,
+       "icon": "spell_shadow_curseofsargeras",
+       "name": "Bane of Agony",
+       "text": "Second DoT"
+      },
+      {
+       "lvl": 10,
+       "icon": "spell_shadow_summonvoidwalker",
+       "name": "Voidwalker + Drain Soul",
+       "text": "Class quest pet; shard channel"
+      },
+      {
+       "lvl": 14,
+       "icon": "spell_shadow_lifedrain02",
+       "name": "Drain Life",
+       "text": "Heal while DoTs tick"
+      },
+      {
+       "talent": "Improved Corruption",
+       "at": 5,
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Instant Corruption",
+       "text": "Improved Corruption 5/5"
+      },
+      {
+       "lvl": 20,
+       "icon": "spell_shadow_chilltouch",
+       "name": "Curse of the Elements + Demon Armor",
+       "text": "Replaces Curse of Weakness on durable mobs; Succubus quest, Rain of Fire"
+      },
+      {
+       "talent": "Nightfall",
+       "icon": "spell_shadow_twilight",
+       "name": "Nightfall",
+       "text": "Instant Shadow Bolt procs"
+      },
+      {
+       "talent": "Siphon Life",
+       "icon": "spell_shadow_requiem",
+       "name": "Siphon Life",
+       "text": "Third DoT that heals; Hellfire for groups"
+      },
+      {
+       "talent": "Demonic Sacrifice",
+       "icon": "spell_shadow_psychicscream",
+       "name": "Demonic Sacrifice",
+       "text": "Sacrifice the Felhunter; you quest without a pet"
+      },
+      {
+       "talent": "Wrack",
+       "icon": "ability_deathknight_hemorrhagicfever",
+       "name": "Wrack",
+       "text": "Damage channel; Drain Life stays for healing"
+      },
+      {
+       "talent": "Amplify Curse",
+       "icon": "spell_shadow_contagion",
+       "name": "Amplify Curse",
+       "text": "Before a new Bane of Agony"
+      },
+      {
+       "talent": "Curse of Exhaustion",
+       "icon": "spell_shadow_grimward",
+       "name": "Curse of Exhaustion",
+       "text": "30% slow, alongside Bane"
       }
      ],
      "notes": [
@@ -2445,9 +2702,14 @@
      ],
      "src": [
       {
-       "label": "Icy Veins Affliction leveling",
-       "date": "Oct 21",
+       "label": "Icy Veins Affliction leveling (Abide)",
+       "date": "Nov 3",
        "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
+      },
+      {
+       "label": "Blizzard beta development notes",
+       "date": "Nov 2 + Nov 3",
+       "url": "https://us.forums.blizzard.com/en/wow/t/latest-warlock-changes/2399400"
       },
       {
        "label": "Mobalytics Warlock leveling (Crix)",
@@ -2457,16 +2719,37 @@
      ]
     },
     "dungeon": {
+     "seq": "aff_lvl",
      "prep": [
       {
+       "icon": "spell_shadow_summonimp",
+       "name": "Imp in range",
+       "tip": "Blood Pact Stamina for the group; attacks from range, away from tanked mobs."
+      },
+      {
        "icon": "spell_shadow_summonsuccubus",
-       "name": "Succubus",
-       "tip": "Highest-damage demon (Mobalytics). Move her out of AoE."
+       "name": "Succubus (damage)",
+       "tip": "Highest-damage demon (Mobalytics, Oct 30). Move her out of AoE; Torment off if you use the Voidwalker.",
+       "lvl": 20,
+       "until": 41
+      },
+      {
+       "icon": "spell_shadow_psychicscream",
+       "name": "Demonic Sacrifice: Imp",
+       "tip": "15% Shadow damage for 2 hours (Felhunter's healing is the solo pick).",
+       "talent": "Demonic Sacrifice"
+      },
+      {
+       "icon": "spell_shadow_soulgem",
+       "name": "Healthstones for the group",
+       "tip": "Offer them before the run; Soulstone the healer.",
+       "lvl": 10
       },
       {
        "icon": "spell_shadow_chilltouch",
        "name": "Curse of the Elements",
-       "tip": "If you're assigned it."
+       "tip": "If you're assigned it; helps every caster.",
+       "lvl": 20
       }
      ],
      "steps": [
@@ -2476,24 +2759,65 @@
        "tip": "Lands as the pull starts."
       },
       {
+       "icon": "spell_shadow_curseofsargeras",
+       "name": "Bane of Agony",
+       "tip": "Durable mobs and bosses; skip weak trash that's already dying.",
+       "lvl": 8,
+       "ups": [
+        {
+         "talent": "Amplify Curse",
+         "text": "Amplify Curse first on bosses"
+        }
+       ]
+      },
+      {
        "icon": "spell_shadow_auraofdarkness",
        "name": "Bane of Doom",
-       "tip": "Bursts after 60 s. If the target dies sooner: Amplify Curse + Bane of Agony."
+       "tip": "Level-60 bosses: bursts after 60 s. If the target dies sooner: Amplify Curse + Bane of Agony. (Mobalytics, Oct 30)",
+       "lvl": 60
       },
       {
        "icon": "spell_shadow_abominationexplosion",
        "name": "Corruption",
-       "tip": "Keep it up; don't clip."
+       "tip": "Every mob you plan to damage; don't clip.",
+       "lvl": 4,
+       "ups": [
+        {
+         "talent": "Improved Corruption",
+         "at": 5,
+         "text": "instant, easy to spread"
+        }
+       ]
       },
       {
-       "icon": "spell_fire_immolation",
-       "name": "Immolate",
-       "tip": "Keep it up."
+       "icon": "spell_shadow_rainoffire",
+       "name": "Rain of Fire",
+       "tip": "Packs the tank is holding.",
+       "lvl": 20
+      },
+      {
+       "icon": "spell_fire_fire",
+       "name": "Hellfire",
+       "tip": "Organized pulls only, with healing; can crit since Nov 3.",
+       "lvl": 30
       },
       {
        "icon": "spell_shadow_requiem",
        "name": "Siphon Life",
-       "tip": "Keep it up."
+       "tip": "Bosses and durable mobs only.",
+       "talent": "Siphon Life"
+      },
+      {
+       "icon": "spell_shadow_twilight",
+       "name": "Nightfall procs",
+       "tip": "Instant Shadow Bolt.",
+       "talent": "Nightfall"
+      },
+      {
+       "icon": "ability_deathknight_hemorrhagicfever",
+       "name": "Wrack",
+       "tip": "On the boss with all DoTs up; the bonus only applies to the target you channel on.",
+       "talent": "Wrack"
       },
       {
        "icon": "spell_shadow_shadowbolt",
@@ -2501,32 +2825,71 @@
        "tip": "Until a DoT needs refreshing."
       },
       {
-       "icon": "spell_shadow_twilight",
-       "name": "Nightfall procs",
-       "tip": "Instant Shadow Bolt."
-      },
-      {
        "icon": "spell_shadow_burningspirit",
        "name": "Life Tap",
-       "tip": "Below about 50% mana with DoTs up; aim to finish at zero mana."
+       "tip": "Below about 50% mana with DoTs up; aim to finish at zero mana.",
+       "lvl": 6
+      }
+     ],
+     "unlocks": [
+      {
+       "lvl": 20,
+       "icon": "spell_shadow_rainoffire",
+       "name": "Rain of Fire + Curse of the Elements",
+       "text": "Pack damage, group curse"
+      },
+      {
+       "talent": "Siphon Life",
+       "icon": "spell_shadow_requiem",
+       "name": "Siphon Life + Hellfire",
+       "text": "Boss DoT; close-range AoE"
+      },
+      {
+       "talent": "Demonic Sacrifice",
+       "icon": "spell_shadow_psychicscream",
+       "name": "Sacrifice the Imp",
+       "text": "15% Shadow damage"
+      },
+      {
+       "talent": "Wrack",
+       "icon": "ability_deathknight_hemorrhagicfever",
+       "name": "Wrack",
+       "text": "Boss channel"
+      },
+      {
+       "talent": "Amplify Curse",
+       "icon": "spell_shadow_contagion",
+       "name": "Amplify Curse",
+       "text": "Before Bane on bosses"
+      },
+      {
+       "lvl": 60,
+       "icon": "spell_shadow_auraofdarkness",
+       "name": "Bane of Doom",
+       "text": "Level-60 boss Bane"
       }
      ],
      "notes": [
-      "Leveling dungeons: Icy Veins adds Rain of Fire from 20 on packs the tank is holding."
+      "Icy Veins' leveling priority covers dungeons too; Bane of Doom and the Shadow Bolt filler are Mobalytics' level-60 boss rotation."
      ],
      "src": [
+      {
+       "label": "Icy Veins Affliction leveling (Abide)",
+       "date": "Nov 3",
+       "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
+      },
       {
        "label": "Mobalytics Affliction guide (Crix)",
        "date": "Oct 30",
        "url": "https://mobalytics.gg/wow-forever/classes/affliction-warlock-guide"
       },
       {
-       "label": "Icy Veins Affliction leveling",
-       "date": "Oct 21",
-       "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
+       "label": "Blizzard beta development notes",
+       "date": "Nov 2 + Nov 3",
+       "url": "https://us.forums.blizzard.com/en/wow/t/latest-warlock-changes/2399400"
       }
      ],
-     "caveat": "Mobalytics' priority is its level-60 boss rotation; Bane of Doom isn't learned while leveling."
+     "caveat": "Steps from 60 come from Mobalytics' level-60 boss rotation (Oct 30)."
     }
    },
    "demo": {
@@ -2535,19 +2898,20 @@
       {
        "icon": "spell_shadow_summonvoidwalker",
        "name": "Voidwalker",
-       "tip": "Send it in first so it builds threat."
+       "tip": "Send it in first so it builds threat.",
+       "lvl": 10
       },
       {
        "icon": "spell_shadow_gathershadows",
        "name": "Soul Link",
        "tip": "From 30; reapply after changing demons.",
-       "lvl": 30
+       "talent": "Soul Link"
       },
       {
        "icon": "spell_shadow_psychicscream",
        "name": "Sacrifice Felhunter, summon Voidwalker",
        "tip": "From 40 with Demonic Pact: steady healing and a tank. Don't start at 29.",
-       "lvl": 40
+       "talent": "Demonic Pact"
       }
      ],
      "steps": [
@@ -2555,7 +2919,7 @@
        "icon": "spell_fire_soulburn",
        "name": "Searing Pain (Demonic Brand)",
        "tip": "On the pet's target: empowers its next 6 attacks. Reapply when used up.",
-       "lvl": 25
+       "talent": "Demonic Brand"
       },
       {
        "icon": "spell_shadow_chilltouch",
@@ -2566,12 +2930,27 @@
       {
        "icon": "spell_shadow_curseofsargeras",
        "name": "Bane of Agony",
-       "tip": "If the mob lives long enough."
+       "tip": "If the mob lives long enough.",
+       "lvl": 8
       },
       {
        "icon": "spell_shadow_abominationexplosion",
        "name": "Corruption",
-       "tip": "Has a cast time until 49 in this build."
+       "tip": "Has a cast time until 49 in this build.",
+       "lvl": 4,
+       "ups": [
+        {
+         "talent": "Improved Corruption",
+         "at": 5,
+         "text": "instant (Improved Corruption 5/5)"
+        }
+       ]
+      },
+      {
+       "icon": "spell_shadow_twilight",
+       "name": "Nightfall procs",
+       "tip": "Instant Shadow Bolt on the healthiest mob.",
+       "talent": "Nightfall"
       },
       {
        "icon": "spell_fire_immolation",
@@ -2584,19 +2963,79 @@
        "tip": "A big part of this build: let the pet and DoTs finish."
       },
       {
+       "icon": "spell_shadow_lifedrain02",
+       "name": "Drain Life",
+       "tip": "When you need health; Health Funnel if the pet does.",
+       "lvl": 14
+      },
+      {
        "icon": "spell_shadow_burningspirit",
        "name": "Life Tap",
-       "tip": "Restores the pet's mana too (Demonic Energies)."
+       "tip": "Restores the pet's mana too (Demonic Energies).",
+       "lvl": 6
       }
      ],
      "notes": [
-      "Health Funnel if the pet needs more than your damage heals."
+      "Health Funnel if the pet needs more than your damage heals.",
+      "Corvin runs Demonology as Spec 2 from 40 (groups); levels on the steps follow Icy Veins' Demonology order.",
+      "Blizzard Nov 2: pets get 2 Health per Stamina (was 7.5), so watch the pet's bar."
      ],
      "src": [
       {
-       "label": "Icy Veins Demonology leveling",
-       "date": "Oct 21",
+       "label": "Icy Veins Demonology leveling (Abide)",
+       "date": "Oct 21, rechecked Nov 4",
        "url": "https://www.icy-veins.com/wow-forever/demonology-warlock-leveling"
+      },
+      {
+       "label": "Blizzard beta development notes",
+       "date": "Nov 2 + Nov 3",
+       "url": "https://us.forums.blizzard.com/en/wow/t/latest-warlock-changes/2399400"
+      }
+     ],
+     "seq": "demo_lvl",
+     "unlocks": [
+      {
+       "talent": "Demonic Energies",
+       "icon": "spell_shadow_felmending",
+       "name": "Demonic Energies",
+       "text": "Your damage heals the pet; Life Tap feeds it mana"
+      },
+      {
+       "lvl": 18,
+       "icon": "spell_fire_soulburn",
+       "name": "Searing Pain",
+       "text": "Brand spell"
+      },
+      {
+       "talent": "Demonic Brand",
+       "icon": "spell_fire_soulburn",
+       "name": "Demonic Brand",
+       "text": "Searing Pain empowers 6 pet attacks"
+      },
+      {
+       "talent": "Soul Link",
+       "icon": "spell_shadow_gathershadows",
+       "name": "Soul Link",
+       "text": "Pet takes 30% of your damage"
+      },
+      {
+       "talent": "Demonic Pact",
+       "icon": "spell_shadow_psychicscream",
+       "name": "Demonic Pact",
+       "text": "Sacrifice Felhunter, keep the Voidwalker"
+      },
+      {
+       "talent": "Improved Corruption",
+       "at": 5,
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Instant Corruption",
+       "text": "Improved Corruption 5/5"
+      },
+      {
+       "talent": "Nightfall",
+       "icon": "spell_shadow_twilight",
+       "name": "Nightfall",
+       "text": "Instant Shadow Bolt procs"
       }
      ]
     },
@@ -2605,7 +3044,8 @@
       {
        "icon": "spell_shadow_psychicscream",
        "name": "Sacrifice Succubus",
-       "tip": "Before the pull, then summon the Imp (Demonic Pact keeps the buff)."
+       "tip": "Before the pull, then summon the Imp (Demonic Pact keeps the buff).",
+       "talent": "Demonic Pact"
       },
       {
        "icon": "spell_shadow_summonimp",
@@ -2615,7 +3055,8 @@
       {
        "icon": "spell_shadow_gathershadows",
        "name": "Soul Link + Demon Armor",
-       "tip": "Plus a Healthstone in your bag."
+       "tip": "Plus a Healthstone in your bag.",
+       "talent": "Soul Link"
       }
      ],
      "steps": [
@@ -2627,12 +3068,14 @@
       {
        "icon": "spell_fire_soulburn",
        "name": "Searing Pain",
-       "tip": "Applies Demonic Brand; /petattack in the macro."
+       "tip": "Applies Demonic Brand; /petattack in the macro.",
+       "lvl": 18
       },
       {
        "icon": "spell_shadow_auraofdarkness",
        "name": "Bane of Doom",
-       "tip": "Bane of Agony if it dies within 60 s."
+       "tip": "Bane of Agony if it dies within 60 s.",
+       "lvl": 60
       },
       {
        "icon": "spell_fire_immolation",
@@ -2652,7 +3095,8 @@
       {
        "icon": "spell_fire_fireball02",
        "name": "Soul Fire under 35%",
-       "tip": "Decimation window."
+       "tip": "Decimation window.",
+       "lvl": 48
       },
       {
        "icon": "spell_shadow_burningspirit",
@@ -2665,12 +3109,18 @@
      ],
      "src": [
       {
+       "label": "Icy Veins Demonology leveling (Abide)",
+       "date": "Oct 21, rechecked Nov 4",
+       "url": "https://www.icy-veins.com/wow-forever/demonology-warlock-leveling"
+      },
+      {
        "label": "Mobalytics Demonology guide (Crix)",
        "date": "Oct 30",
        "url": "https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide"
       }
      ],
-     "caveat": "Mobalytics' priority is its level-60 2/31/18 boss rotation."
+     "caveat": "Mobalytics' priority is its level-60 2/31/18 boss rotation.",
+     "seq": "demo_lvl"
     }
    }
   }
@@ -2967,7 +3417,8 @@
      {
       "n": 5,
       "spell": "Pet attack / follow",
-      "icon": "spell_shadow_summonvoidwalker"
+      "icon": "spell_shadow_summonvoidwalker",
+      "note": "From 41 Demonic Sacrifice eats the pet in Affliction; this key is for Spec 2 or a utility summon."
      },
      {
       "n": 6,
@@ -2979,7 +3430,8 @@
      {
       "k": "F1",
       "spell": "Summon pet macro",
-      "icon": "spell_shadow_summonimp"
+      "icon": "spell_shadow_summonimp",
+      "note": "Voidwalker from 10 (Imp before). From 41 summon and Sacrifice the Felhunter (rotation prep)."
      },
      {
       "k": "F2",
@@ -3376,7 +3828,7 @@
       "n": 9,
       "spell": "Pet attack / follow macro",
       "icon": "spell_shadow_summonvoidwalker",
-      "note": "Was Shift+5"
+      "note": "Was Shift+5. From 41 Demonic Sacrifice eats the pet in Affliction; this key is for Spec 2 or a utility summon."
      },
      {
       "n": 10,
@@ -3578,7 +4030,7 @@
     "spec": "both",
     "where": "Shift+5",
     "code": "#showtooltip\n/petattack [harm,nodead]\n/petfollow [mod:ctrl]",
-    "does": "Sends the pet at your target. Hold Ctrl to call it back, which you want before you Fear.",
+    "does": "Sends the pet at your target. Hold Ctrl to call it back, which you want before you Fear. Affliction from 41: pet is sacrificed, so this is for Spec 2 (Demonology).",
     "src": "Your notes"
    },
    {
@@ -9117,10 +9569,10 @@
   }
  },
  "_meta": {
-  "version": 7,
+  "version": 8,
   "generated_at": "2026-11-04T12:19-05:00",
   "source": "WoW Forever Bot research run, Nov 4 2026 9 AM ET",
   "notes_commit": "21a5969",
-  "notes": "Nov 4: Corvin's path reframed: Affliction to 60, Dual Spec 40 adds Demonology for groups; Soul Link respec optional"
+  "notes": "Nov 4: rotations level-aware (Icy Veins Nov 3 Affliction + Enhancement, Demonology Oct 21 rechecked, Blizzard Nov 2/3) v8 sweep: pet keys note Demonic Sacrifice at 41."
  }
 }
