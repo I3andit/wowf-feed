@@ -8963,6 +8963,30 @@
   "feed_rows": [
    {
     "lead": "Nov 4",
+    "title": "Launch build 70790: Chain Lightning 2.5 sec cast is now in the game files",
+    "detail": "Live build 1.60.1.70790 (detected Nov 4, 18:41 UTC) changes 3 spells and 1 talent versus 70755. For Vorgash: Chain Lightning's cast time is 2.5 sec (was 2 sec), matching Blizzard's official Nov 2 notes, so nothing new to change. The rest is Warrior threat: Defensive Stance and Defiance threat bonuses reverted to 30% and 15% after a same-day hotfix had raised them to 80% and 20%. Read Nov 4, 6:20 PM ET.",
+    "meta": "1mw.io build diff, Nov 4 (build 70790)",
+    "status": {
+     "label": "Unofficial",
+     "tone": "warning"
+    },
+    "_source": "https://1mw.io/en/news/patch-notes#journal-2026-11-04-build-1-60-1-70790",
+    "_date": "Nov 4"
+   },
+   {
+    "lead": "Nov 4",
+    "title": "WoW Forever is live worldwide",
+    "detail": "Blizzard's launch post: Forever is now live, leveling to 60 across the original continents. Battle.net and Discord account linking is available for guild chat in and out of the game. No class changes in the post. Read Nov 4, 6:20 PM ET.",
+    "meta": "Blizzard news, Nov 4",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://news.blizzard.com/en-us/world-of-warcraft",
+    "_date": "Nov 4"
+   },
+   {
+    "lead": "Nov 4",
     "title": "MythicSim: Enhancement up to #3, Demonology slides to #8",
     "detail": "Nov 4 snapshot, re-simmed for the Nov 2 notes on engine a667dce. Enhancement #3 (1,066 DPS, was #5 at 982). Demonology #8 (980, was #4): MythicSim now reads Orc Command from the live client as +5% on the Imp's Firebolt and Succubus' Lash of Pain only, and switched the Demonology reference race to Undead. Affliction #11 (934, was #13) after its reference moved to a 35/11/5 Wrack build. Destruction #12 (929, was #11). Elemental #20 (823, was #22). Survival Hunter leads at 1,288. Sims are pre-launch and unverified against the live game. Read Nov 4, 9:30 AM ET.",
     "meta": "MythicSim, Nov 4 snapshot",
@@ -9569,10 +9593,10 @@
   }
  },
  "_meta": {
-  "version": 8,
-  "generated_at": "2026-11-04T12:19-05:00",
-  "source": "WoW Forever Bot research run, Nov 4 2026 9 AM ET",
+  "version": 9,
+  "generated_at": "2026-11-04T18:22-05:00",
+  "source": "WoW Forever Bot research run, Nov 4 2026 6 PM ET",
   "notes_commit": "21a5969",
-  "notes": "Nov 4: rotations level-aware (Icy Veins Nov 3 Affliction + Enhancement, Demonology Oct 21 rechecked, Blizzard Nov 2/3) v8 sweep: pet keys note Demonic Sacrifice at 41."
+  "notes": "Nov 4 6 PM: launch live; build 70790 confirms Chain Lightning 2.5 sec cast (already on the page)."
  }
 }
