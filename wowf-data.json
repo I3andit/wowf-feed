@@ -1396,23 +1396,23 @@
   "ORDERS": {
    "aff_lvl": [
     [
+     "Suppression",
+     4
+    ],
+    [
      "Improved Corruption",
      5
     ],
     [
-     "Suppression",
-     3
+     "Improved Life Tap",
+     1
     ],
     [
-     "Grim Reach",
+     "Improved Bane of Agony",
      2
     ],
     [
-     "Soul Harvest",
-     2
-    ],
-    [
-     "Improved Drains",
+     "Pandemic",
      3
     ],
     [
@@ -1420,15 +1420,35 @@
      2
     ],
     [
-     "Fel Concentration",
+     "Malevolence",
      3
     ],
     [
-     "Soul Siphon",
+     "Siphon Life",
+     1
+    ],
+    [
+     "Demonic Embrace",
+     5
+    ],
+    [
+     "Demonic Aegis",
+     2
+    ],
+    [
+     "Fel Vitality",
      3
     ],
     [
-     "Pandemic",
+     "Demonic Sacrifice",
+     1
+    ],
+    [
+     "Malevolence",
+     2
+    ],
+    [
+     "Grim Reach",
      2
     ],
     [
@@ -1436,36 +1456,28 @@
      5
     ],
     [
-     "Pandemic",
+     "Wrack",
      1
-    ],
-    [
-     "Unholy Power",
-     5
-    ],
-    [
-     "Demonic Energies",
-     2
-    ],
-    [
-     "Malevolence",
-     5
-    ],
-    [
-     "Fel Vitality",
-     3
-    ],
-    [
-     "Improved Bane of Agony",
-     2
     ],
     [
      "Improved Life Tap",
-     2
+     1
     ],
     [
-     "Siphon Life",
+     "Amplify Curse",
      1
+    ],
+    [
+     "Curse of Exhaustion",
+     1
+    ],
+    [
+     "Soul Siphon",
+     3
+    ],
+    [
+     "Fel Concentration",
+     3
     ]
    ],
    "demo_lvl": [
@@ -1560,84 +1572,76 @@
    ],
    "aff_icy": [
     [
-     "Suppression",
-     4
-    ],
-    [
      "Improved Corruption",
      5
     ],
     [
-     "Grim Reach",
-     1
-    ],
-    [
-     "Improved Bane of Agony",
-     2
+     "Suppression",
+     3
     ],
     [
      "Grim Reach",
-     1
-    ],
-    [
-     "Improved Life Tap",
      2
     ],
     [
-     "Nightfall",
+     "Soul Harvest",
      2
-    ],
-    [
-     "Pandemic",
-     3
-    ],
-    [
-     "Siphon Life",
-     1
-    ],
-    [
-     "Demonic Embrace",
-     5
-    ],
-    [
-     "Demonic Aegis",
-     2
-    ],
-    [
-     "Fel Vitality",
-     3
-    ],
-    [
-     "Demonic Sacrifice",
-     1
-    ],
-    [
-     "Malevolence",
-     4
-    ],
-    [
-     "Shadow Mastery",
-     5
-    ],
-    [
-     "Wrack",
-     1
-    ],
-    [
-     "Malevolence",
-     1
-    ],
-    [
-     "Soul Siphon",
-     3
     ],
     [
      "Improved Drains",
      3
     ],
     [
-     "Fel Concentration",
+     "Nightfall",
      2
+    ],
+    [
+     "Fel Concentration",
+     3
+    ],
+    [
+     "Soul Siphon",
+     3
+    ],
+    [
+     "Pandemic",
+     2
+    ],
+    [
+     "Shadow Mastery",
+     5
+    ],
+    [
+     "Pandemic",
+     1
+    ],
+    [
+     "Unholy Power",
+     5
+    ],
+    [
+     "Demonic Energies",
+     2
+    ],
+    [
+     "Malevolence",
+     5
+    ],
+    [
+     "Fel Vitality",
+     3
+    ],
+    [
+     "Improved Bane of Agony",
+     2
+    ],
+    [
+     "Improved Life Tap",
+     2
+    ],
+    [
+     "Siphon Life",
+     1
     ]
    ],
    "enh_lvl": [
@@ -2063,13 +2067,13 @@
    },
    {
     "key": "aff_lvl",
-    "label": "Affliction leveling",
+    "label": "Affliction leveling (Icy Veins)",
     "cls": "warlock",
     "seq": "aff_lvl",
-    "src": "Mobalytics (Crix), Warlock leveling guide",
-    "date": "Oct 30",
-    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide",
-    "blurb": "Drain-tank Affliction: Improved Corruption first, Soul Siphon at 30, Shadow Mastery 35–39, then a Demonology splash for pet sustain. Ends 41/10/0."
+    "src": "Icy Veins (Abide), Affliction leveling guide text, updated Nov 3, read Nov 4",
+    "date": "Nov 3",
+    "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling",
+    "blurb": "Suppression and instant Corruption first, Siphon Life at 30, Demonology dip to Demonic Sacrifice at 41, Wrack at 51. Ends 40/11/0. Levels 20-21, 27-29, 31-40 and 46-50 come from the guide's talent calculator (its text skips them); level 19 follows the text (Improved Life Tap) where the calculator shows Grim Reach."
    },
    {
     "key": "path",
@@ -2077,8 +2081,8 @@
     "cls": "warlock",
     "path": true,
     "seq": "aff_lvl",
-    "src": "Spec 1: Mobalytics (Crix) · Spec 2: Icy Veins (Abide)",
-    "date": "Oct 30 / Oct 21",
+    "src": "Spec 1: Icy Veins Affliction (Abide, Nov 3) · Spec 2: Icy Veins Demonology (Abide)",
+    "date": "Nov 3 / Oct 21",
     "url": "https://wowfdb.com/classes/warlock/demonology/leveling/",
     "blurb": "Spec 1 levels Affliction. At 40, Dual Spec gives a second spec with all 31 points: Icy Veins' Demonology order reaches Demonic Pact at exactly 31 points.",
     "tag": "Pairing is mine"
@@ -2095,13 +2099,13 @@
    },
    {
     "key": "aff_icy",
-    "label": "Affliction (Icy Veins alt)",
+    "label": "Affliction alt (Mobalytics)",
     "cls": "warlock",
     "seq": "aff_icy",
-    "src": "Icy Veins (Abide), its talent calculator order",
-    "date": "Oct 21",
-    "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling",
-    "blurb": "Older Affliction order with a Demonology dip at 31–41 and Wrack at 51. Ends 40/11/0."
+    "src": "Mobalytics (Crix), Warlock leveling guide",
+    "date": "Oct 30",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide",
+    "blurb": "Drain-tank Affliction: Improved Corruption first, Soul Siphon at 30, Shadow Mastery 35–39, then a Demonology splash for pet sustain. Ends 41/10/0. No Wrack in this build."
    },
    {
     "key": "aff_raid",
@@ -2156,9 +2160,9 @@
     "spec": 1,
     "icon": "spell_shadow_abominationexplosion",
     "title": "Affliction starts",
-    "body": "First point into Improved Corruption (Mobalytics). With Legacy Talented maxed, points start up to 5 levels earlier.",
-    "src": "Mobalytics Warlock leveling (Crix), Oct 30",
-    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide"
+    "body": "First 4 points into Suppression (4% hit), then Improved Corruption 14-18 (Icy Veins). With Legacy Talented maxed, points start up to 5 levels earlier.",
+    "src": "Icy Veins Affliction leveling (Abide), Nov 3",
+    "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
    },
    {
     "lv": "30",
@@ -9104,10 +9108,10 @@
   }
  },
  "_meta": {
-  "version": 3,
-  "generated_at": "2026-11-04T09:40-05:00",
+  "version": 4,
+  "generated_at": "2026-11-04T12:10-05:00",
   "source": "WoW Forever Bot research run, Nov 4 2026 9 AM ET",
   "notes_commit": "21a5969",
-  "notes": "Nov 4: tier lists re-read (Wowhead L60, BrokenMeta, voidsim, MythicSim); no new Blizzard posts"
+  "notes": "Nov 4: Corvin's Affliction path now Icy Veins Nov 3 (40/11, Demonic Sacrifice 41, Wrack 51); Mobalytics kept as alt"
  }
 }
