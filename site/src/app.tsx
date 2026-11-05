@@ -512,10 +512,68 @@ function MetaBoard() {
   );
 }
 
-type Bind = { n: number; spell: string; icon: string; note?: string };
+type Bind = { n: number; spell: string; icon: string; note?: string; lock?: number };
 type Stage = { id: string; label: string; base: Bind[] };
 type FKey = { k: string; spell: string; icon: string };
-type NagaSpec = { stages: Stage[]; shift: Bind[]; fkeys: FKey[] };
+type NagaSpec = { stages: Stage[]; shift: Bind[]; fkeys: FKey[]; auto?: NAuto };
+// Level-aware Naga (Nov 4): plates are built from the level-aware rotation (ROT quest steps) plus a utility pool, per level.
+type NPool = { key: string; spell: string; icon: string; kind: string; covers?: string[]; lvl?: number; talent?: string; at?: number; until?: number; untilTalent?: string; note?: string; alt?: boolean };
+type NAuto = { pool: NPool[]; skip?: string[]; mode?: string; src?: string };
+type NSlot = { key: string; spell: string; icon: string; note?: string; alt?: boolean; lv: number; locked: boolean; rot: boolean; ord: number };
+function nagaSlots(spec: string, lv: number): NSlot[] {
+  const a: NAuto | undefined = (WF_DATA.naga.NAGA[spec] as NagaSpec).auto;
+  const r: Rot = ROT[spec][a && a.mode ? a.mode : "quest"];
+  const seq = r.seq;
+  const steps = r.steps.map((st: RStep) => ({ ...st, lvl: rotLv(st, seq) })).filter((st: RStep) => !(st.until && lv >= st.until));
+  const skip = a && a.skip ? a.skip : [];
+  const covered: Record<string, boolean> = {};
+  const out: NSlot[] = [];
+  (a ? a.pool : []).forEach((p: NPool, i: number) => {
+    const until = p.untilTalent ? rotLv({ talent: p.untilTalent }, seq) : p.until;
+    if (until && lv >= until) return;
+    let L = rotLv(p, seq);
+    let ord = 1000 + i;
+    if (p.covers) {
+      const hit = steps.map((st: RStep, j: number) => ({ st, j })).filter((x: { st: RStep; j: number }) => p.covers!.indexOf(x.st.name) >= 0);
+      if (p.kind === "rot" && hit.length === 0) return;
+      hit.forEach((x: { st: RStep; j: number }) => { covered[x.st.name] = true; });
+      if (hit.length) { ord = Math.min(...hit.map((x: { st: RStep; j: number }) => x.j)); if (L === undefined) L = Math.min(...hit.map((x: { st: RStep; j: number }) => x.st.lvl ?? 1)); }
+    }
+    const lvN = L ?? 1;
+    out.push({ key: p.key, spell: p.spell, icon: p.icon, note: p.note, alt: p.alt, lv: lvN, locked: lvN > lv, rot: p.kind === "rot", ord });
+  });
+  steps.forEach((st: RStep, j: number) => {
+    if (covered[st.name] || skip.indexOf(st.name) >= 0) return;
+    const L = st.lvl ?? 1;
+    out.push({ key: `rot:${st.name}`, spell: st.name, icon: st.icon, lv: L, locked: L > lv, rot: true, ord: j });
+  });
+  const live = out.filter((x: NSlot) => !x.locked);
+  const lr = live.filter((x: NSlot) => x.rot).sort((x: NSlot, y: NSlot) => x.ord - y.ord);
+  const lu = live.filter((x: NSlot) => !x.rot).sort((x: NSlot, y: NSlot) => x.ord - y.ord);
+  const lk = out.filter((x: NSlot) => x.locked).sort((x: NSlot, y: NSlot) => x.lv - y.lv || (x.rot === y.rot ? x.ord - y.ord : x.rot ? -1 : 1));
+  return [...lr, ...lu, ...lk];
+}
+// Splits the ordered list onto a plate: base buttons first (rotation order), then Shift, then keyboard extras.
+function nagaPlate(spec: string, lv: number, twelve: boolean): { base: NSlot[]; shift: NSlot[]; extra: NSlot[]; nBase: number } {
+  const all = nagaSlots(spec, lv);
+  const nBase = twelve ? 12 : 6;
+  return { base: all.slice(0, nBase), shift: all.slice(nBase, nBase + 6), extra: all.slice(nBase + 6), nBase };
+}
+const POS6 = [1, 2, 3, 6, 5, 4];
+function nagaWhere(spec: string, lv: number, keys: string[]): string | null {
+  const NAGA12x: Record<string, Layout12> = WF_DATA.naga.NAGA12;
+  const twelve = lv >= NAGA12x[spec].from;
+  const pl = nagaPlate(spec, lv, twelve);
+  for (const k of keys) {
+    const bi = pl.base.findIndex((x: NSlot) => x.key === k);
+    const si = pl.shift.findIndex((x: NSlot) => x.key === k);
+    const lock = (x: NSlot) => x.locked ? ` (from Lv ${x.lv})` : "";
+    if (bi >= 0) return `Naga ${twelve ? bi + 1 : POS6[bi]}${lock(pl.base[bi])}`;
+    if (si >= 0) return `Shift+Naga ${twelve ? si + 1 : POS6[si]}${lock(pl.shift[si])}`;
+    if (pl.extra.some((x: NSlot) => x.key === k)) return "keyboard (no Naga slot left)";
+  }
+  return null;
+}
 
 const NAGA: Record<string, NagaSpec> = WF_DATA.naga.NAGA;
 
@@ -528,13 +586,13 @@ function NagaPad({ base, shift, fkeys, color }: { base: Bind[]; shift: Bind[]; f
     return (
       <div key={n} className="wf-btn" style={{ display: "flex", gap: 10, alignItems: "center", padding: 10, borderRadius: 8, background: "linear-gradient(180deg, #23201b, #14120f)", border: `1px solid ${GOLD}`, boxShadow: `inset 0 0 0 1px rgba(0,0,0,.6)`, minWidth: 0 }}>
         <div style={{ width: 26, height: 26, borderRadius: 9999, background: color, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: 13, flex: "none" }}>{n}</div>
-        <Icon icon={b.icon} size={40} name={b.spell} tip={b.note} />
+        <span style={{ opacity: b.lock ? 0.45 : 1, filter: b.lock ? "grayscale(.8)" : undefined }}><Icon icon={b.icon} size={40} name={b.spell} tip={b.note} /></span>
         <div style={{ minWidth: 0, flex: 1 }}>
-          <div style={{ color: INK, fontSize: 13, fontWeight: 600 }}>{b.spell}</div>
+          <div style={{ color: b.lock ? MUTED : INK, fontSize: 13, fontWeight: 600 }}>{b.spell}{b.lock ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {b.lock}</span> : null}</div>
           {b.note ? <div style={{ color: MUTED, fontSize: 11 }}>{b.note}</div> : null}
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 4 }}>
             <Icon icon={s.icon} size={20} name={`Shift+${n}: ${s.spell}`} tip={s.note} />
-            <span style={{ color: GOLD_HI, fontSize: 11 }}>Shift: {s.spell}</span>
+            <span style={{ color: s.lock ? MUTED : GOLD_HI, fontSize: 11 }}>Shift: {s.spell || "open"}{s.lock ? ` · Lv ${s.lock}` : ""}</span>
           </div>
         </div>
       </div>
@@ -567,8 +625,8 @@ function NagaPad({ base, shift, fkeys, color }: { base: Bind[]; shift: Bind[]; f
 }
 
 // ===== 12-button Naga plate (notes commit 44475e0, written Oct 30; untested in game) =====
-type B12 = { n: number; spell: string; icon: string; note?: string; alt?: boolean };
-type Layout12 = { from: number; who: string; title: string; intro: string; buttons: B12[]; shift: B12[]; extra?: string; src: string };
+type B12 = { n: number; spell: string; icon: string; note?: string; alt?: boolean; lock?: number };
+type Layout12 = { from: number; who: string; title: string; intro: string; buttons: B12[]; shift: B12[]; extra?: string; src: string; auto?: boolean };
 const KEYS12: string[] = WF_DATA.naga.KEYS12;
 const ROWS12: { job: string; ns: number[] }[] = WF_DATA.naga.ROWS12;
 const NAGA12: Record<string, Layout12> = WF_DATA.naga.NAGA12;
@@ -587,11 +645,11 @@ function NagaPad12({ layout, fkeys, color, preview }: { layout: Layout12; fkeys:
           {b ? <Icon icon={b.icon} size={40} name={b.spell} tip={tip} ring={b.alt ? MUTED : undefined} /> : <span style={{ width: 40, height: 40, borderRadius: 4, border: "1px dashed #6b5a33", display: "flex", alignItems: "center", justifyContent: "center", color: MUTED, fontSize: 10 }}>open</span>}
           <span style={{ marginLeft: "auto", fontFamily: "ui-monospace, Menlo, Consolas, monospace", fontSize: 12, color: GOLD_HI, padding: "1px 7px", borderRadius: 4, border: "1px solid #6b5a33", background: "#0b0a08" }}>{key}</span>
         </div>
-        <div style={{ color: b ? INK : MUTED, fontSize: 12, fontWeight: 600, lineHeight: 1.25 }}>{b ? b.spell : "Open slot"}{b && b.alt ? <span style={{ color: MUTED, fontWeight: 400 }}> *</span> : null}</div>
+        <div style={{ color: b ? INK : MUTED, fontSize: 12, fontWeight: 600, lineHeight: 1.25 }}>{b ? b.spell : "Open slot"}{b && b.alt ? <span style={{ color: MUTED, fontWeight: 400 }}> *</span> : null}{b && b.lock ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {b.lock}</span> : null}</div>
         {b && b.note ? <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.25 }}>{b.note}</div> : null}
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: "auto", paddingTop: 4, borderTop: "1px solid #2e271c" }}>
           {s ? <Icon icon={s.icon} size={20} name={`Shift-${n}: ${s.spell}`} tip={`Bottom Right Action Button ${n}${s.alt ? " · icon is a stand-in" : ""}`} /> : null}
-          <span style={{ color: s ? GOLD_HI : MUTED, fontSize: 11, lineHeight: 1.25 }}>{s ? `Shift-${n}: ${s.spell}` : n <= 6 ? "Shift: open" : "Shift: none in notes"}</span>
+          <span style={{ color: s && !s.lock ? GOLD_HI : MUTED, fontSize: 11, lineHeight: 1.25 }}>{s ? `Shift-${n}: ${s.spell}${s.lock ? ` · Lv ${s.lock}` : ""}` : n <= 6 ? "Shift: open" : "Shift: none in notes"}</span>
         </div>
       </div>
     );
@@ -605,7 +663,7 @@ function NagaPad12({ layout, fkeys, color, preview }: { layout: Layout12; fkeys:
         <div style={{ flex: "2 1 420px", minWidth: 0, display: "grid", gap: 8 }}>
           {ROWS12.map((r: { job: string; ns: number[] }, i: number) => (
             <div key={i}>
-              <div style={{ color: GOLD, fontSize: 10, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 4 }}>Row {i + 1} · {r.job}</div>
+              <div style={{ color: GOLD, fontSize: 10, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 4 }}>Row {i + 1}{layout.auto ? (i === 0 ? " · rotation, in order" : "") : ` · ${r.job}`}</div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 8 }}>{r.ns.map((n: number) => btn(n, r.job))}</div>
             </div>
           ))}
@@ -617,7 +675,7 @@ function NagaPad12({ layout, fkeys, color, preview }: { layout: Layout12; fkeys:
               <div key={s.n} style={{ display: "flex", alignItems: "center", gap: 8, padding: "3px 0" }}>
                 <span style={{ fontFamily: "ui-monospace, Menlo, Consolas, monospace", fontSize: 11, color: GOLD_HI, width: 52, flex: "none" }}>Shift-{s.n}</span>
                 <Icon icon={s.icon} size={24} name={s.spell} tip={`Bottom Right Action Button ${s.n}${s.alt ? " · icon is a stand-in" : ""}`} ring={s.alt ? MUTED : undefined} />
-                <span style={{ fontSize: 12, color: INK }}>{s.spell}{s.alt ? <span style={{ color: MUTED }}> *</span> : null}</span>
+                <span style={{ fontSize: 12, color: s.lock ? MUTED : INK }}>{s.spell}{s.alt ? <span style={{ color: MUTED }}> *</span> : null}{s.lock ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {s.lock}</span> : null}</span>
               </div>
             ))}
             <div style={{ fontSize: 11, color: MUTED, marginTop: 4 }}>Naga 7–12 have no Shift layer in the notes.</div>
@@ -636,7 +694,7 @@ function NagaPad12({ layout, fkeys, color, preview }: { layout: Layout12; fkeys:
         </div>
       </div>
       {layout.extra ? <div style={{ fontSize: 12, color: INK, marginTop: 10 }}>{layout.extra}</div> : null}
-      <div style={{ fontSize: 11, color: MUTED, marginTop: 8 }}>Binds from {layout.src} (notes commit 44475e0). Untested in game; written Oct 30 from the 6-plate layouts. Physical grid assumed 4 rows of 3 (1 2 3 / 4 5 6 / 7 8 9 / 10 11 12): check the numbering in Synapse when the plate is on. * Stand-in icon: the embedded sprite has no exact icon for this spell.</div>
+      <div style={{ fontSize: 11, color: MUTED, marginTop: 8 }}>{layout.auto ? `Built from the level-aware rotation (${layout.src}). ` : null}Base layout from {layout.src} (notes commit 44475e0). Untested in game; written Oct 30 from the 6-plate layouts. Physical grid assumed 4 rows of 3 (1 2 3 / 4 5 6 / 7 8 9 / 10 11 12): check the numbering in Synapse when the plate is on. * Stand-in icon: the embedded sprite has no exact icon for this spell.</div>
     </div>
   );
 }
@@ -1177,13 +1235,13 @@ function PathTimeline({ go }: { go: (level: number, spec: number) => void }) {
   );
 }
 
-type Macro = { title: string; icon: string; spec: "aff" | "demo" | "both" | "enh"; where: string; code: string; does: string; tag?: "NEW" | "FIXED"; lvl?: number; src: string; url?: string; flag?: string };
+type Macro = { title: string; icon: string; spec: "aff" | "demo" | "both" | "enh"; where: string; code: string; does: string; tag?: "NEW" | "FIXED"; lvl?: number; src: string; url?: string; flag?: string; bind?: string[] };
 const WFDB_AFF = WF_DATA.macros.WFDB_AFF;
 const WFDB_DEMO = WF_DATA.macros.WFDB_DEMO;
 const WFDB_ENH = WF_DATA.macros.WFDB_ENH;
 const MACROS: Macro[] = WF_DATA.macros.MACROS;
 
-function MacroCard({ m }: { m: Macro }) {
+function MacroCard({ m, live }: { m: Macro; live?: string }) {
   const [copied, setCopied] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
   const len = m.code.length;
@@ -1209,6 +1267,7 @@ function MacroCard({ m }: { m: Macro }) {
             {m.lvl && m.lvl > 30 ? <PreTag mark="guide" small src={`${m.src}, read Oct 30`} /> : null}
           </div>
           <div style={{ fontSize: 11, color: MUTED }}>{m.where}</div>
+          {live ? <div style={{ fontSize: 11, color: GOLD_HI }}>{live}</div> : null}
         </div>
       </div>
       <pre style={{ margin: "10px 0 0", padding: 10, borderRadius: 6, background: "#07070a", color: "#e8d9a8", border: "1px solid #3a3020", fontFamily: "ui-monospace, Menlo, Consolas, monospace", fontSize: 12, lineHeight: 1.45, whiteSpace: "pre-wrap", wordBreak: "break-word", userSelect: "all" }}>{m.code}</pre>
@@ -1233,6 +1292,12 @@ function MacroBook({ lvV, lvC }: { lvV: number; lvC: number }) {
   const [showAll, setShowAll] = useState<boolean>(false);
   const lvOf = (m: Macro) => m.spec === "enh" ? lvV : lvC;
   const locked = (m: Macro) => !!m.lvl && m.lvl > lvOf(m);
+  const liveWhere = (m: Macro): string | undefined => {
+    if (!m.bind) return undefined;
+    const specs = m.spec === "enh" ? [["enh", "Vorgash", lvV]] : m.spec === "both" ? [["aff", "Aff", lvC], ["demo", "Demo", lvC]] : [[m.spec, m.spec === "aff" ? "Aff" : "Demo", lvC]];
+    const parts = specs.map((x: any[]) => { const w = nagaWhere(x[0], x[2], m.bind!); return w ? `${x[1]} ${w}` : ""; }).filter((t: string) => !!t);
+    return parts.length ? `At your level: ${parts.join(" · ")}` : undefined;
+  };
   const tabs: [string, string, string][] = [["all", "All", "inv_misc_book_09"], ["aff", "Affliction", "spell_shadow_deathcoil"], ["demo", "Demonology", "spell_shadow_metamorphosis"], ["enh", "Enhancement", "spell_nature_lightningshield"], ["new", "New + fixed", "spell_holy_borrowedtime"]];
   const all = MACROS.filter((m: Macro) => f === "all" ? true : f === "new" ? !!m.tag : f === "enh" ? m.spec === "enh" : m.spec === f || m.spec === "both");
   const ordered = [...all.filter((m: Macro) => m.spec !== "enh"), ...all.filter((m: Macro) => m.spec === "enh")];
@@ -1248,7 +1313,7 @@ function MacroBook({ lvV, lvC }: { lvV: number; lvC: number }) {
         ))}
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 10 }}>
-        {list.map((m: Macro) => locked(m) ? <div key={m.title} style={{ opacity: 0.45, filter: "grayscale(.8)" }}><MacroCard m={m} /></div> : <MacroCard key={m.title} m={m} />)}
+        {list.map((m: Macro) => locked(m) ? <div key={m.title} style={{ opacity: 0.45, filter: "grayscale(.8)" }}><MacroCard m={m} live={liveWhere(m)} /></div> : <MacroCard key={m.title} m={m} live={liveWhere(m)} />)}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 10, flexWrap: "wrap", fontSize: 12, color: MUTED }}>
         <span>Macros with a Lv tag above the character's level (Vorgash {lvV} for Enhancement, Corvin {lvC} for Warlock) are {showAll ? "grayed" : "hidden"}. Untagged macros always show.</span>
@@ -1515,7 +1580,7 @@ function PresetPanel({ open, setOpen }: { open: number[]; setOpen: (o: number[])
       ) : null}
       <div style={{ fontSize: 11, color: MUTED, marginTop: 10, lineHeight: 1.5 }}>
         <div>Source: Shaman - Gear and Dungeons.md › “Totem presets per dungeon” (notes commit f0d0af1, untested in game). Gold tiles are what the row changes; dashed tiles are that preset's normal totem from the three-presets table.</div>
-        <div>“Before 20 there are no presets: the pre-20 totem macro drops Strength of Earth and Searing only (no Water totem until the level-20 quest). On the 6-plate, Shift+6 is Lesser Healing Wave; Ancestors arrives at 40, after the 12-plate swap, so it only ever lives on the 12-plate's Shift+6.”</div>
+        <div>“Before 20 there are no presets: the pre-20 totem macro drops Strength of Earth and Searing only (no Water totem until the level-20 quest). On the 6-plate, Shift+6 is Lesser Healing Wave; [the Naga section now places these by level] Ancestors arrives at 40, after the 12-plate swap, so it only ever lives on the 12-plate's Shift+6.”</div>
         <div>Shaman - Enhancement.md agrees: “Call of the Ancestors (40) is a third: the dungeon set, rebuilt at each dungeon's entrance for whatever lasts the whole run.”</div>
         <div>“<b style={{ color: INK }}>Ancestors is the dungeon set:</b> rebuild it at the dungeon entrance for whatever that dungeon needs, then it is one press all run.” “<b style={{ color: INK }}>The rule:</b> a problem that lasts the whole run goes in the preset. A problem that shows up on one boss or one pack gets clicked from the Bottom Right bar (Poison Cleansing, Tremor before 30, Earthbind).”</div>
         <div>Slots follow the Classic elements; the note says: “Confirm on the Totem Bar on day one; Forever could have moved one.”</div>
@@ -2105,27 +2170,30 @@ export default function App() {
   const brandLv = SEQ.demo_lvl.indexOf("Demonic Brand") + 10;
   const wrackIdx = SEQ.aff_lvl.indexOf("Wrack");
   const wrackLv = wrackIdx >= 0 ? wrackIdx + 10 : 99;
-  const autoStage = nagaSpec === "enh" ? (lvV >= ssLv ? "ss" : "early") : nagaSpec === "aff" ? (lvC >= wrackLv ? "a3" : lvC >= 14 ? "a2" : "a1") : (lvC >= brandLv ? "d2" : "d1");
-  useEffect(() => { setStagePick(null); }, [lvV, lvC, nagaSpec]);
-  const stageId = stagePick ?? autoStage;
+  const [nagaPrev, setNagaPrev] = useState<number | null>(null);
+  useEffect(() => { setStagePick(null); setNagaPrev(null); }, [lvV, lvC, nagaSpec]);
   const goPath = (lv: number, sp: number) => {
     setBuildKey("path"); setPreview(lv === lvC ? null : lv); setPathSpec(sp);
     try { const el = document.getElementById("builds"); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e: unknown) { /* ignore */ }
   };
 
   const spec = NAGA[nagaSpec];
-  const stage = spec.stages.find((s: Stage) => s.id === stageId) ?? spec.stages[0];
-  const nagaLv = nagaSpec === "enh" ? lvV : lvC;
+  const nagaChar = nagaSpec === "enh" ? lvV : lvC;
+  const nagaLv = nagaPrev ?? nagaChar;
   const nagaColor = nagaSpec === "enh" ? SHAMAN : WARLOCK;
   const [prev12V, setPrev12V] = useState<boolean>(false);
   const [prev12C, setPrev12C] = useState<boolean>(false);
   const n12raw = NAGA12[nagaSpec];
-  const n12 = nagaSpec === "aff" && lvC < wrackLv ? { ...n12raw, buttons: n12raw.buttons.map((b: any) => b.spell === "Wrack" ? { ...b, spell: "Drain Life", icon: "spell_shadow_lifedrain02", note: `Wrack goes here at ${wrackLv < 99 ? wrackLv : 51}` } : b) } : n12raw;
+  const plate = nagaPlate(nagaSpec, nagaLv, nagaLv >= n12raw.from);
+  const toB = (x: NSlot, n: number): Bind => ({ n, spell: x.spell, icon: x.icon, note: x.note, lock: x.locked ? x.lv : undefined });
+  const base6: Bind[] = plate.base.map((x: NSlot, i: number) => toB(x, POS6[i]));
+  const shift6: Bind[] = plate.shift.map((x: NSlot, i: number) => toB(x, POS6[i]));
+  const n12: Layout12 = { ...n12raw, auto: true, buttons: plate.base.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), shift: plate.shift.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), src: `${spec.auto && spec.auto.src ? spec.auto.src : "ROT"}; ${n12raw.src}` };
   const nagaWho = nagaSpec === "enh" ? "Vorgash" : "Corvin";
   const prev12 = nagaSpec === "enh" ? prev12V : prev12C;
   const setPrev12 = nagaSpec === "enh" ? setPrev12V : setPrev12C;
-  const reached12 = nagaLv >= n12.from;
-  const use12 = reached12 || prev12;
+  const reached12 = nagaChar >= n12.from;
+  const use12 = nagaLv >= n12.from;
   const specOptions = [{ value: "aff", label: "Affliction" }, { value: "demo", label: "Demonology" }, { value: "enh", label: "Enhancement" }];
 
   return (
@@ -2214,21 +2282,32 @@ export default function App() {
         <Segmented options={use12 && nagaSpec !== "enh" ? [{ value: "aff", label: "Spec 1 · Affliction" }, { value: "demo", label: "Spec 2 · Demonology" }, { value: "enh", label: "Enhancement" }] : specOptions} value={nagaSpec} onChange={(v: string) => { setNagaSpec(v); setStagePick(null); }} />
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${use12 && !reached12 ? ORANGE : "#4a3d22"}`, background: use12 && !reached12 ? "rgba(255,128,0,.08)" : "rgba(0,0,0,.25)", color: INK, fontSize: 13 }}>
           <Icon icon={nagaSpec === "enh" ? "classicon_shaman" : "classicon_warlock"} size={24} ring={nagaColor} />
-          <span style={{ flex: "1 1 260px" }}>{reached12 ? `${nagaWho} is level ${nagaLv}: 12-button plate (it starts at ${n12.from}).` : prev12 ? `Preview only. ${nagaWho} is level ${nagaLv}; this 12-button layout is for ${n12.from}+. Keep the 6-button binds in game until then.` : `${nagaWho} is level ${nagaLv}: 6-button plate. The 12-button layout starts at ${n12.from}.`}</span>
-          {reached12 ? null : (
-            <button type="button" className="wf-btn" aria-pressed={prev12} onClick={() => setPrev12(!prev12)} style={{ padding: "4px 12px", borderRadius: 6, border: `1px solid ${prev12 ? ORANGE : GOLD}`, background: prev12 ? "rgba(255,128,0,.18)" : "linear-gradient(180deg,#7a1a12,#3d0c08)", color: prev12 ? ORANGE : GOLD_HI, fontSize: 12, fontWeight: 700 }}>{prev12 ? `Back to ${nagaWho}'s 6-button` : `Preview 12-button (${nagaWho})`}</button>
-          )}
+          <span style={{ flex: "1 1 260px" }}>{nagaPrev !== null ? `Preview at level ${nagaLv} (${nagaWho} is ${nagaChar}). ` : `${nagaWho} is level ${nagaLv}. `}{use12 ? `12-button plate (from ${n12.from}).` : `6-button plate; the 12-button plate starts at ${n12.from}.`} Every rotation spell you have now gets a button, in rotation order; greyed buttons show the level they unlock.</span>
+          <label style={{ display: "flex", alignItems: "center", gap: 8, color: GOLD_HI, fontSize: 12 }}>Preview level
+            <input type="range" min={1} max={60} value={nagaLv} onChange={(e: any) => { const v = Number(e.target.value); setNagaPrev(v === nagaChar ? null : v); }} style={{ accentColor: nagaColor }} />
+            <b style={{ width: 22 }}>{nagaLv}</b>
+          </label>
+          {nagaPrev !== null ? <button type="button" className="wf-btn" onClick={() => setNagaPrev(null)} style={{ padding: "4px 12px", borderRadius: 6, border: `1px solid ${ORANGE}`, background: "rgba(255,128,0,.18)", color: ORANGE, fontSize: 12, fontWeight: 700 }}>Back to {nagaWho}'s level</button> : null}
         </div>
-        {use12 ? null : <Segmented options={spec.stages.map((s: Stage) => ({ value: s.id, label: s.label }))} value={stage.id} onChange={(v: string) => setStagePick(v)} />}
-        {use12 ? null : <Text>{stagePick ? `Manual pick. Change ${nagaSpec === "enh" ? "Vorgash's" : "Corvin's"} level to go back to automatic.` : `Automatic for ${nagaSpec === "enh" ? "Vorgash" : "Corvin"} at level ${nagaLv}${nagaSpec === "enh" ? ` (Stormstrike at ${ssLv} in the Icy Veins order)` : nagaSpec === "demo" ? ` (Demonic Brand at ${brandLv} in the Icy Veins order)` : wrackLv < 99 ? ` (Wrack layout from ${wrackLv}, when the Icy Veins order takes Wrack)` : " (the Wrack layout stays manual: Wrack isn't in Corvin's Affliction leveling build)"}.`}</Text>}
-        {use12 ? <NagaPad12 layout={n12} fkeys={spec.fkeys} color={nagaColor} preview={!reached12} /> : <NagaPad base={stage.base} shift={spec.shift} fkeys={spec.fkeys} color={nagaColor} />}
+        {use12 ? <NagaPad12 layout={n12} fkeys={spec.fkeys} color={nagaColor} preview={!reached12} /> : <NagaPad base={base6} shift={shift6} fkeys={spec.fkeys} color={nagaColor} />}
+        {plate.extra.length ? (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", padding: "8px 12px", borderRadius: 8, border: "1px solid #4a3d22", background: "rgba(0,0,0,.25)" }}>
+            <span style={{ color: GOLD, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase" }}>No Naga slot left · keyboard or bar</span>
+            {plate.extra.map((x: NSlot) => (
+              <span key={x.key} style={{ display: "inline-flex", gap: 6, alignItems: "center", padding: "3px 8px", borderRadius: 6, border: "1px solid #5a4a2a", background: "#1a1612", opacity: x.locked ? 0.55 : 1 }}>
+                <Icon icon={x.icon} size={20} name={x.spell} tip={x.note} /><span style={{ color: INK, fontSize: 11 }}>{x.spell}</span>{x.locked ? <span style={{ fontSize: 10, color: ORANGE }}>Lv {x.lv}</span> : null}
+              </span>
+            ))}
+          </div>
+        ) : null}
+        <Text>{`Order comes from the ${nagaSpec === "enh" ? "Enhancement" : nagaSpec === "aff" ? "Affliction" : "Demonology"} questing rotation above (Icy Veins order, read Nov 3): rotation spells take the plain buttons first, then Shift; utility fills what is left. Replaced spells drop out on their level (Curse of Weakness → Curse of the Elements at 20, pet keys after Demonic Sacrifice at 41, totem macro → Call of the Elements at 30), and slots shift when that happens, so re-check this section at each ding.${nagaSpec === "aff" && wrackLv < 99 ? ` Wrack joins at ${wrackLv}.` : ""}`}</Text>
         {use12 ? (
           <Callout tone={PL.naga_when_to_swap.tone} lead={PL.naga_when_to_swap.lead}>{PL.naga_when_to_swap.text}</Callout>
         ) : null}
         <PreLine lead="12-button layouts (32+ / 40+) and binds past level 30:" mark="notes" />
         {use12 ? <Steps steps={SETUP12} /> : null}
         {use12 ? null : <Steps steps={PL.naga_setup6} />}
-        <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate). Per-spec binds are from each class note's 12-button layout section." : "The 12-button plate takes over at 32 for Vorgash and 40 for Corvin (Spec 1 Affliction and Spec 2 Demonology). Use the preview button to see it early."}</Text>
+        <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate)." : "The 12-button plate takes over at 32 for Vorgash and 40 for Corvin (Spec 1 Affliction and Spec 2 Demonology). Drag the preview level to see it early."}</Text>
       </Section>
 
       <Section heading="Professions" id="profs" caption="Pick a character, then a profession. Skill uses the same numbers as the character cards; − / + or drag. Training thresholds warn when the character level is too low. Legacy points at 150, 225 and 300 in each crafting profession, once per account.">
