@@ -160,71 +160,73 @@
     "icon": "spell_shadow_metamorphosis",
     "mine": true,
     "mythic": 8,
-    "mythicNote": "980 DPS (was #4)",
+    "mythicNote": "980 DPS",
     "broken": "C",
     "tVoid": "A",
     "cogm": "S",
     "lfc": "A",
     "wowhead": "S",
-    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 4"
+    "_source": "MythicSim Nov 5 snapshot; BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 5"
    },
    {
     "spec": "Affliction Warlock",
     "icon": "spell_shadow_deathcoil",
     "mine": true,
-    "mythic": 11,
-    "mythicNote": "934 DPS, Wrack build (was #13)",
+    "mythic": 12,
+    "mythicNote": "934 DPS, Wrack build",
     "broken": "S",
     "brokenNote": "#1, 907 DPS",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "A",
-    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 4"
+    "_source": "MythicSim Nov 5 snapshot; BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 5",
+    "mythicMove": "▼1 (was #11 Nov 4, same DPS)"
    },
    {
     "spec": "Destruction Warlock",
     "icon": "spell_shadow_rainoffire",
     "mine": false,
-    "mythic": 12,
-    "mythicNote": "929 DPS (was #11)",
+    "mythic": 14,
+    "mythicNote": "929 DPS",
     "broken": "C",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "S",
-    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 4"
+    "_source": "MythicSim Nov 5 snapshot; BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 5",
+    "mythicMove": "▼2 (was #12 Nov 4, same DPS)"
    },
    {
     "spec": "Enhancement Shaman",
     "icon": "ability_shaman_stormstrike",
     "mine": true,
     "mythic": 3,
-    "mythicNote": "1,066 DPS (was #5)",
+    "mythicNote": "1,066 DPS",
     "broken": "B",
     "tVoid": "S",
     "cogm": "S",
     "lfc": "S",
     "wowhead": "A",
-    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 4"
+    "_source": "MythicSim Nov 5 snapshot; BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 5"
    },
    {
     "spec": "Elemental Shaman",
     "icon": "spell_nature_lightning",
     "mine": false,
     "mythic": 20,
-    "mythicNote": "823 DPS (was #22)",
+    "mythicNote": "823 DPS",
     "broken": "C",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "A",
     "wowhead": "C",
-    "_source": "MythicSim Nov 4 snapshot; BrokenMeta Nov 3 (build 70753); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 4"
+    "_source": "MythicSim Nov 5 snapshot; BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 4; Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 5"
    }
   ]
  },
@@ -1577,14 +1579,10 @@
     ],
     [
      "Suppression",
-     3
+     5
     ],
     [
      "Grim Reach",
-     2
-    ],
-    [
-     "Soul Harvest",
      2
     ],
     [
@@ -1636,7 +1634,7 @@
      2
     ],
     [
-     "Improved Life Tap",
+     "Soul Harvest",
      2
     ],
     [
@@ -1811,6 +1809,96 @@
      "Earth's Grasp",
      2
     ]
+   ],
+   "enh_mob": [
+    [
+     "Thundering Strikes",
+     5
+    ],
+    [
+     "Mental Dexterity",
+     3
+    ],
+    [
+     "Improved Lightning Shield",
+     2
+    ],
+    [
+     "Shamanistic Focus",
+     1
+    ],
+    [
+     "Elemental Weapons",
+     3
+    ],
+    [
+     "Improved Lightning Shield",
+     1
+    ],
+    [
+     "Stormstrike",
+     1
+    ],
+    [
+     "Improved Ghost Wolf",
+     2
+    ],
+    [
+     "Flurry",
+     2
+    ],
+    [
+     "Improved Stormstrike",
+     2
+    ],
+    [
+     "Mental Quickness",
+     2
+    ],
+    [
+     "Spirit Weapons",
+     1
+    ],
+    [
+     "Concussion",
+     5
+    ],
+    [
+     "Call of Flame",
+     3
+    ],
+    [
+     "Elemental Devastation",
+     2
+    ],
+    [
+     "Elemental Focus",
+     1
+    ],
+    [
+     "Elemental Devastation",
+     1
+    ],
+    [
+     "Convection",
+     3
+    ],
+    [
+     "Trial by Fire",
+     2
+    ],
+    [
+     "Earthbound",
+     1
+    ],
+    [
+     "Tidal Focus",
+     5
+    ],
+    [
+     "Mindfulness",
+     3
+    ]
    ]
   },
   "STATIC": {
@@ -1952,34 +2040,6 @@
    ],
    "enh_mob": [
     [
-     "Concussion",
-     5
-    ],
-    [
-     "Elemental Devastation",
-     3
-    ],
-    [
-     "Reverberation",
-     3
-    ],
-    [
-     "Call of Flame",
-     3
-    ],
-    [
-     "Elemental Focus",
-     1
-    ],
-    [
-     "Trial by Fire",
-     2
-    ],
-    [
-     "Earthbound",
-     1
-    ],
-    [
      "Thundering Strikes",
      5
     ],
@@ -1988,11 +2048,7 @@
      3
     ],
     [
-     "Improved Ghost Wolf",
-     2
-    ],
-    [
-     "Elemental Weapons",
+     "Improved Lightning Shield",
      3
     ],
     [
@@ -2000,28 +2056,60 @@
      1
     ],
     [
-     "Anticipation",
-     1
-    ],
-    [
-     "Flurry",
-     4
+     "Elemental Weapons",
+     3
     ],
     [
      "Stormstrike",
      1
     ],
     [
-     "Spirit Weapons",
-     1
+     "Improved Ghost Wolf",
+     2
+    ],
+    [
+     "Flurry",
+     2
+    ],
+    [
+     "Improved Stormstrike",
+     2
     ],
     [
      "Mental Quickness",
      2
     ],
     [
-     "Improved Stormstrike",
+     "Spirit Weapons",
+     1
+    ],
+    [
+     "Concussion",
+     5
+    ],
+    [
+     "Call of Flame",
+     3
+    ],
+    [
+     "Elemental Devastation",
+     3
+    ],
+    [
+     "Elemental Focus",
+     1
+    ],
+    [
+     "Convection",
+     3
+    ],
+    [
+     "Trial by Fire",
      2
+    ],
+    [
+     "Earthbound",
+     1
     ],
     [
      "Tidal Focus",
@@ -2059,11 +2147,11 @@
     "key": "enh_mob",
     "label": "Enhancement 18/25/8",
     "cls": "shaman",
-    "fixed": "enh_mob",
-    "src": "Mobalytics (Yebb), traditional leveling build",
-    "date": "Oct 28",
+    "src": "Mobalytics (Yebb), traditional leveling build, updated Nov 4, read Nov 5",
+    "date": "Nov 4",
     "url": "https://mobalytics.gg/wow-forever/classes/enhancement-shaman-guide",
-    "blurb": "Final 51-point build only; Mobalytics doesn't publish the level order, so the slider is off."
+    "blurb": "Enhancement to Spirit Weapons at 34 (Improved Lightning Shield 18–24, Stormstrike 25, Improved Stormstrike 30–31), then Elemental for AoE (Concussion, Call of Flame, Convection, Trial by Fire), then Tidal Focus and Mindfulness. Ends 18/25/8.",
+    "seq": "enh_mob"
    },
    {
     "key": "aff_lvl",
@@ -2102,10 +2190,10 @@
     "label": "Affliction alt (Mobalytics)",
     "cls": "warlock",
     "seq": "aff_icy",
-    "src": "Mobalytics (Crix), Warlock leveling guide",
-    "date": "Oct 30",
+    "src": "Mobalytics (Crix), Warlock leveling guide, updated Nov 4, read Nov 5",
+    "date": "Nov 4",
     "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide",
-    "blurb": "Drain-tank Affliction: Improved Corruption first, Soul Siphon at 30, Shadow Mastery 35–39, then a Demonology splash for pet sustain. Ends 41/10/0. No Wrack in this build."
+    "blurb": "Drain-tank Affliction: Improved Corruption first, all 5 Suppression by 19, Soul Siphon at 30, Shadow Mastery 35–39, then a Demonology splash for pet sustain; Soul Harvest moved to 58–59. Ends 41/10/0. No Wrack in this build."
    },
    {
     "key": "aff_raid",
@@ -2477,7 +2565,7 @@
       },
       {
        "label": "Mobalytics Enhancement guide (Yebb)",
-       "date": "Oct 28",
+       "date": "Oct 28, rechecked Nov 5",
        "url": "https://mobalytics.gg/wow-forever/classes/enhancement-shaman-guide"
       }
      ],
@@ -9533,6 +9621,42 @@
   ],
   "feed_rows": [
    {
+    "lead": "Nov 5",
+    "title": "Mobalytics updates both leveling builds: Affliction alt and Enhancement 18/25/8",
+    "detail": "Affliction alt (Crix, updated Nov 4): all 5 points of Suppression at 15–19 instead of 3, Soul Harvest moved from 18–19 to 58–59, Improved Life Tap dropped; still 41/10/0 with no Wrack. Enhancement (Yebb, updated Nov 4): now publishes a level order; Improved Lightning Shield 3 replaces Anticipation and 2 Flurry, Convection replaces Reverberation; still 18/25/8. Icy Veins (your default paths) unchanged since Nov 3. Read Nov 5, 9:20 AM ET.",
+    "meta": "Mobalytics leveling guides, Nov 4",
+    "status": {
+     "label": "Guide, single site",
+     "tone": "neutral"
+    },
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide",
+    "_date": "Nov 5"
+   },
+   {
+    "lead": "Nov 5",
+    "title": "Warrior tank threat raised again (80% Defensive Stance)",
+    "detail": "Nov 5 hotfix datamine on build 70790 puts Defensive Stance threat back to 80% (from 30%) and Defiance to 20% (from 15%), a day after the launch build reverted them. Only matters for group tanking: Warrior tanks should hold threat more easily in Corvin's and Vorgash's dungeons. Read Nov 5, 9:20 AM ET.",
+    "meta": "1mw.io hotfixes, Nov 5",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://1mw.io/en/news/patch-notes",
+    "_date": "Nov 5"
+   },
+   {
+    "lead": "Nov 5",
+    "title": "Launch fixes: Invite-a-Friend issues resolved, lost boats and zeppelins",
+    "detail": "Blizzard says Invite-a-Friend issues are resolved. Boats and zeppelins were getting lost; temporary portals sit near the docks until a fix on Nov 5 (Pacific morning), and realm population caps are being tweaked the same day. No class changes. Read Nov 5, 9:20 AM ET.",
+    "meta": "Blizzard forums (Kaivax, Aggrend), Nov 5",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://us.forums.blizzard.com/en/wow/t/issues-resolved-for-invite-a-friend-players/2401646",
+    "_date": "Nov 5"
+   },
+   {
     "lead": "Nov 4",
     "title": "Launch build 70790: Chain Lightning 2.5 sec cast is now in the game files",
     "detail": "Live build 1.60.1.70790 (detected Nov 4, 18:41 UTC) changes 3 spells and 1 talent versus 70755. For Vorgash: Chain Lightning's cast time is 2.5 sec (was 2 sec), matching Blizzard's official Nov 2 notes, so nothing new to change. The rest is Warrior threat: Defensive Stance and Defiance threat bonuses reverted to 30% and 15% after a same-day hotfix had raised them to 80% and 20%. Read Nov 4, 6:20 PM ET.",
@@ -10164,10 +10288,10 @@
   }
  },
  "_meta": {
-  "version": 10,
-  "generated_at": "2026-11-04T21:28:50-05:00",
-  "source": "WoW Forever Bot research run, Nov 4 2026 6 PM ET",
-  "notes_commit": "21a5969",
-  "notes": "Naga binds level-aware: plates built from ROT quest steps (auto pools), macros bound by key; Immolate now on the Affliction plate."
+  "version": 11,
+  "generated_at": "2026-11-05T09:21-05:00",
+  "source": "WoW Forever Bot research run, Nov 5 2026 9 AM ET",
+  "notes_commit": "ed3b5f2",
+  "notes": "Nov 5: Mobalytics Nov 4 leveling orders (Affliction alt, Enhancement now level-by-level); MythicSim Nov 5 ranks; 3 feed rows."
  }
 }
