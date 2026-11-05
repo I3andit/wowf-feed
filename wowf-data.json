@@ -3271,7 +3271,177 @@
       "spell": "Water Walking · Far Sight · Astral Recall",
       "icon": "spell_frost_windwalkon"
      }
-    ]
+    ],
+    "auto": {
+     "mode": "quest",
+     "src": "ROT enh.quest (Icy Veins, read Nov 3) + trainer levels",
+     "skip": [
+      "Auto-attack"
+     ],
+     "pool": [
+      {
+       "key": "lb",
+       "spell": "Lightning Bolt",
+       "icon": "spell_nature_lightning",
+       "kind": "rot",
+       "covers": [
+        "Lightning Bolt (Rank 1)",
+        "Lightning Bolt at 5 Maelstrom"
+       ],
+       "note": "Pull with Rank 1; full rank at 5 Maelstrom"
+      },
+      {
+       "key": "ss",
+       "spell": "Stormstrike",
+       "icon": "ability_shaman_stormstrike",
+       "kind": "rot",
+       "covers": [
+        "Stormstrike"
+       ]
+      },
+      {
+       "key": "rotf",
+       "spell": "Rage of the Farseer burst macro",
+       "icon": "spell_nature_bloodlust",
+       "kind": "rot",
+       "covers": [
+        "Rage of the Farseer"
+       ]
+      },
+      {
+       "key": "es",
+       "spell": "Earth Shock",
+       "icon": "spell_nature_earthshock",
+       "kind": "rot",
+       "covers": [
+        "Earth Shock"
+       ]
+      },
+      {
+       "key": "fs",
+       "spell": "Flame Shock",
+       "icon": "spell_fire_flameshock",
+       "kind": "rot",
+       "covers": [
+        "Flame Shock"
+       ]
+      },
+      {
+       "key": "fn",
+       "spell": "Fire Nova",
+       "icon": "spell_fire_sealoffire",
+       "kind": "rot",
+       "covers": [
+        "Fire Nova"
+       ]
+      },
+      {
+       "key": "hw",
+       "spell": "Healing Wave (mouseover)",
+       "icon": "spell_nature_magicimmunity",
+       "kind": "rot",
+       "covers": [
+        "Healing Wave"
+       ]
+      },
+      {
+       "key": "lsh",
+       "spell": "Lightning Shield",
+       "icon": "spell_nature_lightningshield",
+       "kind": "util",
+       "lvl": 8
+      },
+      {
+       "key": "totemseq",
+       "spell": "Totem castsequence macro",
+       "icon": "spell_nature_earthbindtotem",
+       "kind": "util",
+       "lvl": 10,
+       "until": 30,
+       "note": "Call of the Elements replaces it at 30"
+      },
+      {
+       "key": "cote",
+       "spell": "Call of the Elements",
+       "icon": "spell_nature_strengthofearthtotem02",
+       "kind": "util",
+       "lvl": 30
+      },
+      {
+       "key": "ebt",
+       "spell": "Earthbind Totem",
+       "icon": "spell_nature_strengthofearthtotem02",
+       "kind": "util",
+       "lvl": 6
+      },
+      {
+       "key": "purge",
+       "spell": "Purge",
+       "icon": "spell_nature_purge",
+       "kind": "util",
+       "lvl": 12
+      },
+      {
+       "key": "frost",
+       "spell": "Frost Shock",
+       "icon": "spell_frost_frostshock",
+       "kind": "util",
+       "lvl": 20
+      },
+      {
+       "key": "gw",
+       "spell": "Ghost Wolf",
+       "icon": "spell_nature_spiritwolf",
+       "kind": "util",
+       "lvl": 20
+      },
+      {
+       "key": "lhw",
+       "spell": "Lesser Healing Wave",
+       "icon": "spell_nature_healingwavelesser",
+       "kind": "util",
+       "lvl": 20
+      },
+      {
+       "key": "tremor",
+       "spell": "Tremor Totem",
+       "icon": "spell_nature_tremortotem",
+       "kind": "util",
+       "lvl": 18,
+       "until": 30,
+       "note": "Call of the Spirits takes this slot at 30"
+      },
+      {
+       "key": "cots",
+       "spell": "Call of the Spirits",
+       "icon": "spell_nature_tremortotem",
+       "kind": "util",
+       "lvl": 30
+      },
+      {
+       "key": "cl",
+       "spell": "Chain Lightning",
+       "icon": "spell_nature_lightningoverload",
+       "kind": "util",
+       "lvl": 32
+      },
+      {
+       "key": "ground",
+       "spell": "Grounding Totem",
+       "icon": "spell_nature_stormreach",
+       "kind": "util",
+       "lvl": 30
+      },
+      {
+       "key": "cota",
+       "spell": "Call of the Ancestors",
+       "icon": "spell_shaman_dropall_02",
+       "kind": "util",
+       "lvl": 40,
+       "note": "Dungeon set"
+      }
+     ]
+    }
    },
    "aff": {
     "stages": [
@@ -3458,7 +3628,181 @@
       "spell": "Mount",
       "icon": "spell_nature_swiftness"
      }
-    ]
+    ],
+    "auto": {
+     "mode": "quest",
+     "src": "ROT aff.quest (Icy Veins, read Nov 3) + trainer levels",
+     "pool": [
+      {
+       "key": "sb",
+       "spell": "Shadow Bolt",
+       "icon": "spell_shadow_shadowbolt",
+       "kind": "rot",
+       "covers": [
+        "Shadow Bolt opener",
+        "Nightfall Shadow Bolt"
+       ],
+       "note": "Opener; also your Nightfall instant"
+      },
+      {
+       "key": "imm",
+       "spell": "Immolate",
+       "icon": "spell_fire_immolation",
+       "kind": "rot",
+       "covers": [
+        "Immolate (optional)"
+       ],
+       "note": "Optional on mobs that live long enough"
+      },
+      {
+       "key": "cow",
+       "spell": "Curse of Weakness",
+       "icon": "spell_shadow_chilltouch",
+       "kind": "rot",
+       "covers": [
+        "Curse of Weakness"
+       ],
+       "note": "Replaced by Curse of the Elements at 20"
+      },
+      {
+       "key": "coe",
+       "spell": "Curse of the Elements",
+       "icon": "spell_shadow_chilltouch",
+       "kind": "rot",
+       "covers": [
+        "Curse of the Elements"
+       ],
+       "note": "Takes the Curse of Weakness button"
+      },
+      {
+       "key": "bane",
+       "spell": "Bane of Agony",
+       "icon": "spell_shadow_curseofsargeras",
+       "kind": "rot",
+       "covers": [
+        "Bane of Agony"
+       ]
+      },
+      {
+       "key": "corr",
+       "spell": "Corruption",
+       "icon": "spell_shadow_abominationexplosion",
+       "kind": "rot",
+       "covers": [
+        "Corruption"
+       ],
+       "note": "Mouseover macro in the macro book"
+      },
+      {
+       "key": "siph",
+       "spell": "Siphon Life",
+       "icon": "spell_shadow_requiem",
+       "kind": "rot",
+       "covers": [
+        "Siphon Life"
+       ]
+      },
+      {
+       "key": "dl",
+       "spell": "Drain Life",
+       "icon": "spell_shadow_lifedrain02",
+       "kind": "rot",
+       "covers": [
+        "Drain Life"
+       ]
+      },
+      {
+       "key": "wrack",
+       "spell": "Wrack",
+       "icon": "ability_deathknight_hemorrhagicfever",
+       "kind": "rot",
+       "covers": [
+        "Wrack"
+       ]
+      },
+      {
+       "key": "wand",
+       "spell": "Shoot (wand)",
+       "icon": "ability_shootwand",
+       "kind": "rot",
+       "covers": [
+        "Wand"
+       ]
+      },
+      {
+       "key": "lt",
+       "spell": "Life Tap",
+       "icon": "spell_shadow_burningspirit",
+       "kind": "rot",
+       "covers": [
+        "Life Tap"
+       ]
+      },
+      {
+       "key": "ds",
+       "spell": "Drain Soul",
+       "icon": "spell_shadow_haunting",
+       "kind": "rot",
+       "covers": [
+        "Drain Soul (shards)"
+       ],
+       "note": "Finish low mobs for shards"
+      },
+      {
+       "key": "fear",
+       "spell": "Fear",
+       "icon": "spell_shadow_possession",
+       "kind": "util",
+       "lvl": 8
+      },
+      {
+       "key": "hs",
+       "spell": "Healthstone / Soulstone macro",
+       "icon": "inv_stone_04",
+       "kind": "util",
+       "lvl": 10,
+       "note": "Ctrl = Soulstone"
+      },
+      {
+       "key": "pet",
+       "spell": "Pet attack / follow",
+       "icon": "spell_shadow_summonsuccubus",
+       "kind": "util",
+       "untilTalent": "Demonic Sacrifice",
+       "note": "Gone once you sacrifice the Felhunter (Demonic Sacrifice)"
+      },
+      {
+       "key": "dc",
+       "spell": "Death Coil",
+       "icon": "spell_shadow_deathcoil",
+       "kind": "util",
+       "lvl": 42
+      },
+      {
+       "key": "howl",
+       "spell": "Howl of Terror",
+       "icon": "spell_shadow_auraofdarkness",
+       "kind": "util",
+       "lvl": 40,
+       "alt": true
+      },
+      {
+       "key": "banish",
+       "spell": "Banish",
+       "icon": "spell_shadow_cripple",
+       "kind": "util",
+       "lvl": 28
+      },
+      {
+       "key": "amp",
+       "spell": "Amplify Curse + Bane macro",
+       "icon": "spell_shadow_contagion",
+       "kind": "util",
+       "talent": "Amplify Curse",
+       "note": "Pull opener"
+      }
+     ]
+    }
    },
    "demo": {
     "stages": [
@@ -3601,7 +3945,162 @@
       "spell": "Mount",
       "icon": "spell_nature_swiftness"
      }
-    ]
+    ],
+    "auto": {
+     "mode": "quest",
+     "src": "ROT demo.quest (Icy Veins, read Nov 3) + trainer levels",
+     "pool": [
+      {
+       "key": "sp",
+       "spell": "Searing Pain",
+       "icon": "spell_fire_soulburn",
+       "kind": "rot",
+       "covers": [
+        "Searing Pain (Demonic Brand)"
+       ],
+       "note": "Filler once Demonic Brand is talented"
+      },
+      {
+       "key": "coe",
+       "spell": "Curse of the Elements",
+       "icon": "spell_shadow_chilltouch",
+       "kind": "rot",
+       "covers": [
+        "Curse of the Elements"
+       ]
+      },
+      {
+       "key": "bane",
+       "spell": "Bane of Agony",
+       "icon": "spell_shadow_curseofsargeras",
+       "kind": "rot",
+       "covers": [
+        "Bane of Agony"
+       ]
+      },
+      {
+       "key": "corr",
+       "spell": "Corruption",
+       "icon": "spell_shadow_abominationexplosion",
+       "kind": "rot",
+       "covers": [
+        "Corruption"
+       ]
+      },
+      {
+       "key": "sb",
+       "spell": "Shadow Bolt",
+       "icon": "spell_shadow_shadowbolt",
+       "kind": "rot",
+       "covers": [
+        "Nightfall procs"
+       ],
+       "note": "Nightfall instants; filler before Demonic Brand"
+      },
+      {
+       "key": "imm",
+       "spell": "Immolate",
+       "icon": "spell_fire_immolation",
+       "kind": "rot",
+       "covers": [
+        "Immolate"
+       ]
+      },
+      {
+       "key": "wand",
+       "spell": "Shoot (wand)",
+       "icon": "ability_shootwand",
+       "kind": "rot",
+       "covers": [
+        "Wand"
+       ]
+      },
+      {
+       "key": "dl",
+       "spell": "Drain Life",
+       "icon": "spell_shadow_lifedrain02",
+       "kind": "rot",
+       "covers": [
+        "Drain Life"
+       ]
+      },
+      {
+       "key": "lt",
+       "spell": "Life Tap",
+       "icon": "spell_shadow_burningspirit",
+       "kind": "rot",
+       "covers": [
+        "Life Tap"
+       ]
+      },
+      {
+       "key": "fear",
+       "spell": "Fear",
+       "icon": "spell_shadow_possession",
+       "kind": "util",
+       "lvl": 8
+      },
+      {
+       "key": "hs",
+       "spell": "Healthstone / Soulstone macro",
+       "icon": "inv_stone_04",
+       "kind": "util",
+       "lvl": 10,
+       "note": "Ctrl = Soulstone"
+      },
+      {
+       "key": "pet",
+       "spell": "Pet attack / follow",
+       "icon": "spell_shadow_summonsuccubus",
+       "kind": "util"
+      },
+      {
+       "key": "hf",
+       "spell": "Health Funnel on pet",
+       "icon": "spell_shadow_lifedrain",
+       "kind": "util",
+       "lvl": 12
+      },
+      {
+       "key": "ds",
+       "spell": "Drain Soul",
+       "icon": "spell_shadow_haunting",
+       "kind": "util",
+       "lvl": 10,
+       "until": 48,
+       "note": "Soul Fire takes this slot at 48"
+      },
+      {
+       "key": "sf",
+       "spell": "Soul Fire",
+       "icon": "spell_fire_fireball02",
+       "kind": "util",
+       "lvl": 48
+      },
+      {
+       "key": "dc",
+       "spell": "Death Coil",
+       "icon": "spell_shadow_deathcoil",
+       "kind": "util",
+       "lvl": 42
+      },
+      {
+       "key": "banish",
+       "spell": "Banish",
+       "icon": "spell_shadow_cripple",
+       "kind": "util",
+       "lvl": 28
+      },
+      {
+       "key": "howl",
+       "spell": "Howl of Terror",
+       "icon": "spell_shadow_auraofdarkness",
+       "kind": "util",
+       "lvl": 40,
+       "alt": true
+      }
+     ]
+    }
    }
   },
   "KEYS12": [
@@ -3658,7 +4157,7 @@
     "who": "Vorgash",
     "title": "Enhancement · 12-button layout (32+)",
     "src": "Shaman - Enhancement.md › 12-button layout (32+)",
-    "intro": "Row 1 keeps the Stormstrike, Flame Shock, Earth Shock order you already know.",
+    "intro": "Rotation spells sit in rotation order from the level-aware Enhancement rotation; Call of the Elements replaces the totem macro and Windfury replaces Rockbiter at 30.",
     "extra": "Windfury Totem stays inside your totem presets, not on a button: it does nothing for you while your own Windfury imbue is on.",
     "buttons": [
      {
@@ -3775,7 +4274,7 @@
     "who": "Corvin",
     "title": "Spec 1 · Affliction · 12-button layout (40+)",
     "src": "Warlock - Affliction.md › 12-button layout (40+)",
-    "intro": "Swap at 40. Wrack arrives at 51 on the Icy Veins path, so until then button 3 holds Drain Life (the page fills Wrack in automatically at 51). Death Coil gets its own thumb button.",
+    "intro": "Swap at 40. The page builds both plates from the level-aware rotation: every live rotation spell gets a button in rotation order, utility fills Shift, and anything you have not learned yet shows its Lv badge. Wrack joins at 51 on the Icy Veins path; pet keys drop out at 41 when you sacrifice the Felhunter.",
     "buttons": [
      {
       "n": 1,
@@ -3887,7 +4386,7 @@
     "who": "Corvin",
     "title": "Spec 2 · Demonology · 12-button layout (40+)",
     "src": "Warlock - Demonology.md › 12-button layout (40+)",
-    "intro": "When Corvin adds Demonology as Spec 2 at 40 (for groups), swap the plate that day and build both layouts at once; rows 1 and 4 line up between the two specs where they can (Bane on 2, Corruption close by, Life Tap on 10, Fear on 12).",
+    "intro": "When Corvin adds Demonology as Spec 2 at 40 (for groups), build this plate too. It follows Corvin's level the same way: rotation spells in rotation order, utility on Shift, Soul Fire taking over from Drain Soul at 48.",
     "buttons": [
      {
       "n": 1,
@@ -4028,28 +4527,38 @@
     "title": "Pet attack and follow",
     "icon": "ability_ghoulfrenzy",
     "spec": "both",
-    "where": "Shift+5",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip\n/petattack [harm,nodead]\n/petfollow [mod:ctrl]",
     "does": "Sends the pet at your target. Hold Ctrl to call it back, which you want before you Fear. Affliction from 41: pet is sacrificed, so this is for Spec 2 (Demonology).",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "pet"
+    ]
    },
    {
     "title": "Curse button",
     "icon": "spell_shadow_chilltouch",
     "spec": "both",
-    "where": "Aff Shift+1 · Demo Shift+2",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip\n/cast [mod:ctrl] Curse of Recklessness; [mod:alt] Curse of Tongues; Curse of the Elements",
     "does": "One key for three curses: plain is Elements, Ctrl is Recklessness, Alt is Tongues. Before 20, swap Elements for Curse of Weakness.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "coe",
+     "cow"
+    ]
    },
    {
     "title": "Corruption, mouseover",
     "icon": "spell_shadow_abominationexplosion",
     "spec": "both",
-    "where": "Aff Naga 1 · Demo Naga 3",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Corruption\n/cast [@mouseover,harm,nodead][harm,nodead] Corruption",
     "does": "Casts on the mob under your cursor, else on your target, so you can spread DoTs without retargeting.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "corr"
+    ]
    },
    {
     "title": "Corruption → Bane",
@@ -4067,96 +4576,124 @@
     "title": "Amplify Curse + Bane",
     "icon": "spell_shadow_contagion",
     "spec": "aff",
-    "where": "Pull opener",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Bane of Agony\n/cast [harm,nodead] Amplify Curse\n/cast [harm,nodead] Bane of Agony",
     "does": "Pops Amplify Curse (off the global cooldown) then lands an empowered Bane of Agony in one press.",
     "tag": "NEW",
     "lvl": 20,
     "src": "wowfdb Affliction macros (marked Untested)",
-    "url": "https://wowfdb.com/classes/warlock/affliction/macros/"
+    "url": "https://wowfdb.com/classes/warlock/affliction/macros/",
+    "bind": [
+     "amp"
+    ]
    },
    {
     "title": "Wrack / Drain Soul / Drain Life",
     "icon": "ability_deathknight_hemorrhagicfever",
     "spec": "aff",
-    "where": "Filler key",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Wrack\n/stopattack\n/cast [mod:shift] Drain Soul; [mod:ctrl] Drain Life; Wrack",
     "does": "Plain casts Wrack; Shift for Drain Soul on a dying mob; Ctrl for Drain Life when you need health.",
     "tag": "NEW",
     "lvl": 51,
     "src": "wowfdb Affliction macros (marked Untested)",
     "url": "https://wowfdb.com/classes/warlock/affliction/macros/",
-    "flag": "Needs the Wrack talent (level 51 on Corvin's Icy Veins path); before 51 use the Drain Life macro."
+    "flag": "Needs the Wrack talent (level 51 on Corvin's Icy Veins path); before 51 use the Drain Life macro.",
+    "bind": [
+     "wrack",
+     "dl"
+    ]
    },
    {
     "title": "Healthstone",
     "icon": "inv_stone_04",
     "spec": "both",
-    "where": "Shift+6",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip\n/cast [mod:shift] Create Healthstone\n/stopmacro [mod:shift]\n/use Major Healthstone\n/use Greater Healthstone\n/use Healthstone\n/use Lesser Healthstone\n/use Minor Healthstone",
     "does": "Plain eats your best Healthstone; Shift makes a new one.",
     "tag": "FIXED",
     "src": "Your notes, split",
-    "flag": "v1 combined Healthstone and Soulstone in 411 characters, over the 255 limit. Split in two."
+    "flag": "v1 combined Healthstone and Soulstone in 411 characters, over the 255 limit. Split in two.",
+    "bind": [
+     "hs"
+    ]
    },
    {
     "title": "Soulstone",
     "icon": "spell_shadow_soulgem",
     "spec": "both",
-    "where": "Ctrl+6",
+    "where": "Ctrl + your Healthstone button",
     "code": "#showtooltip\n/cast [mod:shift] Create Soulstone\n/stopmacro [mod:shift]\n/use [@mouseover,help,nodead][help,nodead][@player] Minor Soulstone",
     "does": "Soulstones your mouseover, then friendly target, then you. Shift makes a new stone.",
     "tag": "FIXED",
     "src": "Your notes + wowfdb pattern",
     "url": "https://wowfdb.com/classes/warlock/affliction/macros/",
-    "flag": "Edit 'Minor' to the rank you carry (wowfdb: keep only the lines for the stone you carry)."
+    "flag": "Edit 'Minor' to the rank you carry (wowfdb: keep only the lines for the stone you carry).",
+    "bind": [
+     "hs"
+    ]
    },
    {
     "title": "Fear, pet pulled off",
     "icon": "spell_shadow_possession",
     "spec": "both",
-    "where": "Naga 6",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Fear\n/petpassive\n/cast [@mouseover,harm,nodead][harm,nodead] Fear",
     "does": "Stops the pet so it doesn't break Fear, then Fears your mouseover or target.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "fear"
+    ]
    },
    {
     "title": "Drain Life, no restart",
     "icon": "spell_shadow_lifedrain02",
     "spec": "both",
-    "where": "Aff Naga 3 · Demo Shift+4",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip\n/cast [mod:ctrl,nochanneling:Drain Mana] Drain Mana; [nochanneling:Drain Life] Drain Life",
     "does": "Mashing won't cancel a running drain. Ctrl for Drain Mana.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "dl"
+    ]
    },
    {
     "title": "Drain Soul",
     "icon": "spell_shadow_haunting",
     "spec": "both",
-    "where": "Aff Shift+2",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Drain Soul\n/cast [nochanneling:Drain Soul,harm,nodead] Drain Soul",
     "does": "Shard farming on a dying mob without clipping the channel.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "ds"
+    ]
    },
    {
     "title": "Life Tap / Health Funnel",
     "icon": "spell_shadow_burningspirit",
     "spec": "both",
-    "where": "Naga 5",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Life Tap\n/cast [mod:ctrl] Health Funnel; Life Tap",
     "does": "Health to mana; Ctrl heals the pet instead.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "lt"
+    ]
    },
    {
     "title": "Health Funnel on pet",
     "icon": "spell_shadow_lifedrain",
     "spec": "demo",
-    "where": "Demo spare key",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Health Funnel\n/cast [@pet,exists,nodead] Health Funnel",
     "does": "Always channels into your pet, whatever you have targeted.",
     "tag": "NEW",
     "src": "wowfdb Demonology macros (marked Untested)",
-    "url": "https://wowfdb.com/classes/warlock/demonology/macros/"
+    "url": "https://wowfdb.com/classes/warlock/demonology/macros/",
+    "bind": [
+     "hf"
+    ]
    },
    {
     "title": "Summon any pet",
@@ -4194,25 +4731,32 @@
     "title": "Soul Fire / Searing Pain",
     "icon": "spell_fire_fireball02",
     "spec": "demo",
-    "where": "Demo burst key",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Soul Fire\n/stopattack\n/cast [mod:ctrl] Searing Pain; Soul Fire",
     "does": "Big Soul Fire nuke; Ctrl for a quick Searing Pain to pull threat off the healer.",
     "tag": "NEW",
     "lvl": 48,
     "src": "wowfdb Demonology macros (marked Untested)",
-    "url": "https://wowfdb.com/classes/warlock/demonology/macros/"
+    "url": "https://wowfdb.com/classes/warlock/demonology/macros/",
+    "bind": [
+     "sf",
+     "sp"
+    ]
    },
    {
     "title": "Searing Pain + pet",
     "icon": "spell_fire_soulburn",
     "spec": "demo",
-    "where": "Demo filler",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Searing Pain\n/petattack [harm,nodead]\n/cast Searing Pain",
     "does": "Sends the pet in with every cast so it never idles.",
     "tag": "NEW",
     "src": "Mobalytics Demo advice + standard syntax",
     "url": "https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide",
-    "flag": "Assembled from the guide's advice; not a published macro."
+    "flag": "Assembled from the guide's advice; not a published macro.",
+    "bind": [
+     "sp"
+    ]
    },
    {
     "title": "Create stone",
@@ -4238,61 +4782,79 @@
     "title": "Banish",
     "icon": "spell_shadow_cripple",
     "spec": "both",
-    "where": "Bottom Right",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Banish\n/cast [@focus,harm,nodead][@mouseover,harm,nodead][harm,nodead] Banish",
     "does": "Banishes focus, else mouseover, else target.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "banish"
+    ]
    },
    {
     "title": "Wand",
     "icon": "ability_shootwand",
     "spec": "both",
-    "where": "Aff Naga 4",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Shoot\n/cleartarget [dead][help]\n/targetenemy [noexists]\n/cast [harm] Shoot",
     "does": "Finds a target and starts wanding. Press once; a second press cancels.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "wand"
+    ]
    },
    {
     "title": "Mouseover Healing Wave",
     "icon": "spell_nature_magicimmunity",
     "spec": "enh",
-    "where": "Naga 6",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Healing Wave\n/cast [@mouseover,help,nodead][@player] Healing Wave",
     "does": "Heals the frame under your cursor, else yourself.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "hw"
+    ]
    },
    {
     "title": "Earth Shock on target",
     "icon": "spell_nature_earthshock",
     "spec": "enh",
-    "where": "Naga 3",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Earth Shock\n/cast [@target,harm] Earth Shock",
     "does": "Always hits the enemy, even with your cursor on a friendly frame.",
-    "src": "Your notes"
+    "src": "Your notes",
+    "bind": [
+     "es"
+    ]
    },
    {
     "title": "Flame Shock + attack",
     "icon": "spell_fire_flameshock",
     "spec": "enh",
-    "where": "Pull key",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip [mod:ctrl] Earth Shock; Flame Shock\n/startattack [harm]\n/cast [mod:ctrl] Earth Shock; Flame Shock",
     "does": "Starts melee and opens with Flame Shock; Ctrl for Earth Shock.",
     "tag": "NEW",
     "lvl": 10,
     "src": "wowfdb Enhancement macros (marked Untested)",
-    "url": "https://wowfdb.com/classes/shaman/enhancement/macros/"
+    "url": "https://wowfdb.com/classes/shaman/enhancement/macros/",
+    "bind": [
+     "fs"
+    ]
    },
    {
     "title": "Stormstrike + Earth Shock",
     "icon": "ability_shaman_stormstrike",
     "spec": "enh",
-    "where": "Main key",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Stormstrike\n/startattack [harm]\n/cast Stormstrike\n/cast Earth Shock",
     "does": "Stormstrike, then Earth Shock next press while Stormstrike is cooling down, so the shock lands inside the Stormstrike bonus.",
     "tag": "NEW",
     "lvl": 25,
     "src": "wowfdb Enhancement macros (marked Untested)",
-    "url": "https://wowfdb.com/classes/shaman/enhancement/macros/"
+    "url": "https://wowfdb.com/classes/shaman/enhancement/macros/",
+    "bind": [
+     "ss"
+    ]
    },
    {
     "title": "Spend the Stormstrike bonus",
@@ -4310,13 +4872,16 @@
     "title": "Rage of the Farseer burst",
     "icon": "spell_nature_bloodlust",
     "spec": "enh",
-    "where": "Burst key",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip Rage of the Farseer\n/startattack\n/use 13\n/use 14\n/cast Rage of the Farseer\n/cast Blood Fury\n/cast Stormstrike",
     "does": "Trinkets, Rage of the Farseer, Blood Fury, then Stormstrike in one press.",
     "tag": "NEW",
     "lvl": 40,
     "src": "wowfdb Enhancement macros (marked Untested); Troll Berserking line removed for Orc",
-    "url": "https://wowfdb.com/classes/shaman/enhancement/macros/"
+    "url": "https://wowfdb.com/classes/shaman/enhancement/macros/",
+    "bind": [
+     "rotf"
+    ]
    },
    {
     "title": "Imbue chooser",
@@ -4334,23 +4899,29 @@
     "title": "Totem sequence (before 20)",
     "icon": "spell_nature_earthbindtotem",
     "spec": "enh",
-    "where": "Naga 5",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip\n/castsequence reset=10 Strength of Earth Totem, Searing Totem",
     "does": "Each press drops the next totem, resets after 10 idle seconds. Press it the full two times then leave it.",
     "tag": "FIXED",
     "src": "Your notes",
-    "flag": "No Water totem before the level-20 quest, so Healing Stream never goes in this macro; from 20, Call of the Elements replaces it."
+    "flag": "No Water totem before the level-20 quest, so Healing Stream never goes in this macro; from 20, Call of the Elements replaces it.",
+    "bind": [
+     "totemseq"
+    ]
    },
    {
     "title": "Totem set / recall",
     "icon": "spell_shaman_totemrecall",
     "spec": "enh",
-    "where": "Shift+5",
+    "where": "Naga slot follows your level",
     "code": "#showtooltip\n/cast [mod:ctrl] Totemic Recall; Call of the Spirits",
     "does": "Drops your saved totem set; Ctrl picks them all back up.",
     "tag": "FIXED",
     "src": "Your notes",
-    "flag": "Call of the Spirits unlocks at 40 (wowfdb), not 30."
+    "flag": "Call of the Spirits unlocks at 40 (wowfdb), not 30.",
+    "bind": [
+     "cote"
+    ]
    },
    {
     "title": "Solo pull",
@@ -6960,7 +7531,7 @@
   "PRESET_BASE": {
    "Call of the Elements": {
     "icon": "spell_shaman_dropall_01",
-    "key": "Naga 5, Naga 8 on the 12-plate",
+    "key": "Naga slot follows Vorgash's level (see Naga binds)",
     "from": 20,
     "earth": {
      "t": "Strength of Earth",
@@ -6981,7 +7552,7 @@
    },
    "Call of the Spirits": {
     "icon": "spell_shaman_dropall_03",
-    "key": "Shift+5",
+    "key": "Naga slot follows Vorgash's level (see Naga binds)",
     "from": 30,
     "earth": {
      "t": "Tremor",
@@ -7002,7 +7573,7 @@
    },
    "Call of the Ancestors": {
     "icon": "spell_shaman_dropall_02",
-    "key": "Shift+6 on the 12-plate",
+    "key": "Naga slot follows Vorgash's level (see Naga binds)",
     "from": 40,
     "earth": {
      "t": "Strength of Earth",
@@ -8245,11 +8816,11 @@
     "items": [
      {
       "id": "la3",
-      "text": "Naga: Vorgash's “Levels 1–19” binds set in game"
+      "text": "Naga: Vorgash's level-1 binds set in game (the Naga section shows them and re-flows as you level)"
      },
      {
       "id": "la4",
-      "text": "Naga: Corvin's “Levels 1–13” binds set in game"
+      "text": "Naga: Corvin's level-1 binds set in game (the Naga section shows them, Immolate included, and re-flows as you level)"
      },
      {
       "id": "la5",
@@ -9593,10 +10164,10 @@
   }
  },
  "_meta": {
-  "version": 9,
-  "generated_at": "2026-11-04T18:22-05:00",
+  "version": 10,
+  "generated_at": "2026-11-04T21:28:50-05:00",
   "source": "WoW Forever Bot research run, Nov 4 2026 6 PM ET",
   "notes_commit": "21a5969",
-  "notes": "Nov 4 6 PM: launch live; build 70790 confirms Chain Lightning 2.5 sec cast (already on the page)."
+  "notes": "Naga binds level-aware: plates built from ROT quest steps (auto pools), macros bound by key; Immolate now on the Affliction plate."
  }
 }
