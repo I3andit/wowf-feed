@@ -481,12 +481,12 @@ function MetaBoard() {
         <thead>
           <tr>
             <th style={th}>Spec</th>
-            {head("MythicSim", "Nov 3 · rank among 22 standard specs")}
-            {head("BrokenMeta", "Oct 28 · sim", true)}
-            {head("voidsim.io", "sim", true)}
+            {head("MythicSim", `${(META[0] as MetaRow & { _date?: string })?._date ?? ""} · rank, best build per spec`)}
+            {head("BrokenMeta", "sim")}
+            {head("voidsim.io", "sim")}
             {head("CoGM", "level-30 dungeons")}
             {head("LFCarry", "level 30")}
-            {head("Wowhead", "level 30 · class level")}
+            {head("Wowhead", "level 60 · class level")}
           </tr>
         </thead>
         <tbody>
@@ -2229,7 +2229,7 @@ export default function App() {
         </Grid>
       </Section>
 
-      <Section heading="Meta board" id="meta" caption="Pre-launch only: level-30 beta data and simulations. No level-60 logs exist until Nov 4.">
+      <Section heading="Meta board" id="meta" caption="Pre-launch only: beta data and simulations. Forever launched Nov 4; no level-60 logs exist yet.">
         <MetaBoard />
         <Callout tone={PL.meta_raid_watch.tone} lead={PL.meta_raid_watch.lead}>{PL.meta_raid_watch.text}</Callout>
         <LinkCards links={PL.meta_links} />
