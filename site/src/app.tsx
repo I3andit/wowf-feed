@@ -176,6 +176,19 @@ const CSS = `
 .wf-role-alt { color: #d8d8d8; border: 1px solid #000; background: linear-gradient(180deg, #6e6e6e 0%, #44403a 50%, #26231f 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 0 0 1px #4a3d22; }
 .wf-role-note { font-size: 11px; color: #c9b98e; font-style: italic; }
 .wf-prelabel { padding: 8px 10px; border-radius: 8px; border: 1px dashed #ff9b3d; background: rgba(255,128,0,.06); font-size: 12px; color: #ece2c8; }
+.wf-nav { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; padding: 8px 12px; border: 1px solid #6b5a33; border-radius: 10px; background: linear-gradient(180deg, rgba(36,29,21,.97), rgba(13,12,10,.97)); box-shadow: inset 0 0 0 1px #000, 0 6px 18px rgba(0,0,0,.65); backdrop-filter: blur(6px); }
+.wf-nav-chars { display: flex; gap: 6px; flex: none; }
+.wf-nav-char { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px 2px 3px; border-radius: 999px; border: 1px solid #4a3d22; background: #14110d; color: ${INK}; font-size: 13px; text-decoration: none; }
+.wf-nav-char:hover { border-color: ${GOLD}; }
+.wf-nav-char b { font-family: ${SERIF}; font-weight: 400; color: ${GOLD_HI}; font-size: 15px; }
+.wf-nav-groups { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; flex: 1 1 520px; min-width: 0; }
+.wf-nav-group { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; }
+.wf-nav-label { color: ${MUTED}; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; margin-right: 4px; }
+.wf-nav-group a { font-size: 13px; text-decoration: none; color: ${GOLD}; padding: 2px 8px; border-radius: 6px; white-space: nowrap; }
+.wf-nav-group a:hover { background: #2a2117; color: ${GOLD_HI}; }
+.wf-nav-group a.wf-nav-on { color: ${GOLD_HI}; background: linear-gradient(180deg, #3a2c14, #1a140b); box-shadow: inset 0 0 0 1px ${GOLD}; }
+main .kit-section { scroll-margin-top: 96px; }
+@media (max-width: 720px) { .wf-nav { border-radius: 0 0 10px 10px; } .wf-nav-groups { flex-wrap: nowrap; overflow-x: auto; flex-basis: 100%; } .wf-nav-group { flex-wrap: nowrap; } main .kit-section { scroll-margin-top: 110px; } }
 @media (prefers-reduced-motion: reduce) { .wf-glow, .wf-shimmer, .wf-pulse, .wf-next, .wf-new, .wf-pop { animation: none; } }
 `;
 
@@ -2081,6 +2094,70 @@ function CorvinFirstSession({ level }: { level: number }) {
   );
 }
 
+// Sticky jump bar (Nov 6 layout): the page is ~20 screens, so the levels and section links stay pinned.
+type NavGroup = { label: string; items: { label: string; id: string }[] };
+function StickyNav({ groups, lvC, lvV }: { groups: NavGroup[]; lvC: number; lvV: number }) {
+  const [on, setOn] = useState<string>("");
+  useEffect(() => {
+    const ids = groups.flatMap((g: NavGroup) => g.items.map((i: { id: string }) => i.id));
+    const pick = () => {
+      let cur = "";
+      let best = -Infinity;
+      ids.forEach((id: string) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const top = el.getBoundingClientRect().top;
+        if (top <= 130 && top > best) { best = top; cur = id; }
+      });
+      setOn(cur);
+    };
+    pick();
+    window.addEventListener("scroll", pick, { passive: true });
+    window.addEventListener("resize", pick);
+    return () => { window.removeEventListener("scroll", pick); window.removeEventListener("resize", pick); };
+  }, []);
+  const chip = (name: string, lv: number, color: string, icon: string) => (
+    <a href="#ding" className="wf-nav-char" title={`${name} is level ${lv}. Change it in Next ding.`}>
+      <Icon icon={icon} size={22} ring={color} /><span>{name}</span><b>{lv}</b>
+    </a>
+  );
+  return (
+    <nav className="wf-nav" aria-label="Jump to section">
+      <div className="wf-nav-chars">
+        {chip("Corvin", lvC, WARLOCK, "classicon_warlock")}
+        {chip("Vorgash", lvV, SHAMAN, "classicon_shaman")}
+      </div>
+      <div className="wf-nav-groups">
+        {groups.map((g: NavGroup) => (
+          <div key={g.label} className="wf-nav-group">
+            <span className="wf-nav-label">{g.label}</span>
+            {g.items.map((t: { label: string; id: string }) => <a key={t.id} href={`#${t.id}`} className={on === t.id ? "wf-nav-on" : undefined}>{t.label}</a>)}
+          </div>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
+// Collapsed panel in the Launch night header style, for sections that are done but worth keeping.
+function Fold({ title, sub, icon, open, setOpen, children }: { title: string; sub?: string; icon: string; open: boolean; setOpen: (b: boolean) => void; children?: ReactNode }) {
+  return (
+    <div style={{ borderRadius: 12, border: `1px solid ${GOLD}`, background: "linear-gradient(180deg, #221a10, #0c0a07)", boxShadow: "0 6px 24px rgba(0,0,0,.45)", overflow: "hidden" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", flexWrap: "wrap", background: "linear-gradient(90deg, rgba(122,26,18,.55), rgba(0,0,0,0))", borderBottom: open ? "1px solid #3a3020" : "none" }}>
+        <Icon icon={icon} size={32} ring={GOLD} />
+        <div style={{ flex: "1 1 200px" }}>
+          <div style={{ fontFamily: SERIF, fontSize: 18, color: GOLD_HI }}>{title}</div>
+          {sub ? <div style={{ fontSize: 12, color: MUTED }}>{sub}</div> : null}
+        </div>
+        <button type="button" className="wf-btn" onClick={() => setOpen(!open)} style={{ padding: "5px 12px", borderRadius: 6, border: `1px solid ${GOLD}`, background: open ? "transparent" : "linear-gradient(180deg,#7a1a12,#3d0c08)", color: GOLD_HI, fontSize: 12, fontWeight: 700 }}>{open ? "Hide" : "Show"}</button>
+      </div>
+      {open ? <div style={{ padding: 14, display: "flex", flexDirection: "column", gap: 12 }}>{children}</div> : null}
+    </div>
+  );
+}
+
+const FEED_SHOW = 5;
+
 function SavePanel({ storeOk, code, onImport, onReset }: { storeOk: boolean | null; code: string; onImport: (c: string) => string; onReset: () => void }) {
   const [txt, setTxt] = useState<string>("");
   const [msg, setMsg] = useState<string>("");
@@ -2129,7 +2206,9 @@ export default function App() {
   const [buildKey, setBuildKey] = useState<string>("path");
   const [st, setSt] = useState<Saved>(initialState);
   const [storeOk, setStoreOk] = useState<boolean | null>(null);
-  const [launchOpen, setLaunchOpen] = useState<boolean>(true);
+  const [launchOpen, setLaunchOpen] = useState<boolean>(false);
+  const [firstOpen, setFirstOpen] = useState<boolean>(false);
+  const [feedAll, setFeedAll] = useState<boolean>(false);
   const lvV = st.lvV;
   const lvC = st.lvC;
   const setLvV = (n: number) => setSt((s: Saved) => ({ ...s, lvV: clampN(n, 1, 60) }));
@@ -2203,75 +2282,17 @@ export default function App() {
       width="wide"
     >
       <Hero />
+      {/* Layout Nov 6 (Claude, for Jason): in-session sections first, reference after, launch night folded at the bottom. Keep this order and the sticky bar. */}
+      <StickyNav lvC={lvC} lvV={lvV} groups={[
+        { label: "Play", items: [{ label: "Next ding", id: "ding" }, { label: "Rotations", id: "rotations" }, { label: "Naga binds", id: "naga" }, { label: "Talents", id: "builds" }] },
+        { label: "Plan", items: [{ label: "Leveling path", id: "path" }, { label: "Gear and dungeons", id: "gear" }, { label: "Professions", id: "profs" }, { label: "Progress", id: "progress" }] },
+        { label: "Reference", items: [{ label: "Macros", id: "macros" }, { label: "Addons", id: "addons" }, { label: "Characters", id: "chars" }, { label: "Meta board", id: "meta" }, { label: "Patch feed", id: "feed" }, { label: "Launch night", id: "launch" }] },
+      ]} />
       <Section heading="Next ding" id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
         <Grid columns={2} plain>
           <NextDing who="C" level={lvC} setLevel={setLvC} skills={st.sk} />
           <NextDing who="V" level={lvV} setLevel={setLvV} skills={st.sk} />
         </Grid>
-      </Section>
-      <Section heading="Launch Night: Corvin's first session" id="first" caption="Quest-log checklist for the Undead start, about levels 1 to 12. Ticks save on the EliteDesk.">
-        <CorvinFirstSession level={lvC} />
-      </Section>
-      <Section heading="Launch night" id="launch">
-        <LaunchNight checks={st.ck} toggle={toggle} open={launchOpen} setOpen={setLaunchOpen} />
-      </Section>
-      <TableOfContents items={[
-        { label: "Next ding", id: "ding" }, { label: "Corvin's first session", id: "first" }, { label: "Launch night", id: "launch" },
-        { label: "Characters", id: "chars" }, { label: "Meta board", id: "meta" }, { label: "Patch and datamine feed", id: "feed" },
-        { label: "Leveling path", id: "path" }, { label: "Talent trees", id: "builds" }, { label: "Rotations", id: "rotations" }, { label: "Naga V2 Pro binds", id: "naga" }, { label: "Professions", id: "profs" },
-        { label: "Gear and dungeons", id: "gear" }, { label: "Macros", id: "macros" }, { label: "Addons", id: "addons" }, { label: "Progress tracker", id: "progress" },
-      ]} />
-
-      <Section heading="Characters" id="chars" caption="Set levels with the gold badge (− / type / +) and skills with − / +. Progress lives on this page: see Export / Import in the Progress tracker.">
-        <Grid columns={2} plain>
-          <CharCard c={CHARS[1]} who="C" level={lvC} setLevel={setLvC} skills={st.sk} setSkill={setSkill} />
-          <CharCard c={CHARS[0]} who="V" level={lvV} setLevel={setLvV} skills={st.sk} setSkill={setSkill} />
-        </Grid>
-      </Section>
-
-      <Section heading="Meta board" id="meta" caption="Pre-launch only: beta data and simulations. Forever launched Nov 4; no level-60 logs exist yet.">
-        <MetaBoard />
-        <Callout tone={PL.meta_raid_watch.tone} lead={PL.meta_raid_watch.lead}>{PL.meta_raid_watch.text}</Callout>
-        <LinkCards links={PL.meta_links} />
-      </Section>
-
-      <Section heading="Patch and datamine feed" id="feed">
-        <Section heading="Pinned: your racials">
-          <Grid columns={2}>
-            <Properties items={PL.feed_racials_left} />
-            <Properties items={PL.feed_racials_right} />
-          </Grid>
-        </Section>
-        <Rows rows={PL.feed_rows} />
-        <Section heading="Notes out of date">
-          <BulletList items={PL.feed_notes_out_of_date} />
-        </Section>
-        <PreLine lead="Molten Core loot and Tier 1 (build 70707): Earthshaker, Band of Sulfuras, Choker of the Fire Lord, Felheart Raiment, The Earthfury:" mark="datamined" />
-        <LinkCards links={PL.feed_links} />
-      </Section>
-
-      <Section heading="Corvin’s leveling path" id="path" caption="Level Affliction all the way to 60 on Icy Veins' 40/11 order (Demonic Sacrifice 41, Wrack 51). Dual Spec at 40 adds Demonology as Spec 2 for dungeons and raids. Click a level to see it in the talent tree.">
-        <PathTimeline go={goPath} />
-      </Section>
-
-      <Section heading="Talent trees" id="builds" caption="Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: Vorgash, Warlock builds: Corvin); moving it previews another level without changing the character. Corvin's path levels Spec 1 Affliction to 60; Spec 2 (Demonology, for groups) unlocks at 40.">
-        {preview !== null ? (
-          <div className="wf-pop" style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${ORANGE}`, background: "rgba(255,128,0,.08)", color: INK, fontSize: 13 }}>
-            <span>Previewing level <b style={{ color: GOLD_HI }}>{preview}</b>. {charName} is level {charLevel}.</span>
-            <button type="button" className="wf-btn" onClick={() => setPreview(null)} style={{ padding: "3px 10px", borderRadius: 6, border: `1px solid ${GOLD}`, background: "#14110d", color: GOLD_HI, fontSize: 12 }}>Back to {charLevel}</button>
-            <button type="button" className="wf-btn" onClick={() => setCharLevel(preview)} style={{ padding: "3px 10px", borderRadius: 6, border: `1px solid ${GOLD}`, background: "linear-gradient(180deg,#7a1a12,#3d0c08)", color: GOLD_HI, fontSize: 12 }}>Set {charName} to {preview}</button>
-          </div>
-        ) : null}
-        <TalentPlanner buildKey={buildKey} setBuildKey={setBuildKey} level={level} setLevel={setLevel} pathSpec={pathSpec} setPathSpec={setPathSpec} />
-        {buildKey.indexOf("enh") === 0 ? (
-          <BulletList items={PL.talents_enh_bullets} />
-        ) : null}
-        {buildKey === "aff_lvl" || buildKey === "aff_icy" || buildKey === "aff_raid" ? (
-          <Callout tone={PL.talents_level60.tone} lead={PL.talents_level60.lead}>{PL.talents_level60.text}</Callout>
-        ) : null}
-        {buildKey === "demo_lvl" || buildKey === "demo_raid" || buildKey === "path" ? (
-          <Callout tone={PL.talents_brand.tone} lead={PL.talents_brand.lead}>{PL.talents_brand.text}</Callout>
-        ) : null}
       </Section>
 
       <Section heading="Rotations" id="rotations" caption="Questing vs dungeon priorities per spec, as icon strips. Sources and dates under each.">
@@ -2310,12 +2331,28 @@ export default function App() {
         <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate)." : "The 12-button plate takes over at 32 for Vorgash and 40 for Corvin (Spec 1 Affliction and Spec 2 Demonology). Drag the preview level to see it early."}</Text>
       </Section>
 
-      <Section heading="Professions" id="profs" caption="Pick a character, then a profession. Skill uses the same numbers as the character cards; − / + or drag. Training thresholds warn when the character level is too low. Legacy points at 150, 225 and 300 in each crafting profession, once per account.">
-        <ProfessionWindow skills={st.sk} setSkillFor={setSkill} lvV={lvV} lvC={lvC} />
-        <Text>{PL.profs_note_skinning.text}</Text>
-        <Text>{PL.profs_note_tailoring.text}</Text>
-        <Text>{PL.profs_note_trainers.text}</Text>
-        <Text>{PL.profs_note_slider.text}</Text>
+      <Section heading="Talent trees" id="builds" caption="Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: Vorgash, Warlock builds: Corvin); moving it previews another level without changing the character. Corvin's path levels Spec 1 Affliction to 60; Spec 2 (Demonology, for groups) unlocks at 40.">
+        {preview !== null ? (
+          <div className="wf-pop" style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${ORANGE}`, background: "rgba(255,128,0,.08)", color: INK, fontSize: 13 }}>
+            <span>Previewing level <b style={{ color: GOLD_HI }}>{preview}</b>. {charName} is level {charLevel}.</span>
+            <button type="button" className="wf-btn" onClick={() => setPreview(null)} style={{ padding: "3px 10px", borderRadius: 6, border: `1px solid ${GOLD}`, background: "#14110d", color: GOLD_HI, fontSize: 12 }}>Back to {charLevel}</button>
+            <button type="button" className="wf-btn" onClick={() => setCharLevel(preview)} style={{ padding: "3px 10px", borderRadius: 6, border: `1px solid ${GOLD}`, background: "linear-gradient(180deg,#7a1a12,#3d0c08)", color: GOLD_HI, fontSize: 12 }}>Set {charName} to {preview}</button>
+          </div>
+        ) : null}
+        <TalentPlanner buildKey={buildKey} setBuildKey={setBuildKey} level={level} setLevel={setLevel} pathSpec={pathSpec} setPathSpec={setPathSpec} />
+        {buildKey.indexOf("enh") === 0 ? (
+          <BulletList items={PL.talents_enh_bullets} />
+        ) : null}
+        {buildKey === "aff_lvl" || buildKey === "aff_icy" || buildKey === "aff_raid" ? (
+          <Callout tone={PL.talents_level60.tone} lead={PL.talents_level60.lead}>{PL.talents_level60.text}</Callout>
+        ) : null}
+        {buildKey === "demo_lvl" || buildKey === "demo_raid" || buildKey === "path" ? (
+          <Callout tone={PL.talents_brand.tone} lead={PL.talents_brand.lead}>{PL.talents_brand.text}</Callout>
+        ) : null}
+      </Section>
+
+      <Section heading="Corvin’s leveling path" id="path" caption="Level Affliction all the way to 60 on Icy Veins' 40/11 order (Demonic Sacrifice 41, Wrack 51). Dual Spec at 40 adds Demonology as Spec 2 for dungeons and raids. Click a level to see it in the talent tree.">
+        <PathTimeline go={goPath} />
       </Section>
 
       <Section heading="Gear and dungeons" id="gear" caption="Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server.">
@@ -2328,6 +2365,26 @@ export default function App() {
         <PresetPanel open={presetOpen} setOpen={setPresetOpen} />
         <Text>{PL.gear_raid_preview.text}</Text>
         <PreLine lead="Tier 1 and raid loot:" mark="datamined" />
+      </Section>
+
+      <Section heading="Professions" id="profs" caption="Pick a character, then a profession. Skill uses the same numbers as the character cards; − / + or drag. Training thresholds warn when the character level is too low. Legacy points at 150, 225 and 300 in each crafting profession, once per account.">
+        <ProfessionWindow skills={st.sk} setSkillFor={setSkill} lvV={lvV} lvC={lvC} />
+        <Text>{PL.profs_note_skinning.text}</Text>
+        <Text>{PL.profs_note_tailoring.text}</Text>
+        <Text>{PL.profs_note_trainers.text}</Text>
+        <Text>{PL.profs_note_slider.text}</Text>
+      </Section>
+
+      <Section heading="Progress tracker" id="progress" caption="Tick items as you go. Saving depends on the viewer: the badge below says whether it works here.">
+        <SavePanel storeOk={storeOk} code={code} onImport={importCode} onReset={resetAll} />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12, marginTop: 12 }}>
+          {[...PROGRESS].sort((a: { heading: string }, b: { heading: string }) => progRank(a) - progRank(b)).map((g: { heading: string; items: Tick[] }) => (
+            <div key={g.heading} style={{ padding: 10, borderRadius: 10, border: "1px solid #4a3d22", background: "linear-gradient(180deg,#1a1712,#0d0c0a)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontFamily: SERIF, color: GOLD_HI, fontSize: 15, marginBottom: 4 }}><span>{g.heading}</span><span style={{ fontSize: 12, color: MUTED }}>{g.items.filter((t: Tick) => st.ck[t.id]).length}/{g.items.length}</span></div>
+              {g.items.map((t: Tick) => <TickBox key={t.id} on={!!st.ck[t.id]} onClick={() => toggle(t.id)} text={t.text} meta={t.meta} />)}
+            </div>
+          ))}
+        </div>
       </Section>
 
       <Section heading="Macros" id="macros" caption="Spell-book cards: copy, check length (255 max) and open “What it does”. NEW = added from Forever sources; FIXED = corrected from v1.">
@@ -2352,16 +2409,42 @@ export default function App() {
         </Section>
       </Section>
 
-      <Section heading="Progress tracker" id="progress" caption="Tick items as you go. Saving depends on the viewer: the badge below says whether it works here.">
-        <SavePanel storeOk={storeOk} code={code} onImport={importCode} onReset={resetAll} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12, marginTop: 12 }}>
-          {[...PROGRESS].sort((a: { heading: string }, b: { heading: string }) => progRank(a) - progRank(b)).map((g: { heading: string; items: Tick[] }) => (
-            <div key={g.heading} style={{ padding: 10, borderRadius: 10, border: "1px solid #4a3d22", background: "linear-gradient(180deg,#1a1712,#0d0c0a)" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", fontFamily: SERIF, color: GOLD_HI, fontSize: 15, marginBottom: 4 }}><span>{g.heading}</span><span style={{ fontSize: 12, color: MUTED }}>{g.items.filter((t: Tick) => st.ck[t.id]).length}/{g.items.length}</span></div>
-              {g.items.map((t: Tick) => <TickBox key={t.id} on={!!st.ck[t.id]} onClick={() => toggle(t.id)} text={t.text} meta={t.meta} />)}
-            </div>
-          ))}
-        </div>
+      <Section heading="Characters" id="chars" caption="Set levels with the gold badge (− / type / +) and skills with − / +. Progress lives on this page: see Export / Import in the Progress tracker.">
+        <Grid columns={2} plain>
+          <CharCard c={CHARS[1]} who="C" level={lvC} setLevel={setLvC} skills={st.sk} setSkill={setSkill} />
+          <CharCard c={CHARS[0]} who="V" level={lvV} setLevel={setLvV} skills={st.sk} setSkill={setSkill} />
+        </Grid>
+      </Section>
+
+      <Section heading="Meta board" id="meta" caption="Pre-launch only: beta data and simulations. Forever launched Nov 4; no level-60 logs exist yet.">
+        <MetaBoard />
+        <Callout tone={PL.meta_raid_watch.tone} lead={PL.meta_raid_watch.lead}>{PL.meta_raid_watch.text}</Callout>
+        <LinkCards links={PL.meta_links} />
+      </Section>
+
+      <Section heading="Patch and datamine feed" id="feed">
+        <Rows rows={feedAll ? PL.feed_rows : PL.feed_rows.slice(0, FEED_SHOW)} />
+        {PL.feed_rows.length > FEED_SHOW ? (
+          <button type="button" className="wf-btn" onClick={() => setFeedAll(!feedAll)} style={{ alignSelf: "flex-start", padding: "5px 12px", borderRadius: 6, border: `1px solid ${GOLD}`, background: feedAll ? "transparent" : "linear-gradient(180deg,#7a1a12,#3d0c08)", color: GOLD_HI, fontSize: 12, fontWeight: 700 }}>{feedAll ? `Show the latest ${FEED_SHOW} only` : `Show ${PL.feed_rows.length - FEED_SHOW} older entries`}</button>
+        ) : null}
+        <Section heading="Pinned: your racials">
+          <Grid columns={2}>
+            <Properties items={PL.feed_racials_left} />
+            <Properties items={PL.feed_racials_right} />
+          </Grid>
+        </Section>
+        <Section heading="Notes out of date">
+          <BulletList items={PL.feed_notes_out_of_date} />
+        </Section>
+        <PreLine lead="Molten Core loot and Tier 1 (build 70707): Earthshaker, Band of Sulfuras, Choker of the Fire Lord, Felheart Raiment, The Earthfury:" mark="datamined" />
+        <LinkCards links={PL.feed_links} />
+      </Section>
+
+      <Section heading="Launch night (done)" id="launch" caption="Forever launched Nov 4. Corvin's first-session quest log and the launch checklist, kept for reference; ticks still save.">
+        <Fold title="Corvin's first session" sub="Undead start quest log, about levels 1 to 12" icon="classicon_warlock" open={firstOpen} setOpen={setFirstOpen}>
+          <CorvinFirstSession level={lvC} />
+        </Fold>
+        <LaunchNight checks={st.ck} toggle={toggle} open={launchOpen} setOpen={setLaunchOpen} />
       </Section>
     </Page>
   );
