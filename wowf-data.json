@@ -2242,8 +2242,8 @@
         "spec": 1,
         "icon": "spell_shadow_shadowbolt",
         "title": "No talents yet",
-        "body": "Shadow Bolt, Imp, wand at 5 (Enchanting). Voidwalker at 10. Official Nov 6: Voidwalker tank durability gets a Nov 10 hotfix pass toward Classic Era (stats TBD).",
-        "src": "Kaivax Class Tuning Nov 6"
+        "body": "Shadow Bolt, Imp, wand at 5 (Enchanting). Voidwalker at 10. Official Nov 6 live: Voidwalker base health +~40. Further VW tank durability toward Classic Era still planned in Nov 10 Class Tuning (stats TBD).",
+        "src": "Kaivax Nov 6 hotfixes + Class Tuning Nov 10"
       },
       {
         "lv": "10",
@@ -2593,7 +2593,7 @@
             {
               "icon": "spell_shadow_summonvoidwalker",
               "name": "Voidwalker",
-              "tip": "Holds mobs while you cast; send it in as you start. Pets are squishier since Blizzard's Nov 2 change (2 Health per Stamina). Official Nov 6: VW durability toward Classic Era on Nov 10 (numbers TBD).",
+              "tip": "Holds mobs while you cast; send it in as you start. Pets are squishier since Blizzard's Nov 2 change (2 Health per Stamina). Official Nov 6: Voidwalker base health +~40 live; further durability toward Classic Era still planned Nov 10.",
               "lvl": 10,
               "until": 41
             },
@@ -2990,7 +2990,7 @@
             {
               "icon": "spell_shadow_summonvoidwalker",
               "name": "Voidwalker",
-              "tip": "Send it in first so it builds threat. Official Nov 6: VW durability toward Classic Era on Nov 10 hotfixes (numbers TBD).",
+              "tip": "Send it in first so it builds threat. Official Nov 6: Voidwalker base health +~40 live; further durability toward Classic Era still planned on Nov 10 hotfixes.",
               "lvl": 10
             },
             {
@@ -5277,7 +5277,7 @@
           ],
           [
             "Tanning Rack",
-            "140"
+            "125 · Official Nov 6 (was 140)"
           ],
           [
             "Sewing Machine",
@@ -9511,9 +9511,9 @@
     "meta_raid_watch": {
       "lead": "Raid watch",
       "tone": "warning",
-      "text": "Official Nov 6: class hotfixes planned Tue Nov 10 for Affliction (DoTs must stay worth casting with Wrack; total Aff DPS unchanged), Warlock Voidwalker durability (toward Classic Era), and Enhancement (Strength/AP over Intellect/Spell Power — collect Str/AP while leveling). Sims still pre-launch: MythicSim Nov 6 has Enh #3, Demo #9, Aff #14, Destro #17. Forever Logs has no confirmed level-60 DPS boards yet.",
-      "_source": "Kaivax Class Tuning Nov 6; MythicSim Nov 6; Forever Logs SPA check Nov 6 6 PM ET",
-      "_date": "Nov 6"
+      "text": "Official Nov 6 live: Voidwalker base health +~40; Soul Siphon no longer self-buffs Wrack; Orc Command pet over-benefit fixed; LW Tanning Rack 125 (was 140). Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP. Live build 70862 (Nov 7) — no Sham/WL spell hits in 1mw analyzer. MythicSim still Nov 6 (Enh #3, Demo #9, Aff #14, Destro #17). Forever Logs: dungeon rankings only — no confirmed L60 DPS boards.",
+      "_source": "Blizzard Nov 6 hotfixes; Kaivax Class Tuning Nov 10; 1mw 70862; MythicSim Nov 6; Forever Logs Nov 7 9 AM ET",
+      "_date": "Nov 7"
     },
     "meta_links": [
       {
@@ -9626,6 +9626,30 @@
     "feed_rows": [
       {
         "lead": "Nov 6",
+        "title": "Official Nov 6 hotfixes: Voidwalker +40 HP, Soul Siphon/Wrack fix, Orc Command pet fix, LW Tanning Rack 125",
+        "detail": "Kaivax Official Forever Hotfixes Nov 6 (US 2403040 / news.blizzard.com / EU mirror; posted ~2:34 AM UTC Nov 6, restated in a Nov 7 forum reply). Warlock: Voidwalker base health +~40 at all levels; Soul Siphon no longer incorrectly causes Wrack to increase its own damage. Orc: some Warlock pet abilities were benefitting too much from Command — fixed. Leatherworking: Tanning Rack skill req 125 (was 140); Tanning Rack skill-ups −15. Skinning: \"Rough Wolf Pelts\" auto-cancels if you unlearn Skinning. No Shaman spell changes. Catch-up/v13 had misread this post as Nov 5-only NPC/PvP list — corrected this run. Read Nov 7 ~9:25 AM ET.",
+        "meta": "Blizzard news + forums (Kaivax), Nov 6",
+        "status": {
+          "label": "Official",
+          "tone": "success"
+        },
+        "_source": "https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-6-2026",
+        "_date": "Nov 6"
+      },
+      {
+        "lead": "Nov 7",
+        "title": "Live build 70862; item waves only — no Shaman/Warlock class hits",
+        "detail": "1mw: new live build 1.60.1.70862 detected ~04:43 UTC Nov 7 (was 70790), with morning hotfix/item waves through ~13:54 UTC. Class analyzer vs 70790: no Shaman or Warlock spell/talent changes. Noted non-class hits include Druid Ravage/Bear Form tooltip flips and Warrior Gore Drinker; Abominable Head required level 15↔16. Nov 7 EU \"Hotfixes - November 7\" blue-post index points at the same Nov 6 Official list (no new Sham/WL lines). Unofficial, single source for build/waves. Read Nov 7 ~9:25 AM ET.",
+        "meta": "1mw.io news + patch notes, Nov 7",
+        "status": {
+          "label": "Unofficial",
+          "tone": "warning"
+        },
+        "_source": "https://1mw.io/en/news",
+        "_date": "Nov 7"
+      },
+      {
+        "lead": "Nov 6",
         "title": "Official: Class Tuning Incoming — November 10 (Affliction, Voidwalker, Enhancement)",
         "detail": "Kaivax (US/EU forums, ~4:11 PM ET / 21:11 UTC): hotfixes planned Tuesday Nov 10. (1) Hunter pets and Warlock Voidwalkers will have stats adjusted toward Classic Era tank durability. (2) Affliction: Siphon Life, Corruption, and Bane of Agony will be made worthwhile alongside Wrack (reports: Wrack-only channeling beats multi-DoT); Affliction total DPS unchanged. (3) Enhancement: Strength will be the strongest stat (ahead of Intellect/Spell Power); best items should be Str or Attack Power with some Int/SP — Blizzard tells leveling Enh to collect Strength and Attack Power gear from now on. May find more issues over the weekend; plans Tuesday class balance thereafter as needed. No numbers posted yet. No Orc/Undead racial or LW/Skinning/Tailoring/Enchanting lines. Raids still Dec 9. Read Nov 6 ~6:20 PM ET.",
         "meta": "Official Kaivax Nov 6 — Class Tuning Incoming November 10",
@@ -9662,9 +9686,9 @@
       },
       {
         "lead": "Nov 6",
-        "title": "Official Nov 5 Forever hotfixes (EU forum post dated Nov 6): NPC, PvP, quests — no class changes",
-        "detail": "Kaivax EU forum post (Nov 6, 2:35 AM UTC) titled \"Hotfixes - November 6\" carries the November 5 hotfix list also on news.blizzard.com: Yarrog Baneshadow / Deathstalker Erland respawns, Zephras Druid trainer, Dustwallow murlocs, Pelluk, Zephras trade bags, Mild Spices 1c, Plainsrunning BG fixes, Sisterhood of Elune text. No Shaman, Warlock, Orc/Undead racial, or profession spell changes. Read Nov 6, ~10:25 AM ET.",
-        "meta": "Blizzard news + EU forums (Kaivax), Nov 5 list / Nov 6 post",
+        "title": "Official Nov 5 Forever hotfixes (also listed under Nov 6 article) — NPC/PvP/quests",
+        "detail": "November 5 section of the Forever Hotfixes article (and the Nov 6 Kaivax post that also carries Nov 6 class/profession lines — see newer feed row): Yarrog Baneshadow / Deathstalker Erland respawns, Zephras Druid trainer, Dustwallow murlocs, Pelluk, Zephras trade bags, Mild Spices 1c, Plainsrunning BG fixes, Sisterhood of Elune text. No Sham/WL in the Nov 5 section. Corrected Nov 7 9 AM after the Nov 6 Warlock/LW/Orc lines were missed in catch-up.",
+        "meta": "Blizzard news + Kaivax, Nov 5 section (corrected Nov 7)",
         "status": {
           "label": "Official",
           "tone": "success"
@@ -10401,11 +10425,11 @@
     }
   },
   "_meta": {
-    "version": 13,
-    "generated_at": "2026-11-06T18:21-05:00",
-    "source": "WoW Forever Bot 6 PM meta-watch, Nov 6 2026",
+    "version": 14,
+    "generated_at": "2026-11-07T09:35-05:00",
+    "source": "WoW Forever Bot 9 AM meta-watch, Nov 7 2026",
     "notes_commit": "ed3b5f2",
-    "notes": "Nov 6 6pm: Official Class Tuning Nov 10 (Aff Wrack/DoTs, VW durability, Enh Str/AP); 70790 waves no Sham/WL; no L60 logs."
+    "notes": "Nov 7 9am: Official Nov 6 WL VW+40/Soul Siphon/Orc Command + LW Tanning 125 (missed earlier); live 70862 no Sham/WL; no L60; IV/MythicSim unchanged."
   },
   "captions": {}
 }
