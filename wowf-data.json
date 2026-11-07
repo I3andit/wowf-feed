@@ -9511,8 +9511,8 @@
     "meta_raid_watch": {
       "lead": "Raid watch",
       "tone": "warning",
-      "text": "Official Nov 6 live: Voidwalker base health +~40; Soul Siphon no longer self-buffs Wrack; Orc Command pet over-benefit fixed; LW Tanning Rack 125 (was 140). Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP. Live build 70862 (Nov 7) — no Sham/WL spell hits in 1mw analyzer. MythicSim still Nov 6 (Enh #3, Demo #9, Aff #14, Destro #17). Forever Logs: dungeon rankings only — no confirmed L60 DPS boards.",
-      "_source": "Blizzard Nov 6 hotfixes; Kaivax Class Tuning Nov 10; 1mw 70862; MythicSim Nov 6; Forever Logs Nov 7 9 AM ET",
+      "text": "Official Nov 6 live: Voidwalker base health +~40; Soul Siphon no longer self-buffs Wrack; Orc Command pet over-benefit fixed; LW Tanning Rack 125 (was 140). Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP. Live build 70862 (Nov 7) — afternoon/evening item waves only; no Sham/WL spell hits in 1mw analyzer. MythicSim still Nov 6 (Enh #3, Demo #9, Aff #14, Destro #17). Forever Logs: dungeon rankings only — no confirmed L60 DPS boards.",
+      "_source": "Blizzard Nov 6 hotfixes; Kaivax Class Tuning Nov 10; 1mw 70862 evening waves; MythicSim Nov 6; Forever Logs Nov 7 6 PM ET",
       "_date": "Nov 7"
     },
     "meta_links": [
@@ -9624,6 +9624,18 @@
       }
     ],
     "feed_rows": [
+      {
+        "lead": "Nov 7",
+        "title": "Build 70862: afternoon/evening hotfix + item waves; still no Shaman/Warlock class hits",
+        "detail": "1mw after morning baseline (~14:35 UTC / 9:35 AM ET through ~22:00 UTC): many 70862 hotfix caches (e.g. 166 / 150 / 34 / 19 / 17 / 13 / 10 / 7 / 6 changes) and dozens of item discoveries (dungeon greens, odd-ilvl Thunderfury/Sulfuras/Benediction/Anathema names — unconfirmed). Some waves list Spells counts; 1mw patch-notes analyzer for afternoon caches: no Shaman or Warlock spell/talent hits (Druid Ravage/Bear Form + Warrior Gore Drinker tooltip flips already logged at 9 AM). foreverchanges.pro ~22:17 UTC: Priest Fear Ward castable in Shadowform (not Jason's classes). Blizzard hub / Kaivax still Nov 6 Forever Hotfixes list only (Nov 7 forum reply restates same).",
+        "meta": "1mw.io news + patch-notes; foreverchanges.pro Nov 7",
+        "status": {
+          "label": "Unofficial, single source",
+          "tone": "warning"
+        },
+        "_source": "1mw.io/en/news + /en/news/patch-notes; foreverchanges.pro/patch-notes",
+        "_date": "Nov 7 ~6:20 PM ET"
+      },
       {
         "lead": "Nov 6",
         "title": "Official Nov 6 hotfixes: Voidwalker +40 HP, Soul Siphon/Wrack fix, Orc Command pet fix, LW Tanning Rack 125",
@@ -10425,11 +10437,11 @@
     }
   },
   "_meta": {
-    "version": 14,
-    "generated_at": "2026-11-07T09:35-05:00",
-    "source": "WoW Forever Bot 9 AM meta-watch, Nov 7 2026",
+    "version": 15,
+    "generated_at": "2026-11-07T18:19-05:00",
+    "source": "WoW Forever Bot 6 PM meta-watch, Nov 7 2026",
     "notes_commit": "ed3b5f2",
-    "notes": "Nov 7 9am: Official Nov 6 WL VW+40/Soul Siphon/Orc Command + LW Tanning 125 (missed earlier); live 70862 no Sham/WL; no L60; IV/MythicSim unchanged."
+    "notes": "Nov 7 6pm: 70862 afternoon/evening item waves only — no Sham/WL/racial/prof; Blizzard still Nov 6 list; no L60."
   },
   "captions": {}
 }
