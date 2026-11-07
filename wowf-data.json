@@ -1901,6 +1901,96 @@
           "Mindfulness",
           3
         ]
+      ],
+      "enh_nicktew": [
+        [
+          "Thundering Strikes",
+          5
+        ],
+        [
+          "Mental Dexterity",
+          3
+        ],
+        [
+          "Ancestral Knowledge",
+          2
+        ],
+        [
+          "Shamanistic Focus",
+          1
+        ],
+        [
+          "Elemental Weapons",
+          3
+        ],
+        [
+          "Anticipation",
+          1
+        ],
+        [
+          "Stormstrike",
+          1
+        ],
+        [
+          "Improved Ghost Wolf",
+          2
+        ],
+        [
+          "Flurry",
+          2
+        ],
+        [
+          "Improved Stormstrike",
+          2
+        ],
+        [
+          "Spirit Weapons",
+          1
+        ],
+        [
+          "Tidal Focus",
+          5
+        ],
+        [
+          "Mindfulness",
+          3
+        ],
+        [
+          "Totemic Focus",
+          2
+        ],
+        [
+          "Water Shield",
+          1
+        ],
+        [
+          "Flurry",
+          1
+        ],
+        [
+          "Mental Quickness",
+          2
+        ],
+        [
+          "Maelstrom Weapon",
+          5
+        ],
+        [
+          "Rage of the Farseer",
+          1
+        ],
+        [
+          "Flurry",
+          2
+        ],
+        [
+          "Concussion",
+          5
+        ],
+        [
+          "Elemental Devastation",
+          1
+        ]
       ]
     },
     "STATIC": {
@@ -2126,13 +2216,13 @@
     "BUILD_DEFS": [
       {
         "key": "enh_lvl",
-        "label": "Enhancement leveling",
+        "label": "Icy Veins leveling (original; conflicts flagged)",
         "cls": "shaman",
         "seq": "enh_lvl",
         "src": "Icy Veins (Wordup), its talent calculator order",
         "date": "Oct 17",
         "url": "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling",
-        "blurb": "Stormstrike at 25, Improved Stormstrike at 30, then a Restoration detour for Mindfulness and Water Shield before Maelstrom Weapon. Ends 8/32/11."
+        "blurb": "Stormstrike at 25, Improved Stormstrike at 30, then a Restoration detour for Mindfulness and Water Shield before Maelstrom Weapon. Ends 8/32/11. Original order retained, not silently replaced. Conflict: early Improved Ghost Wolf18–19 is inconsistent with recorded Nov2 row move; Nicktew alternative delays it26–27. This stored order reaches Water Shield43, not42; Rage52."
       },
       {
         "key": "enh_notes",
@@ -2216,6 +2306,16 @@
         "date": "Oct 30",
         "url": "https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide",
         "blurb": "Sacrifice the Succubus, keep the Imp out. Final build only."
+      },
+      {
+        "key": "enh_nicktew",
+        "label": "Nicktew Recommended 6/34/11 (alternative)",
+        "cls": "shaman",
+        "seq": "enh_nicktew",
+        "src": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "date": "Nov 4; read Nov 7",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "blurb": "Separate selectable guide, not a respec or default switch. Stormstrike25; Improved Ghost Wolf26–27; Improved Stormstrike30–31; Mindfulness38–40; Water Shield43; Maelstrom5/5 at51; Rage52. Water Shield versus earlier deep Enhancement explicitly needs testing. Full Enhance First alternate tab order not accessible. Actual spent talents/trained skills unverified."
       }
     ],
     "WHY": {
@@ -2226,10 +2326,10 @@
       "Demonic Pact": "The 31-point talent: your Sacrifice buff survives summoning a new demon (wowfdb).",
       "Demonic Brand": "Searing Pain marks the target for your pet's next 6 attacks (wording changed Oct 9).",
       "Demonic Sacrifice": "Icy Veins: don't actually use it until Demonic Pact at 40.",
-      "Stormstrike": "The spec starts here (Icy Veins, wowfdb).",
-      "Shamanistic Focus": "Shocks and Lightning Shield cost 45% less mana: you stop rationing shocks (wowfdb).",
+      "Stormstrike": "The spec starts here (Icy Veins, wowfdb). Nicktew also25; keep Earth Shock separate for interrupts (Nov4/readNov7): https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+      "Shamanistic Focus": "Shocks and Lightning Shield cost 45% less mana: you stop rationing shocks (wowfdb). Nicktew point20; only applies if actually spent, not automatically learned by reaching20 (Nov4/readNov7): https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Improved Stormstrike": "Dodges and parries can reset Stormstrike; also 50% mana regen while casting (wowfdb).",
-      "Water Shield": "Icy Veins' text says 42; its own calculator places it at 43 because Restoration needs 10 points first.",
+      "Water Shield": "Icy Veins' text says 42; its own calculator places it at 43 because Restoration needs 10 points first. Nicktew Recommended also43; its value versus earlier deep Enhancement is explicitly untested (updatedNov4/readNov7): https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Maelstrom Weapon": "Free, instant Lightning Bolt at 5 stacks.",
       "Rage of the Farseer": "+30% attack speed for 25 s on a 3-minute cooldown (wowfdb; marked unconfirmed there).",
       "Malevolence": "+5% Shadow crit.",
@@ -2317,7 +2417,7 @@
             {
               "icon": "spell_nature_rockbiter",
               "name": "Rockbiter Weapon",
-              "tip": "Always imbued; Rockbiter until Windfury Weapon.",
+              "tip": "Icy Veins: Rockbiter before30. Nicktew: latest trained Rockbiter/Flametongue solo; Flametongue when not tanking. Do not silently replace imbue. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
               "until": 30
             },
             {
@@ -2335,7 +2435,7 @@
             {
               "icon": "spell_nature_strengthofearthtotem02",
               "name": "Totems on the way in",
-              "tip": "Strength of Earth (or Stoneskin), Searing (Magma if mana allows), Mana Spring. Totemic Recall when moving on; it restores mana again (Nov 3 fix).",
+              "tip": "Icy Veins general set; Nicktew disagrees: prioritize Searing and avoid spending on all four every moving pull. Mana Spring26, Magma26, Recall20 only if trained. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
               "lvl": 10
             }
           ],
@@ -2366,8 +2466,8 @@
             {
               "icon": "spell_shaman_maelstromweapon",
               "name": "Lightning Bolt at 5 Maelstrom",
-              "tip": "Max rank, instant at 5 stacks.",
-              "talent": "Maelstrom Weapon"
+              "tip": "Max rank, instant at 5 stacks. Full5/5 at51 on both stored Icy Veins and Nicktew orders; not first talent point.",
+              "lvl": 51
             },
             {
               "icon": "spell_nature_earthshock",
@@ -2454,10 +2554,10 @@
               "text": "Mana when struck or on crit"
             },
             {
-              "talent": "Maelstrom Weapon",
               "icon": "spell_shaman_maelstromweapon",
               "name": "Maelstrom Weapon",
-              "text": "Instant Lightning Bolts"
+              "text": "Full5/5: instant Lightning Bolt at5 stacks; guide talent plan, not actual learned state.",
+              "lvl": 51
             },
             {
               "talent": "Rage of the Farseer",
@@ -2467,7 +2567,14 @@
             }
           ],
           "notes": [
-            "Levels on the steps follow the Icy Veins talent order on this page; without Legacy Talented they land as shown."
+            "Levels on the steps follow the Icy Veins talent order on this page; without Legacy Talented they land as shown.",
+            "Nicktew Recommended (updated Nov4, read Nov7): separate selectable 6/34/11; existing Icy Veins path remains default. Selecting a guide is not confirmation of in-game respec. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Level20 priority (Nicktew): Lightning Shield before pull; Flame Shock unless reserving the shared Shock cooldown for an interrupt; Searing Totem before melee; Fire Nova on3+; Earth Shock damage/kick; finish with autos. Front-load mana spending, then allow five-second regeneration. Icy Veins retains rank1 Lightning Bolt opener; both options preserved. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Nicktew25+: prioritize Stormstrike, then shocks; full5/5 Maelstrom at51 before relying on instant Lightning Bolt, Rage52. No automatic rotation macro. These levels are Nicktew order, not proof of learned talents. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Nicktew sustain: Mindfulness38–40; Water Shield43 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Training check at20: Ghost Wolf, Frost Shock1, Lesser Healing Wave1, Totemic Recall, Call of the Elements, Searing2, Lightning Bolt4; Healing Stream1 requires Water Totem quest. Purchases/quest completion unknown. Mana Spring/Magma26, Windfury Weapon/Grounding30, Windfury Totem/Chain Lightning32. Fan beta trainer list: https://wowforever.one/classes/shaman/spells/ (read Nov7; verify spellbook).",
+            "Guide corrections: Mental Dexterity converts Intellect to AP, Mental Quickness to spell damage; 1.5AP/Int versus2AP/Str is75%, not guide66%. Nicktew text implies improved wolf20 but its order says26–27. Totemic Projection name/cursor macro conflicts with recorded Totemic Call rename; verify live spell before binding. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Official Nov6: collect Strength/AP while leveling for PLANNED Nov10 tuning; Strength intended strongest. Do not treat planned changes as live or Nicktew Intellect-with-Water-Shield preference as settled numeric weights. https://us.forums.blizzard.com/en/wow/t/class-tuning-incoming-november-10/2404092/1"
           ],
           "src": [
             {
@@ -2479,11 +2586,23 @@
               "label": "wowfdb Enhancement rotation",
               "date": "read Oct 30",
               "url": "https://wowfdb.com/classes/shaman/enhancement/rotation/"
+            },
+            {
+              "label": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+              "date": "Nov4; read Nov7",
+              "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
             }
           ]
         },
         "dungeon": {
           "prep": [
+            {
+              "name": "Flametongue Weapon",
+              "icon": "spell_fire_flametounge",
+              "lvl": 10,
+              "until": 30,
+              "tip": "Nicktew: use instead of Rockbiter when not tanking; highest trained rank. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
+            },
             {
               "icon": "spell_nature_cyclone",
               "name": "Windfury Weapon",
@@ -2510,8 +2629,8 @@
             },
             {
               "icon": "spell_fire_searingtotem",
-              "name": "Searing / Magma Totem",
-              "tip": "Searing on single targets, Magma on packs.",
+              "name": "Searing Totem",
+              "tip": "Searing from10; Magma only26+,3+ long-lived enemies and spare mana (Nicktew Nov4/readNov7).",
               "lvl": 10
             }
           ],
@@ -2535,8 +2654,8 @@
             {
               "icon": "spell_shaman_maelstromweapon",
               "name": "Lightning Bolt at 5 Maelstrom",
-              "tip": "Spend stacks as they hit 5.",
-              "talent": "Maelstrom Weapon"
+              "tip": "Spend stacks as they hit 5. Full5/5 at51 on both stored Icy Veins and Nicktew orders; not first talent point.",
+              "lvl": 51
             },
             {
               "icon": "spell_fire_sealoffire",
@@ -2552,8 +2671,15 @@
             }
           ],
           "notes": [
-            "Icy Veins: alternate Flame and Earth Shock in groups; Frost Shock if threat is an issue. Windfury Totem replaces your imbue's effect for the party.",
-            "Hit cap 8%, Expertise 6.5% (Mobalytics)."
+            "Hit cap 8%, Expertise 6.5% (Mobalytics).",
+            "Nicktew Recommended (updated Nov4, read Nov7): separate selectable 6/34/11; existing Icy Veins path remains default. Selecting a guide is not confirmation of in-game respec. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Level20 priority (Nicktew): Lightning Shield before pull; Flame Shock unless reserving the shared Shock cooldown for an interrupt; Searing Totem before melee; Fire Nova on3+; Earth Shock damage/kick; finish with autos. Front-load mana spending, then allow five-second regeneration. Icy Veins retains rank1 Lightning Bolt opener; both options preserved. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Nicktew25+: prioritize Stormstrike, then shocks; full5/5 Maelstrom at51 before relying on instant Lightning Bolt, Rage52. No automatic rotation macro. These levels are Nicktew order, not proof of learned talents. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Nicktew sustain: Mindfulness38–40; Water Shield43 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Training check at20: Ghost Wolf, Frost Shock1, Lesser Healing Wave1, Totemic Recall, Call of the Elements, Searing2, Lightning Bolt4; Healing Stream1 requires Water Totem quest. Purchases/quest completion unknown. Mana Spring/Magma26, Windfury Weapon/Grounding30, Windfury Totem/Chain Lightning32. Fan beta trainer list: https://wowforever.one/classes/shaman/spells/ (read Nov7; verify spellbook).",
+            "Guide corrections: Mental Dexterity converts Intellect to AP, Mental Quickness to spell damage; 1.5AP/Int versus2AP/Str is75%, not guide66%. Nicktew text implies improved wolf20 but its order says26–27. Totemic Projection name/cursor macro conflicts with recorded Totemic Call rename; verify live spell before binding. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+            "Official Nov6: collect Strength/AP while leveling for PLANNED Nov10 tuning; Strength intended strongest. Do not treat planned changes as live or Nicktew Intellect-with-Water-Shield preference as settled numeric weights. https://us.forums.blizzard.com/en/wow/t/class-tuning-incoming-november-10/2404092/1",
+            "Icy Veins advises alternating Flame/Earth Shock. Nicktew dungeon3+: prioritize fire totem+Fire Nova, autoattacks for mana and Earth Shock for important casts. Later Stormstrike for regen; Magma26+ only for durable packs. Windfury Totem32+ with Flametongue Weapon is Nicktew group alternative; personal Windfury Weapon does not benefit from the same Windfury Totem. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
           ],
           "src": [
             {
@@ -2570,6 +2696,11 @@
               "label": "Mobalytics Enhancement guide (Yebb)",
               "date": "Oct 28, rechecked Nov 5",
               "url": "https://mobalytics.gg/wow-forever/classes/enhancement-shaman-guide"
+            },
+            {
+              "label": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+              "date": "Nov4; read Nov7",
+              "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
             }
           ],
           "seq": "enh_lvl"
@@ -3223,7 +3354,7 @@
         "stages": [
           {
             "id": "early",
-            "label": "Levels 1–19",
+            "label": "Before Stormstrike (through24; learned skills only)",
             "base": [
               {
                 "n": 1,
@@ -3244,12 +3375,13 @@
               },
               {
                 "n": 4,
-                "spell": "Unbound until 20",
-                "icon": "inv_misc_note_01"
+                "spell": "Frost Shock (20)",
+                "icon": "inv_misc_note_01",
+                "note": "Only if trained; earlier empty."
               },
               {
                 "n": 5,
-                "spell": "Totem castsequence macro",
+                "spell": "Searing Totem (individual)",
                 "icon": "spell_nature_earthbindtotem",
                 "note": "pre-20"
               },
@@ -3326,7 +3458,7 @@
           },
           {
             "n": 5,
-            "spell": "Call of the Spirits (30) / Tremor before that",
+            "spell": "Tremor Totem / Call of the Spirits (40)",
             "icon": "spell_nature_tremortotem",
             "note": "Tremor from 18"
           },
@@ -3366,7 +3498,7 @@
         ],
         "auto": {
           "mode": "quest",
-          "src": "ROT enh.quest (Icy Veins, read Nov 3) + trainer levels",
+          "src": "Icy Veins rotation retained; Nicktew alternative notes Nov4/readNov7; actual learned skills unverified",
           "skip": [
             "Auto-attack"
           ],
@@ -3380,7 +3512,7 @@
                 "Lightning Bolt (Rank 1)",
                 "Lightning Bolt at 5 Maelstrom"
               ],
-              "note": "Pull with Rank 1; full rank at 5 Maelstrom"
+              "note": "Icy Veins rank1 pull / Nicktew Flame Shock alternative; instant full-rank at5 stacks only after5/5 at51."
             },
             {
               "key": "ss",
@@ -3393,12 +3525,13 @@
             },
             {
               "key": "rotf",
-              "spell": "Rage of the Farseer burst macro",
+              "spell": "Rage of the Farseer",
               "icon": "spell_nature_bloodlust",
               "kind": "rot",
               "covers": [
                 "Rage of the Farseer"
-              ]
+              ],
+              "note": "52 on both stored guide paths; no combined trinket macro."
             },
             {
               "key": "es",
@@ -3445,19 +3578,19 @@
             },
             {
               "key": "totemseq",
-              "spell": "Totem castsequence macro",
+              "spell": "Searing Totem",
               "icon": "spell_nature_earthbindtotem",
               "kind": "util",
               "lvl": 10,
-              "until": 30,
-              "note": "Call of the Elements replaces it at 30"
+              "note": "Individual placement; Nicktew avoids four-totem spending every pull."
             },
             {
               "key": "cote",
               "spell": "Call of the Elements",
               "icon": "spell_nature_strengthofearthtotem02",
               "kind": "util",
-              "lvl": 30
+              "lvl": 20,
+              "note": "Optional preset if trained;3sec cast."
             },
             {
               "key": "ebt",
@@ -3500,15 +3633,14 @@
               "icon": "spell_nature_tremortotem",
               "kind": "util",
               "lvl": 18,
-              "until": 30,
-              "note": "Call of the Spirits takes this slot at 30"
+              "note": "Situational fear/charm/sleep utility, not replaced by preset."
             },
             {
               "key": "cots",
               "spell": "Call of the Spirits",
               "icon": "spell_nature_tremortotem",
               "kind": "util",
-              "lvl": 30
+              "lvl": 40
             },
             {
               "key": "cl",
@@ -3529,8 +3661,24 @@
               "spell": "Call of the Ancestors",
               "icon": "spell_shaman_dropall_02",
               "kind": "util",
-              "lvl": 40,
+              "lvl": 30,
               "note": "Dungeon set"
+            },
+            {
+              "key": "recall",
+              "spell": "Totemic Recall",
+              "icon": "spell_shaman_totemrecall",
+              "kind": "util",
+              "lvl": 20,
+              "note": "If trained; separate deliberate recall."
+            },
+            {
+              "key": "kick1",
+              "spell": "Earth Shock Rank1 (interrupt)",
+              "icon": "spell_nature_earthshock",
+              "kind": "util",
+              "lvl": 4,
+              "note": "Dedicated cheap kick macro; no automatic targeting/rotation. Damage Earth Shock remains separate."
             }
           ]
         }
@@ -4249,7 +4397,7 @@
         "who": "Vorgash",
         "title": "Enhancement · 12-button layout (32+)",
         "src": "Shaman - Enhancement.md › 12-button layout (32+)",
-        "intro": "Rotation spells sit in rotation order from the level-aware Enhancement rotation; Call of the Elements replaces the totem macro and Windfury replaces Rockbiter at 30.",
+        "intro": "Rotation spells sit in rotation order from the level-aware Enhancement rotation; Call of the Elements available20 if trained; Windfury Weapon30; individual totems remain useful.",
         "extra": "Windfury Totem stays inside your totem presets, not on a button: it does nothing for you while your own Windfury imbue is on.",
         "buttons": [
           {
@@ -4274,7 +4422,7 @@
             "n": 4,
             "spell": "Lightning Bolt",
             "icon": "spell_nature_lightning",
-            "note": "5 Maelstrom stacks only (36+); the \"Spend the Stormstrike bonus\" macro fits here"
+            "note": "5 stacks after5/5 at51 on both stored guide paths; earlier bolts are cast-time pulls"
           },
           {
             "n": 5,
@@ -4286,14 +4434,14 @@
             "n": 6,
             "spell": "Chain Lightning (32)",
             "icon": "spell_nature_lightningoverload",
-            "note": "Packs, or with Maelstrom on 2+ targets",
+            "note": "Packs; do not assume Maelstrom affects Chain Lightning",
             "alt": true
           },
           {
             "n": 7,
-            "spell": "Rage of the Farseer burst macro (37/41)",
+            "spell": "Rage of the Farseer (52)",
             "icon": "spell_nature_bloodlust",
-            "note": "Trinkets + Blood Fury + Rage in one press"
+            "note": "Separate deliberate cooldown;52 on both stored guide paths"
           },
           {
             "n": 8,
@@ -4350,12 +4498,12 @@
           },
           {
             "n": 5,
-            "spell": "Call of the Spirits (second preset) / Tremor before 30",
+            "spell": "Call of the Spirits (40) / Tremor separately",
             "icon": "spell_nature_tremortotem"
           },
           {
             "n": 6,
-            "spell": "Call of the Ancestors (third preset, 40)",
+            "spell": "Call of the Ancestors (30)",
             "icon": "spell_shaman_dropall_02",
             "note": "Only ever on the 12-plate; the dungeon set"
           }
@@ -4899,51 +5047,53 @@
         "icon": "spell_nature_magicimmunity",
         "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Healing Wave\n/cast [@mouseover,help,nodead][@player] Healing Wave",
-        "does": "Heals the frame under your cursor, else yourself.",
-        "src": "Your notes",
+        "code": "#showtooltip Healing Wave\n/cast [@mouseover,help,nodead][help,nodead][@player] Healing Wave",
+        "does": "Friendly living mouseover, then selected friend, otherwise self; keeps weapon/imbue.",
+        "src": "Your notes; reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
         "bind": [
           "hw"
-        ]
+        ],
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
       },
       {
         "title": "Earth Shock on target",
         "icon": "spell_nature_earthshock",
         "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Earth Shock\n/cast [@target,harm] Earth Shock",
-        "does": "Always hits the enemy, even with your cursor on a friendly frame.",
-        "src": "Your notes",
+        "code": "#showtooltip Earth Shock\n/stopcasting\n/cast [@target,harm,nodead] Earth Shock",
+        "does": "Cancels own cast and shocks selected living hostile; highest learned rank for damage. Shared Shock cooldown still applies.",
+        "src": "Your notes; reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
         "bind": [
           "es"
-        ]
+        ],
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
       },
       {
         "title": "Flame Shock + attack",
         "icon": "spell_fire_flameshock",
         "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip [mod:ctrl] Earth Shock; Flame Shock\n/startattack [harm]\n/cast [mod:ctrl] Earth Shock; Flame Shock",
-        "does": "Starts melee and opens with Flame Shock; Ctrl for Earth Shock.",
+        "code": "#showtooltip Flame Shock\n/startattack [@target,harm,nodead]\n/cast [@target,harm,nodead] Flame Shock",
+        "does": "Deliberate same-target Flame Shock and melee; separate Earth Shock key, no assumed controller modifier.",
         "tag": "NEW",
         "lvl": 10,
-        "src": "wowfdb Enhancement macros (marked Untested)",
-        "url": "https://wowfdb.com/classes/shaman/enhancement/macros/",
+        "src": "wowfdb Enhancement macros (marked Untested); reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
         "bind": [
           "fs"
         ]
       },
       {
-        "title": "Stormstrike + Earth Shock",
+        "title": "Stormstrike (separate from Earth Shock)",
         "icon": "ability_shaman_stormstrike",
         "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Stormstrike\n/startattack [harm]\n/cast Stormstrike\n/cast Earth Shock",
-        "does": "Stormstrike, then Earth Shock next press while Stormstrike is cooling down, so the shock lands inside the Stormstrike bonus.",
+        "code": "#showtooltip Stormstrike\n/startattack [@target,harm,nodead]\n/cast [@target,harm,nodead] Stormstrike",
+        "does": "Stormstrike only, learned via talent25 on both guides; shock separately to reserve interrupts.",
         "tag": "NEW",
         "lvl": 25,
-        "src": "wowfdb Enhancement macros (marked Untested)",
-        "url": "https://wowfdb.com/classes/shaman/enhancement/macros/",
+        "src": "wowfdb Enhancement macros (marked Untested); reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
         "bind": [
           "ss"
         ]
@@ -4953,24 +5103,24 @@
         "icon": "spell_nature_lightning",
         "spec": "enh",
         "where": "Naga 4",
-        "code": "#showtooltip [mod:shift] Lightning Bolt; [mod:ctrl] Chain Lightning; Earth Shock\n/cast [mod:shift] Lightning Bolt; [mod:ctrl] Chain Lightning; Earth Shock",
-        "does": "Earth Shock; Shift for Lightning Bolt (use at 5 Maelstrom stacks); Ctrl for Chain Lightning.",
+        "code": "#showtooltip Lightning Bolt\n/cast [@target,harm,nodead] Lightning Bolt",
+        "does": "Full-rank Lightning Bolt; use instant at5 Maelstrom stacks only after5/5 talent (51 both stored paths). Chain Lightning is separate, not assumed affected by Maelstrom.",
         "tag": "NEW",
-        "lvl": 32,
-        "src": "wowfdb Enhancement macros (marked Untested)",
-        "url": "https://wowfdb.com/classes/shaman/enhancement/macros/"
+        "lvl": 51,
+        "src": "wowfdb Enhancement macros (marked Untested); reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
       },
       {
         "title": "Rage of the Farseer burst",
         "icon": "spell_nature_bloodlust",
         "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Rage of the Farseer\n/startattack\n/use 13\n/use 14\n/cast Rage of the Farseer\n/cast Blood Fury\n/cast Stormstrike",
-        "does": "Trinkets, Rage of the Farseer, Blood Fury, then Stormstrike in one press.",
+        "code": "#showtooltip Rage of the Farseer\n/cast Rage of the Farseer",
+        "does": "Rage only at52 on both stored guide paths; Blood Fury/trinkets separate deliberate buttons.",
         "tag": "NEW",
-        "lvl": 40,
-        "src": "wowfdb Enhancement macros (marked Untested); Troll Berserking line removed for Orc",
-        "url": "https://wowfdb.com/classes/shaman/enhancement/macros/",
+        "lvl": 52,
+        "src": "wowfdb Enhancement macros (marked Untested); Troll Berserking line removed for Orc; reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
         "bind": [
           "rotf"
         ]
@@ -4980,49 +5130,110 @@
         "icon": "spell_nature_cyclone",
         "spec": "enh",
         "where": "F5",
-        "code": "#showtooltip [mod:alt] Rockbiter Weapon; [mod:ctrl] Frostbrand Weapon; [mod:shift] Flametongue Weapon; Windfury Weapon\n/cast [mod:alt] Rockbiter Weapon; [mod:ctrl] Frostbrand Weapon; [mod:shift] Flametongue Weapon; Windfury Weapon",
-        "does": "Windfury by default, Shift Flametongue, Ctrl Frostbrand, Alt Rockbiter (before 30).",
+        "code": "#showtooltip Flametongue Weapon\n/cast Flametongue Weapon",
+        "does": "Current pre30 group imbue; separate Rockbiter solo/tanking choice. Windfury30+ separate replacement. No auto weapon swaps or stone-stacking assumption.",
         "tag": "NEW",
-        "lvl": 30,
-        "src": "wowfdb Enhancement macros (marked Untested)",
-        "url": "https://wowfdb.com/classes/shaman/enhancement/macros/"
+        "lvl": 10,
+        "src": "wowfdb Enhancement macros (marked Untested); reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
       },
       {
-        "title": "Totem sequence (before 20)",
+        "title": "Searing Totem (individual placement)",
         "icon": "spell_nature_earthbindtotem",
         "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip\n/castsequence reset=10 Strength of Earth Totem, Searing Totem",
-        "does": "Each press drops the next totem, resets after 10 idle seconds. Press it the full two times then leave it.",
+        "code": "#showtooltip Searing Totem\n/cast Searing Totem",
+        "does": "Place only the needed fire totem; Fire Nova separately on3+. Avoid blanket four-totem mana spending.",
         "tag": "FIXED",
-        "src": "Your notes",
-        "flag": "No Water totem before the level-20 quest, so Healing Stream never goes in this macro; from 20, Call of the Elements replaces it.",
+        "src": "Your notes; reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "flag": "Replaces rigid castsequence; remains useful after20. Fire Totem quest/training required.",
         "bind": [
           "totemseq"
-        ]
+        ],
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "lvl": 10
       },
       {
         "title": "Totem set / recall",
         "icon": "spell_shaman_totemrecall",
         "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip\n/cast [mod:ctrl] Totemic Recall; Call of the Spirits",
-        "does": "Drops your saved totem set; Ctrl picks them all back up.",
+        "code": "#showtooltip Call of the Elements\n/cast Call of the Elements",
+        "does": "Configured saved preset if trained20;3sec cast, not mandatory every pull. Recall separate.",
         "tag": "FIXED",
-        "src": "Your notes",
-        "flag": "Call of the Spirits unlocks at 40 (wowfdb), not 30.",
+        "src": "Your notes; reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "flag": "Elements20; Ancestors30; Spirits40. Totems depend on completed class quests and learned spells.",
         "bind": [
           "cote"
-        ]
+        ],
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "lvl": 20
       },
       {
         "title": "Solo pull",
         "icon": "spell_nature_lightning",
         "spec": "enh",
         "where": "Bottom Right",
-        "code": "#showtooltip Lightning Bolt\n/castsequence reset=combat Lightning Bolt, Flame Shock",
-        "does": "Lightning Bolt to pull, Flame Shock as it runs in.",
-        "src": "Your notes"
+        "code": "#showtooltip Lightning Bolt\n/cast [@target,harm,nodead] Lightning Bolt(Rank 1)",
+        "does": "Icy Veins cheap ranged pull alternative; Nicktew10–24 generally Flame Shock pull, reserve shared Shock cooldown against dangerous casters. No sequence.",
+        "src": "Your notes; reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
+      },
+      {
+        "title": "Earth Shock Rank1 — dedicated interrupt",
+        "icon": "spell_nature_earthshock",
+        "spec": "enh",
+        "where": "Available learned skill; Naga/controller assign separately",
+        "code": "#showtooltip Earth Shock\n/stopcasting\n/cast [@mouseover,harm,nodead][@target,harm,nodead] Earth Shock(Rank 1)",
+        "lvl": 4,
+        "does": "Cheap kick, not normal damage. Mouseover first; controller use current-target version if reticle is not mouseover. Shock cooldown shared.",
+        "src": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "bind": [
+          "kick1"
+        ]
+      },
+      {
+        "title": "Lesser Healing Wave — emergency self",
+        "icon": "spell_nature_earthshock",
+        "spec": "enh",
+        "where": "Available learned skill; Naga/controller assign separately",
+        "code": "#showtooltip Lesser Healing Wave\n/stopcasting\n/cast [@player] Lesser Healing Wave",
+        "lvl": 20,
+        "does": "Requires training. Stops own cast; keeps enemy target, weapon and imbue. Stand still.",
+        "src": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "bind": [
+          "lhw"
+        ]
+      },
+      {
+        "title": "Frost Shock — slow",
+        "icon": "spell_nature_earthshock",
+        "spec": "enh",
+        "where": "Available learned skill; Naga/controller assign separately",
+        "code": "#showtooltip Frost Shock\n/cast [@target,harm,nodead] Frost Shock",
+        "lvl": 20,
+        "does": "Living hostile only; shares Shock cooldown, not independent of Earth Shock.",
+        "src": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "bind": [
+          "frost"
+        ]
+      },
+      {
+        "title": "Totemic Recall — separate",
+        "icon": "spell_nature_earthshock",
+        "spec": "enh",
+        "where": "Available learned skill; Naga/controller assign separately",
+        "code": "#showtooltip Totemic Recall\n/cast Totemic Recall",
+        "lvl": 20,
+        "does": "Only if trained; recall deliberately when leaving useful totems.",
+        "src": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "bind": [
+          "recall"
+        ]
       }
     ]
   },
@@ -5049,7 +5260,7 @@
         "who": "Vorgash",
         "color": "#0070DE",
         "url": "https://foreverartisan.app/guides/leatherworking/",
-        "checked": "Checked on the Forever beta Oct 10 (early trainer steps)",
+        "checked": "Checked on the Forever beta Oct 10 (early trainer steps); Nicktew Nov4/readNov7 endorses LW crafted filler, not a replacement1–300 recipe route. Keep LW/Skinning, no profession change: https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
         "steps": [
           [
             1,
@@ -6435,7 +6646,7 @@
         "15–22",
         "2H",
         "Forsaken Greataxe (or Smite's Mighty Hammer)",
-        "Ruins of Lordaeron quest · Deadmines 18%"
+        "Ruins of Lordaeron quest · Deadmines 18%; Nicktew recommends Forsaken16–20 / Smite required18; Hammerbone WC quest alternative, guide single-source (https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew)"
       ],
       [
         "22–28",
@@ -6447,7 +6658,7 @@
         "26–30",
         "2H",
         "Heavehammer",
-        "Excavation Site quest Earthen Echo"
+        "Excavation Site quest Earthen Echo; Nicktew suggests26–30 (guide recommendation, not confirmed new stats), readNov7 https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
       ],
       [
         "29–30",
@@ -6459,7 +6670,7 @@
         "30–40",
         "2H",
         "Rage of the Storm",
-        "Air totem quest chain (group for the finale)"
+        "Air totem quest chain (group for the finale); Nicktew Nov4/readNov7 discourages lengthy chain; existing notes choice retained (https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew)"
       ],
       [
         "20s",
@@ -7090,7 +7301,7 @@
                 "name": "Forsaken Greataxe",
                 "item": "Forsaken Greataxe",
                 "alt": "Smite's Mighty Hammer",
-                "src": "Ruins of Lordaeron quest · Deadmines 18%"
+                "src": "Ruins of Lordaeron quest · Deadmines 18%; Nicktew Nov4/readNov7: Forsaken16–20, Smite required18, Hammerbone WC quest alternate (single source): https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
               },
               {
                 "id": "gs2",
@@ -7108,7 +7319,7 @@
                 "to": 30,
                 "name": "Heavehammer",
                 "item": "Heavehammer",
-                "src": "Excavation Site quest Earthen Echo"
+                "src": "Excavation Site quest Earthen Echo; Nicktew Nov4/readNov7 agrees suggested26–30 (single-source guide, not verified post30 stats): https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
               },
               {
                 "id": "gs4",
@@ -7126,7 +7337,7 @@
                 "to": 40,
                 "name": "Rage of the Storm",
                 "item": "Rage of the Storm",
-                "src": "Air totem quest chain (group for the finale)"
+                "src": "Air totem quest chain (group for the finale); Nicktew Nov4/readNov7 DISAGREES: lengthy chain not recommended; notes pick retained, stats unconfirmed: https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
               }
             ]
           },
@@ -7690,7 +7901,7 @@
         {
           "name": "Ragefire Chasm",
           "lv": "13-18",
-          "press": "Totem macro (no presets before 20)",
+          "press": "Totem macro (no presets before 20) | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Totem macro",
@@ -7709,7 +7920,7 @@
                 "tag": "macro"
               },
               "water": {
-                "t": "none: no Water totem until the level-20 quest",
+                "t": "none: no Water totem until completing the level-20 Water quest",
                 "icon": "",
                 "inh": true,
                 "tag": "none"
@@ -7729,7 +7940,7 @@
         {
           "name": "Ruins of Lordaeron",
           "lv": "15-22",
-          "press": "Totem macro, Elements from 20",
+          "press": "Totem macro, Elements from 20 | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Totem macro",
@@ -7748,7 +7959,7 @@
                 "tag": "macro"
               },
               "water": {
-                "t": "none: no Water totem until the level-20 quest",
+                "t": "none: no Water totem until completing the level-20 Water quest",
                 "icon": "",
                 "inh": true,
                 "tag": "none"
@@ -7793,7 +8004,7 @@
         {
           "name": "Wailing Caverns",
           "lv": "17-24",
-          "press": "Totem macro at 17-19, Elements from 20",
+          "press": "Totem macro at 17-19, Elements from 20 | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Totem macro",
@@ -7810,7 +8021,7 @@
                 "tag": "macro"
               },
               "water": {
-                "t": "none: no Water totem until the level-20 quest",
+                "t": "none: no Water totem until completing the level-20 Water quest",
                 "icon": "",
                 "inh": true,
                 "tag": "none"
@@ -7855,7 +8066,7 @@
         {
           "name": "Shadowfang Keep",
           "lv": "20-26",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -7889,7 +8100,7 @@
         {
           "name": "Blackfathom Deeps",
           "lv": "22-28",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -7922,7 +8133,7 @@
         {
           "name": "Excavation Site",
           "lv": "24-29",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -7956,7 +8167,7 @@
         {
           "name": "City of Dalaran",
           "lv": "28-33",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -7989,7 +8200,7 @@
         {
           "name": "Gnomeregan",
           "lv": "29-38",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8023,7 +8234,7 @@
         {
           "name": "Razorfen Kraul",
           "lv": "29-38",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8057,7 +8268,7 @@
         {
           "name": "Scarlet Monastery",
           "lv": "30-46",
-          "press": "Elements; Spirits in Cathedral",
+          "press": "Elements; Spirits in Cathedral | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8115,7 +8326,7 @@
         {
           "name": "The Drowned City",
           "lv": "35-40",
-          "press": "Elements; Spirits on any fear or sleep boss",
+          "press": "Elements; Spirits on any fear or sleep boss | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8175,7 +8386,7 @@
         {
           "name": "Uldaman",
           "lv": "36-45",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8208,7 +8419,7 @@
         {
           "name": "Razorfen Downs",
           "lv": "37-46",
-          "press": "Elements to 40, then Ancestors",
+          "press": "Elements20; optional Ancestors30 / Spirits40 if trained | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8264,7 +8475,7 @@
         {
           "name": "Krol'dok Stronghold",
           "lv": "40-45",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8297,7 +8508,7 @@
         {
           "name": "Zul'Farrak",
           "lv": "44-54",
-          "press": "Elements; Spirits for the Hydromancer",
+          "press": "Elements; Spirits for the Hydromancer | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8354,7 +8565,7 @@
         {
           "name": "Maraudon",
           "lv": "46-55",
-          "press": "Elements; Spirits for Theradras",
+          "press": "Elements; Spirits for Theradras | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8411,7 +8622,7 @@
         {
           "name": "Alcaz Prison",
           "lv": "48-53",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8443,7 +8654,7 @@
         {
           "name": "Sunken Temple",
           "lv": "50-60",
-          "press": "Spirits (Eranikus)",
+          "press": "Spirits (Eranikus) | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Spirits",
@@ -8475,7 +8686,7 @@
         {
           "name": "Blackrock Depths",
           "lv": "52-60",
-          "press": "Ancestors",
+          "press": "Ancestors | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Ancestors",
@@ -8507,7 +8718,7 @@
         {
           "name": "Blackmaw Hold",
           "lv": "55-60",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8541,7 +8752,7 @@
         {
           "name": "Stratholme",
           "lv": "58-60",
-          "press": "Ancestors; Spirits on Balnazzar and Anastari",
+          "press": "Ancestors; Spirits on Balnazzar and Anastari | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Ancestors",
@@ -8598,7 +8809,7 @@
         {
           "name": "Scholomance",
           "lv": "58-60",
-          "press": "Ancestors",
+          "press": "Ancestors | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Ancestors",
@@ -8630,7 +8841,7 @@
         {
           "name": "LBRS / UBRS",
           "lv": "55-60",
-          "press": "Ancestors",
+          "press": "Ancestors | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Ancestors",
@@ -8660,7 +8871,7 @@
         {
           "name": "Dire Maul",
           "lv": "55-60",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8695,7 +8906,7 @@
         {
           "name": "Shaper's Terrace",
           "lv": "58-60",
-          "press": "Elements",
+          "press": "Elements | Nicktew Nov4/readNov7 alternative: individual fire totem + Nova on3+, not mandatory full-set drop every moving pull; learned spells only. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
           "uses": [
             {
               "preset": "Call of the Elements",
@@ -8804,7 +9015,7 @@
         "url": "https://wowforever.one/classes/warlock/spells/"
       }
     },
-    "TRAIN_NOTE": "Fan-run site, read Oct 30. Talent spells are left out of its list. Verify at the trainer or with What's Training?"
+    "TRAIN_NOTE": "Fan-run site, read Oct 30. Talent spells are left out of its list. Verify at the trainer or with What's Training? Shaman review Nov7: beta trainer list still contains obsolete Lava Burst/Totemic Projection entries; verify live spellbook before purchase/binding. Nicktew level20: Ghost Wolf/Frost Shock/Lesser Healing Wave/Recall/Elements; Water quest for Healing Stream. No assumption of trained skills. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
   },
   "addons": {
     "INSTALLED": [
@@ -9625,6 +9836,18 @@
     ],
     "feed_rows": [
       {
+        "lead": "Nov7",
+        "title": "Vorgash guide comparison: Nicktew Recommended added; level20 macros and unlocks reviewed",
+        "detail": "Separate selectable Nicktew6/34/11, all accessible guide sections read; original Icy Veins path retained with conflicts flagged. Level20 utility and manual macros corrected; no game respec/progress edits. Nov10 Strength/AP tuning remains planned, not live. Full Enhance First alternate order unverified. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "meta": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "status": {
+          "label": "Unofficial",
+          "tone": "warning"
+        },
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov7 2026"
+      },
+      {
         "lead": "Nov 7",
         "title": "Build 70862: afternoon/evening hotfix + item waves; still no Shaman/Warlock class hits",
         "detail": "1mw after morning baseline (~14:35 UTC / 9:35 AM ET through ~22:00 UTC): many 70862 hotfix caches (e.g. 166 / 150 / 34 / 19 / 17 / 13 / 10 / 7 / 6 changes) and dozens of item discoveries (dungeon greens, odd-ilvl Thunderfury/Sulfuras/Benediction/Anathema names — unconfirmed). Some waves list Spells counts; 1mw patch-notes analyzer for afternoon caches: no Shaman or Warlock spell/talent hits (Druid Ravage/Bear Form + Warrior Gore Drinker tooltip flips already logged at 9 AM). foreverchanges.pro ~22:17 UTC: Priest Fear Ward castable in Shadowform (not Jason's classes). Blizzard hub / Kaivax still Nov 6 Forever Hotfixes list only (Nov 7 forum reply restates same).",
@@ -10235,6 +10458,61 @@
         "text": "Your notes' build (0/51/0): levels 31–41 follow your notes' own reconstruction from the confirmed tree (the notes: no beta guide goes past 30). Pre-launch: no Forever data past 30 yet.",
         "_source": null,
         "_date": null
+      },
+      {
+        "text": "Nicktew Recommended (updated Nov4, read Nov7): separate selectable 6/34/11; existing Icy Veins path remains default. Selecting a guide is not confirmation of in-game respec. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Level20 priority (Nicktew): Lightning Shield before pull; Flame Shock unless reserving the shared Shock cooldown for an interrupt; Searing Totem before melee; Fire Nova on3+; Earth Shock damage/kick; finish with autos. Front-load mana spending, then allow five-second regeneration. Icy Veins retains rank1 Lightning Bolt opener; both options preserved. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Nicktew25+: prioritize Stormstrike, then shocks; full5/5 Maelstrom at51 before relying on instant Lightning Bolt, Rage52. No automatic rotation macro. These levels are Nicktew order, not proof of learned talents. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Nicktew sustain: Mindfulness38–40; Water Shield43 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Training check at20: Ghost Wolf, Frost Shock1, Lesser Healing Wave1, Totemic Recall, Call of the Elements, Searing2, Lightning Bolt4; Healing Stream1 requires Water Totem quest. Purchases/quest completion unknown. Mana Spring/Magma26, Windfury Weapon/Grounding30, Windfury Totem/Chain Lightning32. Fan beta trainer list: https://wowforever.one/classes/shaman/spells/ (read Nov7; verify spellbook).",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Guide corrections: Mental Dexterity converts Intellect to AP, Mental Quickness to spell damage; 1.5AP/Int versus2AP/Str is75%, not guide66%. Nicktew text implies improved wolf20 but its order says26–27. Totemic Projection name/cursor macro conflicts with recorded Totemic Call rename; verify live spell before binding. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Official Nov6: collect Strength/AP while leveling for PLANNED Nov10 tuning; Strength intended strongest. Do not treat planned changes as live or Nicktew Intellect-with-Water-Shield preference as settled numeric weights. https://us.forums.blizzard.com/en/wow/t/class-tuning-incoming-november-10/2404092/1",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Nicktew weapons: prioritize strong slow2h;1h+shield intentional tank/safety choice. At20 Horde: Forsaken Greataxe (Ruins quest), Hammerbone (WC quest), Smite hammer (Deadmines, required18). Upcoming Heavehammer26–30, Striking Staff28–32, Corpsemaker required29, Ravager37; Nick discourages long Rage of the Storm quest. Guide recommendations single-source, not confirmed drops/stats past30. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Nicktew gear/professions: weapon first, Str/Int/AP and enough Stamina; cheap of-the-Gorilla pieces, crafted LW filler. Keep Leatherworking/Skinning and secondary skills; no profession switch. Cheap XP food/health-mana pots and Str/Int buffs; Mana Well/Fish Bowl useful camp choices. Stone+imbue compatibility unverified; do not overwrite imbue automatically. Guide has no full slot-by-slot BiS or profession leveling route. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Coverage caveat: Recommended calculator/order and all accessible text read Nov7; Full Enhance First alternate calculator not accessible and no video watched. No inferred alternate order. Actual equipment, trained ranks and spent talents unknown from level alone. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; read Nov7 2026"
+      },
+      {
+        "text": "Nicktew final Elemental Devastation is1/3, so his prose claim of9% from that choice is not a verified1-point value; tree displays3%/point. Full Enhance First alternate order unverified. Cheap consumables/camps are optional; keep existing professions. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "Nov4; readNov7"
       }
     ],
     "talents_level60": {
@@ -10437,11 +10715,16 @@
     }
   },
   "_meta": {
-    "version": 15,
-    "generated_at": "2026-11-07T18:19-05:00",
+    "version": 16,
+    "generated_at": "2026-11-07T18:57-05:00",
     "source": "WoW Forever Bot 6 PM meta-watch, Nov 7 2026",
     "notes_commit": "ed3b5f2",
-    "notes": "Nov 7 6pm: 70862 afternoon/evening item waves only — no Sham/WL/racial/prof; Blizzard still Nov 6 list; no L60."
+    "notes": "Nicktew Shaman guide comparison; selectable alternative, level20 macro/Naga fixes; Icy Veins retained, Corvin unchanged."
   },
-  "captions": {}
+  "captions": {
+    "builds": "Vorgash: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updatedNov4/readNov7. Corvin unchanged.",
+    "macros": "Vorgash: level-aware manual macros reviewed against Nicktew Nov4/readNov7;20 unlocks require training, Rank1 kick separate from damage. Native triggers are banks, not assumed keyboard modifiers. Corvin unchanged.",
+    "naga": "Vorgash: learned-skill level20 options corrected; original Icy Veins rotation drives auto layout, Nicktew alternative documented. No controller UI added; Corvin unchanged.",
+    "rotations": "Vorgash: current Icy Veins rotation preserved with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking. Corvin unchanged."
+  }
 }
