@@ -3512,7 +3512,7 @@
                 "Lightning Bolt (Rank 1)",
                 "Lightning Bolt at 5 Maelstrom"
               ],
-              "note": "Icy Veins rank1 pull / Nicktew Flame Shock alternative; instant full-rank at5 stacks only after5/5 at51."
+              "note": "Ctrl: Chain Lightning (32). Icy Veins rank1 pull / Nicktew Flame Shock alternative; instant full-rank at5 stacks only after5/5 at51."
             },
             {
               "key": "ss",
@@ -3520,18 +3520,10 @@
               "icon": "ability_shaman_stormstrike",
               "kind": "rot",
               "covers": [
-                "Stormstrike"
-              ]
-            },
-            {
-              "key": "rotf",
-              "spell": "Rage of the Farseer",
-              "icon": "spell_nature_bloodlust",
-              "kind": "rot",
-              "covers": [
+                "Stormstrike",
                 "Rage of the Farseer"
               ],
-              "note": "52 on both stored guide paths; no combined trinket macro."
+              "note": "Ctrl: Rage of the Farseer from 52 (same press)."
             },
             {
               "key": "es",
@@ -3540,7 +3532,8 @@
               "kind": "rot",
               "covers": [
                 "Earth Shock"
-              ]
+              ],
+              "note": "Ctrl: cheap Rank 1 kick (stops your cast first)."
             },
             {
               "key": "fs",
@@ -3549,15 +3542,6 @@
               "kind": "rot",
               "covers": [
                 "Flame Shock"
-              ]
-            },
-            {
-              "key": "fn",
-              "spell": "Fire Nova",
-              "icon": "spell_fire_sealoffire",
-              "kind": "rot",
-              "covers": [
-                "Fire Nova"
               ]
             },
             {
@@ -3578,11 +3562,14 @@
             },
             {
               "key": "totemseq",
-              "spell": "Searing Totem",
-              "icon": "spell_nature_earthbindtotem",
+              "spell": "Searing Totem · Ctrl Fire Nova",
+              "icon": "spell_fire_searingtotem",
               "kind": "util",
               "lvl": 10,
-              "note": "Individual placement; Nicktew avoids four-totem spending every pull."
+              "note": "One key: Searing Totem; Ctrl for Fire Nova (12) on 3+ mobs with a fire totem out. Individual placement; Nicktew avoids four-totem spending every pull.",
+              "covers": [
+                "Fire Nova"
+              ]
             },
             {
               "key": "cote",
@@ -3643,13 +3630,6 @@
               "lvl": 40
             },
             {
-              "key": "cl",
-              "spell": "Chain Lightning",
-              "icon": "spell_nature_lightningoverload",
-              "kind": "util",
-              "lvl": 32
-            },
-            {
               "key": "ground",
               "spell": "Grounding Totem",
               "icon": "spell_nature_stormreach",
@@ -3671,14 +3651,6 @@
               "kind": "util",
               "lvl": 20,
               "note": "If trained; separate deliberate recall."
-            },
-            {
-              "key": "kick1",
-              "spell": "Earth Shock Rank1 (interrupt)",
-              "icon": "spell_nature_earthshock",
-              "kind": "util",
-              "lvl": 4,
-              "note": "Dedicated cheap kick macro; no automatic targeting/rotation. Damage Earth Shock remains separate."
             }
           ]
         }
@@ -13857,11 +13829,11 @@
     }
   },
   "_meta": {
-    "version": 19,
-    "generated_at": "2026-11-07T19:49-05:00",
-    "source": "WoW Forever Bot gear icons/spacing research, Nov7 2026",
+    "version": 20,
+    "generated_at": "2026-11-07T20:10-05:00",
+    "source": "Claude Naga merge, Nov 7 2026 (Jason asked)",
     "notes_commit": "ed3b5f2",
-    "notes": "Three missing gear icons use existing sprite fallbacks with Forever qualities; scoped acquisition prose spacing only."
+    "notes": "Vorgash Naga: Fire Nova, Chain Lightning, Rank 1 kick and Rage of the Farseer ride Ctrl on Searing Totem, Lightning Bolt, Earth Shock and Stormstrike instead of taking their own slots."
   },
   "captions": {
     "builds": "Vorgash: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updatedNov4/readNov7. Corvin unchanged.",
