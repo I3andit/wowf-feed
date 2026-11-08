@@ -175,6 +175,9 @@ const CSS = `
 .wf-role-main { color: #1a0f00; text-shadow: 0 1px 0 rgba(255,236,170,.6); border: 1px solid #000; background: linear-gradient(180deg, #ffe9a3 0%, #f5c84c 45%, #b8861f 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 0 0 1px #8a6216, 0 0 8px rgba(245,200,76,.45); }
 .wf-role-alt { color: #d8d8d8; border: 1px solid #000; background: linear-gradient(180deg, #6e6e6e 0%, #44403a 50%, #26231f 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 0 0 1px #4a3d22; }
 .wf-role-note { font-size: 11px; color: #c9b98e; font-style: italic; }
+.wf-macro { display: inline-block; margin-left: 6px; font-size: 10px; line-height: 1.35; padding: 0 6px; border-radius: 4px; border: 1px solid ${GOLD}; color: ${GOLD_HI}; background: linear-gradient(180deg, #3a2c14, #1a140b); text-decoration: none; font-weight: 600; letter-spacing: .04em; vertical-align: 1px; }
+.wf-macro:hover { border-color: ${GOLD_HI}; box-shadow: 0 0 8px rgba(245,215,122,.45); }
+.wf-macro-sm { font-size: 9px; padding: 0 4px; margin-left: 4px; }
 .wf-prelabel { padding: 8px 10px; border-radius: 8px; border: 1px dashed #ff9b3d; background: rgba(255,128,0,.06); font-size: 12px; color: #ece2c8; }
 .wf-nav { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; padding: 8px 12px; border: 1px solid #6b5a33; border-radius: 10px; background: linear-gradient(180deg, rgba(36,29,21,.97), rgba(13,12,10,.97)); box-shadow: inset 0 0 0 1px #000, 0 6px 18px rgba(0,0,0,.65); backdrop-filter: blur(6px); }
 .wf-nav-chars { display: flex; gap: 6px; flex: none; }
@@ -539,7 +542,7 @@ function MetaBoard() {
   );
 }
 
-type Bind = { n: number; spell: string; icon: string; note?: string; lock?: number };
+type Bind = { n: number; spell: string; icon: string; note?: string; lock?: number; key?: string };
 type Stage = { id: string; label: string; base: Bind[] };
 type FKey = { k: string; spell: string; icon: string };
 type NagaSpec = { stages: Stage[]; shift: Bind[]; fkeys: FKey[]; auto?: NAuto };
@@ -604,7 +607,18 @@ function nagaWhere(spec: string, lv: number, keys: string[]): string | null {
 
 const NAGA: Record<string, NagaSpec> = WF_DATA.naga.NAGA;
 
-function NagaPad({ base, shift, fkeys, color }: { base: Bind[]; shift: Bind[]; fkeys: FKey[]; color: string }) {
+// Nov 7: a button or F-key that has a macro in the Macro book shows a Macro tag (hover for what it does).
+// Spec-specific macros win over "both"; level-variant macros (lvl / until) pick the one for this level.
+function macroOn(spec: string, lv: number, key?: string, fkey?: string): Macro | undefined {
+  const ok = (m: Macro) => !(m.lvl && m.lvl > lv) && !(m.until && lv >= m.until) && (key ? (m.bind ?? []).indexOf(key) >= 0 : !!fkey && m.fkey === fkey);
+  return MACROS.find((m: Macro) => m.spec === spec && ok(m)) ?? (spec !== "enh" ? MACROS.find((m: Macro) => m.spec === "both" && ok(m)) : undefined);
+}
+function MacroTag({ m, small }: { m?: Macro; small?: boolean }) {
+  if (!m) return null;
+  return <a href="#macros" className={`wf-macro${small ? " wf-macro-sm" : ""}`} title={`Macro: ${m.title}. ${m.does} Copy it from the Macro book.`}>Macro</a>;
+}
+
+function NagaPad({ base, shift, fkeys, color, mspec, mlv }: { base: Bind[]; shift: Bind[]; fkeys: FKey[]; color: string; mspec: string; mlv: number }) {
   const rows: [number, number][] = [[1, 6], [2, 5], [3, 4]];
   const find = (list: Bind[], n: number): Bind => list.find((b: Bind) => b.n === n) ?? { n, spell: "", icon: "inv_misc_note_01" };
   const btn = (n: number) => {
@@ -615,11 +629,11 @@ function NagaPad({ base, shift, fkeys, color }: { base: Bind[]; shift: Bind[]; f
         <div style={{ width: 26, height: 26, borderRadius: 9999, background: color, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: 13, flex: "none" }}>{n}</div>
         <span style={{ opacity: b.lock ? 0.45 : 1, filter: b.lock ? "grayscale(.8)" : undefined }}><Icon icon={b.icon} size={40} name={b.spell} tip={b.note} /></span>
         <div style={{ minWidth: 0, flex: 1 }}>
-          <div style={{ color: b.lock ? MUTED : INK, fontSize: 13, fontWeight: 600 }}>{b.spell}{b.lock ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {b.lock}</span> : null}</div>
+          <div style={{ color: b.lock ? MUTED : INK, fontSize: 13, fontWeight: 600 }}>{b.spell}{b.lock ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {b.lock}</span> : null}<MacroTag m={macroOn(mspec, mlv, b.key)} /></div>
           {b.note ? <div style={{ color: MUTED, fontSize: 11 }}>{b.note}</div> : null}
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 4 }}>
             <Icon icon={s.icon} size={20} name={`Shift+${n}: ${s.spell}`} tip={s.note} />
-            <span style={{ color: s.lock ? MUTED : GOLD_HI, fontSize: 11 }}>Shift: {s.spell || "open"}{s.lock ? ` · Lv ${s.lock}` : ""}</span>
+            <span style={{ color: s.lock ? MUTED : GOLD_HI, fontSize: 11 }}>Shift: {s.spell || "open"}{s.lock ? ` · Lv ${s.lock}` : ""}<MacroTag m={macroOn(mspec, mlv, s.key)} small /></span>
           </div>
         </div>
       </div>
@@ -643,7 +657,7 @@ function NagaPad({ base, shift, fkeys, color }: { base: Bind[]; shift: Bind[]; f
           <div key={f.k} className="wf-btn" style={{ display: "flex", gap: 8, alignItems: "center", padding: "6px 10px", borderRadius: 6, border: `1px solid #5a4a2a`, background: "#1a1612" }}>
             <span style={{ color: GOLD_HI, fontWeight: 700, fontSize: 12 }}>{f.k}</span>
             <Icon icon={f.icon} size={24} name={f.spell} />
-            <span style={{ color: INK, fontSize: 12 }}>{f.spell}</span>
+            <span style={{ color: INK, fontSize: 12 }}>{f.spell}<MacroTag m={macroOn(mspec, mlv, undefined, f.k)} small /></span>
           </div>
         ))}
       </div>
@@ -652,14 +666,14 @@ function NagaPad({ base, shift, fkeys, color }: { base: Bind[]; shift: Bind[]; f
 }
 
 // ===== 12-button Naga plate (notes commit 44475e0, written Oct 30; untested in game) =====
-type B12 = { n: number; spell: string; icon: string; note?: string; alt?: boolean; lock?: number };
+type B12 = { n: number; spell: string; icon: string; note?: string; alt?: boolean; lock?: number; key?: string };
 type Layout12 = { from: number; who: string; title: string; intro: string; buttons: B12[]; shift: B12[]; extra?: string; src: string; auto?: boolean };
 const KEYS12: string[] = WF_DATA.naga.KEYS12;
 const ROWS12: { job: string; ns: number[] }[] = WF_DATA.naga.ROWS12;
 const NAGA12: Record<string, Layout12> = WF_DATA.naga.NAGA12;
 const SETUP12: { title: string; detail: string }[] = WF_DATA.naga.SETUP12;
 
-function NagaPad12({ layout, fkeys, color, preview }: { layout: Layout12; fkeys: FKey[]; color: string; preview: boolean }) {
+function NagaPad12({ layout, fkeys, color, preview, mspec, mlv }: { layout: Layout12; fkeys: FKey[]; color: string; preview: boolean; mspec: string; mlv: number }) {
   const btn = (n: number, job: string) => {
     const b = layout.buttons.find((x: B12) => x.n === n);
     const s = n <= 6 ? layout.shift.find((x: B12) => x.n === n) : undefined;
@@ -672,11 +686,11 @@ function NagaPad12({ layout, fkeys, color, preview }: { layout: Layout12; fkeys:
           {b ? <Icon icon={b.icon} size={40} name={b.spell} tip={tip} ring={b.alt ? MUTED : undefined} /> : <span style={{ width: 40, height: 40, borderRadius: 4, border: "1px dashed #6b5a33", display: "flex", alignItems: "center", justifyContent: "center", color: MUTED, fontSize: 10 }}>open</span>}
           <span style={{ marginLeft: "auto", fontFamily: "ui-monospace, Menlo, Consolas, monospace", fontSize: 12, color: GOLD_HI, padding: "1px 7px", borderRadius: 4, border: "1px solid #6b5a33", background: "#0b0a08" }}>{key}</span>
         </div>
-        <div style={{ color: b ? INK : MUTED, fontSize: 12, fontWeight: 600, lineHeight: 1.25 }}>{b ? b.spell : "Open slot"}{b && b.alt ? <span style={{ color: MUTED, fontWeight: 400 }}> *</span> : null}{b && b.lock ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {b.lock}</span> : null}</div>
+        <div style={{ color: b ? INK : MUTED, fontSize: 12, fontWeight: 600, lineHeight: 1.25 }}>{b ? b.spell : "Open slot"}{b && b.alt ? <span style={{ color: MUTED, fontWeight: 400 }}> *</span> : null}{b && b.lock ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {b.lock}</span> : null}{b ? <MacroTag m={macroOn(mspec, mlv, b.key)} /> : null}</div>
         {b && b.note ? <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.25 }}>{b.note}</div> : null}
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: "auto", paddingTop: 4, borderTop: "1px solid #2e271c" }}>
           {s ? <Icon icon={s.icon} size={20} name={`Shift-${n}: ${s.spell}`} tip={`Bottom Right Action Button ${n}${s.alt ? " · icon is a stand-in" : ""}`} /> : null}
-          <span style={{ color: s && !s.lock ? GOLD_HI : MUTED, fontSize: 11, lineHeight: 1.25 }}>{s ? `Shift-${n}: ${s.spell}${s.lock ? ` · Lv ${s.lock}` : ""}` : n <= 6 ? "Shift: open" : "Shift: none in notes"}</span>
+          <span style={{ color: s && !s.lock ? GOLD_HI : MUTED, fontSize: 11, lineHeight: 1.25 }}>{s ? `Shift-${n}: ${s.spell}${s.lock ? ` · Lv ${s.lock}` : ""}` : n <= 6 ? "Shift: open" : "Shift: none in notes"}{s ? <MacroTag m={macroOn(mspec, mlv, s.key)} small /> : null}</span>
         </div>
       </div>
     );
@@ -702,7 +716,7 @@ function NagaPad12({ layout, fkeys, color, preview }: { layout: Layout12; fkeys:
               <div key={s.n} style={{ display: "flex", alignItems: "center", gap: 8, padding: "3px 0" }}>
                 <span style={{ fontFamily: "ui-monospace, Menlo, Consolas, monospace", fontSize: 11, color: GOLD_HI, width: 52, flex: "none" }}>Shift-{s.n}</span>
                 <Icon icon={s.icon} size={24} name={s.spell} tip={`Bottom Right Action Button ${s.n}${s.alt ? " · icon is a stand-in" : ""}`} ring={s.alt ? MUTED : undefined} />
-                <span style={{ fontSize: 12, color: s.lock ? MUTED : INK }}>{s.spell}{s.alt ? <span style={{ color: MUTED }}> *</span> : null}{s.lock ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {s.lock}</span> : null}</span>
+                <span style={{ fontSize: 12, color: s.lock ? MUTED : INK }}>{s.spell}{s.alt ? <span style={{ color: MUTED }}> *</span> : null}{s.lock ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {s.lock}</span> : null}<MacroTag m={macroOn(mspec, mlv, s.key)} small /></span>
               </div>
             ))}
             <div style={{ fontSize: 11, color: MUTED, marginTop: 4 }}>Naga 7–12 have no Shift layer in the notes.</div>
@@ -712,7 +726,7 @@ function NagaPad12({ layout, fkeys, color, preview }: { layout: Layout12; fkeys:
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
               {fkeys.map((f: FKey) => (
                 <span key={f.k} style={{ display: "inline-flex", gap: 6, alignItems: "center", padding: "3px 8px", borderRadius: 6, border: "1px solid #5a4a2a", background: "#1a1612" }}>
-                  <span style={{ color: GOLD_HI, fontWeight: 700, fontSize: 11 }}>{f.k}</span><Icon icon={f.icon} size={20} name={f.spell} /><span style={{ color: INK, fontSize: 11 }}>{f.spell}</span>
+                  <span style={{ color: GOLD_HI, fontWeight: 700, fontSize: 11 }}>{f.k}</span><Icon icon={f.icon} size={20} name={f.spell} /><span style={{ color: INK, fontSize: 11 }}>{f.spell}<MacroTag m={macroOn(mspec, mlv, undefined, f.k)} small /></span>
                 </span>
               ))}
             </div>
@@ -1299,7 +1313,7 @@ function PathTimeline({ go }: { go: (level: number, spec: number) => void }) {
   );
 }
 
-type Macro = { title: string; icon: string; spec: "aff" | "demo" | "both" | "enh"; where: string; code: string; does: string; tag?: "NEW" | "FIXED"; lvl?: number; src: string; url?: string; flag?: string; bind?: string[] };
+type Macro = { title: string; icon: string; spec: "aff" | "demo" | "both" | "enh"; where: string; code: string; does: string; tag?: "NEW" | "FIXED"; lvl?: number; until?: number; src: string; url?: string; flag?: string; bind?: string[]; fkey?: string };
 const WFDB_AFF = WF_DATA.macros.WFDB_AFF;
 const WFDB_DEMO = WF_DATA.macros.WFDB_DEMO;
 const WFDB_ENH = WF_DATA.macros.WFDB_ENH;
@@ -1355,7 +1369,8 @@ function MacroBook({ lvV, lvC, view }: { lvV: number; lvC: number; view: View })
   const [fPick, setF] = useState<string>("all");
   const [showAll, setShowAll] = useState<boolean>(false);
   const lvOf = (m: Macro) => m.spec === "enh" ? lvV : lvC;
-  const locked = (m: Macro) => !!m.lvl && m.lvl > lvOf(m);
+  const replaced = (m: Macro) => !!m.until && lvOf(m) >= m.until;
+  const locked = (m: Macro) => (!!m.lvl && m.lvl > lvOf(m)) || replaced(m);
   const liveWhere = (m: Macro): string | undefined => {
     if (!m.bind) return undefined;
     const specs = m.spec === "enh" ? [["enh", "Vorgash", lvV]] : m.spec === "both" ? [["aff", "Aff", lvC], ["demo", "Demo", lvC]] : [[m.spec, m.spec === "aff" ? "Aff" : "Demo", lvC]];
@@ -1382,7 +1397,7 @@ function MacroBook({ lvV, lvC, view }: { lvV: number; lvC: number; view: View })
         {list.map((m: Macro) => locked(m) ? <div key={m.title} style={{ opacity: 0.45, filter: "grayscale(.8)" }}><MacroCard m={m} live={liveWhere(m)} /></div> : <MacroCard key={m.title} m={m} live={liveWhere(m)} />)}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 10, flexWrap: "wrap", fontSize: 12, color: MUTED }}>
-        <span>Macros with a Lv tag above the character's level (Vorgash {lvV} for Enhancement, Corvin {lvC} for Warlock) are {showAll ? "grayed" : "hidden"}. Untagged macros always show.</span>
+        <span>Macros with a Lv tag above the character's level (Vorgash {lvV} for Enhancement, Corvin {lvC} for Warlock) are {showAll ? "grayed" : "hidden"}, and so are older versions of a macro once its next level version takes over (Curse button, Imbue chooser, Demon Armor). Untagged macros always show.</span>
         <button type="button" className="wf-btn" onClick={() => setShowAll(!showAll)} style={{ padding: "2px 10px", borderRadius: 999, border: `1px solid ${showAll ? GOLD : "#4a3d22"}`, background: showAll ? "rgba(245,215,122,.15)" : "transparent", color: showAll ? GOLD_HI : INK, fontSize: 12 }}>{showAll ? "Hide locked" : "Show all"}</button>
       </div>
       <div style={{ fontSize: 11, color: MUTED, marginTop: 10 }}>Syntax checked against Forever's macro pages on wowfdb (read Oct 30). Every wowfdb macro is marked Untested there, and none of these have been run in the Forever client yet.</div>
@@ -2358,7 +2373,7 @@ export default function App() {
   const [prev12C, setPrev12C] = useState<boolean>(false);
   const n12raw = NAGA12[nagaSpec];
   const plate = nagaPlate(nagaSpec, nagaLv, nagaLv >= n12raw.from);
-  const toB = (x: NSlot, n: number): Bind => ({ n, spell: x.spell, icon: x.icon, note: x.note, lock: x.locked ? x.lv : undefined });
+  const toB = (x: NSlot, n: number): Bind => ({ n, spell: x.spell, icon: x.icon, note: x.note, lock: x.locked ? x.lv : undefined, key: x.key });
   const base6: Bind[] = plate.base.map((x: NSlot, i: number) => toB(x, POS6[i]));
   const shift6: Bind[] = plate.shift.map((x: NSlot, i: number) => toB(x, POS6[i]));
   const n12: Layout12 = { ...n12raw, auto: true, buttons: plate.base.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), shift: plate.shift.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), src: `${spec.auto && spec.auto.src ? spec.auto.src : "ROT"}; ${n12raw.src}` };
@@ -2417,13 +2432,13 @@ export default function App() {
           </label>
           {nagaPrev !== null ? <button type="button" className="wf-btn" onClick={() => setNagaPrev(null)} style={{ padding: "4px 12px", borderRadius: 6, border: `1px solid ${ORANGE}`, background: "rgba(255,128,0,.18)", color: ORANGE, fontSize: 12, fontWeight: 700 }}>Back to {nagaWho}'s level</button> : null}
         </div>
-        {use12 ? <NagaPad12 layout={n12} fkeys={spec.fkeys} color={nagaColor} preview={!reached12} /> : <NagaPad base={base6} shift={shift6} fkeys={spec.fkeys} color={nagaColor} />}
+        {use12 ? <NagaPad12 layout={n12} fkeys={spec.fkeys} color={nagaColor} preview={!reached12} mspec={nagaSpec} mlv={nagaLv} /> : <NagaPad base={base6} shift={shift6} fkeys={spec.fkeys} color={nagaColor} mspec={nagaSpec} mlv={nagaLv} />}
         {plate.extra.length ? (
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", padding: "8px 12px", borderRadius: 8, border: "1px solid #4a3d22", background: "rgba(0,0,0,.25)" }}>
             <span style={{ color: GOLD, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase" }}>No Naga slot left · keyboard or bar</span>
             {plate.extra.map((x: NSlot) => (
               <span key={x.key} style={{ display: "inline-flex", gap: 6, alignItems: "center", padding: "3px 8px", borderRadius: 6, border: "1px solid #5a4a2a", background: "#1a1612", opacity: x.locked ? 0.55 : 1 }}>
-                <Icon icon={x.icon} size={20} name={x.spell} tip={x.note} /><span style={{ color: INK, fontSize: 11 }}>{x.spell}</span>{x.locked ? <span style={{ fontSize: 10, color: ORANGE }}>Lv {x.lv}</span> : null}
+                <Icon icon={x.icon} size={20} name={x.spell} tip={x.note} /><span style={{ color: INK, fontSize: 11 }}>{x.spell}<MacroTag m={macroOn(nagaSpec, nagaLv, x.key)} small /></span>{x.locked ? <span style={{ fontSize: 10, color: ORANGE }}>Lv {x.lv}</span> : null}
               </span>
             ))}
           </div>
