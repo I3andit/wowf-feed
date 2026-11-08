@@ -178,6 +178,24 @@ const CSS = `
 .wf-macro { display: inline-block; margin-left: 6px; font-size: 10px; line-height: 1.35; padding: 0 6px; border-radius: 4px; border: 1px solid ${GOLD}; color: ${GOLD_HI}; background: linear-gradient(180deg, #3a2c14, #1a140b); text-decoration: none; font-weight: 600; letter-spacing: .04em; vertical-align: 1px; }
 .wf-macro:hover { border-color: ${GOLD_HI}; box-shadow: 0 0 8px rgba(245,215,122,.45); }
 .wf-macro-sm { font-size: 9px; padding: 0 4px; margin-left: 4px; }
+.wf-badges { display: inline-flex; flex-wrap: wrap; gap: 4px; align-items: center; margin-top: 2px; }
+.wf-fac { display: inline-block; font-size: 9px; line-height: 1.35; padding: 0 5px; border-radius: 3px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border: 1px solid; }
+.wf-fac-h { color: #ff8f8f; border-color: #8c1c1c; background: rgba(140,28,28,.28); }
+.wf-fac-b { color: ${GOLD_HI}; border-color: #6b5a33; background: rgba(107,90,51,.22); }
+.wf-fac-x { color: ${ORANGE}; border-color: ${ORANGE}; background: rgba(255,128,0,.12); }
+.wf-acq { margin-top: 4px; font-size: 11px; color: ${INK}; }
+.wf-acq summary { cursor: pointer; color: ${GOLD}; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; list-style: none; }
+.wf-acq summary::-webkit-details-marker { display: none; }
+.wf-acq summary::before { content: "▸ "; }
+.wf-acq[open] summary::before { content: "▾ "; }
+.wf-acq summary:hover { color: ${GOLD_HI}; }
+.wf-acq-body { display: grid; gap: 4px; margin-top: 4px; padding: 6px 8px; border-left: 2px solid #6b5a33; background: rgba(0,0,0,.3); border-radius: 0 6px 6px 0; line-height: 1.4; text-align: left; }
+.wf-acq-note { color: ${MUTED}; }
+.wf-acq-alt { color: #b3cbe8; }
+.wf-acq-warn { color: #ffc285; }
+.wf-acq-blocked { color: #ff8f8f; text-decoration: none; }
+.wf-acq-src { color: ${MUTED}; font-size: 10px; }
+.wf-acq-src a { color: ${GOLD}; }
 .wf-prelabel { padding: 8px 10px; border-radius: 8px; border: 1px dashed #ff9b3d; background: rgba(255,128,0,.06); font-size: 12px; color: #ece2c8; }
 .wf-nav { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; padding: 8px 12px; border: 1px solid #6b5a33; border-radius: 10px; background: linear-gradient(180deg, rgba(36,29,21,.97), rgba(13,12,10,.97)); box-shadow: inset 0 0 0 1px #000, 0 6px 18px rgba(0,0,0,.65); backdrop-filter: blur(6px); }
 .wf-nav-chars { display: flex; gap: 6px; flex: none; }
@@ -1412,7 +1430,68 @@ const LOCK_GEAR: string[][] = WF_DATA.gear.LOCK_GEAR;
 // Item icon and quality: Wowhead's WoW Forever item database (exact-name matches, read Oct 30 2026). Icons live in sprite C.
 const QUALITY: Record<number, [string, string]> = WF_DATA.gear.QUALITY;
 const ITEM_INFO: Record<string, [string, number]> = WF_DATA.gear.ITEM_INFO;
-type GPick = { id: string; lv: string; from: number; to: number; name: string; item: string; alt?: string; src: string };
+type GPick = {
+  id: string; lv: string; from: number; to: number; name: string; item: string; alt?: string; src: string;
+  // Gear pass fields (Bot, Nov 7, v18). All optional: older picks only have src.
+  how?: string; faction?: string; faction_basis?: string; _source?: string[]; _date?: string; source_type?: string;
+  confirmation?: string; source_count_note?: string; conflicts?: string[]; unverified?: string[];
+  alt_label?: string; alt_acquisition?: { how?: string }; future_alternatives?: string[]; disputed_leads?: string[]; blocked_leads?: string[];
+  classic_drop_estimate?: { percent: number; tag?: string }; reported_rate_note?: string;
+};
+const GEAR_BLOCKED: Record<string, { how?: string; _source?: string[] }> = WF_DATA.gear.GEAR_BLOCKED_LEADS || {};
+// The feed's text sometimes drops the space before a number ("At15", "Leatherworking130"); put it back for reading.
+function gtext(t?: string): string {
+  return (t || "").replace(/([A-Za-z]{2,})(\d)/g, (m: string, w: string, d: string) => (/^(mp|MP|Rank|R|T|x)$/.test(w) ? m : `${w} ${d}`));
+}
+function shortHow(p: GPick): string {
+  const t = gtext(p.how || p.src.split(" · ").slice(-1)[0] || p.src);
+  const first = t.split(/(?<=\.)\s/)[0];
+  return first.length > 130 ? `${first.slice(0, 127)}…` : first;
+}
+function altLabel(p: GPick): string {
+  return (p.alt_label || "Alt").replace(/^Alt\s*[—–-]\s*/, "Alt: ");
+}
+function GearBadges({ p }: { p: GPick }) {
+  const conf = p.confirmation || "";
+  const confirmed = /forever-confirmed/i.test(conf) && !/not forever-confirmed/i.test(conf);
+  const classic = /classic-data/i.test(p.source_type || "") || !!p.classic_drop_estimate;
+  if (!p.faction && !conf && !classic) return null;
+  return (
+    <span className="wf-badges">
+      {p.faction ? <span className={`wf-fac wf-fac-${p.faction === "Horde" ? "h" : p.faction === "Both" ? "b" : "x"}`} title={p.faction_basis || `Faction: ${p.faction}`}>{p.faction}</span> : null}
+      {conf ? (confirmed ? <span className="wf-confirmed" title={conf}>Forever-confirmed</span> : <span className="wf-mark wf-mark-guide" title={conf}>Unofficial</span>) : null}
+      {classic ? <span className="wf-mark wf-mark-notes" title={p.classic_drop_estimate?.tag || "Some numbers here are Classic data, not confirmed in Forever"}>{p.classic_drop_estimate ? `~${p.classic_drop_estimate.percent}% (Classic)` : "Classic data"}</span> : null}
+    </span>
+  );
+}
+function hostOf(u: string): string { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e: unknown) { return u; } }
+function GearAcq({ p, open }: { p: GPick; open?: boolean }) {
+  if (!p.how && !p._source) return null;
+  const row = (label: string, items: string[] | undefined, cls: string) => (items && items.length ? <div className={cls}><b>{label}:</b> {items.map(gtext).join(" · ")}</div> : null);
+  return (
+    <details className="wf-acq" open={open} onClick={(e: { stopPropagation: () => void }) => e.stopPropagation()}>
+      <summary>How to get it{p.faction ? ` · ${p.faction}` : ""}</summary>
+      <div className="wf-acq-body">
+        {p.how ? <div>{gtext(p.how)}</div> : null}
+        {p.faction_basis ? <div className="wf-acq-note">{gtext(p.faction_basis)}</div> : null}
+        {p.classic_drop_estimate ? <div><b>Drop chance:</b> about {p.classic_drop_estimate.percent}% <span className="wf-mark wf-mark-notes">{p.classic_drop_estimate.tag || "Classic data"}</span></div> : null}
+        {p.reported_rate_note ? <div className="wf-acq-note">{gtext(p.reported_rate_note)}</div> : null}
+        {p.alt ? <div className="wf-acq-alt"><b>{altLabel(p)}</b> · {p.alt}{p.alt_acquisition && p.alt_acquisition.how ? `. ${gtext(p.alt_acquisition.how)}` : ""}</div> : null}
+        {row("Future alternative", p.future_alternatives, "wf-acq-alt")}
+        {row("Disputed, not a plan", p.disputed_leads, "wf-acq-warn")}
+        {(p.blocked_leads || []).map((n: string) => (
+          <div key={n} className="wf-acq-blocked"><b>Blocked, not recommended:</b> {n}{GEAR_BLOCKED[n] && GEAR_BLOCKED[n].how ? `. ${gtext(GEAR_BLOCKED[n].how)}` : ""}</div>
+        ))}
+        {row("Source conflict", p.conflicts, "wf-acq-warn")}
+        {row("Not verified", p.unverified, "wf-acq-note")}
+        {p.confirmation ? <div className="wf-acq-note">{p.confirmation}{p.source_count_note ? ` · ${p.source_count_note}` : ""}</div> : null}
+        {p._source && p._source.length ? (
+          <div className="wf-acq-src">Sources, read {p._date || "date not given"}: {p._source.map((u: string, k: number) => <span key={u}>{k ? " · " : ""}<a href={u} target="_blank" rel="noopener noreferrer">{hostOf(u)}</a></span>)}</div>
+        ) : null}
+      </div>
+    </details>
+  );
+}
 type GSlot = { slot: string; picks: GPick[]; none?: string };
 function lvRange(lv: string): [number, number] {
   const m = lv.match(/^(\d+)\s*[–-]\s*(\d+)$/);
@@ -1463,7 +1542,7 @@ function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror }: { s: GSlot; lv: num
   return (
     <div className={chase ? "wf-glow" : undefined} role="button" tabIndex={0} onClick={() => onSel(s.slot)} style={{ position: "relative", display: "flex", flexDirection: mirror ? "row-reverse" : "row", gap: 8, alignItems: "flex-start", padding: 6, borderRadius: 6, border: `1px solid ${chase ? ORANGE : sel ? GOLD_HI : "#3a3020"}`, background: chase ? "linear-gradient(180deg, rgba(255,128,0,.14), rgba(0,0,0,.35))" : "rgba(0,0,0,.35)", textAlign: mirror ? "right" : "left", cursor: s.picks.length > 1 ? "pointer" : "default", opacity: state === "soon" ? 0.78 : 1 }}>
       <div style={{ flex: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
-        <span style={{ display: "block", borderRadius: 5, boxShadow: `0 0 0 1px #000, 0 0 8px ${q[0]}88` }}><Icon icon={info ? info[0] : ""} size={36} ring={q[0]} name={p.name} tip={`${q[1]} · ${p.src}`} /></span>
+        <span style={{ display: "block", borderRadius: 5, boxShadow: `0 0 0 1px #000, 0 0 8px ${q[0]}88` }}><Icon icon={info ? info[0] : ""} size={36} ring={q[0]} name={p.name} tip={`${q[1]}${p.faction ? ` · ${p.faction}` : ""} · ${shortHow(p)}`} /></span>
         <span onClick={(e: { stopPropagation: () => void }) => e.stopPropagation()} style={{ display: "flex", alignItems: "center", gap: 2, fontSize: 9, color: got ? FEL : MUTED }}><TickBox on={got} onClick={() => toggle(p.id)} small color={q[0]} />Got</span>
       </div>
       <div style={{ minWidth: 0, flex: 1 }}>
@@ -1472,8 +1551,10 @@ function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror }: { s: GSlot; lv: num
           {chase ? <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: ".08em", padding: "0 5px", borderRadius: 3, background: ORANGE, color: "#1a0d00" }}>CHASE</span> : null}
           {s.picks.length > 1 ? <span style={{ fontSize: 9, color: GOLD }}>{i + 1}/{s.picks.length}</span> : null}
         </div>
-        <div style={{ fontSize: 12, fontWeight: 600, lineHeight: 1.25, color: q[0], textShadow: "0 1px 0 #000", overflowWrap: "anywhere" }}>{p.name}{p.alt ? <span style={{ color: MUTED, fontWeight: 400 }}> or <span style={{ color: alt ? QUALITY[alt[1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></span> : null}</div>
-        <div style={{ fontSize: 10, color: MUTED, lineHeight: 1.3, overflowWrap: "anywhere" }}>{p.src}</div>
+        <div style={{ fontSize: 12, fontWeight: 600, lineHeight: 1.25, color: q[0], textShadow: "0 1px 0 #000", overflowWrap: "anywhere" }}>{p.name}{p.alt && !p.alt_label ? <span style={{ color: MUTED, fontWeight: 400 }}> or <span style={{ color: alt ? QUALITY[alt[1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></span> : null}</div>
+        <div style={{ fontSize: 10, color: MUTED, lineHeight: 1.3, overflowWrap: "anywhere" }}>{shortHow(p)}</div>
+        {p.alt && p.alt_label ? <div style={{ fontSize: 10, color: "#b3cbe8", lineHeight: 1.3 }}>{altLabel(p)} · <span style={{ color: alt ? QUALITY[alt[1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></div> : null}
+        <GearBadges p={p} />
         <div style={{ fontSize: 10, color: state === "soon" ? ORANGE : INK }}>Lv {p.lv}{state === "soon" ? ` · from ${p.from}` : state === "past" ? " · past its range" : ""}</div>
         {prePick(p) ? <span className="wf-mark wf-mark-notes" style={{ fontSize: 9 }}>{NOTES_PRE}</span> : state === "past" && lv > 30 ? <span className="wf-pre wf-pre-sm" title="Your notes have no pick for this slot past 30">{PRE_LABEL}</span> : null}
       </div>
@@ -1487,9 +1568,9 @@ function GearSheet({ who, lv, ck, toggle }: { who: "sham" | "lock"; lv: number; 
   const picks = all.flatMap((s: GSlot) => s.picks);
   const gotN = picks.filter((p: GPick) => !!ck[p.id]).length;
   const chasing = all.filter((s: GSlot) => { const r = gearPick(s, lv); return !!r.p && r.state === "now" && !ck[r.p.id]; });
-  const multi = all.filter((s: GSlot) => s.picks.length > 1);
+  const multi = all.filter((s: GSlot) => s.picks.length > 0); // Nov 7: every slot opens its how-to panel, not only 2+ item slots
   const [sel, setSel] = useState<string>("");
-  const cur = multi.find((s: GSlot) => s.slot === sel) ?? chasing.find((s: GSlot) => s.picks.length > 1) ?? multi[0];
+  const cur = multi.find((s: GSlot) => s.slot === sel) ?? chasing.find((s: GSlot) => s.picks.length > 1) ?? chasing[0] ?? multi[0];
   const onSel = (slot: string) => setSel(slot);
   const slotEl = (s: GSlot, mirror?: boolean) => <GearSlot key={s.slot} s={s} lv={lv} ck={ck} toggle={toggle} sel={!!cur && cur.slot === s.slot} onSel={onSel} mirror={mirror} />;
   return (
@@ -1506,7 +1587,7 @@ function GearSheet({ who, lv, ck, toggle }: { who: "sham" | "lock"; lv: number; 
             <div style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap", fontSize: 10 }}>
               {[2, 3].map((n: number) => <span key={n} style={{ color: QUALITY[n][0] }}>■ {QUALITY[n][1]}</span>)}
             </div>
-            <div style={{ fontSize: 10, color: MUTED, lineHeight: 1.35 }}>Glowing slots are the chase item for this level. Tap a slot with 2+ items to see its upgrade path below.</div>
+            <div style={{ fontSize: 10, color: MUTED, lineHeight: 1.35 }}>Glowing slots are the chase item for this level. Tap any slot to see how to get it below.</div>
           </div>
           <div className="wf-sheet-r">{sh.right.map((s: GSlot) => slotEl(s, true))}</div>
           <div className="wf-sheet-b">{sh.bottom.map((s: GSlot) => slotEl(s))}</div>
@@ -1514,7 +1595,7 @@ function GearSheet({ who, lv, ck, toggle }: { who: "sham" | "lock"; lv: number; 
         {cur ? (
           <div className="wf-pop" key={`${who}-${cur.slot}`} style={{ marginTop: 12, padding: 10, borderRadius: 8, border: "1px solid #3a3020", background: "rgba(0,0,0,.35)" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", marginBottom: 8 }}>
-              <span style={{ fontFamily: SERIF, color: GOLD_HI, fontSize: 14 }}>Upgrade path: {cur.slot}</span>
+              <span style={{ fontFamily: SERIF, color: GOLD_HI, fontSize: 14 }}>{cur.picks.length > 1 ? "Upgrade path" : "How to get it"}: {cur.slot}</span>
               {multi.map((s: GSlot) => (
                 <button key={s.slot} type="button" className="wf-tab" onClick={() => setSel(s.slot)} style={{ fontSize: 11, padding: "2px 8px", borderRadius: 999, border: `1px solid ${s.slot === cur.slot ? GOLD_HI : "#4a3d22"}`, background: s.slot === cur.slot ? "rgba(245,215,122,.15)" : "transparent", color: s.slot === cur.slot ? "#fff" : MUTED }}>{s.slot}</button>
               ))}
@@ -1529,11 +1610,13 @@ function GearSheet({ who, lv, ck, toggle }: { who: "sham" | "lock"; lv: number; 
                 return (
                   <div key={`${p.id}-${k}`} style={{ display: "flex", gap: 8, alignItems: "center", padding: "4px 6px", borderRadius: 6, border: `1px solid ${isNow && !got ? ORANGE : "transparent"}`, background: isNow ? "rgba(255,128,0,.08)" : "transparent" }}>
                     <TickBox on={got} onClick={() => toggle(p.id)} small color={q[0]} />
-                    <Icon icon={info ? info[0] : ""} size={28} ring={q[0]} name={p.name} tip={`${q[1]} · ${p.src}`} />
+                    <Icon icon={info ? info[0] : ""} size={28} ring={q[0]} name={p.name} tip={`${q[1]}${p.faction ? ` · ${p.faction}` : ""} · ${shortHow(p)}`} />
                     <div style={{ minWidth: 0, flex: 1, fontSize: 12 }}>
-                      <span style={{ color: q[0], fontWeight: 600 }}>{p.name}</span>{p.alt ? <span style={{ color: MUTED }}> or <span style={{ color: ITEM_INFO[p.alt] ? QUALITY[ITEM_INFO[p.alt][1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></span> : null}
+                      <span style={{ color: q[0], fontWeight: 600 }}>{p.name}</span>{p.alt && !p.alt_label ? <span style={{ color: MUTED }}> or <span style={{ color: ITEM_INFO[p.alt] ? QUALITY[ITEM_INFO[p.alt][1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></span> : null}
                       {isNow && !got ? <span style={{ marginLeft: 6, fontSize: 9, fontWeight: 700, padding: "0 5px", borderRadius: 3, background: ORANGE, color: "#1a0d00" }}>CHASE</span> : null}
-                      <div style={{ fontSize: 10, color: MUTED }}>Lv {p.lv} · {p.src}</div>
+                      <div style={{ fontSize: 10, color: MUTED }}>Lv {gtext(p.lv)} · {shortHow(p)}</div>
+                      <GearBadges p={p} />
+                      <GearAcq p={p} open={isNow && !got} />
                       {prePick(p) ? <div style={{ marginTop: 2 }}><span className="wf-mark wf-mark-notes" style={{ fontSize: 9 }}>{NOTES_PRE}</span></div> : null}
                     </div>
                   </div>
@@ -1542,7 +1625,7 @@ function GearSheet({ who, lv, ck, toggle }: { who: "sham" | "lock"; lv: number; 
             </div>
           </div>
         ) : null}
-        <div style={{ fontSize: 10, color: MUTED, marginTop: 8 }}>Items, levels and sources: your gear notes (unchanged). Item icon and quality colour: Wowhead's WoW Forever item database, read Oct 30. Empty slots are ones your notes don't fill.</div>
+        <div style={{ fontSize: 10, color: MUTED, marginTop: 8 }}>Picks: your Oct 22 gear notes, Horde-audited by the Bot on Nov 7 (feed v18): each item's steps, faction, sources and open questions are in its "How to get it" panel. Unofficial = a guide or database, not confirmed in the live game. Item icon and quality colour: Wowhead's WoW Forever item database, read Oct 30.</div>
         <PreLine lead="Gear past 30: your notes' picks are tagged “from notes, pre-launch, stats unconfirmed” (no stats shown). Past-30 slots your notes don't fill:" />
       </Frame>
     </div>
