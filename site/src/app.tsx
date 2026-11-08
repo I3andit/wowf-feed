@@ -744,6 +744,39 @@ Object.keys(ORDERS).forEach((k: string) => { SEQ[k] = expand(ORDERS[k]); });
 type BuildDef = { key: string; label: string; cls: "shaman" | "warlock"; seq?: string; fixed?: string; path?: boolean; src: string; date: string; url: string; blurb: string; tag?: string };
 const BUILD_DEFS: BuildDef[] = WF_DATA.talents.BUILD_DEFS;
 
+// Followed leveling guide per class (Nov 7): Next ding, rotations and Naga take talent levels from the guide picked
+// in Next ding instead of always Icy Veins. Rotation data names the default orders (enh_lvl / aff_lvl); guideSeq swaps them.
+const GUIDE_DEFAULT: Record<string, string> = { shaman: "enh_lvl", warlock: "aff_lvl" };
+let GUIDE: Record<string, string> = { ...GUIDE_DEFAULT };
+const GUIDE_SHORT: Record<string, string> = { enh_lvl: "Icy Veins", enh_notes: "Your notes", enh_mob: "Mobalytics", enh_nicktew: "Nicktew", aff_lvl: "Icy Veins", aff_icy: "Mobalytics" };
+function guideOptions(cls: string): BuildDef[] {
+  const seen: Record<string, boolean> = {};
+  return BUILD_DEFS.filter((b: BuildDef) => {
+    if (b.cls !== cls || b.fixed || b.path || !b.seq || !SEQ[b.seq] || seen[b.seq]) return false;
+    if (cls === "warlock" && b.seq.indexOf("aff") !== 0) return false; // Corvin's Spec 1 is Affliction; Demonology stays Spec 2
+    seen[b.seq] = true;
+    return true;
+  });
+}
+function guideShort(seq: string): string {
+  if (GUIDE_SHORT[seq]) return GUIDE_SHORT[seq];
+  const b = BUILD_DEFS.find((x: BuildDef) => x.seq === seq);
+  return b ? b.label.split(" (")[0] : seq;
+}
+function cleanGuide(g: any): Record<string, string> {
+  const out: Record<string, string> = { ...GUIDE_DEFAULT };
+  ["shaman", "warlock"].forEach((cls: string) => {
+    const v = g && typeof g[cls] === "string" ? g[cls] : "";
+    if (guideOptions(cls).some((b: BuildDef) => b.seq === v)) out[cls] = v;
+  });
+  return out;
+}
+function guideSeq(seq?: string): string | undefined {
+  if (seq === GUIDE_DEFAULT.shaman) return GUIDE.shaman;
+  if (seq === GUIDE_DEFAULT.warlock) return GUIDE.warlock;
+  return seq;
+}
+
 const WHY: Record<string, string> = WF_DATA.talents.WHY;
 
 function allocate(seq: string[], n: number): Record<string, number> {
@@ -865,7 +898,7 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
     <Frame accent={accent} title="Talents" icon={def.cls === "shaman" ? "classicon_shaman" : "classicon_warlock"} right={<span style={{ fontSize: 12, color: MUTED }}>0hp.com talent data · build 1.60.1.70707 · read Oct 30</span>}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 10 }}>
         {[{ k: "warlock", label: "Corvin · Warlock", icon: "classicon_warlock", c: WARLOCK }, { k: "shaman", label: "Vorgash · Shaman", icon: "classicon_shaman", c: SHAMAN }].map((o: { k: string; label: string; icon: string; c: string }) => (
-          <button key={o.k} type="button" className="wf-tab" onClick={() => { pickBuild(o.k === "shaman" ? "enh_lvl" : "path"); }} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 12px", borderRadius: 8, border: `1px solid ${cls === o.k ? o.c : "#4a3d22"}`, background: cls === o.k ? `${o.c}33` : "#14110d", color: cls === o.k ? "#fff" : MUTED, fontFamily: SERIF, fontSize: 14 }}>
+          <button key={o.k} type="button" className="wf-tab" onClick={() => { const g = GUIDE[o.k]; const gk = BUILD_DEFS.find((b: BuildDef) => b.seq === g && !b.path && !b.fixed && b.cls === o.k); pickBuild(o.k === "warlock" && g === GUIDE_DEFAULT.warlock ? "path" : gk ? gk.key : o.k === "shaman" ? "enh_lvl" : "path"); }} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 12px", borderRadius: 8, border: `1px solid ${cls === o.k ? o.c : "#4a3d22"}`, background: cls === o.k ? `${o.c}33` : "#14110d", color: cls === o.k ? "#fff" : MUTED, fontFamily: SERIF, fontSize: 14 }}>
             <Icon icon={o.icon} size={22} ring={o.c} />{o.label}<RoleBadge who={o.k === "warlock" ? "C" : "V"} />
           </button>
         ))}
@@ -1119,8 +1152,9 @@ type Rot = { prep: RStep[]; steps: RStep[]; notes: string[]; src: { label: strin
 // Level-aware rotations (Nov 4): a step's level comes from its talent in the talent order (seq) when it names one, else its lvl.
 // "until" drops a step from that level on; "ups" are level-gated notes; "unlocks" feed the Next unlock strip.
 function rotLv(x: { lvl?: number; talent?: string; at?: number }, seq?: string): number | undefined {
-  if (x.talent && seq && SEQ[seq]) {
-    const q = SEQ[seq];
+  const sk = guideSeq(seq);
+  if (x.talent && sk && SEQ[sk]) {
+    const q = SEQ[sk];
     let n = 0;
     for (let i = 0; i < q.length; i++) { if (q[i] === x.talent) { n++; if (n >= (x.at ?? 1)) return i + 10; } }
   }
@@ -1765,7 +1799,7 @@ function trainReqLevel(t: [number, string]): number | null {
 }
 
 function nextTalent(cls: string, level: number): { lv: number; name: string; rank: number; tal?: Tal; why: string } | null {
-  const seq = SEQ[cls === "shaman" ? "enh_lvl" : "aff_lvl"];
+  const seq = SEQ[GUIDE[cls]] ?? SEQ[GUIDE_DEFAULT[cls]];
   const lv = Math.max(10, level + 1);
   const idx = lv - 10;
   if (lv > 60 || idx >= seq.length) return null;
@@ -1776,7 +1810,7 @@ function nextTalent(cls: string, level: number): { lv: number; name: string; ran
   return { lv, name, rank, tal, why };
 }
 
-function NextDing({ who, level, setLevel, skills }: { who: "V" | "C"; level: number; setLevel: (n: number) => void; skills: Record<string, number> }) {
+function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: "V" | "C"; level: number; setLevel: (n: number) => void; skills: Record<string, number>; guide: string; setGuide: (seq: string) => void }) {
   const c = who === "V" ? CHARS[0] : CHARS[1];
   const cls = who === "V" ? "shaman" : "warlock";
   const nt = nextTalent(cls, level);
@@ -1787,7 +1821,9 @@ function NextDing({ who, level, setLevel, skills }: { who: "V" | "C"; level: num
   const head = (t: string, icon: string) => (
     <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".12em", margin: "10px 0 6px" }}><Icon icon={icon} size={18} />{t}</div>
   );
-  const buildLabel = who === "V" ? "Enhancement leveling (Icy Veins order)" : level >= 40 ? "Spec 1 Affliction (Icy Veins order); Spec 2 Demonology gets all its points at 40" : "Spec 1 Affliction (Icy Veins order)";
+  const gName = guideShort(guide);
+  const buildLabel = who === "V" ? `Enhancement leveling (${gName} order)` : level >= 40 ? `Spec 1 Affliction (${gName} order); Spec 2 Demonology gets all its points at 40` : `Spec 1 Affliction (${gName} order)`;
+  const gOpts = guideOptions(cls);
   return (
     <div className="wf-card" style={{ position: "relative", borderRadius: 12, padding: 14, border: `1px solid ${GOLD}`, background: `radial-gradient(ellipse 70% 60% at 50% 0%, ${c.color}30, transparent 70%), linear-gradient(180deg, #1c1711, #0a0907)`, boxShadow: `0 0 0 1px #000, 0 6px 24px rgba(0,0,0,.5), 0 0 30px ${c.color}22`, color: INK, overflow: "hidden" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
@@ -1802,6 +1838,12 @@ function NextDing({ who, level, setLevel, skills }: { who: "V" | "C"; level: num
         </div>
         <Icon icon={c.classIcon} size={40} ring={c.color} />
       </div>
+      {gOpts.length > 1 ? (
+        <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", margin: "10px 0 2px" }} title="Talent levels in Next ding, Rotations and Naga follow this guide. The talent calculator below can still preview any guide.">
+          <span style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".12em" }}>Leveling guide</span>
+          <Segmented options={gOpts.map((b: BuildDef) => ({ value: b.seq as string, label: guideShort(b.seq as string) }))} value={guide} onChange={(v: string) => setGuide(v)} />
+        </div>
+      ) : null}
 
       {head("Next talent point", "spell_holy_borrowedtime")}
       {nt ? (
@@ -1933,7 +1975,7 @@ function CorvinFirstSession({ level }: { level: number }) {
   const lm = Math.floor((left % 3600000) / 60000);
   const nextStop = FIRST_TRAINER.find((t: [number, string]) => t[0] > level);
   const tals = [10, 11, 12].map((lv: number) => {
-    const seq = SEQ.aff_lvl;
+    const seq = SEQ[GUIDE.warlock] ?? SEQ.aff_lvl;
     const name = seq[lv - 10];
     const rank = seq.slice(0, lv - 9).filter((n: string) => n === name).length;
     return { lv, name, rank, tal: TAL_INDEX.warlock[name] };
@@ -2209,6 +2251,10 @@ export default function App() {
   const [launchOpen, setLaunchOpen] = useState<boolean>(false);
   const [firstOpen, setFirstOpen] = useState<boolean>(false);
   const [feedAll, setFeedAll] = useState<boolean>(false);
+  const [guide, setGuideAll] = useState<Record<string, string>>(() => cleanGuide(WF_STORE.initial?.guide));
+  GUIDE = guide; // read during this render by rotLv, nextTalent and the Naga plate
+  const setGuide = (cls: string, seq: string) => setGuideAll((g: Record<string, string>) => cleanGuide({ ...g, [cls]: seq }));
+  useEffect(() => { if (storeOk !== null) WF_STORE.save("guide", guide); }, [guide, storeOk]);
   const lvV = st.lvV;
   const lvC = st.lvC;
   const setLvV = (n: number) => setSt((s: Saved) => ({ ...s, lvV: clampN(n, 1, 60) }));
@@ -2247,7 +2293,7 @@ export default function App() {
   const togglePreset = (i: number) => setPresetOpen((o: number[]) => o.indexOf(i) >= 0 ? o.filter((x: number) => x !== i) : [...o, i]);
   const ssLv = SEQ.enh_lvl.indexOf("Stormstrike") + 10;
   const brandLv = SEQ.demo_lvl.indexOf("Demonic Brand") + 10;
-  const wrackIdx = SEQ.aff_lvl.indexOf("Wrack");
+  const wrackIdx = (SEQ[guide.warlock] ?? SEQ.aff_lvl).indexOf("Wrack");
   const wrackLv = wrackIdx >= 0 ? wrackIdx + 10 : 99;
   const [nagaPrev, setNagaPrev] = useState<number | null>(null);
   useEffect(() => { setStagePick(null); setNagaPrev(null); }, [lvV, lvC, nagaSpec]);
@@ -2290,8 +2336,8 @@ export default function App() {
       ]} />
       <Section heading="Next ding" id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
         <Grid columns={2} plain>
-          <NextDing who="C" level={lvC} setLevel={setLvC} skills={st.sk} />
-          <NextDing who="V" level={lvV} setLevel={setLvV} skills={st.sk} />
+          <NextDing who="C" level={lvC} setLevel={setLvC} skills={st.sk} guide={guide.warlock} setGuide={(v: string) => setGuide("warlock", v)} />
+          <NextDing who="V" level={lvV} setLevel={setLvV} skills={st.sk} guide={guide.shaman} setGuide={(v: string) => setGuide("shaman", v)} />
         </Grid>
       </Section>
 
@@ -2321,7 +2367,17 @@ export default function App() {
             ))}
           </div>
         ) : null}
-        <Text>{`Order comes from the ${nagaSpec === "enh" ? "Enhancement" : nagaSpec === "aff" ? "Affliction" : "Demonology"} questing rotation above (Icy Veins order, read Nov 3): rotation spells take the plain buttons first, then Shift; utility fills what is left. Replaced spells drop out on their level (Curse of Weakness → Curse of the Elements at 20, pet keys after Demonic Sacrifice at 41, totem macro → Call of the Elements at 30), and slots shift when that happens, so re-check this section at each ding.${nagaSpec === "aff" && wrackLv < 99 ? ` Wrack joins at ${wrackLv}.` : ""}`}</Text>
+        <Text>{(() => {
+          const a: NAuto | undefined = spec.auto;
+          const qseq = ROT[nagaSpec].quest.seq;
+          const gs = guideSeq(qseq);
+          const drops = (a ? a.pool : []).map((p: NPool) => {
+            const u = p.untilTalent ? rotLv({ talent: p.untilTalent }, qseq) : p.until;
+            return u ? `${p.spell} at ${u}` : "";
+          }).filter((t: string) => !!t);
+          const wrack = nagaSpec === "aff" && wrackLv < 99 ? ` Wrack joins at ${wrackLv}.` : "";
+          return `Button order: ${a && a.src ? a.src : "the questing rotation above"}. Talent levels follow ${gs && gs !== qseq ? `your picked guide, ${guideShort(gs)}` : gs ? guideShort(gs) : "the rotation's own order"} (change it in Next ding). Rotation spells take the plain buttons first, then Shift; utility fills what is left.${drops.length ? ` Replaced spells leave on their level (${drops.join("; ")}) and the slots shift, so re-check this section at each ding.` : ""}${wrack}`;
+        })()}</Text>
         {use12 ? (
           <Callout tone={PL.naga_when_to_swap.tone} lead={PL.naga_when_to_swap.lead}>{PL.naga_when_to_swap.text}</Callout>
         ) : null}
