@@ -159,76 +159,73 @@
         "spec": "Demonology Warlock",
         "icon": "spell_shadow_metamorphosis",
         "mine": true,
-        "mythic": 9,
-        "mythicNote": "986 DPS",
+        "mythic": 8,
+        "mythicNote": "990 DPS; All playstyles view #9",
         "broken": "C",
         "tVoid": "A",
         "cogm": "S",
         "lfc": "A",
         "wowhead": "S",
-        "_source": "MythicSim Nov 6 snapshot (engine a667dce); BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 6 (same DPS as Nov 4); Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 6",
-        "mythicMove": "▼1 (was #8 Nov 5, 980 DPS)"
+        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 8"
       },
       {
         "spec": "Affliction Warlock",
         "icon": "spell_shadow_deathcoil",
         "mine": true,
-        "mythic": 14,
-        "mythicNote": "950 DPS, Wrack build",
+        "mythic": 11,
+        "mythicNote": "950 DPS, Wrack build; All playstyles view #14",
         "broken": "S",
         "brokenNote": "#1, 907 DPS",
         "tVoid": "B",
         "cogm": "A",
         "lfc": "B",
         "wowhead": "A",
-        "_source": "MythicSim Nov 6 snapshot (engine a667dce); BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 6 (same DPS as Nov 4); Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 6",
-        "mythicMove": "▼2 (was #12 Nov 5, 934 DPS)"
+        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 8",
+        "mythicMove": "▲1 vs Nov 5 (#12, 934 DPS)"
       },
       {
         "spec": "Destruction Warlock",
         "icon": "spell_shadow_rainoffire",
         "mine": false,
-        "mythic": 17,
-        "mythicNote": "936 DPS",
+        "mythic": 14,
+        "mythicNote": "936 DPS; All playstyles view #17",
         "broken": "C",
         "tVoid": "B",
         "cogm": "A",
         "lfc": "B",
         "wowhead": "S",
-        "_source": "MythicSim Nov 6 snapshot (engine a667dce); BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 6 (same DPS as Nov 4); Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 6",
-        "mythicMove": "▼3 (was #14 Nov 5, 929 DPS)"
+        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 8"
       },
       {
         "spec": "Enhancement Shaman",
         "icon": "ability_shaman_stormstrike",
         "mine": true,
         "mythic": 3,
-        "mythicNote": "1,073 DPS",
+        "mythicNote": "1,078 DPS; All playstyles view #3",
         "broken": "B",
         "tVoid": "S",
         "cogm": "S",
         "lfc": "S",
         "wowhead": "A",
-        "_source": "MythicSim Nov 6 snapshot (engine a667dce); BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 6 (same DPS as Nov 4); Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 6"
+        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 8"
       },
       {
         "spec": "Elemental Shaman",
         "icon": "spell_nature_lightning",
         "mine": false,
-        "mythic": 25,
-        "mythicNote": "827 DPS",
+        "mythic": 20,
+        "mythicNote": "827 DPS; All playstyles view #25",
         "broken": "C",
         "tVoid": "B",
         "cogm": "A",
         "lfc": "A",
         "wowhead": "C",
-        "_source": "MythicSim Nov 6 snapshot (engine a667dce); BrokenMeta Nov 4 (build 70753, same numbers); voidsim Nov 6 (same DPS as Nov 4); Wowhead Nov 3 level-60 update; CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 6",
-        "mythicMove": "▼5 (was #20 Nov 5, 823 DPS)"
+        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 8"
       }
     ]
   },
@@ -2312,8 +2309,8 @@
         "label": "Nicktew Recommended 6/34/11 (alternative)",
         "cls": "shaman",
         "seq": "enh_nicktew",
-        "src": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
-        "date": "Nov 4; read Nov 7",
+        "src": "Nicktew Recommended, updated Nov 8 (talent order unchanged since Nov 4), read Nov 8 2026 (Unofficial, single source)",
+        "date": "Nov 8; read Nov 8",
         "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
         "blurb": "Separate selectable guide, not a respec or default switch. Stormstrike25; Improved Ghost Wolf26–27; Improved Stormstrike30–31; Mindfulness38–40; Water Shield43; Maelstrom5/5 at51; Rage52. Water Shield versus earlier deep Enhancement explicitly needs testing. Full Enhance First alternate tab order not accessible. Actual spent talents/trained skills unverified."
       }
@@ -8020,7 +8017,7 @@
                 "to": 40,
                 "name": "Rage of the Storm",
                 "item": "Rage of the Storm",
-                "src": "Both · Forever-data, Unofficial · Horde route: at 30 take Call of Air from a Shaman trainer to Prate Cloudseer, Thousand Needles; then Rau Cliffrunner at Freewind Post. Loot Tattered Note from Charlga Razorflank in Razorfen Kraul; return to Rau then Prate. Gather five each Twisted Air (Maraudine centaur, Desolace 37–41), Earth (Lost Ones, Swamp of Sorrows 34–37), Fire (Stonevault troggs, Badlands 39–41), Water (Mirefin murlocs, Dustwallow 35–38). Use Corrupted Totems at hot springs beneath Darkcloud Pinnacle; defeat four elite waves then the final bosses; collect Eye of the Tempest. Return to Rau and then Bath'rah the Windwatcher, Alterac Mountains, to complete The Tempest's Weapons and choose Rage of the Storm. Obtain help or wait: difficult at 30. Alliance has its own route to same weapon; Horde coordinates not published. Existing Nicktew Nov 4 guide discourages this lengthy quest chain; legacy choice retained without claiming Nicktew recommends doing it. Read Nov 7 2026. Sources: https://www.icy-veins.com/wow-forever/shaman-class-quests ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew · read 2026-11-07",
+                "src": "Both · Forever-data, Unofficial · Horde route: at 30 take Call of Air from a Shaman trainer to Prate Cloudseer, Thousand Needles; then Rau Cliffrunner at Freewind Post. Loot Tattered Note from Charlga Razorflank in Razorfen Kraul; return to Rau then Prate. Gather five each Twisted Air (Maraudine centaur, Desolace 37–41), Earth (Lost Ones, Swamp of Sorrows 34–37), Fire (Stonevault troggs, Badlands 39–41), Water (Mirefin murlocs, Dustwallow 35–38). Use Corrupted Totems at hot springs beneath Darkcloud Pinnacle; defeat four elite waves then the final bosses; collect Eye of the Tempest. Return to Rau and then Bath'rah the Windwatcher, Alterac Mountains, to complete The Tempest's Weapons and choose Rage of the Storm. Obtain help or wait: difficult at 30. Alliance has its own route to same weapon; Horde coordinates not published. Existing Nicktew Nov 4 guide discourages this lengthy quest chain; legacy choice retained without claiming Nicktew recommends doing it. Read Nov 7 2026. Sources: https://www.icy-veins.com/wow-forever/shaman-class-quests ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew · read 2026-11-07 Alt — Nicktew pick (Nov 8), needs Honored Gelkis: Abandoned Ferocity. Neutral (Horde OK) Gelkis chain, Desolace. First reach Friendly with the Gelkis (kill Magram centaur; Horde pick-up Gelkis Alliance from Gurda Wildmane, Ghost Walker Post 56.3,59.7, Classic location) and report to Uthek the Wise, Gelkis Village 36.2,79.2 (Classic location). Then reach Honored with the Gelkis for the Forever Valley of Bones quests: Saving Our Own → Bone Burying → Checking Things Out → Khan Jehn (quest 93128, from Nerlokh in Valley of Bones; Valley of Bones coordinates not published in the sources read). Kill Khan Jehn in Magram Village (Desolace), turn in to Uthek the Wise and choose Abandoned Ferocity. Requires level 35; quest level 42, from 30; Nicktew suggests 35+ with help, ~40 solo, long chain. Item (Forever data): Rare 2H axe, ilvl 42, 95-143 damage, 3.20 speed (37.2 DPS), +10 Strength, +4 Agility, +12 Stamina. Raising Gelkis lowers Magram reputation. Sources: https://www.wowhead.com/forever/quest=93128/khan-jehn ; https://wowf.io/en/quests/gelkis · read 2026-11-08",
                 "how": "Horde route: at 30 take Call of Air from a Shaman trainer to Prate Cloudseer, Thousand Needles; then Rau Cliffrunner at Freewind Post. Loot Tattered Note from Charlga Razorflank in Razorfen Kraul; return to Rau then Prate. Gather five each Twisted Air (Maraudine centaur, Desolace 37–41), Earth (Lost Ones, Swamp of Sorrows 34–37), Fire (Stonevault troggs, Badlands 39–41), Water (Mirefin murlocs, Dustwallow 35–38). Use Corrupted Totems at hot springs beneath Darkcloud Pinnacle; defeat four elite waves then the final bosses; collect Eye of the Tempest. Return to Rau and then Bath'rah the Windwatcher, Alterac Mountains, to complete The Tempest's Weapons and choose Rage of the Storm. Obtain help or wait: difficult at 30. Alliance has its own route to same weapon; Horde coordinates not published. Existing Nicktew Nov 4 guide discourages this lengthy quest chain; legacy choice retained without claiming Nicktew recommends doing it. Read Nov 7 2026.",
                 "faction": "Both",
                 "_source": [
@@ -8037,7 +8034,36 @@
                 "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
                 "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
                 "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-                "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+                "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+                "alt": "Abandoned Ferocity",
+                "alt_label": "Alt — Nicktew pick (Nov 8), needs Honored Gelkis",
+                "alt_acquisition": {
+                  "name": "Abandoned Ferocity",
+                  "how": "Neutral (Horde OK) Gelkis chain, Desolace. First reach Friendly with the Gelkis (kill Magram centaur; Horde pick-up Gelkis Alliance from Gurda Wildmane, Ghost Walker Post 56.3,59.7, Classic location) and report to Uthek the Wise, Gelkis Village 36.2,79.2 (Classic location). Then reach Honored with the Gelkis for the Forever Valley of Bones quests: Saving Our Own → Bone Burying → Checking Things Out → Khan Jehn (quest 93128, from Nerlokh in Valley of Bones; Valley of Bones coordinates not published in the sources read). Kill Khan Jehn in Magram Village (Desolace), turn in to Uthek the Wise and choose Abandoned Ferocity. Requires level 35; quest level 42, from 30; Nicktew suggests 35+ with help, ~40 solo, long chain. Item (Forever data): Rare 2H axe, ilvl 42, 95-143 damage, 3.20 speed (37.2 DPS), +10 Strength, +4 Agility, +12 Stamina. Raising Gelkis lowers Magram reputation.",
+                  "faction": "Both",
+                  "_source": [
+                    "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+                    "https://www.wowhead.com/forever/quest=93128/khan-jehn",
+                    "https://wowf.io/en/quests/gelkis",
+                    "https://eternadex.com/en/item/271801/",
+                    "https://foreverdb.net/quest/1368-gelkis-alliance"
+                  ],
+                  "_date": "2026-11-08",
+                  "source_type": "Guide pick (Nicktew, single source) + Forever quest/item data (Wowhead Forever, wowf.io, eternadex); NPC coordinates are Classic locations",
+                  "audit_status": "reviewed; unresolved fields explicitly listed",
+                  "unverified": [
+                    "Valley of Bones / Nerlokh coordinates not published",
+                    "Exact Honored grind length not published",
+                    "Not checked in game"
+                  ],
+                  "conflicts": [
+                    "Wowhead Forever describes turning in to Uthek the Wise; wowf.io names Nerlokh as the quest giver. Both agree on the Uthek turn-in."
+                  ],
+                  "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+                  "source_count_note": "Recommendation single source (Nicktew); item and quest facts from 3 data sites.",
+                  "recommendation_status": "Alt — guide pick, long reputation chain",
+                  "horde_access": "Neutral centaur faction; Horde can do the full chain."
+                }
               }
             ]
           },
@@ -12819,15 +12845,15 @@
     "meta_raid_watch": {
       "lead": "Raid watch",
       "tone": "warning",
-      "text": "Official Nov 6 live: Voidwalker base health +~40; Soul Siphon no longer self-buffs Wrack; Orc Command pet over-benefit fixed; LW Tanning Rack 125 (was 140). Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP. Live build 70862 (Nov 7) — afternoon/evening item waves only; no Sham/WL spell hits in 1mw analyzer. MythicSim still Nov 6 (Enh #3, Demo #9, Aff #14, Destro #17). Forever Logs: dungeon rankings only — no confirmed L60 DPS boards.",
-      "_source": "Blizzard Nov 6 hotfixes; Kaivax Class Tuning Nov 10; 1mw 70862 evening waves; MythicSim Nov 6; Forever Logs Nov 7 6 PM ET",
-      "_date": "Nov 7"
+      "text": "Official: nothing new since the Nov 6 hotfixes (Voidwalker +~40 HP, Soul Siphon/Wrack fix, Orc Command pet fix, LW Tanning Rack 125). Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP. Build 70862 overnight Nov 7-8: item hotfix waves only; 1mw patch notes say nothing changes on spells, talents or items. MythicSim Nov 8 (Best of each spec): Enh #3, Demo #8, Aff #11, Destro #14. Forever Logs: no confirmed level-60 DPS boards.",
+      "_source": "Blizzard news + forum tracker (read Nov 8); Kaivax Class Tuning Nov 10; 1mw.io news + patch notes Nov 8; MythicSim Nov 8; Forever Logs Nov 8 9 AM ET",
+      "_date": "Nov 8"
     },
     "meta_links": [
       {
-        "title": "MythicSim tier list (Nov 4 snapshot, re-simmed for the Nov 2 notes)",
+        "title": "MythicSim tier list (Nov 8 snapshot, 'Best of each spec' view)",
         "site": "mythicsim.com",
-        "date": "Nov 6",
+        "date": "Nov 8",
         "href": "https://mythicsim.com/wow-forever/tier-list",
         "_source": "mythicsim.com",
         "_date": "Nov 4"
@@ -12932,6 +12958,42 @@
       }
     ],
     "feed_rows": [
+      {
+        "lead": "Nov 8",
+        "title": "Build 70862 overnight: item hotfix waves only; no Shaman/Warlock spell, talent or item changes",
+        "detail": "1mw logged ~25 hotfix-cache waves from Nov 7 22:00 to Nov 8 12:48 UTC (mostly new 40-64 items, e.g. Gloves of the Atal'ai Prophet, Keris of Zul'Serak). Two waves carried spell rows (6 at 03:03 UTC, 1 at 03:43 UTC), but 1mw's patch-notes diff for every Hotfixes of 8 November entry says nothing changes on spells, talents or items. No new Blizzard post since Nov 7 01:07 UTC.",
+        "meta": "1mw.io/en/news + /en/news/patch-notes, read Nov 8 2026; Blizzard forum tracker read Nov 8",
+        "status": {
+          "label": "Unofficial, single source",
+          "tone": "warning"
+        },
+        "_source": "https://1mw.io/en/news/patch-notes",
+        "_date": "2026-11-08"
+      },
+      {
+        "lead": "Nov 8",
+        "title": "MythicSim Nov 8 snapshot; meta board back on the 'Best of each spec' view",
+        "detail": "Best of each spec: Enhancement #3 (1,078 DPS), Demonology #8 (990), Affliction #11 (950), Destruction #14 (936), Elemental #20 (827). Compared with Nov 5 on the same view, only Affliction moved (+1). The Nov 6 numbers (Demo #9, Aff #14, Destro #17, Ele #25) came from the 'All playstyles' view, which also lists hybrids, so the Nov 6 drops were a view mix-up, not real moves.",
+        "meta": "MythicSim tier list, snapshot Nov 8 2026 (engine a667dce), read Nov 8",
+        "status": {
+          "label": "Sim, pre-launch",
+          "tone": "warning"
+        },
+        "_source": "https://mythicsim.com/wow-forever/tier-list",
+        "_date": "2026-11-08"
+      },
+      {
+        "lead": "Nov 8",
+        "title": "Nicktew Shaman guide updated Nov 8: talent order unchanged; weapon table adds Abandoned Ferocity",
+        "detail": "Recommended 6/34/11 order is the same as the Nov 4 version already on the page (enh_nicktew). New: suggested level ranges per weapon, Abandoned Ferocity (35+, Gelkis chain in Desolace, needs Honored) added, Rage of the Storm still discouraged, and a note that Stormstrike is normalized so 1H+shield is fine but noticeably worse. Abandoned Ferocity added as a labelled Alt on the 30-40 two-hander row; item data from Wowhead Forever and wowf.io. Also re-checked: Crix Warlock leveling (updated Nov 6) and Yebb Enhancement (updated Nov 6) talent orders match the page; Icy Veins Affliction, Demonology and Enhancement still dated Nov 4.",
+        "meta": "Mobalytics Nicktew, updated Nov 8 2026 01:41 UTC, read Nov 8 (Unofficial, single source)",
+        "status": {
+          "label": "Unofficial, single source",
+          "tone": "warning"
+        },
+        "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "_date": "2026-11-08"
+      },
       {
         "lead": "Nov7",
         "title": "Horde gear pass: accessible primary substitutes, acquisition steps and qualified Classic estimates",
@@ -13829,14 +13891,14 @@
     }
   },
   "_meta": {
-    "version": 20,
-    "generated_at": "2026-11-07T20:10-05:00",
-    "source": "Claude Naga merge, Nov 7 2026 (Jason asked)",
-    "notes_commit": "ed3b5f2",
-    "notes": "Vorgash Naga: Fire Nova, Chain Lightning, Rank 1 kick and Rage of the Farseer ride Ctrl on Searing Totem, Lightning Bolt, Earth Shock and Stormstrike instead of taking their own slots."
+    "version": 21,
+    "generated_at": "2026-11-08T09:22-05:00",
+    "source": "Grok meta watch, Nov 8 2026 9 AM ET (full run)",
+    "notes_commit": "c7803a9",
+    "notes": "Nov 8: no Official change; 70862 item waves only; MythicSim Nov 8 (board view corrected); Nicktew Nov 8 order unchanged, Abandoned Ferocity added as Alt."
   },
   "captions": {
-    "builds": "Vorgash: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updatedNov4/readNov7. Corvin unchanged.",
+    "builds": "Vorgash: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8. Corvin unchanged.",
     "macros": "Vorgash: level-aware manual macros reviewed against Nicktew Nov4/readNov7;20 unlocks require training, Rank1 kick separate from damage. Native triggers are banks, not assumed keyboard modifiers. Corvin unchanged.",
     "naga": "Vorgash: learned-skill level20 options corrected; original Icy Veins rotation drives auto layout, Nicktew alternative documented. No controller UI added; Corvin unchanged.",
     "rotations": "Vorgash: current Icy Veins rotation preserved with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking. Corvin unchanged."
