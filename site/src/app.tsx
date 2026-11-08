@@ -180,6 +180,17 @@ const CSS = `
 .wf-nav-chars { display: flex; gap: 6px; flex: none; }
 .wf-nav-char { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px 2px 3px; border-radius: 999px; border: 1px solid #4a3d22; background: #14110d; color: ${INK}; font-size: 13px; text-decoration: none; }
 .wf-nav-char:hover { border-color: ${GOLD}; }
+button.wf-nav-char, .wf-nav-both { font: inherit; font-size: 13px; cursor: pointer; }
+.wf-nav-char-on { border-color: var(--cc, ${GOLD_HI}); box-shadow: inset 0 0 0 1px var(--cc, ${GOLD_HI}), 0 0 10px rgba(245,215,122,.25); background: linear-gradient(180deg, #3a2c14, #1a140b); }
+.wf-nav-char-off { opacity: .55; }
+.wf-nav-char-off:hover { opacity: 1; }
+.wf-nav-both { padding: 2px 10px; border-radius: 999px; border: 1px solid #4a3d22; background: #14110d; color: ${MUTED}; }
+.wf-nav-both:hover { border-color: ${GOLD}; color: ${INK}; }
+.wf-nav-both.wf-nav-char-on { --cc: ${GOLD}; color: ${GOLD_HI}; }
+.wf-portrait { padding: 0; border: none; background: none; border-radius: 8px; transition: opacity .15s ease, transform .12s ease; }
+.wf-portrait-on { outline: 2px solid ${GOLD_HI}; outline-offset: 3px; }
+.wf-portrait-off { opacity: .45; }
+.wf-portrait-off:hover { opacity: .9; }
 .wf-nav-char b { font-family: ${SERIF}; font-weight: 400; color: ${GOLD_HI}; font-size: 15px; }
 .wf-nav-groups { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; flex: 1 1 520px; min-width: 0; }
 .wf-nav-group { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; }
@@ -342,7 +353,7 @@ function RoleBadge({ who, note }: { who: "V" | "C"; note?: boolean }) {
     </span>
   );
 }
-function Hero() {
+function Hero({ view, setView }: { view: View; setView: (v: View) => void }) {
   const [now, setNow] = useState<number>(Date.now());
   useEffect(() => {
     const id = setInterval(() => setNow(Date.now()), 1000);
@@ -367,14 +378,17 @@ function Hero() {
       <div className="wf-shimmer" style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 2 }} />
       <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
         <div style={{ display: "flex", gap: 8 }}>
-          <Icon icon="classicon_warlock" size={52} ring={WARLOCK} name="Corvin Ashmourne" tip="Undead Warlock, Affliction leveling, Demonology Spec 2 · Guild main" />
-          <Icon icon="classicon_shaman" size={52} ring={SHAMAN} name="Vorgash Stormcleft" tip="Orc Shaman, Enhancement · Alt" />
+          {([["C", "classicon_warlock", WARLOCK, "Corvin Ashmourne", "Undead Warlock, Affliction leveling, Demonology Spec 2 · Guild main"], ["V", "classicon_shaman", SHAMAN, "Vorgash Stormcleft", "Orc Shaman, Enhancement · Alt"]] as [("C" | "V"), string, string, string, string][]).map((o: [("C" | "V"), string, string, string, string]) => (
+            <button key={o[0]} type="button" className={`wf-btn wf-portrait${view === o[0] ? " wf-portrait-on" : view === "both" ? "" : " wf-portrait-off"}`} aria-pressed={view === o[0]} onClick={() => setView(o[0])} title={`Show ${o[3].split(" ")[0]}'s page`}>
+              <Icon icon={o[1]} size={52} ring={o[2]} name={o[3]} tip={`${o[4]} · click for ${o[3].split(" ")[0]}'s page`} />
+            </button>
+          ))}
         </div>
         <div style={{ flex: "1 1 260px" }}>
           <div style={{ fontSize: 12, color: GOLD, letterSpacing: ".12em", textTransform: "uppercase" }}>Horde · WoW Forever · Naga V2 Pro</div>
-          <div style={{ fontFamily: SERIF, fontSize: 30, color: GOLD_HI, lineHeight: 1.15, textShadow: "0 2px 0 #000" }}>Corvin &amp; Vorgash</div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, margin: "4px 0 2px" }}><span><span style={{ color: WARLOCK, fontFamily: SERIF }}>Corvin</span> <RoleBadge who="C" note /></span><span><span style={{ color: SHAMAN, fontFamily: SERIF }}>Vorgash</span> <RoleBadge who="V" note /></span></div>
-          <div style={{ fontSize: 13, color: MUTED }}>Launch Wed Nov 4, 6:00 PM ET (3:00 PM PT) · level cap 60 · raids open Dec 9 (Hyjal Summit, Barrow Deeps, Onyxia)</div>
+          <div style={{ fontFamily: SERIF, fontSize: 30, color: GOLD_HI, lineHeight: 1.15, textShadow: "0 2px 0 #000" }}>{view === "C" ? "Corvin Ashmourne" : view === "V" ? "Vorgash Stormcleft" : "Corvin & Vorgash"}</div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", margin: "4px 0 2px" }}>{shows(view, "C") ? <span><span style={{ color: WARLOCK, fontFamily: SERIF }}>Corvin</span> <RoleBadge who="C" note /></span> : null}{shows(view, "V") ? <span><span style={{ color: SHAMAN, fontFamily: SERIF }}>Vorgash</span> <RoleBadge who="V" note /></span> : null}<button type="button" className="wf-btn" onClick={() => setView(view === "both" ? "C" : "both")} style={{ padding: "1px 10px", borderRadius: 999, border: `1px solid #4a3d22`, background: "#14110d", color: MUTED, fontSize: 11 }}>{view === "both" ? "Just Corvin" : "Show both"}</button></div>
+          <div style={{ fontSize: 13, color: MUTED }}>{left > 0 ? "Launch Wed Nov 4, 6:00 PM ET (3:00 PM PT)" : "Live since Wed Nov 4"} · level cap 60 · raids open Dec 9 (Hyjal Summit, Barrow Deeps, Onyxia)</div>
         </div>
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 20, marginTop: 18, alignItems: "flex-end" }}>
@@ -872,7 +886,7 @@ function TreeGrid({ cls, ti, ranks, nextName }: { cls: string; ti: number; ranks
   );
 }
 
-function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPathSpec }: { buildKey: string; setBuildKey: (k: string) => void; level: number; setLevel: (n: number) => void; pathSpec: number; setPathSpec: (n: number) => void }) {
+function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPathSpec, view }: { buildKey: string; setBuildKey: (k: string) => void; level: number; setLevel: (n: number) => void; pathSpec: number; setPathSpec: (n: number) => void; view: View }) {
   const [legacy, setLegacy] = useState<boolean>(false);
   const [tabOverride, setTabOverride] = useState<number | null>(null);
   const def = BUILD_DEFS.find((b: BuildDef) => b.key === buildKey) ?? BUILD_DEFS[0];
@@ -897,8 +911,8 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
   return (
     <Frame accent={accent} title="Talents" icon={def.cls === "shaman" ? "classicon_shaman" : "classicon_warlock"} right={<span style={{ fontSize: 12, color: MUTED }}>0hp.com talent data · build 1.60.1.70707 · read Oct 30</span>}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 10 }}>
-        {[{ k: "warlock", label: "Corvin · Warlock", icon: "classicon_warlock", c: WARLOCK }, { k: "shaman", label: "Vorgash · Shaman", icon: "classicon_shaman", c: SHAMAN }].map((o: { k: string; label: string; icon: string; c: string }) => (
-          <button key={o.k} type="button" className="wf-tab" onClick={() => { const g = GUIDE[o.k]; const gk = BUILD_DEFS.find((b: BuildDef) => b.seq === g && !b.path && !b.fixed && b.cls === o.k); pickBuild(o.k === "warlock" && g === GUIDE_DEFAULT.warlock ? "path" : gk ? gk.key : o.k === "shaman" ? "enh_lvl" : "path"); }} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 12px", borderRadius: 8, border: `1px solid ${cls === o.k ? o.c : "#4a3d22"}`, background: cls === o.k ? `${o.c}33` : "#14110d", color: cls === o.k ? "#fff" : MUTED, fontFamily: SERIF, fontSize: 14 }}>
+        {[{ k: "warlock", label: "Corvin · Warlock", icon: "classicon_warlock", c: WARLOCK }, { k: "shaman", label: "Vorgash · Shaman", icon: "classicon_shaman", c: SHAMAN }].filter((o: { k: string }) => view === "both" || o.k === (view === "C" ? "warlock" : "shaman")).map((o: { k: string; label: string; icon: string; c: string }) => (
+          <button key={o.k} type="button" className="wf-tab" onClick={() => { pickBuild(guideBuildKey(o.k)); }} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 12px", borderRadius: 8, border: `1px solid ${cls === o.k ? o.c : "#4a3d22"}`, background: cls === o.k ? `${o.c}33` : "#14110d", color: cls === o.k ? "#fff" : MUTED, fontFamily: SERIF, fontSize: 14 }}>
             <Icon icon={o.icon} size={22} ring={o.c} />{o.label}<RoleBadge who={o.k === "warlock" ? "C" : "V"} />
           </button>
         ))}
@@ -1026,8 +1040,9 @@ const PIN_TRAIN: Pin[] = WF_DATA.professions.PIN_TRAIN;
 const PROF_PINS: Record<string, Pin[]> = WF_DATA.professions.PROF_PINS;
 const PROF_WHY: Record<string, string> = WF_DATA.professions.PROF_WHY;
 
-function ProfessionWindow({ skills, setSkillFor, lvV, lvC }: { skills: Record<string, number>; setSkillFor: (k: string, n: number) => void; lvV: number; lvC: number }) {
-  const [who, setWho] = useState<"V" | "C">("C");
+function ProfessionWindow({ skills, setSkillFor, lvV, lvC, view }: { skills: Record<string, number>; setSkillFor: (k: string, n: number) => void; lvV: number; lvC: number; view: View }) {
+  const [whoPick, setWho] = useState<"V" | "C">("C");
+  const who: "V" | "C" = view === "both" ? whoPick : view;
   const [pk, setPk] = useState<string>("lw");
   const own = CHAR_PROFS[who];
   const p = PROFS.find((x: ProfDef) => x.key === (own.indexOf(pk) >= 0 ? pk : own[0])) ?? PROFS[0];
@@ -1046,7 +1061,7 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC }: { skills: Record<st
   return (
     <Frame accent={p.color} title={p.name} icon={p.icon} right={<span style={{ fontSize: 12, color: who === "V" ? SHAMAN : WARLOCK, fontFamily: SERIF }}>{who === "V" ? "Vorgash" : "Corvin"} · level {charLv}</span>}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 }}>
-        {([["C", "Corvin", "classicon_warlock", WARLOCK], ["V", "Vorgash", "classicon_shaman", SHAMAN]] as [("V" | "C"), string, string, string][]).map((o: [("V" | "C"), string, string, string]) => (
+        {((view === "both" ? [["C", "Corvin", "classicon_warlock", WARLOCK], ["V", "Vorgash", "classicon_shaman", SHAMAN]] : []) as [("V" | "C"), string, string, string][]).map((o: [("V" | "C"), string, string, string]) => (
           <button key={o[0]} type="button" className="wf-tab" onClick={() => setWho(o[0])} style={{ display: "flex", alignItems: "center", gap: 6, padding: "4px 12px 4px 4px", borderRadius: 8, border: `1px solid ${who === o[0] ? o[3] : "#4a3d22"}`, background: who === o[0] ? `${o[3]}33` : "#14110d", color: who === o[0] ? "#fff" : MUTED, fontFamily: SERIF, fontSize: 14 }}><Icon icon={o[2]} size={24} ring={o[3]} />{o[1]}<RoleBadge who={o[0]} /></button>
         ))}
       </div>
@@ -1162,8 +1177,10 @@ function rotLv(x: { lvl?: number; talent?: string; at?: number }, seq?: string):
 }
 const ROT: Record<string, Record<string, Rot>> = WF_DATA.rotations.ROT;
 
-function RotationBoard({ lvV, lvC }: { lvV: number; lvC: number }) {
-  const [spec, setSpec] = useState<string>("aff");
+function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: View }) {
+  const [specPick, setSpec] = useState<string>("aff");
+  const allowed = view === "V" ? ["enh"] : view === "C" ? ["aff", "demo"] : ["aff", "demo", "enh"];
+  const spec = allowed.indexOf(specPick) >= 0 ? specPick : allowed[0];
   const [hideLocked, setHideLocked] = useState<boolean>(false);
   const lv = spec === "enh" ? lvV : lvC;
   const [mode, setMode] = useState<string>("quest");
@@ -1194,7 +1211,7 @@ function RotationBoard({ lvV, lvC }: { lvV: number; lvC: number }) {
   return (
     <Frame accent={color} title="Rotations" icon={spec === "enh" ? "classicon_shaman" : "classicon_warlock"}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 }}>
-        {specs.map((x: [string, string, string]) => (
+        {(allowed.length > 1 ? specs.filter((x: [string, string, string]) => allowed.indexOf(x[0]) >= 0) : []).map((x: [string, string, string]) => (
           <button key={x[0]} type="button" className="wf-tab" onClick={() => { setSpec(x[0]); setSel(-1); }} style={{ display: "flex", alignItems: "center", gap: 6, padding: "4px 10px 4px 4px", borderRadius: 8, border: `1px solid ${spec === x[0] ? color : "#4a3d22"}`, background: spec === x[0] ? `${color}30` : "#14110d", color: spec === x[0] ? "#fff" : MUTED, fontSize: 13 }}><Icon icon={x[2]} size={24} />{x[1]}</button>
         ))}
         <span style={{ flex: 1 }} />
@@ -1334,8 +1351,8 @@ function MacroCard({ m, live }: { m: Macro; live?: string }) {
   );
 }
 
-function MacroBook({ lvV, lvC }: { lvV: number; lvC: number }) {
-  const [f, setF] = useState<string>("all");
+function MacroBook({ lvV, lvC, view }: { lvV: number; lvC: number; view: View }) {
+  const [fPick, setF] = useState<string>("all");
   const [showAll, setShowAll] = useState<boolean>(false);
   const lvOf = (m: Macro) => m.spec === "enh" ? lvV : lvC;
   const locked = (m: Macro) => !!m.lvl && m.lvl > lvOf(m);
@@ -1346,14 +1363,16 @@ function MacroBook({ lvV, lvC }: { lvV: number; lvC: number }) {
     return parts.length ? `At your level: ${parts.join(" · ")}` : undefined;
   };
   const tabs: [string, string, string][] = [["all", "All", "inv_misc_book_09"], ["aff", "Affliction", "spell_shadow_deathcoil"], ["demo", "Demonology", "spell_shadow_metamorphosis"], ["enh", "Enhancement", "spell_nature_lightningshield"], ["new", "New + fixed", "spell_holy_borrowedtime"]];
-  const all = MACROS.filter((m: Macro) => f === "all" ? true : f === "new" ? !!m.tag : f === "enh" ? m.spec === "enh" : m.spec === f || m.spec === "both");
+  const tabsV = tabs.filter((t: [string, string, string]) => view === "both" || (view === "V" ? t[0] !== "aff" && t[0] !== "demo" : t[0] !== "enh"));
+  const f = tabsV.some((t: [string, string, string]) => t[0] === fPick) ? fPick : "all";
+  const all = MACROS.filter((m: Macro) => view === "both" || (view === "V" ? m.spec === "enh" : m.spec !== "enh")).filter((m: Macro) => f === "all" ? true : f === "new" ? !!m.tag : f === "enh" ? m.spec === "enh" : m.spec === f || m.spec === "both");
   const ordered = [...all.filter((m: Macro) => m.spec !== "enh"), ...all.filter((m: Macro) => m.spec === "enh")];
   const list = showAll ? ordered : ordered.filter((m: Macro) => !locked(m));
   const hidden = all.length - list.length;
   return (
     <Frame accent={GOLD} title="Macro book" icon="inv_misc_book_09" right={<span style={{ fontSize: 12, color: MUTED }}>{list.length} shown{hidden ? ` · ${hidden} above your level` : ""}</span>}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
-        {tabs.map((t: [string, string, string]) => (
+        {tabsV.map((t: [string, string, string]) => (
           <button key={t[0]} type="button" className="wf-tab" onClick={() => setF(t[0])} style={{ display: "flex", alignItems: "center", gap: 6, padding: "4px 10px 4px 4px", borderRadius: 8, border: `1px solid ${f === t[0] ? GOLD : "#4a3d22"}`, background: f === t[0] ? "rgba(245,215,122,.15)" : "#14110d", color: f === t[0] ? "#fff" : MUTED, fontSize: 13 }}>
             <Icon icon={t[2]} size={24} />{t[1]}
           </button>
@@ -2136,9 +2155,27 @@ function CorvinFirstSession({ level }: { level: number }) {
   );
 }
 
+// Character view (Nov 7): the page shows Corvin, Vorgash or both. Picked from the hero portraits or the sticky bar,
+// saved on the EliteDesk (state.view), and #corvin / #vorgash / #both links open straight into a view.
+type View = "C" | "V" | "both";
+const VIEW_HASH: Record<string, View> = { "#corvin": "C", "#vorgash": "V", "#both": "both" };
+const VIEW_NAME: Record<string, string> = { C: "corvin", V: "vorgash", both: "both" };
+const shows = (view: View, who: "C" | "V"): boolean => view === "both" || view === who;
+function initialView(): View {
+  try { const h = VIEW_HASH[(location.hash || "").toLowerCase()]; if (h) return h; } catch (e: unknown) { /* ignore */ }
+  const s = WF_STORE.initial?.view;
+  return s === "C" || s === "V" || s === "both" ? s : "C";
+}
+function guideBuildKey(cls: string): string {
+  const g = GUIDE[cls];
+  if (cls === "warlock" && g === GUIDE_DEFAULT.warlock) return "path";
+  const b = BUILD_DEFS.find((x: BuildDef) => x.seq === g && !x.path && !x.fixed && x.cls === cls);
+  return b ? b.key : cls === "shaman" ? "enh_lvl" : "path";
+}
+
 // Sticky jump bar (Nov 6 layout): the page is ~20 screens, so the levels and section links stay pinned.
 type NavGroup = { label: string; items: { label: string; id: string }[] };
-function StickyNav({ groups, lvC, lvV }: { groups: NavGroup[]; lvC: number; lvV: number }) {
+function StickyNav({ groups, lvC, lvV, view, setView }: { groups: NavGroup[]; lvC: number; lvV: number; view: View; setView: (v: View) => void }) {
   const [on, setOn] = useState<string>("");
   useEffect(() => {
     const ids = groups.flatMap((g: NavGroup) => g.items.map((i: { id: string }) => i.id));
@@ -2158,16 +2195,17 @@ function StickyNav({ groups, lvC, lvV }: { groups: NavGroup[]; lvC: number; lvV:
     window.addEventListener("resize", pick);
     return () => { window.removeEventListener("scroll", pick); window.removeEventListener("resize", pick); };
   }, []);
-  const chip = (name: string, lv: number, color: string, icon: string) => (
-    <a href="#ding" className="wf-nav-char" title={`${name} is level ${lv}. Change it in Next ding.`}>
+  const chip = (who: "C" | "V", name: string, lv: number, color: string, icon: string) => (
+    <button type="button" className={`wf-nav-char${view === who ? " wf-nav-char-on" : ""}${shows(view, who) ? "" : " wf-nav-char-off"}`} aria-pressed={view === who} onClick={() => setView(who)} title={`Show ${name}'s page (level ${lv}; change the level in Next ding)`} style={{ ["--cc" as any]: color }}>
       <Icon icon={icon} size={22} ring={color} /><span>{name}</span><b>{lv}</b>
-    </a>
+    </button>
   );
   return (
     <nav className="wf-nav" aria-label="Jump to section">
       <div className="wf-nav-chars">
-        {chip("Corvin", lvC, WARLOCK, "classicon_warlock")}
-        {chip("Vorgash", lvV, SHAMAN, "classicon_shaman")}
+        {chip("C", "Corvin", lvC, WARLOCK, "classicon_warlock")}
+        {chip("V", "Vorgash", lvV, SHAMAN, "classicon_shaman")}
+        <button type="button" className={`wf-nav-both${view === "both" ? " wf-nav-char-on" : ""}`} aria-pressed={view === "both"} onClick={() => setView("both")} title="Show both characters side by side">Both</button>
       </div>
       <div className="wf-nav-groups">
         {groups.map((g: NavGroup) => (
@@ -2251,6 +2289,16 @@ export default function App() {
   const [launchOpen, setLaunchOpen] = useState<boolean>(false);
   const [firstOpen, setFirstOpen] = useState<boolean>(false);
   const [feedAll, setFeedAll] = useState<boolean>(false);
+  const [addonsOpen, setAddonsOpen] = useState<boolean>(false);
+  const [progressOpen, setProgressOpen] = useState<boolean>(false);
+  const [view, setViewRaw] = useState<View>(initialView);
+  const setView = (v: View) => { setViewRaw(v); try { history.replaceState(null, "", `#${VIEW_NAME[v]}`); } catch (e: unknown) { /* ignore */ } };
+  useEffect(() => { if (storeOk !== null) WF_STORE.save("view", view); }, [view, storeOk]);
+  useEffect(() => {
+    const onHash = () => { const h = VIEW_HASH[(location.hash || "").toLowerCase()]; if (h) setViewRaw(h); };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
   const [guide, setGuideAll] = useState<Record<string, string>>(() => cleanGuide(WF_STORE.initial?.guide));
   GUIDE = guide; // read during this render by rotLv, nextTalent and the Naga plate
   const setGuide = (cls: string, seq: string) => setGuideAll((g: Record<string, string>) => cleanGuide({ ...g, [cls]: seq }));
@@ -2321,32 +2369,45 @@ export default function App() {
   const use12 = nagaLv >= n12.from;
   const specOptions = [{ value: "aff", label: "Affliction" }, { value: "demo", label: "Demonology" }, { value: "enh", label: "Enhancement" }];
 
+  useEffect(() => {
+    const want = view === "C" ? "warlock" : view === "V" ? "shaman" : null;
+    if (want && tDef.cls !== want) { setBuildKey(guideBuildKey(want)); setPreview(null); }
+    if (view === "C" && nagaSpec === "enh") setNagaSpec("aff");
+    if (view === "V" && nagaSpec !== "enh") setNagaSpec("enh");
+    if (view === "C") setGearChar("lock");
+    if (view === "V") setGearChar("sham");
+  }, [view]);
+  const showC = shows(view, "C");
+  const dCols = view === "C" ? [0, 1, 2, 5] : view === "V" ? [0, 1, 2, 3, 4] : [0, 1, 2, 3, 4, 5];
+  const showV = shows(view, "V");
+
   return (
     <Page
       title="WoW Forever Command Table"
       summary="Your WoW Forever dashboard for Vorgash (Orc Enhancement Shaman) and Corvin (Undead Warlock): launch countdown, meta, patch feed, Corvin’s Affliction leveling path (Demonology Spec 2 at 40), live talent trees with a level slider, rotations, Naga binds, profession windows with a skill slider, gear, macro book, addons and progress. WoW-inspired design, not affiliated with Blizzard."
       width="wide"
     >
-      <Hero />
+      <Hero view={view} setView={setView} />
       {/* Layout Nov 6 (Claude, for Jason): in-session sections first, reference after, launch night folded at the bottom. Keep this order and the sticky bar. */}
-      <StickyNav lvC={lvC} lvV={lvV} groups={[
+      <StickyNav lvC={lvC} lvV={lvV} view={view} setView={setView} groups={[
         { label: "Play", items: [{ label: "Next ding", id: "ding" }, { label: "Rotations", id: "rotations" }, { label: "Naga binds", id: "naga" }, { label: "Talents", id: "builds" }] },
-        { label: "Plan", items: [{ label: "Leveling path", id: "path" }, { label: "Gear and dungeons", id: "gear" }, { label: "Professions", id: "profs" }, { label: "Progress", id: "progress" }] },
-        { label: "Reference", items: [{ label: "Macros", id: "macros" }, { label: "Addons", id: "addons" }, { label: "Characters", id: "chars" }, { label: "Meta board", id: "meta" }, { label: "Patch feed", id: "feed" }, { label: "Launch night", id: "launch" }] },
+        { label: "Plan", items: [...(showC ? [{ label: "Leveling path", id: "path" }] : []), { label: "Gear and dungeons", id: "gear" }, { label: "Professions", id: "profs" }, ] },
+        { label: "Reference", items: [{ label: "Macros", id: "macros" }, { label: "Addons", id: "addons" }, ...(view === "both" ? [{ label: "Characters", id: "chars" }] : []), { label: "Meta board", id: "meta" }, { label: "Patch feed", id: "feed" }, { label: "Saves", id: "progress" }, { label: "Launch night", id: "launch" }] },
       ]} />
-      <Section heading="Next ding" id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
+      <Section heading={view === "both" ? "Next ding" : `Next ding · ${view === "C" ? "Corvin" : "Vorgash"}`} id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
         <Grid columns={2} plain>
-          <NextDing who="C" level={lvC} setLevel={setLvC} skills={st.sk} guide={guide.warlock} setGuide={(v: string) => setGuide("warlock", v)} />
-          <NextDing who="V" level={lvV} setLevel={setLvV} skills={st.sk} guide={guide.shaman} setGuide={(v: string) => setGuide("shaman", v)} />
+          {showC ? <NextDing who="C" level={lvC} setLevel={setLvC} skills={st.sk} guide={guide.warlock} setGuide={(v: string) => setGuide("warlock", v)} /> : null}
+          {showV ? <NextDing who="V" level={lvV} setLevel={setLvV} skills={st.sk} guide={guide.shaman} setGuide={(v: string) => setGuide("shaman", v)} /> : null}
+          {view !== "both" ? <CharCard c={CHARS[view === "C" ? 1 : 0]} who={view} level={view === "C" ? lvC : lvV} setLevel={view === "C" ? setLvC : setLvV} skills={st.sk} setSkill={setSkill} /> : null}
         </Grid>
       </Section>
 
       <Section heading="Rotations" id="rotations" caption="Questing vs dungeon priorities per spec, as icon strips. Sources and dates under each.">
-        <RotationBoard lvV={lvV} lvC={lvC} />
+        <RotationBoard lvV={lvV} lvC={lvC} view={view} />
       </Section>
 
       <Section heading="Naga V2 Pro binds" id="naga" caption="From your notes: 6-button plate, Synapse Standard mode, Hypershift off. Shift+Naga is the second layer, so 12 combat binds.">
-        <Segmented options={use12 && nagaSpec !== "enh" ? [{ value: "aff", label: "Spec 1 · Affliction" }, { value: "demo", label: "Spec 2 · Demonology" }, { value: "enh", label: "Enhancement" }] : specOptions} value={nagaSpec} onChange={(v: string) => { setNagaSpec(v); setStagePick(null); }} />
+        {view !== "V" ? <Segmented options={(use12 && nagaSpec !== "enh" ? [{ value: "aff", label: "Spec 1 · Affliction" }, { value: "demo", label: "Spec 2 · Demonology" }, { value: "enh", label: "Enhancement" }] : specOptions).filter((o: { value: string }) => view === "both" || o.value !== "enh")} value={nagaSpec} onChange={(v: string) => { setNagaSpec(v); setStagePick(null); }} /> : null}
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${use12 && !reached12 ? ORANGE : "#4a3d22"}`, background: use12 && !reached12 ? "rgba(255,128,0,.08)" : "rgba(0,0,0,.25)", color: INK, fontSize: 13 }}>
           <Icon icon={nagaSpec === "enh" ? "classicon_shaman" : "classicon_warlock"} size={24} ring={nagaColor} />
           <span style={{ flex: "1 1 260px" }}>{nagaPrev !== null ? `Preview at level ${nagaLv} (${nagaWho} is ${nagaChar}). ` : `${nagaWho} is level ${nagaLv}. `}{use12 ? `12-button plate (from ${n12.from}).` : `6-button plate; the 12-button plate starts at ${n12.from}.`} Every rotation spell you have now gets a button, in rotation order; greyed buttons show the level they unlock.</span>
@@ -2395,7 +2456,7 @@ export default function App() {
             <button type="button" className="wf-btn" onClick={() => setCharLevel(preview)} style={{ padding: "3px 10px", borderRadius: 6, border: `1px solid ${GOLD}`, background: "linear-gradient(180deg,#7a1a12,#3d0c08)", color: GOLD_HI, fontSize: 12 }}>Set {charName} to {preview}</button>
           </div>
         ) : null}
-        <TalentPlanner buildKey={buildKey} setBuildKey={setBuildKey} level={level} setLevel={setLevel} pathSpec={pathSpec} setPathSpec={setPathSpec} />
+        <TalentPlanner buildKey={buildKey} setBuildKey={setBuildKey} level={level} setLevel={setLevel} pathSpec={pathSpec} setPathSpec={setPathSpec} view={view} />
         {buildKey.indexOf("enh") === 0 ? (
           <BulletList items={PL.talents_enh_bullets} />
         ) : null}
@@ -2407,16 +2468,18 @@ export default function App() {
         ) : null}
       </Section>
 
+      {showC ? (
       <Section heading="Corvin’s leveling path" id="path" caption="Level Affliction all the way to 60 on Icy Veins' 40/11 order (Demonic Sacrifice 41, Wrack 51). Dual Spec at 40 adds Demonology as Spec 2 for dungeons and raids. Click a level to see it in the talent tree.">
         <PathTimeline go={goPath} />
       </Section>
+      ) : null}
 
       <Section heading="Gear and dungeons" id="gear" caption="Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server.">
-        <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: "Vorgash (Shaman) · Alt" }]} value={gearChar} onChange={(v: string) => setGearChar(v)} />
+        {view === "both" ? <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: "Vorgash (Shaman) · Alt" }]} value={gearChar} onChange={(v: string) => setGearChar(v)} /> : null}
         <GearSheet who={gearChar === "lock" ? "lock" : "sham"} lv={gearChar === "lock" ? lvC : lvV} ck={st.ck} toggle={toggle} />
-        <Table columns={["Cleared", "Dungeon", "Levels", "Vorgash", "Preset (Vorgash)", "Corvin"]} rows={DUNGEONS.map((r: string[], i: number) => [
-          <span style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 11 }}><TickBox on={!!st.ck[`dv${DKEYS[i]}`]} onClick={() => toggle(`dv${DKEYS[i]}`)} small color={SHAMAN} />V<TickBox on={!!st.ck[`dc${DKEYS[i]}`]} onClick={() => toggle(`dc${DKEYS[i]}`)} small color={WARLOCK} />C</span>,
-          r[0], dunTop(r[1]) > 30 ? <span style={{ display: "inline-flex", flexDirection: "column", gap: 2 }}>{r[1]}<span className="wf-pre wf-pre-sm" title={`${PRE_LABEL} · ${PRE_MARKS.notes[1]}`}>31+ pre-launch</span></span> : r[1], dunCell(r[2]), <PresetCell i={i} open={presetOpen.indexOf(i) >= 0} onToggle={togglePreset} />, dunCell(r[3])])} />
+        <Table columns={dCols.map((k: number) => ["Cleared", "Dungeon", "Levels", "Vorgash", "Preset (Vorgash)", "Corvin"][k])} rows={DUNGEONS.map((r: string[], i: number) => [
+          <span style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 11 }}>{showV ? <><TickBox on={!!st.ck[`dv${DKEYS[i]}`]} onClick={() => toggle(`dv${DKEYS[i]}`)} small color={SHAMAN} />V</> : null}{showC ? <><TickBox on={!!st.ck[`dc${DKEYS[i]}`]} onClick={() => toggle(`dc${DKEYS[i]}`)} small color={WARLOCK} />C</> : null}</span>,
+          r[0], dunTop(r[1]) > 30 ? <span style={{ display: "inline-flex", flexDirection: "column", gap: 2 }}>{r[1]}<span className="wf-pre wf-pre-sm" title={`${PRE_LABEL} · ${PRE_MARKS.notes[1]}`}>31+ pre-launch</span></span> : r[1], dunCell(r[2]), <PresetCell i={i} open={presetOpen.indexOf(i) >= 0} onToggle={togglePreset} />, dunCell(r[3])].filter((_c: ReactNode, k: number) => dCols.indexOf(k) >= 0))} />
         <PreLine lead="Dungeon rows and totem presets marked 31+:" mark="notes" />
         <PresetPanel open={presetOpen} setOpen={setPresetOpen} />
         <Text>{PL.gear_raid_preview.text}</Text>
@@ -2424,53 +2487,49 @@ export default function App() {
       </Section>
 
       <Section heading="Professions" id="profs" caption="Pick a character, then a profession. Skill uses the same numbers as the character cards; − / + or drag. Training thresholds warn when the character level is too low. Legacy points at 150, 225 and 300 in each crafting profession, once per account.">
-        <ProfessionWindow skills={st.sk} setSkillFor={setSkill} lvV={lvV} lvC={lvC} />
+        <ProfessionWindow skills={st.sk} setSkillFor={setSkill} lvV={lvV} lvC={lvC} view={view} />
         <Text>{PL.profs_note_skinning.text}</Text>
         <Text>{PL.profs_note_tailoring.text}</Text>
         <Text>{PL.profs_note_trainers.text}</Text>
         <Text>{PL.profs_note_slider.text}</Text>
       </Section>
 
-      <Section heading="Progress tracker" id="progress" caption="Tick items as you go. Saving depends on the viewer: the badge below says whether it works here.">
-        <SavePanel storeOk={storeOk} code={code} onImport={importCode} onReset={resetAll} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12, marginTop: 12 }}>
-          {[...PROGRESS].sort((a: { heading: string }, b: { heading: string }) => progRank(a) - progRank(b)).map((g: { heading: string; items: Tick[] }) => (
-            <div key={g.heading} style={{ padding: 10, borderRadius: 10, border: "1px solid #4a3d22", background: "linear-gradient(180deg,#1a1712,#0d0c0a)" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", fontFamily: SERIF, color: GOLD_HI, fontSize: 15, marginBottom: 4 }}><span>{g.heading}</span><span style={{ fontSize: 12, color: MUTED }}>{g.items.filter((t: Tick) => st.ck[t.id]).length}/{g.items.length}</span></div>
-              {g.items.map((t: Tick) => <TickBox key={t.id} on={!!st.ck[t.id]} onClick={() => toggle(t.id)} text={t.text} meta={t.meta} />)}
-            </div>
-          ))}
-        </div>
-      </Section>
-
       <Section heading="Macros" id="macros" caption="Spell-book cards: copy, check length (255 max) and open “What it does”. NEW = added from Forever sources; FIXED = corrected from v1.">
-        <MacroBook lvV={lvV} lvC={lvC} />
+        <MacroBook lvV={lvV} lvC={lvC} view={view} />
         <Text>{PL.macros_skip.text}</Text>
       </Section>
 
       <Section heading="Addons" id="addons">
-        <Section heading="Installed (14), all untested until launch">
-          <Table columns={["Addon", "Version", "What it does", "Status"]} rows={INSTALLED.map((r: string[]) => [r[0], r[1], r[2], <Status tone="neutral">Installed · untested</Status>])} />
-          <Text>{PL.addons_installed_note.text}</Text>
+        {/* Nov 7: Jason confirmed all installed addons work in game, so the section folds to one row. */}
+        <Fold title={`Your ${INSTALLED.length} addons · all working`} sub="Tested in game. The list and recommended extras are inside." icon="inv_misc_book_09" open={addonsOpen} setOpen={setAddonsOpen}>
+        <Section heading={`Installed (${INSTALLED.length}), working`}>
+          <Table columns={["Addon", "Version", "What it does", "Status"]} rows={INSTALLED.map((r: string[]) => [r[0], r[1], r[2], <Status tone="success">Working</Status>])} />
         </Section>
+        {showV ? (
         <Section heading="Recommended to try: Shaman">
           <LinkCards links={PL.addons_links_shaman} />
         </Section>
+        ) : null}
+        {showC ? (
         <Section heading="Recommended to try: Warlock">
           <LinkCards links={PL.addons_links_warlock} />
         </Section>
+        ) : null}
         <Section heading="Recommended to try: both">
           <LinkCards links={PL.addons_links_both} />
           <Text>{PL.addons_install_note.text}</Text>
         </Section>
+        </Fold>
       </Section>
 
-      <Section heading="Characters" id="chars" caption="Set levels with the gold badge (− / type / +) and skills with − / +. Progress lives on this page: see Export / Import in the Progress tracker.">
-        <Grid columns={2} plain>
-          <CharCard c={CHARS[1]} who="C" level={lvC} setLevel={setLvC} skills={st.sk} setSkill={setSkill} />
-          <CharCard c={CHARS[0]} who="V" level={lvV} setLevel={setLvV} skills={st.sk} setSkill={setSkill} />
+      {view === "both" ? (
+      <Section heading="Characters" id="chars" caption="Set levels with the gold badge (− / type / +) and skills with − / +. Progress saves on the EliteDesk; backup codes are under Saves at the bottom.">
+        <Grid columns={view === "both" ? 2 : 1} plain>
+          {showC ? <CharCard c={CHARS[1]} who="C" level={lvC} setLevel={setLvC} skills={st.sk} setSkill={setSkill} /> : null}
+          {showV ? <CharCard c={CHARS[0]} who="V" level={lvV} setLevel={setLvV} skills={st.sk} setSkill={setSkill} /> : null}
         </Grid>
       </Section>
+      ) : null}
 
       <Section heading="Meta board" id="meta" caption="Pre-launch only: beta data and simulations. Forever launched Nov 4; no level-60 logs exist yet.">
         <MetaBoard />
@@ -2494,6 +2553,12 @@ export default function App() {
         </Section>
         <PreLine lead="Molten Core loot and Tier 1 (build 70707): Earthshaker, Band of Sulfuras, Choker of the Fire Lord, Felheart Raiment, The Earthfury:" mark="datamined" />
         <LinkCards links={PL.feed_links} />
+      </Section>
+
+      <Section heading="Saves" id="progress" caption="Your page saves on the EliteDesk automatically. Export a backup code now and then. (Nov 7: the milestone boards were removed because every item already lives in Gear, Professions, Talents or Next ding; old ticks stay saved.)">
+        <Fold title="Save status and backup code" sub="Export / Import / Reset" icon="inv_misc_note_01" open={progressOpen} setOpen={setProgressOpen}>
+          <SavePanel storeOk={storeOk} code={code} onImport={importCode} onReset={resetAll} />
+        </Fold>
       </Section>
 
       <Section heading="Launch night (done)" id="launch" caption="Forever launched Nov 4. Corvin's first-session quest log and the launch checklist, kept for reference; ticks still save.">
