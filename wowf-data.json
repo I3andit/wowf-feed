@@ -4768,25 +4768,62 @@
         "icon": "ability_ghoulfrenzy",
         "spec": "both",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip\n/petattack [harm,nodead]\n/petfollow [mod:ctrl]",
-        "does": "Sends the pet at your target. Hold Ctrl to call it back, which you want before you Fear. Affliction from 41: pet is sacrificed, so this is for Spec 2 (Demonology).",
-        "src": "Your notes",
+        "code": "#showtooltip\n/petattack [nomod:ctrl,harm,nodead]\n/petfollow [mod:ctrl]",
+        "does": "Sends the pet at your target; Ctrl calls it back without also sending it in (v1 ran both lines on Ctrl). Affliction from 41 has no pet, so after that this is a Spec 2 key.",
+        "src": "Your notes; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "bind": [
           "pet"
-        ]
+        ],
+        "tag": "FIXED"
       },
       {
-        "title": "Curse button",
+        "title": "Curse button (levels 4 to 19)",
         "icon": "spell_shadow_chilltouch",
         "spec": "both",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip\n/cast [mod:ctrl] Curse of Recklessness; [mod:alt] Curse of Tongues; Curse of the Elements",
-        "does": "One key for three curses: plain is Elements, Ctrl is Recklessness, Alt is Tongues. Before 20, swap Elements for Curse of Weakness.",
-        "src": "Your notes",
+        "code": "#showtooltip\n/cast [mod:ctrl] Curse of Recklessness; Curse of Weakness",
+        "does": "Plain: Curse of Weakness. Ctrl: Curse of Recklessness (from 14). v1 pressed Curse of the Elements, which you don't have before 20, so the plain press did nothing. No Alt branch: Alt is the default self-cast key.",
+        "src": "Trainer levels; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "bind": [
           "coe",
           "cow"
-        ]
+        ],
+        "lvl": 4,
+        "until": 20,
+        "flag": "Swaps to the 20-25 version at level 20.",
+        "tag": "FIXED"
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Curse button (levels 20 to 25)",
+        "icon": "spell_shadow_chilltouch",
+        "spec": "both",
+        "lvl": 20,
+        "until": 26,
+        "bind": [
+          "coe",
+          "cow"
+        ],
+        "code": "#showtooltip\n/cast [mod:ctrl] Curse of Recklessness; Curse of the Elements",
+        "does": "Plain: Curse of the Elements (20). Ctrl: Recklessness.",
+        "src": "Trainer levels; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "flag": "Swaps to the 26+ version at 26."
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Curse button (26+)",
+        "icon": "spell_shadow_chilltouch",
+        "spec": "both",
+        "lvl": 26,
+        "bind": [
+          "coe",
+          "cow"
+        ],
+        "code": "#showtooltip\n/cast [mod:ctrl] Curse of Tongues; Curse of the Elements",
+        "does": "Plain: Curse of the Elements. Ctrl: Curse of Tongues (26). Recklessness moves to a Bottom Right click.",
+        "src": "Trainer levels; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
       },
       {
         "title": "Corruption, mouseover",
@@ -4801,59 +4838,46 @@
         ]
       },
       {
-        "title": "Corruption → Bane",
-        "icon": "spell_shadow_curseofsargeras",
-        "spec": "aff",
-        "where": "Questing filler",
-        "code": "#showtooltip\n/petattack [harm,nodead]\n/castsequence reset=target/combat Corruption, Bane of Agony",
-        "does": "First press sends the pet and casts Corruption; second press applies Bane of Agony. Resets on a new target.",
-        "tag": "NEW",
-        "lvl": 8,
-        "src": "wowfdb Affliction macros (marked Untested)",
-        "url": "https://wowfdb.com/classes/warlock/affliction/macros/"
-      },
-      {
         "title": "Amplify Curse + Bane",
         "icon": "spell_shadow_contagion",
         "spec": "aff",
         "where": "Naga slot follows your level",
         "code": "#showtooltip Bane of Agony\n/cast [harm,nodead] Amplify Curse\n/cast [harm,nodead] Bane of Agony",
         "does": "Pops Amplify Curse (off the global cooldown) then lands an empowered Bane of Agony in one press.",
-        "tag": "NEW",
-        "lvl": 20,
-        "src": "wowfdb Affliction macros (marked Untested)",
+        "tag": "FIXED",
+        "lvl": 53,
+        "src": "wowfdb Affliction macros (marked Untested); level gate fixed by Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "url": "https://wowfdb.com/classes/warlock/affliction/macros/",
         "bind": [
           "amp"
-        ]
+        ],
+        "flag": "Amplify Curse is a talent: level 53 on Corvin's Icy Veins order (it moves if you follow another guide)."
       },
       {
-        "title": "Wrack / Drain Soul / Drain Life",
+        "title": "Wrack, no restart",
         "icon": "ability_deathknight_hemorrhagicfever",
         "spec": "aff",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Wrack\n/stopattack\n/cast [mod:shift] Drain Soul; [mod:ctrl] Drain Life; Wrack",
-        "does": "Plain casts Wrack; Shift for Drain Soul on a dying mob; Ctrl for Drain Life when you need health.",
-        "tag": "NEW",
+        "code": "#showtooltip Wrack\n/cast [nochanneling,harm,nodead] Wrack",
+        "does": "Wrack only, and a second press can't restart the 6 s channel. v1's Shift branch could never fire (Shift+3 is your Siphon Life key) and /stopattack does nothing for a caster.",
+        "tag": "FIXED",
         "lvl": 51,
-        "src": "wowfdb Affliction macros (marked Untested)",
-        "url": "https://wowfdb.com/classes/warlock/affliction/macros/",
-        "flag": "Needs the Wrack talent (level 51 on Corvin's Icy Veins path); before 51 use the Drain Life macro.",
+        "src": "Icy Veins Nov 3 (rotation); Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026 (syntax); Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
         "bind": [
-          "wrack",
-          "dl"
+          "wrack"
         ]
       },
       {
         "title": "Healthstone",
         "icon": "inv_stone_04",
         "spec": "both",
-        "where": "Naga slot follows your level",
-        "code": "#showtooltip\n/cast [mod:shift] Create Healthstone\n/stopmacro [mod:shift]\n/use Major Healthstone\n/use Greater Healthstone\n/use Healthstone\n/use Lesser Healthstone\n/use Minor Healthstone",
-        "does": "Plain eats your best Healthstone; Shift makes a new one.",
+        "where": "Healthstone key (Shift+Naga on the 6-plate)",
+        "code": "#showtooltip\n/use Major Healthstone\n/use Greater Healthstone\n/use Healthstone\n/use Lesser Healthstone\n/use Minor Healthstone",
+        "does": "Eats your best Healthstone, nothing else. v1 sat on a Shift key, so its [mod:shift] branch was always true and it only ever made stones. Making stones moved to F2.",
         "tag": "FIXED",
-        "src": "Your notes, split",
-        "flag": "v1 combined Healthstone and Soulstone in 411 characters, over the 255 limit. Split in two.",
+        "src": "Your notes; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "flag": "Stone item names are the Classic names; check your bag after the first Create Healthstone.",
         "bind": [
           "hs"
         ]
@@ -4862,40 +4886,44 @@
         "title": "Soulstone",
         "icon": "spell_shadow_soulgem",
         "spec": "both",
-        "where": "Ctrl + your Healthstone button",
-        "code": "#showtooltip\n/cast [mod:shift] Create Soulstone\n/stopmacro [mod:shift]\n/use [@mouseover,help,nodead][help,nodead][@player] Minor Soulstone",
-        "does": "Soulstones your mouseover, then friendly target, then you. Shift makes a new stone.",
+        "where": "Ctrl + your Healthstone key",
+        "code": "#showtooltip\n/use [mod:ctrl,@mouseover,help,nodead][mod:ctrl,help,nodead][mod:ctrl,@player] Minor Soulstone",
+        "does": "Ctrl on the Healthstone key: Soulstone your mouseover, then friendly target, then you. Create Soulstone is level 18 (ranks at 30, 40, 50, 60).",
         "tag": "FIXED",
-        "src": "Your notes + wowfdb pattern",
+        "src": "Trainer levels; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "url": "https://wowfdb.com/classes/warlock/affliction/macros/",
-        "flag": "Edit 'Minor' to the rank you carry (wowfdb: keep only the lines for the stone you carry).",
+        "flag": "Edit 'Minor' to the stone you carry (Lesser 30, plain 40, Greater 50, Major 60).",
         "bind": [
           "hs"
-        ]
+        ],
+        "lvl": 18
       },
       {
         "title": "Fear, pet pulled off",
         "icon": "spell_shadow_possession",
         "spec": "both",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Fear\n/petpassive\n/cast [@mouseover,harm,nodead][harm,nodead] Fear",
-        "does": "Stops the pet so it doesn't break Fear, then Fears your mouseover or target.",
-        "src": "Your notes",
+        "code": "#showtooltip Fear\n/petfollow\n/cast [@mouseover,harm,nodead][harm,nodead] Fear",
+        "does": "Calls the pet off, then Fears your mouseover or target. v1 set the pet passive, so it stayed passive on the next pull.",
+        "src": "Your notes; Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "bind": [
           "fear"
-        ]
+        ],
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
+        "tag": "FIXED"
       },
       {
         "title": "Drain Life, no restart",
         "icon": "spell_shadow_lifedrain02",
         "spec": "both",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip\n/cast [mod:ctrl,nochanneling:Drain Mana] Drain Mana; [nochanneling:Drain Life] Drain Life",
-        "does": "Mashing won't cancel a running drain. Ctrl for Drain Mana.",
-        "src": "Your notes",
+        "code": "#showtooltip\n/cast [mod:ctrl,nochanneling,harm,nodead] Drain Mana; [nomod:ctrl,nochanneling,harm,nodead] Drain Life",
+        "does": "Drain Life; Ctrl for Drain Mana (24). Neither restarts a running channel, and holding Ctrl during Drain Mana no longer falls through to Drain Life.",
+        "src": "Your notes; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "bind": [
           "dl"
-        ]
+        ],
+        "tag": "FIXED"
       },
       {
         "title": "Drain Soul",
@@ -4926,11 +4954,11 @@
         "icon": "spell_shadow_lifedrain",
         "spec": "demo",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Health Funnel\n/cast [@pet,exists,nodead] Health Funnel",
-        "does": "Always channels into your pet, whatever you have targeted.",
-        "tag": "NEW",
-        "src": "wowfdb Demonology macros (marked Untested)",
-        "url": "https://wowfdb.com/classes/warlock/demonology/macros/",
+        "code": "#showtooltip Health Funnel\n/stopmacro [channeling:Health Funnel]\n/cast [@pet,exists,nodead] Health Funnel",
+        "does": "Heals the pet; a second press won't restart the funnel and cost health again.",
+        "tag": "FIXED",
+        "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026 pattern; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
         "bind": [
           "hf"
         ]
@@ -4943,7 +4971,8 @@
         "code": "#showtooltip\n/cast [mod:shift] Summon Voidwalker; [mod:ctrl] Summon Succubus; [mod:alt] Summon Felhunter; Summon Imp",
         "does": "Every demon on one key. Plain is Imp.",
         "src": "Your notes",
-        "flag": "If your spellbook says Summon Sayaad or Incubus, swap the name."
+        "flag": "If your spellbook says Summon Sayaad or Incubus, swap the name.",
+        "fkey": "F1"
       },
       {
         "title": "Fel Domination + summon",
@@ -4954,45 +4983,59 @@
         "does": "When the pet dies, press twice: instant Fel Domination, then a fast Voidwalker (Ctrl: Felhunter).",
         "tag": "NEW",
         "src": "wowfdb Demonology macros (marked Untested)",
-        "url": "https://wowfdb.com/classes/warlock/demonology/macros/"
+        "url": "https://wowfdb.com/classes/warlock/demonology/macros/",
+        "fkey": "F1"
       },
       {
-        "title": "Demonic Sacrifice",
+        "title": "Demonic Sacrifice (Spec 2, dungeon)",
         "icon": "spell_shadow_psychicscream",
         "spec": "demo",
         "where": "Demo spare key",
-        "code": "#showtooltip Demonic Sacrifice\n/cast [pet] Demonic Sacrifice",
-        "does": "Only fires with a pet out, so it can't waste the press.",
-        "tag": "NEW",
-        "src": "wowfdb Demonology macros (marked Untested)",
-        "url": "https://wowfdb.com/classes/warlock/demonology/macros/"
+        "code": "#showtooltip Demonic Sacrifice\n/cast [pet:Succubus] Demonic Sacrifice",
+        "does": "Spec 2 dungeon plan: sacrifice the Succubus, then summon the Imp. Only fires on that pet, so it can't eat your Voidwalker.",
+        "tag": "FIXED",
+        "src": "Mobalytics Demonology 2/31/18 (Oct 30); Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "url": "https://wowfdb.com/classes/warlock/demonology/macros/",
+        "lvl": 40,
+        "flag": "If your spellbook says Incubus or Sayaad, change the pet name."
       },
       {
-        "title": "Soul Fire / Searing Pain",
+        "tag": "NEW",
+        "where": "Spare key at 41",
+        "title": "Demonic Sacrifice (Affliction solo)",
+        "icon": "spell_shadow_psychicscream",
+        "spec": "aff",
+        "lvl": 41,
+        "code": "#showtooltip Demonic Sacrifice\n/cast [pet:Felhunter] Demonic Sacrifice",
+        "does": "Affliction at 41 sacrifices the Felhunter for the buff. Only fires on the Felhunter. Summoning any demon afterwards removes the buff, so keep F1 away from it.",
+        "src": "Icy Veins Affliction order (point 32 = level 41); Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+      },
+      {
+        "title": "Soul Fire",
         "icon": "spell_fire_fireball02",
         "spec": "demo",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Soul Fire\n/stopattack\n/cast [mod:ctrl] Searing Pain; Soul Fire",
-        "does": "Big Soul Fire nuke; Ctrl for a quick Searing Pain to pull threat off the healer.",
-        "tag": "NEW",
+        "code": "#showtooltip Soul Fire\n/cast [@mouseover,harm,nodead][harm,nodead] Soul Fire",
+        "does": "Soul Fire on mouseover or target, always the highest rank. Searing Pain has its own key, so the old Ctrl branch is gone.",
+        "tag": "FIXED",
         "lvl": 48,
-        "src": "wowfdb Demonology macros (marked Untested)",
+        "src": "Trainer level 48; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "url": "https://wowfdb.com/classes/warlock/demonology/macros/",
         "bind": [
-          "sf",
-          "sp"
-        ]
+          "sf"
+        ],
+        "flag": "The under-35% Soul Fire window needs Decimation, which is in the Mobalytics build but not the Icy Veins Demonology order."
       },
       {
         "title": "Searing Pain + pet",
         "icon": "spell_fire_soulburn",
         "spec": "demo",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Searing Pain\n/petattack [harm,nodead]\n/cast Searing Pain",
-        "does": "Sends the pet in with every cast so it never idles.",
-        "tag": "NEW",
-        "src": "Mobalytics Demo advice + standard syntax",
-        "url": "https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide",
+        "code": "#showtooltip Searing Pain\n/petattack [@mouseover,harm,nodead][@target,harm,nodead]\n/cast [@mouseover,harm,nodead][@target,harm,nodead] Searing Pain",
+        "does": "Pet and Searing Pain hit the same mob (mouseover first), so Demonic Brand (talent at 25) marks what the pet is on.",
+        "tag": "FIXED",
+        "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
         "flag": "Assembled from the guide's advice; not a published macro.",
         "bind": [
           "sp"
@@ -5002,10 +5045,11 @@
         "title": "Create stone",
         "icon": "inv_ammo_firetar",
         "spec": "both",
-        "where": "F2",
+        "where": "F5",
         "code": "#showtooltip\n/cast [mod:ctrl] Create Firestone; Create Spellstone",
         "does": "Spellstone (36) for Affliction; Ctrl for Firestone (28) for Demonology.",
-        "src": "Your notes"
+        "src": "Your notes",
+        "fkey": "F5"
       },
       {
         "title": "Pet special",
@@ -5043,6 +5087,152 @@
         ]
       },
       {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Shadow Bolt + pet",
+        "icon": "spell_shadow_shadowbolt",
+        "spec": "both",
+        "bind": [
+          "sb"
+        ],
+        "code": "#showtooltip Shadow Bolt\n/petfollow [mod:ctrl]\n/stopmacro [mod:ctrl]\n/petattack [@target,harm,nodead]\n/cast [@target,harm,nodead] Shadow Bolt",
+        "does": "Every bolt also sends the pet; Ctrl recalls the pet and casts nothing.",
+        "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/"
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Bane of Agony, mouseover",
+        "icon": "spell_shadow_curseofsargeras",
+        "spec": "both",
+        "lvl": 8,
+        "bind": [
+          "bane"
+        ],
+        "code": "#showtooltip Bane of Agony\n/cast [@mouseover,harm,nodead][harm,nodead] Bane of Agony",
+        "does": "Bane on your mouseover or target, always the highest rank.",
+        "src": "Warlock - Macros (your notes); kami-labs rank rule Oct 1; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Immolate, mouseover",
+        "icon": "spell_fire_immolation",
+        "spec": "both",
+        "bind": [
+          "imm"
+        ],
+        "code": "#showtooltip Immolate\n/cast [@mouseover,harm,nodead][harm,nodead] Immolate",
+        "does": "Immolate on mouseover or target, always the highest rank (a bar spell stays on the rank you dragged).",
+        "src": "Warlock - Macros (your notes); Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Siphon Life, mouseover",
+        "icon": "spell_shadow_requiem",
+        "spec": "aff",
+        "lvl": 30,
+        "bind": [
+          "siph"
+        ],
+        "code": "#showtooltip Siphon Life\n/cast [@mouseover,harm,nodead][harm,nodead] Siphon Life",
+        "does": "Third DoT (talent at 30 on the Icy Veins order), always the highest rank.",
+        "src": "Icy Veins Affliction order; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+      },
+      {
+        "tag": "NEW",
+        "where": "F2",
+        "title": "Create Healthstone / Soulstone",
+        "icon": "inv_stone_04",
+        "spec": "both",
+        "lvl": 10,
+        "fkey": "F2",
+        "code": "#showtooltip\n/cast [mod:ctrl] Create Soulstone; Create Healthstone",
+        "does": "Out of combat stone maker: plain Healthstone, Ctrl Soulstone (18). Each needs a Soul Shard. Keeps Shift out of the use keys.",
+        "src": "Warlock - Macros (your notes); trainer levels; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Death Coil / Howl of Terror",
+        "icon": "spell_shadow_deathcoil",
+        "spec": "both",
+        "lvl": 42,
+        "bind": [
+          "dc",
+          "howl"
+        ],
+        "code": "#showtooltip [mod:ctrl] Howl of Terror; Death Coil\n/stopcasting\n/cast [mod:ctrl] Howl of Terror; [@target,harm,nodead] Death Coil",
+        "does": "Panic key: stop casting, Death Coil (heals you); Ctrl for Howl of Terror (40, has a cast time).",
+        "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/"
+      },
+      {
+        "tag": "NEW",
+        "where": "Bottom Right (click)",
+        "title": "Curse of Exhaustion",
+        "icon": "spell_shadow_grimward",
+        "spec": "aff",
+        "lvl": 54,
+        "code": "#showtooltip Curse of Exhaustion\n/cast [@mouseover,harm,nodead][harm,nodead] Curse of Exhaustion",
+        "does": "30% slow on a runner. No /stopcasting, so it won't cancel a Wrack.",
+        "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026; level from the Icy Veins order",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/"
+      },
+      {
+        "tag": "NEW",
+        "where": "Bottom Right (click)",
+        "title": "Rain of Fire at cursor",
+        "icon": "spell_shadow_rainoffire",
+        "spec": "both",
+        "lvl": 20,
+        "code": "#showtooltip Rain of Fire\n/cast [@cursor] Rain of Fire",
+        "does": "Drops Rain of Fire under your mouse with no targeting click, for packs the tank is holding.",
+        "src": "Affliction dungeon rotation; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "flag": "[@cursor] is unconfirmed in Forever. If it doesn't drop, use the plain spell."
+      },
+      {
+        "tag": "NEW",
+        "where": "F4",
+        "title": "Demon Skin (1 to 19)",
+        "icon": "spell_shadow_ragingscream",
+        "spec": "both",
+        "lvl": 1,
+        "until": 20,
+        "fkey": "F4",
+        "code": "#showtooltip\n/cast Demon Skin",
+        "does": "Armor buff, always the highest rank.",
+        "src": "Warlock - Macros (your notes); Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+      },
+      {
+        "tag": "NEW",
+        "where": "F4",
+        "title": "Demon Armor (20+)",
+        "icon": "spell_shadow_ragingscream",
+        "spec": "both",
+        "lvl": 20,
+        "fkey": "F4",
+        "code": "#showtooltip\n/cast Demon Armor",
+        "does": "Replaces Demon Skin at 20, always the highest rank. Only one armor line, so it can't overwrite itself with the older armor.",
+        "src": "Trainer level 20; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Bane of Doom / Agony",
+        "icon": "spell_shadow_auraofdarkness",
+        "spec": "both",
+        "lvl": 60,
+        "bind": [
+          "bane"
+        ],
+        "code": "#showtooltip [mod:ctrl] Bane of Agony; Bane of Doom\n/cast [mod:ctrl,@mouseover,harm,nodead][mod:ctrl,harm,nodead] Bane of Agony; [@mouseover,harm,nodead][harm,nodead] Bane of Doom",
+        "does": "At 60: Bane of Doom on bosses that live past a minute; Ctrl for Agony when the target dies sooner.",
+        "src": "Mobalytics dungeon rotation (Oct 30)"
+      },
+      {
         "title": "Mouseover Healing Wave",
         "icon": "spell_nature_magicimmunity",
         "spec": "enh",
@@ -5056,17 +5246,20 @@
         "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
       },
       {
-        "title": "Earth Shock on target",
+        "title": "Earth Shock (Ctrl = Rank 1 kick)",
         "icon": "spell_nature_earthshock",
         "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Earth Shock\n/stopcasting\n/cast [@target,harm,nodead] Earth Shock",
-        "does": "Cancels own cast and shocks selected living hostile; highest learned rank for damage. Shared Shock cooldown still applies.",
-        "src": "Your notes; reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "code": "#showtooltip Earth Shock\n/stopcasting [mod:ctrl]\n/cast [mod:ctrl,@mouseover,harm,nodead][mod:ctrl,@target,harm,nodead] Earth Shock(Rank 1); [@target,harm,nodead] Earth Shock",
+        "does": "Plain: highest-rank Earth Shock, and it no longer cancels your own cast. Ctrl: stop casting and kick with cheap Rank 1 (mouseover first). Replaces the separate interrupt macro.",
+        "src": "Your notes; Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "bind": [
-          "es"
+          "es",
+          "kick1"
         ],
-        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
+        "flag": "Check in game that /stopcasting accepts [mod:ctrl]; if not, the Ctrl kick still works, it just won't cancel a cast in progress.",
+        "tag": "FIXED"
       },
       {
         "title": "Flame Shock + attack",
@@ -5092,63 +5285,83 @@
         "does": "Stormstrike only, learned via talent25 on both guides; shock separately to reserve interrupts.",
         "tag": "NEW",
         "lvl": 25,
-        "src": "wowfdb Enhancement macros (marked Untested); reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "src": "wowfdb Enhancement macros (marked Untested); reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source); Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
         "bind": [
           "ss"
-        ]
+        ],
+        "until": 52
       },
       {
-        "title": "Spend the Stormstrike bonus",
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Stormstrike + Rage of the Farseer",
+        "icon": "ability_shaman_stormstrike",
+        "spec": "enh",
+        "lvl": 52,
+        "bind": [
+          "ss",
+          "rotf"
+        ],
+        "code": "#showtooltip Stormstrike\n/startattack [@target,harm,nodead]\n/cast [mod:ctrl,@target,harm,nodead] Rage of the Farseer\n/cast [@target,harm,nodead] Stormstrike",
+        "does": "From 52: Ctrl pops Rage of the Farseer and Stormstrikes on the same press. Replaces the separate Rage macro.",
+        "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
+        "flag": "Rankedboost says Rage is off the global cooldown; unconfirmed in Forever."
+      },
+      {
+        "title": "Lightning Bolt / Chain Lightning",
         "icon": "spell_nature_lightning",
         "spec": "enh",
-        "where": "Naga 4",
-        "code": "#showtooltip Lightning Bolt\n/cast [@target,harm,nodead] Lightning Bolt",
-        "does": "Full-rank Lightning Bolt; use instant at5 Maelstrom stacks only after5/5 talent (51 both stored paths). Chain Lightning is separate, not assumed affected by Maelstrom.",
-        "tag": "NEW",
-        "lvl": 51,
-        "src": "wowfdb Enhancement macros (marked Untested); reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
-        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
-      },
-      {
-        "title": "Rage of the Farseer burst",
-        "icon": "spell_nature_bloodlust",
-        "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Rage of the Farseer\n/cast Rage of the Farseer",
-        "does": "Rage only at52 on both stored guide paths; Blood Fury/trinkets separate deliberate buttons.",
-        "tag": "NEW",
-        "lvl": 52,
-        "src": "wowfdb Enhancement macros (marked Untested); Troll Berserking line removed for Orc; reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
-        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "code": "#showtooltip [mod:ctrl] Chain Lightning; Lightning Bolt\n/cast [mod:ctrl,@target,harm,nodead] Chain Lightning; [@target,harm,nodead] Lightning Bolt",
+        "does": "Highest-rank Lightning Bolt; Ctrl for Chain Lightning (32). From 51 (Maelstrom 5/5) this is how you spend 5 stacks instantly.",
+        "tag": "FIXED",
+        "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
         "bind": [
-          "rotf"
+          "lb",
+          "cl"
         ]
       },
       {
-        "title": "Imbue chooser",
+        "title": "Imbue chooser (10 to 29)",
         "icon": "spell_nature_cyclone",
         "spec": "enh",
-        "where": "F5",
-        "code": "#showtooltip Flametongue Weapon\n/cast Flametongue Weapon",
-        "does": "Current pre30 group imbue; separate Rockbiter solo/tanking choice. Windfury30+ separate replacement. No auto weapon swaps or stone-stacking assumption.",
-        "tag": "NEW",
+        "where": "F1",
+        "code": "#showtooltip Flametongue Weapon\n/cast [mod:ctrl] Rockbiter Weapon; Flametongue Weapon",
+        "does": "Plain: Flametongue (Nicktew, when you're not tanking). Ctrl: Rockbiter (Icy Veins before 30). Windfury takes over at 30.",
+        "tag": "FIXED",
         "lvl": 10,
-        "src": "wowfdb Enhancement macros (marked Untested); reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
-        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
+        "src": "Icy Veins and Nicktew (both kept); Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+        "until": 30,
+        "fkey": "F1"
       },
       {
-        "title": "Searing Totem (individual placement)",
+        "tag": "NEW",
+        "where": "F1",
+        "title": "Imbue chooser (30+)",
+        "icon": "spell_nature_windfury",
+        "spec": "enh",
+        "lvl": 30,
+        "fkey": "F1",
+        "code": "#showtooltip Windfury Weapon\n/cast [mod:ctrl] Flametongue Weapon; Windfury Weapon",
+        "does": "Windfury Weapon; Ctrl for Flametongue.",
+        "src": "Trainer level 30; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+      },
+      {
+        "title": "Searing Totem / Fire Nova",
         "icon": "spell_nature_earthbindtotem",
         "spec": "enh",
         "where": "Naga slot follows your level",
-        "code": "#showtooltip Searing Totem\n/cast Searing Totem",
-        "does": "Place only the needed fire totem; Fire Nova separately on3+. Avoid blanket four-totem mana spending.",
+        "code": "#showtooltip\n/cast [mod:ctrl] Fire Nova; Searing Totem",
+        "does": "Searing Totem; Ctrl for Fire Nova (12) on 3+ mobs, which needs a fire totem out. The 6-plate has no other slot for Fire Nova.",
         "tag": "FIXED",
-        "src": "Your notes; reviewed against Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
-        "flag": "Replaces rigid castsequence; remains useful after20. Fire Totem quest/training required.",
+        "src": "Your notes; trainer levels; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "bind": [
-          "totemseq"
+          "totemseq",
+          "fn"
         ],
         "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
         "lvl": 10
@@ -5180,32 +5393,19 @@
         "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
       },
       {
-        "title": "Earth Shock Rank1 — dedicated interrupt",
+        "title": "Lesser Healing Wave (emergency)",
         "icon": "spell_nature_earthshock",
         "spec": "enh",
         "where": "Available learned skill; Naga/controller assign separately",
-        "code": "#showtooltip Earth Shock\n/stopcasting\n/cast [@mouseover,harm,nodead][@target,harm,nodead] Earth Shock(Rank 1)",
-        "lvl": 4,
-        "does": "Cheap kick, not normal damage. Mouseover first; controller use current-target version if reticle is not mouseover. Shock cooldown shared.",
-        "src": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
-        "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-        "bind": [
-          "kick1"
-        ]
-      },
-      {
-        "title": "Lesser Healing Wave — emergency self",
-        "icon": "spell_nature_earthshock",
-        "spec": "enh",
-        "where": "Available learned skill; Naga/controller assign separately",
-        "code": "#showtooltip Lesser Healing Wave\n/stopcasting\n/cast [@player] Lesser Healing Wave",
+        "code": "#showtooltip Lesser Healing Wave\n/stopcasting\n/cast [@mouseover,help,nodead][help,nodead][@player] Lesser Healing Wave",
         "lvl": 20,
-        "does": "Requires training. Stops own cast; keeps enemy target, weapon and imbue. Stand still.",
-        "src": "Nicktew Recommended, updated Nov 4, read Nov 7 2026 (Unofficial, single source)",
+        "does": "Panic heal: stops your cast, heals your mouseover, then a friendly target, then you. v1 always healed you, even with a party member under the mouse.",
+        "src": "Nicktew Nov 4; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
         "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
         "bind": [
           "lhw"
-        ]
+        ],
+        "tag": "FIXED"
       },
       {
         "title": "Frost Shock — slow",
@@ -5234,6 +5434,62 @@
         "bind": [
           "recall"
         ]
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Lightning Shield / Water Shield",
+        "icon": "spell_nature_lightningshield",
+        "spec": "enh",
+        "lvl": 8,
+        "bind": [
+          "lsh"
+        ],
+        "code": "#showtooltip Lightning Shield\n/cast [mod:ctrl] Water Shield; Lightning Shield",
+        "does": "Lightning Shield, always the highest rank; Ctrl for Water Shield once you have it (talent at 43 on the Icy Veins order).",
+        "src": "Trainer; Icy Veins Enhancement order; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Grounding / Tremor Totem",
+        "icon": "spell_nature_tremortotem",
+        "spec": "enh",
+        "lvl": 30,
+        "bind": [
+          "ground",
+          "tremor"
+        ],
+        "code": "#showtooltip [mod:ctrl] Tremor Totem; Grounding Totem\n/stopcasting\n/cast [mod:ctrl] Tremor Totem; Grounding Totem",
+        "does": "Drops Grounding mid enemy cast; Ctrl for Tremor (18) against fear.",
+        "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/"
+      },
+      {
+        "tag": "NEW",
+        "where": "Naga slot follows your level",
+        "title": "Purge / Cure Poison",
+        "icon": "spell_nature_purge",
+        "spec": "enh",
+        "lvl": 12,
+        "bind": [
+          "purge"
+        ],
+        "code": "#showtooltip\n/cast [@target,harm,nodead] Purge; [@target,help,nodead][@player] Cure Poison",
+        "does": "Hostile target: Purge. Friendly or no target: Cure Poison (16) on them or you.",
+        "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026 (typo fixed)",
+        "url": "https://rankedboost.com/world-of-warcraft/forever/macros/"
+      },
+      {
+        "tag": "NEW",
+        "where": "Bottom Right (click)",
+        "title": "Ancestral Spirit, mouseover",
+        "icon": "spell_nature_reincarnation",
+        "spec": "enh",
+        "lvl": 12,
+        "code": "#showtooltip Ancestral Spirit\n/cast [@mouseover,help,dead][help,dead] Ancestral Spirit",
+        "does": "Resurrects the dead player under your mouse or targeted.",
+        "src": "Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
       }
     ]
   },
@@ -10715,11 +10971,11 @@
     }
   },
   "_meta": {
-    "version": 16,
-    "generated_at": "2026-11-07T18:57-05:00",
-    "source": "WoW Forever Bot 6 PM meta-watch, Nov 7 2026",
+    "version": 17,
+    "generated_at": "2026-11-07T19:55-05:00",
+    "source": "Claude macro audit pass, Nov 7 2026 (Jason's go)",
     "notes_commit": "ed3b5f2",
-    "notes": "Nicktew Shaman guide comparison; selectable alternative, level20 macro/Naga fixes; Icy Veins retained, Corvin unchanged."
+    "notes": "Macros: 18 fixed, 3 dropped, 14 added from the Nov 7 audit (Healthstone Shift bug, pre-20 Curse key, Amplify Curse at 53, Earth Shock no longer cancels casts); level variants swap automatically."
   },
   "captions": {
     "builds": "Vorgash: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updatedNov4/readNov7. Corvin unchanged.",
