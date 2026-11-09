@@ -159,73 +159,75 @@
         "spec": "Demonology Warlock",
         "icon": "spell_shadow_metamorphosis",
         "mine": true,
-        "mythic": 8,
-        "mythicNote": "990 DPS; All playstyles view #9",
+        "mythic": 7,
+        "mythicNote": "1,006 DPS; All playstyles view #8",
         "broken": "C",
         "tVoid": "A",
         "cogm": "S",
         "lfc": "A",
         "wowhead": "S",
-        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 8"
+        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 9",
+        "mythicMove": "▲1 vs Nov 8 (#8, 990 DPS)"
       },
       {
         "spec": "Affliction Warlock",
         "icon": "spell_shadow_deathcoil",
         "mine": true,
-        "mythic": 11,
-        "mythicNote": "950 DPS, Wrack build; All playstyles view #14",
+        "mythic": 12,
+        "mythicNote": "947 DPS, Wrack build; All playstyles view #15",
         "broken": "S",
         "brokenNote": "#1, 907 DPS",
         "tVoid": "B",
         "cogm": "A",
         "lfc": "B",
         "wowhead": "A",
-        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 8",
-        "mythicMove": "▲1 vs Nov 5 (#12, 934 DPS)"
+        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 9",
+        "mythicMove": "▼1 vs Nov 8 (#11, 950 DPS)"
       },
       {
         "spec": "Destruction Warlock",
         "icon": "spell_shadow_rainoffire",
         "mine": false,
-        "mythic": 14,
-        "mythicNote": "936 DPS; All playstyles view #17",
+        "mythic": 13,
+        "mythicNote": "938 DPS; All playstyles view #16",
         "broken": "C",
         "tVoid": "B",
         "cogm": "A",
         "lfc": "B",
         "wowhead": "S",
-        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 8"
+        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 9",
+        "mythicMove": "▲1 vs Nov 8 (#14, 936 DPS)"
       },
       {
         "spec": "Enhancement Shaman",
         "icon": "ability_shaman_stormstrike",
         "mine": true,
         "mythic": 3,
-        "mythicNote": "1,078 DPS; All playstyles view #3",
+        "mythicNote": "1,083 DPS; All playstyles view #3",
         "broken": "B",
         "tVoid": "S",
         "cogm": "S",
         "lfc": "S",
         "wowhead": "A",
-        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 8"
+        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 9"
       },
       {
         "spec": "Elemental Shaman",
         "icon": "spell_nature_lightning",
         "mine": false,
         "mythic": 20,
-        "mythicNote": "827 DPS; All playstyles view #25",
+        "mythicNote": "837 DPS; All playstyles view #25",
         "broken": "C",
         "tVoid": "B",
         "cogm": "A",
         "lfc": "A",
         "wowhead": "C",
-        "_source": "MythicSim Nov 8 snapshot (engine a667dce), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and earlier); Nov 6 ranks on this board were read from the 'All playstyles' view by mistake, so the Nov 6 drops were a view mix-up, not real moves. BrokenMeta Nov 4 (build 70753); voidsim Nov 6; Wowhead Nov 3 level-60 update (re-read Nov 8, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 8"
+        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 9"
       }
     ]
   },
@@ -12851,34 +12853,34 @@
     "meta_raid_watch": {
       "lead": "Raid watch",
       "tone": "warning",
-      "text": "Official Nov 8: dungeon kill XP +50% (hotfix ~11:05 AM PST). Otherwise nothing new since the Nov 6 hotfixes (Voidwalker +~40 HP, Soul Siphon/Wrack fix, Orc Command pet fix, LW Tanning Rack 125). Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP. Build 70862 Nov 7-8: item hotfix waves only; 1mw patch notes say nothing changes on spells, talents or items. MythicSim Nov 8 (Best of each spec): Enh #3, Demo #8, Aff #11, Destro #14. Forever Logs: no confirmed level-60 DPS boards.",
-      "_source": "Blizzard news + forum tracker (read Nov 8); Kaivax Class Tuning Nov 10; 1mw.io news + patch notes Nov 8; MythicSim Nov 8; Forever Logs Nov 8 9 AM ET; Blizzard forum Dungeon Enemy XP Increased Nov 8",
-      "_date": "Nov 8"
+      "text": "Official Nov 8: dungeon kill XP +50% (hotfix ~11:05 AM PST). Otherwise nothing new since the Nov 6 hotfixes (Voidwalker +~40 HP, Soul Siphon/Wrack fix, Orc Command pet fix, LW Tanning Rack 125). Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP (details not published yet as of Nov 9 9 AM ET). Build 70862 Nov 7-9: item hotfix waves only; 1mw patch notes say nothing changes on spells, talents or items. MythicSim Nov 9 (Best of each spec): Enh #3, Demo #7, Aff #12, Destro #13. Forever Logs: no confirmed level-60 DPS boards.",
+      "_source": "Blizzard news + forum tracker (read Nov 9); Kaivax Class Tuning Nov 10; 1mw.io news + patch notes Nov 9; MythicSim Nov 9; Forever Logs Nov 9 9 AM ET; Blizzard forum Dungeon Enemy XP Increased Nov 8",
+      "_date": "Nov 9"
     },
     "meta_links": [
       {
-        "title": "MythicSim tier list (Nov 8 snapshot, 'Best of each spec' view)",
+        "title": "MythicSim tier list (Nov 9 snapshot, 'Best of each spec' view)",
         "site": "mythicsim.com",
-        "date": "Nov 8",
+        "date": "Nov 9",
         "href": "https://mythicsim.com/wow-forever/tier-list",
         "_source": "mythicsim.com",
-        "_date": "Nov 4"
+        "_date": "Nov 9"
       },
       {
         "title": "BrokenMeta tier list (build 70753)",
         "site": "brokenmeta.gg",
-        "date": "Nov 3",
+        "date": "Nov 4",
         "href": "https://brokenmeta.gg/en/wow-forever/tier-list/",
         "_source": "brokenmeta.gg",
-        "_date": "Nov 3"
+        "_date": "Nov 4"
       },
       {
         "title": "voidsim.io tier list",
         "site": "voidsim.io",
-        "date": "Nov 4",
+        "date": "Nov 6",
         "href": "https://voidsim.io/forever/tier-list",
         "_source": "voidsim.io",
-        "_date": "Nov 4"
+        "_date": "Nov 6"
       },
       {
         "title": "CoGM DPS tier list",
@@ -12964,6 +12966,30 @@
       }
     ],
     "feed_rows": [
+      {
+        "lead": "Nov 9",
+        "title": "MythicSim Nov 9 snapshot: Demo #7, Aff #12, Destro #13, Enh #3 (1-place moves only)",
+        "detail": "Best of each spec view: Enhancement #3 (1,083 DPS, was 1,078), Demonology #7 (1,006, was #8 at 990), Affliction #12 (947, was #11 at 950), Destruction #13 (938, was #14 at 936), Elemental #20 (837, was 827). The snapshot now uses Wowhead's Nov 9 Forever tooltips for reference gear; engine still a667dce. No spec moved 3+ places or a full tier.",
+        "meta": "MythicSim tier list, snapshot Nov 9 2026, read Nov 9",
+        "status": {
+          "label": "Sim, pre-launch",
+          "tone": "warning"
+        },
+        "_source": "https://mythicsim.com/wow-forever/tier-list",
+        "_date": "2026-11-09"
+      },
+      {
+        "lead": "Nov 9",
+        "title": "Build 70862 overnight Nov 8-9: item hotfix waves only; Class Tuning (Tue Nov 10) details not posted yet",
+        "detail": "1mw logged hotfix-cache waves from Nov 8 21:06 to Nov 9 13:24 UTC, mostly new ilvl 55-65 items (e.g. Soulforge Bracers, Bindings of The Five Thunders, Eye of Flame). The 03:34 UTC wave also carried 7 spell, 14 quest and 47 creature rows, but 1mw's patch-notes diff for every Hotfixes of 9 November entry says nothing changes on spells, talents or items. Shaman and Warlock class pages still list Hotfixes of 3 Nov as the latest change. No new Blizzard blue post since the Nov 8 dungeon XP hotfix.",
+        "meta": "1mw.io/en/news + /en/news/patch-notes, read Nov 9 2026; Blizzard forum tracker read Nov 9",
+        "status": {
+          "label": "Unofficial, single source",
+          "tone": "warning"
+        },
+        "_source": "https://1mw.io/en/news/patch-notes",
+        "_date": "2026-11-09"
+      },
       {
         "lead": "Nov 8",
         "title": "Official: dungeon kill XP +50% (hotfix ~11:05 AM PST Nov 8)",
@@ -13935,11 +13961,11 @@
     }
   },
   "_meta": {
-    "version": 23,
-    "generated_at": "2026-11-08T18:40-05:00",
-    "source": "Grok Bot 6 PM meta-watch",
-    "notes_commit": "c7803a9",
-    "notes": "Nov 8: Official dungeon kill XP +50% hotfix; afternoon 70862 item waves (no Shaman/Warlock spell rows)."
+    "version": 24,
+    "generated_at": "2026-11-09T09:05-05:00",
+    "source": "Grok meta watch, Nov 9 2026 9 AM ET (daily run)",
+    "notes_commit": "25e7d55",
+    "notes": "Nov 9: no Official change; 70862 item waves only; MythicSim Nov 9 (1-place moves); Class Tuning Nov 10 details not posted yet."
   },
   "captions": {
     "builds": "Vorgash: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8. Corvin unchanged.",
