@@ -190,6 +190,9 @@ const CSS = `
 .wf-acq[open] summary::before { content: "▾ "; }
 .wf-acq summary:hover { color: ${GOLD_HI}; }
 .wf-acq-body { display: grid; gap: 4px; margin-top: 4px; padding: 6px 8px; border-left: 2px solid #6b5a33; background: rgba(0,0,0,.3); border-radius: 0 6px 6px 0; line-height: 1.4; text-align: left; }
+.wf-more > summary { display: inline-block; font-size: 11px; padding: 5px 12px; border: 1px solid #4a3d22; border-radius: 999px; background: #14110d; }
+.wf-more > summary:hover { border-color: ${GOLD}; }
+.wf-more[open] > summary { margin-bottom: 6px; }
 .wf-acq-note { color: ${MUTED}; }
 .wf-acq-alt { color: #b3cbe8; }
 .wf-acq-warn { color: #ffc285; }
@@ -1295,7 +1298,13 @@ function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: Vie
           </div>
         ) : null}
         {r.caveat ? <div style={{ fontSize: 12, color: ORANGE, marginTop: 8 }}>⚠ {r.caveat}</div> : null}
-        {r.notes.map((n: string) => <div key={n} style={{ fontSize: 12, color: INK, marginTop: 6 }}>◆ {n}</div>)}
+        {/* Nov 10 (Jason): long note lists fold away by default so the priority strip stays on one screen. */}
+        {r.notes.length > 2 || r.notes.join("").length > 400 ? (
+          <details className="wf-acq wf-more" style={{ marginTop: 10 }}>
+            <summary>Notes ({r.notes.length})</summary>
+            <div className="wf-acq-body">{r.notes.map((n: string) => <div key={n} style={{ fontSize: 12, color: INK }}>◆ {n}</div>)}</div>
+          </details>
+        ) : r.notes.map((n: string) => <div key={n} style={{ fontSize: 12, color: INK, marginTop: 6 }}>◆ {n}</div>)}
         {r.caveat || [...allPrep, ...allSteps].some((x: RStep) => (x.lvl ?? 0) > 30) ? <PreLine lead={r.caveat ? "Level-60 priority and steps past 30:" : "Steps past level 30:"} mark="guide" src={r.src.map((x: { label: string; date: string }) => `${x.label}, ${x.date}`).join(" · ")} /> : null}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}>
           {r.src.map((s: { label: string; date: string; url: string }) => (
@@ -2761,7 +2770,10 @@ export default function App() {
         ) : null}
         <TalentPlanner buildKey={buildKey} setBuildKey={setBuildKey} level={level} setLevel={setLevel} pathSpec={pathSpec} setPathSpec={setPathSpec} view={view} />
         {buildKey.indexOf("enh") === 0 ? (
-          <BulletList items={PL.talents_enh_bullets} />
+          <details className="wf-acq wf-more">
+            <summary>Enhancement notes ({PL.talents_enh_bullets.length})</summary>
+            <div style={{ marginTop: 8 }}><BulletList items={PL.talents_enh_bullets} /></div>
+          </details>
         ) : null}
         {buildKey === "aff_lvl" || buildKey === "aff_icy" || buildKey === "aff_raid" ? (
           <Callout tone={PL.talents_level60.tone} lead={PL.talents_level60.lead}>{PL.talents_level60.text}</Callout>
