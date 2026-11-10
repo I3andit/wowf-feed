@@ -12111,6 +12111,2471 @@
      "change": "Constructs don't fear, so never Spirits"
     }
    ]
+  ],
+  "LOOT": [
+   {
+    "dkey": "0",
+    "item": "Subterranean Cape",
+    "id": 14149,
+    "icon": "inv_misc_cape_18",
+    "q": 3,
+    "slot": "Back",
+    "req": 13,
+    "boss": "Taragaman the Hungerer",
+    "rate": "32% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 17,
+     "str": 3,
+     "hp5": 5
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Source conflict: 1mw beta omits the 5 hp5 that Icy Veins DB lists. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/14149 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Crystalline Cuffs",
+    "id": 14148,
+    "icon": "inv_bracer_13",
+    "q": 3,
+    "slot": "Wrist",
+    "type": "Cloth",
+    "req": 13,
+    "boss": "Taragaman the Hungerer",
+    "rate": "37% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 15,
+     "sta": 2,
+     "spi": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/14148 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Robe of Evocation",
+    "id": 14150,
+    "icon": "inv_chest_cloth_24",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Cloth",
+    "req": 13,
+    "boss": "Jergosh the Invoker",
+    "rate": "37.6% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 35,
+     "int": 4,
+     "sta": 6,
+     "spi": 4
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/14150 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Satyrskin Cloak",
+    "id": 273005,
+    "icon": "inv_misc_cape_18",
+    "q": 3,
+    "slot": "Back",
+    "req": 13,
+    "boss": "Bazzalan",
+    "stats": {
+     "armor": 17,
+     "sta": 3
+    },
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "+3 Fire Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273005 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Chasm Walkers",
+    "id": 273007,
+    "icon": "inv_boots_06",
+    "q": 3,
+    "slot": "Feet",
+    "type": "Leather",
+    "req": 13,
+    "boss": "Bazzalan",
+    "stats": {
+     "armor": 56,
+     "spi": 5,
+     "ap": 4
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273007 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Searing Dagger",
+    "id": 273003,
+    "icon": "inv_weapon_shortblade_03",
+    "q": 3,
+    "slot": "Main Hand",
+    "type": "Dagger",
+    "req": 13,
+    "boss": "Bazzalan",
+    "stats": {
+     "spi": 4,
+     "dps": 8.1
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Harmful spell casts sear the target for 7 Fire damage. (0.01 sec cooldown). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273003 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Featherbead Bracers",
+    "id": 15452,
+    "icon": "inv_bracer_08",
+    "q": 2,
+    "slot": "Wrist",
+    "type": "Cloth",
+    "quest": "Returning the Lost Satchel",
+    "stats": {
+     "armor": 14,
+     "int": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/15452 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Savannah Bracers",
+    "id": 15453,
+    "icon": "inv_bracer_07",
+    "q": 2,
+    "slot": "Wrist",
+    "type": "Leather",
+    "quest": "Returning the Lost Satchel",
+    "stats": {
+     "armor": 33,
+     "sta": 3
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/15453 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Ghastly Trousers",
+    "id": 15449,
+    "icon": "inv_pants_14",
+    "q": 2,
+    "slot": "Legs",
+    "type": "Cloth",
+    "quest": "The Power to Destroy...",
+    "stats": {
+     "armor": 28,
+     "int": 3,
+     "sta": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/15449 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Dredgemire Leggings",
+    "id": 15450,
+    "icon": "inv_pants_07",
+    "q": 2,
+    "slot": "Legs",
+    "type": "Leather",
+    "quest": "The Power to Destroy...",
+    "stats": {
+     "armor": 65,
+     "sta": 3,
+     "spi": 3
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/15450 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Kris of Orgrimmar",
+    "id": 15443,
+    "icon": "inv_weapon_shortblade_05",
+    "q": 3,
+    "slot": "One-Hand",
+    "type": "Dagger",
+    "quest": "Hidden Enemies",
+    "stats": {
+     "sta": 4,
+     "dps": 8.0,
+     "heal": 33,
+     "sp": 11
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/15443 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Axe of Orgrimmar",
+    "id": 15424,
+    "icon": "inv_axe_04",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Axe",
+    "quest": "Hidden Enemies",
+    "stats": {
+     "sta": 6,
+     "spi": 6,
+     "dps": 16.1
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/15424 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Staff of Orgrimmar",
+    "id": 15444,
+    "icon": "inv_staff_goldfeathered_01",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "quest": "Hidden Enemies",
+    "stats": {
+     "agi": 6,
+     "int": 6,
+     "dps": 11.8,
+     "sp": 18,
+     "heal": 18
+    },
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/15444 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Witherbite Bracers",
+    "id": 271202,
+    "icon": "inv_bracer_07",
+    "q": 3,
+    "slot": "Wrist",
+    "type": "Leather",
+    "req": 15,
+    "boss": "Witherfang",
+    "stats": {
+     "armor": 37,
+     "agi": 4,
+     "sp": 5,
+     "heal": 5
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271202 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Segmented Spider Leg",
+    "id": 271203,
+    "icon": "inv_staff_09",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "req": 15,
+    "boss": "Witherfang",
+    "stats": {
+     "agi": 9,
+     "spi": 5,
+     "dps": 17.5
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271203 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Leftover Abomination Skin",
+    "id": 271206,
+    "icon": "inv_chest_cloth_46",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Cloth",
+    "req": 15,
+    "boss": "The Baron",
+    "rate": "37% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 37,
+     "spi": 9
+    },
+    "for": [
+     "C"
+    ],
+    "note": "+7 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271206 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Bloodied Chestwraps",
+    "id": 271212,
+    "icon": "inv_misc_bandage_14",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Leather",
+    "req": 17,
+    "boss": "Viktor the Vile",
+    "rate": "38.1% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 89,
+     "agi": 7,
+     "spi": 9
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271212 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Rotmender's Leggings",
+    "id": 271207,
+    "icon": "inv_pants_cloth_05",
+    "q": 3,
+    "slot": "Legs",
+    "type": "Cloth",
+    "req": 17,
+    "boss": "The Abandoned",
+    "rate": "39.2% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 35,
+     "sta": 5,
+     "mp5": 4
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Source conflict: 1mw beta omits the 4 mp5 that Icy Veins DB lists. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271207 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Tuskwrap Belt",
+    "id": 271210,
+    "icon": "inv_belt_26",
+    "q": 3,
+    "slot": "Waist",
+    "type": "Cloth",
+    "req": 16,
+    "boss": "Bjork",
+    "rate": "35.9% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 22,
+     "spi": 5,
+     "sp": 6,
+     "heal": 6
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271210 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Corpse Chopper",
+    "id": 271217,
+    "icon": "inv_axe_21",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Axe",
+    "req": 16,
+    "boss": "Bjork",
+    "rate": "27.7% (Forever beta, 1mw)",
+    "stats": {
+     "dps": 18.2
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Use: Chop nearby Humanoid or Undead corpse in two, restoring 150 Health, 150 Mana, and 15 Rage. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271217 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Rotmender's Treads",
+    "id": 271214,
+    "icon": "inv_boots_05",
+    "q": 3,
+    "slot": "Feet",
+    "type": "Cloth",
+    "req": 19,
+    "boss": "Rath'mael",
+    "rate": "35.1% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 29,
+     "sta": 7,
+     "heal": 15,
+     "sp": 5
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271214 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Coldspire Staff",
+    "id": 271215,
+    "icon": "inv_staff_07",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "req": 19,
+    "boss": "Rath'mael",
+    "rate": "24.5% (Forever beta, 1mw)",
+    "stats": {
+     "dps": 15.1
+    },
+    "for": [
+     "V"
+    ],
+    "note": "+13 Frost Resistance; Increases damage done by Frost spells and effects by up to 32. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271215 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Tabitha's Cuffs",
+    "id": 251486,
+    "icon": "inv_bracer_10",
+    "q": 2,
+    "slot": "Wrist",
+    "type": "Cloth",
+    "quest": "A Frightened Request",
+    "stats": {
+     "armor": 17,
+     "sta": 4,
+     "sp": 3,
+     "heal": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/251486 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Spare Part Bindings",
+    "id": 279875,
+    "icon": "inv_bracer_07",
+    "q": 2,
+    "slot": "Wrist",
+    "type": "Leather",
+    "quest": "Light's Justice",
+    "stats": {
+     "armor": 37,
+     "agi": 3,
+     "sta": 3
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/279875 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Blight Gloves",
+    "id": 279877,
+    "icon": "inv_gauntlets_21",
+    "q": 2,
+    "slot": "Hands",
+    "type": "Cloth",
+    "quest": "The New Plague",
+    "stats": {
+     "armor": 24,
+     "sp": 5,
+     "heal": 5
+    },
+    "for": [
+     "C"
+    ],
+    "note": "+4 Nature Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/279877 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Forsaken Greataxe",
+    "id": 251533,
+    "icon": "inv_axe_18",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Axe",
+    "quest": "The Wrath of Rath'mael",
+    "stats": {
+     "str": 8,
+     "sta": 4,
+     "dps": 20.5
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/251533 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Gnarled Necromancer's Staff",
+    "id": 251534,
+    "icon": "inv_staff_16",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "quest": "The Wrath of Rath'mael",
+    "stats": {
+     "spi": 10,
+     "dps": 15.2,
+     "sp": 26,
+     "heal": 26
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/251534 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Grave Shroud",
+    "id": 279865,
+    "icon": "inv_misc_cape_10",
+    "q": 2,
+    "slot": "Back",
+    "quest": "Unending Torment",
+    "stats": {
+     "armor": 18,
+     "str": 3,
+     "sta": 3
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/279865 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "1",
+    "item": "Slain Baron's Signet",
+    "id": 279867,
+    "icon": "inv_jewelry_ring_19",
+    "q": 2,
+    "slot": "Finger",
+    "quest": "Unending Torment",
+    "stats": {
+     "sta": 3
+    },
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "Increased Defense +1. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/279867 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Serpent's Shoulders",
+    "id": 5404,
+    "icon": "inv_shoulder_08",
+    "q": 3,
+    "slot": "Shoulder",
+    "type": "Leather",
+    "req": 18,
+    "boss": "Lady Anacondra",
+    "rate": "27.4% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 68,
+     "agi": 5,
+     "spi": 7
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/5404 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Belt of the Fang",
+    "id": 10412,
+    "icon": "inv_belt_30",
+    "q": 3,
+    "slot": "Waist",
+    "type": "Leather",
+    "req": 16,
+    "boss": "Lady Anacondra",
+    "rate": "11% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 49,
+     "agi": 3,
+     "sta": 5
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/10412 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Snake Eye Kaleidoscope",
+    "id": 273088,
+    "icon": "inv_misc_eye_01",
+    "q": 3,
+    "slot": "Neck",
+    "req": 17,
+    "boss": "Lady Anacondra",
+    "stats": {
+     "str": 1,
+     "agi": 1,
+     "int": 1,
+     "sta": 1,
+     "spi": 1
+    },
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "+1 Fire Resistance; +1 Frost Resistance; +1 Shadow Resistance; +1 Nature Resistance; +1 Arcane Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273088 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Robe of the Moccasin",
+    "id": 6465,
+    "icon": "inv_chest_cloth_36",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Cloth",
+    "req": 17,
+    "boss": "Lord Cobrahn",
+    "rate": "52.7% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 40,
+     "str": 3,
+     "spi": 10,
+     "heal": 9,
+     "sp": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6465 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Leggings of the Fang",
+    "id": 10410,
+    "icon": "inv_pants_11",
+    "q": 3,
+    "slot": "Legs",
+    "type": "Leather",
+    "req": 17,
+    "boss": "Lord Cobrahn",
+    "rate": "16.6% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 78,
+     "str": 5,
+     "agi": 9,
+     "sta": 4
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/10410 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Armor of the Fang",
+    "id": 6473,
+    "icon": "inv_shirt_16",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Leather",
+    "req": 18,
+    "boss": "Lord Pythas",
+    "rate": "52.6% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 91,
+     "str": 3,
+     "int": 3,
+     "spi": 10
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6473 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Slither Cord",
+    "id": 273089,
+    "icon": "inv_belt_21",
+    "q": 3,
+    "slot": "Waist",
+    "type": "Cloth",
+    "req": 17,
+    "boss": "Lord Pythas",
+    "stats": {
+     "armor": 22,
+     "mp5": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Use: Escape all immobilizing effects. (30 Min Cooldown). Source conflict: 1mw stat block shows no mp5; Icy Veins DB lists 3 mp5. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273089 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Glowing Lizardscale Cloak",
+    "id": 6449,
+    "icon": "inv_chest_cloth_15",
+    "q": 3,
+    "slot": "Back",
+    "req": 18,
+    "boss": "Skum",
+    "rate": "52.2% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 20,
+     "agi": 6
+    },
+    "for": [
+     "V"
+    ],
+    "note": "+2 Nature Resistance. Source conflict: +2 Nature Resistance only on Icy Veins DB. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6449 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Skum's Bucket",
+    "id": 273137,
+    "icon": "inv_misc_1h_bucket_c_01",
+    "q": 3,
+    "slot": "Off Hand",
+    "type": "Held In Off-hand",
+    "req": 17,
+    "boss": "Skum",
+    "stats": {
+     "sta": 3,
+     "heal": 10,
+     "sp": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Use: Restores 835 mana over 24 sec. Must remain seated while drinking. (10 Min Cooldown). Source conflict: mana restored: 835 (Icy Veins DB) vs 803 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273137 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Serpent Gloves",
+    "id": 5970,
+    "icon": "inv_gauntlets_19",
+    "q": 3,
+    "slot": "Hands",
+    "type": "Cloth",
+    "req": 18,
+    "boss": "Lord Serpentis",
+    "rate": "20.6% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 25,
+     "agi": 6,
+     "sp": 7,
+     "heal": 7
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/5970 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Footpads of the Fang",
+    "id": 10411,
+    "icon": "inv_boots_04",
+    "q": 3,
+    "slot": "Feet",
+    "type": "Leather",
+    "req": 17,
+    "boss": "Lord Serpentis",
+    "rate": "15.6% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 61,
+     "agi": 6,
+     "sta": 6
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/10411 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Living Root",
+    "id": 6631,
+    "icon": "inv_staff_25",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "req": 18,
+    "boss": "Verdan the Everliving",
+    "rate": "37.5% (Forever beta, 1mw)",
+    "stats": {
+     "sta": 2,
+     "spi": 5,
+     "dps": 14.7,
+     "heal": 45,
+     "sp": 15
+    },
+    "for": [
+     "C"
+    ],
+    "note": "+9 Nature Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6631 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Sporid Cape",
+    "id": 6629,
+    "icon": "inv_misc_cape_17",
+    "q": 3,
+    "slot": "Back",
+    "req": 17,
+    "boss": "Verdan the Everliving",
+    "rate": "17.8% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 20,
+     "sta": 6
+    },
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "When struck in combat, inflicts 1 Nature damage to the attacker. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6629 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Slime-encrusted Pads",
+    "id": 6461,
+    "icon": "inv_shoulder_05",
+    "q": 3,
+    "slot": "Shoulder",
+    "type": "Cloth",
+    "req": 20,
+    "boss": "Mutanus the Devourer",
+    "rate": "31% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 32,
+     "mp5": 3,
+     "hp5": 10
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Source conflict: 1mw beta lists 3 mp5 only; Icy Veins DB lists 3 mp5 and 10 hp5. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6461 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Deep Fathom Ring",
+    "id": 6463,
+    "icon": "inv_jewelry_ring_15",
+    "q": 3,
+    "slot": "Finger",
+    "req": 19,
+    "boss": "Mutanus the Devourer",
+    "rate": "31% (Forever beta, 1mw)",
+    "stats": {
+     "sta": 3
+    },
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "Your spells pierce 2 Magical Resistance. Source conflict: spell pierce line only on Icy Veins DB. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6463 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Slick Deviate Leggings",
+    "id": 6480,
+    "icon": "inv_pants_02",
+    "q": 2,
+    "slot": "Legs",
+    "type": "Leather",
+    "quest": "Deviate Hides",
+    "stats": {
+     "armor": 68,
+     "agi": 4,
+     "sta": 4
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Source conflict: armor 68 (Icy Veins DB) vs 75 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6480 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Sizzle Stick",
+    "id": 8071,
+    "icon": "inv_staff_02",
+    "q": 2,
+    "slot": "Ranged",
+    "type": "Wand",
+    "quest": "Deviate Eradication",
+    "stats": {
+     "dps": 17.6,
+     "sp": 2,
+     "heal": 2
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/8071 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Talbar Mantle",
+    "id": 10657,
+    "icon": "inv_shoulder_09",
+    "q": 2,
+    "slot": "Shoulder",
+    "type": "Cloth",
+    "quest": "The Glowing Shard",
+    "stats": {
+     "armor": 30,
+     "int": 4,
+     "sta": 2,
+     "mp5": 1
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Horde turn-in in Thunder Bluff (1mw). Source conflict: armor 30 vs 33 (1mw); 1 mp5 only on Icy Veins DB. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/10657 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Apothecary Gloves",
+    "id": 10919,
+    "icon": "inv_gauntlets_06",
+    "q": 2,
+    "slot": "Hands",
+    "type": "Cloth",
+    "quest": "Serpentbloom",
+    "stats": {
+     "armor": 21,
+     "sp": 4,
+     "heal": 4
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Increased Herbalism +2. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/10919 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Heat Resistant Mitts",
+    "id": 270008,
+    "icon": "inv_gauntlets_15",
+    "q": 2,
+    "slot": "Hands",
+    "type": "Leather",
+    "quest": "Serpentbloom",
+    "stats": {
+     "armor": 48,
+     "agi": 4,
+     "sta": 1
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/270008 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Crescent Staff",
+    "id": 6505,
+    "icon": "inv_staff_04",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "quest": "Leaders of the Fang",
+    "stats": {
+     "agi": 7,
+     "int": 7,
+     "sta": 7,
+     "dps": 15.2,
+     "sp": 26,
+     "heal": 26
+    },
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "Horde quest; 1mw says the chain start is still to verify in game. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6505 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "2",
+    "item": "Hammerbone",
+    "id": 270018,
+    "icon": "inv_hammer_15",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Mace",
+    "quest": "Leaders of the Fang",
+    "stats": {
+     "str": 7,
+     "spi": 10,
+     "dps": 20.4
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Horde quest; 1mw says the chain start is still to verify in game. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/270018 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Sorcerer Collar",
+    "id": 273457,
+    "icon": "inv_jewelry_necklace_07",
+    "q": 3,
+    "slot": "Neck",
+    "req": 17,
+    "boss": "Rethilgore",
+    "stats": {
+     "int": 2,
+     "spi": 2
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Reduces the hit chance of Silence effects against you by 4%. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273457 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Black Malice",
+    "id": 3194,
+    "icon": "inv_mace_01",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Mace",
+    "req": 16,
+    "boss": "Rethilgore",
+    "rate": "1.5% (Forever beta, 1mw)",
+    "stats": {
+     "dps": 18.3
+    },
+    "for": [
+     "V"
+    ],
+    "note": "+2 Shadow Resistance; Chance on hit: Sends a shadowy bolt at the enemy causing 70 Shadow damage. Source conflict: proc 70 Shadow (Icy Veins DB) vs 55-85 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/3194 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Silverlaine's Family Seal",
+    "id": 6321,
+    "icon": "inv_belt_29",
+    "q": 3,
+    "slot": "Finger",
+    "req": 21,
+    "boss": "Baron Silverlaine",
+    "rate": "16.4% (Forever beta, 1mw)",
+    "stats": {
+     "str": 5,
+     "sta": 2
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Increases movement speed by 2% in Tirisfal Glades, Silverpine Forest, and Shadowfang Keep. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6321 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Blade of Silverlaine",
+    "id": 273637,
+    "icon": "inv_sword_05",
+    "q": 3,
+    "slot": "Main Hand",
+    "type": "Sword",
+    "req": 21,
+    "boss": "Baron Silverlaine",
+    "stats": {
+     "dps": 10.9,
+     "sp": 28,
+     "heal": 28
+    },
+    "for": [
+     "C"
+    ],
+    "note": "+6 Shadow Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273637 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Arced War Axe",
+    "id": 3191,
+    "icon": "inv_axe_06",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Axe",
+    "req": 21,
+    "boss": "Commander Springvale",
+    "rate": "38.1% (Forever beta, 1mw)",
+    "stats": {
+     "str": 9,
+     "sta": 9,
+     "dps": 21.7
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/3191 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Worgenbane Talisman",
+    "id": 273643,
+    "icon": "inv_jewelry_talisman_06",
+    "q": 3,
+    "slot": "Trinket",
+    "req": 21,
+    "boss": "Commander Springvale",
+    "stats": {
+     "mp5": 2
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Use: Stuns target Worgen for 4 sec. (5 Min Cooldown). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273643 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Eerie Stable Lantern",
+    "id": 6341,
+    "icon": "inv_misc_lantern_01",
+    "q": 3,
+    "slot": "Off Hand",
+    "type": "Held In Off-hand",
+    "req": 19,
+    "boss": "Fel Steed or Shadow Charger",
+    "stats": {
+     "sta": 4
+    },
+    "for": [
+     "C"
+    ],
+    "note": "+4 Shadow Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6341 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Bloody Apron",
+    "id": 6226,
+    "icon": "inv_chest_cloth_24",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Cloth",
+    "req": 19,
+    "boss": "Razorclaw",
+    "rate": "41.6% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 42,
+     "sta": 10,
+     "heal": 13,
+     "sp": 4
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6226 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Girdle of the Blindwatcher",
+    "id": 6319,
+    "icon": "inv_belt_03",
+    "q": 3,
+    "slot": "Waist",
+    "type": "Leather",
+    "req": 21,
+    "boss": "Odo",
+    "rate": "65.4% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 54,
+     "sta": 5,
+     "sp": 7,
+     "heal": 7
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Increases your effective stealth detection level by 1. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6319 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Odo's Ley Staff",
+    "id": 6318,
+    "icon": "inv_staff_27",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "req": 21,
+    "boss": "Odo",
+    "rate": "32.7% (Forever beta, 1mw)",
+    "stats": {
+     "sta": 5,
+     "spi": 12,
+     "dps": 16.0,
+     "heal": 52,
+     "sp": 17
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6318 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Fenrus' Hide",
+    "id": 6340,
+    "icon": "inv_misc_pelt_wolf_02",
+    "q": 3,
+    "slot": "Back",
+    "req": 22,
+    "boss": "Fenrus",
+    "rate": "75.7% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 22,
+     "agi": 4,
+     "sta": 6
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6340 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Black Wolf Bracers",
+    "id": 3230,
+    "icon": "inv_bracer_07",
+    "q": 3,
+    "slot": "Wrist",
+    "type": "Leather",
+    "req": 22,
+    "boss": "Fenrus",
+    "rate": "19.2% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 43,
+     "sta": 7,
+     "ap": 4
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Source conflict: 1mw beta adds +20 bonus armor that Icy Veins DB does not list. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/3230 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Feline Mantle",
+    "id": 3748,
+    "icon": "inv_shoulder_05",
+    "q": 3,
+    "slot": "Shoulder",
+    "type": "Cloth",
+    "req": 23,
+    "boss": "Nandos",
+    "rate": "59.5% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 34,
+     "agi": 2,
+     "int": 8,
+     "sp": 4,
+     "heal": 4
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Reduces damage from falling. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/3748 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Wolfmaster Cape",
+    "id": 6314,
+    "icon": "inv_misc_cape_10",
+    "q": 3,
+    "slot": "Back",
+    "req": 22,
+    "boss": "Nandos",
+    "rate": "37.2% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 22,
+     "sta": 3,
+     "ap": 10
+    },
+    "for": [
+     "V"
+    ],
+    "note": "+9 Attack Power against Beasts. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6314 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Worgpelt Leggings",
+    "id": 273647,
+    "icon": "inv_pants_12",
+    "q": 3,
+    "slot": "Legs",
+    "type": "Leather",
+    "req": 21,
+    "boss": "Nandos",
+    "stats": {
+     "armor": 84,
+     "str": 5,
+     "agi": 10
+    },
+    "for": [
+     "V"
+    ],
+    "note": "+7 Fire Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273647 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Belt of Arugal",
+    "id": 6392,
+    "icon": "inv_belt_10",
+    "q": 3,
+    "slot": "Waist",
+    "type": "Cloth",
+    "req": 23,
+    "boss": "Arugal",
+    "rate": "35.7% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 26,
+     "agi": 2,
+     "int": 3,
+     "spi": 5,
+     "sp": 9,
+     "heal": 9
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6392 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Robes of Arugal",
+    "id": 6324,
+    "icon": "inv_chest_cloth_31",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Cloth",
+    "req": 23,
+    "boss": "Arugal",
+    "rate": "33.2% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 46,
+     "sta": 5,
+     "spi": 6,
+     "heal": 18,
+     "sp": 6
+    },
+    "for": [
+     "C"
+    ],
+    "note": "+8 Shadow Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6324 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Night Reaver",
+    "id": 1318,
+    "icon": "inv_throwingaxe_06",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Axe",
+    "req": 18,
+    "boss": "Trash",
+    "stats": {
+     "dps": 19.7
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Trash drop anywhere in the dungeon. Chance on hit: Sends a shadowy bolt at the enemy causing 84 Shadow damage. Source conflict: proc 84 Shadow (Icy Veins DB) vs 67-101 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/1318 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Witching Stave",
+    "id": 1484,
+    "icon": "inv_wand_04",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "req": 17,
+    "boss": "Trash",
+    "stats": {
+     "int": 5,
+     "sta": 6,
+     "dps": 14.0
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Trash drop anywhere in the dungeon. +8 Shadow Resistance; +27 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/1484 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Necrology Robes",
+    "id": 2292,
+    "icon": "inv_chest_cloth_36",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Cloth",
+    "req": 20,
+    "boss": "Trash",
+    "stats": {
+     "armor": 43,
+     "int": 5,
+     "sta": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Trash drop anywhere in the dungeon. +5 Shadow Resistance; +14 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/2292 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Orb of Soran'ruk",
+    "id": 6898,
+    "icon": "inv_misc_orb_03",
+    "q": 3,
+    "slot": "Off Hand",
+    "type": "Held In Off-hand",
+    "quest": "The Orb of Soran'ruk",
+    "for": [
+     "C"
+    ],
+    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Increases damage done by Fire spells and effects by up to 9; +9 Shadow damage; Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown). School damage is not a page stat key, so the score leaves it out. No page stat keys on this item. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6898 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Staff of Soran'ruk",
+    "id": 15109,
+    "icon": "inv_staff_09",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "quest": "The Orb of Soran'ruk",
+    "stats": {
+     "sta": 14,
+     "dps": 15.7
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Increases damage done by Fire spells and effects by up to 34; +34 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/15109 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Tattered Mittens",
+    "id": 270030,
+    "icon": "inv_gauntlets_27",
+    "q": 2,
+    "slot": "Hands",
+    "type": "Cloth",
+    "quest": "The Book of Ur",
+    "stats": {
+     "armor": 26,
+     "sta": 6,
+     "heal": 9,
+     "sp": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Source conflict: armor 26 vs 29 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/270030 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Grizzled Boots",
+    "id": 6335,
+    "icon": "inv_boots_03",
+    "q": 2,
+    "slot": "Feet",
+    "type": "Leather",
+    "quest": "The Book of Ur",
+    "stats": {
+     "armor": 62,
+     "sta": 7
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Source conflict: armor 62 vs 68 +20 bonus (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6335 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Ghostly Mantle",
+    "id": 3324,
+    "icon": "inv_shoulder_09",
+    "q": 2,
+    "slot": "Shoulder",
+    "type": "Cloth",
+    "quest": "Deathstalkers in Shadowfang",
+    "stats": {
+     "armor": 30,
+     "spi": 6,
+     "heal": 6,
+     "sp": 2
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Source conflict: armor 30 vs 34 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/3324 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Tanned Shoulderpads",
+    "id": 270023,
+    "icon": "inv_shoulder_27",
+    "q": 2,
+    "slot": "Shoulder",
+    "type": "Leather",
+    "quest": "Deathstalkers in Shadowfang",
+    "stats": {
+     "armor": 67,
+     "str": 3,
+     "int": 6
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Source conflict: armor 67 vs 73 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/270023 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "3",
+    "item": "Seal of Sylvanas",
+    "id": 6414,
+    "icon": "inv_jewelry_ring_15",
+    "q": 3,
+    "slot": "Finger",
+    "quest": "Arugal Must Die",
+    "stats": {
+     "sta": 8,
+     "ap": 6
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6414 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Ghamoo-ra's Bind",
+    "id": 6908,
+    "icon": "inv_belt_24",
+    "q": 3,
+    "slot": "Waist",
+    "type": "Cloth",
+    "req": 22,
+    "boss": "Ghamoo-ra",
+    "rate": "53.6% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 25,
+     "sta": 7,
+     "sp": 8,
+     "heal": 8
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6908 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Spiked Shell Band",
+    "id": 273839,
+    "icon": "inv_jewelry_ring_02",
+    "q": 3,
+    "slot": "Finger",
+    "req": 22,
+    "boss": "Ghamoo-ra",
+    "stats": {
+     "sta": 5
+    },
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "When struck in combat, inflicts 2 Nature damage to the attacker. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273839 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Staff of the Blessed Seer",
+    "id": 2271,
+    "icon": "inv_staff_31",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "req": 20,
+    "boss": "Ghamoo-ra",
+    "rate": "0.5% (Forever beta, 1mw)",
+    "stats": {
+     "sta": 9,
+     "spi": 10,
+     "dps": 15.7,
+     "sp": 28,
+     "heal": 28
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/2271 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Naga Battle Gloves",
+    "id": 888,
+    "icon": "inv_gauntlets_13",
+    "q": 3,
+    "slot": "Hands",
+    "type": "Leather",
+    "req": 22,
+    "boss": "Lady Sarevess",
+    "rate": "39% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 61,
+     "str": 4,
+     "sta": 4,
+     "heal": 15,
+     "sp": 5
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/888 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Reef Axe",
+    "id": 6905,
+    "icon": "inv_weapon_halberd_06",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Axe",
+    "req": 22,
+    "boss": "Gelihast",
+    "rate": "49.7% (Forever beta, 1mw)",
+    "stats": {
+     "str": 8,
+     "dps": 22.4,
+     "heal": 24,
+     "sp": 8
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6905 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Cursed Murloc Eye",
+    "id": 273840,
+    "icon": "spell_shadow_evileye",
+    "q": 3,
+    "slot": "Trinket",
+    "req": 24,
+    "boss": "Gelihast",
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "Spells and attacks deal 2 Shadow damage. Deals 4 times as much damage to Murlocs. No page stat keys on this item. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273840 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Twilight Maul",
+    "id": 273841,
+    "icon": "inv_hammer_09",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Mace",
+    "req": 23,
+    "boss": "Lorgus Jett",
+    "stats": {
+     "dps": 22.9,
+     "sp": 12,
+     "heal": 12
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Chance on hit: Blasts a target for 70 Nature damage. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273841 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Glowing Thresher Cape",
+    "id": 6901,
+    "icon": "inv_misc_monsterscales_03",
+    "q": 3,
+    "slot": "Back",
+    "req": 24,
+    "boss": "Old Serra'kis",
+    "rate": "39.6% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 23,
+     "spi": 8,
+     "heal": 7,
+     "sp": 3
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6901 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Bands of Serra'kis",
+    "id": 6902,
+    "icon": "inv_bracer_08",
+    "q": 3,
+    "slot": "Wrist",
+    "type": "Leather",
+    "req": 22,
+    "boss": "Old Serra'kis",
+    "rate": "36.1% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 43,
+     "str": 6,
+     "sta": 3
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6902 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Rod of the Sleepwalker",
+    "id": 1155,
+    "icon": "inv_staff_06",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "req": 24,
+    "boss": "Twilight Lord Kelris",
+    "rate": "56.2% (Forever beta, 1mw)",
+    "stats": {
+     "spi": 11,
+     "dps": 17.7,
+     "sp": 32,
+     "heal": 32
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Reduces the hit chance of Sleep effects against you by 5%. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/1155 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Gaze Dreamer Pants",
+    "id": 6903,
+    "icon": "inv_pants_02",
+    "q": 3,
+    "slot": "Legs",
+    "type": "Cloth",
+    "req": 23,
+    "boss": "Twilight Lord Kelris",
+    "rate": "30.1% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 40,
+     "spi": 9,
+     "sp": 12,
+     "heal": 12
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6903 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Leech Pants",
+    "id": 6910,
+    "icon": "inv_pants_14",
+    "q": 3,
+    "slot": "Legs",
+    "type": "Cloth",
+    "req": 24,
+    "boss": "Aku'mai",
+    "rate": "43.8% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 41,
+     "sta": 5,
+     "mp5": 5,
+     "sp": 5,
+     "heal": 5,
+     "hp5": 5
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Source conflict: 1mw beta stat block parses as 5 Sta only; its text and Icy Veins DB both give 5 mp5, 5 hp5, 5 spell power. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6910 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Moss Cinch",
+    "id": 6911,
+    "icon": "inv_belt_25",
+    "q": 3,
+    "slot": "Waist",
+    "type": "Leather",
+    "req": 25,
+    "boss": "Aku'mai",
+    "rate": "36.4% (Forever beta, 1mw)",
+    "stats": {
+     "armor": 58,
+     "sta": 5,
+     "sp": 12
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6911 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Staff of the Friar",
+    "id": 3415,
+    "icon": "inv_staff_32",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "req": 21,
+    "boss": "Trash",
+    "stats": {
+     "int": 3,
+     "sta": 4,
+     "spi": 12,
+     "dps": 16.0,
+     "heal": 52,
+     "sp": 17
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Trash drop anywhere in the dungeon. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/3415 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Ring of Precision",
+    "id": 1491,
+    "icon": "inv_jewelry_ring_14",
+    "q": 3,
+    "slot": "Finger",
+    "req": 22,
+    "boss": "Trash",
+    "stats": {
+     "agi": 6,
+     "spi": 3
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Trash drop anywhere in the dungeon. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/1491 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Gravestone Scepter",
+    "id": 7001,
+    "icon": "inv_wand_04",
+    "q": 3,
+    "slot": "Ranged",
+    "type": "Wand",
+    "quest": "Blackfathom Villainy",
+    "stats": {
+     "spi": 3,
+     "dps": 29.0
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Horde version from Thunder Bluff (1mw: both factions). +6 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/7001 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Dark Ritual Leggings",
+    "id": 270031,
+    "icon": "inv_pants_02",
+    "q": 3,
+    "slot": "Legs",
+    "type": "Leather",
+    "quest": "Blackfathom Villainy",
+    "stats": {
+     "armor": 88,
+     "sta": 9,
+     "sp": 14,
+     "heal": 14
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Horde version from Thunder Bluff (1mw: both factions). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/270031 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Cultist's Armguards",
+    "id": 270032,
+    "icon": "inv_bracer_12",
+    "q": 3,
+    "slot": "Wrist",
+    "type": "Leather",
+    "quest": "Blackfathom Villainy",
+    "stats": {
+     "armor": 44,
+     "sta": 7,
+     "ap": 10
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Horde version from Thunder Bluff (1mw: both factions). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/270032 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Orb of Soran'ruk",
+    "id": 6898,
+    "icon": "inv_misc_orb_03",
+    "q": 3,
+    "slot": "Off Hand",
+    "type": "Held In Off-hand",
+    "quest": "The Orb of Soran'ruk",
+    "for": [
+     "C"
+    ],
+    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Increases damage done by Fire spells and effects by up to 9; +9 Shadow damage; Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown). School damage is not a page stat key, so the score leaves it out. No page stat keys on this item. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6898 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Staff of Soran'ruk",
+    "id": 15109,
+    "icon": "inv_staff_09",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "quest": "The Orb of Soran'ruk",
+    "stats": {
+     "sta": 14,
+     "dps": 15.7
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Increases damage done by Fire spells and effects by up to 34; +34 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/15109 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Band of the Fist",
+    "id": 17694,
+    "icon": "inv_jewelry_ring_02",
+    "q": 2,
+    "slot": "Finger",
+    "quest": "Allegiance to the Old Gods",
+    "stats": {
+     "str": 4,
+     "agi": 4
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/17694 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Chestnut Mantle",
+    "id": 17695,
+    "icon": "inv_shoulder_09",
+    "q": 2,
+    "slot": "Shoulder",
+    "type": "Cloth",
+    "quest": "Allegiance to the Old Gods",
+    "stats": {
+     "armor": 31,
+     "sta": 3,
+     "sp": 5,
+     "heal": 5
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Source conflict: armor 31 vs 34 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/17695 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Witch's Finger",
+    "id": 16887,
+    "icon": "inv_wand_12",
+    "q": 3,
+    "slot": "Off Hand",
+    "type": "Held In Off-hand",
+    "quest": "Baron Aquanis",
+    "stats": {
+     "int": 8,
+     "sta": 4
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/16887 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "4",
+    "item": "Dreamer's Chestguard",
+    "id": 270043,
+    "icon": "inv_chest_leather_01",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Leather",
+    "quest": "Baron Aquanis",
+    "stats": {
+     "armor": 106,
+     "str": 10,
+     "sta": 5,
+     "spi": 11
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/270043 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Glinteye Slippers",
+    "id": 273024,
+    "icon": "inv_boots_05",
+    "q": 3,
+    "slot": "Feet",
+    "type": "Cloth",
+    "req": 26,
+    "boss": "Saltspine",
+    "stats": {
+     "armor": 33,
+     "sta": 9,
+     "spi": 6,
+     "sp": 7,
+     "heal": 7
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273024 ; https://1mw.io/en/dungeons/excavation-site/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Supple Bellyskin Leggings",
+    "id": 273022,
+    "icon": "inv_pants_11",
+    "q": 3,
+    "slot": "Legs",
+    "type": "Leather",
+    "req": 26,
+    "boss": "Saltspine",
+    "stats": {
+     "armor": 92,
+     "str": 6,
+     "sta": 14
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273022 ; https://1mw.io/en/dungeons/excavation-site/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Garb of Florid Feathers",
+    "id": 273026,
+    "icon": "inv_misc_bandage_14",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Leather",
+    "req": 26,
+    "boss": "Shadetooth",
+    "stats": {
+     "armor": 105,
+     "agi": 9,
+     "int": 15
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273026 ; https://1mw.io/en/dungeons/excavation-site/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Raptor's Gaze",
+    "id": 273027,
+    "icon": "spell_nature_crystalball",
+    "q": 3,
+    "slot": "Off Hand",
+    "type": "Held In Off-hand",
+    "req": 26,
+    "boss": "Shadetooth",
+    "stats": {
+     "int": 4,
+     "sta": 4,
+     "sp": 8,
+     "heal": 8
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273027 ; https://1mw.io/en/dungeons/excavation-site/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Ring of Power Regulation",
+    "id": 273030,
+    "icon": "inv_jewelry_ring_28",
+    "q": 3,
+    "slot": "Finger",
+    "req": 28,
+    "boss": "Relic Guardian",
+    "stats": {
+     "mp5": 3,
+     "sp": 6,
+     "heal": 6
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273030 ; https://1mw.io/en/dungeons/excavation-site/loot",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Knife-Polishing Rag",
+    "id": 271740,
+    "icon": "inv_bracer_10",
+    "q": 2,
+    "slot": "Wrist",
+    "type": "Cloth",
+    "quest": "Open the Maw",
+    "stats": {
+     "armor": 20,
+     "spi": 4,
+     "sp": 6,
+     "heal": 6
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271740 ; https://1mw.io/en/dungeons/excavation-site/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Dirt-Heavy Bracers",
+    "id": 271732,
+    "icon": "inv_bracer_04",
+    "q": 2,
+    "slot": "Wrist",
+    "type": "Leather",
+    "quest": "Open the Maw",
+    "stats": {
+     "armor": 43,
+     "spi": 4,
+     "ap": 10
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271732 ; https://1mw.io/en/dungeons/excavation-site/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Furs of the Earthen Ring",
+    "id": 271719,
+    "icon": "inv_misc_cape_04",
+    "q": 3,
+    "slot": "Back",
+    "quest": "Earthen Echo",
+    "stats": {
+     "armor": 25,
+     "str": 5,
+     "int": 5,
+     "spi": 5
+    },
+    "for": [
+     "C",
+     "V"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271719 ; https://1mw.io/en/dungeons/excavation-site/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Heavehammer",
+    "id": 271766,
+    "icon": "inv_hammer_09",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Mace",
+    "quest": "Earthen Echo",
+    "stats": {
+     "dps": 27.7,
+     "ap": 32
+    },
+    "for": [
+     "V"
+    ],
+    "note": "Source conflict: 1mw beta adds +60 bonus armor that Icy Veins DB does not list. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271766 ; https://1mw.io/en/dungeons/excavation-site/quests",
+    "_date": "2026-11-10"
+   },
+   {
+    "dkey": "5",
+    "item": "Healer's Staff",
+    "id": 271767,
+    "icon": "inv_staff_10",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "quest": "Earthen Echo",
+    "stats": {
+     "sta": 12,
+     "dps": 20.8,
+     "heal": 67,
+     "sp": 22,
+     "mp5": 5
+    },
+    "for": [
+     "C"
+    ],
+    "note": "Source conflict: 5 mp5 only on Icy Veins DB. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271767 ; https://1mw.io/en/dungeons/excavation-site/quests",
+    "_date": "2026-11-10"
+   }
   ]
  },
  "trainers": {
@@ -14088,11 +16553,11 @@
   }
  },
  "_meta": {
-  "version": 26,
-  "generated_at": "2026-11-10T10:24-05:00",
-  "source": "Grok, Nov 10 2026 (Shaman switch requested by Jason)",
+  "version": 27,
+  "generated_at": "2026-11-10T10:59-05:00",
+  "source": "Grok, Nov 10 2026 (dungeon loot pass requested by Jason)",
   "notes_commit": "ae74407",
-  "notes": "Nov 10: Shaman is now Zanjiro Tidetusk (Troll, level 25); Troll racials and a Berserking macro replace Orc."
+  "notes": "Nov 10: Dungeon gear loot tables for Ragefire to Excavation Site (112 items, Forever DB stats, 1mw beta drop rates)."
  },
  "captions": {
   "builds": "Zanjiro: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8. Corvin unchanged.",
