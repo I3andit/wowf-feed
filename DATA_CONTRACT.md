@@ -21,7 +21,7 @@ The same sections and constant names as `research-data.json` from the Nov 3 expo
 | `macros` | `WFDB_AFF`, `WFDB_DEMO`, `WFDB_ENH`, `MACROS` |
 | `professions` | `TRAIN_STD`, `PROFS`, `SKIN_ZONES`, `LEATHER`, `PIN_TRAIN`, `PROF_PINS`, `PROF_WHY` |
 | `gear` | `SHAM_GEAR`, `LOCK_GEAR`, `QUALITY`, `ITEM_INFO`, `GEAR_SHEETS`, `GEAR_EXTRA_IDS` |
-| `dungeons` | `DUNGEONS`, `DUN_NOTES_LOOT`, `DKEYS`, `PRESET_BASE`, `PRESETS` |
+| `dungeons` | `DUNGEONS`, `DUN_NOTES_LOOT`, `DKEYS`, `PRESET_BASE`, `PRESETS`, optional `LOOT`, optional `STAT_WEIGHTS` (below) |
 | `trainers` | `TRAINER_RAW`, `TRAIN_SRC`, `TRAIN_NOTE` |
 | `addons` | `INSTALLED` |
 | `launch_night` | `LAUNCH_ITEMS`, `ROUTES`, `corvin_first_session` {`FIRST_ROUTE`, `FIRST_SPELL_ICON`, `FIRST_TRAINER`, `FIRST_SRC`} |
@@ -45,6 +45,32 @@ The same sections and constant names as `research-data.json` from the Nov 3 expo
 | `profs_note_skinning`, `profs_note_tailoring`, `profs_note_trainers`, `profs_note_slider`, `gear_raid_preview`, `macros_skip`, `addons_installed_note`, `addons_install_note` | `{text}` | Paragraphs |
 
 Items may carry extra `_source` / `_date` fields; the page ignores unknown fields.
+
+### dungeons.LOOT and dungeons.STAT_WEIGHTS (optional, added 2026-11-10)
+
+The page's "Dungeon gear" panel lists what each dungeon gives a character and compares it with the gear the game sync reports as equipped. Both keys are optional; a dungeon with no `LOOT` rows shows the board's own gear picks from it instead.
+
+`LOOT` is a list with one object per item per dungeon:
+
+| Field | Meaning |
+|---|---|
+| `dkey` | The dungeon's key from `DKEYS` (same index as its `DUNGEONS` row). Required. |
+| `item` | Exact item name. Required. |
+| `id` | Item id when the source gives it (lets the page spot an item already worn). |
+| `q` | Quality number as in `gear.QUALITY` (2 uncommon, 3 rare, 4 epic). |
+| `slot` | One of Head, Neck, Shoulder, Back, Chest, Wrist, Hands, Waist, Legs, Feet, Finger, Trinket, Main Hand, One-Hand, Two-Hand, Off Hand, Ranged. Required. |
+| `type` | Armor or weapon type (Cloth, Leather, Mail, Staff, Wand, Shield...). |
+| `req` | Level required to equip. |
+| `boss` or `quest` | Where it comes from: the boss name, or the quest name for a quest reward. |
+| `rate` | Drop chance as text. Say "(Classic)" when the number is Classic data and "(Forever)" only when a Forever source publishes it. Leave out when unknown. |
+| `stats` | Object using only these keys: `dps` (weapon damage per second), `str`, `agi`, `sta`, `int`, `spi`, `sp` (spell power or spell damage), `heal`, `ap`, `crit`, `hit`, `mp5`, `hp5`, `armor`. Leave out zero stats. Leave the whole object out when no source publishes the item's stats. |
+| `for` | Who it is for: `["C"]` Corvin, `["V"]` the shaman, or both. Left out means both. |
+| `note` | Short caveat: procs, on-use effects, Classic-only numbers. |
+| `_source`, `_date` | Source URLs (separated by " ; ") and the date read. |
+
+`STAT_WEIGHTS` is `{ "V": { stat: points per 1 of that stat }, "C": { ... } }` and replaces the page's default stat priorities. Send it only with a cited Forever source.
+
+The upgrade score on the page is the stat change times these weights. It is an estimate, not a simulation.
 
 ## Rules the checker enforces (a push that breaks one is ignored)
 
