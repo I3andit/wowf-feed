@@ -196,6 +196,20 @@ const CSS = `
 .wf-acq-blocked { color: #ff8f8f; text-decoration: none; }
 .wf-acq-src { color: ${MUTED}; font-size: 10px; }
 .wf-acq-src a { color: ${GOLD}; }
+.wf-dun { display: grid; grid-template-columns: minmax(220px, 290px) 1fr; gap: 14px; align-items: start; }
+@media (max-width: 860px) { .wf-dun { grid-template-columns: 1fr; } }
+.wf-dun-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.wf-dun-chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; border: 1px solid #4a3d22; background: #14110d; color: ${MUTED}; font-size: 12px; line-height: 1.5; }
+.wf-dun-chip-in { color: ${INK}; border-color: #6b5a33; }
+.wf-dun-chip-on { color: ${GOLD_HI}; border-color: ${GOLD_HI}; background: linear-gradient(180deg, #3a2c14, #1a140b); box-shadow: 0 0 10px rgba(245,215,122,.35); }
+.wf-dun-up { color: ${FEL}; font-weight: 700; font-size: 11px; }
+@media (max-width: 860px) { .wf-dun-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; } .wf-dun-chip { flex: none; white-space: nowrap; } }
+.wf-dun-list { display: grid; gap: 6px; max-height: min(58vh, 540px); overflow-y: auto; padding-right: 4px; scrollbar-color: #6b5a33 #14110d; scrollbar-width: thin; }
+.wf-dun-row { display: grid; grid-template-columns: 38px 1fr minmax(150px, 230px); gap: 10px; align-items: center; padding: 6px 8px; border-radius: 8px; border: 1px solid #3a3020; background: rgba(0,0,0,.28); }
+@media (max-width: 640px) { .wf-dun-row { grid-template-columns: 38px 1fr; } .wf-dun-row > :last-child { grid-column: 1 / -1; } }
+.wf-dun-row-up { border-color: rgba(30,255,0,.45); background: rgba(30,255,0,.05); }
+.wf-dun-tag { display: inline-block; padding: 0 7px; border-radius: 4px; border: 1px solid currentColor; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; line-height: 1.6; }
+.wf-dun-d { display: inline-block; margin-right: 8px; font-size: 12px; font-weight: 600; white-space: nowrap; }
 .wf-prelabel { padding: 8px 10px; border-radius: 8px; border: 1px dashed #ff9b3d; background: rgba(255,128,0,.06); font-size: 12px; color: #ece2c8; }
 .wf-nav { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; padding: 8px 12px; border: 1px solid #6b5a33; border-radius: 10px; background: linear-gradient(180deg, rgba(36,29,21,.97), rgba(13,12,10,.97)); box-shadow: inset 0 0 0 1px #000, 0 6px 18px rgba(0,0,0,.65); backdrop-filter: blur(6px); }
 .wf-nav-chars { display: flex; gap: 6px; flex: none; }
@@ -399,7 +413,7 @@ function Hero({ view, setView }: { view: View; setView: (v: View) => void }) {
       <div className="wf-shimmer" style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 2 }} />
       <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
         <div style={{ display: "flex", gap: 8 }}>
-          {([["C", "classicon_warlock", WARLOCK, "Corvin Ashmourne", "Undead Warlock, Affliction leveling, Demonology Spec 2 · Guild main"], ["V", "classicon_shaman", SHAMAN, "Vorgash Stormcleft", "Orc Shaman, Enhancement · Alt"]] as [("C" | "V"), string, string, string, string][]).map((o: [("C" | "V"), string, string, string, string]) => (
+          {([["C", "classicon_warlock", WARLOCK, "Corvin Ashmourne", "Undead Warlock, Affliction leveling, Demonology Spec 2 · Guild main"], ["V", "classicon_shaman", SHAMAN, V_FULL, `${CHARS[0].line} · Alt`]] as [("C" | "V"), string, string, string, string][]).map((o: [("C" | "V"), string, string, string, string]) => (
             <button key={o[0]} type="button" className={`wf-btn wf-portrait${view === o[0] ? " wf-portrait-on" : view === "both" ? "" : " wf-portrait-off"}`} aria-pressed={view === o[0]} onClick={() => setView(o[0])} title={`Show ${o[3].split(" ")[0]}'s page`}>
               <Icon icon={o[1]} size={52} ring={o[2]} name={o[3]} tip={`${o[4]} · click for ${o[3].split(" ")[0]}'s page`} />
             </button>
@@ -407,8 +421,8 @@ function Hero({ view, setView }: { view: View; setView: (v: View) => void }) {
         </div>
         <div style={{ flex: "1 1 260px" }}>
           <div style={{ fontSize: 12, color: GOLD, letterSpacing: ".12em", textTransform: "uppercase" }}>Horde · WoW Forever · Naga V2 Pro</div>
-          <div style={{ fontFamily: SERIF, fontSize: 30, color: GOLD_HI, lineHeight: 1.15, textShadow: "0 2px 0 #000" }}>{view === "C" ? "Corvin Ashmourne" : view === "V" ? "Vorgash Stormcleft" : "Corvin & Vorgash"}</div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", margin: "4px 0 2px" }}>{shows(view, "C") ? <span><span style={{ color: WARLOCK, fontFamily: SERIF }}>Corvin</span> <RoleBadge who="C" note /></span> : null}{shows(view, "V") ? <span><span style={{ color: SHAMAN, fontFamily: SERIF }}>Vorgash</span> <RoleBadge who="V" note /></span> : null}<button type="button" className="wf-btn" onClick={() => setView(view === "both" ? "C" : "both")} style={{ padding: "1px 10px", borderRadius: 999, border: `1px solid #4a3d22`, background: "#14110d", color: MUTED, fontSize: 11 }}>{view === "both" ? "Just Corvin" : "Show both"}</button></div>
+          <div style={{ fontFamily: SERIF, fontSize: 30, color: GOLD_HI, lineHeight: 1.15, textShadow: "0 2px 0 #000" }}>{view === "C" ? "Corvin Ashmourne" : view === "V" ? V_FULL : `Corvin & ${V_NAME}`}</div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", margin: "4px 0 2px" }}>{shows(view, "C") ? <span><span style={{ color: WARLOCK, fontFamily: SERIF }}>Corvin</span> <RoleBadge who="C" note /></span> : null}{shows(view, "V") ? <span><span style={{ color: SHAMAN, fontFamily: SERIF }}>{V_NAME}</span> <RoleBadge who="V" note /></span> : null}<button type="button" className="wf-btn" onClick={() => setView(view === "both" ? "C" : "both")} style={{ padding: "1px 10px", borderRadius: 999, border: `1px solid #4a3d22`, background: "#14110d", color: MUTED, fontSize: 11 }}>{view === "both" ? "Just Corvin" : "Show both"}</button></div>
           <div style={{ fontSize: 13, color: MUTED }}>{left > 0 ? "Launch Wed Nov 4, 6:00 PM ET (3:00 PM PT)" : "Live since Wed Nov 4"} · level cap 60 · raids open Dec 9 (Hyjal Summit, Barrow Deeps, Onyxia)</div>
         </div>
       </div>
@@ -444,6 +458,9 @@ type CharData = {
 };
 
 const CHARS: CharData[] = WF_DATA.characters.CHARS;
+// Nov 10: the shaman's name comes from the feed (planned as Vorgash, created as Zanjiro). "V" stays the internal key.
+const V_FULL: string = (CHARS[0] && CHARS[0].name) || "Vorgash Stormcleft";
+const V_NAME: string = V_FULL.split(" ")[0];
 
 function Bar({ value, max, color }: { value: number; max: number; color: string }) {
   const pct = Math.max(0, Math.min(100, (value / max) * 100));
@@ -943,7 +960,7 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
   return (
     <Frame accent={accent} title="Talents" icon={def.cls === "shaman" ? "classicon_shaman" : "classicon_warlock"} right={<span style={{ fontSize: 12, color: MUTED }}>0hp.com talent data · build 1.60.1.70707 · read Oct 30</span>}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 10 }}>
-        {[{ k: "warlock", label: "Corvin · Warlock", icon: "classicon_warlock", c: WARLOCK }, { k: "shaman", label: "Vorgash · Shaman", icon: "classicon_shaman", c: SHAMAN }].filter((o: { k: string }) => view === "both" || o.k === (view === "C" ? "warlock" : "shaman")).map((o: { k: string; label: string; icon: string; c: string }) => (
+        {[{ k: "warlock", label: "Corvin · Warlock", icon: "classicon_warlock", c: WARLOCK }, { k: "shaman", label: `${V_NAME} · Shaman`, icon: "classicon_shaman", c: SHAMAN }].filter((o: { k: string }) => view === "both" || o.k === (view === "C" ? "warlock" : "shaman")).map((o: { k: string; label: string; icon: string; c: string }) => (
           <button key={o.k} type="button" className="wf-tab" onClick={() => { pickBuild(guideBuildKey(o.k)); }} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 12px", borderRadius: 8, border: `1px solid ${cls === o.k ? o.c : "#4a3d22"}`, background: cls === o.k ? `${o.c}33` : "#14110d", color: cls === o.k ? "#fff" : MUTED, fontFamily: SERIF, fontSize: 14 }}>
             <Icon icon={o.icon} size={22} ring={o.c} />{o.label}<RoleBadge who={o.k === "warlock" ? "C" : "V"} />
           </button>
@@ -963,7 +980,7 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
         <div style={{ padding: "8px 12px", border: "1px dashed #6b5a33", borderRadius: 8, color: MUTED, fontSize: 12, marginBottom: 12 }}>Level 60 build: all 51 points shown. Pick a ▲ build to use the level slider. <PreTag mark="guide" src={`${def.src}, ${def.date}`} /></div>
       ) : (
         <div style={{ marginBottom: 12 }}>
-          <Slider value={level} min={1} max={60} onChange={(v: number) => { setLevel(v); setTabOverride(null); }} color={accent} label={def.cls === "shaman" ? "Level · follows Vorgash" : "Level · follows Corvin"} marks={[{ at: 10, label: "10 first point" }, { at: 30, label: "30" }, { at: 40, label: "40 Dual Spec" }, { at: 60, label: "60" }]} />
+          <Slider value={level} min={1} max={60} onChange={(v: number) => { setLevel(v); setTabOverride(null); }} color={accent} label={def.cls === "shaman" ? `Level · follows ${V_NAME}` : "Level · follows Corvin"} marks={[{ at: 10, label: "10 first point" }, { at: 30, label: "30" }, { at: 40, label: "40 Dual Spec" }, { at: 60, label: "60" }]} />
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", marginTop: 8, fontSize: 12, color: MUTED }}>
             <span>Points spent: <b style={{ color: GOLD_HI }}>{pts}</b>/51 · split <b style={{ color: INK }}>{split.join("/")}</b></span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}><Toggle label="Legacy Talented maxed: points up to 5 levels early" value={legacy} onChange={(v: boolean) => setLegacy(v)} /></span>
@@ -1091,9 +1108,9 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC, view }: { skills: Rec
   const leathers = LEATHER.filter((l: [string, number, number]) => mob >= l[1] && mob <= l[2] + 3).map((l: [string, number, number]) => l[0]);
   const zone = SKIN_ZONES.find((z: [number, number, string]) => s >= z[0] && s < z[1]) ?? SKIN_ZONES[SKIN_ZONES.length - 1];
   return (
-    <Frame accent={p.color} title={p.name} icon={p.icon} right={<span style={{ fontSize: 12, color: who === "V" ? SHAMAN : WARLOCK, fontFamily: SERIF }}>{who === "V" ? "Vorgash" : "Corvin"} · level {charLv}</span>}>
+    <Frame accent={p.color} title={p.name} icon={p.icon} right={<span style={{ fontSize: 12, color: who === "V" ? SHAMAN : WARLOCK, fontFamily: SERIF }}>{who === "V" ? V_NAME : "Corvin"} · level {charLv}</span>}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 }}>
-        {((view === "both" ? [["C", "Corvin", "classicon_warlock", WARLOCK], ["V", "Vorgash", "classicon_shaman", SHAMAN]] : []) as [("V" | "C"), string, string, string][]).map((o: [("V" | "C"), string, string, string]) => (
+        {((view === "both" ? [["C", "Corvin", "classicon_warlock", WARLOCK], ["V", V_NAME, "classicon_shaman", SHAMAN]] : []) as [("V" | "C"), string, string, string][]).map((o: [("V" | "C"), string, string, string]) => (
           <button key={o[0]} type="button" className="wf-tab" onClick={() => setWho(o[0])} style={{ display: "flex", alignItems: "center", gap: 6, padding: "4px 12px 4px 4px", borderRadius: 8, border: `1px solid ${who === o[0] ? o[3] : "#4a3d22"}`, background: who === o[0] ? `${o[3]}33` : "#14110d", color: who === o[0] ? "#fff" : MUTED, fontFamily: SERIF, fontSize: 14 }}><Icon icon={o[2]} size={24} ring={o[3]} />{o[1]}<RoleBadge who={o[0]} /></button>
         ))}
       </div>
@@ -1118,7 +1135,7 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC, view }: { skills: Rec
       </div>
       {nextTrain ? (
         <div style={{ display: "flex", gap: 8, alignItems: "center", fontSize: 12, padding: "6px 10px", borderRadius: 6, border: `1px solid ${skill >= nextTrain[0] - 5 ? ORANGE : "#3a3020"}`, marginBottom: 12, color: INK }} className={skill >= nextTrain[0] - 5 ? "wf-glow" : undefined}>
-          <span style={{ color: GOLD_HI, fontWeight: 700 }}>Train at {nextTrain[0]}</span><span>{nextTrain[1]}</span>{trainReqLevel(nextTrain) !== null && charLv < (trainReqLevel(nextTrain) ?? 0) ? <span style={{ color: ORANGE }}>· {who === "V" ? "Vorgash" : "Corvin"} is level {charLv}, needs {trainReqLevel(nextTrain)}</span> : null}
+          <span style={{ color: GOLD_HI, fontWeight: 700 }}>Train at {nextTrain[0]}</span><span>{nextTrain[1]}</span>{trainReqLevel(nextTrain) !== null && charLv < (trainReqLevel(nextTrain) ?? 0) ? <span style={{ color: ORANGE }}>· {who === "V" ? V_NAME : "Corvin"} is level {charLv}, needs {trainReqLevel(nextTrain)}</span> : null}
         </div>
       ) : <div style={{ fontSize: 12, color: GOLD_HI, marginBottom: 12 }}>Max rank. Reaching 300 also earns a Legacy point and the account-wide certification title (your notes).</div>}
       {p.key === "skin" ? (
@@ -1252,7 +1269,7 @@ function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: Vie
         ))}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", fontSize: 12, color: MUTED, marginBottom: 4 }}>
-        <span>For <span style={{ color: spec === "enh" ? "#5fb0ff" : "#b9baff" }}>{spec === "enh" ? "Vorgash" : "Corvin"}</span> at level <span style={{ color: GOLD_HI }}>{lv}</span>: the priority uses the spells and talents learned by this level; later steps are grayed with their level.</span>
+        <span>For <span style={{ color: spec === "enh" ? "#5fb0ff" : "#b9baff" }}>{spec === "enh" ? V_NAME : "Corvin"}</span> at level <span style={{ color: GOLD_HI }}>{lv}</span>: the priority uses the spells and talents learned by this level; later steps are grayed with their level.</span>
         <button type="button" className="wf-btn" onClick={() => setHideLocked(!hideLocked)} style={{ padding: "2px 10px", borderRadius: 999, border: `1px solid ${hideLocked ? GOLD : "#4a3d22"}`, background: hideLocked ? "rgba(245,215,122,.15)" : "transparent", color: hideLocked ? GOLD_HI : INK, fontSize: 12 }}>{hideLocked ? "Show locked steps" : "Hide locked steps"}</button>
       </div>
       <div className="wf-pop" key={`${spec}-${mode}`}>
@@ -1391,7 +1408,7 @@ function MacroBook({ lvV, lvC, view }: { lvV: number; lvC: number; view: View })
   const locked = (m: Macro) => (!!m.lvl && m.lvl > lvOf(m)) || replaced(m);
   const liveWhere = (m: Macro): string | undefined => {
     if (!m.bind) return undefined;
-    const specs = m.spec === "enh" ? [["enh", "Vorgash", lvV]] : m.spec === "both" ? [["aff", "Aff", lvC], ["demo", "Demo", lvC]] : [[m.spec, m.spec === "aff" ? "Aff" : "Demo", lvC]];
+    const specs = m.spec === "enh" ? [["enh", V_NAME, lvV]] : m.spec === "both" ? [["aff", "Aff", lvC], ["demo", "Demo", lvC]] : [[m.spec, m.spec === "aff" ? "Aff" : "Demo", lvC]];
     const parts = specs.map((x: any[]) => { const w = nagaWhere(x[0], x[2], m.bind!); return w ? `${x[1]} ${w}` : ""; }).filter((t: string) => !!t);
     return parts.length ? `At your level: ${parts.join(" · ")}` : undefined;
   };
@@ -1415,7 +1432,7 @@ function MacroBook({ lvV, lvC, view }: { lvV: number; lvC: number; view: View })
         {list.map((m: Macro) => locked(m) ? <div key={m.title} style={{ opacity: 0.45, filter: "grayscale(.8)" }}><MacroCard m={m} live={liveWhere(m)} /></div> : <MacroCard key={m.title} m={m} live={liveWhere(m)} />)}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 10, flexWrap: "wrap", fontSize: 12, color: MUTED }}>
-        <span>Macros with a Lv tag above the character's level (Vorgash {lvV} for Enhancement, Corvin {lvC} for Warlock) are {showAll ? "grayed" : "hidden"}, and so are older versions of a macro once its next level version takes over (Curse button, Imbue chooser, Demon Armor). Untagged macros always show.</span>
+        <span>Macros with a Lv tag above the character's level ({V_NAME} {lvV} for Enhancement, Corvin {lvC} for Warlock) are {showAll ? "grayed" : "hidden"}, and so are older versions of a macro once its next level version takes over (Curse button, Imbue chooser, Demon Armor). Untagged macros always show.</span>
         <button type="button" className="wf-btn" onClick={() => setShowAll(!showAll)} style={{ padding: "2px 10px", borderRadius: 999, border: `1px solid ${showAll ? GOLD : "#4a3d22"}`, background: showAll ? "rgba(245,215,122,.15)" : "transparent", color: showAll ? GOLD_HI : INK, fontSize: 12 }}>{showAll ? "Hide locked" : "Show all"}</button>
       </div>
       <div style={{ fontSize: 11, color: MUTED, marginTop: 10 }}>Syntax checked against Forever's macro pages on wowfdb (read Oct 30). Every wowfdb macro is marked Untested there, and none of these have been run in the Forever client yet.</div>
@@ -1642,6 +1659,176 @@ function dunTop(lv: string): number { const m = lv.match(/(\d+)\D*$/); return m 
 // Stable check ids: the first 12 rows keep their old index so saved ticks survive; added rows get names.
 const DKEYS: string[] = WF_DATA.dungeons.DKEYS;
 
+// ===== Dungeon gear (Nov 10 2026, Claude for Jason): what each dungeon gives this character, set against the gear
+// the WoWForeverSync addon reports as equipped (GET /api/game on the EliteDesk). Loot rows come from the feed
+// (dungeons.LOOT, researched by the Bot). A dungeon with no rows yet shows the board's own gear picks from it.
+// The upgrade score is stat priorities times stat changes: an estimate, not a simulation.
+type DLoot = { dkey: string; item: string; id?: number; icon?: string; q?: number; slot: string; type?: string; req?: number; boss?: string; quest?: string; rate?: string; stats?: Record<string, number>; for?: string[]; note?: string; _source?: string; _date?: string };
+type EqItem = { id: number; name: string; q?: number; ilvl?: number; sub?: string; loc?: string; stats?: Record<string, number> };
+type GameChar = { name?: string; level?: number; equipped?: Record<string, EqItem>; received_at?: number };
+type DCmp = { kind: "nosync" | "have" | "nostats" | "eqnostats" | "cmp"; replaces: string[]; deltas: [string, number][]; score: number; empty: boolean };
+const DLOOT: DLoot[] = WF_DATA.dungeons.LOOT || [];
+const STAT_LABEL: [string, string][] = [["dps", "DPS"], ["str", "Str"], ["agi", "Agi"], ["sta", "Sta"], ["int", "Int"], ["spi", "Spi"], ["sp", "Spell Power"], ["heal", "Healing"], ["ap", "Attack Power"], ["crit", "Crit"], ["hit", "Hit"], ["mp5", "Mp5"], ["hp5", "Hp5"], ["armor", "Armor"]];
+// Default stat priorities (points per 1 of a stat). The feed can replace them with sourced numbers (dungeons.STAT_WEIGHTS).
+const STAT_WEIGHTS: Record<string, Record<string, number>> = {
+  V: { dps: 14, str: 2, agi: 1.5, ap: 1, sta: 1, crit: 25, hit: 20, int: 0.4, spi: 0.2, sp: 0.3, mp5: 1, armor: 0.02 },
+  C: { sp: 1, sta: 0.8, int: 0.6, spi: 0.3, crit: 8, hit: 10, mp5: 1.5, armor: 0.01 },
+  ...(WF_DATA.dungeons.STAT_WEIGHTS || {}),
+};
+const DSLOT_ALIAS: Record<string, string> = { ring: "finger", cloak: "back", shoulders: "shoulder", bracers: "wrist", wrists: "wrist", gloves: "hands", belt: "waist", boots: "feet", "2h": "two-hand", "two-handed": "two-hand", "two hand": "two-hand", staff: "two-hand", "1h": "one-hand", "one hand": "one-hand", "one-handed": "one-hand", "main-hand": "main hand", "off-hand": "off hand", offhand: "off hand", "held in off-hand": "off hand", "held in off hand": "off hand", shield: "off hand", wand: "ranged", totem: "ranged", relic: "ranged", gun: "ranged", bow: "ranged" };
+const DSLOT_IDS: Record<string, number[]> = { head: [1], neck: [2], shoulder: [3], back: [15], chest: [5], wrist: [9], hands: [10], waist: [6], legs: [7], feet: [8], finger: [11, 12], trinket: [13, 14], "main hand": [16], "one-hand": [16], "two-hand": [16, 17], "off hand": [17], ranged: [18] };
+// Stand-in icons from the page's own sprite when a loot item's icon is not in it (the page cannot load remote images).
+const DSLOT_ICON: Record<string, string> = { head: "inv_helmet_15", neck: "inv_jewelry_necklace_06", shoulder: "inv_shoulder_18", back: "inv_misc_cape_11", chest: "inv_chest_cloth_48", wrist: "inv_bracer_02", hands: "inv_gauntlets_15", waist: "inv_belt_43", legs: "inv_pants_14", feet: "inv_boots_09", finger: "inv_jewelry_ring_09", trinket: "inv_misc_orb_02", "main hand": "inv_weapon_shortblade_07", "one-hand": "inv_weapon_shortblade_07", "two-hand": "inv_staff_07", "off hand": "inv_misc_orb_02", ranged: "inv_wand_04" };
+function dSlot(t: string): string { const k = (t || "").trim().toLowerCase(); return DSLOT_ALIAS[k] || k; }
+function dScore(stats: Record<string, number> | undefined, w: Record<string, number>): number {
+  return Object.keys(stats || {}).reduce((t: number, k: string) => t + (w[k] || 0) * ((stats as Record<string, number>)[k] || 0), 0);
+}
+function dunRange(lv: string): [number, number] { const m = lv.match(/\d+/g) || []; return [Number(m[0] || 0), Number(m[m.length - 1] || 0)]; }
+function statLine(stats?: Record<string, number>): string {
+  if (!stats) return "";
+  return STAT_LABEL.filter((x: [string, string]) => !!stats[x[0]]).map((x: [string, string]) => `${stats[x[0]]} ${x[1]}`).join(" · ");
+}
+function dunCompare(l: DLoot, eq: Record<string, EqItem> | null, w: Record<string, number>): DCmp {
+  const base: DCmp = { kind: "nosync", replaces: [], deltas: [], score: 0, empty: false };
+  if (!eq) return base;
+  const worn = Object.keys(eq).map((k: string) => eq[k]).filter((x: EqItem) => !!x);
+  if (worn.some((x: EqItem) => (!!l.id && x.id === l.id) || x.name === l.item)) return { ...base, kind: "have" };
+  const slot = dSlot(l.slot);
+  let cur = (DSLOT_IDS[slot] || []).map((i: number) => eq[String(i)]).filter((x: EqItem) => !!x);
+  const pair = slot === "finger" || slot === "trinket";
+  const empty = pair ? cur.length < 2 : slot === "two-hand" ? !eq["16"] : cur.length === 0;
+  if (pair) {
+    if (empty) cur = [];
+    else if (cur.every((x: EqItem) => !!x.stats)) cur = [cur.slice().sort((a: EqItem, b: EqItem) => dScore(a.stats, w) - dScore(b.stats, w))[0]];
+  }
+  const replaces = cur.map((x: EqItem) => x.name);
+  if (!l.stats) return { ...base, kind: "nostats", replaces, empty };
+  if (cur.some((x: EqItem) => !x.stats)) return { ...base, kind: "eqnostats", replaces, empty };
+  const old: Record<string, number> = {};
+  cur.forEach((x: EqItem) => Object.keys(x.stats || {}).forEach((k: string) => { old[k] = (old[k] || 0) + ((x.stats as Record<string, number>)[k] || 0); }));
+  const ls = l.stats;
+  const deltas = STAT_LABEL.map((x: [string, string]) => [x[0], Math.round(((ls[x[0]] || 0) - (old[x[0]] || 0)) * 10) / 10] as [string, number]).filter((d: [string, number]) => d[1] !== 0);
+  const score = Math.round(deltas.reduce((t: number, d: [string, number]) => t + (w[d[0]] || 0) * d[1], 0) * 10) / 10;
+  return { kind: "cmp", replaces, deltas, score, empty };
+}
+// Gear picks already on the board whose how-to text names this dungeon (used until the dungeon has loot rows).
+function dunPicks(dname: string, who: "V" | "C"): { slot: string; p: GPick }[] {
+  const parts = dname.replace(/\s*\(new\)\s*$/, "").split(/\s*[→·]\s*/).map((x: string) => x.trim().toLowerCase()).filter((x: string) => x.length >= 5);
+  const sh = GEAR_SHEETS[who === "V" ? "sham" : "lock"];
+  const out: { slot: string; p: GPick }[] = [];
+  [...sh.left, ...sh.right, ...sh.bottom].forEach((sl: GSlot) => sl.picks.forEach((p: GPick) => {
+    const hay = `${p.how || ""} ${p.src || ""}`.toLowerCase();
+    if (parts.some((x: string) => hay.indexOf(x) >= 0)) out.push({ slot: sl.slot, p });
+  }));
+  return out;
+}
+function agoText(sec?: number): string {
+  if (!sec) return "";
+  const d = Math.max(0, Date.now() / 1000 - sec);
+  return d < 90 ? "just now" : d < 5400 ? `${Math.round(d / 60)} min ago` : d < 129600 ? `${Math.round(d / 3600)} h ago` : `${Math.round(d / 86400)} d ago`;
+}
+type DRow = { i: number; key: string; name: string; lv: string; lo: number; hi: number; tip: string; loot: { l: DLoot; c: DCmp }[]; ups: number; later: number; picks: { slot: string; p: GPick }[]; inRange: boolean; done: boolean; tick: string };
+function DungeonGear({ who, lv, game, ck, toggle }: { who: "V" | "C"; lv: number; game: Record<string, GameChar> | null; ck: Record<string, boolean>; toggle: (id: string) => void }) {
+  const color = who === "V" ? SHAMAN : WARLOCK;
+  const name = who === "V" ? V_NAME : "Corvin";
+  const g = game && game[who] ? game[who] : null;
+  const eq = g && g.equipped && Object.keys(g.equipped).length ? g.equipped : null;
+  const w = STAT_WEIGHTS[who] || {};
+  const eqStats = !!eq && Object.keys(eq).some((k: string) => !!eq[k] && !!eq[k].stats);
+  const rows: DRow[] = useMemo(() => DUNGEONS.map((r: string[], i: number) => {
+    const key = DKEYS[i];
+    const [lo, hi] = dunRange(r[1]);
+    const rank = (c: DCmp) => (c.kind === "cmp" ? 0 : c.kind === "have" ? 2 : 1);
+    const loot = DLOOT.filter((l: DLoot) => (l.dkey === key || l.dkey === r[0]) && (!l.for || l.for.indexOf(who) >= 0)).map((l: DLoot) => ({ l, c: dunCompare(l, eq, w) }))
+      .sort((a: { c: DCmp }, b: { c: DCmp }) => rank(a.c) - rank(b.c) || b.c.score - a.c.score);
+    const tick = `d${who === "V" ? "v" : "c"}${key}`;
+    return { i, key, name: r[0], lv: r[1], lo, hi, tip: who === "V" ? r[2] : r[3], loot, ups: loot.filter((x: { l: DLoot; c: DCmp }) => x.c.kind === "cmp" && x.c.score >= 1 && (!x.l.req || x.l.req <= lv)).length, later: loot.filter((x: { l: DLoot; c: DCmp }) => x.c.kind === "cmp" && x.c.score >= 1 && !!x.l.req && x.l.req > lv).length, picks: loot.length ? [] : dunPicks(r[0], who), inRange: lv >= lo - 1 && lv <= hi, done: !!ck[tick], tick };
+  }), [who, lv, game, ck]);
+  const [pick, setPick] = useState<Record<string, string>>({});
+  // Opens on the dungeon most worth running now: in range, not cleared, most upgrades, then closest to this level.
+  const auto = rows.filter((r: DRow) => r.inRange && !r.done).sort((a: DRow, b: DRow) => b.ups - a.ups || Math.abs((a.lo + a.hi) / 2 - lv) - Math.abs((b.lo + b.hi) / 2 - lv))[0] ?? rows.find((r: DRow) => r.lo > lv) ?? rows[rows.length - 1];
+  const cur = rows.find((r: DRow) => r.key === pick[who]) ?? auto;
+  if (!cur) return null;
+  const usable = (l: DLoot) => !l.req || l.req <= lv;
+  const sides = cur.loot.filter((x: { c: DCmp }) => x.c.kind === "cmp" && Math.abs(x.c.score) < 1).length;
+  const verdict = (x: { l: DLoot; c: DCmp }): ReactNode => {
+    const c = x.c;
+    const rep = c.replaces.length ? `vs ${c.replaces.join(" + ")}` : c.empty ? "slot is empty" : "";
+    if (c.kind === "have") return <span className="wf-dun-tag" style={{ color: "#b3cbe8" }}>Wearing it</span>;
+    if (c.kind === "nosync") return <span style={{ color: MUTED, fontSize: 11 }}>No gear sync for {name} yet</span>;
+    if (c.kind === "nostats") return <span style={{ color: MUTED, fontSize: 11 }}>Stats not published yet{rep ? ` · ${rep}` : ""}</span>;
+    if (c.kind === "eqnostats") return <span style={{ color: MUTED, fontSize: 11 }}>{rep} · your item's stats arrive with the addon update</span>;
+    const tone = c.score >= 1 ? FEL : c.score <= -1 ? "#ff6b5a" : GOLD;
+    return (
+      <span style={{ display: "grid", gap: 2, justifyItems: "start" }}>
+        <span><span className="wf-dun-tag" style={{ color: tone }} title="Estimate: stat priorities times the stat changes. Not a simulation.">{c.score >= 1 ? "Upgrade" : c.score <= -1 ? "Worse" : "Sidegrade"} {c.score > 0 ? "+" : ""}{c.score}</span>{!usable(x.l) ? <span style={{ marginLeft: 6, fontSize: 10, padding: "1px 6px", borderRadius: 4, border: `1px solid ${ORANGE}`, color: ORANGE }}>Lv {x.l.req}</span> : null}</span>
+        <span>{c.deltas.map((d: [string, number]) => <span key={d[0]} className="wf-dun-d" style={{ color: d[1] > 0 ? FEL : "#ff6b5a" }}>{d[1] > 0 ? "+" : ""}{d[1]} {(STAT_LABEL.find((s: [string, string]) => s[0] === d[0]) || ["", d[0]])[1]}</span>)}</span>
+        <span style={{ color: MUTED, fontSize: 11 }}>{rep}</span>
+      </span>
+    );
+  };
+  return (
+    <Frame accent={color} title={`Dungeon gear · ${name}`} icon={who === "V" ? "classicon_shaman" : "classicon_warlock"} right={<span style={{ fontSize: 12, color: g ? INK : MUTED }}>{g ? `Gear read from the game ${agoText(g.received_at)}` : `No game sync for ${name} yet`}</span>}>
+      <div className="wf-dun-chips">
+        {rows.map((r: DRow) => (
+          <button key={r.key} type="button" className={`wf-btn wf-dun-chip${r.inRange ? " wf-dun-chip-in" : ""}${r.key === cur.key ? " wf-dun-chip-on" : ""}`} aria-pressed={r.key === cur.key} onClick={() => setPick((p: Record<string, string>) => ({ ...p, [who]: r.key }))} title={`${r.name} · levels ${r.lv}${r.done ? " · cleared" : ""}`}>
+            {r.done ? <span style={{ color: FEL }}>✓</span> : null}{r.name.replace(/\s*\(new\)\s*$/, "")} <span style={{ color: MUTED, fontSize: 11 }}>{r.lv}</span>{r.ups ? <span className="wf-dun-up" title={`${r.ups} upgrade${r.ups > 1 ? "s" : ""} usable now`}>▲{r.ups}</span> : null}
+          </button>
+        ))}
+      </div>
+      <div className="wf-dun">
+        <div style={{ display: "grid", gap: 8, fontSize: 13 }}>
+          <div style={{ fontFamily: SERIF, fontSize: 20, color: GOLD_HI, lineHeight: 1.2 }}>{cur.name}</div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center" }}>
+            <span style={{ color: INK }}>Levels {cur.lv}</span>
+            <span className="wf-dun-tag" style={{ color: cur.inRange ? FEL : cur.lo > lv ? ORANGE : MUTED }}>{cur.inRange ? "In range now" : cur.lo > lv ? `Opens around ${cur.lo}` : "Outleveled"}</span>
+          </div>
+          <div style={{ color: cur.ups ? FEL : INK, fontWeight: 600 }}>{cur.loot.length ? (cur.ups ? `Worth running: ${cur.ups} upgrade${cur.ups > 1 ? "s" : ""} for ${name} now${cur.later ? `, ${cur.later} more at a higher level` : ""}${sides ? `, ${sides} sidegrade${sides > 1 ? "s" : ""}` : ""}.` : cur.later ? `${cur.later} upgrade${cur.later > 1 ? "s" : ""} here once ${name} is a few levels higher.` : eqStats ? `Nothing listed here beats what ${name} is wearing.` : `${cur.loot.length} drop${cur.loot.length > 1 ? "s" : ""} listed for ${name}.`) : cur.picks.length ? `Loot table not researched yet. ${cur.picks.length} of your gear picks ${cur.picks.length === 1 ? "comes" : "come"} from here.` : "Loot table not researched yet, and none of your gear picks come from here."}</div>
+          <div style={{ color: INK, lineHeight: 1.45 }}><span style={{ color: GOLD, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase" }}>{name}'s notes · </span>{dunCell(cur.tip)}</div>
+          <TickBox on={cur.done} onClick={() => toggle(cur.tick)} color={color} text={<span>Cleared on {name}</span>} small />
+          {eq && !eqStats ? <div style={{ color: ORANGE, fontSize: 12, lineHeight: 1.4 }}>Upgrade numbers need the updated sync addon: log in on {name}, type /reload, and they fill in.</div> : null}
+          <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.4 }}>Scores are estimates from stat priorities, not a simulation. Drop chances marked Classic are not confirmed for Forever.</div>
+        </div>
+        <div className="wf-dun-list">
+          {cur.loot.map((x: { l: DLoot; c: DCmp }) => {
+            const l = x.l;
+            const q = QUALITY[l.q ?? (ITEM_INFO[l.item] ? ITEM_INFO[l.item][1] : 2)] || [INK, ""];
+            const icon = l.icon && ICON_POS[l.icon] !== undefined ? l.icon : ITEM_INFO[l.item] && ICON_POS[ITEM_INFO[l.item][0]] !== undefined ? ITEM_INFO[l.item][0] : DSLOT_ICON[dSlot(l.slot)] || "inv_misc_orb_02";
+            const url = (l._source || "").match(/https?:\/\/[^\s;]+/);
+            return (
+              <div key={`${l.dkey}-${l.item}`} className={`wf-dun-row${x.c.kind === "cmp" && x.c.score >= 1 ? " wf-dun-row-up" : ""}`} style={{ opacity: x.c.kind === "have" ? 0.6 : 1 }}>
+                <Icon icon={icon} size={36} ring={q[0]} name={l.item} tip={[l.slot, l.type, l.note].filter((t: string | undefined) => !!t).join(" · ")} />
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ color: q[0], fontWeight: 600, fontSize: 13, lineHeight: 1.25 }}>{l.item}{ITEM_INFO[l.item] ? <a href="#gear" className="wf-macro wf-macro-sm" title="This item is one of your gear picks">Your pick</a> : null}</div>
+                  <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.35 }}>{[l.slot, l.type, l.quest ? `Quest: ${l.quest}` : l.boss, l.rate].filter((t: string | undefined) => !!t).join(" · ")}{url ? <> · <a href={url[0]} target="_blank" rel="noreferrer" style={{ color: GOLD }}>{hostOf(url[0])}</a></> : null}</div>
+                  {l.stats ? <div style={{ color: INK, fontSize: 12, lineHeight: 1.35 }}>{statLine(l.stats)}</div> : null}
+                </div>
+                <div>{verdict(x)}</div>
+              </div>
+            );
+          })}
+          {cur.picks.map((x: { slot: string; p: GPick }) => {
+            const info = ITEM_INFO[x.p.item];
+            const q = info ? QUALITY[info[1]] : [GOLD, ""];
+            return (
+              <div key={x.p.id} className="wf-dun-row">
+                <Icon icon={info ? info[0] : "inv_misc_orb_02"} size={36} ring={q[0]} name={x.p.item} tip={x.slot} />
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ color: q[0], fontWeight: 600, fontSize: 13, lineHeight: 1.25 }}>{x.p.name}<a href="#gear" className="wf-macro wf-macro-sm" title="Open the gear sheet for the full how-to">Your pick</a></div>
+                  <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.35 }}>{x.slot} · levels {x.p.lv}</div>
+                  <div style={{ color: INK, fontSize: 12, lineHeight: 1.35 }}>{shortHow(x.p)}</div>
+                </div>
+                <div><TickBox on={!!ck[x.p.id]} onClick={() => toggle(x.p.id)} color={color} text={<span>Got it</span>} small /></div>
+              </div>
+            );
+          })}
+          {!cur.loot.length && !cur.picks.length ? <div style={{ color: MUTED, fontSize: 13, padding: "12px 4px" }}>Nothing to show for this dungeon yet. The Bot adds its loot table on a research run.</div> : null}
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
 // ===== Vorgash totem presets per dungeon: from "Totem presets per dungeon" in Shaman - Gear and Dungeons.md (notes commit f0d0af1) =====
 type PSlot = { t: string; icon: string; inh?: boolean; tag?: string } | null;
 type PUse = { preset: string; icon: string; when?: string; earth: PSlot; fire: PSlot; water: PSlot; air: PSlot; gate?: string };
@@ -1720,7 +1907,7 @@ function PresetPanel({ open, setOpen }: { open: number[]; setOpen: (o: number[])
     <div style={{ borderRadius: 12, border: `1px solid ${GOLD}`, background: "#0f0d0b", padding: 12 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
         <Icon icon="classicon_shaman" size={28} ring={SHAMAN} />
-        <span style={{ fontFamily: SERIF, color: GOLD_HI, fontSize: 16 }}>Vorgash's totem presets</span>
+        <span style={{ fontFamily: SERIF, color: GOLD_HI, fontSize: 16 }}>{V_NAME}'s totem presets</span>
         <span style={{ fontSize: 12, color: MUTED }}>Click a Preset cell in the table, or</span>
         <button type="button" className="wf-btn" onClick={() => setOpen(all ? [] : PRESETS.map((_p: PSub[], i: number) => i))} style={{ padding: "3px 12px", borderRadius: 6, border: `1px solid ${GOLD}`, background: all ? "transparent" : "linear-gradient(180deg,#7a1a12,#3d0c08)", color: GOLD_HI, fontSize: 12, fontWeight: 700 }}>{all ? "Hide all" : "Show all"}</button>
       </div>
@@ -1779,7 +1966,7 @@ const ROUTES: Route[] = WF_DATA.launch_night.ROUTES;
 const PROGRESS: { heading: string; items: Tick[] }[] = WF_DATA.progress.PROGRESS;
 // Order is part of the export code: only ever append.
 // Progress groups render with Corvin's milestones first (MAIN / ALT); PROGRESS and CHECK_IDS order are unchanged.
-function progRank(g: { heading: string }): number { const i = PROGRESS.findIndex((x: { heading: string }) => x.heading === g.heading); const v = PROGRESS.findIndex((x: { heading: string }) => x.heading === "Vorgash milestones"); return g.heading === "Corvin milestones" && v >= 0 ? v - 0.5 : i; }
+function progRank(g: { heading: string }): number { const i = PROGRESS.findIndex((x: { heading: string }) => x.heading === g.heading); const v = PROGRESS.findIndex((x: { heading: string }) => x.heading === "Vorgash milestones" || x.heading === `${V_NAME} milestones`); return g.heading === "Corvin milestones" && v >= 0 ? v - 0.5 : i; }
 const CHECK_IDS: string[] = [
   ...LAUNCH_ITEMS.flatMap((g: { items: Tick[] }) => g.items.map((t: Tick) => t.id)),
   ...ROUTES.flatMap((r: Route) => r.steps.map((_s: string, i: number) => `${r.id}${i}`)),
@@ -2256,8 +2443,8 @@ function CorvinFirstSession({ level }: { level: number }) {
 // Character view (Nov 7): the page shows Corvin, Vorgash or both. Picked from the hero portraits or the sticky bar,
 // saved on the EliteDesk (state.view), and #corvin / #vorgash / #both links open straight into a view.
 type View = "C" | "V" | "both";
-const VIEW_HASH: Record<string, View> = { "#corvin": "C", "#vorgash": "V", "#both": "both" };
-const VIEW_NAME: Record<string, string> = { C: "corvin", V: "vorgash", both: "both" };
+const VIEW_HASH: Record<string, View> = { "#corvin": "C", "#vorgash": "V", [`#${V_NAME.toLowerCase()}`]: "V", "#both": "both" };
+const VIEW_NAME: Record<string, string> = { C: "corvin", V: V_NAME.toLowerCase(), both: "both" };
 const shows = (view: View, who: "C" | "V"): boolean => view === "both" || view === who;
 function initialView(): View {
   try { const h = VIEW_HASH[(location.hash || "").toLowerCase()]; if (h) return h; } catch (e: unknown) { /* ignore */ }
@@ -2302,7 +2489,7 @@ function StickyNav({ groups, lvC, lvV, view, setView }: { groups: NavGroup[]; lv
     <nav className="wf-nav" aria-label="Jump to section">
       <div className="wf-nav-chars">
         {chip("C", "Corvin", lvC, WARLOCK, "classicon_warlock")}
-        {chip("V", "Vorgash", lvV, SHAMAN, "classicon_shaman")}
+        {chip("V", V_NAME, lvV, SHAMAN, "classicon_shaman")}
         <button type="button" className={`wf-nav-both${view === "both" ? " wf-nav-char-on" : ""}`} aria-pressed={view === "both"} onClick={() => setView("both")} title="Show both characters side by side">Both</button>
       </div>
       <div className="wf-nav-groups">
@@ -2425,7 +2612,7 @@ export default function App() {
   const tDef = BUILD_DEFS.find((b: BuildDef) => b.key === buildKey) ?? BUILD_DEFS[0];
   const charLevel = tDef.cls === "shaman" ? lvV : lvC;
   const setCharLevel = tDef.cls === "shaman" ? setLvV : setLvC;
-  const charName = tDef.cls === "shaman" ? "Vorgash" : "Corvin";
+  const charName = tDef.cls === "shaman" ? V_NAME : "Corvin";
   const [preview, setPreview] = useState<number | null>(null);
   useEffect(() => { setPreview(null); }, [lvV, lvC]);
   const level = preview ?? charLevel;
@@ -2460,7 +2647,7 @@ export default function App() {
   const base6: Bind[] = plate.base.map((x: NSlot, i: number) => toB(x, POS6[i]));
   const shift6: Bind[] = plate.shift.map((x: NSlot, i: number) => toB(x, POS6[i]));
   const n12: Layout12 = { ...n12raw, auto: true, buttons: plate.base.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), shift: plate.shift.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), src: `${spec.auto && spec.auto.src ? spec.auto.src : "ROT"}; ${n12raw.src}` };
-  const nagaWho = nagaSpec === "enh" ? "Vorgash" : "Corvin";
+  const nagaWho = nagaSpec === "enh" ? V_NAME : "Corvin";
   const prev12 = nagaSpec === "enh" ? prev12V : prev12C;
   const setPrev12 = nagaSpec === "enh" ? setPrev12V : setPrev12C;
   const reached12 = nagaChar >= n12.from;
@@ -2476,28 +2663,42 @@ export default function App() {
     if (view === "V") setGearChar("sham");
   }, [view]);
   const showC = shows(view, "C");
+  // Nov 10: equipped gear from the game sync (the addon's last snapshot), refreshed every 2 minutes.
+  const [game, setGame] = useState<Record<string, GameChar> | null>(null);
+  useEffect(() => {
+    let dead = false;
+    const load = () => { fetch("/api/game", { cache: "no-store" }).then((r: Response) => (r.ok ? r.json() : null)).then((x: unknown) => { if (!dead && x && typeof x === "object") setGame(x as Record<string, GameChar>); }).catch(() => { /* offline or static preview */ }); };
+    load();
+    const t = setInterval(load, 120000);
+    return () => { dead = true; clearInterval(t); };
+  }, []);
   const dCols = view === "C" ? [0, 1, 2, 5] : view === "V" ? [0, 1, 2, 3, 4] : [0, 1, 2, 3, 4, 5];
   const showV = shows(view, "V");
 
   return (
     <Page
       title="WoW Forever Command Table"
-      summary="Your WoW Forever dashboard for Vorgash (Orc Enhancement Shaman) and Corvin (Undead Warlock): launch countdown, meta, patch feed, Corvin’s Affliction leveling path (Demonology Spec 2 at 40), live talent trees with a level slider, rotations, Naga binds, profession windows with a skill slider, gear, macro book, addons and progress. WoW-inspired design, not affiliated with Blizzard."
+      summary={"Your WoW Forever dashboard for " + V_NAME + " (Enhancement Shaman) and Corvin (Undead Warlock): launch countdown, meta, patch feed, Corvin’s Affliction leveling path (Demonology Spec 2 at 40), live talent trees with a level slider, rotations, Naga binds, profession windows with a skill slider, gear, macro book, addons and progress. WoW-inspired design, not affiliated with Blizzard."}
       width="wide"
     >
       <Hero view={view} setView={setView} />
       {/* Layout Nov 6 (Claude, for Jason): in-session sections first, reference after, launch night folded at the bottom. Keep this order and the sticky bar. */}
       <StickyNav lvC={lvC} lvV={lvV} view={view} setView={setView} groups={[
-        { label: "Play", items: [{ label: "Next ding", id: "ding" }, { label: "Rotations", id: "rotations" }, { label: "Naga binds", id: "naga" }, { label: "Talents", id: "builds" }] },
+        { label: "Play", items: [{ label: "Next ding", id: "ding" }, { label: "Dungeon gear", id: "runs" }, { label: "Rotations", id: "rotations" }, { label: "Naga binds", id: "naga" }, { label: "Talents", id: "builds" }] },
         { label: "Plan", items: [...(showC ? [{ label: "Leveling path", id: "path" }] : []), { label: "Gear and dungeons", id: "gear" }, { label: "Professions", id: "profs" }, ] },
         { label: "Reference", items: [{ label: "Macros", id: "macros" }, { label: "Addons", id: "addons" }, ...(view === "both" ? [{ label: "Characters", id: "chars" }] : []), { label: "Meta board", id: "meta" }, { label: "Patch feed", id: "feed" }, { label: "Saves", id: "progress" }, { label: "Launch night", id: "launch" }] },
       ]} />
-      <Section heading={view === "both" ? "Next ding" : `Next ding · ${view === "C" ? "Corvin" : "Vorgash"}`} id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
+      <Section heading={view === "both" ? "Next ding" : `Next ding · ${view === "C" ? "Corvin" : V_NAME}`} id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
         <Grid columns={2} plain>
           {showC ? <NextDing who="C" level={lvC} setLevel={setLvC} skills={st.sk} guide={guide.warlock} setGuide={(v: string) => setGuide("warlock", v)} /> : null}
           {showV ? <NextDing who="V" level={lvV} setLevel={setLvV} skills={st.sk} guide={guide.shaman} setGuide={(v: string) => setGuide("shaman", v)} /> : null}
           {view !== "both" ? <CharCard c={CHARS[view === "C" ? 1 : 0]} who={view} level={view === "C" ? lvC : lvV} setLevel={view === "C" ? setLvC : setLvV} skills={st.sk} setSkill={setSkill} /> : null}
         </Grid>
+      </Section>
+
+      <Section heading="Dungeon gear" id="runs" caption="Pick a dungeon: what it drops for this character and what each piece changes against the gear you are wearing in game. The list scrolls inside its own box, so the dungeon, its notes and the verdicts stay on one screen.">
+        {view === "both" ? <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: `${V_NAME} (Shaman) · Alt` }]} value={gearChar} onChange={(v: string) => setGearChar(v)} /> : null}
+        <DungeonGear who={gearChar === "lock" ? "C" : "V"} lv={gearChar === "lock" ? lvC : lvV} game={game} ck={st.ck} toggle={toggle} />
       </Section>
 
       <Section heading="Rotations" id="rotations" caption="Questing vs dungeon priorities per spec, as icon strips. Sources and dates under each.">
@@ -2543,10 +2744,10 @@ export default function App() {
         <PreLine lead="12-button layouts (32+ / 40+) and binds past level 30:" mark="notes" />
         {use12 ? <Steps steps={SETUP12} /> : null}
         {use12 ? null : <Steps steps={PL.naga_setup6} />}
-        <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate)." : "The 12-button plate takes over at 32 for Vorgash and 40 for Corvin (Spec 1 Affliction and Spec 2 Demonology). Drag the preview level to see it early."}</Text>
+        <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate)." : "The 12-button plate takes over at 32 for " + V_NAME + " and 40 for Corvin (Spec 1 Affliction and Spec 2 Demonology). Drag the preview level to see it early."}</Text>
       </Section>
 
-      <Section heading="Talent trees" id="builds" caption="Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: Vorgash, Warlock builds: Corvin); moving it previews another level without changing the character. Corvin's path levels Spec 1 Affliction to 60; Spec 2 (Demonology, for groups) unlocks at 40.">
+      <Section heading="Talent trees" id="builds" caption={"Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: " + V_NAME + ", Warlock builds: Corvin); moving it previews another level without changing the character. Corvin's path levels Spec 1 Affliction to 60; Spec 2 (Demonology, for groups) unlocks at 40."}>
         {preview !== null ? (
           <div className="wf-pop" style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${ORANGE}`, background: "rgba(255,128,0,.08)", color: INK, fontSize: 13 }}>
             <span>Previewing level <b style={{ color: GOLD_HI }}>{preview}</b>. {charName} is level {charLevel}.</span>
@@ -2573,9 +2774,9 @@ export default function App() {
       ) : null}
 
       <Section heading="Gear and dungeons" id="gear" caption="Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server.">
-        {view === "both" ? <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: "Vorgash (Shaman) · Alt" }]} value={gearChar} onChange={(v: string) => setGearChar(v)} /> : null}
+        {view === "both" ? <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: `${V_NAME} (Shaman) · Alt` }]} value={gearChar} onChange={(v: string) => setGearChar(v)} /> : null}
         <GearSheet who={gearChar === "lock" ? "lock" : "sham"} lv={gearChar === "lock" ? lvC : lvV} ck={st.ck} toggle={toggle} />
-        <Table columns={dCols.map((k: number) => ["Cleared", "Dungeon", "Levels", "Vorgash", "Preset (Vorgash)", "Corvin"][k])} rows={DUNGEONS.map((r: string[], i: number) => [
+        <Table columns={dCols.map((k: number) => ["Cleared", "Dungeon", "Levels", V_NAME, `Preset (${V_NAME})`, "Corvin"][k])} rows={DUNGEONS.map((r: string[], i: number) => [
           <span style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 11 }}>{showV ? <><TickBox on={!!st.ck[`dv${DKEYS[i]}`]} onClick={() => toggle(`dv${DKEYS[i]}`)} small color={SHAMAN} />V</> : null}{showC ? <><TickBox on={!!st.ck[`dc${DKEYS[i]}`]} onClick={() => toggle(`dc${DKEYS[i]}`)} small color={WARLOCK} />C</> : null}</span>,
           r[0], dunTop(r[1]) > 30 ? <span style={{ display: "inline-flex", flexDirection: "column", gap: 2 }}>{r[1]}<span className="wf-pre wf-pre-sm" title={`${PRE_LABEL} · ${PRE_MARKS.notes[1]}`}>31+ pre-launch</span></span> : r[1], dunCell(r[2]), <PresetCell i={i} open={presetOpen.indexOf(i) >= 0} onToggle={togglePreset} />, dunCell(r[3])].filter((_c: ReactNode, k: number) => dCols.indexOf(k) >= 0))} />
         <PreLine lead="Dungeon rows and totem presets marked 31+:" mark="notes" />
