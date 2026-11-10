@@ -63,12 +63,12 @@ The page's "Dungeon gear" panel lists what each dungeon gives a character and co
 | `req` | Level required to equip. |
 | `boss` or `quest` | Where it comes from: the boss name, or the quest name for a quest reward. |
 | `rate` | Drop chance as text. Say "(Classic)" when the number is Classic data and "(Forever)" only when a Forever source publishes it. Leave out when unknown. |
-| `stats` | Object using only these keys: `dps` (weapon damage per second), `str`, `agi`, `sta`, `int`, `spi`, `sp` (spell power or spell damage), `heal`, `ap`, `crit`, `hit`, `mp5`, `hp5`, `armor`. Leave out zero stats. Leave the whole object out when no source publishes the item's stats. |
+| `stats` | Object using only these keys: `dps` (weapon damage per second; for a wand in the Ranged slot it is scored with the `wand` weight), `str`, `agi`, `sta`, `int`, `spi`, `sp` (spell power or spell damage, all schools), `shadow`, `fire`, `frost`, `nature` (spell damage for that one school only, added 2026-11-10), `heal`, `ap`, `crit`, `hit`, `mp5`, `hp5`, `armor`. Leave out zero stats. Leave the whole object out when no source publishes the item's stats. |
 | `for` | Who it is for: `["C"]` Corvin, `["V"]` the shaman, or both. Left out means both. |
 | `note` | Short caveat: procs, on-use effects, Classic-only numbers. |
 | `_source`, `_date` | Source URLs (separated by " ; ") and the date read. |
 
-`STAT_WEIGHTS` is `{ "V": { stat: points per 1 of that stat }, "C": { ... } }` and replaces the page's default stat priorities. Send it only with a cited Forever source.
+`STAT_WEIGHTS` is `{ "V": { stat: points per 1 of that stat }, "C": { ... } }` and replaces the page's default stat priorities. A full set replaces the defaults for that character, so include every stat that should count. `wand` is the weight for wand DPS in the Ranged slot. Send it only with a cited Forever source.
 
 The upgrade score on the page is the stat change times these weights. It is an estimate, not a simulation.
 

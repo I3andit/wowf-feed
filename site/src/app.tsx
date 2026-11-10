@@ -1668,11 +1668,13 @@ type EqItem = { id: number; name: string; q?: number; ilvl?: number; sub?: strin
 type GameChar = { name?: string; level?: number; equipped?: Record<string, EqItem>; received_at?: number };
 type DCmp = { kind: "nosync" | "have" | "nostats" | "eqnostats" | "cmp"; replaces: string[]; deltas: [string, number][]; score: number; empty: boolean };
 const DLOOT: DLoot[] = WF_DATA.dungeons.LOOT || [];
-const STAT_LABEL: [string, string][] = [["dps", "DPS"], ["str", "Str"], ["agi", "Agi"], ["sta", "Sta"], ["int", "Int"], ["spi", "Spi"], ["sp", "Spell Power"], ["heal", "Healing"], ["ap", "Attack Power"], ["crit", "Crit"], ["hit", "Hit"], ["mp5", "Mp5"], ["hp5", "Hp5"], ["armor", "Armor"]];
+const STAT_LABEL: [string, string][] = [["dps", "DPS"], ["str", "Str"], ["agi", "Agi"], ["sta", "Sta"], ["int", "Int"], ["spi", "Spi"], ["sp", "Spell Power"], ["shadow", "Shadow dmg"], ["fire", "Fire dmg"], ["frost", "Frost dmg"], ["nature", "Nature dmg"], ["heal", "Healing"], ["ap", "Attack Power"], ["crit", "Crit"], ["hit", "Hit"], ["mp5", "Mp5"], ["hp5", "Hp5"], ["armor", "Armor"]];
 // Default stat priorities (points per 1 of a stat). The feed can replace them with sourced numbers (dungeons.STAT_WEIGHTS).
 const STAT_WEIGHTS: Record<string, Record<string, number>> = {
-  V: { dps: 14, str: 2, agi: 1.5, ap: 1, sta: 1, crit: 25, hit: 20, int: 0.4, spi: 0.2, sp: 0.3, mp5: 1, armor: 0.02 },
-  C: { sp: 1, sta: 0.8, int: 0.6, spi: 0.3, crit: 8, hit: 10, mp5: 1.5, armor: 0.01 },
+  // Nov 10 (Bot request): single-school spell damage counts (Affliction is nearly all Shadow, Immolate is the only Fire),
+  // and "wand" is the weight for a wand's DPS in the Ranged slot (assumes wanding about a third of a fight).
+  V: { dps: 14, str: 2, agi: 1.5, ap: 1, sta: 1, crit: 25, hit: 20, int: 0.4, spi: 0.2, sp: 0.3, nature: 0.3, fire: 0.1, frost: 0.1, mp5: 1, armor: 0.02 },
+  C: { sp: 1, shadow: 1, fire: 0.2, wand: 1.2, sta: 0.8, int: 0.6, spi: 0.3, crit: 8, hit: 10, mp5: 1.5, armor: 0.01 },
   ...(WF_DATA.dungeons.STAT_WEIGHTS || {}),
 };
 const DSLOT_ALIAS: Record<string, string> = { ring: "finger", cloak: "back", shoulders: "shoulder", bracers: "wrist", wrists: "wrist", gloves: "hands", belt: "waist", boots: "feet", "2h": "two-hand", "two-handed": "two-hand", "two hand": "two-hand", staff: "two-hand", "1h": "one-hand", "one hand": "one-hand", "one-handed": "one-hand", "main-hand": "main hand", "off-hand": "off hand", offhand: "off hand", "held in off-hand": "off hand", "held in off hand": "off hand", shield: "off hand", wand: "ranged", totem: "ranged", relic: "ranged", gun: "ranged", bow: "ranged" };
@@ -1688,7 +1690,8 @@ function statLine(stats?: Record<string, number>): string {
   if (!stats) return "";
   return STAT_LABEL.filter((x: [string, string]) => !!stats[x[0]]).map((x: [string, string]) => `${stats[x[0]]} ${x[1]}`).join(" · ");
 }
-function dunCompare(l: DLoot, eq: Record<string, EqItem> | null, w: Record<string, number>): DCmp {
+function dunCompare(l: DLoot, eq: Record<string, EqItem> | null, w0: Record<string, number>): DCmp {
+  const w = dSlot(l.slot) === "ranged" && w0.wand !== undefined ? { ...w0, dps: w0.wand } : w0;
   const base: DCmp = { kind: "nosync", replaces: [], deltas: [], score: 0, empty: false };
   if (!eq) return base;
   const worn = Object.keys(eq).map((k: string) => eq[k]).filter((x: EqItem) => !!x);
@@ -1756,7 +1759,7 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: "V" | "C"; lv: number
     const rep = c.replaces.length ? `vs ${c.replaces.join(" + ")}` : c.empty ? "slot is empty" : "";
     if (c.kind === "have") return <span className="wf-dun-tag" style={{ color: "#b3cbe8" }}>Wearing it</span>;
     if (c.kind === "nosync") return <span style={{ color: MUTED, fontSize: 11 }}>No gear sync for {name} yet</span>;
-    if (c.kind === "nostats") return <span style={{ color: MUTED, fontSize: 11 }}>Stats not published yet{rep ? ` · ${rep}` : ""}</span>;
+    if (c.kind === "nostats") return <span style={{ color: MUTED, fontSize: 11 }}>{x.l.note ? "No scored stats, see Notes" : "Stats not published yet"}{rep ? ` · ${rep}` : ""}</span>;
     if (c.kind === "eqnostats") return <span style={{ color: MUTED, fontSize: 11 }}>{rep} · your item's stats arrive with the addon update</span>;
     const tone = c.score >= 1 ? FEL : c.score <= -1 ? "#ff6b5a" : GOLD;
     return (
@@ -1797,11 +1800,12 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: "V" | "C"; lv: number
             const url = (l._source || "").match(/https?:\/\/[^\s;]+/);
             return (
               <div key={`${l.dkey}-${l.item}`} className={`wf-dun-row${x.c.kind === "cmp" && x.c.score >= 1 ? " wf-dun-row-up" : ""}`} style={{ opacity: x.c.kind === "have" ? 0.6 : 1 }}>
-                <Icon icon={icon} size={36} ring={q[0]} name={l.item} tip={[l.slot, l.type, l.note].filter((t: string | undefined) => !!t).join(" · ")} />
+                <Icon icon={icon} size={36} ring={q[0]} name={l.item} tip={[l.slot, l.type].filter((t: string | undefined) => !!t).join(" · ")} />
                 <div style={{ minWidth: 0 }}>
                   <div style={{ color: q[0], fontWeight: 600, fontSize: 13, lineHeight: 1.25 }}>{l.item}{ITEM_INFO[l.item] ? <a href="#gear" className="wf-macro wf-macro-sm" title="This item is one of your gear picks">Your pick</a> : null}</div>
                   <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.35 }}>{[l.slot, l.type, l.quest ? `Quest: ${l.quest}` : l.boss, l.rate].filter((t: string | undefined) => !!t).join(" · ")}{url ? <> · <a href={url[0]} target="_blank" rel="noreferrer" style={{ color: GOLD }}>{hostOf(url[0])}</a></> : null}</div>
                   {l.stats ? <div style={{ color: INK, fontSize: 12, lineHeight: 1.35 }}>{statLine(l.stats)}</div> : null}
+                  {l.note ? <details className="wf-acq"><summary>Notes</summary><div className="wf-acq-body">{gtext(l.note)}</div></details> : null}
                 </div>
                 <div>{verdict(x)}</div>
               </div>
