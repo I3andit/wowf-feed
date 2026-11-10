@@ -6932,7 +6932,7 @@
     "Twilight Maul: Form a dungeon group; enter Blackfathom Deeps in Ashenvale; defeat Lorgus Jett and loot Twilight Maul.  Verified live Forever drop probability: not established by the primary source; no guaranteed drop. ForeverChanges lists 41% and separately 4 in 13 kills (figures do not reconcile). Treat as conflicting small-sample community estimates, not a reliable rate. Source reports item seen in game; this is not proof of probability. New Forever-only item: no Classic drop rate exists to substitute. Sources: https://wowfdb.com/zones/blackfathom-deeps/loot/ ; https://foreverchanges.pro/item/273841/twilight-maul · read 2026-11-07"
    ],
    [
-    "26–30",
+    "24–30",
     "2H",
     "Heavehammer",
     "Heavehammer: Loot Titan Relic from Relic Guardian in Excavation Site: Wetlands; accept Elder Knowledge and deliver to Bashana Runetotem, Elder Rise, Thunder Bluff (70.8,33.7); take Earthen Echo to Muln Earthfury, Skywatcher Plateau, Mulgore (path begins 40.3,17.6). Choose Heavehammer, not the mutually exclusive Furs of the Earthen Ring. Quest minimum 24; dungeon group recommended. Existing Nicktew Nov 4 guide suggests 26–30; retained as guide recommendation, not new item stats. Read Nov 7 2026. Sources: https://1mw.io/en/dungeons/excavation-site/quests ; https://1mw.io/en/dungeons/excavation-site/loot ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew · read 2026-11-07"
@@ -7378,6 +7378,118 @@
    "Deviate Scale Belt": [
     "inv_belt_43",
     3
+   ],
+   "Snake Eye Kaleidoscope": [
+    "inv_jewelry_necklace_06",
+    3
+   ],
+   "Serpent's Shoulders": [
+    "inv_shoulder_18",
+    3
+   ],
+   "Fenrus' Hide": [
+    "inv_misc_cape_11",
+    3
+   ],
+   "Wolfmaster Cape": [
+    "inv_misc_cape_11",
+    3
+   ],
+   "Dreamer's Chestguard": [
+    "inv_chest_cloth_48",
+    3
+   ],
+   "Bands of Serra'kis": [
+    "inv_bracer_02",
+    3
+   ],
+   "Cultist's Armguards": [
+    "inv_bracer_02",
+    3
+   ],
+   "Worgpelt Leggings": [
+    "inv_pants_14",
+    3
+   ],
+   "Leggings of the Fang": [
+    "inv_pants_11",
+    3
+   ],
+   "Seal of Sylvanas": [
+    "inv_jewelry_ring_09",
+    3
+   ],
+   "Band of the Fist": [
+    "inv_jewelry_ring_09",
+    2
+   ],
+   "Reef Axe": [
+    "inv_axe_18",
+    3
+   ],
+   "Sorcerer Collar": [
+    "inv_jewelry_necklace_06",
+    3
+   ],
+   "Chestnut Mantle": [
+    "inv_shoulder_18",
+    2
+   ],
+   "Sporid Cape": [
+    "inv_misc_cape_11",
+    3
+   ],
+   "Necrology Robes": [
+    "inv_chest_cloth_48",
+    3
+   ],
+   "Leftover Abomination Skin": [
+    "inv_chest_cloth_48",
+    3
+   ],
+   "Tabitha's Cuffs": [
+    "inv_bracer_10",
+    2
+   ],
+   "Serpent Gloves": [
+    "inv_gauntlets_15",
+    3
+   ],
+   "Tattered Mittens": [
+    "inv_gauntlets_15",
+    2
+   ],
+   "Tuskwrap Belt": [
+    "inv_belt_43",
+    3
+   ],
+   "Rotmender's Leggings": [
+    "inv_pants_14",
+    3
+   ],
+   "Rotmender's Treads": [
+    "inv_boots_05",
+    3
+   ],
+   "Slain Baron's Signet": [
+    "inv_jewelry_ring_09",
+    2
+   ],
+   "Deep Fathom Ring": [
+    "inv_jewelry_ring_09",
+    3
+   ],
+   "Worgenbane Talisman": [
+    "inv_misc_orb_02",
+    3
+   ],
+   "Witching Stave": [
+    "inv_wand_04",
+    3
+   ],
+   "Crescent Staff": [
+    "inv_staff_07",
+    3
    ]
   },
   "GEAR_SHEETS": {
@@ -7424,6 +7536,32 @@
       "slot": "Neck",
       "picks": [
        {
+        "id": "gsd1",
+        "lv": "17–29",
+        "from": 17,
+        "to": 29,
+        "name": "Snake Eye Kaleidoscope",
+        "item": "Snake Eye Kaleidoscope",
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lady Anacondra and loot Snake Eye Kaleidoscope. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 1 Str, 1 Agi, 1 Int, 1 Sta, 1 Spi. Page score for Zanjiro with the default stat weights: 5.1. Sources: https://db.icy-veins.com/wow-forever/items/273088 ; https://1mw.io/en/dungeons/wailing-caverns/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lady Anacondra and loot Snake Eye Kaleidoscope. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 1 Str, 1 Agi, 1 Int, 1 Sta, 1 Spi. Page score for Zanjiro with the default stat weights: 5.1.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273088",
+         "https://1mw.io/en/dungeons/wailing-caverns/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [
+         "Drop rate not published"
+        ],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 17–29 chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gs14",
         "lv": "30",
         "from": 30,
@@ -7461,6 +7599,30 @@
       "slot": "Shoulder",
       "picks": [
        {
+        "id": "gsd2",
+        "lv": "18–25",
+        "from": 18,
+        "to": 25,
+        "name": "Serpent's Shoulders",
+        "item": "Serpent's Shoulders",
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lady Anacondra and loot Serpent's Shoulders. Drop chance 27.4% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 18 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 68 armor, 5 Agi, 7 Spi. Page score for Zanjiro with the default stat weights: 10.3. Sources: https://db.icy-veins.com/wow-forever/items/5404 ; https://1mw.io/en/dungeons/wailing-caverns/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lady Anacondra and loot Serpent's Shoulders. Drop chance 27.4% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 18 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 68 armor, 5 Agi, 7 Spi. Page score for Zanjiro with the default stat weights: 10.3.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/5404",
+         "https://1mw.io/en/dungeons/wailing-caverns/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 18–25 chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gs7",
         "lv": "26+",
         "from": 26,
@@ -7496,8 +7658,38 @@
      },
      {
       "slot": "Back",
-      "picks": [],
-      "none": "No primary cloak pick recorded. Furs of the Earthen Ring is an Earthen Echo alternative INSTEAD OF Heavehammer, not an extra reward after taking the hammer. Horde; Same Horde Elder Knowledge → Earthen Echo route as Heavehammer: Titan Relic from Relic Guardian, Excavation Site: Wetlands → Bashana Runetotem, Thunder Bluff(70.8,33.7) → Muln Earthfury, Mulgore, path begins(40.3,17.6). Choose Furs INSTEAD OF Heavehammer; these rewards are mutually exclusive. No claim of obtaining both. https://1mw.io/en/dungeons/excavation-site/quests (Unofficial beta; read2026-11-07).",
+      "picks": [
+       {
+        "id": "gsd3",
+        "lv": "22+",
+        "from": 22,
+        "to": 60,
+        "name": "Wolfmaster Cape",
+        "item": "Wolfmaster Cape",
+        "alt": "Fenrus' Hide",
+        "alt_label": "Alt — SFK Fenrus, 75.7% (Forever beta, 1mw)",
+        "alt_acquisition": {
+         "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Fenrus and loot Fenrus' Hide. Drop chance 75.7% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Stats: 22 armor, 4 Agi, 6 Sta; page score 12.4."
+        },
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Nandos and loot Wolfmaster Cape. Drop chance 37.2% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Furs of the Earthen Ring (Excavation Site, Earthen Echo) scores 13.5 but replaces Heavehammer (same quest, pick one), so it is not the plan. Stats (Icy Veins DB, client 1.60.1): 22 armor, 3 Sta, 10 AP. Page score for Zanjiro with the default stat weights: 13.4. Sources: https://db.icy-veins.com/wow-forever/items/6314 ; https://1mw.io/en/dungeons/shadowfang-keep/loot ; https://db.icy-veins.com/wow-forever/items/6340 · read 2026-11-10",
+        "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Nandos and loot Wolfmaster Cape. Drop chance 37.2% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Furs of the Earthen Ring (Excavation Site, Earthen Echo) scores 13.5 but replaces Heavehammer (same quest, pick one), so it is not the plan. Stats (Icy Veins DB, client 1.60.1): 22 armor, 3 Sta, 10 AP. Page score for Zanjiro with the default stat weights: 13.4.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/6314",
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot",
+         "https://db.icy-veins.com/wow-forever/items/6340"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 22+ chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       }
+      ],
       "_gear_audit": {
        "status": "named suggestion audited",
        "items": [
@@ -7510,6 +7702,32 @@
      {
       "slot": "Chest",
       "picks": [
+       {
+        "id": "gsd4",
+        "lv": "21–28",
+        "from": 21,
+        "to": 28,
+        "name": "Dreamer's Chestguard",
+        "item": "Dreamer's Chestguard",
+        "src": "Horde · Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial · Quest Baron Aquanis (Horde, from level 21, per 1mw.io): starts with Strange Water Globe, Drops from Baron Aquanis, Blackfathom Deeps. Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost. Chain: Follows Amongst the Ruins Choose Dreamer's Chestguard. Prerequisite Amongst the Ruins from the same giver (from 21): loot the Fathom Core in the Twilight's Hammer area, which summons Baron Aquanis. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 106 armor, 10 Str, 5 Sta, 11 Spi. Page score for Zanjiro with the default stat weights: 29.3. Sources: https://db.icy-veins.com/wow-forever/items/270043 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests · read 2026-11-10",
+        "how": "Quest Baron Aquanis (Horde, from level 21, per 1mw.io): starts with Strange Water Globe, Drops from Baron Aquanis, Blackfathom Deeps. Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost. Chain: Follows Amongst the Ruins Choose Dreamer's Chestguard. Prerequisite Amongst the Ruins from the same giver (from 21): loot the Fathom Core in the Twilight's Hammer area, which summons Baron Aquanis. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 106 armor, 10 Str, 5 Sta, 11 Spi. Page score for Zanjiro with the default stat weights: 29.3.",
+        "faction": "Horde",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/270043",
+         "https://1mw.io/en/dungeons/blackfathom-deeps/quests"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [
+         "Scores 29.3 vs Garb of Fallen Felbark 27.9 (29+): Garb is kept as the next pick but is a sidegrade by these weights"
+        ],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 21–28 chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
        {
         "id": "gs8",
         "lv": "29+",
@@ -7602,6 +7820,37 @@
          "recommendation_status": "Alt ONLY — Alliance territory, long trip",
          "name": "Technician's Bracers"
         }
+       },
+       {
+        "id": "gsd5",
+        "lv": "22+",
+        "from": 22,
+        "to": 60,
+        "name": "Cultist's Armguards",
+        "item": "Cultist's Armguards",
+        "alt": "Bands of Serra'kis",
+        "alt_label": "Alt — BFD Old Serra'kis, 36.1% (Forever beta, 1mw)",
+        "alt_acquisition": {
+         "how": "Form a dungeon group; enter Blackfathom Deeps in Ashenvale; defeat Old Serra'kis and loot Bands of Serra'kis. Drop chance 36.1% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Stats: 43 armor, 6 Str, 3 Sta; page score 15.9."
+        },
+        "src": "Both · Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial · Quest Blackfathom Villainy (Both factions, from level 18, per 1mw.io): starts with Argent Guard Thaelrid, Alcove southwest of Ghamoo-ra, Blackfathom Deeps. Kill Twilight Lord Kelris and bring his head to Selgorm in Darnassus or Bashana Runetotem in Thunder Bluff. Chain: Follows In Search of Thaelrid Choose Cultist's Armguards. Horde turn-in: Bashana Runetotem, Elder Rise, Thunder Bluff. The Alliance breadcrumb is not needed (same as the board's Gravestone Scepter pick). Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 44 armor, 7 Sta, 10 AP. Page score for Zanjiro with the default stat weights: 17.9. Sources: https://db.icy-veins.com/wow-forever/items/270032 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests ; https://db.icy-veins.com/wow-forever/items/6902 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot · read 2026-11-10",
+        "how": "Quest Blackfathom Villainy (Both factions, from level 18, per 1mw.io): starts with Argent Guard Thaelrid, Alcove southwest of Ghamoo-ra, Blackfathom Deeps. Kill Twilight Lord Kelris and bring his head to Selgorm in Darnassus or Bashana Runetotem in Thunder Bluff. Chain: Follows In Search of Thaelrid Choose Cultist's Armguards. Horde turn-in: Bashana Runetotem, Elder Rise, Thunder Bluff. The Alliance breadcrumb is not needed (same as the board's Gravestone Scepter pick). Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 44 armor, 7 Sta, 10 AP. Page score for Zanjiro with the default stat weights: 17.9.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/270032",
+         "https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+         "https://db.icy-veins.com/wow-forever/items/6902",
+         "https://1mw.io/en/dungeons/blackfathom-deeps/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 22+ chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
        }
       ]
      }
@@ -7707,6 +7956,37 @@
       "slot": "Legs",
       "picks": [
        {
+        "id": "gsd6",
+        "lv": "17–28",
+        "from": 17,
+        "to": 28,
+        "name": "Leggings of the Fang",
+        "item": "Leggings of the Fang",
+        "alt": "Worgpelt Leggings",
+        "alt_label": "Alt — SFK Wolf Master Nandos, rate not published",
+        "alt_acquisition": {
+         "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Nandos and loot Worgpelt Leggings. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 21 (Icy Veins DB). Stats: 84 armor, 5 Str, 10 Agi; page score 26.7."
+        },
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lord Cobrahn and loot Leggings of the Fang. Drop chance 16.6% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 17 (Icy Veins DB). Part of Embrace of the Viper (set bonuses not scored). Stats (Icy Veins DB, client 1.60.1): 78 armor, 5 Str, 9 Agi, 4 Sta. Page score for Zanjiro with the default stat weights: 29.1. Sources: https://db.icy-veins.com/wow-forever/items/10410 ; https://1mw.io/en/dungeons/wailing-caverns/loot ; https://db.icy-veins.com/wow-forever/items/273647 ; https://1mw.io/en/dungeons/shadowfang-keep/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lord Cobrahn and loot Leggings of the Fang. Drop chance 16.6% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 17 (Icy Veins DB). Part of Embrace of the Viper (set bonuses not scored). Stats (Icy Veins DB, client 1.60.1): 78 armor, 5 Str, 9 Agi, 4 Sta. Page score for Zanjiro with the default stat weights: 29.1.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/10410",
+         "https://1mw.io/en/dungeons/wailing-caverns/loot",
+         "https://db.icy-veins.com/wow-forever/items/273647",
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 17–28 chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gs12",
         "lv": "29+",
         "from": 29,
@@ -7774,6 +8054,30 @@
       "slot": "Ring 1",
       "picks": [
        {
+        "id": "gsd7",
+        "lv": "18–29",
+        "from": 18,
+        "to": 29,
+        "name": "Seal of Sylvanas",
+        "item": "Seal of Sylvanas",
+        "src": "Horde · Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial · Quest Arugal Must Die (Horde, from level 18, per 1mw.io): starts with Dalar Dawnweaver, The Sepulcher, Silverpine Forest (44.2, 39.8). Kill Archmage Arugal and bring his head to Dalar Dawnweaver. Choose Seal of Sylvanas. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 8 Sta, 6 AP. Page score for Zanjiro with the default stat weights: 14. Sources: https://db.icy-veins.com/wow-forever/items/6414 ; https://1mw.io/en/dungeons/shadowfang-keep/quests · read 2026-11-10",
+        "how": "Quest Arugal Must Die (Horde, from level 18, per 1mw.io): starts with Dalar Dawnweaver, The Sepulcher, Silverpine Forest (44.2, 39.8). Kill Archmage Arugal and bring his head to Dalar Dawnweaver. Choose Seal of Sylvanas. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 8 Sta, 6 AP. Page score for Zanjiro with the default stat weights: 14.",
+        "faction": "Horde",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/6414",
+         "https://1mw.io/en/dungeons/shadowfang-keep/quests"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 18–29 chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gs15",
         "lv": "30+ guide; chain gates verify",
         "from": 30,
@@ -7810,6 +8114,30 @@
      {
       "slot": "Ring 2",
       "picks": [
+       {
+        "id": "gsd8",
+        "lv": "17–28",
+        "from": 17,
+        "to": 28,
+        "name": "Band of the Fist",
+        "item": "Band of the Fist",
+        "src": "Horde · Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial · Quest Allegiance to the Old Gods (Horde, from level 17, per 1mw.io): starts with Je'neu Sancrea, Zoram'gar Outpost, Ashenvale (11.6, 34.2). Kill Lorgus Jett. Choose Band of the Fist. Mutually exclusive with Chestnut Mantle. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 4 Str, 4 Agi. Page score for Zanjiro with the default stat weights: 14.0. Sources: https://db.icy-veins.com/wow-forever/items/17694 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests · read 2026-11-10",
+        "how": "Quest Allegiance to the Old Gods (Horde, from level 17, per 1mw.io): starts with Je'neu Sancrea, Zoram'gar Outpost, Ashenvale (11.6, 34.2). Kill Lorgus Jett. Choose Band of the Fist. Mutually exclusive with Chestnut Mantle. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 4 Str, 4 Agi. Page score for Zanjiro with the default stat weights: 14.0.",
+        "faction": "Horde",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/17694",
+         "https://1mw.io/en/dungeons/blackfathom-deeps/quests"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 17–28 chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
        {
         "id": "gs15b",
         "lv": "29+ (rare32)",
@@ -7863,7 +8191,8 @@
         "audit_status": "reviewed; unresolved fields explicitly listed",
         "unverified": [
          "Verified live Forever drop probability not established; see qualified estimates if available",
-         "Reported community rate not independently verified"
+         "Reported community rate not independently verified",
+         "Nov 10: its only effect (2 Shadow damage on spells and attacks) has no page stat key, so it scores 0 against equipped gear ; no other Zanjiro trinket exists in dungeons.LOOT through Excavation Site, so it stays"
         ],
         "conflicts": [],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
@@ -7990,7 +8319,8 @@
         "faction": "Both",
         "_source": [
          "https://wowfdb.com/zones/blackfathom-deeps/loot/",
-         "https://foreverchanges.pro/item/273841/twilight-maul"
+         "https://foreverchanges.pro/item/273841/twilight-maul",
+         "https://db.icy-veins.com/wow-forever/items/6905"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game",
@@ -8004,17 +8334,22 @@
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
         "reported_rate_note": "ForeverChanges lists41% and separately4 in13 kills (figures do not reconcile). Treat as conflicting small-sample community estimates, not a reliable rate. Source reports item seen in game; this is not proof of probability.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "alt": "Reef Axe",
+        "alt_label": "Alt — BFD Gelihast, 49.7% (Forever beta, 1mw)",
+        "alt_acquisition": {
+         "how": "Form a dungeon group; enter Blackfathom Deeps in Ashenvale; defeat Gelihast and loot Reef Axe. Drop chance 49.7% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Stats: 8 Str, 22.4 DPS, 24 healing, 8 spell power; page score 332.0 vs Twilight Maul 324.2."
+        }
        },
        {
         "id": "gs3",
-        "lv": "26–30",
-        "from": 26,
+        "lv": "24–30",
+        "from": 24,
         "to": 30,
         "name": "Heavehammer",
         "item": "Heavehammer",
-        "src": "Horde · Forever beta guide, Unofficial (verified by source Oct 15) · Loot Titan Relic from Relic Guardian in Excavation Site: Wetlands; accept Elder Knowledge and deliver to Bashana Runetotem, Elder Rise, Thunder Bluff (70.8,33.7); take Earthen Echo to Muln Earthfury, Skywatcher Plateau, Mulgore (path begins 40.3,17.6). Choose Heavehammer, not the mutually exclusive Furs of the Earthen Ring. Quest minimum 24; dungeon group recommended. Existing Nicktew Nov 4 guide suggests 26–30; retained as guide recommendation, not new item stats. Read Nov 7 2026. Sources: https://1mw.io/en/dungeons/excavation-site/quests ; https://1mw.io/en/dungeons/excavation-site/loot ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew · read 2026-11-07",
-        "how": "Loot Titan Relic from Relic Guardian in Excavation Site: Wetlands; accept Elder Knowledge and deliver to Bashana Runetotem, Elder Rise, Thunder Bluff (70.8,33.7); take Earthen Echo to Muln Earthfury, Skywatcher Plateau, Mulgore (path begins 40.3,17.6). Choose Heavehammer, not the mutually exclusive Furs of the Earthen Ring. Quest minimum 24; dungeon group recommended. Existing Nicktew Nov 4 guide suggests 26–30; retained as guide recommendation, not new item stats. Read Nov 7 2026.",
+        "src": "Horde · Forever beta guide, Unofficial (verified by source Oct 15) · Loot Titan Relic from Relic Guardian in Excavation Site: Wetlands; accept Elder Knowledge and deliver to Bashana Runetotem, Elder Rise, Thunder Bluff (70.8,33.7); take Earthen Echo to Muln Earthfury, Skywatcher Plateau, Mulgore (path begins 40.3,17.6). Choose Heavehammer, not the mutually exclusive Furs of the Earthen Ring. Quest minimum 24; dungeon group recommended. Window moved to 24–30 on Nov 10 (quest minimum 24 per 1mw.io; top-scoring two-hander now). Nicktew Nov 4 suggested 26–30. Read Nov 7 2026. Sources: https://1mw.io/en/dungeons/excavation-site/quests ; https://1mw.io/en/dungeons/excavation-site/loot ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew · read 2026-11-07",
+        "how": "Loot Titan Relic from Relic Guardian in Excavation Site: Wetlands; accept Elder Knowledge and deliver to Bashana Runetotem, Elder Rise, Thunder Bluff (70.8,33.7); take Earthen Echo to Muln Earthfury, Skywatcher Plateau, Mulgore (path begins 40.3,17.6). Choose Heavehammer, not the mutually exclusive Furs of the Earthen Ring. Quest minimum 24; dungeon group recommended. Window moved to 24–30 on Nov 10 (quest minimum 24 per 1mw.io; it is the top-scoring two-hander Zanjiro can get now: 27.7 DPS, 32 AP, page score 419.8). Nicktew's Nov 4 guide suggested 26–30. Read Nov 7 2026.",
         "faction": "Horde",
         "_source": [
          "https://1mw.io/en/dungeons/excavation-site/quests",
@@ -8025,7 +8360,9 @@
         "source_type": "Forever beta guide, Unofficial (verified by source Oct15)",
         "audit_status": "reviewed source evidence; not live-game verified",
         "unverified": [],
-        "conflicts": [],
+        "conflicts": [
+         "Level window: Nicktew (Nov 4) 26–30 vs quest minimum 24 (1mw.io); board now uses 24"
+        ],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
         "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
@@ -8197,6 +8534,32 @@
       "slot": "Neck",
       "picks": [
        {
+        "id": "gld1",
+        "lv": "17–28",
+        "from": 17,
+        "to": 28,
+        "name": "Sorcerer Collar",
+        "item": "Sorcerer Collar",
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Rethilgore and loot Sorcerer Collar. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 2 Int, 2 Spi. Page score for Corvin with the default stat weights: 1.8. Sources: https://db.icy-veins.com/wow-forever/items/273457 ; https://1mw.io/en/dungeons/shadowfang-keep/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Rethilgore and loot Sorcerer Collar. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 2 Int, 2 Spi. Page score for Corvin with the default stat weights: 1.8.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273457",
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [
+         "Drop rate not published"
+        ],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 17–28 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gl11",
         "lv": "29+",
         "from": 29,
@@ -8233,6 +8596,30 @@
      {
       "slot": "Shoulder",
       "picks": [
+       {
+        "id": "gld2",
+        "lv": "17–29",
+        "from": 17,
+        "to": 29,
+        "name": "Chestnut Mantle",
+        "item": "Chestnut Mantle",
+        "src": "Horde · Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial · Quest Allegiance to the Old Gods (Horde, from level 17, per 1mw.io): starts with Je'neu Sancrea, Zoram'gar Outpost, Ashenvale (11.6, 34.2). Kill Lorgus Jett. Choose Chestnut Mantle. Mutually exclusive with Band of the Fist. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 31 armor, 3 Sta, 5 spell power, 5 healing. Page score for Corvin with the default stat weights: 7.7. Sources: https://db.icy-veins.com/wow-forever/items/17695 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests · read 2026-11-10",
+        "how": "Quest Allegiance to the Old Gods (Horde, from level 17, per 1mw.io): starts with Je'neu Sancrea, Zoram'gar Outpost, Ashenvale (11.6, 34.2). Kill Lorgus Jett. Choose Chestnut Mantle. Mutually exclusive with Band of the Fist. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 31 armor, 3 Sta, 5 spell power, 5 healing. Page score for Corvin with the default stat weights: 7.7.",
+        "faction": "Horde",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/17695",
+         "https://1mw.io/en/dungeons/blackfathom-deeps/quests"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 17–29 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
        {
         "id": "gl12",
         "lv": "30+",
@@ -8271,6 +8658,30 @@
       "slot": "Back",
       "picks": [
        {
+        "id": "gld3",
+        "lv": "17–24",
+        "from": 17,
+        "to": 24,
+        "name": "Sporid Cape",
+        "item": "Sporid Cape",
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Verdan the Everliving and loot Sporid Cape. Drop chance 17.8% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 20 armor, 6 Sta. Page score for Corvin with the default stat weights: 5.0. Sources: https://db.icy-veins.com/wow-forever/items/6629 ; https://1mw.io/en/dungeons/wailing-caverns/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Verdan the Everliving and loot Sporid Cape. Drop chance 17.8% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 20 armor, 6 Sta. Page score for Corvin with the default stat weights: 5.0.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/6629",
+         "https://1mw.io/en/dungeons/wailing-caverns/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 17–24 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gl13",
         "lv": "25+",
         "from": 25,
@@ -8300,6 +8711,37 @@
      {
       "slot": "Chest",
       "picks": [
+       {
+        "id": "gld4",
+        "lv": "15–21",
+        "from": 15,
+        "to": 21,
+        "name": "Leftover Abomination Skin",
+        "item": "Leftover Abomination Skin",
+        "alt": "Necrology Robes",
+        "alt_label": "Alt — SFK trash drop from 20, rate not published",
+        "alt_acquisition": {
+         "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; Necrology Robes is a trash drop anywhere in the dungeon (no single boss). Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 20 (Icy Veins DB). Stats: 3 Sta, 5 Int, 14 Shadow dmg, 43 armor; page score 19.8."
+        },
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat The Baron and loot Leftover Abomination Skin. Drop chance 37% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 15 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 9 Spi, 7 Shadow dmg, 37 armor. Page score for Corvin with the default stat weights: 10.1. Sources: https://db.icy-veins.com/wow-forever/items/271206 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot ; https://db.icy-veins.com/wow-forever/items/2292 ; https://1mw.io/en/dungeons/shadowfang-keep/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat The Baron and loot Leftover Abomination Skin. Drop chance 37% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 15 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 9 Spi, 7 Shadow dmg, 37 armor. Page score for Corvin with the default stat weights: 10.1.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/271206",
+         "https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+         "https://db.icy-veins.com/wow-forever/items/2292",
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 15–21 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
        {
         "id": "gl14",
         "lv": "22–26",
@@ -8366,6 +8808,30 @@
       "slot": "Wrist",
       "picks": [
        {
+        "id": "gld5",
+        "lv": "15–23",
+        "from": 15,
+        "to": 23,
+        "name": "Tabitha's Cuffs",
+        "item": "Tabitha's Cuffs",
+        "src": "Horde · Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial · Quest A Frightened Request (Horde, from level 15, per 1mw.io): starts with Tabitha Heartweaver, Silverpine Forest (44.5, 43). Find her husband Edward's body by the graveyard near Rath'mael. Choose Tabitha's Cuffs. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 17 armor, 4 Sta, 3 spell power, 3 healing. Page score for Corvin with the default stat weights: 6.4. Sources: https://db.icy-veins.com/wow-forever/items/251486 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests · read 2026-11-10",
+        "how": "Quest A Frightened Request (Horde, from level 15, per 1mw.io): starts with Tabitha Heartweaver, Silverpine Forest (44.5, 43). Find her husband Edward's body by the graveyard near Rath'mael. Choose Tabitha's Cuffs. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 17 armor, 4 Sta, 3 spell power, 3 healing. Page score for Corvin with the default stat weights: 6.4.",
+        "faction": "Horde",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/251486",
+         "https://1mw.io/en/dungeons/ruins-of-lordaeron/quests"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 15–23 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gl15",
         "lv": "24+",
         "from": 24,
@@ -8396,6 +8862,37 @@
       "slot": "Hands",
       "picks": [
        {
+        "id": "gld6",
+        "lv": "16–26",
+        "from": 16,
+        "to": 26,
+        "name": "Tattered Mittens",
+        "item": "Tattered Mittens",
+        "alt": "Serpent Gloves",
+        "alt_label": "Alt — WC Lord Serpentis, 20.6% (Forever beta, 1mw)",
+        "alt_acquisition": {
+         "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lord Serpentis and loot Serpent Gloves. Drop chance 20.6% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 18 (Icy Veins DB). Stats: 25 armor, 6 Agi, 7 spell power, 7 healing; page score 7.2."
+        },
+        "src": "Horde · Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial · Quest The Book of Ur (Horde, from level 16, per 1mw.io): starts with Keeper Bel'dugur, The Apothecarium, Undercity (53.6, 54). Grab the Book of Ur in Fenrus' room and bring it back to Keeper Bel'dugur. Choose Tattered Mittens. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 26 armor, 6 Sta, 9 healing, 3 spell power. Page score for Corvin with the default stat weights: 8.1. Sources: https://db.icy-veins.com/wow-forever/items/270030 ; https://1mw.io/en/dungeons/shadowfang-keep/quests ; https://db.icy-veins.com/wow-forever/items/5970 ; https://1mw.io/en/dungeons/wailing-caverns/loot · read 2026-11-10",
+        "how": "Quest The Book of Ur (Horde, from level 16, per 1mw.io): starts with Keeper Bel'dugur, The Apothecarium, Undercity (53.6, 54). Grab the Book of Ur in Fenrus' room and bring it back to Keeper Bel'dugur. Choose Tattered Mittens. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 26 armor, 6 Sta, 9 healing, 3 spell power. Page score for Corvin with the default stat weights: 8.1.",
+        "faction": "Horde",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/270030",
+         "https://1mw.io/en/dungeons/shadowfang-keep/quests",
+         "https://db.icy-veins.com/wow-forever/items/5970",
+         "https://1mw.io/en/dungeons/wailing-caverns/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 16–26 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gl16",
         "lv": "27+",
         "from": 27,
@@ -8425,6 +8922,30 @@
      {
       "slot": "Waist",
       "picks": [
+       {
+        "id": "gld7",
+        "lv": "16–22",
+        "from": 16,
+        "to": 22,
+        "name": "Tuskwrap Belt",
+        "item": "Tuskwrap Belt",
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat Bjork and loot Tuskwrap Belt. Drop chance 35.9% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 16 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 22 armor, 5 Spi, 6 spell power, 6 healing. Page score for Corvin with the default stat weights: 7.7. Sources: https://db.icy-veins.com/wow-forever/items/271210 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat Bjork and loot Tuskwrap Belt. Drop chance 35.9% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 16 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 22 armor, 5 Spi, 6 spell power, 6 healing. Page score for Corvin with the default stat weights: 7.7.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/271210",
+         "https://1mw.io/en/dungeons/ruins-of-lordaeron/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 16–22 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
        {
         "id": "gl17",
         "lv": "23–28",
@@ -8488,6 +9009,30 @@
       "slot": "Legs",
       "picks": [
        {
+        "id": "gld8",
+        "lv": "17–24",
+        "from": 17,
+        "to": 24,
+        "name": "Rotmender's Leggings",
+        "item": "Rotmender's Leggings",
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat The Abandoned and loot Rotmender's Leggings. Drop chance 39.2% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 35 armor, 5 Sta, 4 mp5. Page score for Corvin with the default stat weights: 10.3. Sources: https://db.icy-veins.com/wow-forever/items/271207 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat The Abandoned and loot Rotmender's Leggings. Drop chance 39.2% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 35 armor, 5 Sta, 4 mp5. Page score for Corvin with the default stat weights: 10.3.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/271207",
+         "https://1mw.io/en/dungeons/ruins-of-lordaeron/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 17–24 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gl18",
         "lv": "25–29",
         "from": 25,
@@ -8543,6 +9088,30 @@
       "slot": "Feet",
       "picks": [
        {
+        "id": "gld9",
+        "lv": "19–23",
+        "from": 19,
+        "to": 23,
+        "name": "Rotmender's Treads",
+        "item": "Rotmender's Treads",
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat Rath'mael and loot Rotmender's Treads. Drop chance 35.1% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 19 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 29 armor, 7 Sta, 15 healing, 5 spell power. Page score for Corvin with the default stat weights: 10.9. Sources: https://db.icy-veins.com/wow-forever/items/271214 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat Rath'mael and loot Rotmender's Treads. Drop chance 35.1% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 19 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 29 armor, 7 Sta, 15 healing, 5 spell power. Page score for Corvin with the default stat weights: 10.9.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/271214",
+         "https://1mw.io/en/dungeons/ruins-of-lordaeron/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 19–23 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gl19",
         "lv": "24+",
         "from": 24,
@@ -8578,6 +9147,30 @@
       "slot": "Ring 1",
       "picks": [
        {
+        "id": "gld10",
+        "lv": "16–27",
+        "from": 16,
+        "to": 27,
+        "name": "Slain Baron's Signet",
+        "item": "Slain Baron's Signet",
+        "src": "Horde · Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial · Quest Unending Torment (Horde, from level 16, per 1mw.io): starts with Abominable Head (item), Drops from The Baron; anyone in the group can loot it, Ruins of Lordaeron. Bring the head to Master Apothecary Faranell in Undercity and help him finish his work. Chain: Several steps in Undercity and Tirisfal Glades; the last step gives the reward. Choose Slain Baron's Signet. Pick one with Grave Shroud and Monstrous Cleaver. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 3 Sta. Page score for Corvin with the default stat weights: 2.4. Sources: https://db.icy-veins.com/wow-forever/items/279867 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests · read 2026-11-10",
+        "how": "Quest Unending Torment (Horde, from level 16, per 1mw.io): starts with Abominable Head (item), Drops from The Baron; anyone in the group can loot it, Ruins of Lordaeron. Bring the head to Master Apothecary Faranell in Undercity and help him finish his work. Chain: Several steps in Undercity and Tirisfal Glades; the last step gives the reward. Choose Slain Baron's Signet. Pick one with Grave Shroud and Monstrous Cleaver. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 3 Sta. Page score for Corvin with the default stat weights: 2.4.",
+        "faction": "Horde",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/279867",
+         "https://1mw.io/en/dungeons/ruins-of-lordaeron/quests"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 16–27 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       },
+       {
         "id": "gl20",
         "lv": "28+",
         "from": 28,
@@ -8606,8 +9199,32 @@
      },
      {
       "slot": "Ring 2",
-      "picks": [],
-      "none": "not in notes",
+      "picks": [
+       {
+        "id": "gld11",
+        "lv": "19+",
+        "from": 19,
+        "to": 60,
+        "name": "Deep Fathom Ring",
+        "item": "Deep Fathom Ring",
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Mutanus the Devourer and loot Deep Fathom Ring. Drop chance 31% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 19 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 3 Sta. Page score for Corvin with the default stat weights: 2.4. Sources: https://db.icy-veins.com/wow-forever/items/6463 ; https://1mw.io/en/dungeons/wailing-caverns/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Mutanus the Devourer and loot Deep Fathom Ring. Drop chance 31% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 19 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 3 Sta. Page score for Corvin with the default stat weights: 2.4.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/6463",
+         "https://1mw.io/en/dungeons/wailing-caverns/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 19+ chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       }
+      ],
       "_gear_audit": {
        "status": "empty placeholder; no pick invented",
        "items": [],
@@ -8636,7 +9253,8 @@
         "audit_status": "reviewed; unresolved fields explicitly listed",
         "unverified": [
          "Verified live Forever drop probability not established; see qualified estimates if available",
-         "Reported community rate not independently verified"
+         "Reported community rate not independently verified",
+         "Nov 10: its only effect (2 Shadow damage on spells and attacks) has no page stat key, so it scores 0 against equipped gear ; Worgenbane Talisman now fills Trinket 2"
         ],
         "conflicts": [],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
@@ -8649,8 +9267,34 @@
      },
      {
       "slot": "Trinket 2",
-      "picks": [],
-      "none": "not in notes",
+      "picks": [
+       {
+        "id": "gld12",
+        "lv": "21+",
+        "from": 21,
+        "to": 60,
+        "name": "Worgenbane Talisman",
+        "item": "Worgenbane Talisman",
+        "src": "Both · Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial · Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Commander Springvale and loot Worgenbane Talisman. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 21 (Icy Veins DB). On-use: stuns a target Worgen for 4 sec (5 min cooldown). Stats (Icy Veins DB, client 1.60.1): 2 mp5. Page score for Corvin with the default stat weights: 3.0. Sources: https://db.icy-veins.com/wow-forever/items/273643 ; https://1mw.io/en/dungeons/shadowfang-keep/loot · read 2026-11-10",
+        "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Commander Springvale and loot Worgenbane Talisman. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 21 (Icy Veins DB). On-use: stuns a target Worgen for 4 sec (5 min cooldown). Stats (Icy Veins DB, client 1.60.1): 2 mp5. Page score for Corvin with the default stat weights: 3.0.",
+        "faction": "Both",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273643",
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [
+         "Drop rate not published"
+        ],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 21+ chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+       }
+      ],
       "_gear_audit": {
        "status": "empty placeholder; no pick invented",
        "items": [],
@@ -8718,6 +9362,39 @@
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
         "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+       },
+       {
+        "id": "gld13",
+        "lv": "17–19",
+        "from": 17,
+        "to": 19,
+        "name": "Crescent Staff",
+        "item": "Crescent Staff",
+        "alt": "Witching Stave",
+        "alt_label": "Alt — SFK trash drop, rate not published",
+        "alt_acquisition": {
+         "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; Witching Stave is a trash drop anywhere in the dungeon (no single boss). Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 17 (Icy Veins DB). Stats: 14.0 DPS, 6 Sta, 5 Int, 27 Shadow dmg; page score 34.8."
+        },
+        "src": "Horde · Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial · Quest Leaders of the Fang (Horde, from level 10, per 1mw.io): starts with Nara Wildmane, Thunder Bluff (75.6, 31.2). Kill the four Fang lords and bring their gems to Nara Wildmane. Chain: End of a druid chain that starts at the Crossroads; exact steps to verify in game. Choose Crescent Staff. 1mw.io says the start of this chain still needs checking in game. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 7 Agi, 7 Int, 7 Sta, 15.2 DPS, 26 spell power, 26 healing. Page score for Corvin with the default stat weights: 35.8. Sources: https://db.icy-veins.com/wow-forever/items/6505 ; https://1mw.io/en/dungeons/wailing-caverns/quests ; https://db.icy-veins.com/wow-forever/items/1484 ; https://1mw.io/en/dungeons/shadowfang-keep/loot · read 2026-11-10",
+        "how": "Quest Leaders of the Fang (Horde, from level 10, per 1mw.io): starts with Nara Wildmane, Thunder Bluff (75.6, 31.2). Kill the four Fang lords and bring their gems to Nara Wildmane. Chain: End of a druid chain that starts at the Crossroads; exact steps to verify in game. Choose Crescent Staff. 1mw.io says the start of this chain still needs checking in game. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 7 Agi, 7 Int, 7 Sta, 15.2 DPS, 26 spell power, 26 healing. Page score for Corvin with the default stat weights: 35.8.",
+        "faction": "Horde",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/6505",
+         "https://1mw.io/en/dungeons/wailing-caverns/quests",
+         "https://db.icy-veins.com/wow-forever/items/1484",
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+        ],
+        "_date": "2026-11-10",
+        "source_type": "Forever quest guide (1mw.io beta) + Forever item DB (Icy Veins), Unofficial",
+        "audit_status": "dungeon loot pass Nov 10: chosen by page stat weights from dungeons.LOOT",
+        "unverified": [
+         "Quest chain start not verified in game (1mw.io)"
+        ],
+        "conflicts": [],
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
+        "level_status": "Window 17–19 chosen for Corvin from equip level / dungeon range; planning recommendation.",
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
        },
        {
         "id": "gl7",
@@ -9031,7 +9708,28 @@
    "gl9b",
    "gl14b",
    "gl17b",
-   "gl18b"
+   "gl18b",
+   "gsd1",
+   "gsd2",
+   "gsd3",
+   "gsd4",
+   "gsd5",
+   "gsd6",
+   "gsd7",
+   "gsd8",
+   "gld1",
+   "gld2",
+   "gld3",
+   "gld4",
+   "gld5",
+   "gld6",
+   "gld7",
+   "gld8",
+   "gld9",
+   "gld10",
+   "gld11",
+   "gld12",
+   "gld13"
   ],
   "GEAR_ACQUISITION": {
    "Axe of Orgrimmar": {
@@ -10124,6 +10822,197 @@
     "confirmation": "Unofficial; client/guide evidence and Classic-data labels retained",
     "level_status": "Planning window, not character ownership or trained profession confirmation",
     "horde_access": "Sourced Horde-accessible route; Classic components explicitly identified"
+   },
+   "Snake Eye Kaleidoscope": {
+    "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lady Anacondra and loot Snake Eye Kaleidoscope. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 1 Str, 1 Agi, 1 Int, 1 Sta, 1 Spi. Page score for Zanjiro with the default stat weights: 5.1.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/273088",
+     "https://1mw.io/en/dungeons/wailing-caverns/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Serpent's Shoulders": {
+    "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lady Anacondra and loot Serpent's Shoulders. Drop chance 27.4% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 18 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 68 armor, 5 Agi, 7 Spi. Page score for Zanjiro with the default stat weights: 10.3.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/5404",
+     "https://1mw.io/en/dungeons/wailing-caverns/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Wolfmaster Cape": {
+    "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Nandos and loot Wolfmaster Cape. Drop chance 37.2% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Furs of the Earthen Ring (Excavation Site, Earthen Echo) scores 13.5 but replaces Heavehammer (same quest, pick one), so it is not the plan. Stats (Icy Veins DB, client 1.60.1): 22 armor, 3 Sta, 10 AP. Page score for Zanjiro with the default stat weights: 13.4.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/6314",
+     "https://1mw.io/en/dungeons/shadowfang-keep/loot",
+     "https://db.icy-veins.com/wow-forever/items/6340"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Dreamer's Chestguard": {
+    "how": "Quest Baron Aquanis (Horde, from level 21, per 1mw.io): starts with Strange Water Globe, Drops from Baron Aquanis, Blackfathom Deeps. Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost. Chain: Follows Amongst the Ruins Choose Dreamer's Chestguard. Prerequisite Amongst the Ruins from the same giver (from 21): loot the Fathom Core in the Twilight's Hammer area, which summons Baron Aquanis. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 106 armor, 10 Str, 5 Sta, 11 Spi. Page score for Zanjiro with the default stat weights: 29.3.",
+    "faction": "Horde",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/270043",
+     "https://1mw.io/en/dungeons/blackfathom-deeps/quests"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Cultist's Armguards": {
+    "how": "Quest Blackfathom Villainy (Both factions, from level 18, per 1mw.io): starts with Argent Guard Thaelrid, Alcove southwest of Ghamoo-ra, Blackfathom Deeps. Kill Twilight Lord Kelris and bring his head to Selgorm in Darnassus or Bashana Runetotem in Thunder Bluff. Chain: Follows In Search of Thaelrid Choose Cultist's Armguards. Horde turn-in: Bashana Runetotem, Elder Rise, Thunder Bluff. The Alliance breadcrumb is not needed (same as the board's Gravestone Scepter pick). Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 44 armor, 7 Sta, 10 AP. Page score for Zanjiro with the default stat weights: 17.9.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/270032",
+     "https://1mw.io/en/dungeons/blackfathom-deeps/quests",
+     "https://db.icy-veins.com/wow-forever/items/6902",
+     "https://1mw.io/en/dungeons/blackfathom-deeps/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Leggings of the Fang": {
+    "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lord Cobrahn and loot Leggings of the Fang. Drop chance 16.6% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 17 (Icy Veins DB). Part of Embrace of the Viper (set bonuses not scored). Stats (Icy Veins DB, client 1.60.1): 78 armor, 5 Str, 9 Agi, 4 Sta. Page score for Zanjiro with the default stat weights: 29.1.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/10410",
+     "https://1mw.io/en/dungeons/wailing-caverns/loot",
+     "https://db.icy-veins.com/wow-forever/items/273647",
+     "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Seal of Sylvanas": {
+    "how": "Quest Arugal Must Die (Horde, from level 18, per 1mw.io): starts with Dalar Dawnweaver, The Sepulcher, Silverpine Forest (44.2, 39.8). Kill Archmage Arugal and bring his head to Dalar Dawnweaver. Choose Seal of Sylvanas. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 8 Sta, 6 AP. Page score for Zanjiro with the default stat weights: 14.",
+    "faction": "Horde",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/6414",
+     "https://1mw.io/en/dungeons/shadowfang-keep/quests"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Band of the Fist": {
+    "how": "Quest Allegiance to the Old Gods (Horde, from level 17, per 1mw.io): starts with Je'neu Sancrea, Zoram'gar Outpost, Ashenvale (11.6, 34.2). Kill Lorgus Jett. Choose Band of the Fist. Mutually exclusive with Chestnut Mantle. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 4 Str, 4 Agi. Page score for Zanjiro with the default stat weights: 14.0.",
+    "faction": "Horde",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/17694",
+     "https://1mw.io/en/dungeons/blackfathom-deeps/quests"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Sorcerer Collar": {
+    "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Rethilgore and loot Sorcerer Collar. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 2 Int, 2 Spi. Page score for Corvin with the default stat weights: 1.8.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/273457",
+     "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Chestnut Mantle": {
+    "how": "Quest Allegiance to the Old Gods (Horde, from level 17, per 1mw.io): starts with Je'neu Sancrea, Zoram'gar Outpost, Ashenvale (11.6, 34.2). Kill Lorgus Jett. Choose Chestnut Mantle. Mutually exclusive with Band of the Fist. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 31 armor, 3 Sta, 5 spell power, 5 healing. Page score for Corvin with the default stat weights: 7.7.",
+    "faction": "Horde",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/17695",
+     "https://1mw.io/en/dungeons/blackfathom-deeps/quests"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Sporid Cape": {
+    "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Verdan the Everliving and loot Sporid Cape. Drop chance 17.8% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 20 armor, 6 Sta. Page score for Corvin with the default stat weights: 5.0.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/6629",
+     "https://1mw.io/en/dungeons/wailing-caverns/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Leftover Abomination Skin": {
+    "how": "Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat The Baron and loot Leftover Abomination Skin. Drop chance 37% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 15 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 9 Spi, 7 Shadow dmg, 37 armor. Page score for Corvin with the default stat weights: 10.1.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/271206",
+     "https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+     "https://db.icy-veins.com/wow-forever/items/2292",
+     "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Tabitha's Cuffs": {
+    "how": "Quest A Frightened Request (Horde, from level 15, per 1mw.io): starts with Tabitha Heartweaver, Silverpine Forest (44.5, 43). Find her husband Edward's body by the graveyard near Rath'mael. Choose Tabitha's Cuffs. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 17 armor, 4 Sta, 3 spell power, 3 healing. Page score for Corvin with the default stat weights: 6.4.",
+    "faction": "Horde",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/251486",
+     "https://1mw.io/en/dungeons/ruins-of-lordaeron/quests"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Tattered Mittens": {
+    "how": "Quest The Book of Ur (Horde, from level 16, per 1mw.io): starts with Keeper Bel'dugur, The Apothecarium, Undercity (53.6, 54). Grab the Book of Ur in Fenrus' room and bring it back to Keeper Bel'dugur. Choose Tattered Mittens. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 26 armor, 6 Sta, 9 healing, 3 spell power. Page score for Corvin with the default stat weights: 8.1.",
+    "faction": "Horde",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/270030",
+     "https://1mw.io/en/dungeons/shadowfang-keep/quests",
+     "https://db.icy-veins.com/wow-forever/items/5970",
+     "https://1mw.io/en/dungeons/wailing-caverns/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Tuskwrap Belt": {
+    "how": "Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat Bjork and loot Tuskwrap Belt. Drop chance 35.9% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 16 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 22 armor, 5 Spi, 6 spell power, 6 healing. Page score for Corvin with the default stat weights: 7.7.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/271210",
+     "https://1mw.io/en/dungeons/ruins-of-lordaeron/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Rotmender's Leggings": {
+    "how": "Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat The Abandoned and loot Rotmender's Leggings. Drop chance 39.2% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 17 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 35 armor, 5 Sta, 4 mp5. Page score for Corvin with the default stat weights: 10.3.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/271207",
+     "https://1mw.io/en/dungeons/ruins-of-lordaeron/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Rotmender's Treads": {
+    "how": "Form a dungeon group; enter Ruins of Lordaeron in Tirisfal Glades; defeat Rath'mael and loot Rotmender's Treads. Drop chance 35.1% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 19 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 29 armor, 7 Sta, 15 healing, 5 spell power. Page score for Corvin with the default stat weights: 10.9.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/271214",
+     "https://1mw.io/en/dungeons/ruins-of-lordaeron/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Slain Baron's Signet": {
+    "how": "Quest Unending Torment (Horde, from level 16, per 1mw.io): starts with Abominable Head (item), Drops from The Baron; anyone in the group can loot it, Ruins of Lordaeron. Bring the head to Master Apothecary Faranell in Undercity and help him finish his work. Chain: Several steps in Undercity and Tirisfal Glades; the last step gives the reward. Choose Slain Baron's Signet. Pick one with Grave Shroud and Monstrous Cleaver. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 3 Sta. Page score for Corvin with the default stat weights: 2.4.",
+    "faction": "Horde",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/279867",
+     "https://1mw.io/en/dungeons/ruins-of-lordaeron/quests"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Deep Fathom Ring": {
+    "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Mutanus the Devourer and loot Deep Fathom Ring. Drop chance 31% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 19 (Icy Veins DB). Stats (Icy Veins DB, client 1.60.1): 3 Sta. Page score for Corvin with the default stat weights: 2.4.",
+    "faction": "Both",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/6463",
+     "https://1mw.io/en/dungeons/wailing-caverns/loot"
+    ],
+    "_date": "2026-11-10"
+   },
+   "Crescent Staff": {
+    "how": "Quest Leaders of the Fang (Horde, from level 10, per 1mw.io): starts with Nara Wildmane, Thunder Bluff (75.6, 31.2). Kill the four Fang lords and bring their gems to Nara Wildmane. Chain: End of a druid chain that starts at the Crossroads; exact steps to verify in game. Choose Crescent Staff. 1mw.io says the start of this chain still needs checking in game. Quest rewards have no equip level printed in Icy Veins DB; the quest minimum is not an equip level. Stats (Icy Veins DB, client 1.60.1): 7 Agi, 7 Int, 7 Sta, 15.2 DPS, 26 spell power, 26 healing. Page score for Corvin with the default stat weights: 35.8.",
+    "faction": "Horde",
+    "_source": [
+     "https://db.icy-veins.com/wow-forever/items/6505",
+     "https://1mw.io/en/dungeons/wailing-caverns/quests",
+     "https://db.icy-veins.com/wow-forever/items/1484",
+     "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+    ],
+    "_date": "2026-11-10"
    }
   },
   "GEAR_ROW_AUDIT": {
@@ -16570,11 +17459,11 @@
   }
  },
  "_meta": {
-  "version": 28,
-  "generated_at": "2026-11-10T11:12-05:00",
-  "source": "Grok, Nov 10 2026 (school damage keys follow-up requested by Jason)",
+  "version": 29,
+  "generated_at": "2026-11-10T11:24-05:00",
+  "source": "Grok, Nov 10 2026 (gear sheets from dungeon loot, requested by Jason)",
   "notes_commit": "ae74407",
-  "notes": "Nov 10: Dungeon gear school spell damage (shadow/fire/frost) moved from notes into item stats on 9 rows."
+  "notes": "Nov 10: gear sheets updated from dungeon loot: 21 new level-appropriate picks for Zanjiro and Corvin, Heavehammer from 24."
  },
  "captions": {
   "builds": "Zanjiro: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8. Corvin unchanged.",
