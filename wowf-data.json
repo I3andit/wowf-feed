@@ -4547,7 +4547,7 @@
        "key": "totemseq",
        "spell": "Searing Totem · Ctrl Fire Nova",
        "icon": "spell_fire_searingtotem",
-       "kind": "util",
+       "kind": "rot",
        "lvl": 10,
        "note": "One key: Searing Totem; Ctrl for Fire Nova (12) on 3+ mobs with a fire totem out. Individual placement; Nicktew avoids four-totem spending every pull.",
        "covers": [
@@ -4894,7 +4894,7 @@
        "covers": [
         "Corruption"
        ],
-       "note": "Mouseover macro; cast time again 26-44"
+       "note": "Mouseover macro (instant or cast time depends on level: see the rotation step)"
       },
       {
        "key": "wand",
@@ -4946,11 +4946,11 @@
        "key": "pet",
        "spell": "Pet attack / follow",
        "icon": "spell_shadow_summonsuccubus",
-       "kind": "util",
+       "kind": "rot",
        "covers": [
         "Demon in first"
        ],
-       "note": "Send the demon in first"
+       "note": "Step 1: send the demon in first"
       },
       {
        "key": "fear",
@@ -5386,7 +5386,7 @@
        "covers": [
         "Corruption"
        ],
-       "note": "Mouseover macro; cast time again 26-44"
+       "note": "Mouseover macro (instant or cast time depends on level: see the rotation step)"
       },
       {
        "key": "wand",
@@ -5438,11 +5438,11 @@
        "key": "pet",
        "spell": "Pet attack / follow",
        "icon": "spell_shadow_summonsuccubus",
-       "kind": "util",
+       "kind": "rot",
        "covers": [
         "Demon in first"
        ],
-       "note": "Send the demon in first"
+       "note": "Step 1: send the demon in first"
       },
       {
        "key": "fear",
@@ -19227,16 +19227,16 @@
   }
  },
  "_meta": {
-  "version": 31,
-  "generated_at": "2026-11-10T13:25-05:00",
-  "source": "Grok, Nov 10 2026 (Corvin switches to Mobalytics Demonology respec at 26, requested by Jason)",
+  "version": 32,
+  "generated_at": "2026-11-10T14:40-05:00",
+  "source": "Grok, Nov 10 2026 (Naga plates follow the rotation order, requested by Jason)",
   "notes_commit": "ae74407",
-  "notes": "Nov 10: Corvin follows Mobalytics (Crix) Demonology respec at 26; your 4 Suppression kept pre-26; Icy Veins kept as reference."
+  "notes": "Nov 10: Naga pools fixed so plate buttons follow each rotation's priority order (pet first for Corvin, Fire Nova key in rotation order for Zanjiro)."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins original and Nicktew Recommended 6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8.",
   "macros": "Corvin: Mobalytics macros added or matched Nov 10 (Searing Pain + pet from 26, Succubus summon key, Fel Domination resummon, Imp sacrifice at 41, Torment + attack). Zanjiro: level-aware manual macros reviewed against Nicktew; Rank1 kick separate from damage. Native triggers are banks, not keyboard modifiers. Troll Berserking macro added Nov 10.",
-  "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; original Icy Veins rotation drives auto layout, Nicktew alternative documented. No controller UI added.",
+  "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; original Icy Veins rotation drives auto layout, Nicktew alternative documented. No controller UI added. Nov 10: plate buttons follow each rotation's priority order at every level.",
   "rotations": "Corvin: Mobalytics (Crix, Nov 10) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: current Icy Veins rotation preserved with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking.",
   "path": "Mobalytics (Crix, updated Nov 10): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build."
  }
