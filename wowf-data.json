@@ -100,7 +100,7 @@
     "name": "Corvin Ashmourne",
     "color": "#8788EE",
     "classIcon": "classicon_warlock",
-    "line": "Undead · Warlock · Affliction (Spec 2 Demonology at 40)",
+    "line": "Undead · Warlock · Demonology (Mobalytics respec at 26; Affliction talents until then)",
     "role": "Main",
     "level": 1,
     "profs": [
@@ -2008,6 +2008,124 @@
      "Elemental Devastation",
      1
     ]
+   ],
+   "aff_moba26": [
+    [
+     "Suppression",
+     4
+    ],
+    [
+     "Improved Corruption",
+     5
+    ],
+    [
+     "Unholy Power",
+     5
+    ],
+    [
+     "Demonic Energies",
+     2
+    ]
+   ],
+   "moba_pre26_guide": [
+    [
+     "Improved Corruption",
+     5
+    ],
+    [
+     "Suppression",
+     2
+    ],
+    [
+     "Unholy Power",
+     5
+    ],
+    [
+     "Demonic Energies",
+     2
+    ],
+    [
+     "Suppression",
+     2
+    ]
+   ],
+   "demo_moba": [
+    [
+     "Unholy Power",
+     5
+    ],
+    [
+     "Demonic Energies",
+     2
+    ],
+    [
+     "Fel Vitality",
+     3
+    ],
+    [
+     "Master Summoner",
+     2
+    ],
+    [
+     "Improved Sayaad",
+     3
+    ],
+    [
+     "Demonic Brand",
+     3
+    ],
+    [
+     "Fel Domination",
+     1
+    ],
+    [
+     "Demonic Sacrifice",
+     1
+    ],
+    [
+     "Soul Link",
+     1
+    ],
+    [
+     "Improved Corruption",
+     1
+    ],
+    [
+     "Demonic Knowledge",
+     3
+    ],
+    [
+     "Demonic Embrace",
+     1
+    ],
+    [
+     "Master Demonologist",
+     5
+    ],
+    [
+     "Demonic Pact",
+     1
+    ],
+    [
+     "Improved Corruption",
+     4
+    ],
+    [
+     "Suppression",
+     5
+    ],
+    [
+     "Pandemic",
+     3
+    ],
+    [
+     "Improved Bane of Agony",
+     2
+    ],
+    [
+     "Malevolence",
+     5
+    ]
    ]
   },
   "STATIC": {
@@ -2264,35 +2382,35 @@
    },
    {
     "key": "aff_lvl",
-    "label": "Affliction leveling (Icy Veins)",
+    "label": "Affliction leveling (Icy Veins) · previous plan, reference",
     "cls": "warlock",
     "seq": "aff_lvl",
     "src": "Icy Veins (Abide), Affliction leveling guide text, updated Nov 3, read Nov 4",
     "date": "Nov 3",
     "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling",
-    "blurb": "Suppression and instant Corruption first, Siphon Life at 30, Demonology dip to Demonic Sacrifice at 41, Wrack at 51. Ends 40/11/0. Levels 20-21, 27-29, 31-40 and 46-50 come from the guide's talent calculator (its text skips them); level 19 follows the text (Improved Life Tap) where the calculator shows Grim Reach."
+    "blurb": "Suppression and instant Corruption first, Siphon Life at 30, Demonology dip to Demonic Sacrifice at 41, Wrack at 51. Ends 40/11/0. Levels 20-21, 27-29, 31-40 and 46-50 come from the guide's talent calculator (its text skips them); level 19 follows the text (Improved Life Tap) where the calculator shows Grim Reach. Since Nov 10 Corvin follows Mobalytics' Demonology respec at 26 instead; kept for comparison."
    },
    {
     "key": "path",
-    "label": "Affliction to 60 + Spec 2 Demo",
+    "label": "Previous plan: Affliction to 60 + Spec 2 Demo (until Nov 10)",
     "cls": "warlock",
     "path": true,
     "seq": "aff_lvl",
     "src": "Spec 1: Icy Veins Affliction (Abide, Nov 3) · Spec 2: Icy Veins Demonology (Abide)",
     "date": "Nov 3 / Oct 21",
     "url": "https://wowfdb.com/classes/warlock/demonology/leveling/",
-    "blurb": "Spec 1 levels Affliction to 60 on Icy Veins' 40/11 order (Demonic Sacrifice 41, Wrack 51). At 40, Dual Spec adds a Demonology Spec 2 for groups: Icy Veins' Demonology order reaches Demonic Pact at exactly 31 points.",
+    "blurb": "Replaced Nov 10 (Jason's choice): Corvin now levels on Mobalytics' Demonology respec at 26 (see 'Mobalytics Demo respec at 26'). Old plan kept for reference: Spec 1 Affliction to 60 on Icy Veins' 40/11 order (Demonic Sacrifice 41, Wrack 51), Spec 2 Icy Veins Demonology at 40.",
     "tag": "Pairing is mine"
    },
    {
     "key": "demo_lvl",
-    "label": "Demonology leveling",
+    "label": "Demonology leveling (Icy Veins) · reference",
     "cls": "warlock",
     "seq": "demo_lvl",
     "src": "Icy Veins (Abide), its talent calculator order",
     "date": "Oct 21",
     "url": "https://www.icy-veins.com/wow-forever/demonology-warlock-leveling",
-    "blurb": "Unholy Power first, Demonic Brand at 25, Soul Link at 30, Demonic Pact at 40, then Affliction. Ends 20/31/0."
+    "blurb": "Unholy Power first, Demonic Brand at 25, Soul Link at 30, Demonic Pact at 40, then Affliction. Ends 20/31/0. Mobalytics' respec build (Corvin's plan since Nov 10) differs: Improved Sayaad instead of Improved Voidwalker, Demonic Embrace instead of Demonic Aegis, 1 Improved Corruption at 31 so Demonic Pact lands at 41, and 46-60 go Suppression 5, Pandemic 3, Improved Bane of Agony 2, Malevolence 5."
    },
    {
     "key": "aff_icy",
@@ -2302,7 +2420,7 @@
     "src": "Mobalytics (Crix), Warlock leveling guide, updated Nov 4, read Nov 5",
     "date": "Nov 4",
     "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide",
-    "blurb": "Drain-tank Affliction: Improved Corruption first, all 5 Suppression by 19, Soul Siphon at 30, Shadow Mastery 35–39, then a Demonology splash for pet sustain; Soul Harvest moved to 58–59. Ends 41/10/0. No Wrack in this build."
+    "blurb": "Drain-tank Affliction: Improved Corruption first, all 5 Suppression by 19, Soul Siphon at 30, Shadow Mastery 35–39, then a Demonology splash for pet sustain; Soul Harvest moved to 58–59. Ends 41/10/0. No Wrack in this build. Same Mobalytics guide's Affliction 1-60 tab; not Corvin's plan since Nov 10 (he takes its Demonology respec at 26). Tab not re-read Nov 10 (its calculator wasn't exposed in the fetched text)."
    },
    {
     "key": "aff_raid",
@@ -2333,26 +2451,168 @@
     "date": "Nov 8; read Nov 8",
     "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
     "blurb": "Separate selectable guide, not a respec or default switch. Stormstrike25; Improved Ghost Wolf26–27; Improved Stormstrike30–31; Mindfulness38–40; Water Shield43; Maelstrom5/5 at51; Rage52. Water Shield versus earlier deep Enhancement explicitly needs testing. Full Enhance First alternate tab order not accessible. Actual spent talents/trained skills unverified."
+   },
+   {
+    "key": "aff_moba26",
+    "label": "Mobalytics pre-26 (your 4 Suppression kept; respec at 26)",
+    "cls": "warlock",
+    "seq": "aff_moba26",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026; adjusted to the 4 Suppression points Jason already spent (chat, Nov 10)",
+    "date": "Nov 10; read Nov 10",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "blurb": "Levels 10-25 before the respec. Your Suppression 4/5 (10-13) stays; the guide's other pre-26 points follow: Improved Corruption 5 (14-18, instant Corruption at 18), Unholy Power 5 (19-23), Demonic Energies 2 (24-25). Guide's own order is Improved Corruption 10-14, Suppression 15-16, Unholy Power 17-21, Demonic Energies 22-23, Suppression 24-25: same 16 points, different levels. At 26 train Searing Pain Rank 2, then respec into 'Mobalytics Demo respec at 26'. Ends 9/7/0.",
+    "tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "respec_at": 26,
+    "then": "demo_moba",
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_date": "2026-11-10"
+   },
+   {
+    "key": "demo_moba",
+    "label": "Mobalytics Demo respec at 26 (Crix) · Corvin's plan",
+    "cls": "warlock",
+    "seq": "demo_moba",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "date": "Nov 10; read Nov 10",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "blurb": "Corvin's leveling plan since Nov 10. After the 26 respec the points go back in this order from level 10: Unholy Power 5, Demonic Energies 2, Fel Vitality 3, Master Summoner 2, Improved Sayaad 3, Demonic Brand 3 (25-27, so 2/3 right after the respec), Fel Domination 28, Demonic Sacrifice 29, Soul Link 30, Improved Corruption 31, Demonic Knowledge 32-34, Demonic Embrace 35, Master Demonologist 36-40, Demonic Pact 41, Improved Corruption 42-45 (instant again at 45), Suppression 46-50, Pandemic 51-53, Improved Bane of Agony 54-55, Malevolence 56-60. Ends 20/31/0. Succubus is the demon.",
+    "tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "primary": true,
+    "respec_at": 26,
+    "before": "aff_moba26",
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_date": "2026-11-10"
    }
   ],
   "WHY": {
-   "Improved Corruption": "Every Affliction guide opens here: an instant Corruption.",
+   "Improved Corruption": "Every Affliction guide opens here: an instant Corruption. On your Mobalytics path it is 5/5 at 18 before the respec; after the 26 respec only 1/5 at 31 and 5/5 again at 45, so Corruption has a cast time 26-44 (Mobalytics Crix, Nov 10).",
    "Soul Siphon": "Mobalytics' drain-tank core: Drain Life heals more for each of your effects on the target.",
    "Shadow Mastery": "Your biggest Shadow damage boost; Icy Veins' leveling order takes it at 46–50 (Mobalytics at 35–39).",
-   "Soul Link": "The 21-point talent. wowfdb: until you have it, Demonology is “a worse Affliction”.",
-   "Demonic Pact": "The 31-point talent: your Sacrifice buff survives summoning a new demon (wowfdb).",
-   "Demonic Brand": "Searing Pain marks the target for your pet's next 6 attacks (wording changed Oct 9).",
-   "Demonic Sacrifice": "Icy Veins: don't actually use it until Demonic Pact at 40.",
+   "Soul Link": "Mobalytics: the pet takes 30% of all damage you take and you deal 3% more; keep it on at all times (30 on your path). wowfdb: until you have it, Demonology is “a worse Affliction”.",
+   "Demonic Pact": "The 31-point talent: your Sacrifice buff survives summoning a new demon (wowfdb). Mobalytics (41 on your path): summon the Imp, sacrifice it for 15% Shadow damage, then summon the Succubus. Icy Veins' order has it at 40.",
+   "Demonic Brand": "Searing Pain marks the target for your pet's next 6 attacks (wording changed Oct 9). Mobalytics: keep it up with the Searing Pain + /petattack macro; it also gives your Succubus the threat to tank. 25-27 in the respec order, so 2/3 right after the 26 respec.",
+   "Demonic Sacrifice": "Mobalytics takes it at 29 only to reach Soul Link; not used until Demonic Pact at 41 (then sacrifice the Imp). Icy Veins: don't use it until Demonic Pact at 40.",
    "Stormstrike": "The spec starts here (Icy Veins, wowfdb). Nicktew also25; keep Earth Shock separate for interrupts (Nov4/readNov7): https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Shamanistic Focus": "Shocks and Lightning Shield cost 45% less mana: you stop rationing shocks (wowfdb). Nicktew point20; only applies if actually spent, not automatically learned by reaching20 (Nov4/readNov7): https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Improved Stormstrike": "Dodges and parries can reset Stormstrike; also 50% mana regen while casting (wowfdb).",
    "Water Shield": "Icy Veins' text says 42; its own calculator places it at 43 because Restoration needs 10 points first. Nicktew Recommended also43; its value versus earlier deep Enhancement is explicitly untested (updatedNov4/readNov7): https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Maelstrom Weapon": "Free, instant Lightning Bolt at 5 stacks.",
    "Rage of the Farseer": "+30% attack speed for 25 s on a 3-minute cooldown (wowfdb; marked unconfirmed there).",
-   "Malevolence": "+5% Shadow crit.",
-   "Wrack": "Affliction's 31-point talent; needs Siphon Life."
+   "Malevolence": "+5% Shadow crit. Mobalytics' last 5 points (56-60), paired with Pandemic.",
+   "Wrack": "Affliction's 31-point talent; needs Siphon Life.",
+   "Suppression": "+hit and less threat. You already have 4/5 (10-13); Mobalytics' respec takes all 5 at 46-50 (1% hit and 4% threat reduction per rank).",
+   "Unholy Power": "+10% damage for all your demons (Mobalytics Crix, Nov 10). Pre-26 at 19-23 on your path; first 5 points after the respec.",
+   "Demonic Energies": "Keeps your demon alive and in mana: you heal it for part of your spell damage and Life Tap feeds it (Mobalytics Crix, Nov 10).",
+   "Fel Vitality": "+15% demon Health and Mana and +15% of your own Mana (Mobalytics Crix, Nov 10).",
+   "Master Summoner": "Demon summons 4 sec faster (and cheaper) (Mobalytics Crix, Nov 10).",
+   "Improved Sayaad": "A little more Lash of Pain damage and pet threat; Mobalytics says these 3 points can go elsewhere in Demonology.",
+   "Fel Domination": "Near-instant resummon: when the Succubus drops below about 20%, Fel Domination + a new Succubus beats Health Funnel (Mobalytics Crix, Nov 10).",
+   "Demonic Knowledge": "Spell damage equal to your level for you and your demon while a demon is out (30 SP at 30, 45 at 45) (Mobalytics Crix, Nov 10).",
+   "Demonic Embrace": "More Stamina; Mobalytics says this 1 point can go anywhere in Demonology.",
+   "Master Demonologist": "Bonus per demon; Mobalytics takes it for the Succubus' 10% Shadow damage (36-40).",
+   "Pandemic": "Bigger crits on your DoTs and Drains; better the more crit you have (51-53) (Mobalytics Crix, Nov 10).",
+   "Improved Bane of Agony": "More Bane of Agony damage (54-55) (Mobalytics Crix, Nov 10)."
   },
   "PATH_NODES": [
+   {
+    "lv": "1–9",
+    "at": 9,
+    "spec": 1,
+    "icon": "spell_shadow_shadowbolt",
+    "title": "No talents yet",
+    "body": "Imp quest right away; Corruption and Immolate do the work, Shadow Bolt and a wand finish. Lesser Magic Wand at 5. Voidwalker class quest at 10 (Drain Soul at 10: start saving shards). Official Nov 6: Voidwalker base health +~40 live; more pet durability still planned in the Nov 10 Class Tuning.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026; Kaivax Nov 6 hotfixes",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "10–18",
+    "at": 18,
+    "spec": 1,
+    "icon": "spell_shadow_abominationexplosion",
+    "title": "Suppression 4 (spent), Improved Corruption 14-18",
+    "body": "Your 4 Suppression points (10-13) stay; the guide's Improved Corruption 5 follows at 14-18, so Corruption is instant from 18. The 26 respec resets all of this.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "19–25",
+    "at": 25,
+    "spec": 1,
+    "icon": "spell_shadow_summonsuccubus",
+    "title": "Unholy Power, Succubus at 20, Demonic Energies",
+    "body": "Unholy Power 19-23 (+10% demon damage), Demonic Energies 24-25. Succubus class quest at 20 (also Staff of Soran'ruk, Orb and a Soul Pouch); she is the leveling demon from here. Demon Armor at 20.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "26",
+    "at": 26,
+    "spec": 1,
+    "icon": "spell_fire_soulburn",
+    "title": "Respec to Demonology",
+    "body": "Train Searing Pain Rank 2 first, then reset talents and spend 17 points in the Demonology order: Unholy Power 5, Demonic Energies 2, Fel Vitality 3, Master Summoner 2, Improved Sayaad 3, Demonic Brand 2. From now on: Searing Pain + /petattack brands the pet's target and the Succubus tanks. Respec costs gold (TechRadar Oct 10: costs climb with use).",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10",
+    "quote": "Once you reach Level 26, you will need to go to the Warlock trainer to learn Rank 2 Searing Pain and then respec"
+   },
+   {
+    "lv": "28–30",
+    "at": 30,
+    "spec": 1,
+    "icon": "spell_shadow_gathershadows",
+    "title": "Fel Domination, Demonic Sacrifice, Soul Link",
+    "body": "Fel Domination 28 for instant resummons, Demonic Sacrifice 29 (not used yet), Soul Link 30: your demon takes 30% of your damage, keep it on. Felhunter class quest at 30.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "31–40",
+    "at": 40,
+    "spec": 1,
+    "icon": "spell_shadow_metamorphosis",
+    "title": "Demonic Knowledge, Master Demonologist",
+    "body": "Improved Corruption 1 (31), Demonic Knowledge 32-34 (spell damage = your level while a demon is out), Demonic Embrace 35, Master Demonologist 36-40 (Succubus: +10% Shadow damage). Felsteed at 40. Dual Spec at 40 is optional now: the guide doesn't cover it.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "41",
+    "at": 41,
+    "spec": 1,
+    "icon": "spell_shadow_psychicscream",
+    "title": "Demonic Pact",
+    "body": "Summon the Imp, Demonic Sacrifice it for 15% Shadow damage, then summon the Succubus; the buff stays.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "42–60",
+    "at": 60,
+    "spec": 1,
+    "icon": "spell_shadow_focusedpower",
+    "title": "Affliction finish",
+    "body": "Improved Corruption 42-45 (instant Corruption again at 45), Suppression 46-50, Pandemic 51-53, Improved Bane of Agony 54-55, Malevolence 56-60. Ends 20/31/0. Raid builds at 60 stay in the planner: Affliction 30/0/21 or Demonology 2/31/18 (Mobalytics class guides, Oct 30).",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   }
+  ],
+  "PATH_NODES_ICY": [
    {
     "lv": "1–9",
     "at": 9,
@@ -2727,6 +2987,358 @@
    },
    "aff": {
     "quest": {
+     "seq": "demo_moba",
+     "prep": [
+      {
+       "icon": "spell_shadow_ragingscream",
+       "name": "Demon Skin / Demon Armor",
+       "tip": "Keep it up: Demon Skin early, Demon Armor from 20 (replaces it)."
+      },
+      {
+       "icon": "spell_shadow_summonimp",
+       "name": "Imp",
+       "tip": "Quest it at once and keep it attacking; your only demon until 10.",
+       "until": 10
+      },
+      {
+       "icon": "spell_shadow_summonvoidwalker",
+       "name": "Voidwalker",
+       "tip": "Level 10 class quest: holds mobs while you DoT from range. Pets were nerfed hard (Blizzard told Crix not intended; Official Nov 6 +~40 base health), so don't pull too many.",
+       "lvl": 10,
+       "until": 20
+      },
+      {
+       "icon": "spell_shadow_summonsuccubus",
+       "name": "Succubus / Incubus",
+       "tip": "Highest-damage demon; your leveling demon from 20. With Demonic Brand (26) she tanks. Let her tank some mobs while you tank others to keep her alive.",
+       "lvl": 20
+      },
+      {
+       "icon": "spell_shadow_gathershadows",
+       "name": "Soul Link",
+       "tip": "From 30: the demon takes 30% of your damage and you deal 3% more. Keep it on at all times.",
+       "lvl": 30
+      },
+      {
+       "icon": "spell_shadow_psychicscream",
+       "name": "Sacrifice the Imp, then Succubus",
+       "tip": "From 41 (Demonic Pact): summon Imp, Demonic Sacrifice for 15% Shadow damage, then summon the Succubus.",
+       "lvl": 41
+      }
+     ],
+     "steps": [
+      {
+       "icon": "ability_ghoulfrenzy",
+       "name": "Demon in first",
+       "tip": "Send the demon in and let it hit first so it holds threat."
+      },
+      {
+       "icon": "spell_fire_soulburn",
+       "name": "Searing Pain (Demonic Brand)",
+       "tip": "After the 26 respec: Searing Pain + /petattack macro brands the pet's target. Watch the Brand timer and stacks and recast when needed.",
+       "lvl": 26
+      },
+      {
+       "icon": "spell_shadow_curseofsargeras",
+       "name": "Bane of Agony",
+       "tip": "Press it near the end of the Searing Pain cast; the spell queue fires it right after. Low threat, good for pulling the next mob.",
+       "lvl": 8
+      },
+      {
+       "icon": "spell_shadow_chilltouch",
+       "name": "Curse of Weakness",
+       "tip": "Good at low levels on mobs that hit hard.",
+       "lvl": 4,
+       "until": 20
+      },
+      {
+       "icon": "spell_shadow_chilltouch",
+       "name": "Curse of the Elements",
+       "tip": "If the target won't die right away: up to 10% more spell damage taken.",
+       "lvl": 20
+      },
+      {
+       "icon": "spell_fire_immolation",
+       "name": "Immolate",
+       "tip": "One of your two early workhorse DoTs; keep it up on mobs that live."
+      },
+      {
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Corruption",
+       "tip": "Keep it up.",
+       "lvl": 4,
+       "ups": [
+        {
+         "lvl": 18,
+         "text": "instant from 18 (Improved Corruption 5/5) until the 26 respec"
+        },
+        {
+         "lvl": 26,
+         "text": "after the respec it has a cast time again (Improved Corruption 1/5 at 31)"
+        },
+        {
+         "lvl": 45,
+         "text": "instant again (Improved Corruption 5/5 at 45)"
+        }
+       ]
+      },
+      {
+       "icon": "ability_shootwand",
+       "name": "Wand",
+       "tip": "Free filler; great damage until about 30. Let DoTs and the demon finish the mob.",
+       "lvl": 5
+      },
+      {
+       "icon": "spell_shadow_shadowbolt",
+       "name": "Shadow Bolt",
+       "tip": "Early finisher; after about 30 it out-damages the wand but costs mana and threat."
+      },
+      {
+       "icon": "spell_shadow_lifedrain02",
+       "name": "Drain Life",
+       "tip": "Whenever you need health.",
+       "lvl": 14
+      },
+      {
+       "icon": "spell_shadow_burningspirit",
+       "name": "Life Tap",
+       "tip": "Only with enough health to spare; with Demonic Energies it feeds the demon's mana too.",
+       "lvl": 6
+      },
+      {
+       "icon": "spell_shadow_haunting",
+       "name": "Drain Soul (shards)",
+       "tip": "Finish with it when you need shards (demons, Healthstones, Soulstones, summons). Blizzard Nov 2/3: shards come reliably only from the kill.",
+       "lvl": 10
+      }
+     ],
+     "unlocks": [
+      {
+       "lvl": 10,
+       "icon": "spell_shadow_summonvoidwalker",
+       "name": "Voidwalker + Drain Soul",
+       "text": "Class quest pet; start saving shards"
+      },
+      {
+       "lvl": 18,
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Instant Corruption",
+       "text": "Improved Corruption 5/5 (until the respec)"
+      },
+      {
+       "lvl": 19,
+       "icon": "spell_shadow_shadowworddominate",
+       "name": "Unholy Power",
+       "text": "+10% demon damage"
+      },
+      {
+       "lvl": 20,
+       "icon": "spell_shadow_summonsuccubus",
+       "name": "Succubus + Demon Armor + Curse of the Elements",
+       "text": "Class quest; she becomes your demon"
+      },
+      {
+       "lvl": 26,
+       "icon": "spell_fire_soulburn",
+       "name": "Respec: Demonic Brand",
+       "text": "Train Searing Pain R2, then respec to Demonology"
+      },
+      {
+       "lvl": 28,
+       "icon": "spell_nature_removecurse",
+       "name": "Fel Domination",
+       "text": "Instant resummon when the Succubus is low"
+      },
+      {
+       "lvl": 30,
+       "icon": "spell_shadow_gathershadows",
+       "name": "Soul Link + Hellfire",
+       "text": "30% of your damage goes to the demon"
+      },
+      {
+       "lvl": 41,
+       "icon": "spell_shadow_psychicscream",
+       "name": "Demonic Pact",
+       "text": "Sacrifice the Imp, keep the Succubus"
+      },
+      {
+       "lvl": 45,
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Instant Corruption again",
+       "text": "Improved Corruption 5/5"
+      }
+     ],
+     "notes": [
+      "Corvin's plan since Nov 10 (Jason's choice): Mobalytics (Crix) Demonology respec at 26. Levels 1-25 play like Affliction with a pet; from 26 this is a Demonology rotation. Unofficial, single source; Forever beta-based.",
+      "Two mobs at a time: brand and DoT mob 1, pull mob 2 at about 50% with Bane of Agony or Curse of the Elements (low threat), brand it and send the demon over, let DoTs or the wand finish mob 1. Fear when three are up. Bandages (First Aid) top the demon up between pulls.",
+      "Conflict kept: Icy Veins' Affliction plan (Nightfall, Siphon Life 30, Wrack 51, Felhunter sacrifice at 41) was the previous default; it is kept in the Affliction reference build and the old rotation data.",
+      "Blizzard Nov 2: pets get 2 Health per Stamina (was 7.5), so watch the demon's bar."
+     ],
+     "src": [
+      {
+       "label": "Mobalytics Warlock leveling, Demonology Respec LV 26 (Crix)",
+       "date": "Nov 10",
+       "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10"
+      },
+      {
+       "label": "Trainer levels (TRAINER_RAW)",
+       "date": "Nov 9",
+       "url": "https://wowfdb.com/classes/warlock/"
+      },
+      {
+       "label": "Blizzard beta development notes",
+       "date": "Nov 2 + Nov 3",
+       "url": "https://us.forums.blizzard.com/en/wow/t/latest-warlock-changes/2399400"
+      }
+     ],
+     "caveat": "Mobalytics guide theorycraft (Forever beta-based), single source. Levels come from the guide and trainer table; your actual spent talents and trained ranks aren't read by the page.",
+     "_date": "2026-11-10"
+    },
+    "dungeon": {
+     "seq": "demo_moba",
+     "prep": [
+      {
+       "icon": "spell_shadow_summonsuccubus",
+       "name": "Succubus",
+       "tip": "Your damage demon in groups too; keep her out of AoE.",
+       "lvl": 20
+      },
+      {
+       "icon": "spell_shadow_summonimp",
+       "name": "Imp",
+       "tip": "Before 20 (Blood Pact Stamina).",
+       "until": 20
+      },
+      {
+       "icon": "spell_shadow_psychicscream",
+       "name": "Sacrifice the Imp, then Succubus",
+       "tip": "From 41 (Demonic Pact): 15% Shadow damage, buff stays.",
+       "lvl": 41
+      },
+      {
+       "icon": "spell_shadow_soulgem",
+       "name": "Healthstone in your bags",
+       "tip": "Hellfire hurts you; heal with it mid-AoE. Offer stones to the group.",
+       "lvl": 10
+      },
+      {
+       "icon": "spell_shadow_gathershadows",
+       "name": "Soul Link + Demon Armor",
+       "tip": "From 30.",
+       "lvl": 30
+      }
+     ],
+     "steps": [
+      {
+       "icon": "spell_fire_soulburn",
+       "name": "Searing Pain (Demonic Brand)",
+       "tip": "Brand a high-health mob, preferably the tank's target, and send the demon in.",
+       "lvl": 26
+      },
+      {
+       "icon": "spell_shadow_curseofsargeras",
+       "name": "Bane of Agony",
+       "tip": "On several mobs in the pack while you move into Hellfire range.",
+       "lvl": 8
+      },
+      {
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Corruption",
+       "tip": "Spread it on the pack (Mobalytics' AoE before Brand).",
+       "lvl": 4
+      },
+      {
+       "icon": "spell_fire_immolation",
+       "name": "Immolate",
+       "tip": "Durable mobs and bosses."
+      },
+      {
+       "icon": "spell_shadow_rainoffire",
+       "name": "Rain of Fire",
+       "tip": "Packs the tank holds (Icy Veins; not in Mobalytics' rotation).",
+       "lvl": 20,
+       "until": 30
+      },
+      {
+       "icon": "spell_fire_fire",
+       "name": "Hellfire",
+       "tip": "A few yards from the pack once the tank has threat; it damages you and pulls a lot of threat. Paladin Blessing of Protection lets you spam it.",
+       "lvl": 30
+      },
+      {
+       "icon": "spell_fire_soulburn",
+       "name": "Re-Brand a new target",
+       "tip": "Brand a different mob so the Succubus doesn't rip threat off the tank's target.",
+       "lvl": 26
+      },
+      {
+       "icon": "spell_shadow_shadowbolt",
+       "name": "Shadow Bolt filler",
+       "tip": "Or wand when mana is low."
+      },
+      {
+       "icon": "spell_shadow_burningspirit",
+       "name": "Life Tap",
+       "tip": "When healers have you covered.",
+       "lvl": 6
+      },
+      {
+       "icon": "spell_shadow_auraofdarkness",
+       "name": "Bane of Doom",
+       "tip": "Level-60 bosses (Mobalytics Demonology guide, Oct 30).",
+       "lvl": 60
+      }
+     ],
+     "unlocks": [
+      {
+       "lvl": 20,
+       "icon": "spell_shadow_summonsuccubus",
+       "name": "Succubus",
+       "text": "Group damage demon"
+      },
+      {
+       "lvl": 26,
+       "icon": "spell_fire_soulburn",
+       "name": "Demonic Brand",
+       "text": "Brand the tank's target"
+      },
+      {
+       "lvl": 30,
+       "icon": "spell_fire_fire",
+       "name": "Hellfire",
+       "text": "Close-range AoE"
+      },
+      {
+       "lvl": 41,
+       "icon": "spell_shadow_psychicscream",
+       "name": "Sacrifice the Imp",
+       "text": "15% Shadow damage"
+      }
+     ],
+     "notes": [
+      "Mobalytics AoE: let the tank gather threat first; ask nicely for heals. Rain of Fire 20-29 and Bane of Doom at 60 come from Icy Veins / Mobalytics' Oct 30 Demonology guide."
+     ],
+     "src": [
+      {
+       "label": "Mobalytics Warlock leveling, Demonology Respec LV 26 (Crix)",
+       "date": "Nov 10",
+       "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10"
+      },
+      {
+       "label": "Mobalytics Demonology guide (Crix)",
+       "date": "Oct 30",
+       "url": "https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide"
+      },
+      {
+       "label": "Icy Veins Affliction leveling (Abide)",
+       "date": "Nov 3",
+       "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
+      }
+     ],
+     "caveat": "Conflict kept: Mobalytics' Oct 30 level-60 Demonology guide sacrifices the Succubus and keeps the Imp; its Nov 10 leveling guide sacrifices the Imp and keeps the Succubus.",
+     "_date": "2026-11-10"
+    },
+    "quest_icy": {
      "seq": "aff_lvl",
      "prep": [
       {
@@ -2960,7 +3572,7 @@
       }
      ]
     },
-    "dungeon": {
+    "dungeon_icy": {
      "seq": "aff_lvl",
      "prep": [
       {
@@ -3136,6 +3748,358 @@
    },
    "demo": {
     "quest": {
+     "seq": "demo_moba",
+     "prep": [
+      {
+       "icon": "spell_shadow_ragingscream",
+       "name": "Demon Skin / Demon Armor",
+       "tip": "Keep it up: Demon Skin early, Demon Armor from 20 (replaces it)."
+      },
+      {
+       "icon": "spell_shadow_summonimp",
+       "name": "Imp",
+       "tip": "Quest it at once and keep it attacking; your only demon until 10.",
+       "until": 10
+      },
+      {
+       "icon": "spell_shadow_summonvoidwalker",
+       "name": "Voidwalker",
+       "tip": "Level 10 class quest: holds mobs while you DoT from range. Pets were nerfed hard (Blizzard told Crix not intended; Official Nov 6 +~40 base health), so don't pull too many.",
+       "lvl": 10,
+       "until": 20
+      },
+      {
+       "icon": "spell_shadow_summonsuccubus",
+       "name": "Succubus / Incubus",
+       "tip": "Highest-damage demon; your leveling demon from 20. With Demonic Brand (26) she tanks. Let her tank some mobs while you tank others to keep her alive.",
+       "lvl": 20
+      },
+      {
+       "icon": "spell_shadow_gathershadows",
+       "name": "Soul Link",
+       "tip": "From 30: the demon takes 30% of your damage and you deal 3% more. Keep it on at all times.",
+       "lvl": 30
+      },
+      {
+       "icon": "spell_shadow_psychicscream",
+       "name": "Sacrifice the Imp, then Succubus",
+       "tip": "From 41 (Demonic Pact): summon Imp, Demonic Sacrifice for 15% Shadow damage, then summon the Succubus.",
+       "lvl": 41
+      }
+     ],
+     "steps": [
+      {
+       "icon": "ability_ghoulfrenzy",
+       "name": "Demon in first",
+       "tip": "Send the demon in and let it hit first so it holds threat."
+      },
+      {
+       "icon": "spell_fire_soulburn",
+       "name": "Searing Pain (Demonic Brand)",
+       "tip": "After the 26 respec: Searing Pain + /petattack macro brands the pet's target. Watch the Brand timer and stacks and recast when needed.",
+       "lvl": 26
+      },
+      {
+       "icon": "spell_shadow_curseofsargeras",
+       "name": "Bane of Agony",
+       "tip": "Press it near the end of the Searing Pain cast; the spell queue fires it right after. Low threat, good for pulling the next mob.",
+       "lvl": 8
+      },
+      {
+       "icon": "spell_shadow_chilltouch",
+       "name": "Curse of Weakness",
+       "tip": "Good at low levels on mobs that hit hard.",
+       "lvl": 4,
+       "until": 20
+      },
+      {
+       "icon": "spell_shadow_chilltouch",
+       "name": "Curse of the Elements",
+       "tip": "If the target won't die right away: up to 10% more spell damage taken.",
+       "lvl": 20
+      },
+      {
+       "icon": "spell_fire_immolation",
+       "name": "Immolate",
+       "tip": "One of your two early workhorse DoTs; keep it up on mobs that live."
+      },
+      {
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Corruption",
+       "tip": "Keep it up.",
+       "lvl": 4,
+       "ups": [
+        {
+         "lvl": 18,
+         "text": "instant from 18 (Improved Corruption 5/5) until the 26 respec"
+        },
+        {
+         "lvl": 26,
+         "text": "after the respec it has a cast time again (Improved Corruption 1/5 at 31)"
+        },
+        {
+         "lvl": 45,
+         "text": "instant again (Improved Corruption 5/5 at 45)"
+        }
+       ]
+      },
+      {
+       "icon": "ability_shootwand",
+       "name": "Wand",
+       "tip": "Free filler; great damage until about 30. Let DoTs and the demon finish the mob.",
+       "lvl": 5
+      },
+      {
+       "icon": "spell_shadow_shadowbolt",
+       "name": "Shadow Bolt",
+       "tip": "Early finisher; after about 30 it out-damages the wand but costs mana and threat."
+      },
+      {
+       "icon": "spell_shadow_lifedrain02",
+       "name": "Drain Life",
+       "tip": "Whenever you need health.",
+       "lvl": 14
+      },
+      {
+       "icon": "spell_shadow_burningspirit",
+       "name": "Life Tap",
+       "tip": "Only with enough health to spare; with Demonic Energies it feeds the demon's mana too.",
+       "lvl": 6
+      },
+      {
+       "icon": "spell_shadow_haunting",
+       "name": "Drain Soul (shards)",
+       "tip": "Finish with it when you need shards (demons, Healthstones, Soulstones, summons). Blizzard Nov 2/3: shards come reliably only from the kill.",
+       "lvl": 10
+      }
+     ],
+     "unlocks": [
+      {
+       "lvl": 10,
+       "icon": "spell_shadow_summonvoidwalker",
+       "name": "Voidwalker + Drain Soul",
+       "text": "Class quest pet; start saving shards"
+      },
+      {
+       "lvl": 18,
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Instant Corruption",
+       "text": "Improved Corruption 5/5 (until the respec)"
+      },
+      {
+       "lvl": 19,
+       "icon": "spell_shadow_shadowworddominate",
+       "name": "Unholy Power",
+       "text": "+10% demon damage"
+      },
+      {
+       "lvl": 20,
+       "icon": "spell_shadow_summonsuccubus",
+       "name": "Succubus + Demon Armor + Curse of the Elements",
+       "text": "Class quest; she becomes your demon"
+      },
+      {
+       "lvl": 26,
+       "icon": "spell_fire_soulburn",
+       "name": "Respec: Demonic Brand",
+       "text": "Train Searing Pain R2, then respec to Demonology"
+      },
+      {
+       "lvl": 28,
+       "icon": "spell_nature_removecurse",
+       "name": "Fel Domination",
+       "text": "Instant resummon when the Succubus is low"
+      },
+      {
+       "lvl": 30,
+       "icon": "spell_shadow_gathershadows",
+       "name": "Soul Link + Hellfire",
+       "text": "30% of your damage goes to the demon"
+      },
+      {
+       "lvl": 41,
+       "icon": "spell_shadow_psychicscream",
+       "name": "Demonic Pact",
+       "text": "Sacrifice the Imp, keep the Succubus"
+      },
+      {
+       "lvl": 45,
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Instant Corruption again",
+       "text": "Improved Corruption 5/5"
+      }
+     ],
+     "notes": [
+      "Demonology after the 26 respec (Mobalytics Crix, Nov 10). Before 26 Corvin uses the pre-respec talents (see the Affliction tab).",
+      "Conflict kept: Icy Veins' Demonology order (Improved Voidwalker, Demonic Aegis, Demonic Pact at 40, Nightfall) and Voidwalker-tank play are in the 'Demonology leveling (Icy Veins)' reference build.",
+      "Two mobs at a time: brand and DoT mob 1, pull mob 2 at about 50% with Bane of Agony or Curse of the Elements (low threat), brand it and send the demon over, let DoTs or the wand finish mob 1. Fear when three are up. Bandages (First Aid) top the demon up between pulls.",
+      "Blizzard Nov 2: pets get 2 Health per Stamina (was 7.5), so watch the demon's bar."
+     ],
+     "src": [
+      {
+       "label": "Mobalytics Warlock leveling, Demonology Respec LV 26 (Crix)",
+       "date": "Nov 10",
+       "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10"
+      },
+      {
+       "label": "Trainer levels (TRAINER_RAW)",
+       "date": "Nov 9",
+       "url": "https://wowfdb.com/classes/warlock/"
+      },
+      {
+       "label": "Blizzard beta development notes",
+       "date": "Nov 2 + Nov 3",
+       "url": "https://us.forums.blizzard.com/en/wow/t/latest-warlock-changes/2399400"
+      }
+     ],
+     "caveat": "Mobalytics guide theorycraft (Forever beta-based), single source. Levels come from the guide and trainer table; your actual spent talents and trained ranks aren't read by the page.",
+     "_date": "2026-11-10"
+    },
+    "dungeon": {
+     "seq": "demo_moba",
+     "prep": [
+      {
+       "icon": "spell_shadow_summonsuccubus",
+       "name": "Succubus",
+       "tip": "Your damage demon in groups too; keep her out of AoE.",
+       "lvl": 20
+      },
+      {
+       "icon": "spell_shadow_summonimp",
+       "name": "Imp",
+       "tip": "Before 20 (Blood Pact Stamina).",
+       "until": 20
+      },
+      {
+       "icon": "spell_shadow_psychicscream",
+       "name": "Sacrifice the Imp, then Succubus",
+       "tip": "From 41 (Demonic Pact): 15% Shadow damage, buff stays.",
+       "lvl": 41
+      },
+      {
+       "icon": "spell_shadow_soulgem",
+       "name": "Healthstone in your bags",
+       "tip": "Hellfire hurts you; heal with it mid-AoE. Offer stones to the group.",
+       "lvl": 10
+      },
+      {
+       "icon": "spell_shadow_gathershadows",
+       "name": "Soul Link + Demon Armor",
+       "tip": "From 30.",
+       "lvl": 30
+      }
+     ],
+     "steps": [
+      {
+       "icon": "spell_fire_soulburn",
+       "name": "Searing Pain (Demonic Brand)",
+       "tip": "Brand a high-health mob, preferably the tank's target, and send the demon in.",
+       "lvl": 26
+      },
+      {
+       "icon": "spell_shadow_curseofsargeras",
+       "name": "Bane of Agony",
+       "tip": "On several mobs in the pack while you move into Hellfire range.",
+       "lvl": 8
+      },
+      {
+       "icon": "spell_shadow_abominationexplosion",
+       "name": "Corruption",
+       "tip": "Spread it on the pack (Mobalytics' AoE before Brand).",
+       "lvl": 4
+      },
+      {
+       "icon": "spell_fire_immolation",
+       "name": "Immolate",
+       "tip": "Durable mobs and bosses."
+      },
+      {
+       "icon": "spell_shadow_rainoffire",
+       "name": "Rain of Fire",
+       "tip": "Packs the tank holds (Icy Veins; not in Mobalytics' rotation).",
+       "lvl": 20,
+       "until": 30
+      },
+      {
+       "icon": "spell_fire_fire",
+       "name": "Hellfire",
+       "tip": "A few yards from the pack once the tank has threat; it damages you and pulls a lot of threat. Paladin Blessing of Protection lets you spam it.",
+       "lvl": 30
+      },
+      {
+       "icon": "spell_fire_soulburn",
+       "name": "Re-Brand a new target",
+       "tip": "Brand a different mob so the Succubus doesn't rip threat off the tank's target.",
+       "lvl": 26
+      },
+      {
+       "icon": "spell_shadow_shadowbolt",
+       "name": "Shadow Bolt filler",
+       "tip": "Or wand when mana is low."
+      },
+      {
+       "icon": "spell_shadow_burningspirit",
+       "name": "Life Tap",
+       "tip": "When healers have you covered.",
+       "lvl": 6
+      },
+      {
+       "icon": "spell_shadow_auraofdarkness",
+       "name": "Bane of Doom",
+       "tip": "Level-60 bosses (Mobalytics Demonology guide, Oct 30).",
+       "lvl": 60
+      }
+     ],
+     "unlocks": [
+      {
+       "lvl": 20,
+       "icon": "spell_shadow_summonsuccubus",
+       "name": "Succubus",
+       "text": "Group damage demon"
+      },
+      {
+       "lvl": 26,
+       "icon": "spell_fire_soulburn",
+       "name": "Demonic Brand",
+       "text": "Brand the tank's target"
+      },
+      {
+       "lvl": 30,
+       "icon": "spell_fire_fire",
+       "name": "Hellfire",
+       "text": "Close-range AoE"
+      },
+      {
+       "lvl": 41,
+       "icon": "spell_shadow_psychicscream",
+       "name": "Sacrifice the Imp",
+       "text": "15% Shadow damage"
+      }
+     ],
+     "notes": [
+      "Mobalytics AoE: let the tank gather threat first; ask nicely for heals. Rain of Fire 20-29 and Bane of Doom at 60 come from Icy Veins / Mobalytics' Oct 30 Demonology guide."
+     ],
+     "src": [
+      {
+       "label": "Mobalytics Warlock leveling, Demonology Respec LV 26 (Crix)",
+       "date": "Nov 10",
+       "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10"
+      },
+      {
+       "label": "Mobalytics Demonology guide (Crix)",
+       "date": "Oct 30",
+       "url": "https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide"
+      },
+      {
+       "label": "Icy Veins Affliction leveling (Abide)",
+       "date": "Nov 3",
+       "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
+      }
+     ],
+     "caveat": "Conflict kept: Mobalytics' Oct 30 level-60 Demonology guide sacrifices the Succubus and keeps the Imp; its Nov 10 leveling guide sacrifices the Imp and keeps the Succubus.",
+     "_date": "2026-11-10"
+    },
+    "quest_icy": {
      "prep": [
       {
        "icon": "spell_shadow_summonvoidwalker",
@@ -3281,7 +4245,7 @@
       }
      ]
     },
-    "dungeon": {
+    "dungeon_icy": {
      "prep": [
       {
        "icon": "spell_shadow_psychicscream",
@@ -3827,7 +4791,7 @@
       "n": 5,
       "spell": "Pet attack / follow",
       "icon": "spell_shadow_summonvoidwalker",
-      "note": "From 41 Demonic Sacrifice eats the pet in Affliction; this key is for Spec 2 or a utility summon."
+      "note": "Your demon stays out to 60 on the Mobalytics path (Succubus from 20; after the 41 Imp sacrifice too)."
      },
      {
       "n": 6,
@@ -3840,7 +4804,7 @@
       "k": "F1",
       "spell": "Summon pet macro",
       "icon": "spell_shadow_summonimp",
-      "note": "Voidwalker from 10 (Imp before). From 41 summon and Sacrifice the Felhunter (rotation prep)."
+      "note": "Imp before 10, Voidwalker 10-19, Succubus from 20 (Mobalytics). From 28 Fel Domination + Succubus; from 41 summon Imp, sacrifice it, then Succubus."
      },
      {
       "k": "F2",
@@ -3849,8 +4813,9 @@
      },
      {
       "k": "F3",
-      "spell": "spare (Soul Link on Demonology)",
-      "icon": "inv_misc_note_01"
+      "spell": "Soul Link (30+)",
+      "icon": "spell_shadow_gathershadows",
+      "note": "Keep it on at all times (Mobalytics)"
      },
      {
       "k": "F4",
@@ -3869,6 +4834,181 @@
      }
     ],
     "auto": {
+     "mode": "quest",
+     "src": "ROT aff.quest (Mobalytics Crix Demonology respec 26, read Nov 10) + trainer levels",
+     "pool": [
+      {
+       "key": "sp",
+       "spell": "Searing Pain",
+       "icon": "spell_fire_soulburn",
+       "kind": "rot",
+       "covers": [
+        "Searing Pain (Demonic Brand)",
+        "Re-Brand a new target"
+       ],
+       "note": "Brand macro (+ /petattack) from the 26 respec"
+      },
+      {
+       "key": "bane",
+       "spell": "Bane of Agony",
+       "icon": "spell_shadow_curseofsargeras",
+       "kind": "rot",
+       "covers": [
+        "Bane of Agony"
+       ]
+      },
+      {
+       "key": "cow",
+       "spell": "Curse of Weakness",
+       "icon": "spell_shadow_chilltouch",
+       "kind": "rot",
+       "covers": [
+        "Curse of Weakness"
+       ],
+       "note": "Replaced by Curse of the Elements at 20"
+      },
+      {
+       "key": "coe",
+       "spell": "Curse of the Elements",
+       "icon": "spell_shadow_chilltouch",
+       "kind": "rot",
+       "covers": [
+        "Curse of the Elements"
+       ],
+       "note": "Takes the Curse of Weakness button"
+      },
+      {
+       "key": "imm",
+       "spell": "Immolate",
+       "icon": "spell_fire_immolation",
+       "kind": "rot",
+       "covers": [
+        "Immolate"
+       ]
+      },
+      {
+       "key": "corr",
+       "spell": "Corruption",
+       "icon": "spell_shadow_abominationexplosion",
+       "kind": "rot",
+       "covers": [
+        "Corruption"
+       ],
+       "note": "Mouseover macro; cast time again 26-44"
+      },
+      {
+       "key": "wand",
+       "spell": "Shoot (wand)",
+       "icon": "ability_shootwand",
+       "kind": "rot",
+       "covers": [
+        "Wand"
+       ]
+      },
+      {
+       "key": "sb",
+       "spell": "Shadow Bolt",
+       "icon": "spell_shadow_shadowbolt",
+       "kind": "rot",
+       "covers": [
+        "Shadow Bolt"
+       ]
+      },
+      {
+       "key": "dl",
+       "spell": "Drain Life",
+       "icon": "spell_shadow_lifedrain02",
+       "kind": "rot",
+       "covers": [
+        "Drain Life"
+       ]
+      },
+      {
+       "key": "lt",
+       "spell": "Life Tap",
+       "icon": "spell_shadow_burningspirit",
+       "kind": "rot",
+       "covers": [
+        "Life Tap"
+       ]
+      },
+      {
+       "key": "ds",
+       "spell": "Drain Soul",
+       "icon": "spell_shadow_haunting",
+       "kind": "rot",
+       "covers": [
+        "Drain Soul (shards)"
+       ],
+       "note": "Finish low mobs for shards"
+      },
+      {
+       "key": "pet",
+       "spell": "Pet attack / follow",
+       "icon": "spell_shadow_summonsuccubus",
+       "kind": "util",
+       "covers": [
+        "Demon in first"
+       ],
+       "note": "Send the demon in first"
+      },
+      {
+       "key": "fear",
+       "spell": "Fear",
+       "icon": "spell_shadow_possession",
+       "kind": "util",
+       "lvl": 8
+      },
+      {
+       "key": "hs",
+       "spell": "Healthstone / Soulstone macro",
+       "icon": "inv_stone_04",
+       "kind": "util",
+       "lvl": 10,
+       "note": "Ctrl = Soulstone"
+      },
+      {
+       "key": "hf",
+       "spell": "Health Funnel on pet",
+       "icon": "spell_shadow_lifedrain",
+       "kind": "util",
+       "lvl": 12,
+       "until": 28,
+       "note": "Fel Domination resummon replaces it at 28 (Mobalytics)"
+      },
+      {
+       "key": "feldom",
+       "spell": "Fel Domination + summon",
+       "icon": "spell_nature_removecurse",
+       "kind": "util",
+       "lvl": 28,
+       "note": "Succubus under ~20%: instant new Succubus"
+      },
+      {
+       "key": "banish",
+       "spell": "Banish",
+       "icon": "spell_shadow_cripple",
+       "kind": "util",
+       "lvl": 28
+      },
+      {
+       "key": "howl",
+       "spell": "Howl of Terror",
+       "icon": "spell_shadow_auraofdarkness",
+       "kind": "util",
+       "lvl": 40,
+       "alt": true
+      },
+      {
+       "key": "dc",
+       "spell": "Death Coil",
+       "icon": "spell_shadow_deathcoil",
+       "kind": "util",
+       "lvl": 42
+      }
+     ]
+    },
+    "auto_icy": {
      "mode": "quest",
      "src": "ROT aff.quest (Icy Veins, read Nov 3) + trainer levels",
      "pool": [
@@ -4186,6 +5326,181 @@
      }
     ],
     "auto": {
+     "mode": "quest",
+     "src": "ROT demo.quest (Mobalytics Crix Demonology respec 26, read Nov 10) + trainer levels",
+     "pool": [
+      {
+       "key": "sp",
+       "spell": "Searing Pain",
+       "icon": "spell_fire_soulburn",
+       "kind": "rot",
+       "covers": [
+        "Searing Pain (Demonic Brand)",
+        "Re-Brand a new target"
+       ],
+       "note": "Brand macro (+ /petattack) from the 26 respec"
+      },
+      {
+       "key": "bane",
+       "spell": "Bane of Agony",
+       "icon": "spell_shadow_curseofsargeras",
+       "kind": "rot",
+       "covers": [
+        "Bane of Agony"
+       ]
+      },
+      {
+       "key": "cow",
+       "spell": "Curse of Weakness",
+       "icon": "spell_shadow_chilltouch",
+       "kind": "rot",
+       "covers": [
+        "Curse of Weakness"
+       ],
+       "note": "Replaced by Curse of the Elements at 20"
+      },
+      {
+       "key": "coe",
+       "spell": "Curse of the Elements",
+       "icon": "spell_shadow_chilltouch",
+       "kind": "rot",
+       "covers": [
+        "Curse of the Elements"
+       ],
+       "note": "Takes the Curse of Weakness button"
+      },
+      {
+       "key": "imm",
+       "spell": "Immolate",
+       "icon": "spell_fire_immolation",
+       "kind": "rot",
+       "covers": [
+        "Immolate"
+       ]
+      },
+      {
+       "key": "corr",
+       "spell": "Corruption",
+       "icon": "spell_shadow_abominationexplosion",
+       "kind": "rot",
+       "covers": [
+        "Corruption"
+       ],
+       "note": "Mouseover macro; cast time again 26-44"
+      },
+      {
+       "key": "wand",
+       "spell": "Shoot (wand)",
+       "icon": "ability_shootwand",
+       "kind": "rot",
+       "covers": [
+        "Wand"
+       ]
+      },
+      {
+       "key": "sb",
+       "spell": "Shadow Bolt",
+       "icon": "spell_shadow_shadowbolt",
+       "kind": "rot",
+       "covers": [
+        "Shadow Bolt"
+       ]
+      },
+      {
+       "key": "dl",
+       "spell": "Drain Life",
+       "icon": "spell_shadow_lifedrain02",
+       "kind": "rot",
+       "covers": [
+        "Drain Life"
+       ]
+      },
+      {
+       "key": "lt",
+       "spell": "Life Tap",
+       "icon": "spell_shadow_burningspirit",
+       "kind": "rot",
+       "covers": [
+        "Life Tap"
+       ]
+      },
+      {
+       "key": "ds",
+       "spell": "Drain Soul",
+       "icon": "spell_shadow_haunting",
+       "kind": "rot",
+       "covers": [
+        "Drain Soul (shards)"
+       ],
+       "note": "Finish low mobs for shards"
+      },
+      {
+       "key": "pet",
+       "spell": "Pet attack / follow",
+       "icon": "spell_shadow_summonsuccubus",
+       "kind": "util",
+       "covers": [
+        "Demon in first"
+       ],
+       "note": "Send the demon in first"
+      },
+      {
+       "key": "fear",
+       "spell": "Fear",
+       "icon": "spell_shadow_possession",
+       "kind": "util",
+       "lvl": 8
+      },
+      {
+       "key": "hs",
+       "spell": "Healthstone / Soulstone macro",
+       "icon": "inv_stone_04",
+       "kind": "util",
+       "lvl": 10,
+       "note": "Ctrl = Soulstone"
+      },
+      {
+       "key": "hf",
+       "spell": "Health Funnel on pet",
+       "icon": "spell_shadow_lifedrain",
+       "kind": "util",
+       "lvl": 12,
+       "until": 28,
+       "note": "Fel Domination resummon replaces it at 28 (Mobalytics)"
+      },
+      {
+       "key": "feldom",
+       "spell": "Fel Domination + summon",
+       "icon": "spell_nature_removecurse",
+       "kind": "util",
+       "lvl": 28,
+       "note": "Succubus under ~20%: instant new Succubus"
+      },
+      {
+       "key": "banish",
+       "spell": "Banish",
+       "icon": "spell_shadow_cripple",
+       "kind": "util",
+       "lvl": 28
+      },
+      {
+       "key": "howl",
+       "spell": "Howl of Terror",
+       "icon": "spell_shadow_auraofdarkness",
+       "kind": "util",
+       "lvl": 40,
+       "alt": true
+      },
+      {
+       "key": "dc",
+       "spell": "Death Coil",
+       "icon": "spell_shadow_deathcoil",
+       "kind": "util",
+       "lvl": 42
+      }
+     ]
+    },
+    "auto_icy": {
      "mode": "quest",
      "src": "ROT demo.quest (Icy Veins, read Nov 3) + trainer levels",
      "pool": [
@@ -4511,9 +5826,9 @@
    "aff": {
     "from": 40,
     "who": "Corvin",
-    "title": "Spec 1 · Affliction · 12-button layout (40+)",
+    "title": "Corvin · Mobalytics Demo leveling · 12-button layout (40+)",
     "src": "Warlock - Affliction.md › 12-button layout (40+)",
-    "intro": "Swap at 40. The page builds both plates from the level-aware rotation: every live rotation spell gets a button in rotation order, utility fills Shift, and anything you have not learned yet shows its Lv badge. Wrack joins at 51 on the Icy Veins path; pet keys drop out at 41 when you sacrifice the Felhunter.",
+    "intro": "Swap at 40. The page builds both plates from the level-aware rotation (Mobalytics Demonology respec at 26): every live rotation spell gets a button in rotation order, utility fills Shift, and anything you have not learned yet shows its Lv badge. Searing Pain (Brand) leads from 26; Fel Domination joins at 28; no Wrack or Siphon Life on this path.",
     "buttons": [
      {
       "n": 1,
@@ -4566,7 +5881,7 @@
       "n": 9,
       "spell": "Pet attack / follow macro",
       "icon": "spell_shadow_summonvoidwalker",
-      "note": "Was Shift+5. From 41 Demonic Sacrifice eats the pet in Affliction; this key is for Spec 2 or a utility summon."
+      "note": "Was Shift+5. Demon stays out to 60 on the Mobalytics path."
      },
      {
       "n": 10,
@@ -4623,9 +5938,9 @@
    "demo": {
     "from": 40,
     "who": "Corvin",
-    "title": "Spec 2 · Demonology · 12-button layout (40+)",
+    "title": "Demonology · 12-button layout (40+)",
     "src": "Warlock - Demonology.md › 12-button layout (40+)",
-    "intro": "When Corvin adds Demonology as Spec 2 at 40 (for groups), build this plate too. It follows Corvin's level the same way: rotation spells in rotation order, utility on Shift, Soul Fire taking over from Drain Soul at 48.",
+    "intro": "Same plan as the main plate since Nov 10 (Mobalytics Demonology respec at 26): rotation spells in rotation order, utility on Shift. Your Spec 2 at 40 is optional now.",
     "buttons": [
      {
       "n": 1,
@@ -4772,7 +6087,7 @@
     "spec": "both",
     "where": "Naga slot follows your level",
     "code": "#showtooltip\n/petattack [nomod:ctrl,harm,nodead]\n/petfollow [mod:ctrl]",
-    "does": "Sends the pet at your target; Ctrl calls it back without also sending it in (v1 ran both lines on Ctrl). Affliction from 41 has no pet, so after that this is a Spec 2 key.",
+    "does": "Sends the pet at your target; Ctrl calls it back without also sending it in (v1 ran both lines on Ctrl). On your Mobalytics path the demon stays out to 60, so this key stays live (Nov 10).",
     "src": "Your notes; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
     "bind": [
      "pet"
@@ -4854,7 +6169,7 @@
     "bind": [
      "amp"
     ],
-    "flag": "Amplify Curse is a talent: level 53 on Corvin's Icy Veins order (it moves if you follow another guide)."
+    "flag": "Amplify Curse is a talent: level 53 on Corvin's Icy Veins order (it moves if you follow another guide). Not on your Mobalytics path (no Wrack, Siphon Life, Amplify Curse or Curse of Exhaustion in its 20/31/0); kept for the Icy Veins Affliction reference."
    },
    {
     "title": "Wrack, no restart",
@@ -4869,7 +6184,8 @@
     "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
     "bind": [
      "wrack"
-    ]
+    ],
+    "flag": "Not on your Mobalytics path (no Wrack, Siphon Life, Amplify Curse or Curse of Exhaustion in its 20/31/0); kept for the Icy Veins Affliction reference."
    },
    {
     "title": "Healthstone",
@@ -4974,20 +6290,23 @@
     "code": "#showtooltip\n/cast [mod:shift] Summon Voidwalker; [mod:ctrl] Summon Succubus; [mod:alt] Summon Felhunter; Summon Imp",
     "does": "Every demon on one key. Plain is Imp.",
     "src": "Your notes",
-    "flag": "If your spellbook says Summon Sayaad or Incubus, swap the name.",
-    "fkey": "F1"
+    "flag": "If your spellbook says Summon Sayaad or Incubus, swap the name. Used until 20; the Succubus-default version takes over at 20.",
+    "fkey": "F1",
+    "until": 20
    },
    {
     "title": "Fel Domination + summon",
     "icon": "spell_nature_removecurse",
-    "spec": "demo",
+    "spec": "both",
     "where": "Demo F1",
-    "code": "#showtooltip Fel Domination\n/cast [nopet] Fel Domination\n/cast [mod:ctrl] Summon Felhunter; Summon Voidwalker",
-    "does": "When the pet dies, press twice: instant Fel Domination, then a fast Voidwalker (Ctrl: Felhunter).",
-    "tag": "NEW",
-    "src": "wowfdb Demonology macros (marked Untested)",
+    "code": "#showtooltip Fel Domination\n/cast [nopet] Fel Domination\n/cast [mod:ctrl] Summon Voidwalker; Summon Succubus",
+    "does": "When the Succubus dies or drops low, press twice: instant Fel Domination, then a fast Succubus (Ctrl: Voidwalker). Mobalytics: faster than Health Funnel.",
+    "tag": "FIXED",
+    "src": "wowfdb Demonology macros (marked Untested); Succubus default per Mobalytics Crix, Nov 10 2026",
     "url": "https://wowfdb.com/classes/warlock/demonology/macros/",
-    "fkey": "F1"
+    "fkey": "F1",
+    "lvl": 28,
+    "flag": "[nopet] only fires Fel Domination with no pet out; dismiss a low Succubus first. If your spellbook says Sayaad or Incubus, swap the name."
    },
    {
     "title": "Demonic Sacrifice (Spec 2, dungeon)",
@@ -5011,7 +6330,8 @@
     "lvl": 41,
     "code": "#showtooltip Demonic Sacrifice\n/cast [pet:Felhunter] Demonic Sacrifice",
     "does": "Affliction at 41 sacrifices the Felhunter for the buff. Only fires on the Felhunter. Summoning any demon afterwards removes the buff, so keep F1 away from it.",
-    "src": "Icy Veins Affliction order (point 32 = level 41); Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+    "src": "Icy Veins Affliction order (point 32 = level 41); Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+    "flag": "Previous Icy Veins Affliction plan. On your Mobalytics path you sacrifice the Imp instead (see 'Demonic Sacrifice: Imp')."
    },
    {
     "title": "Soul Fire",
@@ -5032,17 +6352,18 @@
    {
     "title": "Searing Pain + pet",
     "icon": "spell_fire_soulburn",
-    "spec": "demo",
+    "spec": "both",
     "where": "Naga slot follows your level",
     "code": "#showtooltip Searing Pain\n/petattack [@mouseover,harm,nodead][@target,harm,nodead]\n/cast [@mouseover,harm,nodead][@target,harm,nodead] Searing Pain",
-    "does": "Pet and Searing Pain hit the same mob (mouseover first), so Demonic Brand (talent at 25) marks what the pet is on.",
+    "does": "Pet and Searing Pain hit the same mob (mouseover first), so Demonic Brand marks what the pet is on. Mobalytics calls this macro mandatory for Demonology; yours adds mouseover. On your path from the 26 respec.",
     "tag": "FIXED",
-    "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+    "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07); Mobalytics Crix Demonic Brand Searing Pain macro (#showtooltip /cast Searing Pain /petattack), read Nov 10 2026",
     "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
     "flag": "Assembled from the guide's advice; not a published macro.",
     "bind": [
      "sp"
-    ]
+    ],
+    "lvl": 26
    },
    {
     "title": "Create stone",
@@ -5142,7 +6463,8 @@
     ],
     "code": "#showtooltip Siphon Life\n/cast [@mouseover,harm,nodead][harm,nodead] Siphon Life",
     "does": "Third DoT (talent at 30 on the Icy Veins order), always the highest rank.",
-    "src": "Icy Veins Affliction order; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+    "src": "Icy Veins Affliction order; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+    "flag": "Not on your Mobalytics path (no Wrack, Siphon Life, Amplify Curse or Curse of Exhaustion in its 20/31/0); kept for the Icy Veins Affliction reference."
    },
    {
     "tag": "NEW",
@@ -5182,7 +6504,8 @@
     "code": "#showtooltip Curse of Exhaustion\n/cast [@mouseover,harm,nodead][harm,nodead] Curse of Exhaustion",
     "does": "30% slow on a runner. No /stopcasting, so it won't cancel a Wrack.",
     "src": "Rankedboost WoW Forever macros, updated Nov 4, read Nov 7 2026; level from the Icy Veins order",
-    "url": "https://rankedboost.com/world-of-warcraft/forever/macros/"
+    "url": "https://rankedboost.com/world-of-warcraft/forever/macros/",
+    "flag": "Not on your Mobalytics path (no Wrack, Siphon Life, Amplify Curse or Curse of Exhaustion in its 20/31/0); kept for the Icy Veins Affliction reference."
    },
    {
     "tag": "NEW",
@@ -5511,6 +6834,45 @@
      "bers"
     ],
     "flag": "wowfdb's burst macro casts Berserking with trinkets and Rage of the Farseer (40/52). Merge it into the Ctrl press of Stormstrike + Rage at 52 only after you check in game that Berserking does not trigger the global cooldown."
+   },
+   {
+    "tag": "NEW",
+    "where": "F1",
+    "fkey": "F1",
+    "title": "Summon any pet (20+, Succubus default)",
+    "icon": "spell_shadow_summonsuccubus",
+    "spec": "both",
+    "lvl": 20,
+    "code": "#showtooltip\n/cast [mod:alt] Summon Imp; [mod:shift] Summon Voidwalker; [mod:ctrl] Summon Felhunter; Summon Succubus",
+    "does": "Every demon on one key; plain press is the Succubus, your leveling demon. The icon changes with the held modifier. Felhunter from 30.",
+    "src": "Mobalytics Crix, All in one Demon Summoning Macro, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "flag": "Modifiers work on the keyboard and Naga, not on the native gamepad (no [mod:] there). If your spellbook says Sayaad or Incubus, swap the name."
+   },
+   {
+    "tag": "NEW",
+    "where": "Spare key at 41",
+    "title": "Demonic Sacrifice: Imp (41+, Mobalytics)",
+    "icon": "spell_shadow_psychicscream",
+    "spec": "both",
+    "lvl": 41,
+    "code": "#showtooltip Demonic Sacrifice\n/cast [pet:Imp] Demonic Sacrifice",
+    "does": "With Demonic Pact: summon the Imp, press this for 15% Shadow damage (2 h), then summon the Succubus; the buff stays. Only fires on the Imp, so it can't eat your Succubus.",
+    "src": "Mobalytics Crix rotation text, read Nov 10 2026 (macro assembled from it, not published as a macro)",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10"
+   },
+   {
+    "tag": "NEW",
+    "where": "Bottom Right",
+    "title": "Torment + pet attack (Voidwalker)",
+    "icon": "spell_shadow_summonvoidwalker",
+    "spec": "both",
+    "lvl": 10,
+    "code": "#showtooltip Torment\n/cast Torment\n/petattack",
+    "does": "Taunts with the Voidwalker and makes it attack what it taunted. Crix keeps Torment off autocast and presses it by hand.",
+    "src": "Mobalytics Crix, Voidwalker Taunt macro, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "flag": "Only useful while the Voidwalker is out (10-19, or if you swap back to it)."
    }
   ]
  },
@@ -16491,6 +17853,16 @@
      {
       "id": "p22",
       "text": "Level 60"
+     },
+     {
+      "id": "p26",
+      "text": "Train Searing Pain Rank 2, then respec to Demonology (26)",
+      "meta": "Mobalytics Crix, Nov 10"
+     },
+     {
+      "id": "p27",
+      "text": "Soul Link talented (30)",
+      "meta": "Mobalytics Crix, Nov 10"
      }
     ]
    },
@@ -16632,6 +18004,8 @@
    "p23",
    "p24",
    "p25",
+   "p26",
+   "p27",
    "gs15b",
    "gl8b",
    "gl9b",
@@ -16769,6 +18143,18 @@
    }
   ],
   "feed_rows": [
+   {
+    "lead": "Nov 10",
+    "title": "Corvin switches to Mobalytics' Demonology respec at 26 (Crix)",
+    "detail": "Jason's choice (chat, Nov 10). Pre-26: his 4 Suppression points stay, then Improved Corruption 14-18, Unholy Power 19-23, Demonic Energies 24-25. At 26 train Searing Pain Rank 2 and respec to 20/31/0 Demonology: Demonic Brand 25-27, Soul Link 30, Demonic Pact 41, Malevolence 56-60. Succubus is the demon from 20. Corruption has a cast time again 26-44. Icy Veins' Affliction and Demonology orders stay as reference builds; disagreements are kept side by side.",
+    "meta": "Mobalytics (Crix), updated Nov 10, read Nov 10",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_date": "2026-11-10"
+   },
    {
     "lead": "Nov 10",
     "title": "Shaman is now Zanjiro Tidetusk, Troll Enhancement, level 25: Troll racials replace Orc",
@@ -17472,6 +18858,11 @@
     "text": "Drain Soul shard farming: shards now come reliably only from the kill, so channel it as the mob dies (Nov 2 notes, official).",
     "_source": null,
     "_date": null
+   },
+   {
+    "text": "Warlock notes and the dashboard plan (Oct 30 rules: 'levels Affliction, Dual Specs into Demonology at 40'): Jason now follows Mobalytics' Demonology respec at 26 (chat, Nov 10). Vault notes not edited.",
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_date": "2026-11-10"
    }
   ],
   "feed_links": [
@@ -17633,17 +19024,17 @@
   "talents_level60": {
    "lead": "Level 60",
    "tone": "info",
-   "text": "Leveling uses the 40/11 Wrack build (Icy Veins, Nov 3; Wrack at 51). At 60 for raids, Mobalytics' Oct 30 sim puts Shadow Mastery + Ruin (30/0/21) ahead. Malediction is gone from every row."
+   "text": "Corvin now levels on Mobalytics' Demonology respec at 26 (20/31/0 at 60, Crix, Nov 10). Previous plan for reference: Icy Veins' 40/11 Wrack build (Nov 3; Wrack at 51). At 60 for raids, Mobalytics' Oct 30 sim puts Shadow Mastery + Ruin (30/0/21) ahead. Malediction is gone from every row."
   },
   "talents_brand": {
    "lead": "Brand",
    "tone": "info",
-   "text": "Searing Pain's Demonic Brand now covers the pet's next six hits, not two, and only Shadow brand hits add threat. Your notes' 60 build and their 45-51 leveling step (Oct 31 edit) keep Malediction 5: swap it for Grim Reach 2 plus 3 flex points."
+   "text": "Searing Pain's Demonic Brand now covers the pet's next six hits, not two, and only Shadow brand hits add threat. On your Mobalytics path it comes with the 26 respec (2/3, 3/3 at 27). Your notes' 60 build and their 45-51 leveling step (Oct 31 edit) keep Malediction 5: swap it for Grim Reach 2 plus 3 flex points."
   },
   "naga_when_to_swap": {
    "lead": "When to swap",
    "tone": "info",
-   "text": "When three or more Shift binds feel like they should be one press (Enhancement around 32–40, Warlocks at 40 with Death Coil and Howl of Terror, Wrack joining at 51). Swap once, at a rest stop, not mid-dungeon. The 12-plate is a 4-row grid, not two columns, so every thumb position is new: expect a couple of sessions of fumbling, which is why the old 1–6 slots stay as close to the top as possible."
+   "text": "When three or more Shift binds feel like they should be one press (Enhancement around 32–40, Corvin at 40 with Howl of Terror, Fel Domination and Death Coil at 42). Swap once, at a rest stop, not mid-dungeon. The 12-plate is a 4-row grid, not two columns, so every thumb position is new: expect a couple of sessions of fumbling, which is why the old 1–6 slots stay as close to the top as possible."
   },
   "naga_setup6": [
    {
@@ -17836,16 +19227,17 @@
   }
  },
  "_meta": {
-  "version": 30,
-  "generated_at": "2026-11-10T11:36-05:00",
-  "source": "Grok, Nov 10 2026 (gear sheet alts and pick stats, requested by Jason)",
+  "version": 31,
+  "generated_at": "2026-11-10T13:25-05:00",
+  "source": "Grok, Nov 10 2026 (Corvin switches to Mobalytics Demonology respec at 26, requested by Jason)",
   "notes_commit": "ae74407",
-  "notes": "Nov 10: gear sheet alternates lists and Forever DB stats on 35 picks/alts so every scorable pick shows a score."
+  "notes": "Nov 10: Corvin follows Mobalytics (Crix) Demonology respec at 26; your 4 Suppression kept pre-26; Icy Veins kept as reference."
  },
  "captions": {
-  "builds": "Zanjiro: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8. Corvin unchanged.",
-  "macros": "Zanjiro: level-aware manual macros reviewed against Nicktew Nov4/readNov7;20 unlocks require training, Rank1 kick separate from damage. Native triggers are banks, not assumed keyboard modifiers. Corvin unchanged. Troll Berserking macro added Nov 10.",
-  "naga": "Zanjiro: learned-skill level20 options corrected; original Icy Veins rotation drives auto layout, Nicktew alternative documented. No controller UI added; Corvin unchanged.",
-  "rotations": "Zanjiro: current Icy Veins rotation preserved with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking. Corvin unchanged."
+  "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins original and Nicktew Recommended 6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8.",
+  "macros": "Corvin: Mobalytics macros added or matched Nov 10 (Searing Pain + pet from 26, Succubus summon key, Fel Domination resummon, Imp sacrifice at 41, Torment + attack). Zanjiro: level-aware manual macros reviewed against Nicktew; Rank1 kick separate from damage. Native triggers are banks, not keyboard modifiers. Troll Berserking macro added Nov 10.",
+  "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; original Icy Veins rotation drives auto layout, Nicktew alternative documented. No controller UI added.",
+  "rotations": "Corvin: Mobalytics (Crix, Nov 10) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: current Icy Veins rotation preserved with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking.",
+  "path": "Mobalytics (Crix, updated Nov 10): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build."
  }
 }
