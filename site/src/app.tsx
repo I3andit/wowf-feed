@@ -211,6 +211,7 @@ const CSS = `
 .wf-dun-row { display: grid; grid-template-columns: 38px 1fr minmax(150px, 230px); gap: 10px; align-items: center; padding: 6px 8px; border-radius: 8px; border: 1px solid #3a3020; background: rgba(0,0,0,.28); }
 @media (max-width: 640px) { .wf-dun-row { grid-template-columns: 38px 1fr; } .wf-dun-row > :last-child { grid-column: 1 / -1; } }
 .wf-dun-row-up { border-color: rgba(30,255,0,.45); background: rgba(30,255,0,.05); }
+.wf-gscore { display: inline-block; font-size: 10px; line-height: 1.55; padding: 0 6px; margin: 1px 0; border-radius: 4px; border: 1px solid #4a3d22; color: ${INK}; background: rgba(0,0,0,.35); white-space: nowrap; }
 .wf-dun-tag { display: inline-block; padding: 0 7px; border-radius: 4px; border: 1px solid currentColor; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; line-height: 1.6; }
 .wf-dun-d { display: inline-block; margin-right: 8px; font-size: 12px; font-weight: 600; white-space: nowrap; }
 .wf-prelabel { padding: 8px 10px; border-radius: 8px; border: 1px dashed #ff9b3d; background: rgba(255,128,0,.06); font-size: 12px; color: #ece2c8; }
@@ -1463,7 +1464,11 @@ type GPick = {
   confirmation?: string; source_count_note?: string; conflicts?: string[]; unverified?: string[];
   alt_label?: string; alt_acquisition?: { how?: string }; future_alternatives?: string[]; disputed_leads?: string[]; blocked_leads?: string[];
   classic_drop_estimate?: { percent: number; tag?: string }; reported_rate_note?: string;
+  // Nov 10: several alternates per pick (alts replaces the single alt when present) and optional stats for picks
+  // that are not in dungeons.LOOT (crafted, world quest). Stats use the same keys as LOOT.
+  alts?: GAlt[]; stats?: Record<string, number>;
 };
+type GAlt = { item: string; label?: string; how?: string; stats?: Record<string, number> };
 const GEAR_BLOCKED: Record<string, { how?: string; _source?: string[] }> = WF_DATA.gear.GEAR_BLOCKED_LEADS || {};
 // The feed's text sometimes drops the space before a number ("At15", "Leatherworking130"); put it back for reading.
 function gtext(t?: string): string {
@@ -1474,8 +1479,13 @@ function shortHow(p: GPick): string {
   const first = t.split(/(?<=\.)\s/)[0];
   return first.length > 130 ? `${first.slice(0, 127)}…` : first;
 }
-function altLabel(p: GPick): string {
-  return (p.alt_label || "Alt").replace(/^Alt\s*[—–-]\s*/, "Alt: ");
+function altLabelOf(label?: string): string {
+  return (label || "Alt").replace(/^Alt\s*[—–-]\s*/, "Alt: ");
+}
+function altLabel(p: GPick): string { return altLabelOf(p.alt_label); }
+function gAlts(p: GPick): GAlt[] {
+  if (p.alts && p.alts.length) return p.alts;
+  return p.alt ? [{ item: p.alt, label: p.alt_label, how: p.alt_acquisition ? p.alt_acquisition.how : undefined }] : [];
 }
 function GearBadges({ p }: { p: GPick }) {
   const conf = p.confirmation || "";
@@ -1502,7 +1512,7 @@ function GearAcq({ p, open }: { p: GPick; open?: boolean }) {
         {p.faction_basis ? <div className="wf-acq-note">{gtext(p.faction_basis)}</div> : null}
         {p.classic_drop_estimate ? <div><b>Drop chance:</b> about {p.classic_drop_estimate.percent}% <span className="wf-mark wf-mark-notes">{p.classic_drop_estimate.tag || "Classic data"}</span></div> : null}
         {p.reported_rate_note ? <div className="wf-acq-note">{gtext(p.reported_rate_note)}</div> : null}
-        {p.alt ? <div className="wf-acq-alt"><b>{altLabel(p)}</b> · {p.alt}{p.alt_acquisition && p.alt_acquisition.how ? `. ${gtext(p.alt_acquisition.how)}` : ""}</div> : null}
+        {gAlts(p).map((a: GAlt) => <div key={a.item} className="wf-acq-alt"><b>{altLabelOf(a.label)}</b> · {a.item}{a.how ? `. ${gtext(a.how)}` : ""}</div>)}
         {row("Future alternative", p.future_alternatives, "wf-acq-alt")}
         {row("Disputed, not a plan", p.disputed_leads, "wf-acq-warn")}
         {(p.blocked_leads || []).map((n: string) => (
@@ -1549,7 +1559,7 @@ function gearPick(s: GSlot, lv: number): { p: GPick | null; i: number; state: "n
 }
 // Gear past 30 (rules.md SPLIT, clarified Oct 31 9:32 AM): notes picks that start at 30 or later and run past 30 (not exact level-30 items) stay, tagged NOTES_PRE. The pre-launch label is only for past-30 slots the notes don't fill.
 function prePick(p: GPick): boolean { return p.from > 30 || (p.from === 30 && p.to > 30 && p.lv.trim() !== "30"); }
-function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror }: { s: GSlot; lv: number; ck: Record<string, boolean>; toggle: (id: string) => void; sel: boolean; onSel: (slot: string) => void; mirror?: boolean }) {
+function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror, who, game }: { s: GSlot; lv: number; ck: Record<string, boolean>; toggle: (id: string) => void; sel: boolean; onSel: (slot: string) => void; mirror?: boolean; who: "V" | "C"; game: Record<string, GameChar> | null }) {
   const { p, i, state } = gearPick(s, lv);
   const label = <div style={{ fontSize: 9, letterSpacing: ".12em", textTransform: "uppercase", color: MUTED }}>{s.slot}</div>;
   if (!p) {
@@ -1577,9 +1587,10 @@ function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror }: { s: GSlot; lv: num
           {chase ? <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: ".08em", padding: "0 5px", borderRadius: 3, background: ORANGE, color: "#1a0d00" }}>CHASE</span> : null}
           {s.picks.length > 1 ? <span style={{ fontSize: 9, color: GOLD }}>{i + 1}/{s.picks.length}</span> : null}
         </div>
-        <div style={{ fontSize: 12, fontWeight: 600, lineHeight: 1.25, color: q[0], textShadow: "0 1px 0 #000", overflowWrap: "anywhere" }}>{p.name}{p.alt && !p.alt_label ? <span style={{ color: MUTED, fontWeight: 400 }}> or <span style={{ color: alt ? QUALITY[alt[1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></span> : null}</div>
+        <div style={{ fontSize: 12, fontWeight: 600, lineHeight: 1.25, color: q[0], textShadow: "0 1px 0 #000", overflowWrap: "anywhere" }}>{p.name}{p.alt && !p.alt_label && !p.alts ? <span style={{ color: MUTED, fontWeight: 400 }}> or <span style={{ color: alt ? QUALITY[alt[1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></span> : null}</div>
         <div style={{ fontSize: 10, color: MUTED, lineHeight: 1.3, overflowWrap: "anywhere" }}>{shortHow(p)}</div>
-        {p.alt && p.alt_label ? <div style={{ fontSize: 10, color: "#b3cbe8", lineHeight: 1.3 }}>{altLabel(p)} · <span style={{ color: alt ? QUALITY[alt[1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></div> : null}
+        {p.alts || p.alt_label ? gAlts(p).map((a: GAlt) => <div key={a.item} style={{ fontSize: 10, color: "#b3cbe8", lineHeight: 1.3 }}>{altLabelOf(a.label)} · <span style={{ color: ITEM_INFO[a.item] ? QUALITY[ITEM_INFO[a.item][1]][0] : INK, fontWeight: 600 }}>{a.item}</span></div>) : null}
+        <GearScore item={p.item} stats={p.stats} slot={s.slot} who={who} game={game} />
         <GearBadges p={p} />
         <div style={{ fontSize: 10, color: state === "soon" ? ORANGE : INK }}>Lv {p.lv}{state === "soon" ? ` · from ${p.from}` : state === "past" ? " · past its range" : ""}</div>
         {prePick(p) ? <span className="wf-mark wf-mark-notes" style={{ fontSize: 9 }}>{NOTES_PRE}</span> : state === "past" && lv > 30 ? <span className="wf-pre wf-pre-sm" title="Your notes have no pick for this slot past 30">{PRE_LABEL}</span> : null}
@@ -1587,7 +1598,8 @@ function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror }: { s: GSlot; lv: num
     </div>
   );
 }
-function GearSheet({ who, lv, ck, toggle }: { who: "sham" | "lock"; lv: number; ck: Record<string, boolean>; toggle: (id: string) => void }) {
+function GearSheet({ who, lv, ck, toggle, game }: { who: "sham" | "lock"; lv: number; ck: Record<string, boolean>; toggle: (id: string) => void; game: Record<string, GameChar> | null }) {
+  const gw: "V" | "C" = who === "sham" ? "V" : "C";
   const sh = GEAR_SHEETS[who];
   const c = who === "sham" ? CHARS[0] : CHARS[1];
   const all = [...sh.left, ...sh.right, ...sh.bottom];
@@ -1598,7 +1610,7 @@ function GearSheet({ who, lv, ck, toggle }: { who: "sham" | "lock"; lv: number; 
   const [sel, setSel] = useState<string>("");
   const cur = multi.find((s: GSlot) => s.slot === sel) ?? chasing.find((s: GSlot) => s.picks.length > 1) ?? chasing[0] ?? multi[0];
   const onSel = (slot: string) => setSel(slot);
-  const slotEl = (s: GSlot, mirror?: boolean) => <GearSlot key={s.slot} s={s} lv={lv} ck={ck} toggle={toggle} sel={!!cur && cur.slot === s.slot} onSel={onSel} mirror={mirror} />;
+  const slotEl = (s: GSlot, mirror?: boolean) => <GearSlot key={s.slot} s={s} lv={lv} ck={ck} toggle={toggle} sel={!!cur && cur.slot === s.slot} onSel={onSel} mirror={mirror} who={gw} game={game} />;
   return (
     <div className="wf-sheetwrap" style={{ margin: "10px 0 14px" }}>
       <Frame accent={c.color} title={`${c.name.split(" ")[0]}: character sheet`} icon={c.classIcon} right={<span style={{ fontSize: 12, color: c.color, fontFamily: SERIF }}>Level {lv}</span>}>
@@ -1638,9 +1650,11 @@ function GearSheet({ who, lv, ck, toggle }: { who: "sham" | "lock"; lv: number; 
                     <TickBox on={got} onClick={() => toggle(p.id)} small color={q[0]} />
                     <Icon icon={info ? info[0] : ""} size={28} ring={q[0]} name={p.name} tip={`${q[1]}${p.faction ? ` · ${p.faction}` : ""} · ${shortHow(p)}`} />
                     <div style={{ minWidth: 0, flex: 1, fontSize: 12 }}>
-                      <span style={{ color: q[0], fontWeight: 600 }}>{p.name}</span>{p.alt && !p.alt_label ? <span style={{ color: MUTED }}> or <span style={{ color: ITEM_INFO[p.alt] ? QUALITY[ITEM_INFO[p.alt][1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></span> : null}
+                      <span style={{ color: q[0], fontWeight: 600 }}>{p.name}</span>{p.alt && !p.alt_label && !p.alts ? <span style={{ color: MUTED }}> or <span style={{ color: ITEM_INFO[p.alt] ? QUALITY[ITEM_INFO[p.alt][1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></span> : null}
                       {isNow && !got ? <span style={{ marginLeft: 6, fontSize: 9, fontWeight: 700, padding: "0 5px", borderRadius: 3, background: ORANGE, color: "#1a0d00" }}>CHASE</span> : null}
                       <div style={{ fontSize: 10, color: MUTED }}>Lv {gtext(p.lv)} · {shortHow(p)}</div>
+                      <GearScore item={p.item} stats={p.stats} slot={cur.slot} who={gw} game={game} />
+                      {gAlts(p).map((a: GAlt) => <div key={a.item} style={{ fontSize: 11, color: "#b3cbe8", lineHeight: 1.5 }}>{altLabelOf(a.label)} · <span style={{ color: ITEM_INFO[a.item] ? QUALITY[ITEM_INFO[a.item][1]][0] : INK, fontWeight: 600 }}>{a.item}</span> <GearScore item={a.item} stats={a.stats} slot={cur.slot} who={gw} game={game} /></div>)}
                       <GearBadges p={p} />
                       <GearAcq p={p} open={isNow && !got} />
                       {prePick(p) ? <div style={{ marginTop: 2 }}><span className="wf-mark wf-mark-notes" style={{ fontSize: 9 }}>{NOTES_PRE}</span></div> : null}
@@ -1651,7 +1665,7 @@ function GearSheet({ who, lv, ck, toggle }: { who: "sham" | "lock"; lv: number; 
             </div>
           </div>
         ) : null}
-        <div style={{ fontSize: 10, color: MUTED, marginTop: 8 }}>Picks: your Oct 22 gear notes, Horde-audited by the Bot on Nov 7 (feed v18): each item's steps, faction, sources and open questions are in its "How to get it" panel. Unofficial = a guide or database, not confirmed in the live game. Item icon and quality colour: Wowhead's WoW Forever item database, read Oct 30.</div>
+        <div style={{ fontSize: 10, color: MUTED, marginTop: 8 }}>Picks: your Oct 22 gear notes, Horde-audited by the Bot on Nov 7 (feed v18): each item's steps, faction, sources and open questions are in its "How to get it" panel. Unofficial = a guide or database, not confirmed in the live game. Score = the item's stats times this character's stat priorities (an estimate); the coloured number is the change against what you are wearing in game. Item icon and quality colour: Wowhead's WoW Forever item database, read Oct 30.</div>
         <PreLine lead="Gear past 30: your notes' picks are tagged “from notes, pre-launch, stats unconfirmed” (no stats shown). Past-30 slots your notes don't fill:" />
       </Frame>
     </div>
@@ -1840,6 +1854,32 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: "V" | "C"; lv: number
       </div>
     </Frame>
   );
+}
+
+// Nov 10 (Bot request): each gear pick shows its stat score and, when the game sync has the worn item's stats,
+// the change against what is equipped. Stats come from the pick itself (pick.stats) or its dungeons.LOOT row.
+const LOOT_BY_ITEM: Record<string, DLoot> = {};
+DLOOT.forEach((l: DLoot) => { if (!LOOT_BY_ITEM[l.item] || (!LOOT_BY_ITEM[l.item].stats && l.stats)) LOOT_BY_ITEM[l.item] = l; });
+const SHEET_SLOT: Record<string, string> = { "ring 1": "finger", "ring 2": "finger", "trinket 1": "trinket", "trinket 2": "trinket", "main hand (2h)": "two-hand", wand: "ranged", totem: "ranged" };
+function gearScore(item: string, stats: Record<string, number> | undefined, sheetSlot: string, who: "V" | "C", game: Record<string, GameChar> | null): { score: number; c: DCmp } | null {
+  const row = LOOT_BY_ITEM[item];
+  const st = stats || (row ? row.stats : undefined);
+  if (!st) return null;
+  const slot = row ? row.slot : SHEET_SLOT[sheetSlot.toLowerCase()] || sheetSlot;
+  const w0 = STAT_WEIGHTS[who] || {};
+  const w = dSlot(slot) === "ranged" && w0.wand !== undefined ? { ...w0, dps: w0.wand } : w0;
+  const g = game && game[who] ? game[who] : null;
+  const eq = g && g.equipped && Object.keys(g.equipped).length ? g.equipped : null;
+  return { score: Math.round(dScore(st, w) * 10) / 10, c: dunCompare({ dkey: "", item, id: row ? row.id : undefined, slot, stats: st }, eq, w0) };
+}
+function GearScore({ item, stats, slot, who, game }: { item: string; stats?: Record<string, number>; slot: string; who: "V" | "C"; game: Record<string, GameChar> | null }) {
+  const r = gearScore(item, stats, slot, who, game);
+  if (!r) return null;
+  const c = r.c;
+  const tone = c.kind !== "cmp" ? MUTED : c.score >= 1 ? FEL : c.score <= -1 ? "#ff6b5a" : GOLD;
+  const vs = c.kind === "have" ? "wearing it" : c.kind === "cmp" ? `${c.score > 0 ? "+" : ""}${c.score} vs ${c.replaces.length ? "worn" : "empty slot"}` : "";
+  const tip = c.kind === "cmp" ? `${c.replaces.length ? `Against ${c.replaces.join(" + ")}` : "The slot is empty"}: ${c.deltas.map((d: [string, number]) => `${d[1] > 0 ? "+" : ""}${d[1]} ${(STAT_LABEL.find((x: [string, string]) => x[0] === d[0]) || ["", d[0]])[1]}`).join(", ")}. An estimate from stat priorities, not a simulation.` : "Stat score: the item's stats times this character's stat priorities. An estimate, not a simulation.";
+  return <span className="wf-gscore" title={tip}>Score {r.score}{vs ? <span style={{ color: tone, fontWeight: 700 }}> · {vs}</span> : null}</span>;
 }
 
 // ===== Vorgash totem presets per dungeon: from "Totem presets per dungeon" in Shaman - Gear and Dungeons.md (notes commit f0d0af1) =====
@@ -2791,7 +2831,7 @@ export default function App() {
 
       <Section heading="Gear and dungeons" id="gear" caption="Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server.">
         {view === "both" ? <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: `${V_NAME} (Shaman) · Alt` }]} value={gearChar} onChange={(v: string) => setGearChar(v)} /> : null}
-        <GearSheet who={gearChar === "lock" ? "lock" : "sham"} lv={gearChar === "lock" ? lvC : lvV} ck={st.ck} toggle={toggle} />
+        <GearSheet who={gearChar === "lock" ? "lock" : "sham"} lv={gearChar === "lock" ? lvC : lvV} ck={st.ck} toggle={toggle} game={game} />
         <Table columns={dCols.map((k: number) => ["Cleared", "Dungeon", "Levels", V_NAME, `Preset (${V_NAME})`, "Corvin"][k])} rows={DUNGEONS.map((r: string[], i: number) => [
           <span style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 11 }}>{showV ? <><TickBox on={!!st.ck[`dv${DKEYS[i]}`]} onClick={() => toggle(`dv${DKEYS[i]}`)} small color={SHAMAN} />V</> : null}{showC ? <><TickBox on={!!st.ck[`dc${DKEYS[i]}`]} onClick={() => toggle(`dc${DKEYS[i]}`)} small color={WARLOCK} />C</> : null}</span>,
           r[0], dunTop(r[1]) > 30 ? <span style={{ display: "inline-flex", flexDirection: "column", gap: 2 }}>{r[1]}<span className="wf-pre wf-pre-sm" title={`${PRE_LABEL} · ${PRE_MARKS.notes[1]}`}>31+ pre-launch</span></span> : r[1], dunCell(r[2]), <PresetCell i={i} open={presetOpen.indexOf(i) >= 0} onToggle={togglePreset} />, dunCell(r[3])].filter((_c: ReactNode, k: number) => dCols.indexOf(k) >= 0))} />

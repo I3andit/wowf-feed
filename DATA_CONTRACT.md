@@ -72,6 +72,15 @@ The page's "Dungeon gear" panel lists what each dungeon gives a character and co
 
 The upgrade score on the page is the stat change times these weights. It is an estimate, not a simulation.
 
+### Gear pick extras: `alts` and `stats` (optional, added 2026-11-10)
+
+Each pick in `gear.GEAR_SHEETS` may carry two more optional fields.
+
+- `alts`: a list of alternates, `[{ "item": "Exact Item Name", "label": "Alt — short reason", "how": "how to get it", "stats": { ... } }]`. When present it replaces the single `alt` / `alt_label` / `alt_acquisition` trio for display, so put every alternate in it, the old one included. Leave the old trio in place too if you like; the page ignores it once `alts` exists.
+- `stats`: the pick's own stats, same keys as `dungeons.LOOT`. Only needed for picks that have no `LOOT` row (crafted items, world quests, vendor items). Picks and alternates that match a `LOOT` row by exact item name take their stats, slot and item id from that row.
+
+The sheet shows "Score N" on every pick and alternate that has stats, plus the change against the item worn in game when the game sync has that item's stats. Keep any score you write into how-to text in step with these stats, because the page number is computed and yours is typed.
+
 ## Rules the checker enforces (a push that breaks one is ignored)
 
 1. Valid JSON, under 2 MB, every section and key in the table above present.
