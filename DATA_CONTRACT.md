@@ -81,6 +81,31 @@ Each pick in `gear.GEAR_SHEETS` may carry two more optional fields.
 
 The sheet shows "Score N" on every pick and alternate that has stats, plus the change against the item worn in game when the game sync has that item's stats. Keep any score you write into how-to text in step with these stats, because the page number is computed and yours is typed.
 
+### Respec plans and reference copies (optional, added 2026-11-10)
+
+A class's leveling plan can change talent order part way up. The page reads these optional fields on `talents.BUILD_DEFS` entries:
+
+| Field | Meaning |
+|---|---|
+| `primary` | `true` on the one warlock build Corvin follows. Its `seq` becomes the default guide for Next ding, Rotations, Naga and the path. A guide pick saved before this build was primary resets to it once. Only one build per class. |
+| `respec_at` | The level of the respec. Put it on both halves of the plan. |
+| `before` | On the main build: the `key` of the build that is in force below `respec_at`. |
+| `then` | On the first-half build: the `key` of the main build. A build with `then` is not offered as a guide of its own. |
+
+What the page does with a respec plan: the talent planner, Next ding and the launch card use the first-half order below `respec_at` and the main order from it on (all points re-spent from the main order's first point). The planner shows a "Respec at N" banner, a marker in the level strip and on the slider. Next ding shows the countdown, and one level before the respec it prints the body of the `PATH_NODES` entry whose `at` equals `respec_at`, so keep the respec instructions in that node. A rotation step or unlock that names a `talent` from the main order never shows a level below `respec_at`.
+
+Reference copies. When Corvin's picked guide is not the primary plan, the page swaps to the kept copies when they exist, so keep them complete:
+
+- `rotations.ROT.aff` and `.demo`: `quest_icy` and `dungeon_icy` (same shape as `quest` / `dungeon`). The Rotations card also has a reference button that shows them on request.
+- `naga.NAGA.aff` and `.demo`: `auto_icy` (same shape as `auto`).
+- `talents.PATH_NODES_ICY` (same shape as `PATH_NODES`). The old hardcoded path cards (Soul Link respec, respec cost, Spec 2 at 40) only show with these.
+
+On the primary plan the path header is built from the main build (short name plus its final split) and the two cards under the timeline are the two builds' `label`, `blurb`, `src`, `date` and `tag`. A `PATH_NODES` entry's `_tag` shows as a chip under its text.
+
+Names the page derives, so word them with that in mind: the guide picker and the path header call a respec plan "<first word of the main build's label> respec <level>" (for example "Mobalytics respec 26"). Corvin's first Rotations and Naga tab is called "Leveling (<first word of ROT.aff.quest.src[0].label>)" on a primary plan and "Affliction" otherwise. From `respec_at` the Demonology tab is the one opened by default. The hero line under Corvin's name is `characters.CHARS[1].line`.
+
+Section captions were already data: `captions.path`, `captions.builds`, `captions.rotations`, `captions.naga` and `captions.macros` replace the built-in captions (see the `captions` row in the table above).
+
 ## Rules the checker enforces (a push that breaks one is ignored)
 
 1. Valid JSON, under 2 MB, every section and key in the table above present.

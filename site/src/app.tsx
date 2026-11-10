@@ -211,6 +211,9 @@ const CSS = `
 .wf-dun-row { display: grid; grid-template-columns: 38px 1fr minmax(150px, 230px); gap: 10px; align-items: center; padding: 6px 8px; border-radius: 8px; border: 1px solid #3a3020; background: rgba(0,0,0,.28); }
 @media (max-width: 640px) { .wf-dun-row { grid-template-columns: 38px 1fr; } .wf-dun-row > :last-child { grid-column: 1 / -1; } }
 .wf-dun-row-up { border-color: rgba(30,255,0,.45); background: rgba(30,255,0,.05); }
+.wf-respec { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 12px; margin-bottom: 12px; border-radius: 8px; border: 1px solid ${FEL}; background: rgba(30,255,0,.06); color: ${INK}; font-size: 12px; }
+.wf-respec-tag { padding: 1px 8px; border-radius: 999px; background: #062300; border: 1px solid ${FEL}; color: ${FEL}; font-weight: 700; white-space: nowrap; }
+.wf-respec-chip { align-self: center; height: 26px; padding: 0 6px; margin: 0 3px; border-radius: 4px; border: 1px solid ${FEL}; background: #062300; color: ${FEL}; font-size: 10px; font-weight: 700; cursor: pointer; }
 .wf-gscore { display: inline-block; font-size: 10px; line-height: 1.55; padding: 0 6px; margin: 1px 0; border-radius: 4px; border: 1px solid #4a3d22; color: ${INK}; background: rgba(0,0,0,.35); white-space: nowrap; }
 .wf-dun-tag { display: inline-block; padding: 0 7px; border-radius: 4px; border: 1px solid currentColor; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; line-height: 1.6; }
 .wf-dun-d { display: inline-block; margin-right: 8px; font-size: 12px; font-weight: 600; white-space: nowrap; }
@@ -417,7 +420,7 @@ function Hero({ view, setView }: { view: View; setView: (v: View) => void }) {
       <div className="wf-shimmer" style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 2 }} />
       <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
         <div style={{ display: "flex", gap: 8 }}>
-          {([["C", "classicon_warlock", WARLOCK, "Corvin Ashmourne", "Undead Warlock, Affliction leveling, Demonology Spec 2 · Guild main"], ["V", "classicon_shaman", SHAMAN, V_FULL, `${CHARS[0].line} · Alt`]] as [("C" | "V"), string, string, string, string][]).map((o: [("C" | "V"), string, string, string, string]) => (
+          {([["C", "classicon_warlock", WARLOCK, "Corvin Ashmourne", `${CHARS[1].line} · Guild main`], ["V", "classicon_shaman", SHAMAN, V_FULL, `${CHARS[0].line} · Alt`]] as [("C" | "V"), string, string, string, string][]).map((o: [("C" | "V"), string, string, string, string]) => (
             <button key={o[0]} type="button" className={`wf-btn wf-portrait${view === o[0] ? " wf-portrait-on" : view === "both" ? "" : " wf-portrait-off"}`} aria-pressed={view === o[0]} onClick={() => setView(o[0])} title={`Show ${o[3].split(" ")[0]}'s page`}>
               <Icon icon={o[1]} size={52} ring={o[2]} name={o[3]} tip={`${o[4]} · click for ${o[3].split(" ")[0]}'s page`} />
             </button>
@@ -589,9 +592,13 @@ type NagaSpec = { stages: Stage[]; shift: Bind[]; fkeys: FKey[]; auto?: NAuto };
 type NPool = { key: string; spell: string; icon: string; kind: string; covers?: string[]; lvl?: number; talent?: string; at?: number; until?: number; untilTalent?: string; note?: string; alt?: boolean };
 type NAuto = { pool: NPool[]; skip?: string[]; mode?: string; src?: string };
 type NSlot = { key: string; spell: string; icon: string; note?: string; alt?: boolean; lv: number; locked: boolean; rot: boolean; ord: number };
+function nagaAuto(spec: string): NAuto | undefined {
+  const n: any = WF_DATA.naga.NAGA[spec];
+  return (refMode(spec) && n.auto_icy) || n.auto;
+}
 function nagaSlots(spec: string, lv: number): NSlot[] {
-  const a: NAuto | undefined = (WF_DATA.naga.NAGA[spec] as NagaSpec).auto;
-  const r: Rot = ROT[spec][a && a.mode ? a.mode : "quest"];
+  const a: NAuto | undefined = nagaAuto(spec);
+  const r: Rot = rotOf(spec, a && a.mode ? a.mode : "quest");
   const seq = r.seq;
   const steps = r.steps.map((st: RStep) => ({ ...st, lvl: rotLv(st, seq) })).filter((st: RStep) => !(st.until && lv >= st.until));
   const skip = a && a.skip ? a.skip : [];
@@ -808,39 +815,80 @@ function expand(steps: Step[]): string[] {
 const SEQ: Record<string, string[]> = {};
 Object.keys(ORDERS).forEach((k: string) => { SEQ[k] = expand(ORDERS[k]); });
 
-type BuildDef = { key: string; label: string; cls: "shaman" | "warlock"; seq?: string; fixed?: string; path?: boolean; src: string; date: string; url: string; blurb: string; tag?: string };
+type BuildDef = { key: string; label: string; cls: "shaman" | "warlock"; seq?: string; fixed?: string; path?: boolean; src: string; date: string; url: string; blurb: string; tag?: string; respec_at?: number; before?: string; then?: string; primary?: boolean };
 const BUILD_DEFS: BuildDef[] = WF_DATA.talents.BUILD_DEFS;
+
+// Respec plans (Nov 10, Bot request): a build with `before` only starts at `respec_at`; until then its `before` build's
+// order is the one in force (that build points back with `then`). `primary` marks the plan a class follows by default.
+type Plan = { main: BuildDef; pre?: BuildDef; at: number };
+function buildOfSeq(seq: string, cls?: string): BuildDef | undefined {
+  return BUILD_DEFS.find((b: BuildDef) => b.seq === seq && !b.path && !b.fixed && (!cls || b.cls === cls));
+}
+function planOf(def?: BuildDef): Plan | null {
+  if (!def || !def.seq || !SEQ[def.seq]) return null;
+  const byKey = (k?: string) => BUILD_DEFS.find((b: BuildDef) => b.key === k && !!b.seq && !!SEQ[b.seq]);
+  const main = def.then ? byKey(def.then) : undefined;
+  if (main) { const at = def.respec_at ?? main.respec_at ?? 0; return at ? { main, pre: def, at } : { main: def, at: 0 }; }
+  const pre = def.before && def.respec_at ? byKey(def.before) : undefined;
+  return pre ? { main: def, pre, at: def.respec_at as number } : { main: def, at: 0 };
+}
+function planDefAt(plan: Plan, level: number): BuildDef { return plan.pre && level < plan.at ? plan.pre : plan.main; }
+function buildShort(b: BuildDef): string { return b.label.split(" (")[0]; }
+// "Unholy Power 5, Demonic Energies 2, ..." for the first n points of an order.
+function seqSteps(seq: string[], n: number): string {
+  const out: [string, number][] = [];
+  seq.slice(0, n).forEach((t: string) => { const last = out[out.length - 1]; if (last && last[0] === t) last[1]++; else out.push([t, 1]); });
+  return out.map((x: [string, number]) => `${x[0]} ${x[1]}`).join(", ");
+}
 
 // Followed leveling guide per class (Nov 7): Next ding, rotations and Naga take talent levels from the guide picked
 // in Next ding instead of always Icy Veins. Rotation data names the default orders (enh_lvl / aff_lvl); guideSeq swaps them.
-const GUIDE_DEFAULT: Record<string, string> = { shaman: "enh_lvl", warlock: "aff_lvl" };
+// Nov 10: the warlock default is the feed's primary plan when it names one (Mobalytics' Demonology respec at 26).
+const GUIDE_OLD_LOCK = "aff_lvl"; // the order the kept reference rotations (quest_icy / dungeon_icy) name
+const PRIMARY_LOCK = BUILD_DEFS.find((b: BuildDef) => b.cls === "warlock" && !!b.primary && !b.fixed && !b.path && !!b.seq && !!SEQ[b.seq]);
+const GUIDE_DEFAULT: Record<string, string> = { shaman: "enh_lvl", warlock: PRIMARY_LOCK ? (PRIMARY_LOCK.seq as string) : GUIDE_OLD_LOCK };
 let GUIDE: Record<string, string> = { ...GUIDE_DEFAULT };
-const GUIDE_SHORT: Record<string, string> = { enh_lvl: "Icy Veins", enh_notes: "Your notes", enh_mob: "Mobalytics", enh_nicktew: "Nicktew", aff_lvl: "Icy Veins", aff_icy: "Mobalytics" };
+const GUIDE_SHORT: Record<string, string> = { enh_lvl: "Icy Veins", enh_notes: "Your notes", enh_mob: "Mobalytics", enh_nicktew: "Nicktew", aff_lvl: "Icy Veins", aff_icy: "Mobalytics Affliction" };
 function guideOptions(cls: string): BuildDef[] {
   const seen: Record<string, boolean> = {};
   return BUILD_DEFS.filter((b: BuildDef) => {
-    if (b.cls !== cls || b.fixed || b.path || !b.seq || !SEQ[b.seq] || seen[b.seq]) return false;
-    if (cls === "warlock" && b.seq.indexOf("aff") !== 0) return false; // Corvin's Spec 1 is Affliction; Demonology stays Spec 2
+    // `then` builds are the first half of a respec plan, not a guide of their own.
+    if (b.cls !== cls || b.fixed || b.path || b.then || !b.seq || !SEQ[b.seq] || seen[b.seq]) return false;
+    if (cls === "warlock" && b.seq.indexOf("aff") !== 0 && b.seq !== GUIDE_DEFAULT.warlock) return false; // the plan plus the Affliction orders
     seen[b.seq] = true;
     return true;
-  });
+  }).sort((a: BuildDef, b: BuildDef) => (b.seq === GUIDE_DEFAULT[cls] ? 1 : 0) - (a.seq === GUIDE_DEFAULT[cls] ? 1 : 0));
+}
+// True when Corvin's picked guide is not the feed's primary plan: rotations, Naga pools and path nodes then use the
+// kept reference copies (quest_icy / dungeon_icy / auto_icy / PATH_NODES_ICY).
+function refMode(spec: string): boolean { return spec !== "enh" && GUIDE.warlock !== GUIDE_DEFAULT.warlock; }
+// Levels a talent order cannot beat: points of a respec plan's main order exist from the respec level at the earliest.
+function respecFloor(seq?: string): number {
+  const p = seq ? planOf(buildOfSeq(seq)) : null;
+  return p && p.pre && p.main.seq === seq ? p.at : 0;
 }
 function guideShort(seq: string): string {
   if (GUIDE_SHORT[seq]) return GUIDE_SHORT[seq];
   const b = BUILD_DEFS.find((x: BuildDef) => x.seq === seq);
+  if (b && b.before && b.respec_at) return `${b.label.split(" ")[0]} respec ${b.respec_at}`;
   return b ? b.label.split(" (")[0] : seq;
 }
 function cleanGuide(g: any): Record<string, string> {
   const out: Record<string, string> = { ...GUIDE_DEFAULT };
+  // A warlock pick saved before the feed named this primary plan belongs to the old plan: it resets once to the new one.
+  const stale = !g || g.plan !== GUIDE_DEFAULT.warlock;
   ["shaman", "warlock"].forEach((cls: string) => {
     const v = g && typeof g[cls] === "string" ? g[cls] : "";
+    if (cls === "warlock" && stale) return;
     if (guideOptions(cls).some((b: BuildDef) => b.seq === v)) out[cls] = v;
   });
+  out.plan = GUIDE_DEFAULT.warlock;
   return out;
 }
 function guideSeq(seq?: string): string | undefined {
   if (seq === GUIDE_DEFAULT.shaman) return GUIDE.shaman;
   if (seq === GUIDE_DEFAULT.warlock) return GUIDE.warlock;
+  if (seq === GUIDE_OLD_LOCK && GUIDE.warlock !== GUIDE_DEFAULT.warlock) return GUIDE.warlock; // reference rotations follow the picked Affliction order
   return seq;
 }
 
@@ -943,24 +991,39 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
   const [legacy, setLegacy] = useState<boolean>(false);
   const [tabOverride, setTabOverride] = useState<number | null>(null);
   const def = BUILD_DEFS.find((b: BuildDef) => b.key === buildKey) ?? BUILD_DEFS[0];
+  // Respec plan (Nov 10): the order shown is the one in force at the slider's level.
+  const plan = def.fixed || def.path ? null : planOf(def);
+  const respecAt = plan && plan.pre ? plan.at : 0;
+  const cur = plan ? planDefAt(plan, level) : def;
+  const litKey = respecAt ? cur.key : buildKey;
   const accent = def.cls === "shaman" ? SHAMAN : WARLOCK;
   const cls: string = def.cls;
   useEffect(() => { setTabOverride(null); }, [buildKey, pathSpec]);
   const shift = legacy ? 5 : 0;
   const pts = def.fixed ? 51 : Math.max(0, Math.min(51, level - 9 + shift));
   const usingSpec2 = !!def.path && pathSpec === 2 && level >= 40;
-  const seq: string[] = def.fixed ? expand(STATIC[def.fixed]) : usingSpec2 ? SEQ.demo_lvl : SEQ[def.seq ?? "aff_lvl"];
-  const ranks = useMemo(() => allocate(seq, pts), [buildKey, pts, usingSpec2]);
+  const seq: string[] = def.fixed ? expand(STATIC[def.fixed]) : usingSpec2 ? SEQ.demo_lvl : SEQ[cur.seq ?? "aff_lvl"];
+  const ranks = useMemo(() => allocate(seq, pts), [buildKey, pts, usingSpec2, cur.key]);
   const split = TREES[def.cls].map((_tr: TreeRaw, ti: number) => TAL_LIST[def.cls][ti].reduce((s: number, t: Tal) => s + (ranks[t.name] ?? 0), 0));
   const autoTab = split.indexOf(Math.max(...split));
-  const nextName = !def.fixed && pts < 51 ? seq[pts] : "";
+  const nextName = !def.fixed && pts < 51 ? seq[pts] ?? "" : "";
   const nextTal = nextName ? TAL_INDEX[def.cls][nextName] : undefined;
   const tab = tabOverride ?? (nextTal ? nextTal.tree : autoTab);
   const nextRank = nextName ? (ranks[nextName] ?? 0) + 1 : 0;
   const nextLevel = pts + 10 - shift;
   const lastName = !def.fixed && pts > 0 ? seq[pts - 1] : "";
-  const builds = BUILD_DEFS.filter((b: BuildDef) => b.cls === cls);
-  const pickBuild = (k: string) => { setBuildKey(k); setTabOverride(null); };
+  const pillRank = (b: BuildDef) => (b.then ? 0 : b.before || b.primary ? 1 : 2); // the followed plan leads the pill row
+  const builds = BUILD_DEFS.filter((b: BuildDef) => b.cls === cls).sort((a: BuildDef, b: BuildDef) => pillRank(a) - pillRank(b));
+  const pickBuild = (k: string, jump?: boolean) => {
+    setBuildKey(k); setTabOverride(null);
+    // Picking one half of a respec plan moves the slider into that half, so the pill you click is the order you see.
+    const p = jump ? planOf(BUILD_DEFS.find((b: BuildDef) => b.key === k)) : null;
+    if (p && p.pre) { if (k === p.main.key && level < p.at) setLevel(p.at); else if (k === p.pre.key && level >= p.at) setLevel(p.at - 1); }
+  };
+  const mapStrip = (q: string[], pre: boolean) => q.map((n: string, i: number) => ({ n, lv: i + 10 - shift, pre }));
+  const strip: { n: string; lv: number; pre: boolean }[] = respecAt && plan && plan.pre && !usingSpec2 && level < respecAt
+    ? [...mapStrip(SEQ[plan.pre.seq as string], true).filter((x: { lv: number }) => x.lv < respecAt), ...mapStrip(SEQ[plan.main.seq as string], false).filter((x: { lv: number }) => x.lv >= respecAt)]
+    : mapStrip(seq, false);
   return (
     <Frame accent={accent} title="Talents" icon={def.cls === "shaman" ? "classicon_shaman" : "classicon_warlock"} right={<span style={{ fontSize: 12, color: MUTED }}>0hp.com talent data · build 1.60.1.70707 · read Oct 30</span>}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 10 }}>
@@ -972,19 +1035,19 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
         {builds.map((b: BuildDef) => (
-          <button key={b.key} type="button" className="wf-btn" onClick={() => pickBuild(b.key)} style={{ padding: "5px 10px", borderRadius: 999, border: `1px solid ${b.key === buildKey ? GOLD_HI : "#4a3d22"}`, background: b.key === buildKey ? "linear-gradient(180deg,#5a4318,#2a1f0e)" : "#14110d", color: b.key === buildKey ? GOLD_HI : INK, fontSize: 12 }}>
-            {b.fixed ? "◆ " : b.path ? "⇄ " : "▲ "}{b.label}
+          <button key={b.key} type="button" className="wf-btn" onClick={() => pickBuild(b.key, true)} style={{ padding: "5px 10px", borderRadius: 999, border: `1px solid ${b.key === litKey ? GOLD_HI : "#4a3d22"}`, background: b.key === litKey ? "linear-gradient(180deg,#5a4318,#2a1f0e)" : "#14110d", color: b.key === litKey ? GOLD_HI : INK, fontSize: 12 }}>
+            {b.fixed ? "◆ " : b.path ? "⇄ " : b.then || b.before ? "⟳ " : "▲ "}{b.label}
           </button>
         ))}
       </div>
       <div style={{ fontSize: 12, color: MUTED, marginBottom: 10 }}>
-        <span style={{ color: INK }}>{def.blurb}</span> Source: <a href={def.url} target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>{def.src}</a>, {def.date}.{def.tag ? <span style={{ marginLeft: 6, padding: "0 6px", border: "1px solid #888", borderRadius: 4, color: "#ccc" }}>{def.tag}</span> : null}
+        <span style={{ color: INK }}>{cur.blurb}</span> Source: <a href={cur.url} target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>{cur.src}</a>, {cur.date}.{cur.tag ? <span style={{ marginLeft: 6, padding: "0 6px", border: "1px solid #888", borderRadius: 4, color: "#ccc" }}>{cur.tag}</span> : null}
       </div>
       {def.fixed ? (
-        <div style={{ padding: "8px 12px", border: "1px dashed #6b5a33", borderRadius: 8, color: MUTED, fontSize: 12, marginBottom: 12 }}>Level 60 build: all 51 points shown. Pick a ▲ build to use the level slider. <PreTag mark="guide" src={`${def.src}, ${def.date}`} /></div>
+        <div style={{ padding: "8px 12px", border: "1px dashed #6b5a33", borderRadius: 8, color: MUTED, fontSize: 12, marginBottom: 12 }}>Level 60 build: all 51 points shown. Pick a ▲ build to use the level slider. <PreTag mark="guide" src={`${cur.src}, ${cur.date}`} /></div>
       ) : (
         <div style={{ marginBottom: 12 }}>
-          <Slider value={level} min={1} max={60} onChange={(v: number) => { setLevel(v); setTabOverride(null); }} color={accent} label={def.cls === "shaman" ? `Level · follows ${V_NAME}` : "Level · follows Corvin"} marks={[{ at: 10, label: "10 first point" }, { at: 30, label: "30" }, { at: 40, label: "40 Dual Spec" }, { at: 60, label: "60" }]} />
+          <Slider value={level} min={1} max={60} onChange={(v: number) => { setLevel(v); setTabOverride(null); }} color={accent} label={def.cls === "shaman" ? `Level · follows ${V_NAME}` : "Level · follows Corvin"} marks={[{ at: 10, label: "10 first point" }, respecAt ? { at: respecAt, label: `${respecAt} respec` } : { at: 30, label: "30" }, { at: 40, label: "40 Dual Spec" }, { at: 60, label: "60" }]} />
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", marginTop: 8, fontSize: 12, color: MUTED }}>
             <span>Points spent: <b style={{ color: GOLD_HI }}>{pts}</b>/51 · split <b style={{ color: INK }}>{split.join("/")}</b></span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}><Toggle label="Legacy Talented maxed: points up to 5 levels early" value={legacy} onChange={(v: boolean) => setLegacy(v)} /></span>
@@ -1000,21 +1063,32 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
           </div>
         </div>
       )}
+      {respecAt && plan && plan.pre ? (
+        <div className="wf-respec">
+          <span className="wf-respec-tag">⟳ Respec at {respecAt}</span>
+          <span style={{ flex: "1 1 260px" }}>{level < respecAt
+            ? `Until then you follow "${buildShort(plan.pre)}". At ${respecAt} every point is reset and spent again in the "${buildShort(plan.main)}" order.`
+            : `From ${respecAt} you follow "${buildShort(plan.main)}": all ${pts} points are spent in its order from the first one. Levels 10 to ${respecAt - 1} used "${buildShort(plan.pre)}".`}</span>
+          <button type="button" className="wf-btn" onClick={() => { setLevel(level < respecAt ? respecAt : respecAt - 1); setTabOverride(null); }} style={{ padding: "3px 10px", borderRadius: 6, border: `1px solid ${FEL}`, background: "#062300", color: FEL, fontSize: 12 }}>{level < respecAt ? `Show level ${respecAt}` : `Show level ${respecAt - 1}`}</button>
+        </div>
+      ) : null}
       {nextTal ? (
-        <div className="wf-pop" key={`${buildKey}-${pts}-${usingSpec2}`} style={{ display: "flex", gap: 12, alignItems: "center", padding: 12, marginBottom: 14, borderRadius: 10, border: `1px solid ${GOLD}`, background: "linear-gradient(90deg, rgba(245,215,122,.14), rgba(0,0,0,.2))" }}>
+        <div className="wf-pop" key={`${buildKey}-${cur.key}-${pts}-${usingSpec2}`} style={{ display: "flex", gap: 12, alignItems: "center", padding: 12, marginBottom: 14, borderRadius: 10, border: `1px solid ${GOLD}`, background: "linear-gradient(90deg, rgba(245,215,122,.14), rgba(0,0,0,.2))" }}>
           <div className="wf-next" style={{ borderRadius: 6 }}><Icon icon={nextTal.icon} size={48} ring={GOLD_HI} /></div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: 11, color: GOLD, letterSpacing: ".1em", textTransform: "uppercase" }}>Next point · level {Math.max(1, nextLevel)}</div>
             <div style={{ fontFamily: SERIF, fontSize: 18, color: "#fff" }}>{nextTal.name} <span style={{ color: FEL, fontSize: 14 }}>{nextRank}/{nextTal.max}</span> <span style={{ color: MUTED, fontSize: 12 }}>· {TREES[def.cls][nextTal.tree].name}</span></div>
             <div style={{ fontSize: 12, color: "#ffd100" }}>{WHY[nextTal.name] ?? (nextRank >= nextTal.max ? nextTal.rm : nextTal.r1)}</div>
-            {nextLevel > 30 ? <div style={{ marginTop: 4 }}><PreTag mark="guide" src={`${def.src}, ${def.date}`} /></div> : null}
+            {nextLevel > 30 ? <div style={{ marginTop: 4 }}><PreTag mark="guide" src={`${cur.src}, ${cur.date}`} /></div> : null}
           </div>
           {lastName ? <div style={{ fontSize: 11, color: MUTED, textAlign: "right" }}>Last taken<br /><span style={{ color: INK }}>{lastName}</span></div> : null}
         </div>
       ) : !def.fixed && pts === 0 ? (
         <div style={{ padding: 10, marginBottom: 14, borderRadius: 8, border: "1px dashed #6b5a33", color: MUTED, fontSize: 12 }}>No talent points before level 10{legacy ? " (5 with Legacy Talented)" : ""}. First pick: <b style={{ color: GOLD_HI }}>{seq[0]}</b>.</div>
+      ) : !def.fixed && respecAt && plan && level < respecAt ? (
+        <div style={{ padding: 10, marginBottom: 14, borderRadius: 8, border: `1px solid ${FEL}`, color: INK, fontSize: 13 }}><b style={{ color: FEL }}>Next: respec at level {respecAt}.</b> Reset talents, then spend {respecAt - 9} points in the "{buildShort(plan.main)}" order: {seqSteps(SEQ[plan.main.seq as string], respecAt - 9)}.</div>
       ) : !def.fixed ? (
-        <div style={{ padding: 10, marginBottom: 14, borderRadius: 8, border: `1px solid ${GOLD}`, color: GOLD_HI, fontSize: 13 }}>All 51 points spent. Build complete. <PreTag mark="guide" src={`${def.src}, ${def.date}`} /></div>
+        <div style={{ padding: 10, marginBottom: 14, borderRadius: 8, border: `1px solid ${GOLD}`, color: GOLD_HI, fontSize: 13 }}>All 51 points spent. Build complete. <PreTag mark="guide" src={`${cur.src}, ${cur.date}`} /></div>
       ) : null}
       <div style={{ display: "flex", gap: 4, marginBottom: 12, flexWrap: "wrap" }}>
         {TREES[def.cls].map((tr: TreeRaw, ti: number) => (
@@ -1030,21 +1104,27 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
         <div style={{ marginTop: 14 }}>
           <div style={{ fontSize: 11, color: GOLD, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 6 }}>Level-by-level path · click a level to jump</div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
-            {seq.map((n: string, i: number) => {
+            {strip.map((x: { n: string; lv: number; pre: boolean }, i: number) => {
+              const n = x.n;
               const tl = TAL_INDEX[def.cls][n];
-              const lv = i + 10 - shift;
-              const taken = i < pts;
+              const lv = x.lv;
+              const taken = lv <= level;
+              const again = !!respecAt && !x.pre && lv < respecAt; // spent again at the respec, not at this level
+              const mark = !!respecAt && lv >= respecAt && i > 0 && strip[i - 1].lv < respecAt;
               return (
-                <button key={i} type="button" className="wf-chip" onClick={() => { setLevel(Math.max(1, lv)); setTabOverride(null); }} title={`Level ${lv}: ${n}${lv > 30 ? " · guide theorycraft, Classic-based" : ""}`} style={{ padding: 0, border: "none", background: "none", cursor: "pointer", position: "relative", outline: lv > 30 ? "1px dashed #ff9b3d" : undefined, outlineOffset: lv > 30 ? 1 : undefined, borderRadius: 4 }}>
-                  <div className={i === pts ? "wf-next" : undefined} style={{ borderRadius: 4 }}>
-                    <Icon icon={tl.icon} size={26} ring={taken ? (tl.tree === 0 ? "#c9a44c" : tl.tree === 1 ? FEL : ORANGE) : "#333"} dim={!taken} name={n} tip={`Level ${lv} · ${TREES[def.cls][tl.tree].name}`} />
+                <span key={i} style={{ display: "contents" }}>
+                {mark ? <button type="button" className="wf-respec-chip" onClick={() => { setLevel(respecAt); setTabOverride(null); }} title={`Level ${respecAt}: respec. Every point is reset and spent again in the ${plan ? buildShort(plan.main) : "new"} order.`}>⟳ {respecAt}</button> : null}
+                <button type="button" className="wf-chip" onClick={() => { setLevel(Math.max(1, lv)); setTabOverride(null); }} title={again ? `${n}: spent again at the level ${respecAt} respec (point ${i + 1})` : `Level ${lv}: ${n}${lv > 30 ? " · guide theorycraft, Classic-based" : ""}`} style={{ padding: 0, border: "none", background: "none", cursor: "pointer", position: "relative", outline: lv > 30 ? "1px dashed #ff9b3d" : undefined, outlineOffset: lv > 30 ? 1 : undefined, borderRadius: 4 }}>
+                  <div className={lv === level + 1 ? "wf-next" : undefined} style={{ borderRadius: 4 }}>
+                    <Icon icon={tl.icon} size={26} ring={taken ? (tl.tree === 0 ? "#c9a44c" : tl.tree === 1 ? FEL : ORANGE) : "#333"} dim={!taken} name={n} tip={again ? `Respec point ${i + 1} · ${TREES[def.cls][tl.tree].name}` : `Level ${lv} · ${TREES[def.cls][tl.tree].name}`} />
                   </div>
-                  {lv % 5 === 0 ? <div style={{ position: "absolute", top: 27, left: 0, right: 0, fontSize: 9, color: MUTED, textAlign: "center" }}>{lv}</div> : null}
+                  {lv % 5 === 0 && !again ? <div style={{ position: "absolute", top: 27, left: 0, right: 0, fontSize: 9, color: MUTED, textAlign: "center" }}>{lv}</div> : null}
                 </button>
+                </span>
               );
             })}
           </div>
-          <PreLine lead={`Levels 31+ (dashed outline)${def.key === "path" ? "; Spec 2 at 40 pairs two guide orders (my pairing)" : ""}:`} mark="guide" src={`${def.src}, ${def.date}`} />
+          <PreLine lead={`Levels 31+ (dashed outline)${def.key === "path" ? "; Spec 2 at 40 pairs two guide orders (my pairing)" : ""}:`} mark="guide" src={`${cur.src}, ${cur.date}`} />
           <div style={{ fontSize: 10, color: MUTED, marginTop: 14 }}>Ring color = tree: gold {TREES[def.cls][0].name} · green {TREES[def.cls][1].name} · orange {TREES[def.cls][2].name}</div>
         </div>
       ) : null}
@@ -1224,23 +1304,44 @@ function rotLv(x: { lvl?: number; talent?: string; at?: number }, seq?: string):
   if (x.talent && sk && SEQ[sk]) {
     const q = SEQ[sk];
     let n = 0;
-    for (let i = 0; i < q.length; i++) { if (q[i] === x.talent) { n++; if (n >= (x.at ?? 1)) return i + 10; } }
+    for (let i = 0; i < q.length; i++) { if (q[i] === x.talent) { n++; if (n >= (x.at ?? 1)) return Math.max(i + 10, respecFloor(sk)); } }
   }
   return x.lvl;
 }
 const ROT: Record<string, Record<string, Rot>> = WF_DATA.rotations.ROT;
+// Nov 10: Corvin's rotation follows the picked guide: the main data on the feed's primary plan, the kept reference
+// copy (quest_icy / dungeon_icy) on an older guide.
+function rotOf(spec: string, mode: string): Rot { return (refMode(spec) && ROT[spec][`${mode}_icy`]) || ROT[spec][mode]; }
+// Tab name for Corvin's first rotation / Naga tab: both tabs carry the plan now, so "Affliction" would mislead.
+function lockLabel(): string {
+  if (GUIDE_DEFAULT.warlock === GUIDE_OLD_LOCK) return "Affliction";
+  const s0 = ROT.aff && ROT.aff.quest && ROT.aff.quest.src[0] ? ROT.aff.quest.src[0].label.split(" ")[0] : "";
+  return s0 ? `Leveling (${s0})` : "Leveling";
+}
+// Which of Corvin's tabs leads: Demonology from the respec level on a respec plan.
+function lockTab(lvC: number): string {
+  const p = planOf(buildOfSeq(GUIDE.warlock, "warlock"));
+  return p && p.pre && lvC >= p.at && !refMode("aff") ? "demo" : "aff";
+}
 
 function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: View }) {
-  const [specPick, setSpec] = useState<string>("aff");
+  const [specPick, setSpec] = useState<string | null>(null);
   const allowed = view === "V" ? ["enh"] : view === "C" ? ["aff", "demo"] : ["aff", "demo", "enh"];
-  const spec = allowed.indexOf(specPick) >= 0 ? specPick : allowed[0];
+  const lead = lockTab(lvC);
+  const spec = specPick && allowed.indexOf(specPick) >= 0 ? specPick : allowed.indexOf(lead) >= 0 ? lead : allowed[0];
   const [hideLocked, setHideLocked] = useState<boolean>(false);
   const lv = spec === "enh" ? lvV : lvC;
   const [mode, setMode] = useState<string>("quest");
   const [sel, setSel] = useState<number>(-1);
-  const r = ROT[spec][mode];
+  // The kept reference rotation shows when an older guide is picked in Next ding, or on request with the button.
+  const [refPick, setRefPick] = useState<boolean>(false);
+  const refR: Rot | undefined = spec === "enh" ? undefined : ROT[spec][`${mode}_icy`];
+  const forced = refMode(spec);
+  const showRef = !!refR && (forced || refPick);
+  const r = showRef && refR ? refR : ROT[spec][mode];
+  const refName = refR && refR.src[0] ? refR.src[0].label.split(" ").slice(0, 2).join(" ") : "Earlier";
   const color = spec === "enh" ? SHAMAN : WARLOCK;
-  const specs: [string, string, string][] = [["aff", "Affliction", "spell_shadow_deathcoil"], ["demo", "Demonology", "spell_shadow_metamorphosis"], ["enh", "Enhancement", "spell_nature_lightningshield"]];
+  const specs: [string, string, string][] = [["aff", refMode("aff") || refPick ? "Affliction" : lockLabel(), "spell_shadow_deathcoil"], ["demo", "Demonology", "spell_shadow_metamorphosis"], ["enh", "Enhancement", "spell_nature_lightningshield"]];
   const rs = (st: RStep): RStep => ({ ...st, lvl: rotLv(st, r.seq) });
   const allPrep = r.prep.map(rs).filter((st: RStep) => !(st.until && lv >= st.until));
   const allSteps = r.steps.map(rs).filter((st: RStep) => !(st.until && lv >= st.until));
@@ -1275,8 +1376,10 @@ function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: Vie
       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", fontSize: 12, color: MUTED, marginBottom: 4 }}>
         <span>For <span style={{ color: spec === "enh" ? "#5fb0ff" : "#b9baff" }}>{spec === "enh" ? V_NAME : "Corvin"}</span> at level <span style={{ color: GOLD_HI }}>{lv}</span>: the priority uses the spells and talents learned by this level; later steps are grayed with their level.</span>
         <button type="button" className="wf-btn" onClick={() => setHideLocked(!hideLocked)} style={{ padding: "2px 10px", borderRadius: 999, border: `1px solid ${hideLocked ? GOLD : "#4a3d22"}`, background: hideLocked ? "rgba(245,215,122,.15)" : "transparent", color: hideLocked ? GOLD_HI : INK, fontSize: 12 }}>{hideLocked ? "Show locked steps" : "Hide locked steps"}</button>
+        {refR && !forced ? <button type="button" className="wf-btn" onClick={() => { setRefPick(!refPick); setSel(-1); }} style={{ padding: "2px 10px", borderRadius: 999, border: `1px solid ${refPick ? ORANGE : "#4a3d22"}`, background: refPick ? "rgba(255,128,0,.15)" : "transparent", color: refPick ? ORANGE : INK, fontSize: 12 }}>{refPick ? "Back to the plan" : `${refName} reference`}</button> : null}
       </div>
-      <div className="wf-pop" key={`${spec}-${mode}`}>
+      {showRef ? <div style={{ fontSize: 12, color: ORANGE, marginBottom: 4 }}>Reference only: the earlier {refName} rotation{forced ? ", shown because that guide is picked in Next ding" : ""}. Corvin's plan is {guideShort(GUIDE_DEFAULT.warlock)}.</div> : null}
+      <div className="wf-pop" key={`${spec}-${mode}-${showRef}`}>
         <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", margin: "6px 0" }}>Before the pull</div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 12, paddingTop: 4 }}>{prep.map((st: RStep, i: number) => chip(st, i, false))}</div>
         <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", margin: "6px 0" }}>Priority · hover or tap an icon</div>
@@ -1317,42 +1420,65 @@ function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: Vie
   );
 }
 
-type PNode = { lv: string; at: number; spec: number; icon: string; title: string; body: string; quote?: string; src?: string; url?: string; mine?: boolean };
+type PNode = { lv: string; at: number; spec: number; icon: string; title: string; body: string; quote?: string; src?: string; url?: string; mine?: boolean; _tag?: string };
 const PATH_NODES: PNode[] = WF_DATA.talents.PATH_NODES;
+const PATH_NODES_ICY: PNode[] = (WF_DATA.talents as any).PATH_NODES_ICY || [];
 
-function PathTimeline({ go }: { go: (level: number, spec: number) => void }) {
-  const hl = Math.max(0, PATH_NODES.findIndex((p: PNode) => p.title.indexOf("Wrack") === 0));
+function PathTimeline({ go, lv }: { go: (level: number, spec: number) => void; lv: number }) {
+  // Nov 10: nodes, header and cards follow the picked guide. A respec plan (the feed's primary) uses PATH_NODES and
+  // its two builds' blurbs; any other guide shows the kept Icy Veins nodes and the old cards.
+  const plan = planOf(buildOfSeq(GUIDE.warlock, "warlock"));
+  const respecAt = plan && plan.pre ? plan.at : 0;
+  const old = !respecAt;
+  const NODES: PNode[] = old && PATH_NODES_ICY.length ? PATH_NODES_ICY : PATH_NODES;
+  const hl = Math.max(0, NODES.findIndex((p: PNode) => (respecAt ? p.at === respecAt : p.title.indexOf("Wrack") === 0)));
+  const here = NODES.findIndex((p: PNode) => p.at >= lv);
   const wrackAt = SEQ.aff_lvl.indexOf("Wrack") >= 0 ? SEQ.aff_lvl.indexOf("Wrack") + 10 : 51;
-  const [pick, setPick] = useState<number>(hl);
-  const n = PATH_NODES[pick] ?? PATH_NODES[0];
+  const [pickRaw, setPick] = useState<number | null>(null);
+  useEffect(() => { setPick(null); }, [old]);
+  const pick = pickRaw ?? (old ? hl : here >= 0 ? here : NODES.length - 1);
+  const n = NODES[pick] ?? NODES[0];
+  const full = plan && !old ? allocate(SEQ[plan.main.seq as string], 51) : {};
+  const split = TREES.warlock.map((_tr: TreeRaw, ti: number) => TAL_LIST.warlock[ti].reduce((sum: number, t: Tal) => sum + (full[t.name] ?? 0), 0)).join("/");
+  const head = old || !plan ? `Affliction to 60 · Wrack at ${wrackAt}` : `${guideShort(plan.main.seq as string)} · ${split} at 60`;
   return (
-    <Frame accent={WARLOCK} title="Corvin's leveling path" icon="classicon_warlock" right={<span style={{ fontSize: 12, color: GOLD_HI, fontFamily: SERIF }}>Affliction to 60 · Wrack at {wrackAt}</span>}>
-      <div style={{ position: "relative", padding: "18px 6px 6px" }}>
+    <Frame accent={WARLOCK} title="Corvin's leveling path" icon="classicon_warlock" right={<span style={{ fontSize: 12, color: GOLD_HI, fontFamily: SERIF }}>{head}</span>}>
+      <div style={{ overflowX: "auto" }}>
+      <div style={{ position: "relative", padding: "18px 6px 6px", minWidth: NODES.length * 54 }}>
         <div style={{ position: "absolute", left: 20, right: 20, top: 42, height: 6, borderRadius: 3, background: WARLOCK, opacity: 0.8 }} />
         <div style={{ position: "relative", display: "flex", justifyContent: "space-between", gap: 4 }}>
-          {PATH_NODES.map((p: PNode, i: number) => (
+          {NODES.map((p: PNode, i: number) => (
             <button key={p.lv} type="button" className={`wf-btn${i === hl ? " wf-glow" : ""}`} onClick={() => setPick(i)} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, border: "none", background: "transparent", padding: 0, minWidth: 48, cursor: "pointer" }}>
               <div style={{ transform: pick === i ? "scale(1.15)" : "scale(1)", transition: "transform .15s ease" }}><Icon icon={p.icon} size={48} ring={pick === i ? GOLD_HI : p.spec === 2 ? FEL : WARLOCK} /></div>
               <span style={{ fontFamily: SERIF, fontSize: 13, color: pick === i ? GOLD_HI : INK }}>Lv {p.lv}</span>
+              {!old && i === here ? <span style={{ fontSize: 9, color: FEL, lineHeight: 1 }}>Corvin · {lv}</span> : null}
             </button>
           ))}
         </div>
+      </div>
       </div>
       <div className="wf-pop" key={pick} style={{ marginTop: 10, padding: 12, borderRadius: 8, border: `1px solid ${n.spec === 2 ? FEL : GOLD}`, background: "linear-gradient(180deg, rgba(135,136,238,.12), rgba(0,0,0,.3))" }}>
         <div style={{ fontFamily: SERIF, fontSize: 18, color: n.spec === 2 ? FEL : GOLD_HI }}>{n.title}</div>
         <div style={{ fontSize: 13, color: INK, marginTop: 4 }}>{n.body}</div>
         {n.quote ? <div style={{ fontSize: 13, color: "#fff", fontStyle: "italic", borderLeft: `3px solid ${GOLD}`, paddingLeft: 8, marginTop: 8 }}>“{n.quote}”</div> : null}
+        {n._tag ? <div style={{ marginTop: 8 }}><span style={{ fontSize: 11, padding: "0 6px", border: "1px solid #888", borderRadius: 4, color: "#ccc" }}>{n._tag}</span></div> : null}
         {n.at > 30 ? <div style={{ marginTop: 8 }}><PreTag mark="guide" src={n.src ? (/(Oct|Nov) \d/.test(n.src) ? n.src : `${n.src}, read Oct 30`) : "read Oct 30"} /></div> : null}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginTop: 10 }}>
           {n.at >= 10 ? <button type="button" className="wf-btn" onClick={() => go(n.at, n.spec)} style={{ padding: "5px 12px", borderRadius: 6, border: `1px solid ${GOLD}`, background: "linear-gradient(180deg, #7a1a12, #3d0c08)", color: GOLD_HI, fontSize: 12, fontWeight: 700 }}>Show level {n.at}{n.spec === 2 ? " · Spec 2" : ""} in the talent tree ↓</button> : null}
           {n.src ? <a href={n.url} target="_blank" rel="noreferrer" style={{ fontSize: 11, color: GOLD_HI }}>{n.src}</a> : null}
         </div>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 10, marginTop: 12 }}>
+      <div style={{ display: "grid", gridTemplateColumns: `repeat(auto-fit, minmax(${old ? 220 : 280}px, 1fr))`, gap: 10, marginTop: 12 }}>
+        {old ? (<>
         <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020", fontSize: 12, color: INK }}><span style={{ color: GOLD_HI, fontWeight: 700 }}>Optional: Soul Link safety respec.</span> Not the plan. Only if you keep dying or losing your demon: one respec into Demonology at 30 reaches Soul Link (21 points). wowfdb: “Until you have its 21 points, Demonology is a worse Affliction.” <a href="https://wowfdb.com/classes/warlock/demonology/leveling/" target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>wowfdb Demonology</a> · <a href="https://wowfdb.com/classes/warlock/affliction/leveling/" target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>wowfdb Affliction</a></div>
         <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020", fontSize: 12, color: INK }}><span style={{ color: GOLD_HI, fontWeight: 700 }}>Respec cost:</span> Respec costs climb with each use and only decay once a week at launch (TechRadar interview, Oct 10; on beta it was 1 silver). Leveling Affliction all the way and holding Demonology in Dual Spec needs no respec at all.</div>
         <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020", fontSize: 12, color: INK }}><span style={{ color: GOLD_HI, fontWeight: 700 }}>Spec 2 at 40 (groups, not leveling):</span> 0/31/0 Demonology per Icy Veins' order (Soul Link 30, Demonic Pact 40), then Affliction, for dungeons and raids. Sacrifice a Felhunter, keep a Voidwalker or Succubus out.</div>
         <div className="wf-prelabel"><span style={{ color: ORANGE, fontWeight: 700 }}>Spec 1 + Spec 2 pairing at 40 (group spec):</span> <span className="wf-pre">{PRE_LABEL}</span><div style={{ fontSize: 11, color: MUTED, marginTop: 4 }}>The pairing was my own theorycraft, so it is replaced by this label until Forever data past 30 exists. Each half is a published guide order (tagged in the planner). Dual Spec's gold cost: not in any source.</div></div>
+        </>) : (plan ? [plan.pre, plan.main] : []).filter((b: BuildDef | undefined): b is BuildDef => !!b).map((b: BuildDef) => (
+          <div key={b.key} style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020", fontSize: 12, color: INK }}>
+            <span style={{ color: GOLD_HI, fontWeight: 700 }}>{plan && b === plan.pre ? `Levels 10 to ${respecAt - 1}` : `From the ${respecAt} respec`}: {buildShort(b)}.</span> {b.blurb} <a href={b.url} target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>{b.src}</a>, {b.date}.{b.tag ? <div style={{ marginTop: 6 }}><span style={{ padding: "0 6px", border: "1px solid #888", borderRadius: 4, color: "#ccc", fontSize: 11 }}>{b.tag}</span></div> : null}
+          </div>
+        ))}
       </div>
     </Frame>
   );
@@ -2155,9 +2281,16 @@ function trainReqLevel(t: [number, string]): number | null {
   return m ? parseInt(m[1], 10) : null;
 }
 
+// The talent order in force at a level for the class's picked guide (a respec plan has two).
+function guideDefAt(cls: string, level: number): BuildDef | undefined {
+  const def = buildOfSeq(SEQ[GUIDE[cls]] ? GUIDE[cls] : GUIDE_DEFAULT[cls], cls);
+  const plan = planOf(def);
+  return plan ? planDefAt(plan, level) : def;
+}
 function nextTalent(cls: string, level: number): { lv: number; name: string; rank: number; tal?: Tal; why: string } | null {
-  const seq = SEQ[GUIDE[cls]] ?? SEQ[GUIDE_DEFAULT[cls]];
   const lv = Math.max(10, level + 1);
+  const gd = guideDefAt(cls, lv);
+  const seq = (gd && gd.seq ? SEQ[gd.seq] : undefined) ?? SEQ[GUIDE[cls]] ?? SEQ[GUIDE_DEFAULT[cls]];
   const idx = lv - 10;
   if (lv > 60 || idx >= seq.length) return null;
   const name = seq[idx];
@@ -2179,7 +2312,13 @@ function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: "V" 
     <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".12em", margin: "10px 0 6px" }}><Icon icon={icon} size={18} />{t}</div>
   );
   const gName = guideShort(guide);
-  const buildLabel = who === "V" ? `Enhancement leveling (${gName} order)` : level >= 40 ? `Spec 1 Affliction (${gName} order); Spec 2 Demonology gets all its points at 40` : `Spec 1 Affliction (${gName} order)`;
+  // Nov 10: label and source come from the order in force at the next level (a respec plan has two).
+  const gd = guideDefAt(cls, Math.max(10, level + 1));
+  const gPlan = planOf(buildOfSeq(guide, cls));
+  const respecAt = gPlan && gPlan.pre ? gPlan.at : 0;
+  const respecNode = respecAt && who === "C" ? PATH_NODES.find((p: PNode) => p.at === respecAt) : undefined;
+  const buildLabel = gd ? gd.label : who === "V" ? `Enhancement leveling (${gName} order)` : `Affliction (${gName} order)`;
+  const gSrc = gd ? `${gd.src}, ${gd.date}` : who === "V" ? "Icy Veins (Wordup), Oct 17" : "Icy Veins (Abide), Nov 3";
   const gOpts = guideOptions(cls);
   return (
     <div className="wf-card" style={{ position: "relative", borderRadius: 12, padding: 14, border: `1px solid ${GOLD}`, background: `radial-gradient(ellipse 70% 60% at 50% 0%, ${c.color}30, transparent 70%), linear-gradient(180deg, #1c1711, #0a0907)`, boxShadow: `0 0 0 1px #000, 0 6px 24px rgba(0,0,0,.5), 0 0 30px ${c.color}22`, color: INK, overflow: "hidden" }}>
@@ -2202,6 +2341,13 @@ function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: "V" 
         </div>
       ) : null}
 
+      {respecAt && gPlan && level < respecAt ? (
+        <div className="wf-respec" style={{ margin: "8px 0 0" }}>
+          <span className="wf-respec-tag">⟳ Respec at {respecAt}</span>
+          <span style={{ flex: "1 1 200px" }}>{respecNode ? respecNode.title : gPlan.main.label} · {respecAt - level} level{respecAt - level === 1 ? "" : "s"} to go.{respecAt - level === 1 && respecNode ? ` ${respecNode.body}` : ""}</span>
+        </div>
+      ) : null}
+
       {head("Next talent point", "spell_holy_borrowedtime")}
       {nt ? (
         <div style={{ display: "flex", gap: 10, alignItems: "center", padding: 8, borderRadius: 8, background: "rgba(0,0,0,.35)", border: "1px solid #3a3020" }}>
@@ -2209,7 +2355,7 @@ function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: "V" 
           <div style={{ fontSize: 12 }}>
             <div><span style={{ fontFamily: SERIF, color: "#fff", fontSize: 14 }}>{nt.name}</span> <span style={{ color: GOLD_HI }}>rank {nt.rank}{nt.tal ? `/${nt.tal.max}` : ""}</span> <span style={{ color: MUTED }}>at level {nt.lv}</span></div>
             <div style={{ color: INK }}>{nt.why}</div>
-            {nt.lv > 30 ? <div style={{ marginTop: 3 }}><PreTag mark="guide" small src={who === "V" ? "Icy Veins (Wordup), Oct 17" : "Icy Veins (Abide), Nov 3"} /></div> : null}
+            {nt.lv > 30 ? <div style={{ marginTop: 3 }}><PreTag mark="guide" small src={gSrc} /></div> : null}
             <div style={{ color: MUTED, fontSize: 11 }}>{buildLabel}; without Legacy Talented.</div>
           </div>
         </div>
@@ -2332,7 +2478,8 @@ function CorvinFirstSession({ level }: { level: number }) {
   const lm = Math.floor((left % 3600000) / 60000);
   const nextStop = FIRST_TRAINER.find((t: [number, string]) => t[0] > level);
   const tals = [10, 11, 12].map((lv: number) => {
-    const seq = SEQ[GUIDE.warlock] ?? SEQ.aff_lvl;
+    const fd = guideDefAt("warlock", lv);
+    const seq = (fd && fd.seq ? SEQ[fd.seq] : undefined) ?? SEQ[GUIDE.warlock] ?? SEQ.aff_lvl;
     const name = seq[lv - 10];
     const rank = seq.slice(0, lv - 9).filter((n: string) => n === name).length;
     return { lv, name, rank, tal: TAL_INDEX.warlock[name] };
@@ -2444,7 +2591,7 @@ function CorvinFirstSession({ level }: { level: number }) {
                   </div>
                 ))}
                 <div style={{ fontSize: 12 }}>{WHY[tals[0].name] ?? ""}</div>
-                <div style={{ fontSize: 10, color: MUTED }}>Icy Veins (Abide) Affliction leveling order, Nov 3, as in Talent trees. Without Legacy Talented; with Talented 5/5 the first point comes at 5 (your Class Hub note).</div>
+                <div style={{ fontSize: 10, color: MUTED }}>{(() => { const fd = guideDefAt("warlock", 10); return fd ? `${fd.label}: ${fd.src}, ${fd.date}` : "Icy Veins (Abide) Affliction leveling order, Nov 3"; })()}, as in Talent trees. Without Legacy Talented; with Talented 5/5 the first point comes at 5 (your Class Hub note).</div>
               </div>
             ))}
 
@@ -2506,8 +2653,9 @@ function initialView(): View {
 }
 function guideBuildKey(cls: string): string {
   const g = GUIDE[cls];
-  if (cls === "warlock" && g === GUIDE_DEFAULT.warlock) return "path";
-  const b = BUILD_DEFS.find((x: BuildDef) => x.seq === g && !x.path && !x.fixed && x.cls === cls);
+  // The old Icy Veins plan opens its paired build (Spec 2 toggle); every other guide opens its own build.
+  if (cls === "warlock" && g === GUIDE_OLD_LOCK && BUILD_DEFS.some((x: BuildDef) => x.key === "path")) return "path";
+  const b = buildOfSeq(g, cls);
   return b ? b.key : cls === "shaman" ? "enh_lvl" : "path";
 }
 
@@ -2621,7 +2769,6 @@ function SavePanel({ storeOk, code, onImport, onReset }: { storeOk: boolean | nu
 
 export default function App() {
   const PL = WF_DATA.page_lists;
-  const [buildKey, setBuildKey] = useState<string>("path");
   const [st, setSt] = useState<Saved>(initialState);
   const [storeOk, setStoreOk] = useState<boolean | null>(null);
   const [launchOpen, setLaunchOpen] = useState<boolean>(false);
@@ -2639,6 +2786,7 @@ export default function App() {
   }, []);
   const [guide, setGuideAll] = useState<Record<string, string>>(() => cleanGuide(WF_STORE.initial?.guide));
   GUIDE = guide; // read during this render by rotLv, nextTalent and the Naga plate
+  const [buildKey, setBuildKey] = useState<string>(() => guideBuildKey("warlock"));
   const setGuide = (cls: string, seq: string) => setGuideAll((g: Record<string, string>) => cleanGuide({ ...g, [cls]: seq }));
   useEffect(() => { if (storeOk !== null) WF_STORE.save("guide", guide); }, [guide, storeOk]);
   const lvV = st.lvV;
@@ -2672,7 +2820,9 @@ export default function App() {
   const setLevel = (n: number) => setPreview(n === charLevel ? null : n);
   const [pathSpec, setPathSpec] = useState<number>(1);
   useEffect(() => { if (level < 40 && pathSpec === 2) setPathSpec(1); }, [level, pathSpec]);
-  const [nagaSpec, setNagaSpec] = useState<string>("aff");
+  // Nov 10: Corvin's Naga tab follows the plan (Demonology leads from the respec level) until one is picked by hand.
+  const [nagaPick, setNagaSpec] = useState<string | null>(null);
+  const nagaSpec = view === "V" ? "enh" : nagaPick && (nagaPick !== "enh" || view === "both") ? nagaPick : lockTab(lvC);
   const [stagePick, setStagePick] = useState<string | null>(null);
   const [gearChar, setGearChar] = useState<string>("lock");
   const [presetOpen, setPresetOpen] = useState<number[]>([]);
@@ -2684,7 +2834,7 @@ export default function App() {
   const [nagaPrev, setNagaPrev] = useState<number | null>(null);
   useEffect(() => { setStagePick(null); setNagaPrev(null); }, [lvV, lvC, nagaSpec]);
   const goPath = (lv: number, sp: number) => {
-    setBuildKey("path"); setPreview(lv === lvC ? null : lv); setPathSpec(sp);
+    setBuildKey(guideBuildKey("warlock")); setPreview(lv === lvC ? null : lv); setPathSpec(sp);
     try { const el = document.getElementById("builds"); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e: unknown) { /* ignore */ }
   };
 
@@ -2695,23 +2845,23 @@ export default function App() {
   const [prev12V, setPrev12V] = useState<boolean>(false);
   const [prev12C, setPrev12C] = useState<boolean>(false);
   const n12raw = NAGA12[nagaSpec];
+  const nAuto = nagaAuto(nagaSpec);
+  const lockOld = refMode("aff");
   const plate = nagaPlate(nagaSpec, nagaLv, nagaLv >= n12raw.from);
   const toB = (x: NSlot, n: number): Bind => ({ n, spell: x.spell, icon: x.icon, note: x.note, lock: x.locked ? x.lv : undefined, key: x.key });
   const base6: Bind[] = plate.base.map((x: NSlot, i: number) => toB(x, POS6[i]));
   const shift6: Bind[] = plate.shift.map((x: NSlot, i: number) => toB(x, POS6[i]));
-  const n12: Layout12 = { ...n12raw, auto: true, buttons: plate.base.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), shift: plate.shift.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), src: `${spec.auto && spec.auto.src ? spec.auto.src : "ROT"}; ${n12raw.src}` };
+  const n12: Layout12 = { ...n12raw, auto: true, buttons: plate.base.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), shift: plate.shift.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), src: `${nAuto && nAuto.src ? nAuto.src : "ROT"}; ${n12raw.src}` };
   const nagaWho = nagaSpec === "enh" ? V_NAME : "Corvin";
   const prev12 = nagaSpec === "enh" ? prev12V : prev12C;
   const setPrev12 = nagaSpec === "enh" ? setPrev12V : setPrev12C;
   const reached12 = nagaChar >= n12.from;
   const use12 = nagaLv >= n12.from;
-  const specOptions = [{ value: "aff", label: "Affliction" }, { value: "demo", label: "Demonology" }, { value: "enh", label: "Enhancement" }];
+  const specOptions = [{ value: "aff", label: lockOld ? "Affliction" : lockLabel() }, { value: "demo", label: "Demonology" }, { value: "enh", label: "Enhancement" }];
 
   useEffect(() => {
     const want = view === "C" ? "warlock" : view === "V" ? "shaman" : null;
     if (want && tDef.cls !== want) { setBuildKey(guideBuildKey(want)); setPreview(null); }
-    if (view === "C" && nagaSpec === "enh") setNagaSpec("aff");
-    if (view === "V" && nagaSpec !== "enh") setNagaSpec("enh");
     if (view === "C") setGearChar("lock");
     if (view === "V") setGearChar("sham");
   }, [view]);
@@ -2731,7 +2881,7 @@ export default function App() {
   return (
     <Page
       title="WoW Forever Command Table"
-      summary={"Your WoW Forever dashboard for " + V_NAME + " (Enhancement Shaman) and Corvin (Undead Warlock): launch countdown, meta, patch feed, Corvin’s Affliction leveling path (Demonology Spec 2 at 40), live talent trees with a level slider, rotations, Naga binds, profession windows with a skill slider, gear, macro book, addons and progress. WoW-inspired design, not affiliated with Blizzard."}
+      summary={"Your WoW Forever dashboard for " + V_NAME + " (Enhancement Shaman) and Corvin (Undead Warlock): launch countdown, meta, patch feed, Corvin’s leveling path, live talent trees with a level slider, rotations, Naga binds, profession windows with a skill slider, gear, macro book, addons and progress. WoW-inspired design, not affiliated with Blizzard."}
       width="wide"
     >
       <Hero view={view} setView={setView} />
@@ -2759,7 +2909,7 @@ export default function App() {
       </Section>
 
       <Section heading="Naga V2 Pro binds" id="naga" caption="From your notes: 6-button plate, Synapse Standard mode, Hypershift off. Shift+Naga is the second layer, so 12 combat binds.">
-        {view !== "V" ? <Segmented options={(use12 && nagaSpec !== "enh" ? [{ value: "aff", label: "Spec 1 · Affliction" }, { value: "demo", label: "Spec 2 · Demonology" }, { value: "enh", label: "Enhancement" }] : specOptions).filter((o: { value: string }) => view === "both" || o.value !== "enh")} value={nagaSpec} onChange={(v: string) => { setNagaSpec(v); setStagePick(null); }} /> : null}
+        {view !== "V" ? <Segmented options={(use12 && nagaSpec !== "enh" && lockOld ? [{ value: "aff", label: "Spec 1 · Affliction" }, { value: "demo", label: "Spec 2 · Demonology" }, { value: "enh", label: "Enhancement" }] : specOptions).filter((o: { value: string }) => view === "both" || o.value !== "enh")} value={nagaSpec} onChange={(v: string) => { setNagaSpec(v); setStagePick(null); }} /> : null}
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${use12 && !reached12 ? ORANGE : "#4a3d22"}`, background: use12 && !reached12 ? "rgba(255,128,0,.08)" : "rgba(0,0,0,.25)", color: INK, fontSize: 13 }}>
           <Icon icon={nagaSpec === "enh" ? "classicon_shaman" : "classicon_warlock"} size={24} ring={nagaColor} />
           <span style={{ flex: "1 1 260px" }}>{nagaPrev !== null ? `Preview at level ${nagaLv} (${nagaWho} is ${nagaChar}). ` : `${nagaWho} is level ${nagaLv}. `}{use12 ? `12-button plate (from ${n12.from}).` : `6-button plate; the 12-button plate starts at ${n12.from}.`} Every rotation spell you have now gets a button, in rotation order; greyed buttons show the level they unlock.</span>
@@ -2781,8 +2931,8 @@ export default function App() {
           </div>
         ) : null}
         <Text>{(() => {
-          const a: NAuto | undefined = spec.auto;
-          const qseq = ROT[nagaSpec].quest.seq;
+          const a: NAuto | undefined = nAuto;
+          const qseq = rotOf(nagaSpec, "quest").seq;
           const gs = guideSeq(qseq);
           const drops = (a ? a.pool : []).map((p: NPool) => {
             const u = p.untilTalent ? rotLv({ talent: p.untilTalent }, qseq) : p.until;
@@ -2797,7 +2947,7 @@ export default function App() {
         <PreLine lead="12-button layouts (32+ / 40+) and binds past level 30:" mark="notes" />
         {use12 ? <Steps steps={SETUP12} /> : null}
         {use12 ? null : <Steps steps={PL.naga_setup6} />}
-        <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate)." : "The 12-button plate takes over at 32 for " + V_NAME + " and 40 for Corvin (Spec 1 Affliction and Spec 2 Demonology). Drag the preview level to see it early."}</Text>
+        <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate)." : "The 12-button plate takes over at " + NAGA12.enh.from + " for " + V_NAME + " and " + NAGA12.aff.from + " for Corvin" + (lockOld ? " (Spec 1 Affliction and Spec 2 Demonology)" : "") + ". Drag the preview level to see it early."}</Text>
       </Section>
 
       <Section heading="Talent trees" id="builds" caption={"Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: " + V_NAME + ", Warlock builds: Corvin); moving it previews another level without changing the character. Corvin's path levels Spec 1 Affliction to 60; Spec 2 (Demonology, for groups) unlocks at 40."}>
@@ -2815,17 +2965,17 @@ export default function App() {
             <div style={{ marginTop: 8 }}><BulletList items={PL.talents_enh_bullets} /></div>
           </details>
         ) : null}
-        {buildKey === "aff_lvl" || buildKey === "aff_icy" || buildKey === "aff_raid" ? (
+        {buildKey === "aff_lvl" || buildKey === "aff_icy" || buildKey === "aff_raid" || !!tDef.before || !!tDef.then ? (
           <Callout tone={PL.talents_level60.tone} lead={PL.talents_level60.lead}>{PL.talents_level60.text}</Callout>
         ) : null}
-        {buildKey === "demo_lvl" || buildKey === "demo_raid" || buildKey === "path" ? (
+        {buildKey === "demo_lvl" || buildKey === "demo_raid" || buildKey === "path" || !!tDef.before || !!tDef.then ? (
           <Callout tone={PL.talents_brand.tone} lead={PL.talents_brand.lead}>{PL.talents_brand.text}</Callout>
         ) : null}
       </Section>
 
       {showC ? (
       <Section heading="Corvin’s leveling path" id="path" caption="Level Affliction all the way to 60 on Icy Veins' 40/11 order (Demonic Sacrifice 41, Wrack 51). Dual Spec at 40 adds Demonology as Spec 2 for dungeons and raids. Click a level to see it in the talent tree.">
-        <PathTimeline go={goPath} />
+        <PathTimeline go={goPath} lv={lvC} />
       </Section>
       ) : null}
 
