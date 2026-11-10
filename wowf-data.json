@@ -166,68 +166,66 @@
         "cogm": "S",
         "lfc": "A",
         "wowhead": "S",
-        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 9",
-        "mythicMove": "▲1 vs Nov 8 (#8, 990 DPS)"
+        "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 10"
       },
       {
         "spec": "Affliction Warlock",
         "icon": "spell_shadow_deathcoil",
         "mine": true,
         "mythic": 12,
-        "mythicNote": "947 DPS, Wrack build; All playstyles view #15",
+        "mythicNote": "953 DPS, Wrack build; All playstyles view #14",
         "broken": "S",
-        "brokenNote": "#1, 907 DPS",
+        "brokenNote": "#1, 1,184 DPS",
         "tVoid": "B",
         "cogm": "A",
         "lfc": "B",
         "wowhead": "A",
-        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 9",
-        "mythicMove": "▼1 vs Nov 8 (#11, 950 DPS)"
+        "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 10"
       },
       {
         "spec": "Destruction Warlock",
         "icon": "spell_shadow_rainoffire",
         "mine": false,
         "mythic": 13,
-        "mythicNote": "938 DPS; All playstyles view #16",
+        "mythicNote": "937 DPS; All playstyles view #16",
         "broken": "C",
         "tVoid": "B",
         "cogm": "A",
         "lfc": "B",
         "wowhead": "S",
-        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 9",
-        "mythicMove": "▲1 vs Nov 8 (#14, 936 DPS)"
+        "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 10"
       },
       {
         "spec": "Enhancement Shaman",
         "icon": "ability_shaman_stormstrike",
         "mine": true,
         "mythic": 3,
-        "mythicNote": "1,083 DPS; All playstyles view #3",
+        "mythicNote": "1,053 DPS; All playstyles view #3",
         "broken": "B",
         "tVoid": "S",
         "cogm": "S",
         "lfc": "S",
         "wowhead": "A",
-        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 9"
+        "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 10"
       },
       {
         "spec": "Elemental Shaman",
         "icon": "spell_nature_lightning",
         "mine": false,
-        "mythic": 20,
-        "mythicNote": "837 DPS; All playstyles view #25",
-        "broken": "C",
+        "mythic": 21,
+        "mythicNote": "837 DPS; All playstyles view #26",
+        "broken": "D",
         "tVoid": "B",
         "cogm": "A",
         "lfc": "A",
         "wowhead": "C",
-        "_source": "MythicSim Nov 9 snapshot (engine a667dce, reference gear now on Wowhead's Nov 9 Forever tooltips), 'Best of each spec' view (22 DPS specs, same view as Nov 5 and Nov 8). BrokenMeta Nov 4 (build 70753, re-read Nov 9, unchanged); voidsim Nov 6 (re-read Nov 9, unchanged); Wowhead Nov 3 level-60 update (re-read Nov 9, unchanged); CoGM Oct 21 and LFCarry unchanged",
-        "_date": "Nov 9"
+        "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+        "_date": "Nov 10",
+        "mythicMove": "▼1 vs Nov 9 (#20, 837 DPS)"
       }
     ]
   },
@@ -12128,12 +12126,12 @@
         "44": "Corruption R5|Drain Mana R3|Health Funnel R5|Subjugate Demon R2|Shadow Bolt R7",
         "46": "Drain Life R5|Life Tap R5|Create Firestone R3|Create Healthstone R4|Rain of Fire R3",
         "48": "Bane of Agony R5|Siphon Life R3|Banish R2|Create Spellstone R2|Conflagrate R4|Shadowburn R5|Soul Fire R1",
-        "50": "Curse of Tongues R2|Curse of the Elements R4|Death Coil R2|Create Soulstone R4|Demon Armor R4|Detect Invisibility R3|Inferno|Immolate R6|Incinerate R2 (new)|Searing Pain R5",
+        "50": "Curse of Tongues R2|Curse of the Elements R4|Death Coil R2|Create Soulstone R4|Demon Armor R4|Detect Invisibility R3|Inferno|Immolate R6|Incinerate R2 (new) (Destruction only, Official Nov 9)|Searing Pain R5",
         "52": "Curse of Weakness R6|Drain Soul R4|Health Funnel R6|Shadow Ward R3|Shadow Bolt R8",
         "54": "Corruption R6|Drain Life R6|Drain Mana R4|Howl of Terror R2|Conflagrate R5|Hellfire R3",
         "56": "Curse of Recklessness R4|Fear R3|Life Tap R6|Create Firestone R4|Shadowburn R6|Soul Fire R2",
         "58": "Bane of Agony R6|Death Coil R3|Siphon Life R4|Create Healthstone R5|Subjugate Demon R3|Rain of Fire R4|Searing Pain R6",
-        "60": "Bane of Doom|Corruption R7|Create Soulstone R5|Create Spellstone R3|Demon Armor R5|Health Funnel R7|Ritual of Doom|Shadow Ward R4|Conflagrate R6|Immolate R7|Immolate R8|Incinerate R3 (new)|Shadow Bolt R10|Shadow Bolt R9"
+        "60": "Bane of Doom|Corruption R7|Create Soulstone R5|Create Spellstone R3|Demon Armor R5|Health Funnel R7|Ritual of Doom|Shadow Ward R4|Conflagrate R6|Immolate R7|Immolate R8|Incinerate R3 (new) (Destruction only, Official Nov 9)|Shadow Bolt R10|Shadow Bolt R9"
       }
     },
     "TRAIN_SRC": {
@@ -12689,7 +12687,7 @@
           },
           {
             "id": "p21",
-            "text": "Felsteed and Dual Spec (40)"
+            "text": "Felsteed and Dual Spec (40); Felsteed quest now also grants riding skill (Official Nov 9 hotfix)"
           },
           {
             "id": "p22",
@@ -12853,26 +12851,26 @@
     "meta_raid_watch": {
       "lead": "Raid watch",
       "tone": "warning",
-      "text": "Official Nov 8: dungeon kill XP +50% (hotfix ~11:05 AM PST). Otherwise nothing new since the Nov 6 hotfixes (Voidwalker +~40 HP, Soul Siphon/Wrack fix, Orc Command pet fix, LW Tanning Rack 125). Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP (details not published yet as of Nov 9 9 AM ET). Build 70862 Nov 7-9: item hotfix waves only; 1mw patch notes say nothing changes on spells, talents or items. MythicSim Nov 9 (Best of each spec): Enh #3, Demo #7, Aff #12, Destro #13. Forever Logs: no confirmed level-60 DPS boards.",
-      "_source": "Blizzard news + forum tracker (read Nov 9); Kaivax Class Tuning Nov 10; 1mw.io news + patch notes Nov 9; MythicSim Nov 9; Forever Logs Nov 9 9 AM ET; Blizzard forum Dungeon Enemy XP Increased Nov 8",
-      "_date": "Nov 9"
+      "text": "Official Nov 9 hotfixes (posted 11:23 PM ET): Lightning Overload damage fix (Elemental), Summon Felsteed now grants riding, Incinerate Destruction-only, Shaper's Terrace loot and skinning mats, zone populations lowered; dungeon kill XP +50% since Nov 8. Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP (details not published as of Nov 10 9:15 AM ET). Build 70862 Nov 9-10: item waves plus one talent row (Lightning Overload). MythicSim Nov 10 (Best of each spec): Enh #3, Demo #7, Aff #12, Destro #13. BrokenMeta Nov 9: Aff S, Enh B, Destro C, Demo C. Forever Logs: no confirmed level-60 DPS boards.",
+      "_source": "Blizzard news + forum tracker (read Nov 10); Kaivax WoW: Forever Hotfixes - November 9; Kaivax Class Tuning Nov 10; 1mw.io news + patch notes Nov 10; MythicSim Nov 10; BrokenMeta Nov 9; Forever Logs Nov 10 9 AM ET",
+      "_date": "Nov 10"
     },
     "meta_links": [
       {
-        "title": "MythicSim tier list (Nov 9 snapshot, 'Best of each spec' view)",
+        "title": "MythicSim tier list (Nov 10 snapshot, 'Best of each spec' view)",
         "site": "mythicsim.com",
-        "date": "Nov 9",
+        "date": "Nov 10",
         "href": "https://mythicsim.com/wow-forever/tier-list",
         "_source": "mythicsim.com",
-        "_date": "Nov 9"
+        "_date": "Nov 10"
       },
       {
-        "title": "BrokenMeta tier list (build 70753)",
+        "title": "BrokenMeta tier list (updated Nov 9, build 70753 tables)",
         "site": "brokenmeta.gg",
-        "date": "Nov 4",
+        "date": "Nov 9",
         "href": "https://brokenmeta.gg/en/wow-forever/tier-list/",
         "_source": "brokenmeta.gg",
-        "_date": "Nov 4"
+        "_date": "Nov 9"
       },
       {
         "title": "voidsim.io tier list",
@@ -12966,6 +12964,66 @@
       }
     ],
     "feed_rows": [
+      {
+        "lead": "Nov 10",
+        "title": "Official: Nov 9 hotfixes touch Shaman and Warlock (Lightning Overload damage fix, Felsteed riding skill, Incinerate Destruction-only)",
+        "detail": "Kaivax's Nov 9 hotfix list (posted Nov 9, 11:23 PM ET). Shaman: Lightning Overload now deals the correct damage for Lightning Bolt; Lightning Mastery visual updated; Improved Ghost Wolf torch fix. Warlock: completing \"Summon Felsteed\" now grants the riding skill (if done before the fix, summon the Felsteed once to get Apprentice riding, which also lets you ride other mounts); Incinerate is no longer available to non-Destruction specs. Also: The Shaper's Terrace (58-60) bosses Vitrix, Snowtalon and Cinder now drop loot and higher-level skinning materials; dungeon kill XP +50% (Nov 8) is included; zone populations lowered, more on PvP realms. Corvin: Felsteed at 40 now gives riding; Incinerate was never in his Affliction/Demonology plan. Vorgash: Lightning Overload is an Elemental talent that none of his builds take; Shaper's Terrace is a level-60 Skinning stop. No talent, rotation or gear pick changes.",
+        "meta": "Blizzard forum (Kaivax) WoW: Forever Hotfixes - November 9, 2026, posted Nov 10 04:23 UTC; Blizzard news article 24315281; read Nov 10 9 AM ET",
+        "status": {
+          "label": "Official",
+          "tone": "success"
+        },
+        "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-9-2026/2403040",
+        "_date": "2026-11-10"
+      },
+      {
+        "lead": "Nov 10",
+        "title": "Datamine: Hotfixes of 10 November change Lightning Overload's numbers (matches the Official fix)",
+        "detail": "1mw's game-file diff (build 1.60.1.70862, Hotfixes of 10 November): Lightning Overload's extra bolt goes from 94-106 to 171-190 Nature damage and its extra Chain Lightning from 62-70 to 246-276. 1mw lists 0 spells, 1 talent, 0 items changed. Elemental talent only; no Enhancement or Warlock rows. Overnight Nov 9-10 waves were otherwise items only (ilvl 49-65, incl. a 949-row wave at 03:50 UTC). Numbers are from the game files, not from Blizzard.",
+        "meta": "1mw.io/en/news/patch-notes and /en/news, read Nov 10 9 AM ET",
+        "status": {
+          "label": "Unofficial, single source",
+          "tone": "warning"
+        },
+        "_source": "https://1mw.io/en/news/patch-notes",
+        "_date": "2026-11-10"
+      },
+      {
+        "lead": "Nov 10",
+        "title": "Class Tuning (Tue Nov 10): details still not posted as of 9:15 AM ET",
+        "detail": "Kaivax's Nov 6 post still only lists the plan (Affliction DoTs worth casting with Wrack, Voidwalker durability toward Classic Era, Enhancement Strength/AP above Int/SP). No blue reply with the actual changes yet, and nothing on the news hub. Dashboard notes that point to the Nov 10 hotfixes stay as 'planned'.",
+        "meta": "Blizzard forum Class Tuning Incoming - November 10 (topic 2404092) and blue tracker, read Nov 10 9:15 AM ET",
+        "status": {
+          "label": "Official",
+          "tone": "success"
+        },
+        "_source": "https://us.forums.blizzard.com/en/wow/t/class-tuning-incoming-november-10/2404092",
+        "_date": "2026-11-10"
+      },
+      {
+        "lead": "Nov 10",
+        "title": "MythicSim Nov 10 snapshot (9 Nov hotfixes): Enh #3, Demo #7, Aff #12, Destro #13; BrokenMeta updated Nov 9 (tiers for tracked specs unchanged)",
+        "detail": "MythicSim, Best of each spec: Enhancement #3 (1,053 DPS, was 1,083; Windfury Totem now modeled from Forever logs), Demonology #7 (1,006), Affliction #12 (953, was 947), Destruction #13 (937), Elemental #21 (837, was #20). All playstyles view: Enh 3, Demo 8, Aff 14, Destro 16, Ele 26. New top: Survival Hunter (weave) 1,322, Retribution #2. BrokenMeta Nov 9 (still build 70753 tables): Affliction S #1 (1,184 DPS), Enhancement B (1,004), Destruction C (922), Demonology C (853, 72.1% of top), Elemental fell C to D. No tracked spec moved 3+ places or a full tier.",
+        "meta": "MythicSim tier list snapshot Nov 10 2026 (engine a667dce, client 70862), BrokenMeta tier list updated Nov 9 2026; both read Nov 10",
+        "status": {
+          "label": "Sim, pre-launch",
+          "tone": "warning"
+        },
+        "_source": "https://mythicsim.com/wow-forever/tier-list",
+        "_date": "2026-11-10"
+      },
+      {
+        "lead": "Nov 10",
+        "title": "Official: PvP faction balance - harder to create characters on Horde on North American PvP realms",
+        "detail": "Kaivax (Nov 9, 9:05 PM ET): character creation now uses each region's overall PvP-ruleset faction balance (worst case about 55/45). Short term it gets harder to create characters on the bigger faction, currently Horde on NA PvP rulesets. Existing characters are not affected; only matters if a new Horde alt is planned on a PvP realm.",
+        "meta": "Blizzard forum PvP Faction Balance Updates - November 10 (topic 2408781), read Nov 10",
+        "status": {
+          "label": "Official",
+          "tone": "success"
+        },
+        "_source": "https://us.forums.blizzard.com/en/wow/t/pvp-faction-balance-updates-november-10/2408781",
+        "_date": "2026-11-10"
+      },
       {
         "lead": "Nov 9",
         "title": "MythicSim Nov 9 snapshot: Demo #7, Aff #12, Destro #13, Enh #3 (1-place moves only)",
@@ -13597,6 +13655,11 @@
         "text": "Drain Soul shard farming: shards now come reliably only from the kill, so channel it as the mob dies (Nov 2 notes, official).",
         "_source": null,
         "_date": null
+      },
+      {
+        "text": "EllesmereUI Ultrawide - Zanjiro (added Nov 9) describes the Shaman as Zanjiro Tidetusk, Troll Enhancement Shaman, level 25, while this dashboard still tracks Vorgash Stormcleft, Orc (Orc racials, Orc-only notes). Not changed here; needs a decision on which Shaman character the dashboard follows.",
+        "_source": "Claude-OS Fun Builds/WoW Forever @ ae74407",
+        "_date": "2026-11-10"
       }
     ],
     "feed_links": [
@@ -13961,11 +14024,11 @@
     }
   },
   "_meta": {
-    "version": 24,
-    "generated_at": "2026-11-09T09:05-05:00",
-    "source": "Grok meta watch, Nov 9 2026 9 AM ET (daily run)",
-    "notes_commit": "25e7d55",
-    "notes": "Nov 9: no Official change; 70862 item waves only; MythicSim Nov 9 (1-place moves); Class Tuning Nov 10 details not posted yet."
+    "version": 25,
+    "generated_at": "2026-11-10T09:20-05:00",
+    "source": "Grok meta watch, Nov 10 2026 9 AM ET (daily run)",
+    "notes_commit": "ae74407",
+    "notes": "Nov 10: Official Nov 9 hotfixes (Felsteed riding, Incinerate Destro-only, Lightning Overload fix); Class Tuning details not posted yet; MythicSim Nov 10."
   },
   "captions": {
     "builds": "Vorgash: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8. Corvin unchanged.",
