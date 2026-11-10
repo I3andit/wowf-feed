@@ -591,7 +591,7 @@ type NagaSpec = { stages: Stage[]; shift: Bind[]; fkeys: FKey[]; auto?: NAuto };
 // Level-aware Naga (Nov 4): plates are built from the level-aware rotation (ROT quest steps) plus a utility pool, per level.
 type NPool = { key: string; spell: string; icon: string; kind: string; covers?: string[]; lvl?: number; talent?: string; at?: number; until?: number; untilTalent?: string; note?: string; alt?: boolean };
 type NAuto = { pool: NPool[]; skip?: string[]; mode?: string; src?: string };
-type NSlot = { key: string; spell: string; icon: string; note?: string; alt?: boolean; lv: number; locked: boolean; rot: boolean; ord: number };
+type NSlot = { key: string; spell: string; icon: string; note?: string; alt?: boolean; lv: number; locked: boolean; rot: boolean; ord: number; steps: string[] };
 function nagaAuto(spec: string): NAuto | undefined {
   const n: any = WF_DATA.naga.NAGA[spec];
   return (refMode(spec) && n.auto_icy) || n.auto;
@@ -616,12 +616,12 @@ function nagaSlots(spec: string, lv: number): NSlot[] {
       if (hit.length) { ord = Math.min(...hit.map((x: { st: RStep; j: number }) => x.j)); if (L === undefined) L = Math.min(...hit.map((x: { st: RStep; j: number }) => x.st.lvl ?? 1)); }
     }
     const lvN = L ?? 1;
-    out.push({ key: p.key, spell: p.spell, icon: p.icon, note: p.note, alt: p.alt, lv: lvN, locked: lvN > lv, rot: p.kind === "rot", ord });
+    out.push({ key: p.key, spell: p.spell, icon: p.icon, note: p.note, alt: p.alt, lv: lvN, locked: lvN > lv, rot: p.kind === "rot", ord, steps: p.covers ?? [] });
   });
   steps.forEach((st: RStep, j: number) => {
     if (covered[st.name] || skip.indexOf(st.name) >= 0) return;
     const L = st.lvl ?? 1;
-    out.push({ key: `rot:${st.name}`, spell: st.name, icon: st.icon, lv: L, locked: L > lv, rot: true, ord: j });
+    out.push({ key: `rot:${st.name}`, spell: st.name, icon: st.icon, lv: L, locked: L > lv, rot: true, ord: j, steps: [st.name] });
   });
   const live = out.filter((x: NSlot) => !x.locked);
   const lr = live.filter((x: NSlot) => x.rot).sort((x: NSlot, y: NSlot) => x.ord - y.ord);
@@ -635,7 +635,20 @@ function nagaPlate(spec: string, lv: number, twelve: boolean): { base: NSlot[]; 
   const nBase = twelve ? 12 : 6;
   return { base: all.slice(0, nBase), shift: all.slice(nBase, nBase + 6), extra: all.slice(nBase + 6), nBase };
 }
-const POS6 = [1, 2, 3, 6, 5, 4];
+// Nov 10 (Bot request): plate slots map to buttons 1-6 (and Shift+1-6) in order on the 6-button plate too. The old
+// POS6 = [1, 2, 3, 6, 5, 4] put rotation step 4 on button 6. The drawing of the physical columns is unchanged.
+// The priority strip shows the Naga key each rotation step sits on, read from the same plate the Naga section draws,
+// so the two cannot drift. A step has no key when it is not learned yet, is left off on purpose (auto.skip) or has no slot.
+type StepKey = { label: string; long: string; spell: string; locked: boolean };
+function stepKeys(spec: string, lv: number): Record<string, StepKey> {
+  const NAGA12x: Record<string, Layout12> = WF_DATA.naga.NAGA12;
+  const pl = nagaPlate(spec, lv, lv >= NAGA12x[spec].from);
+  const out: Record<string, StepKey> = {};
+  const put = (x: NSlot, label: string, long: string) => x.steps.forEach((n: string) => { if (!out[n]) out[n] = { label, long, spell: x.spell, locked: x.locked }; });
+  pl.base.forEach((x: NSlot, i: number) => put(x, `${i + 1}`, `Naga ${i + 1}`));
+  pl.shift.forEach((x: NSlot, i: number) => put(x, `S${i + 1}`, `Shift+Naga ${i + 1}`));
+  return out;
+}
 function nagaWhere(spec: string, lv: number, keys: string[]): string | null {
   const NAGA12x: Record<string, Layout12> = WF_DATA.naga.NAGA12;
   const twelve = lv >= NAGA12x[spec].from;
@@ -644,8 +657,8 @@ function nagaWhere(spec: string, lv: number, keys: string[]): string | null {
     const bi = pl.base.findIndex((x: NSlot) => x.key === k);
     const si = pl.shift.findIndex((x: NSlot) => x.key === k);
     const lock = (x: NSlot) => x.locked ? ` (from Lv ${x.lv})` : "";
-    if (bi >= 0) return `Naga ${twelve ? bi + 1 : POS6[bi]}${lock(pl.base[bi])}`;
-    if (si >= 0) return `Shift+Naga ${twelve ? si + 1 : POS6[si]}${lock(pl.shift[si])}`;
+    if (bi >= 0) return `Naga ${bi + 1}${lock(pl.base[bi])}`;
+    if (si >= 0) return `Shift+Naga ${si + 1}${lock(pl.shift[si])}`;
     if (pl.extra.some((x: NSlot) => x.key === k)) return "keyboard (no Naga slot left)";
   }
   return null;
@@ -1351,13 +1364,26 @@ function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: Vie
   const nextUn = (r.unlocks ?? []).map((u: RUnlock) => ({ ...u, lvl: rotLv(u, r.seq) ?? 0 })).filter((u: RUnlock) => (u.lvl ?? 0) > lv).sort((a: RUnlock, b: RUnlock) => (a.lvl ?? 0) - (b.lvl ?? 0)).slice(0, 3);
   const ups = (st: RStep) => (st.ups ?? []).map((u: RUp) => ({ l: rotLv(u, r.seq) ?? 0, t: u.text }));
   const upLines = (st: RStep) => ups(st).map((u: { l: number; t: string }) => <div key={u.t} style={{ color: u.l <= lv ? "#9fe39f" : "#b3cbe8", marginTop: 2 }}>{u.l <= lv ? `✓ ${u.t} (from ${u.l})` : `Lv ${u.l}: ${u.t}`}</div>);
+  const keys = stepKeys(spec, lv);
+  const autoNow = nagaAuto(spec);
+  const skipNames: string[] = autoNow && autoNow.skip ? autoNow.skip : [];
+  // The key a learned step is pressed with; locked steps and steps left off the plate on purpose get none.
+  const keyOf = (st: RStep): StepKey | undefined => { const k = keys[st.name]; return k && !k.locked && !(st.lvl && st.lvl > lv) ? k : undefined; };
+  const keyNote = (st: RStep): string => {
+    const k = keys[st.name];
+    const live = keyOf(st);
+    if (live) return `Key: ${live.long}${live.spell !== st.name ? ` (${live.spell})` : ""}`;
+    if (skipNames.indexOf(st.name) >= 0) return "No key on purpose: nothing to bind.";
+    if (st.lvl && st.lvl > lv) return k && !k.locked ? `From level ${st.lvl} it uses ${k.long} (${k.spell}).` : "";
+    return "No Naga key listed for this step.";
+  };
   const chip = (st: RStep, i: number, numbered: boolean) => (
     <div key={`${st.name}-${i}`} style={{ display: "flex", alignItems: "center", gap: 4, opacity: st.lvl && st.lvl > lv ? 0.55 : 1 }}>
       <button type="button" className="wf-cell wf-btn" onClick={() => setSel(numbered ? (sel === i ? -1 : i) : -1)} style={{ position: "relative", padding: 0, border: "none", background: "transparent" }}>
         <Icon icon={st.icon} size={numbered ? 48 : 36} ring={numbered && sel === i ? GOLD_HI : color} dim={!!st.lvl && st.lvl > lv} />
-        {numbered ? <span style={{ position: "absolute", top: -6, left: -6, width: 20, height: 20, borderRadius: 10, background: GOLD, color: "#000", fontSize: 11, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>{i + 1}</span> : null}
+        {numbered && keyOf(st) ? <span style={{ position: "absolute", top: -6, left: -6, minWidth: 20, height: 20, padding: "0 4px", boxSizing: "border-box", borderRadius: 10, background: GOLD, color: "#000", fontSize: 11, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>{(keyOf(st) as StepKey).label}</span> : null}
         {st.lvl ? <span style={{ position: "absolute", bottom: -6, right: -6, fontSize: 9, padding: "0 4px", borderRadius: 4, background: "#000", border: `1px solid ${st.lvl > lv ? "#ff4040" : GOLD}`, color: st.lvl > lv ? "#ff8080" : GOLD_HI }}>{st.lvl > lv ? `Lv ${st.lvl}` : `${st.lvl}+`}</span> : null}
-        <div className="wf-tt" style={{ width: 220 }}><div style={{ color: GOLD_HI, fontWeight: 700 }}>{st.name}</div><div>{st.tip}</div>{upLines(st)}{st.until ? <div style={{ color: MUTED, marginTop: 2 }}>Until level {st.until}</div> : null}{st.lvl && st.lvl > 30 ? <div style={{ color: "#b3cbe8", marginTop: 2 }}>Guide theorycraft, Classic-based (sources below)</div> : null}</div>
+        <div className="wf-tt" style={{ width: 220 }}><div style={{ color: GOLD_HI, fontWeight: 700 }}>{st.name}</div><div>{st.tip}</div>{numbered && keyNote(st) ? <div style={{ color: GOLD, marginTop: 2 }}>{keyNote(st)}</div> : null}{upLines(st)}{st.until ? <div style={{ color: MUTED, marginTop: 2 }}>Until level {st.until}</div> : null}{st.lvl && st.lvl > 30 ? <div style={{ color: "#b3cbe8", marginTop: 2 }}>Guide theorycraft, Classic-based (sources below)</div> : null}</div>
       </button>
       {numbered && i < steps.length - 1 ? <span style={{ color: GOLD, fontSize: 18 }}>›</span> : null}
     </div>
@@ -1382,7 +1408,7 @@ function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: Vie
       <div className="wf-pop" key={`${spec}-${mode}-${showRef}`}>
         <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", margin: "6px 0" }}>Before the pull</div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 12, paddingTop: 4 }}>{prep.map((st: RStep, i: number) => chip(st, i, false))}</div>
-        <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", margin: "6px 0" }}>Priority · hover or tap an icon</div>
+        <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", margin: "6px 0" }}>Priority · hover or tap an icon · the number is the Naga key (S = Shift)</div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", padding: "10px 8px", borderRadius: 8, background: "rgba(0,0,0,.35)", border: "1px solid #3a3020" }}>{steps.map((st: RStep, i: number) => chip(st, i, true))}</div>
         <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", margin: "12px 0 6px" }}>Next unlock</div>
         {nextUn.length ? (
@@ -1398,7 +1424,7 @@ function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: Vie
         {sel >= 0 && steps[sel] ? (
           <div className="wf-pop" key={sel} style={{ marginTop: 10, padding: 10, borderRadius: 8, border: `1px solid ${GOLD}`, display: "flex", gap: 10, alignItems: "center", background: "rgba(245,215,122,.08)" }}>
             <Icon icon={steps[sel].icon} size={40} ring={GOLD_HI} />
-            <div><div style={{ fontFamily: SERIF, color: GOLD_HI }}>{sel + 1}. {steps[sel].name}</div><div style={{ fontSize: 13, color: INK }}>{steps[sel].tip}</div><div style={{ fontSize: 12 }}>{upLines(steps[sel])}</div></div>
+            <div><div style={{ fontFamily: SERIF, color: GOLD_HI }}>{keyOf(steps[sel]) ? `${(keyOf(steps[sel]) as StepKey).long} · ` : ""}{steps[sel].name}</div><div style={{ fontSize: 13, color: INK }}>{steps[sel].tip}</div>{keyNote(steps[sel]) && !keyOf(steps[sel]) ? <div style={{ fontSize: 12, color: GOLD }}>{keyNote(steps[sel])}</div> : null}<div style={{ fontSize: 12 }}>{upLines(steps[sel])}</div></div>
           </div>
         ) : null}
         {r.caveat ? <div style={{ fontSize: 12, color: ORANGE, marginTop: 8 }}>⚠ {r.caveat}</div> : null}
@@ -2849,8 +2875,8 @@ export default function App() {
   const lockOld = refMode("aff");
   const plate = nagaPlate(nagaSpec, nagaLv, nagaLv >= n12raw.from);
   const toB = (x: NSlot, n: number): Bind => ({ n, spell: x.spell, icon: x.icon, note: x.note, lock: x.locked ? x.lv : undefined, key: x.key });
-  const base6: Bind[] = plate.base.map((x: NSlot, i: number) => toB(x, POS6[i]));
-  const shift6: Bind[] = plate.shift.map((x: NSlot, i: number) => toB(x, POS6[i]));
+  const base6: Bind[] = plate.base.map((x: NSlot, i: number) => toB(x, i + 1));
+  const shift6: Bind[] = plate.shift.map((x: NSlot, i: number) => toB(x, i + 1));
   const n12: Layout12 = { ...n12raw, auto: true, buttons: plate.base.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), shift: plate.shift.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), src: `${nAuto && nAuto.src ? nAuto.src : "ROT"}; ${n12raw.src}` };
   const nagaWho = nagaSpec === "enh" ? V_NAME : "Corvin";
   const prev12 = nagaSpec === "enh" ? prev12V : prev12C;

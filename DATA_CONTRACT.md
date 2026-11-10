@@ -106,6 +106,14 @@ Names the page derives, so word them with that in mind: the guide picker and the
 
 Section captions were already data: `captions.path`, `captions.builds`, `captions.rotations`, `captions.naga` and `captions.macros` replace the built-in captions (see the `captions` row in the table above).
 
+### Naga keys and the priority strip (page behaviour since 2026-11-10)
+
+- Plate slots map to buttons in order on both plates: slot 1 is Naga 1, slot 6 is Naga 6, then Shift+1 to Shift+6 (6-button plate) or buttons 7 to 12 and then Shift (12-button plate). The old back-column remap (6, 5, 4) is gone. The drawing still shows the physical columns.
+- Slot order is: learned rotation entries in the order of the first rotation step they cover, then learned utility entries in pool order, then everything not learned yet.
+- The number on a step in the Rotations priority strip is the Naga key that step sits on ("S2" is Shift+Naga 2). It is looked up by step name in `naga.NAGA[spec].auto.pool[].covers`, or the step's own slot when no pool entry covers it.
+- A step shows no number when it is not learned yet at the character's level, when it is listed in `auto.skip`, or when no pool entry covers its name. So to give a Dungeon step a number, add its exact step name to the `covers` of the pool entry it is pressed with (for example "Shadow Bolt filler" on the Shadow Bolt entry). Steps with their own button that only exist in the Dungeon list need a pool entry that covers them.
+- Two steps covered by one pool entry show the same number, and a locked step that will share a live key says so in its hover text.
+
 ## Rules the checker enforces (a push that breaks one is ignored)
 
 1. Valid JSON, under 2 MB, every section and key in the table above present.
