@@ -12452,13 +12452,14 @@
     "boss": "The Baron",
     "rate": "37% (Forever beta, 1mw)",
     "stats": {
-     "armor": 37,
-     "spi": 9
+     "spi": 9,
+     "shadow": 7,
+     "armor": 37
     },
     "for": [
      "C"
     ],
-    "note": "+7 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271206 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
     "_date": "2026-11-10"
    },
@@ -12589,12 +12590,13 @@
     "boss": "Rath'mael",
     "rate": "24.5% (Forever beta, 1mw)",
     "stats": {
-     "dps": 15.1
+     "dps": 15.1,
+     "frost": 32
     },
     "for": [
      "V"
     ],
-    "note": "+13 Frost Resistance; Increases damage done by Frost spells and effects by up to 32. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "note": "+13 Frost Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271215 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
     "_date": "2026-11-10"
    },
@@ -13656,14 +13658,15 @@
     "req": 17,
     "boss": "Trash",
     "stats": {
-     "int": 5,
+     "dps": 14.0,
      "sta": 6,
-     "dps": 14.0
+     "int": 5,
+     "shadow": 27
     },
     "for": [
      "C"
     ],
-    "note": "Trash drop anywhere in the dungeon. +8 Shadow Resistance; +27 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "note": "Trash drop anywhere in the dungeon. +8 Shadow Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/1484 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
     "_date": "2026-11-10"
    },
@@ -13678,14 +13681,15 @@
     "req": 20,
     "boss": "Trash",
     "stats": {
-     "armor": 43,
+     "sta": 3,
      "int": 5,
-     "sta": 3
+     "shadow": 14,
+     "armor": 43
     },
     "for": [
      "C"
     ],
-    "note": "Trash drop anywhere in the dungeon. +5 Shadow Resistance; +14 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "note": "Trash drop anywhere in the dungeon. +5 Shadow Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/2292 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
     "_date": "2026-11-10"
    },
@@ -13701,9 +13705,13 @@
     "for": [
      "C"
     ],
-    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Increases damage done by Fire spells and effects by up to 9; +9 Shadow damage; Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown). School damage is not a page stat key, so the score leaves it out. No page stat keys on this item. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6898 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
-    "_date": "2026-11-10"
+    "_date": "2026-11-10",
+    "stats": {
+     "shadow": 9,
+     "fire": 9
+    }
    },
    {
     "dkey": "3",
@@ -13715,13 +13723,15 @@
     "type": "Staff",
     "quest": "The Orb of Soran'ruk",
     "stats": {
+     "dps": 15.7,
      "sta": 14,
-     "dps": 15.7
+     "shadow": 34,
+     "fire": 34
     },
     "for": [
      "C"
     ],
-    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Increases damage done by Fire spells and effects by up to 34; +34 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/15109 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
     "_date": "2026-11-10"
    },
@@ -14184,13 +14194,14 @@
     "type": "Wand",
     "quest": "Blackfathom Villainy",
     "stats": {
+     "dps": 29.0,
      "spi": 3,
-     "dps": 29.0
+     "shadow": 6
     },
     "for": [
      "C"
     ],
-    "note": "Horde version from Thunder Bluff (1mw: both factions). +6 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "note": "Horde version from Thunder Bluff (1mw: both factions). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/7001 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
     "_date": "2026-11-10"
    },
@@ -14249,9 +14260,13 @@
     "for": [
      "C"
     ],
-    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Increases damage done by Fire spells and effects by up to 9; +9 Shadow damage; Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown). School damage is not a page stat key, so the score leaves it out. No page stat keys on this item. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6898 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
-    "_date": "2026-11-10"
+    "_date": "2026-11-10",
+    "stats": {
+     "shadow": 9,
+     "fire": 9
+    }
    },
    {
     "dkey": "4",
@@ -14263,13 +14278,15 @@
     "type": "Staff",
     "quest": "The Orb of Soran'ruk",
     "stats": {
+     "dps": 15.7,
      "sta": 14,
-     "dps": 15.7
+     "shadow": 34,
+     "fire": 34
     },
     "for": [
      "C"
     ],
-    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Increases damage done by Fire spells and effects by up to 34; +34 Shadow damage. School damage is not a page stat key, so the score leaves it out. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/15109 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
     "_date": "2026-11-10"
    },
@@ -16553,11 +16570,11 @@
   }
  },
  "_meta": {
-  "version": 27,
-  "generated_at": "2026-11-10T10:59-05:00",
-  "source": "Grok, Nov 10 2026 (dungeon loot pass requested by Jason)",
+  "version": 28,
+  "generated_at": "2026-11-10T11:12-05:00",
+  "source": "Grok, Nov 10 2026 (school damage keys follow-up requested by Jason)",
   "notes_commit": "ae74407",
-  "notes": "Nov 10: Dungeon gear loot tables for Ragefire to Excavation Site (112 items, Forever DB stats, 1mw beta drop rates)."
+  "notes": "Nov 10: Dungeon gear school spell damage (shadow/fire/frost) moved from notes into item stats on 9 rows."
  },
  "captions": {
   "builds": "Zanjiro: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8. Corvin unchanged.",
