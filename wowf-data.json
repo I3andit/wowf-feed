@@ -7528,7 +7528,14 @@
          "source": "https://zugzugdb.com/item/14584/dokebi-hat",
          "date": "2026-11-07"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 83,
+         "str": 4,
+         "int": 11,
+         "spi": 5
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/14584 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -7573,7 +7580,8 @@
         "faction": "Both",
         "_source": [
          "https://wowfdb.com/zones/scarlet-monastery/loot/",
-         "https://wowclassicdatabase.com/item/ghostshard-talisman"
+         "https://wowclassicdatabase.com/item/ghostshard-talisman",
+         "https://db.icy-veins.com/wow-forever/items/7731"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game + Classic-data rate estimate",
@@ -7591,7 +7599,12 @@
          "date": "2026-11-07",
          "tag": "Classic-data estimate; not Forever-confirmed"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "sta": 9,
+         "ap": 14
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/7731 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -7634,7 +7647,8 @@
         "faction": "Both",
         "_source": [
          "https://www.stillsixty.com/bis/level-30-shaman-enhancement",
-         "https://zugzugdb.com/item/2278/forest-tracker-epaulets"
+         "https://zugzugdb.com/item/2278/forest-tracker-epaulets",
+         "https://db.icy-veins.com/wow-forever/items/2278"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, Unofficial + Classic-data world-drop examples",
@@ -7652,7 +7666,13 @@
          "source": "https://zugzugdb.com/item/2278/forest-tracker-epaulets",
          "date": "2026-11-07"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 78,
+         "str": 5,
+         "agi": 11
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/2278 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -7677,7 +7697,8 @@
         "_source": [
          "https://db.icy-veins.com/wow-forever/items/6314",
          "https://1mw.io/en/dungeons/shadowfang-keep/loot",
-         "https://db.icy-veins.com/wow-forever/items/6340"
+         "https://db.icy-veins.com/wow-forever/items/6340",
+         "https://db.icy-veins.com/wow-forever/items/271719"
         ],
         "_date": "2026-11-10",
         "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
@@ -7687,7 +7708,19 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
         "level_status": "Window 22+ chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
-        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access.",
+        "alts": [
+         {
+          "item": "Fenrus' Hide",
+          "label": "Alt — SFK Fenrus, 75.7% (Forever beta, 1mw)",
+          "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Fenrus and loot Fenrus' Hide. Drop chance 75.7% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Stats: 22 armor, 4 Agi, 6 Sta; page score 12.4."
+         },
+         {
+          "item": "Furs of the Earthen Ring",
+          "label": "Alt — Earthen Echo reward INSTEAD of Heavehammer (pick one)",
+          "how": "Excavation Site: loot Titan Relic from the Relic Guardian; Elder Knowledge to Bashana Runetotem, Elder Rise, Thunder Bluff (70.8, 33.7); Earthen Echo to Muln Earthfury, Skywatcher Plateau, Mulgore (path starts near 40.3, 17.6) (1mw.io). Same reward choice as Heavehammer, so taking it costs the two-hander. Stats from dungeons.LOOT (Icy Veins DB)."
+         }
+        ]
        }
       ],
       "_gear_audit": {
@@ -7739,7 +7772,8 @@
         "how": "Form a dungeon group; enter City of Dalaran in Alterac Mountains; defeat Fel Ancient and loot Garb of Fallen Felbark. Talk to Grindle Firespark to lower the barrier; boss is in the centre. Verified live Forever drop probability: not established by the primary source; no guaranteed drop.",
         "faction": "Both",
         "_source": [
-         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot",
+         "https://db.icy-veins.com/wow-forever/items/273038"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever beta guide, Unofficial (verified by source Oct15)",
@@ -7751,7 +7785,14 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 110,
+         "agi": 9,
+         "int": 13,
+         "sta": 7
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/273038 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -7819,7 +7860,20 @@
          "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
          "recommendation_status": "Alt ONLY — Alliance territory, long trip",
          "name": "Technician's Bracers"
-        }
+        },
+        "alts": [
+         {
+          "item": "Technician's Bracers",
+          "label": "Alt — Alliance territory, long trip",
+          "how": "Accept A Fine Mess from Kernobee inside Gnomeregan, Dormitory before Viscous Fallout, minimum 20. Escort him to the entrance and leave before the bot countdown ends; choose Technician's Bracers. Gnomeregan is in Dun Morogh: Alliance territory, long trip (neutral dungeon quest, not an Alliance-only reward). No prerequisite or NPC coordinates published by source. Stats: Icy Veins Forever DB https://db.icy-veins.com/wow-forever/items/270042 (read 2026-11-10).",
+          "stats": {
+           "armor": 42,
+           "str": 4,
+           "int": 4,
+           "sta": 4
+          }
+         }
+        ]
        },
        {
         "id": "gsd5",
@@ -7850,7 +7904,14 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
         "level_status": "Window 22+ chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
-        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access.",
+        "alts": [
+         {
+          "item": "Bands of Serra'kis",
+          "label": "Alt — BFD Old Serra'kis, 36.1% (Forever beta, 1mw)",
+          "how": "Form a dungeon group; enter Blackfathom Deeps in Ashenvale; defeat Old Serra'kis and loot Bands of Serra'kis. Drop chance 36.1% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Stats: 43 armor, 6 Str, 3 Sta; page score 15.9."
+         }
+        ]
        }
       ]
      }
@@ -7910,7 +7971,26 @@
          "level_status": "Planning window, not character ownership or trained profession confirmation",
          "horde_access": "Sourced Horde-accessible route; Classic components explicitly identified",
          "name": "Gloves of the Fang"
-        }
+        },
+        "stats": {
+         "armor": 53,
+         "str": 4,
+         "agi": 4,
+         "sta": 3
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/252494 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10",
+        "alts": [
+         {
+          "item": "Gloves of the Fang",
+          "label": "Alt — WC farm / AH",
+          "how": "Alt to deterministic Brawler craft. Wailing Caverns, The Barrens: loot Druid of the Fang trash (Classic-data mob level 19–20), or buy the BoE item on AH if listed. Forever DB lists the item as WC random drop and equip 14; one weighted gear page displays 16, so use 14 as item-database requirement with discrepancy noted. Classic-data estimated drop chance 2.3% per Druid of the Fang (MetaBot); not Forever-confirmed and not a guaranteed dungeon run. Forever stats from cited client tables 6 Agility/4 Strength; level 20 guide ranks it above Brawler's Leather Gloves, but this does not prove a universal best choice. Stats: Icy Veins Forever DB https://db.icy-veins.com/wow-forever/items/10413 (read 2026-11-10).",
+          "stats": {
+           "armor": 52,
+           "str": 4,
+           "agi": 6
+          }
+         }
+        ]
        }
       ]
      },
@@ -7932,7 +8012,8 @@
          "https://db.icy-veins.com/wow-forever/quests/1487",
          "https://warcraftmaps.com/recipe/7955/deviate-scale-belt",
          "https://theforeverera.com/en/items/6468/",
-         "https://foreverwow.gg/shaman/enhancement/level-20/"
+         "https://foreverwow.gg/shaman/enhancement/level-20/",
+         "https://db.icy-veins.com/wow-forever/items/6468"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever client recipe/item + guide acquisition, Unofficial",
@@ -7948,7 +8029,14 @@
         "blocked_leads": [
          "Prowler's Leather Belt"
         ],
-        "horde_access": "Sourced Horde-accessible route; Classic components explicitly identified"
+        "horde_access": "Sourced Horde-accessible route; Classic components explicitly identified",
+        "stats": {
+         "armor": 51,
+         "str": 3,
+         "agi": 5,
+         "sta": 6
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/6468 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -7974,7 +8062,8 @@
          "https://db.icy-veins.com/wow-forever/items/10410",
          "https://1mw.io/en/dungeons/wailing-caverns/loot",
          "https://db.icy-veins.com/wow-forever/items/273647",
-         "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot",
+         "https://db.icy-veins.com/wow-forever/items/273022"
         ],
         "_date": "2026-11-10",
         "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
@@ -7984,7 +8073,19 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
         "level_status": "Window 17–28 chosen for Zanjiro from equip level / dungeon range; planning recommendation.",
-        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access.",
+        "alts": [
+         {
+          "item": "Worgpelt Leggings",
+          "label": "Alt — SFK Wolf Master Nandos, rate not published",
+          "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; defeat Nandos and loot Worgpelt Leggings. Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 21 (Icy Veins DB). Stats: 84 armor, 5 Str, 10 Agi; page score 26.7."
+         },
+         {
+          "item": "Supple Bellyskin Leggings",
+          "label": "Alt — Excavation Site Saltspine, from 26, rate not published",
+          "how": "Defeat Saltspine in Excavation Site and loot it. Drop chance not published. Requires level 26. Stats from dungeons.LOOT (Icy Veins DB)."
+         }
+        ]
        },
        {
         "id": "gs12",
@@ -7998,7 +8099,8 @@
         "faction": "Both",
         "_source": [
          "https://wowfdb.com/zones/razorfen-kraul/loot/",
-         "https://wowclassicdatabase.com/item/ferine-leggings"
+         "https://wowclassicdatabase.com/item/ferine-leggings",
+         "https://db.icy-veins.com/wow-forever/items/6690"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game + Classic-data rate estimate",
@@ -8016,7 +8118,13 @@
          "date": "2026-11-07",
          "tag": "Classic-data estimate; not Forever-confirmed"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 96,
+         "int": 12,
+         "ap": 26
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/6690 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8037,7 +8145,8 @@
          "https://www.foreverdb.app/en/forever/items/252786/pattern-brawler-s-leather-boots",
          "https://www.wow-professions.com/forever/npc/pawani",
          "https://wowfdb.com/professions/leatherworking/recipes/",
-         "https://www.stillsixty.com/bis/level-30-shaman-enhancement"
+         "https://www.stillsixty.com/bis/level-30-shaman-enhancement",
+         "https://db.icy-veins.com/wow-forever/items/252439"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, Unofficial",
@@ -8046,7 +8155,14 @@
         "conflicts": [],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 61,
+         "str": 5,
+         "agi": 5,
+         "sta": 4
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/252439 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8094,7 +8210,8 @@
          "https://warcraft.wiki.gg/wiki/The_Severed_Head",
          "https://warcraft.wiki.gg/wiki/The_Troll_Witchdoctor",
          "https://warcraft.wiki.gg/wiki/Marg_Speaks",
-         "https://warcraft.wiki.gg/wiki/Report_to_Zor"
+         "https://warcraft.wiki.gg/wiki/Report_to_Zor",
+         "https://db.icy-veins.com/wow-forever/items/18585"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever guide minimum30 + Classic-data chain, Unofficial",
@@ -8107,7 +8224,12 @@
         ],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "str": 9,
+         "sta": 4
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/18585 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8150,7 +8272,8 @@
         "faction": "Both",
         "_source": [
          "https://www.stillsixty.com/bis/level-30-shaman-enhancement",
-         "https://wowseer.gg/items/Wyvern_Heart_Band_285190"
+         "https://wowseer.gg/items/Wyvern_Heart_Band_285190",
+         "https://db.icy-veins.com/wow-forever/items/285190"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever beta/community guide, Unofficial single source",
@@ -8165,7 +8288,13 @@
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
         "reported_rate_note": "WowSeer lists Heartrazor32 near Whitereach Post, Thousand Needles; item equip29, reported chance0.63%. Sample/method not published; Unofficial single-source estimate, not a live Forever probability guarantee.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "agi": 5,
+         "sta": 5,
+         "ap": 15
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/285190 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8305,7 +8434,19 @@
         },
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
         "alt_label": "Alt — Alliance territory, long trip",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "alts": [
+         {
+          "item": "Smite's Mighty Hammer",
+          "label": "Alt — Alliance territory, long trip",
+          "how": "Form a dungeon group; enter The Deadmines in Westfall; defeat Mr. Smite and loot Smite's Mighty Hammer. Alt only: Alliance territory, long trip. Verified live Forever drop probability: not established by the primary source; no guaranteed drop. Classic-data estimate: 18.58% from the same named boss in the Classic database; NOT the Forever probability. Different databases/samples can disagree. Stats: Icy Veins Forever DB https://db.icy-veins.com/wow-forever/items/7230 (read 2026-11-10).",
+          "stats": {
+           "str": 11,
+           "agi": 4,
+           "dps": 19.7
+          }
+         }
+        ]
        },
        {
         "id": "gs2",
@@ -8320,7 +8461,8 @@
         "_source": [
          "https://wowfdb.com/zones/blackfathom-deeps/loot/",
          "https://foreverchanges.pro/item/273841/twilight-maul",
-         "https://db.icy-veins.com/wow-forever/items/6905"
+         "https://db.icy-veins.com/wow-forever/items/6905",
+         "https://db.icy-veins.com/wow-forever/items/3191"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game",
@@ -8339,7 +8481,19 @@
         "alt_label": "Alt — BFD Gelihast, 49.7% (Forever beta, 1mw)",
         "alt_acquisition": {
          "how": "Form a dungeon group; enter Blackfathom Deeps in Ashenvale; defeat Gelihast and loot Reef Axe. Drop chance 49.7% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Stats: 8 Str, 22.4 DPS, 24 healing, 8 spell power; page score 332.0 vs Twilight Maul 324.2."
-        }
+        },
+        "alts": [
+         {
+          "item": "Reef Axe",
+          "label": "Alt — BFD Gelihast, 49.7% (Forever beta, 1mw)",
+          "how": "Form a dungeon group; enter Blackfathom Deeps in Ashenvale; defeat Gelihast and loot Reef Axe. Drop chance 49.7% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 22 (Icy Veins DB). Stats: 8 Str, 22.4 DPS, 24 healing, 8 spell power; page score 332.0 vs Twilight Maul 324.2."
+         },
+         {
+          "item": "Arced War Axe",
+          "label": "Alt — SFK Commander Springvale, 38.1% (Forever beta, 1mw)",
+          "how": "Defeat Commander Springvale in Shadowfang Keep and loot it. Drop chance 38.1% (Forever beta survey, 1mw.io, single source). Requires level 21. Stats from dungeons.LOOT (Icy Veins DB)."
+         }
+        ]
        },
        {
         "id": "gs3",
@@ -8354,7 +8508,9 @@
         "_source": [
          "https://1mw.io/en/dungeons/excavation-site/quests",
          "https://1mw.io/en/dungeons/excavation-site/loot",
-         "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
+         "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+         "https://db.icy-veins.com/wow-forever/items/6905",
+         "https://db.icy-veins.com/wow-forever/items/3191"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever beta guide, Unofficial (verified by source Oct15)",
@@ -8365,7 +8521,19 @@
         ],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "alts": [
+         {
+          "item": "Reef Axe",
+          "label": "Alt — BFD Gelihast, 49.7% (Forever beta, 1mw); no quest chain",
+          "how": "Defeat Gelihast in Blackfathom Deeps and loot it. Drop chance 49.7% (Forever beta survey, 1mw.io, single source). Requires level 22. Stats from dungeons.LOOT (Icy Veins DB)."
+         },
+         {
+          "item": "Arced War Axe",
+          "label": "Alt — SFK Commander Springvale, 38.1% (Forever beta, 1mw)",
+          "how": "Defeat Commander Springvale in Shadowfang Keep and loot it. Drop chance 38.1% (Forever beta survey, 1mw.io, single source). Requires level 21. Stats from dungeons.LOOT (Icy Veins DB)."
+         }
+        ]
        },
        {
         "id": "gs4",
@@ -8379,7 +8547,8 @@
         "faction": "Both",
         "_source": [
          "https://wowfdb.com/zones/razorfen-kraul/loot/",
-         "https://wowclassicdatabase.com/item/corpsemaker"
+         "https://wowclassicdatabase.com/item/corpsemaker",
+         "https://db.icy-veins.com/wow-forever/items/6687"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game + Classic-data rate estimate",
@@ -8397,7 +8566,13 @@
          "date": "2026-11-07",
          "tag": "Classic-data estimate; not Forever-confirmed"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "str": 15,
+         "sta": 8,
+         "dps": 28.9
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/6687 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        },
        {
         "id": "gs5",
@@ -8411,7 +8586,8 @@
         "faction": "Both",
         "_source": [
          "https://www.icy-veins.com/wow-forever/shaman-class-quests",
-         "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
+         "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+         "https://db.icy-veins.com/wow-forever/items/280604"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, Unofficial",
@@ -8452,7 +8628,26 @@
          "source_count_note": "Recommendation single source (Nicktew); item and quest facts from 3 data sites.",
          "recommendation_status": "Alt — guide pick, long reputation chain",
          "horde_access": "Neutral centaur faction; Horde can do the full chain."
-        }
+        },
+        "stats": {
+         "int": 12,
+         "sta": 15,
+         "dps": 35.6
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/280604 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10",
+        "alts": [
+         {
+          "item": "Abandoned Ferocity",
+          "label": "Alt — Nicktew pick (Nov 8), needs Honored Gelkis",
+          "how": "Neutral (Horde OK) Gelkis chain, Desolace. First reach Friendly with the Gelkis (kill Magram centaur; Horde pick-up Gelkis Alliance from Gurda Wildmane, Ghost Walker Post 56.3,59.7, Classic location) and report to Uthek the Wise, Gelkis Village 36.2,79.2 (Classic location). Then reach Honored with the Gelkis for the Forever Valley of Bones quests: Saving Our Own → Bone Burying → Checking Things Out → Khan Jehn (quest 93128, from Nerlokh in Valley of Bones; Valley of Bones coordinates not published in the sources read). Kill Khan Jehn in Magram Village (Desolace), turn in to Uthek the Wise and choose Abandoned Ferocity. Requires level 35; quest level 42, from 30; Nicktew suggests 35+ with help, ~40 solo, long chain. Item (Forever data): Rare 2H axe, ilvl 42, 95-143 damage, 3.20 speed (37.2 DPS), +10 Strength, +4 Agility, +12 Stamina. Raising Gelkis lowers Magram reputation. Stats: Icy Veins Forever DB https://db.icy-veins.com/wow-forever/items/271801 (read 2026-11-10).",
+          "stats": {
+           "str": 10,
+           "agi": 4,
+           "sta": 12,
+           "dps": 37.2
+          }
+         }
+        ]
        }
       ]
      },
@@ -8517,7 +8712,8 @@
          "https://www.wow-professions.com/forever/npc/jimbek",
          "https://wowdb.wiki/forever/map/the-barrens/jim-bek",
          "https://wowfdb.com/professions/tailoring/recipes/",
-         "https://wowdb.wiki/forever/map/redridge-mountains/mivin-shadowweave"
+         "https://wowdb.wiki/forever/map/redridge-mountains/mivin-shadowweave",
+         "https://db.icy-veins.com/wow-forever/items/253955"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, Unofficial",
@@ -8526,7 +8722,13 @@
         "conflicts": [],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 35,
+         "sta": 10,
+         "shadow": 11
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/253955 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8571,7 +8773,8 @@
         "faction": "Both",
         "_source": [
          "https://wowfdb.com/zones/razorfen-kraul/loot/",
-         "https://wowclassicdatabase.com/item/stygian-bone-amulet"
+         "https://wowclassicdatabase.com/item/stygian-bone-amulet",
+         "https://db.icy-veins.com/wow-forever/items/6695"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game + Classic-data rate estimate",
@@ -8589,7 +8792,13 @@
          "date": "2026-11-07",
          "tag": "Classic-data estimate; not Forever-confirmed"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "sta": 4,
+         "sp": 5,
+         "heal": 5
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/6695 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8632,7 +8841,8 @@
         "faction": "Both",
         "_source": [
          "https://wowfdb.com/zones/scarlet-monastery/loot/",
-         "https://wowclassicdatabase.com/item/bloodmage-mantle"
+         "https://wowclassicdatabase.com/item/bloodmage-mantle",
+         "https://db.icy-veins.com/wow-forever/items/7684"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game + Classic-data rate estimate",
@@ -8650,7 +8860,15 @@
          "date": "2026-11-07",
          "tag": "Classic-data estimate; not Forever-confirmed"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 38,
+         "int": 9,
+         "sp": 9,
+         "heal": 9,
+         "hp5": 9
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/7684 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8692,7 +8910,8 @@
         "how": "Form a dungeon group; enter Razorfen Kraul in The Barrens; defeat Roogug and loot Thornweaver Drape.  Verified live Forever drop probability: not established by the primary source; no guaranteed drop.",
         "faction": "Both",
         "_source": [
-         "https://wowfdb.com/zones/razorfen-kraul/loot/"
+         "https://wowfdb.com/zones/razorfen-kraul/loot/",
+         "https://db.icy-veins.com/wow-forever/items/274149"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game",
@@ -8704,7 +8923,14 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 24,
+         "spi": 6,
+         "sp": 7,
+         "heal": 7
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/274149 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8730,7 +8956,8 @@
          "https://db.icy-veins.com/wow-forever/items/271206",
          "https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
          "https://db.icy-veins.com/wow-forever/items/2292",
-         "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot",
+         "https://db.icy-veins.com/wow-forever/items/6226"
         ],
         "_date": "2026-11-10",
         "source_type": "Forever item DB (Icy Veins) + Forever beta loot survey (1mw.io), Unofficial",
@@ -8740,7 +8967,19 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
         "level_status": "Window 15–21 chosen for Corvin from equip level / dungeon range; planning recommendation.",
-        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access.",
+        "alts": [
+         {
+          "item": "Necrology Robes",
+          "label": "Alt — SFK trash drop from 20, rate not published",
+          "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; Necrology Robes is a trash drop anywhere in the dungeon (no single boss). Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 20 (Icy Veins DB). Stats: 3 Sta, 5 Int, 14 Shadow dmg, 43 armor; page score 19.8."
+         },
+         {
+          "item": "Bloody Apron",
+          "label": "Alt — SFK Razorclaw the Butcher, 41.6% (Forever beta, 1mw)",
+          "how": "Defeat Razorclaw in Shadowfang Keep and loot it. Drop chance 41.6% (Forever beta survey, 1mw.io, single source). Requires level 19. Stats from dungeons.LOOT (Icy Veins DB)."
+         }
+        ]
        },
        {
         "id": "gl14",
@@ -8756,7 +8995,8 @@
          "https://www.wow-professions.com/forever/npc/jimbek",
          "https://wowdb.wiki/forever/map/the-barrens/jim-bek",
          "https://wowfdb.com/professions/tailoring/recipes/",
-         "https://wowdb.wiki/forever/map/redridge-mountains/mivin-shadowweave"
+         "https://wowdb.wiki/forever/map/redridge-mountains/mivin-shadowweave",
+         "https://db.icy-veins.com/wow-forever/items/253967"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, Unofficial",
@@ -8765,7 +9005,15 @@
         "conflicts": [],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 45,
+         "int": 7,
+         "sta": 6,
+         "spi": 4,
+         "shadow": 13
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/253967 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        },
        {
         "id": "gl14b",
@@ -8778,7 +9026,8 @@
         "how": "Form a dungeon group; enter City of Dalaran in Alterac Mountains; defeat Arcanic Enigma and loot Violet Sorcerer's Robes. Boss is in the southern-bank garden on Path of Renewal. Verified live Forever drop probability: not established by the primary source; no guaranteed drop.",
         "faction": "Both",
         "_source": [
-         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot",
+         "https://db.icy-veins.com/wow-forever/items/273044"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever beta guide, Unofficial (verified by source Oct15)",
@@ -8790,7 +9039,14 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 49,
+         "int": 15,
+         "sp": 9,
+         "heal": 9
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/273044 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8890,7 +9146,14 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
         "level_status": "Window 16–26 chosen for Corvin from equip level / dungeon range; planning recommendation.",
-        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access.",
+        "alts": [
+         {
+          "item": "Serpent Gloves",
+          "label": "Alt — WC Lord Serpentis, 20.6% (Forever beta, 1mw)",
+          "how": "Form a dungeon group; enter Wailing Caverns in The Barrens; defeat Lord Serpentis and loot Serpent Gloves. Drop chance 20.6% (Forever beta survey, 1mw.io, single source; not a live-game rate). Requires level 18 (Icy Veins DB). Stats: 25 armor, 6 Agi, 7 spell power, 7 healing; page score 7.2."
+         }
+        ]
        },
        {
         "id": "gl16",
@@ -8903,7 +9166,8 @@
         "how": "Form a dungeon group; enter City of Dalaran in Alterac Mountains; defeat Arcane Anomaly and loot Ephemeral Grips. Boss is at Krasus' Landing. Verified live Forever drop probability: not established by the primary source; no guaranteed drop.",
         "faction": "Both",
         "_source": [
-         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot",
+         "https://db.icy-veins.com/wow-forever/items/273034"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever beta guide, Unofficial (verified by source Oct15)",
@@ -8915,7 +9179,14 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 31,
+         "int": 7,
+         "sta": 7,
+         "shadow": 9
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/273034 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -8989,7 +9260,8 @@
         "how": "Form a dungeon group; enter City of Dalaran in Alterac Mountains; defeat Fel Ancient and loot Blightleaf Rope. Talk to Grindle Firespark to lower central barrier. Verified live Forever drop probability: not established by the primary source; no guaranteed drop.",
         "faction": "Both",
         "_source": [
-         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot",
+         "https://db.icy-veins.com/wow-forever/items/273039"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever beta guide, Unofficial (verified by source Oct15)",
@@ -9001,7 +9273,15 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 28,
+         "int": 10,
+         "sp": 7,
+         "heal": 7,
+         "hp5": 5
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/273039 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -9046,7 +9326,8 @@
          "https://www.wow-professions.com/forever/npc/jimbek",
          "https://wowdb.wiki/forever/map/the-barrens/jim-bek",
          "https://wowfdb.com/professions/tailoring/recipes/",
-         "https://wowdb.wiki/forever/map/redridge-mountains/mivin-shadowweave"
+         "https://wowdb.wiki/forever/map/redridge-mountains/mivin-shadowweave",
+         "https://db.icy-veins.com/wow-forever/items/253993"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, Unofficial",
@@ -9055,7 +9336,15 @@
         "conflicts": [],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 41,
+         "int": 7,
+         "sta": 7,
+         "spi": 5,
+         "shadow": 14
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/253993 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        },
        {
         "id": "gl18b",
@@ -9068,7 +9357,8 @@
         "how": "Form a dungeon group; enter Scarlet Monastery Graveyard in Tirisfal Glades; defeat Azshir the Sleepless (rare) and loot Blighted Leggings.  Verified live Forever drop probability: not established by the primary source; no guaranteed drop.",
         "faction": "Both",
         "_source": [
-         "https://wowfdb.com/zones/scarlet-monastery/loot/"
+         "https://wowfdb.com/zones/scarlet-monastery/loot/",
+         "https://db.icy-veins.com/wow-forever/items/7709"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game",
@@ -9080,7 +9370,13 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 45,
+         "spi": 14,
+         "shadow": 19
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/7709 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -9123,7 +9419,8 @@
         "faction": "Horde",
         "_source": [
          "https://1mw.io/en/dungeons/city-of-dalaran/quests",
-         "https://www.wowhead.com/forever/quest=96984/heart-of-disruption"
+         "https://www.wowhead.com/forever/quest=96984/heart-of-disruption",
+         "https://db.icy-veins.com/wow-forever/items/279843"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever beta guide + conflicting search-only quest extract, Unofficial",
@@ -9139,7 +9436,14 @@
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "source_access_note": "1mw fully opened; Wowhead search extract only, direct page403.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "armor": 36,
+         "sta": 10,
+         "sp": 9,
+         "heal": 9
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/279843 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -9394,7 +9698,14 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Stats on two Forever databases (Icy Veins DB, 1mw.io beta); acquisition from 1mw.io. Score is an estimate from stat weights, not a simulation.",
         "level_status": "Window 17–19 chosen for Corvin from equip level / dungeon range; planning recommendation.",
-        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access."
+        "horde_access": "Horde quest or neutral dungeon drop; no Alliance quest or Alliance-only access.",
+        "alts": [
+         {
+          "item": "Witching Stave",
+          "label": "Alt — SFK trash drop, rate not published",
+          "how": "Form a dungeon group; enter Shadowfang Keep in Silverpine Forest; Witching Stave is a trash drop anywhere in the dungeon (no single boss). Drop chance: not published by 1mw.io or Icy Veins DB; no Classic rate substituted. Requires level 17 (Icy Veins DB). Stats: 14.0 DPS, 6 Sta, 5 Int, 27 Shadow dmg; page score 34.8."
+         }
+        ]
        },
        {
         "id": "gl7",
@@ -9438,7 +9749,21 @@
          "name": "Glimmering Staff"
         },
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "alts": [
+         {
+          "item": "Glimmering Staff",
+          "label": "Alt",
+          "how": "Craft with Enchanting 140. Horde formula: Beneris outside west gate of Crossroads, The Barrens,45 Merchant's Favor (formula BoP). Reagents: 4 Large Glimmering Shard,2 Small Glimmering Shard,4 Star Wood,1 Greater Astral Essence,5 Strange Dust,3 Pyrite; Runed Silver Rod. Exact Beneris coordinates not published in opened source. Both-faction acquisition corroboration: Alliance counterpart Alynsia, Three Corners, Redridge, lists same formula 140/45 Favor. Horde uses Beneris. Stats: Icy Veins Forever DB https://db.icy-veins.com/wow-forever/items/249392 (read 2026-11-10).",
+          "stats": {
+           "int": 11,
+           "sta": 11,
+           "dps": 18.4,
+           "sp": 34,
+           "heal": 34
+          }
+         }
+        ]
        },
        {
         "id": "gl8",
@@ -9451,7 +9776,8 @@
         "how": "Form a dungeon group; enter City of Dalaran in Alterac Mountains; defeat Lyn the Ignored (secret boss) and loot Tendonscraper Dagger. Loot Black Tome in Arugal's room, Shadowfang Keep; use at Ambermill Leyline Focus in Silverpine Forest to get Tome of Dalaran; use at purple ritual circle in Dalaran sewers to summon Lyn. Verified live Forever drop probability: not established by the primary source; no guaranteed drop.",
         "faction": "Both",
         "_source": [
-         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot",
+         "https://db.icy-veins.com/wow-forever/items/273053"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever beta guide, Unofficial (verified by source Oct15)",
@@ -9463,7 +9789,15 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "sta": 5,
+         "dps": 14.4,
+         "sp": 36,
+         "heal": 36,
+         "hp5": 8
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/273053 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        },
        {
         "id": "gl9",
@@ -9477,7 +9811,8 @@
         "faction": "Both",
         "_source": [
          "https://wowfdb.com/zones/scarlet-monastery/loot/",
-         "https://wowclassicdatabase.com/item/hypnotic-blade"
+         "https://wowclassicdatabase.com/item/hypnotic-blade",
+         "https://db.icy-veins.com/wow-forever/items/7714"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game + Classic-data rate estimate",
@@ -9495,7 +9830,15 @@
          "date": "2026-11-07",
          "tag": "Classic-data estimate; not Forever-confirmed"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "int": 8,
+         "spi": 3,
+         "dps": 17.5,
+         "sp": 44,
+         "heal": 44
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/7714 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -9539,7 +9882,8 @@
         "faction": "Both",
         "_source": [
          "https://wowfdb.com/zones/scarlet-monastery/loot/",
-         "https://wowclassicdatabase.com/item/orb-of-the-forgotten-seer"
+         "https://wowclassicdatabase.com/item/orb-of-the-forgotten-seer",
+         "https://db.icy-veins.com/wow-forever/items/7685"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game + Classic-data rate estimate",
@@ -9557,7 +9901,12 @@
          "date": "2026-11-07",
          "tag": "Classic-data estimate; not Forever-confirmed"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "sp": 14,
+         "heal": 14
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/7685 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      },
@@ -9577,7 +9926,8 @@
         "_source": [
          "https://forg.gg/en/forever/professions/enchanting",
          "https://wowfdb.com/professions/enchanting/recipes/",
-         "https://www.wow-professions.com/classic/enchanting-leveling-guide-classic-wow"
+         "https://www.wow-professions.com/classic/enchanting-leveling-guide-classic-wow",
+         "https://db.icy-veins.com/wow-forever/items/11287"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever datamined recipe + trainer table, Unofficial + Classic-data trainer route",
@@ -9588,7 +9938,13 @@
         "conflicts": [],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "dps": 11.3,
+         "sp": 1,
+         "heal": 1
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/11287 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        },
        {
         "id": "gl1",
@@ -9603,7 +9959,8 @@
         "_source": [
          "https://forg.gg/en/forever/professions/enchanting",
          "https://wowfdb.com/professions/enchanting/recipes/",
-         "https://www.wow-professions.com/classic/enchanting-leveling-guide-classic-wow"
+         "https://www.wow-professions.com/classic/enchanting-leveling-guide-classic-wow",
+         "https://db.icy-veins.com/wow-forever/items/11288"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever datamined recipe + trainer table, Unofficial + Classic-data trainer route",
@@ -9614,7 +9971,13 @@
         "conflicts": [],
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "dps": 17.5,
+         "sp": 2,
+         "heal": 2
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/11288 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        },
        {
         "id": "gl2",
@@ -9651,7 +10014,8 @@
         "how": "Form a dungeon group; enter City of Dalaran in Alterac Mountains; defeat Arcanic Enigma and loot Wand of Mana Concentration. Boss is in the southern-bank garden on Path of Renewal. Verified live Forever drop probability: not established by the primary source; no guaranteed drop.",
         "faction": "Both",
         "_source": [
-         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot",
+         "https://db.icy-veins.com/wow-forever/items/273043"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever beta guide, Unofficial (verified by source Oct15)",
@@ -9663,7 +10027,13 @@
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
         "source_count_note": "Single source; acquisition lead, not mathematically proven best.",
         "level_status": "Inherited level windows are planning recommendations, not newly verified equip requirements; explicit requirement corrections are cited in how.",
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "int": 4,
+         "dps": 31.2,
+         "mp5": 2
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/273043 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        },
        {
         "id": "gl4",
@@ -9677,7 +10047,8 @@
         "faction": "Both",
         "_source": [
          "https://wowfdb.com/zones/scarlet-monastery/loot/",
-         "https://wowclassicdatabase.com/item/necrotic-wand"
+         "https://wowclassicdatabase.com/item/necrotic-wand",
+         "https://db.icy-veins.com/wow-forever/items/7708"
         ],
         "_date": "2026-11-07",
         "source_type": "Forever-data, datamined/collected; not checked in game + Classic-data rate estimate",
@@ -9695,7 +10066,13 @@
          "date": "2026-11-07",
          "tag": "Classic-data estimate; not Forever-confirmed"
         },
-        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how."
+        "horde_access": "Sourced Horde quest/vendor/craft or non-faction-restricted dungeon/world drop; travel restrictions and Classic-data components are explicit in how.",
+        "stats": {
+         "dps": 33.2,
+         "heal": 9,
+         "sp": 3
+        },
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/7708 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10"
        }
       ]
      }
@@ -17459,11 +17836,11 @@
   }
  },
  "_meta": {
-  "version": 29,
-  "generated_at": "2026-11-10T11:24-05:00",
-  "source": "Grok, Nov 10 2026 (gear sheets from dungeon loot, requested by Jason)",
+  "version": 30,
+  "generated_at": "2026-11-10T11:36-05:00",
+  "source": "Grok, Nov 10 2026 (gear sheet alts and pick stats, requested by Jason)",
   "notes_commit": "ae74407",
-  "notes": "Nov 10: gear sheets updated from dungeon loot: 21 new level-appropriate picks for Zanjiro and Corvin, Heavehammer from 24."
+  "notes": "Nov 10: gear sheet alternates lists and Forever DB stats on 35 picks/alts so every scorable pick shows a score."
  },
  "captions": {
   "builds": "Zanjiro: Icy Veins original and Nicktew Recommended6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8. Corvin unchanged.",
