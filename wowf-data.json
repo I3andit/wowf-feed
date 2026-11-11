@@ -4569,7 +4569,10 @@
        "spell": "Earthbind Totem",
        "icon": "spell_nature_strengthofearthtotem02",
        "kind": "util",
-       "lvl": 6
+       "lvl": 6,
+       "covers": [
+        "Earthbind Totem"
+       ]
       },
       {
        "key": "purge",
@@ -4856,7 +4859,8 @@
        "icon": "spell_shadow_curseofsargeras",
        "kind": "rot",
        "covers": [
-        "Bane of Agony"
+        "Bane of Agony",
+        "Bane of Doom"
        ]
       },
       {
@@ -4913,7 +4917,8 @@
        "icon": "spell_shadow_shadowbolt",
        "kind": "rot",
        "covers": [
-        "Shadow Bolt"
+        "Shadow Bolt",
+        "Shadow Bolt filler"
        ]
       },
       {
@@ -5021,7 +5026,10 @@
        "kind": "rot",
        "covers": [
         "Shadow Bolt opener",
-        "Nightfall Shadow Bolt"
+        "Nightfall Shadow Bolt",
+        "Shadow Bolt filler",
+        "Shadow Bolt precast",
+        "Nightfall procs"
        ],
        "note": "Opener; also your Nightfall instant"
       },
@@ -5061,7 +5069,8 @@
        "icon": "spell_shadow_curseofsargeras",
        "kind": "rot",
        "covers": [
-        "Bane of Agony"
+        "Bane of Agony",
+        "Bane of Doom"
        ]
       },
       {
@@ -5348,7 +5357,8 @@
        "icon": "spell_shadow_curseofsargeras",
        "kind": "rot",
        "covers": [
-        "Bane of Agony"
+        "Bane of Agony",
+        "Bane of Doom"
        ]
       },
       {
@@ -5405,7 +5415,8 @@
        "icon": "spell_shadow_shadowbolt",
        "kind": "rot",
        "covers": [
-        "Shadow Bolt"
+        "Shadow Bolt",
+        "Shadow Bolt filler"
        ]
       },
       {
@@ -5512,7 +5523,9 @@
        "icon": "spell_fire_soulburn",
        "kind": "rot",
        "covers": [
-        "Searing Pain (Demonic Brand)"
+        "Searing Pain (Demonic Brand)",
+        "Searing Pain",
+        "Searing Pain filler"
        ],
        "note": "Filler once Demonic Brand is talented"
       },
@@ -5531,7 +5544,8 @@
        "icon": "spell_shadow_curseofsargeras",
        "kind": "rot",
        "covers": [
-        "Bane of Agony"
+        "Bane of Agony",
+        "Bane of Doom"
        ]
       },
       {
@@ -5631,7 +5645,10 @@
        "spell": "Soul Fire",
        "icon": "spell_fire_fireball02",
        "kind": "util",
-       "lvl": 48
+       "lvl": 48,
+       "covers": [
+        "Soul Fire under 35%"
+       ]
       },
       {
        "key": "dc",
@@ -19297,11 +19314,11 @@
   }
  },
  "_meta": {
-  "version": 34,
-  "generated_at": "2026-11-11T09:25-05:00",
-  "source": "Grok, Nov 11 2026 daily meta watch",
+  "version": 35,
+  "generated_at": "2026-11-11T13:55-05:00",
+  "source": "Grok, Nov 11 2026 Naga dungeon covers",
   "notes_commit": "a79d383",
-  "notes": "Nov 11: Official Nov 10 hotfix reworks Enhancement and buffs demon health; MythicSim Enh #16, Aff #8."
+  "notes": "Nov 11: Dungeon step names added to existing Naga covers (Shadow Bolt filler, Bane of Doom, Earthbind Totem; icy reference names too)."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins original and Nicktew Recommended 6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8.",
