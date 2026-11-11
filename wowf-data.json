@@ -180,72 +180,74 @@
     "icon": "spell_shadow_metamorphosis",
     "mine": true,
     "mythic": 7,
-    "mythicNote": "1,006 DPS; All playstyles view #8",
+    "mythicNote": "991 DPS; All playstyles view #8",
     "broken": "C",
     "tVoid": "A",
     "cogm": "S",
     "lfc": "A",
     "wowhead": "S",
-    "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 10"
+    "_source": "MythicSim Nov 11 snapshot (engine a667dce, 10 November hotfixes incl. class tuning), 'Best of each spec' view (22 DPS specs). BrokenMeta updated Nov 9 (re-read Nov 11, unchanged); voidsim Nov 6 (re-read Nov 11, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 11"
    },
    {
     "spec": "Affliction Warlock",
     "icon": "spell_shadow_deathcoil",
     "mine": true,
-    "mythic": 12,
-    "mythicNote": "953 DPS, Wrack build; All playstyles view #14",
+    "mythic": 8,
+    "mythicNote": "988 DPS; All playstyles view #9",
     "broken": "S",
     "brokenNote": "#1, 1,184 DPS",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "A",
-    "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 10"
+    "_source": "MythicSim Nov 11 snapshot (engine a667dce, 10 November hotfixes incl. class tuning), 'Best of each spec' view (22 DPS specs). BrokenMeta updated Nov 9 (re-read Nov 11, unchanged); voidsim Nov 6 (re-read Nov 11, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 11",
+    "mythicMove": "▲4 vs Nov 10 (#12, 953 DPS): Bane of Agony reference rotation, Wrack rework"
    },
    {
     "spec": "Destruction Warlock",
     "icon": "spell_shadow_rainoffire",
     "mine": false,
-    "mythic": 13,
-    "mythicNote": "937 DPS; All playstyles view #16",
+    "mythic": 12,
+    "mythicNote": "932 DPS; All playstyles view #15",
     "broken": "C",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "S",
-    "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 10"
+    "_source": "MythicSim Nov 11 snapshot (engine a667dce, 10 November hotfixes incl. class tuning), 'Best of each spec' view (22 DPS specs). BrokenMeta updated Nov 9 (re-read Nov 11, unchanged); voidsim Nov 6 (re-read Nov 11, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 11",
+    "mythicMove": "▲1 vs Nov 10 (#13, 937 DPS)"
    },
    {
     "spec": "Enhancement Shaman",
     "icon": "ability_shaman_stormstrike",
     "mine": true,
-    "mythic": 3,
-    "mythicNote": "1,053 DPS; All playstyles view #3",
+    "mythic": 16,
+    "mythicNote": "900 DPS; All playstyles view #19 (tier A→B)",
     "broken": "B",
     "tVoid": "S",
     "cogm": "S",
     "lfc": "S",
     "wowhead": "A",
-    "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 10"
+    "_source": "MythicSim Nov 11 snapshot (engine a667dce, 10 November hotfixes incl. class tuning), 'Best of each spec' view (22 DPS specs). BrokenMeta updated Nov 9 (re-read Nov 11, unchanged); voidsim Nov 6 (re-read Nov 11, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 11",
+    "mythicMove": "▼13 vs Nov 10 (#3, 1,053 DPS): Nov 10 hotfix Stormstrike/Maelstrom/Mental Dexterity nerf"
    },
    {
     "spec": "Elemental Shaman",
     "icon": "spell_nature_lightning",
     "mine": false,
     "mythic": 21,
-    "mythicNote": "837 DPS; All playstyles view #26",
+    "mythicNote": "827 DPS; All playstyles view #26",
     "broken": "D",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "A",
     "wowhead": "C",
-    "_source": "MythicSim Nov 10 snapshot (engine a667dce, client 70862, up to date with the 9 Nov hotfixes), 'Best of each spec' view (22 DPS specs, same view as Nov 5, 8 and 9). BrokenMeta updated Nov 9 (tables still build 70753, read Nov 10); voidsim Nov 6 (re-read Nov 10, unchanged); Wowhead Nov 3 level-60 update (page blocked Nov 10, last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 10",
-    "mythicMove": "▼1 vs Nov 9 (#20, 837 DPS)"
+    "_source": "MythicSim Nov 11 snapshot (engine a667dce, 10 November hotfixes incl. class tuning), 'Best of each spec' view (22 DPS specs). BrokenMeta updated Nov 9 (re-read Nov 11, unchanged); voidsim Nov 6 (re-read Nov 11, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 11"
    }
   ]
  },
@@ -490,8 +492,8 @@
        "spell_nature_mentalquickness",
        "",
        1,
-       "Increases your Attack Power by an amount equal to 50% of your Intellect.",
-       "Increases your Attack Power by an amount equal to 150% of your Intellect."
+       "Increases your Attack Power by an amount equal to 33% of your Intellect. (Official Nov 10 hotfix, was 50%)",
+       "Increases your Attack Power by an amount equal to 100% of your Intellect. (Official Nov 10 hotfix, was 150%)"
       ],
       [
        "Improved Ghost Wolf",
@@ -578,7 +580,7 @@
        "ability_shaman_stormstrike",
        "",
        0,
-       "Instantly strike for 150% normalized weapon damage (6 sec cooldown, Nov 2 notes) and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.",
+       "Instantly strike for 100% weapon damage (8 sec cooldown; Official Nov 10 hotfix, was 150% on 6 sec) and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.",
        ""
       ],
       [
@@ -622,8 +624,8 @@
        "spell_shaman_maelstromweapon",
        "",
        1,
-       "When you deal damage with a melee attack, you have a chance (doubled in the Nov 2 notes) to reduce the cast time and Mana cost of your next Lightning Bolt spell by 4%. Stacks up to 5 times. Lasts 30 sec.",
-       "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec."
+       "When you deal damage with a melee attack, you have a chance (about 6 times a minute at rank 1; Official Nov 10 hotfix) to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20% (every rank since Nov 10, was 4%). Stacks up to 5 times. Lasts 30 sec.",
+       "When you deal damage with a melee attack, you have a chance (about 10 times a minute at rank 5, so slower weapons proc more per swing; Official Nov 10 hotfix, was 20 a minute at every rank) to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec."
       ],
       [
        "Rage of the Farseer",
@@ -988,8 +990,8 @@
        "spell_shadow_lifedrain02",
        "",
        1,
-       "Increases the damage done or health drained by your Drain Life, Drain Soul, and Wrack spells by 4% per each of your other Affliction effects active on the target, up to a maximum increase of 12%.",
-       "Increases the damage done or health drained by your Drain Life, Drain Soul, and Wrack spells by 12% per each of your other Affliction effects active on the target, up to a maximum increase of 36%."
+       "Increases the damage done or health drained by your Drain Life, Drain Soul, and Wrack spells by 4% per each of your Corruption, Siphon Life, and Bane of Agony effects active on the target (Official Nov 10 hotfix; was any Affliction effect), up to 12%.",
+       "Increases the damage done or health drained by your Drain Life, Drain Soul, and Wrack spells by 12% per each of your Corruption, Siphon Life, and Bane of Agony effects active on the target (Official Nov 10 hotfix; was any Affliction effect), up to a maximum increase of 36%."
       ],
       [
        "Shadow Mastery",
@@ -1010,7 +1012,7 @@
        "ability_deathknight_hemorrhagicfever",
        "Siphon Life",
        1,
-       "Tears the target apart from within, inflicting 86 Shadow damage every 1 sec at level 60 (was 36; Nov 2 notes) and increasing the damage they take from your other Shadow damage over time effects by 10% for 6 sec.",
+       "Channel: tears the target apart from within for 6 sec, inflicting 60 Shadow damage every 1 sec at level 60 (game files via 1mw; Blizzard: 30% less damage). While channeling, your Siphon Life, Corruption, and Bane of Agony effects on the target deal their periodic damage 100% faster, and the skipped time is kept after the channel ends. It no longer adds 10% to your other DoTs (Official Nov 10 hotfix).",
        ""
       ]
      ]
@@ -2486,7 +2488,7 @@
   ],
   "WHY": {
    "Improved Corruption": "Cuts Corruption's cast time (instant at 5/5) and adds up to 10% damage. Between the 26 respec and 5/5 again, Corvin's Corruption has a cast time again (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 14–18 before the respec; 31, 42–45 after it · Icy Veins Affliction: 14–18 · Icy Veins Demonology: 45–49 · Mobalytics Affliction 1-60: 10–14.",
-   "Soul Siphon": "Mobalytics' drain-tank core: Drain Life heals more for each of your effects on the target. Levels · Icy Veins Affliction: 55–57 · Mobalytics Affliction 1-60: 30–32.",
+   "Soul Siphon": "Mobalytics' drain-tank core: Drain Life heals more for each of your Corruption, Siphon Life and Bane of Agony on the target (Official Nov 10 hotfix). Levels · Icy Veins Affliction: 55–57 · Mobalytics Affliction 1-60: 30–32.",
    "Shadow Mastery": "Your biggest Shadow damage boost: up to 10% more Shadow damage and life drained. Not in the Mobalytics respec build. Levels · Icy Veins Affliction: 46–50 · Mobalytics Affliction 1-60: 35–39.",
    "Soul Link": "The pet takes 30% of all damage you take and you deal 3% more; keep it on at all times (Mobalytics Crix, Nov 10). wowfdb: until you have it, Demonology is “a worse Affliction”. Levels · Mobalytics respec 26: 30 · Icy Veins Demonology: 30.",
    "Demonic Pact": "The 31-point talent: your Sacrifice buff survives summoning a new demon (wowfdb). Mobalytics: summon the Imp, sacrifice it for 15% Shadow damage, then summon the Succubus. Levels · Mobalytics respec 26: 41 · Icy Veins Demonology: 40.",
@@ -2496,10 +2498,10 @@
    "Shamanistic Focus": "Shocks and Lightning Shield cost 45% less mana: you stop rationing shocks (wowfdb). Only applies once the point is actually spent, not automatically at 20 (Nicktew, Nov 4, read Nov 7). Levels · Icy Veins: 20 · Nicktew: 20 · Mobalytics (Yebb): 20 · Your notes: 20. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Improved Stormstrike": "Dodges and parries can reset Stormstrike; also 50% mana regen while casting (wowfdb). Levels · Icy Veins: 30–31 · Nicktew: 30–31 · Mobalytics (Yebb): 30–31 · Your notes: 30, 32.",
    "Water Shield": "Restoration talent; its value versus earlier deep Enhancement is explicitly untested (Nicktew, updated Nov 4, read Nov 7). Icy Veins' text says 42, but its own calculator places it at 43 because Restoration needs 10 points first. Levels · Icy Veins: 43 · Nicktew: 43. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-   "Maelstrom Weapon": "Free, instant Lightning Bolt at 5 stacks. Levels · Icy Veins: 47–51 · Nicktew: 47–51 · Your notes: 36–40.",
+   "Maelstrom Weapon": "Each stack cuts your next Lightning Bolt's cast time and mana by 20% at every rank, so 5 stacks make it free and instant; more ranks only raise the proc rate (6 to 10 a minute, Official Nov 10 hotfix). Levels · Icy Veins: 47–51 · Nicktew: 47–51 · Your notes: 36–40.",
    "Rage of the Farseer": "+30% attack speed for 25 s on a 3-minute cooldown (wowfdb; marked unconfirmed there). Levels · Icy Veins: 52 · Nicktew: 52 · Your notes: 41.",
    "Malevolence": "+5% Shadow crit at 5/5; pairs with Pandemic. Levels · Mobalytics respec 26: 56–60 · Icy Veins Affliction: 27–29, 42–43 · Mobalytics Affliction 1-60: 48–52.",
-   "Wrack": "Affliction's 31-point talent; needs Siphon Life. Not in the Mobalytics builds. Levels · Icy Veins Affliction: 51.",
+   "Wrack": "Channel that makes your Siphon Life, Corruption and Bane of Agony on the target tick twice as fast while you channel (Official Nov 10 hotfix, damage cut 30%). Affliction's 31-point talent; needs Siphon Life. Not in the Mobalytics builds. Levels · Icy Veins Affliction: 51.",
    "Suppression": "+1% hit and 4% less threat per rank (5% and 20% at 5/5). Corvin already has 4/5 (spent at 10–13). Levels · Mobalytics respec 26: 10–13 before the respec; 46–50 after it · Icy Veins Affliction: 10–13 · Icy Veins Demonology: 41–44 · Mobalytics Affliction 1-60: 15–19.",
    "Unholy Power": "+10% damage for all your demons (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 19–23 before the respec; 26 after it · Icy Veins Demonology: 10–14 · Mobalytics Affliction 1-60: 41–45.",
    "Demonic Energies": "Keeps your demon alive and in mana: you heal it for part of your spell damage and Life Tap feeds it (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 24–25 before the respec; 26 after it · Icy Veins Demonology: 15–16 · Mobalytics Affliction 1-60: 46–47.",
@@ -2520,7 +2522,7 @@
     "spec": 1,
     "icon": "spell_shadow_shadowbolt",
     "title": "No talents yet",
-    "body": "Imp quest right away; Corruption and Immolate do the work, Shadow Bolt and a wand finish. Lesser Magic Wand at 5. Voidwalker class quest at 10 (Drain Soul at 10: start saving shards). Official Nov 6: Voidwalker base health +~40 live; more pet durability still planned in the Nov 10 Class Tuning.",
+    "body": "Imp quest right away; Corruption and Immolate do the work, Shadow Bolt and a wand finish. Lesser Magic Wand at 5. Voidwalker class quest at 10 (Drain Soul at 10: start saving shards). Official Nov 6: Voidwalker base health +~40 live; Official Nov 10 hotfix: Imp, Voidwalker, Succubus and Incubus base health +~15%, Imp Firebolt ranks 1-4 hit harder.",
     "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026; Kaivax Nov 6 hotfixes",
     "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
     "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
@@ -2619,8 +2621,8 @@
     "spec": 1,
     "icon": "spell_shadow_shadowbolt",
     "title": "No talents yet",
-    "body": "Shadow Bolt, Imp, wand at 5 (Enchanting). Voidwalker at 10. Official Nov 6 live: Voidwalker base health +~40. Further VW tank durability toward Classic Era still planned in Nov 10 Class Tuning (stats TBD).",
-    "src": "Kaivax Nov 6 hotfixes + Class Tuning Nov 10"
+    "body": "Shadow Bolt, Imp, wand at 5 (Enchanting). Voidwalker at 10. Official Nov 6 live: Voidwalker base health +~40. Official Nov 10 hotfix: Imp, Voidwalker, Succubus and Incubus base health +~15%.",
+    "src": "Kaivax Nov 6 hotfixes + Kaivax Nov 10 hotfixes"
    },
    {
     "lv": "10",
@@ -2816,7 +2818,7 @@
        "lvl": 32,
        "icon": "spell_nature_windfury",
        "name": "Windfury Totem",
-       "text": "Groups"
+       "text": "Groups; works with your own Windfury Weapon since Nov 10 (Official)"
       },
       {
        "talent": "Mindfulness",
@@ -2851,7 +2853,7 @@
       "Nicktew sustain: Mindfulness38–40; Water Shield43 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Training check at20: Ghost Wolf, Frost Shock1, Lesser Healing Wave1, Totemic Recall, Call of the Elements, Searing2, Lightning Bolt4; Healing Stream1 requires Water Totem quest. Purchases/quest completion unknown. Mana Spring/Magma26, Windfury Weapon/Grounding30, Windfury Totem/Chain Lightning32. Fan beta trainer list: https://wowforever.one/classes/shaman/spells/ (read Nov7; verify spellbook).",
       "Guide corrections: Mental Dexterity converts Intellect to AP, Mental Quickness to spell damage; 1.5AP/Int versus2AP/Str is75%, not guide66%. Nicktew text implies improved wolf20 but its order says26–27. Totemic Projection name/cursor macro conflicts with recorded Totemic Call rename; verify live spell before binding. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-      "Official Nov6: collect Strength/AP while leveling for PLANNED Nov10 tuning; Strength intended strongest. Do not treat planned changes as live or Nicktew Intellect-with-Water-Shield preference as settled numeric weights. https://us.forums.blizzard.com/en/wow/t/class-tuning-incoming-november-10/2404092/1",
+      "Official Nov 10 hotfix (live): Stormstrike 100% weapon damage on an 8 s cooldown (was 150% on 6 s); Mental Dexterity 33/66/100% of Intellect as Attack Power (was 50/100/150); Maelstrom Weapon 20% per stack at every rank, 6-10 procs a minute by rank (slow weapons proc more per swing). Blizzard: Enhancement leaned too hard on Spell Power/Intellect gear and away from Windfury, so this is fixed before raids. Collect Strength and Attack Power gear. https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
       "Troll Berserking (from level 1): +10% attack and casting speed for 15 s (Official), 3 min cooldown (Unofficial, client). Press it on elites, dangerous pulls and dungeon packs, with Stormstrike up from 25; it is a speed buff, so it pays most while swinging and shocking, not while running. Your bar has it on key 9 (vault EllesmereUI Zanjiro note, Nov 9). Whether it is off the global cooldown in Forever is not published. Race advice: Icy Veins Enhancement PvE (Wordup, stamped Nov 9; the Icy Veins leveling guide gives no race advice): race differences are small; 'Troll is also a strong contender through Berserking'. Nicktew (Mobalytics, race section read Nov 7; page updated Nov 8, order unchanged): no reason to reroll Orc (Blood Fury/Shatter Curse utility); no Troll-specific advice. Both kept. https://www.icy-veins.com/wow-forever/enhancement-shaman-melee-dps-pve-guide ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
      ],
      "src": [
@@ -2902,7 +2904,7 @@
       {
        "icon": "spell_nature_windfury",
        "name": "Windfury Totem",
-       "tip": "When the group has other melee.",
+       "tip": "When the group has other melee. Since the Nov 10 hotfix it also works with your own Windfury Weapon (Official).",
        "lvl": 32
       },
       {
@@ -2956,8 +2958,8 @@
       "Nicktew sustain: Mindfulness38–40; Water Shield43 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Training check at20: Ghost Wolf, Frost Shock1, Lesser Healing Wave1, Totemic Recall, Call of the Elements, Searing2, Lightning Bolt4; Healing Stream1 requires Water Totem quest. Purchases/quest completion unknown. Mana Spring/Magma26, Windfury Weapon/Grounding30, Windfury Totem/Chain Lightning32. Fan beta trainer list: https://wowforever.one/classes/shaman/spells/ (read Nov7; verify spellbook).",
       "Guide corrections: Mental Dexterity converts Intellect to AP, Mental Quickness to spell damage; 1.5AP/Int versus2AP/Str is75%, not guide66%. Nicktew text implies improved wolf20 but its order says26–27. Totemic Projection name/cursor macro conflicts with recorded Totemic Call rename; verify live spell before binding. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-      "Official Nov6: collect Strength/AP while leveling for PLANNED Nov10 tuning; Strength intended strongest. Do not treat planned changes as live or Nicktew Intellect-with-Water-Shield preference as settled numeric weights. https://us.forums.blizzard.com/en/wow/t/class-tuning-incoming-november-10/2404092/1",
-      "Icy Veins advises alternating Flame/Earth Shock. Nicktew dungeon3+: prioritize fire totem+Fire Nova, autoattacks for mana and Earth Shock for important casts. Later Stormstrike for regen; Magma26+ only for durable packs. Windfury Totem32+ with Flametongue Weapon is Nicktew group alternative; personal Windfury Weapon does not benefit from the same Windfury Totem. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+      "Official Nov 10 hotfix (live): Stormstrike 100% weapon damage on an 8 s cooldown (was 150% on 6 s); Mental Dexterity 33/66/100% of Intellect as Attack Power (was 50/100/150); Maelstrom Weapon 20% per stack at every rank, 6-10 procs a minute by rank (slow weapons proc more per swing). Blizzard: Enhancement leaned too hard on Spell Power/Intellect gear and away from Windfury, so this is fixed before raids. Collect Strength and Attack Power gear. https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
+      "Icy Veins advises alternating Flame/Earth Shock. Nicktew dungeon3+: prioritize fire totem+Fire Nova, autoattacks for mana and Earth Shock for important casts. Later Stormstrike for regen; Magma26+ only for durable packs. Windfury Totem32+ with Flametongue Weapon is Nicktew group alternative; since the Official Nov 10 hotfix weapon imbues and Windfury Totem work together, so your own Windfury Weapon and the totem can both proc. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Troll Berserking (from level 1): +10% attack and casting speed for 15 s (Official), 3 min cooldown (Unofficial, client). Press it on elites, dangerous pulls and dungeon packs, with Stormstrike up from 25; it is a speed buff, so it pays most while swinging and shocking, not while running. Your bar has it on key 9 (vault EllesmereUI Zanjiro note, Nov 9). Whether it is off the global cooldown in Forever is not published. Race advice: Icy Veins Enhancement PvE (Wordup, stamped Nov 9; the Icy Veins leveling guide gives no race advice): race differences are small; 'Troll is also a strong contender through Berserking'. Nicktew (Mobalytics, race section read Nov 7; page updated Nov 8, order unchanged): no reason to reroll Orc (Blood Fury/Shatter Curse utility); no Troll-specific advice. Both kept. https://www.icy-veins.com/wow-forever/enhancement-shaman-melee-dps-pve-guide ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
      ],
      "src": [
@@ -3003,7 +3005,7 @@
       {
        "icon": "spell_shadow_summonvoidwalker",
        "name": "Voidwalker",
-       "tip": "Level 10 class quest: holds mobs while you DoT from range. Pets were nerfed hard (Blizzard told Crix not intended; Official Nov 6 +~40 base health), so don't pull too many.",
+       "tip": "Level 10 class quest: holds mobs while you DoT from range. Pets were nerfed hard (Blizzard told Crix not intended; Official Nov 6 +~40 base health; Official Nov 10 +~15% base health for Imp, Voidwalker, Succubus/Incubus), so don't pull too many.",
        "lvl": 10,
        "until": 20
       },
@@ -3355,7 +3357,7 @@
       {
        "icon": "spell_shadow_summonvoidwalker",
        "name": "Voidwalker",
-       "tip": "Holds mobs while you cast; send it in as you start. Pets are squishier since Blizzard's Nov 2 change (2 Health per Stamina). Official Nov 6: Voidwalker base health +~40 live; further durability toward Classic Era still planned Nov 10.",
+       "tip": "Holds mobs while you cast; send it in as you start. Pets are squishier since Blizzard's Nov 2 change (2 Health per Stamina). Official Nov 6: Voidwalker base health +~40 live; Official Nov 10: demon base health +~15%.",
        "lvl": 10,
        "until": 41
       },
@@ -3764,7 +3766,7 @@
       {
        "icon": "spell_shadow_summonvoidwalker",
        "name": "Voidwalker",
-       "tip": "Level 10 class quest: holds mobs while you DoT from range. Pets were nerfed hard (Blizzard told Crix not intended; Official Nov 6 +~40 base health), so don't pull too many.",
+       "tip": "Level 10 class quest: holds mobs while you DoT from range. Pets were nerfed hard (Blizzard told Crix not intended; Official Nov 6 +~40 base health; Official Nov 10 +~15% base health for Imp, Voidwalker, Succubus/Incubus), so don't pull too many.",
        "lvl": 10,
        "until": 20
       },
@@ -4104,7 +4106,7 @@
       {
        "icon": "spell_shadow_summonvoidwalker",
        "name": "Voidwalker",
-       "tip": "Send it in first so it builds threat. Official Nov 6: Voidwalker base health +~40 live; further durability toward Classic Era still planned on Nov 10 hotfixes.",
+       "tip": "Send it in first so it builds threat. Official Nov 6: Voidwalker base health +~40 live; Official Nov 10: demon base health +~15%.",
        "lvl": 10
       },
       {
@@ -5712,7 +5714,7 @@
     "title": "Enhancement · 12-button layout (32+)",
     "src": "Shaman - Enhancement.md › 12-button layout (32+)",
     "intro": "Rotation spells sit in rotation order from the level-aware Enhancement rotation; Call of the Elements available20 if trained; Windfury Weapon30; individual totems remain useful.",
-    "extra": "Windfury Totem stays inside your totem presets, not on a button: it does nothing for you while your own Windfury imbue is on.",
+    "extra": "Windfury Totem stays inside your totem presets, not on a button. Since the Nov 10 hotfix (Official) it works with your own Windfury Weapon: both can proc.",
     "buttons": [
      {
       "n": 1,
@@ -8309,7 +8311,7 @@
     "30–40",
     "2H",
     "Rage of the Storm",
-    "Rage of the Storm: Horde route: at 30 take Call of Air from a Shaman trainer to Prate Cloudseer, Thousand Needles; then Rau Cliffrunner at Freewind Post. Loot Tattered Note from Charlga Razorflank in Razorfen Kraul; return to Rau then Prate. Gather five each Twisted Air (Maraudine centaur, Desolace 37–41), Earth (Lost Ones, Swamp of Sorrows 34–37), Fire (Stonevault troggs, Badlands 39–41), Water (Mirefin murlocs, Dustwallow 35–38). Use Corrupted Totems at hot springs beneath Darkcloud Pinnacle; defeat four elite waves then the final bosses; collect Eye of the Tempest. Return to Rau and then Bath'rah the Windwatcher, Alterac Mountains, to complete The Tempest's Weapons and choose Rage of the Storm. Obtain help or wait: difficult at 30. Alliance has its own route to same weapon; Horde coordinates not published. Existing Nicktew Nov 4 guide discourages this lengthy quest chain; legacy choice retained without claiming Nicktew recommends doing it. Read Nov 7 2026. Sources: https://www.icy-veins.com/wow-forever/shaman-class-quests ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew · read 2026-11-07"
+    "Rage of the Storm: Horde route: at 30 take Call of Air from a Shaman trainer to Prate Cloudseer, Thousand Needles; then Rau Cliffrunner at Freewind Post. Loot Tattered Note from Charlga Razorflank in Razorfen Kraul; return to Rau then Prate. Gather five each Twisted Air (Maraudine centaur, Desolace 37–41), Earth (Lost Ones, Swamp of Sorrows 34–37), Fire (Stonevault troggs, Badlands 39–41), Water (Mirefin murlocs, Dustwallow 35–38). Use Corrupted Totems at hot springs beneath Darkcloud Pinnacle; defeat four elite waves then the final bosses; collect Eye of the Tempest. Return to Rau and then Bath'rah the Windwatcher, Alterac Mountains, to complete The Tempest's Weapons and choose Rage of the Storm. Obtain help or wait: difficult at 30. Alliance has its own route to same weapon; Horde coordinates not published. Existing Nicktew Nov 4 guide discourages this lengthy quest chain; legacy choice retained without claiming Nicktew recommends doing it. Read Nov 7 2026. Sources: https://www.icy-veins.com/wow-forever/shaman-class-quests ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew · read 2026-11-07 · Official Nov 10 hotfix: now 16 Strength (was 16 Intellect) and 3.6 speed (was 3.2), read Nov 11."
    ],
    [
     "30+",
@@ -9943,7 +9945,7 @@
         "to": 40,
         "name": "Rage of the Storm",
         "item": "Rage of the Storm",
-        "src": "Both · Forever-data, Unofficial · Horde route: at 30 take Call of Air from a Shaman trainer to Prate Cloudseer, Thousand Needles; then Rau Cliffrunner at Freewind Post. Loot Tattered Note from Charlga Razorflank in Razorfen Kraul; return to Rau then Prate. Gather five each Twisted Air (Maraudine centaur, Desolace 37–41), Earth (Lost Ones, Swamp of Sorrows 34–37), Fire (Stonevault troggs, Badlands 39–41), Water (Mirefin murlocs, Dustwallow 35–38). Use Corrupted Totems at hot springs beneath Darkcloud Pinnacle; defeat four elite waves then the final bosses; collect Eye of the Tempest. Return to Rau and then Bath'rah the Windwatcher, Alterac Mountains, to complete The Tempest's Weapons and choose Rage of the Storm. Obtain help or wait: difficult at 30. Alliance has its own route to same weapon; Horde coordinates not published. Existing Nicktew Nov 4 guide discourages this lengthy quest chain; legacy choice retained without claiming Nicktew recommends doing it. Read Nov 7 2026. Sources: https://www.icy-veins.com/wow-forever/shaman-class-quests ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew · read 2026-11-07 Alt — Nicktew pick (Nov 8), needs Honored Gelkis: Abandoned Ferocity. Neutral (Horde OK) Gelkis chain, Desolace. First reach Friendly with the Gelkis (kill Magram centaur; Horde pick-up Gelkis Alliance from Gurda Wildmane, Ghost Walker Post 56.3,59.7, Classic location) and report to Uthek the Wise, Gelkis Village 36.2,79.2 (Classic location). Then reach Honored with the Gelkis for the Forever Valley of Bones quests: Saving Our Own → Bone Burying → Checking Things Out → Khan Jehn (quest 93128, from Nerlokh in Valley of Bones; Valley of Bones coordinates not published in the sources read). Kill Khan Jehn in Magram Village (Desolace), turn in to Uthek the Wise and choose Abandoned Ferocity. Requires level 35; quest level 42, from 30; Nicktew suggests 35+ with help, ~40 solo, long chain. Item (Forever data): Rare 2H axe, ilvl 42, 95-143 damage, 3.20 speed (37.2 DPS), +10 Strength, +4 Agility, +12 Stamina. Raising Gelkis lowers Magram reputation. Sources: https://www.wowhead.com/forever/quest=93128/khan-jehn ; https://wowf.io/en/quests/gelkis · read 2026-11-08",
+        "src": "Both · Forever-data, Unofficial · Horde route: at 30 take Call of Air from a Shaman trainer to Prate Cloudseer, Thousand Needles; then Rau Cliffrunner at Freewind Post. Loot Tattered Note from Charlga Razorflank in Razorfen Kraul; return to Rau then Prate. Gather five each Twisted Air (Maraudine centaur, Desolace 37–41), Earth (Lost Ones, Swamp of Sorrows 34–37), Fire (Stonevault troggs, Badlands 39–41), Water (Mirefin murlocs, Dustwallow 35–38). Use Corrupted Totems at hot springs beneath Darkcloud Pinnacle; defeat four elite waves then the final bosses; collect Eye of the Tempest. Return to Rau and then Bath'rah the Windwatcher, Alterac Mountains, to complete The Tempest's Weapons and choose Rage of the Storm. Obtain help or wait: difficult at 30. Alliance has its own route to same weapon; Horde coordinates not published. Existing Nicktew Nov 4 guide discourages this lengthy quest chain; legacy choice retained without claiming Nicktew recommends doing it. Read Nov 7 2026. Sources: https://www.icy-veins.com/wow-forever/shaman-class-quests ; https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew · read 2026-11-07 Alt — Nicktew pick (Nov 8), needs Honored Gelkis: Abandoned Ferocity. Neutral (Horde OK) Gelkis chain, Desolace. First reach Friendly with the Gelkis (kill Magram centaur; Horde pick-up Gelkis Alliance from Gurda Wildmane, Ghost Walker Post 56.3,59.7, Classic location) and report to Uthek the Wise, Gelkis Village 36.2,79.2 (Classic location). Then reach Honored with the Gelkis for the Forever Valley of Bones quests: Saving Our Own → Bone Burying → Checking Things Out → Khan Jehn (quest 93128, from Nerlokh in Valley of Bones; Valley of Bones coordinates not published in the sources read). Kill Khan Jehn in Magram Village (Desolace), turn in to Uthek the Wise and choose Abandoned Ferocity. Requires level 35; quest level 42, from 30; Nicktew suggests 35+ with help, ~40 solo, long chain. Item (Forever data): Rare 2H axe, ilvl 42, 95-143 damage, 3.20 speed (37.2 DPS), +10 Strength, +4 Agility, +12 Stamina. Raising Gelkis lowers Magram reputation. Sources: https://www.wowhead.com/forever/quest=93128/khan-jehn ; https://wowf.io/en/quests/gelkis · read 2026-11-08 · Official Nov 10 hotfix: now 16 Strength (was 16 Intellect) and 3.6 speed (was 3.2), read Nov 11.",
         "how": "Horde route: at 30 take Call of Air from a Shaman trainer to Prate Cloudseer, Thousand Needles; then Rau Cliffrunner at Freewind Post. Loot Tattered Note from Charlga Razorflank in Razorfen Kraul; return to Rau then Prate. Gather five each Twisted Air (Maraudine centaur, Desolace 37–41), Earth (Lost Ones, Swamp of Sorrows 34–37), Fire (Stonevault troggs, Badlands 39–41), Water (Mirefin murlocs, Dustwallow 35–38). Use Corrupted Totems at hot springs beneath Darkcloud Pinnacle; defeat four elite waves then the final bosses; collect Eye of the Tempest. Return to Rau and then Bath'rah the Windwatcher, Alterac Mountains, to complete The Tempest's Weapons and choose Rage of the Storm. Obtain help or wait: difficult at 30. Alliance has its own route to same weapon; Horde coordinates not published. Existing Nicktew Nov 4 guide discourages this lengthy quest chain; legacy choice retained without claiming Nicktew recommends doing it. Read Nov 7 2026.",
         "faction": "Both",
         "_source": [
@@ -9992,11 +9994,11 @@
          "horde_access": "Neutral centaur faction; Horde can do the full chain."
         },
         "stats": {
-         "int": 12,
+         "str": 16,
          "sta": 15,
          "dps": 35.6
         },
-        "stats_source": "https://db.icy-veins.com/wow-forever/items/280604 (Icy Veins Forever DB, client 1.60.1) · read 2026-11-10",
+        "stats_source": "https://db.icy-veins.com/wow-forever/items/280604 (Icy Veins Forever DB: +16 Strength, +15 Stamina, 102-154, speed 3.60, Equip: Stormstrike damage +10%) · read 2026-11-11; Official Nov 10 hotfix: 16 Strength (was 16 Intellect), speed 3.6 (was 3.2) https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
         "alts": [
          {
           "item": "Abandoned Ferocity",
@@ -18024,8 +18026,8 @@
   "meta_raid_watch": {
    "lead": "Raid watch",
    "tone": "warning",
-   "text": "Official Nov 9 hotfixes (posted 11:23 PM ET): Lightning Overload damage fix (Elemental), Summon Felsteed now grants riding, Incinerate Destruction-only, Shaper's Terrace loot and skinning mats, zone populations lowered; dungeon kill XP +50% since Nov 8. Still planned Tue Nov 10: Affliction DoTs with Wrack, further VW durability toward Classic Era, Enhancement Str/AP over Int/SP (details not published as of Nov 10 9:15 AM ET). Build 70862 Nov 9-10: item waves plus one talent row (Lightning Overload). MythicSim Nov 10 (Best of each spec): Enh #3, Demo #7, Aff #12, Destro #13. BrokenMeta Nov 9: Aff S, Enh B, Destro C, Demo C. Forever Logs: no confirmed level-60 DPS boards.",
-   "_source": "Blizzard news + forum tracker (read Nov 10); Kaivax WoW: Forever Hotfixes - November 9; Kaivax Class Tuning Nov 10; 1mw.io news + patch notes Nov 10; MythicSim Nov 10; BrokenMeta Nov 9; Forever Logs Nov 10 9 AM ET",
+   "text": "Official Nov 10 hotfixes (posted 10:27 PM ET): Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health, Imp Firebolt ranks 1-4 up; Affliction Wrack now speeds up your DoTs (damage -30%), Soul Siphon counts only Corruption, Siphon Life and Bane of Agony; quests 48+ give more gold. Kaivax Nov 10 8:10 PM ET: totems lost in the Monday crash restored (relog with bag space). Dungeon XP stays at 60% of Classic Era. MythicSim Nov 11 (Best of each spec): Demo #7, Aff #8, Destro #12, Enh #16. BrokenMeta Nov 9: Aff S, Enh B, Destro C, Demo C. Forever Logs: no confirmed level-60 DPS boards.",
+   "_source": "Blizzard forum tracker (read Nov 11); Kaivax WoW: Forever Hotfixes - November 10, 2026 (post 6); Kaivax totem fix (topic 2409772); Kaivax dungeon XP and quest gold replies Nov 10; 1mw.io patch notes Nov 11; MythicSim Nov 11; BrokenMeta Nov 9; Forever Logs Nov 11 9 AM ET",
    "_date": "Nov 10"
   },
   "meta_links": [
@@ -18145,6 +18147,66 @@
   "feed_rows": [
    {
     "lead": "Nov 10",
+    "title": "Zanjiro: Official Enhancement rework (Stormstrike 100% on 8 s, Maelstrom Weapon, Mental Dexterity, imbues stack with Windfury Totem)",
+    "detail": "Stormstrike 100% weapon damage on an 8 s cooldown (was 150% on 6 s). Mental Dexterity 33/66/100% of Intellect as Attack Power (was 50/100/150). Maelstrom Weapon 20% less cast time and mana per stack at every rank; procs 6/7/8/9/10 times a minute by rank (was 20 at any rank); the tooltip shows your chance per swing from weapon speed (5/5 with a 3.6 speed weapon: 60%). Weapon imbues and weapon totems now work together, so Windfury Weapon and Windfury Totem can both proc. Rage of the Storm (Shaman Air quest 2H mace) now 16 Strength (was Intellect), speed 3.6 (was 3.2). Maelstrom Weapon can be tracked in the Cooldown Manager. Blizzard: Enhancement favoured Spell Power/Intellect too much and drifted from Windfury; fixed before raids open. Planner talent texts, rotations, Naga 12 note and the gear sheet updated.",
+    "meta": "Kaivax, WoW: Forever Hotfixes - November 10, 2026 (post 6, Nov 10 10:27 PM ET), read Nov 11",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
+    "_date": "2026-11-11"
+   },
+   {
+    "lead": "Nov 10",
+    "title": "Corvin: Official demon health +~15%, Imp Firebolt ranks 1-4 up; Affliction Wrack and Soul Siphon reworked",
+    "detail": "Imp, Voidwalker, Succubus and Incubus base health +~15%; Imp Firebolt ranks 1-4 more base damage; Succubus whip sound fixed. Affliction: Wrack damage -30%, no longer adds 10% to your DoTs; while channeled your Siphon Life, Corruption and Bane of Agony tick twice as fast (skipped time is kept). Soul Siphon now counts only Corruption, Siphon Life and Bane of Agony. Destruction: Bane of Havoc now triggers the global cooldown. Corvin's Mobalytics Demonology plan takes no Wrack, so his build is unchanged; the pet notes on the path and rotations now say the health buff is live. Game files (1mw, Unofficial): Wrack 60 Shadow a second at 60 (was 86).",
+    "meta": "Kaivax Nov 10 hotfixes post 6, read Nov 11; 1mw.io patch notes Hotfixes of 10 November, read Nov 11",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
+    "_date": "2026-11-11"
+   },
+   {
+    "lead": "Nov 10",
+    "title": "Official: lost Shaman totems restored; quests 48+ give more gold; dungeon XP stays at 60%",
+    "detail": "Kaivax (Nov 10, 8:10 PM ET): totems lost in Monday's crash are restored to the bag; if you are online, make bag space and relog. Most quests level 48+ now also reward gold (no XP-to-gold at 60 in Forever). Dungeon kill XP stays at 60% of Classic Era (raised from 40% on Nov 8). Also: Auction House minimum deposit 1 copper; Coarse Grinding Stone skill-ups to 90; Journeyman Campfire Kit needs Cooking 90.",
+    "meta": "Blizzard forum topics 2409772 (post 2), 2405161 (post 165), 2406555 (post 254), 2403040 (post 6), read Nov 11",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://us.forums.blizzard.com/en/wow/t/buggedmissing-shaman-totems-since-mondays-server-chaos/2409772/2",
+    "_date": "2026-11-11"
+   },
+   {
+    "lead": "Nov 11",
+    "title": "MythicSim after the Nov 10 tuning: Enhancement #3 → #16, Affliction #12 → #8",
+    "detail": "Best of each spec: Demonology #7 (991 DPS, was 1,006), Affliction #8 (988, was 953; Bane of Agony reference rotation +12.5%, Wrack rework -7.0%), Destruction #12 (932), Enhancement #16 (900, was 1,053; hotfix -17.7%, Windfury Weapon reference imbue +4.4%), Elemental #21 (827). All playstyles: Demo 8, Aff 9, Destro 15, Enh 19 (tier A → B), Ele 26. Survival weave still #1 (1,324). Sim, pre-launch gear assumptions.",
+    "meta": "MythicSim tier list, snapshot Nov 11 2026, read Nov 11",
+    "status": {
+     "label": "Sim, pre-launch",
+     "tone": "warning"
+    },
+    "_source": "https://mythicsim.com/wow-forever/tier-list",
+    "_date": "2026-11-11"
+   },
+   {
+    "lead": "Nov 11",
+    "title": "Mobalytics (Crix) updated Nov 11: Corvin's Demonology respec at 26 unchanged",
+    "detail": "Crix updated the guide for the Wrack changes (Affliction tab reworked) and added a PvP Server Build tab. The \"Demonology Respec LV 26\" calculator still reads 20/31/0 with the same level order (pre-26 Improved Corruption, Suppression, Unholy Power, Demonic Energies; after 26 Demonic Brand 25-27, Soul Link 30, Demonic Pact 41, Malevolence 56-60). Crix still warns demons are squishy (written before the +15% health hotfix). No change to Corvin's board.",
+    "meta": "Mobalytics, dateModified 2026-11-11T05:35Z (12:35 AM ET), read Nov 11",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_date": "2026-11-11"
+   },
+   {
+    "lead": "Nov 10",
     "title": "Corvin switches to Mobalytics' Demonology respec at 26 (Crix)",
     "detail": "Jason's choice (chat, Nov 10). Pre-26: his 4 Suppression points stay, then Improved Corruption 14-18, Unholy Power 19-23, Demonic Energies 24-25. At 26 train Searing Pain Rank 2 and respec to 20/31/0 Demonology: Demonic Brand 25-27, Soul Link 30, Demonic Pact 41, Malevolence 56-60. Succubus is the demon from 20. Corruption has a cast time again 26-44. Icy Veins' Affliction and Demonology orders stay as reference builds; disagreements are kept side by side.",
     "meta": "Mobalytics (Crix), updated Nov 10, read Nov 10",
@@ -18193,9 +18255,9 @@
    },
    {
     "lead": "Nov 10",
-    "title": "Class Tuning (Tue Nov 10): details still not posted as of 9:15 AM ET",
-    "detail": "Kaivax's Nov 6 post still only lists the plan (Affliction DoTs worth casting with Wrack, Voidwalker durability toward Classic Era, Enhancement Strength/AP above Int/SP). No blue reply with the actual changes yet, and nothing on the news hub. Dashboard notes that point to the Nov 10 hotfixes stay as 'planned'.",
-    "meta": "Blizzard forum Class Tuning Incoming - November 10 (topic 2404092) and blue tracker, read Nov 10 9:15 AM ET",
+    "title": "Class Tuning (Tue Nov 10): landed in the Nov 10 hotfix post that evening (see the Nov 10 hotfix rows)",
+    "detail": "At 9:15 AM ET Nov 10 Kaivax's Nov 6 post still only listed the plan. The changes were posted at 10:27 PM ET in WoW: Forever Hotfixes - November 10, 2026 (post 6): Enhancement moved back toward Windfury, Affliction Wrack reworked, demon health up ~15%. Dashboard notes that said \"planned\" now point to the live changes.",
+    "meta": "Blizzard forum topics 2404092 and 2403040 post 6, read Nov 11 9:20 AM ET",
     "status": {
      "label": "Official",
      "tone": "success"
@@ -18835,9 +18897,9 @@
   ],
   "feed_notes_out_of_date": [
    {
-    "text": "Shaman - Enhancement (line 115): Stormstrike's 8 s cooldown is now 6 s, at 150% normalized weapon damage (Nov 2 notes, official).",
-    "_source": null,
-    "_date": null
+    "text": "Shaman - Enhancement (lines 96, 214 and 260): 'Windfury Totem does nothing for you while your own Windfury imbue is on' is out of date: since the Nov 10 hotfix weapon imbues and Windfury Totem work together (Official). Line 115's 8 s Stormstrike cooldown is right again (100% weapon damage).",
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
+    "_date": "2026-11-11"
    },
    {
     "text": "Shaman - Enhancement (lines 79 and 113) and Shaman - Gear and Dungeons (line 261): Totemic Projection (moves the set 30 yards, 1-minute cooldown) is now Totemic Call: totems jump to you, 30 sec cooldown (Nov 2 notes, official).",
@@ -18866,6 +18928,14 @@
    }
   ],
   "feed_links": [
+   {
+    "title": "WoW: Forever Hotfixes - November 10, 2026 (Kaivax)",
+    "site": "us.forums.blizzard.com",
+    "date": "Nov 10",
+    "href": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
+    "_source": "Official Kaivax",
+    "_date": "Nov 10"
+   },
    {
     "title": "Dungeon Enemy XP Increased - November 8 (Kaivax)",
     "site": "us.forums.blizzard.com",
@@ -18941,9 +19011,9 @@
   ],
   "talents_enh_bullets": [
    {
-    "text": "Official Nov 6 (Class Tuning Nov 10): while leveling, collect Strength and Attack Power gear from now on — Blizzard plans Strength as Enhancement’s strongest stat so Mage/Warlock gear stops winning. Numbers not posted yet.",
-    "_source": "https://us.forums.blizzard.com/en/wow/t/class-tuning-incoming-november-10/2404092/1",
-    "_date": "Nov 6"
+    "text": "Official Nov 10 hotfix (live): Stormstrike 100% weapon damage on 8 s, Mental Dexterity 33/66/100% of Intellect, Maelstrom Weapon 20% a stack at every rank with 6-10 procs a minute, imbues and Windfury Totem now stack. Collect Strength and Attack Power gear; Intellect is worth less as Attack Power now.",
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
+    "_date": "Nov 10 (read Nov 11)"
    },
    {
     "text": "Dungeon and raid alternative: Wowhead's 8/33/10 build; its point order isn't published, so it isn't in the planner.",
@@ -18996,9 +19066,9 @@
     "_date": "Nov4; read Nov7 2026"
    },
    {
-    "text": "Official Nov6: collect Strength/AP while leveling for PLANNED Nov10 tuning; Strength intended strongest. Do not treat planned changes as live or Nicktew Intellect-with-Water-Shield preference as settled numeric weights. https://us.forums.blizzard.com/en/wow/t/class-tuning-incoming-november-10/2404092/1",
-    "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-    "_date": "Nov4; read Nov7 2026"
+    "text": "Official Nov 10 hotfix (live): Stormstrike 100% weapon damage on an 8 s cooldown (was 150% on 6 s); Mental Dexterity 33/66/100% of Intellect as Attack Power (was 50/100/150); Maelstrom Weapon 20% per stack at every rank, 6-10 procs a minute by rank (slow weapons proc more per swing). Blizzard: Enhancement leaned too hard on Spell Power/Intellect gear and away from Windfury, so this is fixed before raids. Collect Strength and Attack Power gear. https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
+    "_date": "Nov 10 (read Nov 11)"
    },
    {
     "text": "Nicktew weapons: prioritize strong slow2h;1h+shield intentional tank/safety choice. At20 Horde: Forsaken Greataxe (Ruins quest), Hammerbone (WC quest), Smite hammer (Deadmines, required18). Upcoming Heavehammer26–30, Striking Staff28–32, Corpsemaker required29, Ravager37; Nick discourages long Rage of the Storm quest. Guide recommendations single-source, not confirmed drops/stats past30. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
@@ -19227,11 +19297,11 @@
   }
  },
  "_meta": {
-  "version": 33,
-  "generated_at": "2026-11-10T14:55-05:00",
-  "source": "Grok, Nov 10 2026 (WHY texts per guide and respec node, requested by Claude via Jason)",
-  "notes_commit": "ae74407",
-  "notes": "Nov 10: talent explanations say what each talent does, then the levels per guide; the level-26 respec node holds the full instructions."
+  "version": 34,
+  "generated_at": "2026-11-11T09:25-05:00",
+  "source": "Grok, Nov 11 2026 daily meta watch",
+  "notes_commit": "a79d383",
+  "notes": "Nov 11: Official Nov 10 hotfix reworks Enhancement and buffs demon health; MythicSim Enh #16, Aff #8."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins original and Nicktew Recommended 6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8.",
