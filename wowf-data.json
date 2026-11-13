@@ -179,75 +179,75 @@
     "spec": "Demonology Warlock",
     "icon": "spell_shadow_metamorphosis",
     "mine": true,
-    "mythic": 6,
-    "mythicNote": "991 DPS; All playstyles view #7",
+    "mythic": 7,
+    "mythicNote": "1,011 DPS; All playstyles view #8",
     "broken": "C",
     "tVoid": "B",
     "cogm": "S",
     "lfc": "A",
     "wowhead": "S",
-    "_source": "MythicSim Nov 12 snapshot (engine a667dce, 10 and 11 November hotfixes), 'Best of each spec' view (22 DPS specs). voidsim Nov 12 (engine e540db9, read Nov 12); BrokenMeta updated Nov 9 (re-read Nov 12, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 12 read blocked); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 12",
-    "mythicMove": "▲1 vs Nov 11 (#7, same 991 DPS; Destruction and Enhancement moved around it)"
+    "_source": "MythicSim Nov 13 snapshot (engine a667dce, latest read late morning), 'Best of each spec' view (22 DPS specs). voidsim Nov 13 (engine 5bc808c, read Nov 13); BrokenMeta updated Nov 9 (re-read Nov 13, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 13 read blocked); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 13",
+    "mythicMove": "▼1 vs Nov 12 (#6, 991 DPS)"
    },
    {
     "spec": "Affliction Warlock",
     "icon": "spell_shadow_deathcoil",
     "mine": true,
     "mythic": 8,
-    "mythicNote": "988 DPS; All playstyles view #9",
+    "mythicNote": "993 DPS; All playstyles view #10",
     "broken": "S",
     "brokenNote": "#1, 1,184 DPS",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "A",
-    "_source": "MythicSim Nov 12 snapshot (engine a667dce, 10 and 11 November hotfixes), 'Best of each spec' view (22 DPS specs). voidsim Nov 12 (engine e540db9, read Nov 12); BrokenMeta updated Nov 9 (re-read Nov 12, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 12 read blocked); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 12"
+    "_source": "MythicSim Nov 13 snapshot (engine a667dce, latest read late morning), 'Best of each spec' view (22 DPS specs). voidsim Nov 13 (engine 5bc808c, read Nov 13); BrokenMeta updated Nov 9 (re-read Nov 13, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 13 read blocked); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 13"
    },
    {
     "spec": "Destruction Warlock",
     "icon": "spell_shadow_rainoffire",
     "mine": false,
-    "mythic": 13,
-    "mythicNote": "932 DPS; All playstyles view #16",
+    "mythic": 11,
+    "mythicNote": "948 DPS; All playstyles view #13",
     "broken": "C",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "S",
-    "_source": "MythicSim Nov 12 snapshot (engine a667dce, 10 and 11 November hotfixes), 'Best of each spec' view (22 DPS specs). voidsim Nov 12 (engine e540db9, read Nov 12); BrokenMeta updated Nov 9 (re-read Nov 12, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 12 read blocked); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 12",
-    "mythicMove": "▼1 vs Nov 11 (#12, same 932 DPS)"
+    "_source": "MythicSim Nov 13 snapshot (engine a667dce, latest read late morning), 'Best of each spec' view (22 DPS specs). voidsim Nov 13 (engine 5bc808c, read Nov 13); BrokenMeta updated Nov 9 (re-read Nov 13, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 13 read blocked); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 13",
+    "mythicMove": "▲2 vs Nov 12 (#13, 932 DPS)"
    },
    {
     "spec": "Enhancement Shaman",
     "icon": "ability_shaman_stormstrike",
     "mine": true,
-    "mythic": 12,
-    "mythicNote": "935 DPS; All playstyles view #15 (tier B)",
+    "mythic": 15,
+    "mythicNote": "936 DPS; All playstyles view #18 (tier B)",
     "broken": "B",
-    "tVoid": "S",
+    "tVoid": "A",
     "cogm": "S",
     "lfc": "S",
     "wowhead": "A",
-    "_source": "MythicSim Nov 12 snapshot (engine a667dce, 10 and 11 November hotfixes), 'Best of each spec' view (22 DPS specs). voidsim Nov 12 (engine e540db9, read Nov 12); BrokenMeta updated Nov 9 (re-read Nov 12, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 12 read blocked); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 12",
-    "mythicMove": "▲4 vs Nov 11 (#16, 900 DPS): sim update counts gear hit and crit once, live Forever gear stats, reference talents 17/31/3 (Reverberation 3/5, Tidal Focus 3 for Convection), The Unstoppable Force"
+    "_source": "MythicSim Nov 13 snapshot (engine a667dce, latest read late morning), 'Best of each spec' view (22 DPS specs). voidsim Nov 13 (engine 5bc808c, read Nov 13); BrokenMeta updated Nov 9 (re-read Nov 13, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 13 read blocked); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 13",
+    "mythicMove": "▼3 vs Nov 12 (#12, 935 DPS): its own DPS held; other specs moved around it in this snapshot"
    },
    {
     "spec": "Elemental Shaman",
     "icon": "spell_nature_lightning",
     "mine": false,
     "mythic": 21,
-    "mythicNote": "827 DPS; All playstyles view #26",
+    "mythicNote": "833 DPS; All playstyles view #26",
     "broken": "D",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "A",
     "wowhead": "C",
-    "_source": "MythicSim Nov 12 snapshot (engine a667dce, 10 and 11 November hotfixes), 'Best of each spec' view (22 DPS specs). voidsim Nov 12 (engine e540db9, read Nov 12); BrokenMeta updated Nov 9 (re-read Nov 12, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 12 read blocked); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 12"
+    "_source": "MythicSim Nov 13 snapshot (engine a667dce, latest read late morning), 'Best of each spec' view (22 DPS specs). voidsim Nov 13 (engine 5bc808c, read Nov 13); BrokenMeta updated Nov 9 (re-read Nov 13, unchanged); Wowhead Nov 3 level-60 update (last read Nov 9; Nov 13 read blocked); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 13"
    }
   ]
  },
@@ -18043,18 +18043,18 @@
   "meta_raid_watch": {
    "lead": "Raid watch",
    "tone": "warning",
-   "text": "Official Nov 11 hotfixes (posted 7:48 PM ET): Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Retribution's Unsealed Fury no longer echoes Windfury Totem; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health, Imp Firebolt ranks 1-4 up; Affliction Wrack now speeds up your DoTs (damage -30%). MythicSim Nov 12 (Best of each spec): Demo #6, Aff #8, Enh #12, Destro #13. voidsim Nov 12: Enh S, Demo/Aff/Destro B. BrokenMeta Nov 9: Aff S, Enh B, Destro C, Demo C. Forever Logs: no confirmed level-60 DPS boards.",
-   "_source": "Blizzard forum tracker (read Nov 12); Kaivax WoW: Forever Hotfixes - November 11, 2026 (posts 7-8) and November 10 (post 6); MythicSim Nov 12; voidsim Nov 12; BrokenMeta Nov 9; Forever Logs Nov 12 9 AM ET",
-   "_date": "Nov 12"
+   "text": "Official Nov 12 note (hotfix post 9): the Nov 10 Shaman changes (Enhancement rework, imbues stack with weapon totems) only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Retribution's Unsealed Fury no longer echoes Windfury Totem; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health, Imp Firebolt ranks 1-4 up; Affliction Wrack now speeds up your DoTs (damage -30%). MythicSim Nov 13 (Best of each spec): Demo #7, Aff #8, Destro #11, Enh #15. voidsim Nov 13: Enh A (was S), Demo/Aff/Destro B. BrokenMeta Nov 9: Aff S, Enh B, Destro C, Demo C. Forever Logs: no confirmed level-60 DPS boards.",
+   "_source": "Blizzard forum hotfix topic 2403040 (read Nov 13 late morning); Kaivax WoW: Forever Hotfixes - November 11, 2026 (posts 7-9) and November 10 (post 6); MythicSim Nov 13; voidsim Nov 13; BrokenMeta Nov 9; Forever Logs Nov 13",
+   "_date": "Nov 13"
   },
   "meta_links": [
    {
-    "title": "MythicSim tier list (Nov 12 snapshot, 'Best of each spec' view)",
+    "title": "MythicSim tier list (Nov 13 snapshot, 'Best of each spec' view)",
     "site": "mythicsim.com",
-    "date": "Nov 12",
+    "date": "Nov 13",
     "href": "https://mythicsim.com/wow-forever/tier-list",
     "_source": "mythicsim.com",
-    "_date": "Nov 12"
+    "_date": "Nov 13"
    },
    {
     "title": "BrokenMeta tier list (updated Nov 9, build 70753 tables)",
@@ -18067,10 +18067,10 @@
    {
     "title": "voidsim.io tier list",
     "site": "voidsim.io",
-    "date": "Nov 12",
+    "date": "Nov 13",
     "href": "https://voidsim.io/forever/tier-list",
     "_source": "voidsim.io",
-    "_date": "Nov 12"
+    "_date": "Nov 13"
    },
    {
     "title": "CoGM DPS tier list",
@@ -18163,6 +18163,30 @@
   ],
   "feed_rows": [
    {
+    "lead": "Nov 12",
+    "title": "Official: the Nov 10 Shaman and Enhancement changes only went live Nov 12, 1:45 PM ET",
+    "detail": "Blizzard (hotfix post 9): due to a deployment delay, the Nov 10 Shaman changes reached all regions at 10:45 AM PST (1:45 PM ET) on Nov 12. Weapon imbues and weapon totems work together; Stormstrike 100% weapon damage on 8 s (was 150% on 6 s); Mental Dexterity 33/66/100%; Maelstrom Weapon 20% a stack at every rank, 6/7/8/9/10 procs a minute by rank, and the tooltip shows your chance per swing from main-hand speed (5/5 with a 3.6 speed weapon: 60%; with a 2.0 speed weapon: 33%). For Zanjiro: anything you saw on Nov 10-12 before 1:45 PM ET was the old Enhancement; slow two-handers proc Maelstrom more per swing.",
+    "meta": "Kaivax, WoW: Forever Hotfixes - November 11, 2026 (post 9, Nov 12 2:10 PM ET), read Nov 13",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-11-2026/2403040/9",
+    "_date": "2026-11-13"
+   },
+   {
+    "lead": "Nov 13",
+    "title": "Sims after the Enhancement changes went live: voidsim Enhancement S → A; MythicSim Enhancement #12 → #15",
+    "detail": "voidsim (Nov 13, engine 5bc808c): Enhancement 773 DPS, tier A #8 (was S #2 at 868; engine change, reason not published), Destruction B (713), Demonology B (705), Affliction B (659), Elemental B (685); Survival Hunter #1 (888). MythicSim, Best of each spec (Nov 13 snapshot, latest read late morning): Demonology #7 (1,011 DPS, was #6 at 991), Affliction #8 (993), Destruction #11 (948, was #13 at 932), Enhancement #15 (936, was #12 at 935: its own DPS held; other specs moved around it), Elemental #21 (833). All playstyles: Demo 8, Aff 10, Destro 13, Enh 18 (tier B), Ele 26. Sims, pre-launch gear assumptions; no level-60 Forever Logs yet.",
+    "meta": "voidsim tier list updated Nov 13 2026; MythicSim tier list snapshot Nov 13 2026 (re-read late morning); both read Nov 13",
+    "status": {
+     "label": "Sim, pre-launch",
+     "tone": "warning"
+    },
+    "_source": "https://voidsim.io/forever/tier-list",
+    "_date": "2026-11-13"
+   },
+   {
     "lead": "Nov 11",
     "title": "Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen and Silk bags cost more bolts but hold more",
     "detail": "Shaman: Flametongue Totem Rank 2 was not working and is fixed (Zanjiro trains it at 38). Tailoring (Corvin): Green Woolen Bag and Red Woolen Bag now need 5 Bolts of Woolen Cloth (was 4) and hold 10 slots; Green Silk Pack 5 bolts of silk, 12 slots; Black Silk Pack 6 bolts, 12 slots; Red Mageweave Bag 5 bolts, 14 slots. Retribution: Unsealed Fury no longer echoes Windfury Totem attacks (group note for your Windfury Totem). Auction House changes from Nov 10 pulled until the Nov 17 weekly maintenance. Item Restoration disabled while Blizzard fixes a bug.",
@@ -18189,8 +18213,8 @@
    {
     "lead": "Nov 10",
     "title": "Zanjiro: Official Enhancement rework (Stormstrike 100% on 8 s, Maelstrom Weapon, Mental Dexterity, imbues stack with Windfury Totem)",
-    "detail": "Stormstrike 100% weapon damage on an 8 s cooldown (was 150% on 6 s). Mental Dexterity 33/66/100% of Intellect as Attack Power (was 50/100/150). Maelstrom Weapon 20% less cast time and mana per stack at every rank; procs 6/7/8/9/10 times a minute by rank (was 20 at any rank); the tooltip shows your chance per swing from weapon speed (5/5 with a 3.6 speed weapon: 60%). Weapon imbues and weapon totems now work together, so Windfury Weapon and Windfury Totem can both proc. Rage of the Storm (Shaman Air quest 2H mace) now 16 Strength (was Intellect), speed 3.6 (was 3.2). Maelstrom Weapon can be tracked in the Cooldown Manager. Blizzard: Enhancement favoured Spell Power/Intellect too much and drifted from Windfury; fixed before raids open. Planner talent texts, rotations, Naga 12 note and the gear sheet updated.",
-    "meta": "Kaivax, WoW: Forever Hotfixes - November 10, 2026 (post 6, Nov 10 10:27 PM ET), read Nov 11",
+    "detail": "Live on all realms only since Nov 12, 1:45 PM ET (Blizzard: deployment delay). Stormstrike 100% weapon damage on an 8 s cooldown (was 150% on 6 s). Mental Dexterity 33/66/100% of Intellect as Attack Power (was 50/100/150). Maelstrom Weapon 20% less cast time and mana per stack at every rank; procs 6/7/8/9/10 times a minute by rank (was 20 at any rank); the tooltip shows your chance per swing from weapon speed (5/5 with a 3.6 speed weapon: 60%). Weapon imbues and weapon totems now work together, so Windfury Weapon and Windfury Totem can both proc. Rage of the Storm (Shaman Air quest 2H mace) now 16 Strength (was Intellect), speed 3.6 (was 3.2). Maelstrom Weapon can be tracked in the Cooldown Manager. Blizzard: Enhancement favoured Spell Power/Intellect too much and drifted from Windfury; fixed before raids open. Planner talent texts, rotations, Naga 12 note and the gear sheet updated.",
+    "meta": "Kaivax, WoW: Forever Hotfixes - November 10, 2026 (post 6, Nov 10 10:27 PM ET), read Nov 11; live time from post 9, read Nov 13",
     "status": {
      "label": "Official",
      "tone": "success"
@@ -19333,11 +19357,11 @@
   }
  },
  "_meta": {
-  "version": 36,
-  "generated_at": "2026-11-12T09:40-05:00",
-  "source": "Grok, Nov 12 2026 daily meta watch",
-  "notes_commit": "a362b0e",
-  "notes": "Nov 12: Official Nov 11 hotfix (Flametongue Totem R2 fix, Tailoring bags); MythicSim Enh #12, Demo #6; voidsim Demo A to B."
+  "version": 37,
+  "generated_at": "2026-11-13T10:52-05:00",
+  "source": "Grok, Nov 13 2026 daily meta watch",
+  "notes_commit": "5ee67c9",
+  "notes": "Nov 13: Enhancement changes live only since Nov 12 1:45 PM ET; voidsim Enh S to A; MythicSim Enh #15, Demo #7."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins original and Nicktew Recommended 6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8.",
