@@ -186,7 +186,7 @@
     "cogm": "S",
     "lfc": "A",
     "wowhead": "S",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 13 (engine 5bc808c, last read Nov 14); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "brokenNote": "#6, 1,067 DPS"
    },
@@ -202,7 +202,7 @@
     "cogm": "A",
     "lfc": "B",
     "wowhead": "A",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 13 (engine 5bc808c, last read Nov 14); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15"
    },
    {
@@ -216,7 +216,7 @@
     "cogm": "A",
     "lfc": "B",
     "wowhead": "S",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 13 (engine 5bc808c, last read Nov 14); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "brokenNote": "#8, 1,033 DPS"
    },
@@ -231,7 +231,7 @@
     "cogm": "S",
     "lfc": "S",
     "wowhead": "A",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 13 (engine 5bc808c, last read Nov 14); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "mythicMove": "▼5 vs Nov 14 (#9, 983 DPS): MythicSim reference-gear swap (Silithus quest rewards removed until Forever confirms them, -1.4%) and Windfury Totem extra attack modelled as one main-hand strike with no Maelstrom stack (-0.8%); sim changes, not a game change",
     "brokenNote": "#10, 968 DPS (was B)"
@@ -247,7 +247,7 @@
     "cogm": "A",
     "lfc": "A",
     "wowhead": "C",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 13 (engine 5bc808c, last read Nov 14); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "brokenNote": "#16, 859 DPS"
    }
@@ -1977,6 +1977,14 @@
      1
     ],
     [
+     "Flurry",
+     2
+    ],
+    [
+     "Maelstrom Weapon",
+     1
+    ],
+    [
      "Tidal Focus",
      5
     ],
@@ -1993,16 +2001,12 @@
      1
     ],
     [
-     "Flurry",
-     1
+     "Maelstrom Weapon",
+     2
     ],
     [
      "Mental Quickness",
      2
-    ],
-    [
-     "Maelstrom Weapon",
-     5
     ],
     [
      "Rage of the Farseer",
@@ -2010,7 +2014,11 @@
     ],
     [
      "Flurry",
-     2
+     1
+    ],
+    [
+     "Maelstrom Weapon",
+     1
     ],
     [
      "Concussion",
@@ -2018,7 +2026,7 @@
     ],
     [
      "Elemental Devastation",
-     1
+     2
     ]
    ],
    "aff_moba26": [
@@ -2123,8 +2131,12 @@
      4
     ],
     [
+     "Soul Harvest",
+     2
+    ],
+    [
      "Suppression",
-     5
+     4
     ],
     [
      "Pandemic",
@@ -2136,7 +2148,7 @@
     ],
     [
      "Malevolence",
-     5
+     4
     ]
    ]
   },
@@ -2422,7 +2434,7 @@
     "src": "Icy Veins (Abide), its talent calculator order",
     "date": "Oct 21",
     "url": "https://www.icy-veins.com/wow-forever/demonology-warlock-leveling",
-    "blurb": "Unholy Power first, Demonic Brand at 25, Soul Link at 30, Demonic Pact at 40, then Affliction. Ends 20/31/0. Mobalytics' respec build (Corvin's plan since Nov 10) differs: Improved Sayaad instead of Improved Voidwalker, Demonic Embrace instead of Demonic Aegis, 1 Improved Corruption at 31 so Demonic Pact lands at 41, and 46-60 go Suppression 5, Pandemic 3, Improved Bane of Agony 2, Malevolence 5."
+    "blurb": "Unholy Power first, Demonic Brand at 25, Soul Link at 30, Demonic Pact at 40, then Affliction. Ends 20/31/0. Mobalytics' respec build (Corvin's plan since Nov 10) differs: Improved Sayaad instead of Improved Voidwalker, Demonic Embrace instead of Demonic Aegis, 1 Improved Corruption at 31 so Demonic Pact lands at 41, and 46-60 go Soul Harvest 2, Suppression 4, Pandemic 3, Improved Bane of Agony 2, Malevolence 4 (Crix, Nov 15)."
    },
    {
     "key": "aff_icy",
@@ -2456,13 +2468,15 @@
    },
    {
     "key": "enh_nicktew",
-    "label": "Nicktew Recommended 6/34/11 (alternative)",
+    "label": "Nicktew Recommended 7/33/11 (alternative)",
     "cls": "shaman",
     "seq": "enh_nicktew",
-    "src": "Nicktew Recommended, updated Nov 8 (talent order unchanged since Nov 4), read Nov 8 2026 (Unofficial, single source)",
-    "date": "Nov 8; read Nov 8",
+    "src": "Nicktew Recommended, updated Nov 15 2026, read Nov 16 2026 (Unofficial, single source)",
+    "date": "Nov 15; read Nov 16",
     "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-    "blurb": "Separate selectable guide, not a respec or default switch. Stormstrike25; Improved Ghost Wolf26–27; Improved Stormstrike30–31; Mindfulness38–40; Water Shield43; Maelstrom5/5 at51; Rage52. Water Shield versus earlier deep Enhancement explicitly needs testing. Full Enhance First alternate tab order not accessible. Actual spent talents/trained skills unverified."
+    "blurb": "Separate selectable guide, not a respec or default switch. Stormstrike 25; Improved Ghost Wolf 26–27; Improved Stormstrike 30–31; Flurry 4/5 by 34; one Maelstrom point at 35 (instant Lightning Bolt now and then); Mindfulness 41–43; Water Shield 46; Maelstrom 3/5 at 48; Rage 51; Maelstrom 4/5 at 53 (he skips the 5th point); Elemental Devastation 2/3 at 59–60. Ends 7/33/11 (Nov 15 update; was 6/34/11). Water Shield versus Lightning Shield still needs testing per the guide. Actual spent talents/trained skills unverified.",
+    "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+    "_date": "2026-11-16"
    },
    {
     "key": "aff_moba26",
@@ -2484,16 +2498,16 @@
     "label": "Mobalytics Demo respec at 26 (Crix) · Corvin's plan",
     "cls": "warlock",
     "seq": "demo_moba",
-    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
-    "date": "Nov 10; read Nov 10",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 15 2026 (page re-dated Nov 16), read Nov 16 2026",
+    "date": "Nov 15; read Nov 16",
     "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
-    "blurb": "Corvin's leveling plan since Nov 10. After the 26 respec the points go back in this order from level 10: Unholy Power 5, Demonic Energies 2, Fel Vitality 3, Master Summoner 2, Improved Sayaad 3, Demonic Brand 3 (25-27, so 2/3 right after the respec), Fel Domination 28, Demonic Sacrifice 29, Soul Link 30, Improved Corruption 31, Demonic Knowledge 32-34, Demonic Embrace 35, Master Demonologist 36-40, Demonic Pact 41, Improved Corruption 42-45 (instant again at 45), Suppression 46-50, Pandemic 51-53, Improved Bane of Agony 54-55, Malevolence 56-60. Ends 20/31/0. Succubus is the demon.",
+    "blurb": "Corvin's leveling plan since Nov 10. After the 26 respec the points go back in this order from level 10: Unholy Power 5, Demonic Energies 2, Fel Vitality 3, Master Summoner 2, Improved Sayaad 3, Demonic Brand 3 (25-27, so 2/3 right after the respec), Fel Domination 28, Demonic Sacrifice 29, Soul Link 30, Improved Corruption 31, Demonic Knowledge 32-34, Demonic Embrace 35, Master Demonologist 36-40, Demonic Pact 41, Improved Corruption 42-45 (instant again at 45), Soul Harvest 46-47, Suppression 48-51 (4/5), Pandemic 52-54, Improved Bane of Agony 55-56, Malevolence 57-60 (4/5) (Crix change of Nov 15). Ends 20/31/0. Succubus is the demon.",
     "tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
     "primary": true,
     "respec_at": 26,
     "before": "aff_moba26",
     "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
-    "_date": "2026-11-10"
+    "_date": "2026-11-16"
    }
   ],
   "WHY": {
@@ -2507,12 +2521,12 @@
    "Stormstrike": "The spec starts here (Icy Veins, wowfdb). Nicktew: keep Earth Shock separate for interrupts (Nov 4, read Nov 7). Levels · Icy Veins: 25 · Nicktew: 25 · Mobalytics (Yebb): 25 · Your notes: 25. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Shamanistic Focus": "Shocks and Lightning Shield cost 45% less mana: you stop rationing shocks (wowfdb). Only applies once the point is actually spent, not automatically at 20 (Nicktew, Nov 4, read Nov 7). Levels · Icy Veins: 20 · Nicktew: 20 · Mobalytics (Yebb): 20 · Your notes: 20. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Improved Stormstrike": "Dodges and parries can reset Stormstrike; also 50% mana regen while casting (wowfdb). Levels · Icy Veins: 30–31 · Nicktew: 30–31 · Mobalytics (Yebb): 30–31 · Your notes: 30, 32.",
-   "Water Shield": "Restoration talent: restores mana when you are struck or when you crit (Icy Veins, Nov 13: 46 in both its text and calculator). Nicktew: its value versus earlier deep Enhancement is untested (Nov 4, read Nov 7). Levels · Icy Veins: 46 · Nicktew: 43. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-   "Maelstrom Weapon": "Each stack cuts your next Lightning Bolt's cast time and mana by 20% at every rank, so 5 stacks make it free and instant; more ranks only raise the proc rate (6 to 10 a minute, Official Nov 10 hotfix). Icy Veins (Nov 13): one point is worth it, more delays the mana talents. Levels · Icy Veins: 43 · Nicktew: 47–51 · Your notes: 36–40.",
-   "Rage of the Farseer": "+30% attack speed for 25 s on a 3-minute cooldown (wowfdb; marked unconfirmed there). Not in Icy Veins' build since Nov 13. Levels · Nicktew: 52 · Your notes: 41.",
-   "Malevolence": "+5% Shadow crit at 5/5; pairs with Pandemic. Levels · Mobalytics respec 26: 56–60 · Icy Veins Affliction: 27–29, 42–43 · Mobalytics Affliction 1-60: 48–52.",
+   "Water Shield": "Restoration talent: restores mana when you are struck or when you crit (Icy Veins, Nov 13: 46 in both its text and calculator). Nicktew: its value versus earlier deep Enhancement is untested (Nov 4, read Nov 7). Levels · Icy Veins: 46 · Nicktew: 46 (Nov 15 update). https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+   "Maelstrom Weapon": "Each stack cuts your next Lightning Bolt's cast time and mana by 20% at every rank, so 5 stacks make it free and instant; more ranks only raise the proc rate (6 to 10 a minute, Official Nov 10 hotfix). Icy Veins (Nov 13): one point is worth it, more delays the mana talents. Levels · Icy Veins: 43 · Nicktew: 35, 47–48, 53 (4/5, Nov 15 update) · Your notes: 36–40.",
+   "Rage of the Farseer": "+30% attack speed for 25 s on a 3-minute cooldown (wowfdb; marked unconfirmed there). Not in Icy Veins' build since Nov 13. Levels · Nicktew: 51 · Your notes: 41.",
+   "Malevolence": "+1% Shadow crit per point (5% at 5/5); pairs with Pandemic. Crix's respec build takes 4/5 since Nov 15. Levels · Mobalytics respec 26: 57–60 (4/5) · Icy Veins Affliction: 27–29, 42–43 · Mobalytics Affliction 1-60: 48–52.",
    "Wrack": "Channel that makes your Siphon Life, Corruption and Bane of Agony on the target tick twice as fast while you channel (Official Nov 10 hotfix, damage cut 30%). Affliction's 31-point talent; needs Siphon Life. Not in the Mobalytics builds. Levels · Icy Veins Affliction: 51.",
-   "Suppression": "+1% hit and 4% less threat per rank (5% and 20% at 5/5). Corvin already has 4/5 (spent at 10–13). Levels · Mobalytics respec 26: 10–13 before the respec; 46–50 after it · Icy Veins Affliction: 10–13 · Icy Veins Demonology: 41–44 · Mobalytics Affliction 1-60: 15–19.",
+   "Suppression": "+1% hit and 4% less threat per rank (5% and 20% at 5/5). Corvin already has 4/5 (spent at 10–13). Levels · Mobalytics respec 26: 10–13 before the respec; 48–51 after it (4/5: 100% hit against your level; Crix Nov 15) · Icy Veins Affliction: 10–13 · Icy Veins Demonology: 41–44 · Mobalytics Affliction 1-60: 15–19.",
    "Unholy Power": "+10% damage for all your demons (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 19–23 before the respec; 26 after it · Icy Veins Demonology: 10–14 · Mobalytics Affliction 1-60: 41–45.",
    "Demonic Energies": "Keeps your demon alive and in mana: you heal it for part of your spell damage and Life Tap feeds it (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 24–25 before the respec; 26 after it · Icy Veins Demonology: 15–16 · Mobalytics Affliction 1-60: 46–47.",
    "Fel Vitality": "+15% demon Health and Mana and +15% of your own Mana (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 26 (re-spent at the 26 respec) · Icy Veins Affliction: 38–40 · Icy Veins Demonology: 17–19 · Mobalytics Affliction 1-60: 53–55.",
@@ -2522,9 +2536,10 @@
    "Demonic Knowledge": "Spell damage equal to your level for you and your demon while a demon is out (30 at level 30, 45 at 45) (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 32–34 · Icy Veins Demonology: 31–33.",
    "Demonic Embrace": "More Stamina; Mobalytics says this 1 point can go anywhere in Demonology. Levels · Mobalytics respec 26: 35 · Icy Veins Affliction: 31–35.",
    "Master Demonologist": "A bonus for you and your demon depending on which demon is out; Mobalytics takes it for the Succubus' 10% Shadow damage. Levels · Mobalytics respec 26: 36–40 · Icy Veins Demonology: 35–39.",
-   "Pandemic": "Bigger crits on your DoTs and Drains; better the more crit you have (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 51–53 · Icy Veins Affliction: 22–24 · Icy Veins Demonology: 53–55 · Mobalytics Affliction 1-60: 33–34, 40.",
-   "Improved Bane of Agony": "Up to 10% more Bane of Agony damage (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 54–55 · Icy Veins Affliction: 20–21 · Icy Veins Demonology: 51–52 · Mobalytics Affliction 1-60: 56–57.",
-   "Elemental Focus": "10% chance on a spell cast to make your next spell free (Icy Veins, Nov 13). Levels · Icy Veins: 57 · Mobalytics (Yebb): 45."
+   "Pandemic": "Bigger crits on your DoTs and Drains; better the more crit you have (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 52–54 · Icy Veins Affliction: 22–24 · Icy Veins Demonology: 53–55 · Mobalytics Affliction 1-60: 33–34, 40.",
+   "Improved Bane of Agony": "Up to 10% more Bane of Agony damage (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 55–56 · Icy Veins Affliction: 20–21 · Icy Veins Demonology: 51–52 · Mobalytics Affliction 1-60: 56–57.",
+   "Elemental Focus": "10% chance on a spell cast to make your next spell free (Icy Veins, Nov 13). Levels · Icy Veins: 57 · Mobalytics (Yebb): 45.",
+   "Soul Harvest": "A Drain Soul kill raises your Mana regeneration by 100% for 10 sec and keeps 100% of normal regen going while casting (2/2, talent tree). Crix (Nov 15): drinking while the buff is up gives a huge amount of mana, possibly a bug. Levels · Mobalytics respec 26: 46–47 · Mobalytics Affliction 1-60: 58–59."
   },
   "PATH_NODES": [
    {
@@ -2618,11 +2633,11 @@
     "spec": 1,
     "icon": "spell_shadow_focusedpower",
     "title": "Affliction finish",
-    "body": "Improved Corruption 42-45 (instant Corruption again at 45), Suppression 46-50, Pandemic 51-53, Improved Bane of Agony 54-55, Malevolence 56-60. Ends 20/31/0. Raid builds at 60 stay in the planner: Affliction 30/0/21 or Demonology 2/31/18 (Mobalytics class guides, Oct 30).",
-    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "body": "Improved Corruption 42-45 (instant Corruption again at 45), Soul Harvest 46-47 (Crix: sit and drink while its mana buff from a Drain Soul kill is up for huge regen, possibly a bug), Suppression 48-51 (4/5 = 100% hit against your level), Pandemic 52-54, Improved Bane of Agony 55-56, Malevolence 57-60 (4/5; or a 5th Suppression point and 3 Malevolence). Ends 20/31/0. Raid builds at 60 stay in the planner: Affliction 30/0/21 or Demonology 2/31/18 (Mobalytics class guides, Oct 30).",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 15 2026 (page re-dated Nov 16), read Nov 16 2026",
     "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
     "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
-    "_date": "2026-11-10"
+    "_date": "2026-11-16"
    }
   ],
   "PATH_NODES_ICY": [
@@ -2756,7 +2771,7 @@
       {
        "icon": "spell_shaman_maelstromweapon",
        "name": "Lightning Bolt at 5 Maelstrom",
-       "tip": "Max rank, instant and free at 5 stacks. Icy Veins (Nov 13): one Maelstrom point at 43; Nicktew: 5/5 at 51.",
+       "tip": "Max rank, instant and free at 5 stacks. Icy Veins (Nov 13): one Maelstrom point at 43; Nicktew: 1 point at 35, 4/5 at 53.",
        "lvl": 43
       },
       {
@@ -2852,10 +2867,10 @@
      ],
      "notes": [
       "Levels on the steps follow the Icy Veins talent calculator (updated Nov 13, read Nov 14); without Legacy Talented they land as shown. Icy Veins no longer takes Rage of the Farseer.",
-      "Nicktew Recommended (updated Nov4, read Nov7): separate selectable 6/34/11; existing Icy Veins path remains default. Selecting a guide is not confirmation of in-game respec. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+      "Nicktew Recommended (updated Nov 15, read Nov 16): separate selectable 7/33/11; existing Icy Veins path remains default. Selecting a guide is not confirmation of in-game respec. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Level20 priority (Nicktew): Lightning Shield before pull; Flame Shock unless reserving the shared Shock cooldown for an interrupt; Searing Totem before melee; Fire Nova on3+; Earth Shock damage/kick; finish with autos. Front-load mana spending, then allow five-second regeneration. Icy Veins retains rank1 Lightning Bolt opener; both options preserved. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-      "Nicktew25+: prioritize Stormstrike, then shocks; full5/5 Maelstrom at51 before relying on instant Lightning Bolt, Rage52. No automatic rotation macro. These levels are Nicktew order, not proof of learned talents. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-      "Nicktew sustain: Mindfulness38–40; Water Shield43 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+      "Nicktew25+: prioritize Stormstrike, then shocks; one Maelstrom point at 35 for the odd instant Lightning Bolt, 3/5 at 48, 4/5 at 53; Rage 51. No automatic rotation macro. These levels are Nicktew order, not proof of learned talents. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+      "Nicktew sustain: Mindfulness 41–43; Water Shield 46 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Training check at20: Ghost Wolf, Frost Shock1, Lesser Healing Wave1, Totemic Recall, Call of the Elements, Searing2, Lightning Bolt4; Healing Stream1 requires Water Totem quest. Purchases/quest completion unknown. Mana Spring/Magma26, Windfury Weapon/Grounding30, Windfury Totem/Chain Lightning32. Fan beta trainer list: https://wowforever.one/classes/shaman/spells/ (read Nov7; verify spellbook).",
       "Guide corrections: Mental Dexterity converts Intellect to AP, Mental Quickness to spell damage; 1.5AP/Int versus2AP/Str is75%, not guide66%. Nicktew text implies improved wolf20 but its order says26–27. Totemic Projection name/cursor macro conflicts with recorded Totemic Call rename; verify live spell before binding. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Official Nov 10 hotfix (live): Stormstrike 100% weapon damage on an 8 s cooldown (was 150% on 6 s); Mental Dexterity 33/66/100% of Intellect as Attack Power (was 50/100/150); Maelstrom Weapon 20% per stack at every rank, 6-10 procs a minute by rank (slow weapons proc more per swing). Blizzard: Enhancement leaned too hard on Spell Power/Intellect gear and away from Windfury, so this is fixed before raids. Collect Strength and Attack Power gear. https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
@@ -2939,7 +2954,7 @@
       {
        "icon": "spell_shaman_maelstromweapon",
        "name": "Lightning Bolt at 5 Maelstrom",
-       "tip": "Spend stacks as they hit 5. Icy Veins (Nov 13): one Maelstrom point at 43; Nicktew: 5/5 at 51.",
+       "tip": "Spend stacks as they hit 5. Icy Veins (Nov 13): one Maelstrom point at 43; Nicktew: 1 point at 35, 4/5 at 53.",
        "lvl": 43
       },
       {
@@ -2957,10 +2972,10 @@
      ],
      "notes": [
       "Hit cap 8%, Expertise 6.5% (Mobalytics).",
-      "Nicktew Recommended (updated Nov4, read Nov7): separate selectable 6/34/11; existing Icy Veins path remains default. Selecting a guide is not confirmation of in-game respec. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+      "Nicktew Recommended (updated Nov 15, read Nov 16): separate selectable 7/33/11; existing Icy Veins path remains default. Selecting a guide is not confirmation of in-game respec. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Level20 priority (Nicktew): Lightning Shield before pull; Flame Shock unless reserving the shared Shock cooldown for an interrupt; Searing Totem before melee; Fire Nova on3+; Earth Shock damage/kick; finish with autos. Front-load mana spending, then allow five-second regeneration. Icy Veins retains rank1 Lightning Bolt opener; both options preserved. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-      "Nicktew25+: prioritize Stormstrike, then shocks; full5/5 Maelstrom at51 before relying on instant Lightning Bolt, Rage52. No automatic rotation macro. These levels are Nicktew order, not proof of learned talents. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-      "Nicktew sustain: Mindfulness38–40; Water Shield43 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+      "Nicktew25+: prioritize Stormstrike, then shocks; one Maelstrom point at 35 for the odd instant Lightning Bolt, 3/5 at 48, 4/5 at 53; Rage 51. No automatic rotation macro. These levels are Nicktew order, not proof of learned talents. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+      "Nicktew sustain: Mindfulness 41–43; Water Shield 46 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Training check at20: Ghost Wolf, Frost Shock1, Lesser Healing Wave1, Totemic Recall, Call of the Elements, Searing2, Lightning Bolt4; Healing Stream1 requires Water Totem quest. Purchases/quest completion unknown. Mana Spring/Magma26, Windfury Weapon/Grounding30, Windfury Totem/Chain Lightning32. Fan beta trainer list: https://wowforever.one/classes/shaman/spells/ (read Nov7; verify spellbook).",
       "Guide corrections: Mental Dexterity converts Intellect to AP, Mental Quickness to spell damage; 1.5AP/Int versus2AP/Str is75%, not guide66%. Nicktew text implies improved wolf20 but its order says26–27. Totemic Projection name/cursor macro conflicts with recorded Totemic Call rename; verify live spell before binding. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
       "Official Nov 10 hotfix (live): Stormstrike 100% weapon damage on an 8 s cooldown (was 150% on 6 s); Mental Dexterity 33/66/100% of Intellect as Attack Power (was 50/100/150); Maelstrom Weapon 20% per stack at every rank, 6-10 procs a minute by rank (slow weapons proc more per swing). Blizzard: Enhancement leaned too hard on Spell Power/Intellect gear and away from Windfury, so this is fixed before raids. Collect Strength and Attack Power gear. https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
@@ -4502,7 +4517,7 @@
         "Lightning Bolt (Rank 1)",
         "Lightning Bolt at 5 Maelstrom"
        ],
-       "note": "Ctrl: Chain Lightning (32). Icy Veins rank1 pull / Nicktew Flame Shock alternative; instant full rank at 5 stacks from 43 (Icy Veins, one Maelstrom point) or 51 (Nicktew 5/5)."
+       "note": "Ctrl: Chain Lightning (32). Icy Veins rank1 pull / Nicktew Flame Shock alternative; instant full rank at 5 stacks from 43 (Icy Veins, one Maelstrom point) or 35 (Nicktew, one point; 4/5 at 53)."
       },
       {
        "key": "ss",
@@ -4513,7 +4528,7 @@
         "Stormstrike",
         "Rage of the Farseer"
        ],
-       "note": "Ctrl: Rage of the Farseer from 52 on the Nicktew and notes builds (same press); Icy Veins dropped Rage on Nov 13."
+       "note": "Ctrl: Rage of the Farseer from 51 on the Nicktew build and 41 on your notes build (same press); Icy Veins dropped Rage on Nov 13."
       },
       {
        "key": "es",
@@ -18072,10 +18087,10 @@
    {
     "title": "voidsim.io tier list",
     "site": "voidsim.io",
-    "date": "Nov 13",
+    "date": "Nov 16",
     "href": "https://voidsim.io/forever/tier-list",
     "_source": "voidsim.io",
-    "_date": "Nov 13"
+    "_date": "Nov 16"
    },
    {
     "title": "CoGM DPS tier list",
@@ -18167,6 +18182,30 @@
    }
   ],
   "feed_rows": [
+   {
+    "lead": "Nov 15",
+    "title": "Corvin: Crix moved 2 points into Soul Harvest (levels 46-47) in the Demonology respec build",
+    "detail": "Mobalytics Demonology Respec LV 26 calculator and text: 41 Demonic Pact and 42-45 Improved Corruption unchanged; then Soul Harvest 46-47, Suppression 48-51 (4/5 gives 100% hit against your level), Pandemic 52-54, Improved Bane of Agony 55-56, Malevolence 57-60 (4/5). Was Suppression 46-50, Pandemic 51-53, Improved Bane of Agony 54-55, Malevolence 56-60. Crix: sitting to drink while Soul Harvest's mana buff (from a Drain Soul kill) is up gives huge regen, and it 'might be a bug'. Optional: a 5th Suppression point and 3 Malevolence. Still 20/31/0; levels 10-45 and the respec at 26 unchanged. Planner, path node, talent notes updated.",
+    "meta": "Mobalytics (Crix) Warlock Leveling Guide, Demonology Respec LV 26 variant, changelog '11/15/26 - Moved two points into Soul Harvest', dateModified Nov 16 5:02 AM ET, read Nov 16. Unofficial, single source (Corvin's primary guide).",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_date": "2026-11-16"
+   },
+   {
+    "lead": "Nov 15",
+    "title": "Zanjiro (alternative build): Nicktew's Recommended Enhancement order now ends 7/33/11",
+    "detail": "Nicktew moved Flurry to 4/5 by 34 and one Maelstrom Weapon point to 35 (instant Lightning Bolt now and then), so Tidal Focus 36-40, Mindfulness 41-43, Totemic Focus 44-45, Water Shield 46, Maelstrom 3/5 at 47-48, Mental Quickness 49-50, Rage of the Farseer 51, Flurry 5/5 at 52, Maelstrom 4/5 at 53 (he skips the 5th), Concussion 54-58, Elemental Devastation 2/3 at 59-60. Was 6/34/11 with Water Shield 43 and Maelstrom 5/5 at 51. Icy Veins (your default, 11/29/11, Nov 13) unchanged; Nicktew stays a selectable alternative.",
+    "meta": "Mobalytics Shaman Leveling Guide 1-60 by Nicktew, dateModified Nov 15 5:26 PM ET, read Nov 16. Unofficial, single source.",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+    "_date": "2026-11-16"
+   },
    {
     "lead": "Nov 15",
     "title": "Corvin: Crix updated the Mobalytics Warlock leveling guide (Rank 1 Shadow Bolt filler, Felhunter option)",
@@ -19195,9 +19234,9 @@
     "_date": null
    },
    {
-    "text": "Nicktew Recommended (updated Nov4, read Nov7): separate selectable 6/34/11; existing Icy Veins path remains default. Selecting a guide is not confirmation of in-game respec. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+    "text": "Nicktew Recommended (updated Nov 15, read Nov 16): separate selectable 7/33/11; existing Icy Veins path remains default. Selecting a guide is not confirmation of in-game respec. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
     "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-    "_date": "Nov4; read Nov7 2026"
+    "_date": "2026-11-16"
    },
    {
     "text": "Level20 priority (Nicktew): Lightning Shield before pull; Flame Shock unless reserving the shared Shock cooldown for an interrupt; Searing Totem before melee; Fire Nova on3+; Earth Shock damage/kick; finish with autos. Front-load mana spending, then allow five-second regeneration. Icy Veins retains rank1 Lightning Bolt opener; both options preserved. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
@@ -19205,14 +19244,14 @@
     "_date": "Nov4; read Nov7 2026"
    },
    {
-    "text": "Nicktew25+: prioritize Stormstrike, then shocks; full5/5 Maelstrom at51 before relying on instant Lightning Bolt, Rage52. No automatic rotation macro. These levels are Nicktew order, not proof of learned talents. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+    "text": "Nicktew25+: prioritize Stormstrike, then shocks; one Maelstrom point at 35 for the odd instant Lightning Bolt, 3/5 at 48, 4/5 at 53; Rage 51. No automatic rotation macro. These levels are Nicktew order, not proof of learned talents. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
     "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-    "_date": "Nov4; read Nov7 2026"
+    "_date": "2026-11-16"
    },
    {
-    "text": "Nicktew sustain: Mindfulness38–40; Water Shield43 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+    "text": "Nicktew sustain: Mindfulness 41–43; Water Shield 46 replaces Lightning Shield. Its value versus delaying Maelstrom is explicitly untested; infinite-mana and ~10% shield-damage claims are guide estimates, not verified values. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
     "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-    "_date": "Nov4; read Nov7 2026"
+    "_date": "2026-11-16"
    },
    {
     "text": "Training check at20: Ghost Wolf, Frost Shock1, Lesser Healing Wave1, Totemic Recall, Call of the Elements, Searing2, Lightning Bolt4; Healing Stream1 requires Water Totem quest. Purchases/quest completion unknown. Mana Spring/Magma26, Windfury Weapon/Grounding30, Windfury Totem/Chain Lightning32. Fan beta trainer list: https://wowforever.one/classes/shaman/spells/ (read Nov7; verify spellbook).",
@@ -19245,9 +19284,9 @@
     "_date": "Nov4; read Nov7 2026"
    },
    {
-    "text": "Nicktew final Elemental Devastation is1/3, so his prose claim of9% from that choice is not a verified1-point value; tree displays3%/point. Full Enhance First alternate order unverified. Cheap consumables/camps are optional; keep existing professions. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+    "text": "Nicktew final Elemental Devastation is 2/3 since Nov 15 (tree shows 3% per point, so 6%); his prose '9% melee crit' is the 3/3 value. Full Enhance First alternate order unverified. Cheap consumables/camps are optional; keep existing professions. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
     "_source": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-    "_date": "Nov4; readNov7"
+    "_date": "2026-11-16"
    }
   ],
   "talents_level60": {
@@ -19456,17 +19495,17 @@
   }
  },
  "_meta": {
-  "version": 39,
-  "generated_at": "2026-11-15T09:10-05:00",
-  "source": "Grok, Nov 15 2026 daily meta watch",
-  "notes_commit": "5ee67c9",
-  "notes": "Nov 15: Crix Warlock guide (Rank 1 Shadow Bolt filler, Felhunter option); MythicSim Enh #14; Nov 14 dungeon XP 12-level rule."
+  "version": 40,
+  "generated_at": "2026-11-16T08:52-05:00",
+  "source": "Grok, Nov 16 2026 daily meta watch",
+  "notes_commit": "f6e28e5",
+  "notes": "Nov 16: Crix Demo respec build adds Soul Harvest 46-47 (Suppression 4, Malevolence 4); Nicktew Enh alternative now 7/33/11."
  },
  "captions": {
-  "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 6/34/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 8 (order unchanged), read Nov 8.",
+  "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16.",
   "macros": "Corvin: Mobalytics macros added or matched Nov 10 (Searing Pain + pet from 26, Succubus summon key, Fel Domination resummon, Imp sacrifice at 41, Torment + attack). Zanjiro: level-aware manual macros reviewed against Nicktew; Rank1 kick separate from damage. Native triggers are banks, not keyboard modifiers. Troll Berserking macro added Nov 10.",
   "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; Icy Veins rotation (Nov 13 update) drives auto layout, Nicktew alternative documented. No controller UI added. Nov 10: plate buttons follow each rotation's priority order at every level.",
   "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking.",
-  "path": "Mobalytics (Crix, plan since Nov 10, respec unchanged in the Nov 15 update): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build."
+  "path": "Mobalytics (Crix, plan since Nov 10, respec at 26 unchanged; Nov 15 talent change moves 2 points into Soul Harvest at 46-47): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build."
  }
 }
