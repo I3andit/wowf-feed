@@ -20,8 +20,8 @@ The same sections and constant names as `research-data.json` from the Nov 3 expo
 | `naga` | `NAGA`, `KEYS12`, `ROWS12`, `NAGA12`, `SETUP12` |
 | `macros` | `WFDB_AFF`, `WFDB_DEMO`, `WFDB_ENH`, `MACROS` |
 | `professions` | `TRAIN_STD`, `PROFS`, `SKIN_ZONES`, `LEATHER`, `PIN_TRAIN`, `PROF_PINS`, `PROF_WHY` |
-| `gear` | `SHAM_GEAR`, `LOCK_GEAR`, `QUALITY`, `ITEM_INFO`, `GEAR_SHEETS`, `GEAR_EXTRA_IDS` |
-| `dungeons` | `DUNGEONS`, `DUN_NOTES_LOOT`, `DKEYS`, `PRESET_BASE`, `PRESETS`, optional `LOOT`, optional `STAT_WEIGHTS` (below) |
+| `gear` | `SHAM_GEAR`, `LOCK_GEAR`, `QUALITY`, `ITEM_INFO`, `GEAR_SHEETS` (`sham`, `lock`, optional `K`), `GEAR_EXTRA_IDS` |
+| `dungeons` | `DUNGEONS`, `DUN_NOTES_LOOT`, `DKEYS`, `PRESET_BASE`, `PRESETS`, optional `LOOT`, optional `STAT_WEIGHTS` (below), optional `DUN_NOTES_K` (Kestrik, at the end) |
 | `trainers` | `TRAINER_RAW`, `TRAIN_SRC`, `TRAIN_NOTE` |
 | `addons` | `INSTALLED` |
 | `launch_night` | `LAUNCH_ITEMS`, `ROUTES`, `corvin_first_session` {`FIRST_ROUTE`, `FIRST_SPELL_ICON`, `FIRST_TRAINER`, `FIRST_SRC`} |
@@ -64,11 +64,11 @@ The page's "Dungeon gear" panel lists what each dungeon gives a character and co
 | `boss` or `quest` | Where it comes from: the boss name, or the quest name for a quest reward. |
 | `rate` | Drop chance as text. Say "(Classic)" when the number is Classic data and "(Forever)" only when a Forever source publishes it. Leave out when unknown. |
 | `stats` | Object using only these keys: `dps` (weapon damage per second; for a wand in the Ranged slot it is scored with the `wand` weight), `str`, `agi`, `sta`, `int`, `spi`, `sp` (spell power or spell damage, all schools), `shadow`, `fire`, `frost`, `nature` (spell damage for that one school only, added 2026-11-10), `heal`, `ap`, `crit`, `hit`, `mp5`, `hp5`, `armor`. Leave out zero stats. Leave the whole object out when no source publishes the item's stats. |
-| `for` | Who it is for: `["C"]` Corvin, `["V"]` the shaman, or both. Left out means both. |
+| `for` | Who it is for: a list of `"C"` Corvin, `"V"` the shaman, `"K"` Kestrik. Left out means Corvin and the shaman only; Kestrik sees a row only when `"K"` is listed. |
 | `note` | Short caveat: procs, on-use effects, Classic-only numbers. |
 | `_source`, `_date` | Source URLs (separated by " ; ") and the date read. |
 
-`STAT_WEIGHTS` is `{ "V": { stat: points per 1 of that stat }, "C": { ... } }` and replaces the page's default stat priorities. A full set replaces the defaults for that character, so include every stat that should count. `wand` is the weight for wand DPS in the Ranged slot. Send it only with a cited Forever source.
+`STAT_WEIGHTS` is `{ "V": { stat: points per 1 of that stat }, "C": { ... }, "K": { ... } }` and replaces the page's default stat priorities, one character at a time (a character you leave out keeps the defaults). A full set replaces the defaults for that character, so include every stat that should count. `wand` is the weight for wand DPS in the Ranged slot. Send it only with a cited Forever source.
 
 The upgrade score on the page is the stat change times these weights. It is an estimate, not a simulation.
 
@@ -117,12 +117,13 @@ Section captions were already data: `captions.path`, `captions.builds`, `caption
 ## Rules the checker enforces (a push that breaks one is ignored)
 
 1. Valid JSON, under 2 MB, every section and key in the table above present.
-2. Tick ids stay unique across launch items, route steps, gear rows, dungeons, progress and gear extras.
+2. Tick ids stay unique across launch items, route steps, gear rows, dungeons, progress and gear extras. Since 2026-11-17 the page also builds `dk<DKEYS key>` for Kestrik's dungeon clears, so no other id may start with `dk`.
 3. **Ids keep their meaning.** Saved progress is stored by tick id:
    - Explicit ids (`la*` in LAUNCH_ITEMS, `p*` in PROGRESS, GEAR_EXTRA_IDS, DKEYS) can be added anywhere but never removed or reused for something else.
    - Numbered rows mean "row n": ROUTES steps, SHAM_GEAR rows and LOCK_GEAR rows can only grow AT THE END. Changing the text of an existing row is fine; inserting or deleting a row is not.
    - DKEYS has exactly one key per DUNGEONS row, in the same order.
 4. `SKILL_KEYS` never changes.
+5. **Kestrik's optional keys, when present, have the shape in "Kestrik's talents, professions, gear and dungeons".** Checked: `talents.TREES.druid` is 3 well-formed trees and every prerequisite names a druid talent; every `BUILD_DEFS` entry with `cls: "druid"` has a key, a label and an order that exists, spends only talents from `TREES.druid`, never more points than a talent has ranks and never more than 51; `gear.GEAR_SHEETS.K` has `left`, `right`, `bottom`, every pick has its required fields and a `gk` id that is unique and listed in `GEAR_EXTRA_IDS`; `dungeons.DUN_NOTES_K` is an object whose keys are all in `DKEYS`; `dungeons.STAT_WEIGHTS` is `{character: {stat: number}}`; every `LOOT[].for` is a list made of `"C"`, `"V"`, `"K"`; `characters.CHAR_PROFS.K` lists only `PROFS` keys. The reason for a rejected feed is in `/api/status` under `feed.last_error`.
 
 ## Writing rules (the checker can't see these, so they're on you)
 
@@ -189,8 +190,72 @@ His forms are his specs. Each form has its own main bar in game, so each has its
 
 **Macros.** `spec` is `cat`, `bear` or `caster` for one form, or `druid` for a macro that sits on every bar. `bind` names pool keys, as for the other characters.
 
-**Not on the page yet.** Talent trees, the gear sheet, dungeon notes and loot, and professions have no druid data. His view shows one line in those sections. Adding them needs new keys agreed with Claude first (for example `talents.TREES.druid` with builds whose `cls` is `druid`). `SKILL_KEYS` still never changes.
+**Talent trees, professions, gear and dungeons.** The page reads them since 2026-11-17, all from optional keys: see "Kestrik's talents, professions, gear and dungeons" below for the exact keys and shapes. A section whose keys are missing shows one line. `SKILL_KEYS` still never changes.
 
-**State.** His level is `st.lvK` (game sync writes it, like `lvV` and `lvC`). The view name is `K`, the link is `#kestrik`, and `#all` is the same as `#both`.
+**State.** His level is `st.lvK` (game sync writes it, like `lvV` and `lvC`), his profession skills are `st.sk["K:<PROFS key>"]`. The view name is `K`, the link is `#kestrik`, and `#all` is the same as `#both`.
 
 **Trainer source tag (optional, added 2026-11-17).** `trainers.TRAIN_SRC[cls].tag` is a short source line shown under trainer levels above 30, for example "talentsforever, read Nov 17". Without it Kestrik's card shows the full `label` and the other two keep "wowforever.one, read Oct 30".
+
+## Kestrik's talents, professions, gear and dungeons (page side added 2026-11-17)
+
+Every key in this section is optional. Each of these four sections of his view shows its content when its keys exist and one line ("not on the table yet") when they do not. Nothing here changes a key for Corvin or Zanjiro. The checker rejects a feed where one of these keys is present in the wrong shape (rule 5), and the page ignores a broken key on top of that.
+
+### Talent trees and Next ding
+
+| Key | Shape |
+|---|---|
+| `talents.TREES.druid` | Exactly 3 trees, in the order Balance, Feral Combat, Restoration. Same shape as the other classes: `{name, icon, t}`, each talent in `t` is `[name, row, col, max, icon, need, isNew, rank 1 text, max rank text]`. `row` and `col` start at 0. `need` is the exact name of a prerequisite talent of the same class, or `""`. `isNew` is 1 for a talent new in Forever, else 0. The grid grows when a tree has more than 7 rows or 4 columns. An icon that is not in the page's embedded sprite shows as two letters. |
+| `talents.ORDERS.<name>` | A leveling order, `[[talent, points], ...]`; the first point is level 10. You choose the names, for example `feral_moba` and `feral_iv`. Every talent is spelled exactly as in `TREES.druid`, never more points than the talent has ranks, 51 points at most. |
+| `talents.STATIC.<name>` | Same shape, for a level 60 final build (all points shown, no slider). |
+| `talents.BUILD_DEFS` entries | `{key, label, cls: "druid", seq or fixed, src, date, url, blurb}`, optional `tag`, `short`, `primary`. `seq` names an `ORDERS` entry, `fixed` a `STATIC` entry. `short` is the name in the Next ding guide picker ("Mobalytics"); without it the label up to its first " (" is used. `primary: true` marks the order Kestrik follows; without it the first druid leveling build in the list is his default. Respec plans (`respec_at`, `before`, `then`) work as for the warlock. `path` is not supported on a druid build. |
+| `talents.WHY["druid:<talent>"]` | One line shown under his next talent point. The `druid:` prefix is required, because talent names repeat across classes (Nature's Swiftness). Without an entry the talent's own text shows. |
+| `talents.TREE_SRC.druid` | Short source line in the planner header, for example "talentsforever calculator, client 70755, read Nov 17". |
+| `page_lists.talents_druid_bullets` | `[string]` or `[{text, _source?, _date?}]`, folded under the planner as "Feral notes". |
+
+What the page does with them: Kestrik gets his own class button and build pills in Talent trees, and the slider follows `st.lvK`. Next ding shows his next talent point from the picked guide; two or more druid leveling builds give him a guide picker like the other two. His rotation steps may use `talent` (and `at`) in place of `lvl`, with `ROT.<form>.<mode>.seq` naming the druid order, exactly as the other classes do; a step with a plain `lvl` keeps working.
+
+`PATH_NODES` is Corvin's leveling path only. Do not add entries for Kestrik.
+
+### Professions
+
+- Game sync saves his skills as `st.sk["K:lw"]`, `st.sk["K:skin"]`, `st.sk["K:fa"]`, `st.sk["K:cook"]`. They sit outside `SKILL_KEYS`, which still never changes. For Kestrik the server saves every profession the game reports that has a `professions.PROFS` entry.
+- `characters.CHAR_PROFS.K`: a list of `PROFS` keys in display order. While it is empty the page shows every profession he has a synced skill for, so the section works without it. `["lw", "skin", "fa", "cook"]` fixes the order.
+- `characters.CHARS[2].profs`: optional, `[{name, icon, skill, next}]` as for the other two (`name` must equal a `PROFS` name). While it is empty his character card builds the list from `PROFS`.
+- His Leatherworking, Skinning, First Aid and Cooking use the existing `PROFS` routes, pins and notes, the same data Zanjiro's use. There is no per-character route yet. If one of those texts is wrong for a druid, report it and Claude adds a per-character field first.
+- A profession without a `PROFS` entry (Fishing, Herbalism) is neither saved nor shown.
+
+WF2 backup codes carry skills outside `SKILL_KEYS` in an optional `x` object, for example `{"K:lw": 63}`. Codes without it import as before.
+
+### Gear sheet
+
+`gear.GEAR_SHEETS.K` is `{left: [slot, ...], right: [slot, ...], bottom: [slot, ...]}` with the same slot and pick shape as `GEAR_SHEETS.sham`. Use these slot names, so the scores line up with what he wears:
+
+- `left`: Head, Neck, Shoulder, Back, Chest, Shirt / Tabard, Wrist
+- `right`: Hands, Waist, Legs, Feet, Ring 1, Ring 2, Trinket 1, Trinket 2
+- `bottom`: Main hand (2H), Off hand, Idol
+
+A slot is `{slot, picks: [...], none?}`; `none` is the short text of an empty slot. A pick needs `id`, `lv` (text such as "20-29" or "30+"), `from` and `to` (numbers), `name`, `item` (the exact item name) and `src` (short source text). Everything optional on the other sheets works here too: `how`, `faction`, `faction_basis`, `_source` (list), `_date`, `source_type`, `confirmation`, `alts`, `stats`, `classic_drop_estimate` and the rest.
+
+Tick ids: every pick id on his sheet starts with `gk` (`gk1`, `gk2`, ...), is used by one pick only, and is listed in `gear.GEAR_EXTRA_IDS`. Like every gear extra id it can be added but never removed or reused: when a pick leaves the sheet, its id stays in `GEAR_EXTRA_IDS`. There is no `DRUID_GEAR` row list; the sheet is the only place his picks live.
+
+`gear.ITEM_INFO["Item Name"] = [icon, quality]` for each new item, added at the end. Without an entry the pick shows two letters and "Quality not listed".
+
+`page_lists.gear_note_druid` `{text}`: one sentence under his sheet saying where the picks come from. The page adds the sentences about the how-to panel and the score itself. His sheet shows no pre-launch tags; those mark picks that came from the Oct 22 notes.
+
+### Dungeon gear and dungeon notes
+
+- `dungeons.LOOT[].for`: list `"K"` to show a row for Kestrik, for example `["K"]` or `["V", "K"]`. A row with no `for` means Corvin and Zanjiro only, so an existing leather row needs `"K"` added before he sees it. The value must be a list.
+- `dungeons.STAT_WEIGHTS.K`: `{stat: points}` as for the other two; it replaces the page's defaults for him. The defaults are placeholders, not sourced: `dps` 10, `str` 2, `agi` 2, `ap` 1, `sta` 1, `crit` 20, `hit` 12, `int` 0.2, `spi` 0.2, `mp5` 0.3, `hp5` 0.3, `armor` 0.02. Send a full set with a cited Forever source. Sending `STAT_WEIGHTS` with only `K` in it leaves the other two on their defaults.
+- `dungeons.DUN_NOTES_K`: `{"<DKEYS key>": "note text"}`, his one-line note per dungeon. `DUNGEONS` rows keep exactly their four columns (name, levels, Zanjiro's note, Corvin's note); never add a fifth. A dungeon without an entry shows no note.
+- Tick ids: his "Cleared" ticks are `dk<DKEYS key>` (`dk0`, `dkgnomer`). The page builds them from `DKEYS`, so there is nothing to add, but no other tick id may start with `dk`.
+- Slot names: `Idol` and `Relic` count as the Ranged slot, `Polearm` as Two-Hand.
+- `PRESETS` and `PRESET_BASE` are Zanjiro's totem presets. Nothing for Kestrik goes there.
+
+### When each section shows for him
+
+| Section | Shows when |
+|---|---|
+| Talent trees, and the talent point in Next ding | At least one druid leveling build (`seq`) is usable |
+| Professions | `CHAR_PROFS.K` has entries, or game sync has saved a skill for him |
+| Dungeon gear | At least one `LOOT` row lists `"K"`, or `DUN_NOTES_K` has an entry |
+| Gear and dungeons | `GEAR_SHEETS.K` is valid, or `DUN_NOTES_K` has an entry |
