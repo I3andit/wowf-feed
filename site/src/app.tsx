@@ -538,14 +538,14 @@ function CharCard({ c, who, level, setLevel, skills, setSkill }: { c: CharData; 
         <Bar value={level} max={60} color={c.color} />
       </div>
       <div style={{ marginTop: 14, display: "grid", gap: 10 }}>
-        {c.profs.map((p: Prof) => {
+        {(Array.isArray(c.profs) && c.profs.length ? c.profs : profKeys(who, skills).map((k: string) => PROFS.find((x: ProfDef) => x.key === k) as ProfDef).map((x: ProfDef) => ({ name: x.name, icon: x.icon, skill: 0, next: "" }))).map((p: Prof) => {
           const pd = PROFS.find((x: ProfDef) => x.name === p.name);
           const k = `${who}:${pd ? pd.key : p.name}`;
           const sk = skills[k] ?? 0;
           const st = pd ? profStep(pd, sk) : undefined;
           return (
             <div key={p.name} style={{ display: "flex", gap: 10, alignItems: "center" }}>
-              <Icon icon={p.icon} size={28} name={p.name} tip={st ? `Next: ${st[2]} to ${st[1]}` : `Next: ${p.next}`} />
+              <Icon icon={p.icon} size={28} name={p.name} tip={st ? `Next: ${st[2]} to ${st[1]}` : p.next ? `Next: ${p.next}` : pd && pd.key === "skin" ? `Skin mobs up to level ${skinMobLevel(Math.max(1, sk))}` : undefined} />
               <div style={{ flex: 1, fontSize: 12 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}><span>{p.name}</span><span style={{ display: "inline-flex", alignItems: "center", gap: 6, color: MUTED }}>{sk}/300 <SkillStepper value={sk} onChange={(n: number) => setSkill(k, n)} /></span></div>
                 <Bar value={sk} max={300} color={GOLD} />
@@ -555,7 +555,7 @@ function CharCard({ c, who, level, setLevel, skills, setSkill }: { c: CharData; 
         })}
       </div>
       <div style={{ marginTop: 14, borderTop: "1px solid #3a3020", paddingTop: 10, display: "flex", flexWrap: "wrap", gap: 10 }}>
-        {c.racials.map((r: Racial) => (
+        {(Array.isArray(c.racials) ? c.racials : []).map((r: Racial) => (
           <div key={r.name} style={{ display: "flex", gap: 6, alignItems: "center", fontSize: 12 }}>
             <Icon icon={r.icon} size={24} name={r.name} tip={r.detail} />
             <span>{r.name}: <span style={{ color: MUTED }}>{r.detail}</span></span>
@@ -1273,15 +1273,16 @@ const PIN_TRAIN: Pin[] = WF_DATA.professions.PIN_TRAIN;
 const PROF_PINS: Record<string, Pin[]> = WF_DATA.professions.PROF_PINS;
 const PROF_WHY: Record<string, string> = WF_DATA.professions.PROF_WHY;
 
-function ProfessionWindow({ skills, setSkillFor, lvV, lvC, view }: { skills: Record<string, number>; setSkillFor: (k: string, n: number) => void; lvV: number; lvC: number; view: View }) {
-  const [whoPick, setWho] = useState<"V" | "C">("C");
-  const who: Who = view === "both" ? whoPick : view;
+function ProfessionWindow({ skills, setSkillFor, lvV, lvC, lvK, view }: { skills: Record<string, number>; setSkillFor: (k: string, n: number) => void; lvV: number; lvC: number; lvK: number; view: View }) {
+  const [whoPick, setWho] = useState<Who>("C");
+  const kOwn = HAS_K ? profKeys("K", skills) : [];
+  const who: Who = view === "both" ? (whoPick === "K" && !kOwn.length ? "C" : whoPick) : view;
   const [pk, setPk] = useState<string>("lw");
-  const own = CHAR_PROFS[who];
+  const own = who === "K" ? kOwn : profKeys(who, skills);
   const p = PROFS.find((x: ProfDef) => x.key === (own.indexOf(pk) >= 0 ? pk : own[0])) ?? PROFS[0];
   const skill = skills[`${who}:${p.key}`] ?? 0;
   const setSkill = (n: number) => setSkillFor(`${who}:${p.key}`, clampN(n, 0, 300));
-  const charLv = who === "V" ? lvV : lvC;
+  const charLv = who === "V" ? lvV : who === "K" ? lvK : lvC;
   const s = Math.max(1, skill);
   const idx = p.steps.findIndex((st: PStepRaw) => s >= st[0] && s < st[1]);
   const cur = p.steps.length ? p.steps[idx >= 0 ? idx : p.steps.length - 1] : undefined;
@@ -1292,9 +1293,9 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC, view }: { skills: Rec
   const leathers = LEATHER.filter((l: [string, number, number]) => mob >= l[1] && mob <= l[2] + 3).map((l: [string, number, number]) => l[0]);
   const zone = SKIN_ZONES.find((z: [number, number, string]) => s >= z[0] && s < z[1]) ?? SKIN_ZONES[SKIN_ZONES.length - 1];
   return (
-    <Frame accent={p.color} title={p.name} icon={p.icon} right={<span style={{ fontSize: 12, color: who === "V" ? SHAMAN : WARLOCK, fontFamily: SERIF }}>{who === "V" ? V_NAME : "Corvin"} · level {charLv}</span>}>
+    <Frame accent={p.color} title={p.name} icon={p.icon} right={<span style={{ fontSize: 12, color: whoColor(who), fontFamily: SERIF }}>{whoName(who)} · level {charLv}</span>}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 }}>
-        {((view === "both" ? [["C", "Corvin", "classicon_warlock", WARLOCK], ["V", V_NAME, "classicon_shaman", SHAMAN]] : []) as [("V" | "C"), string, string, string][]).map((o: [("V" | "C"), string, string, string]) => (
+        {((view === "both" ? [["C", "Corvin", "classicon_warlock", WARLOCK], ["V", V_NAME, "classicon_shaman", SHAMAN], ...(kOwn.length ? [["K", K_NAME, "classicon_druid", DRUID]] : [])] : []) as [Who, string, string, string][]).map((o: [Who, string, string, string]) => (
           <button key={o[0]} type="button" className="wf-tab" onClick={() => setWho(o[0])} style={{ display: "flex", alignItems: "center", gap: 6, padding: "4px 12px 4px 4px", borderRadius: 8, border: `1px solid ${who === o[0] ? o[3] : "#4a3d22"}`, background: who === o[0] ? `${o[3]}33` : "#14110d", color: who === o[0] ? "#fff" : MUTED, fontFamily: SERIF, fontSize: 14 }}><Icon icon={o[2]} size={24} ring={o[3]} />{o[1]}<RoleBadge who={o[0]} /></button>
         ))}
       </div>
@@ -1319,7 +1320,7 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC, view }: { skills: Rec
       </div>
       {nextTrain ? (
         <div style={{ display: "flex", gap: 8, alignItems: "center", fontSize: 12, padding: "6px 10px", borderRadius: 6, border: `1px solid ${skill >= nextTrain[0] - 5 ? ORANGE : "#3a3020"}`, marginBottom: 12, color: INK }} className={skill >= nextTrain[0] - 5 ? "wf-glow" : undefined}>
-          <span style={{ color: GOLD_HI, fontWeight: 700 }}>Train at {nextTrain[0]}</span><span>{nextTrain[1]}</span>{trainReqLevel(nextTrain) !== null && charLv < (trainReqLevel(nextTrain) ?? 0) ? <span style={{ color: ORANGE }}>· {who === "V" ? V_NAME : "Corvin"} is level {charLv}, needs {trainReqLevel(nextTrain)}</span> : null}
+          <span style={{ color: GOLD_HI, fontWeight: 700 }}>Train at {nextTrain[0]}</span><span>{nextTrain[1]}</span>{trainReqLevel(nextTrain) !== null && charLv < (trainReqLevel(nextTrain) ?? 0) ? <span style={{ color: ORANGE }}>· {whoName(who)} is level {charLv}, needs {trainReqLevel(nextTrain)}</span> : null}
         </div>
       ) : <div style={{ fontSize: 12, color: GOLD_HI, marginBottom: 12 }}>Max rank. Reaching 300 also earns a Legacy point and the account-wide certification title (your notes).</div>}
       {p.key === "skin" ? (
@@ -2252,6 +2253,16 @@ function nextTrainerLevel(cls: string, lv: number): number | null {
 
 const SKILL_KEYS: string[] = WF_DATA.characters.SKILL_KEYS;
 const CHAR_PROFS: Record<string, string[]> = WF_DATA.characters.CHAR_PROFS;
+// Nov 17: Kestrik's skills live outside SKILL_KEYS (that list is frozen for WF1 codes) under "K:<profession key>".
+// A character's professions are the feed's CHAR_PROFS list; while that list is empty (Kestrik, until the feed fills
+// it) they are the professions the game sync has reported a skill for.
+function profKeys(who: Who, skills: Record<string, number>): string[] {
+  const own = CHAR_PROFS[who];
+  const known = (Array.isArray(own) ? own : []).filter((k: string) => PROFS.some((p: ProfDef) => p.key === k));
+  if (known.length) return known;
+  return PROFS.filter((p: ProfDef) => (skills[`${who}:${p.key}`] ?? 0) > 0).map((p: ProfDef) => p.key);
+}
+const EXTRA_SKILL = /^[A-Z]:[a-z0-9_]{1,12}$/; // skills outside SKILL_KEYS that a WF2 code may carry
 
 type Tick = { id: string; text: string; meta?: string; def?: boolean };
 const LAUNCH_ITEMS: { group: string; icon: string; items: Tick[] }[] = WF_DATA.launch_night.LAUNCH_ITEMS;
@@ -2288,7 +2299,9 @@ const b64u = (t: string) => btoa(unescape(encodeURIComponent(t))).replace(/=+$/,
 const unb64u = (t: string) => decodeURIComponent(escape(atob(t.replace(/-/g, "+").replace(/_/g, "/"))));
 function encodeState(s: Saved): string {
   const k = Object.keys(s.ck).filter((id: string) => s.ck[id]).sort();
-  return "WF2-" + b64u(JSON.stringify({ v: s.lvV, c: s.lvC, d: s.lvK, s: SKILL_KEYS.map((key: string) => s.sk[key] ?? 0), k }));
+  const x: Record<string, number> = {};
+  Object.keys(s.sk).sort().forEach((key: string) => { if (SKILL_KEYS.indexOf(key) < 0 && EXTRA_SKILL.test(key) && s.sk[key] > 0) x[key] = s.sk[key]; });
+  return "WF2-" + b64u(JSON.stringify({ v: s.lvV, c: s.lvC, d: s.lvK, s: SKILL_KEYS.map((key: string) => s.sk[key] ?? 0), k, ...(Object.keys(x).length ? { x } : {}) }));
 }
 function decodeState(code: string): Saved | null {
   const t = code.trim();
@@ -2298,6 +2311,7 @@ function decodeState(code: string): Saved | null {
       if (typeof o.v !== "number" || typeof o.c !== "number" || !Array.isArray(o.s) || !Array.isArray(o.k)) return null;
       const sk: Record<string, number> = {};
       SKILL_KEYS.forEach((key: string, i: number) => { sk[key] = clampN(Number(o.s[i]) || 0, 0, 300); });
+      if (o.x && typeof o.x === "object") Object.keys(o.x).forEach((key: string) => { if (SKILL_KEYS.indexOf(key) < 0 && EXTRA_SKILL.test(key) && typeof o.x[key] === "number") sk[key] = clampN(o.x[key], 0, 300); });
       const ck: Record<string, boolean> = {};
       o.k.forEach((id: unknown) => { if (typeof id === "string") ck[id] = true; });
       return { lvV: clampN(o.v, 1, 60), lvC: clampN(o.c, 1, 60), lvK: clampN(typeof o.d === "number" ? o.d : 1, 1, 60), sk, ck };
@@ -2422,7 +2436,7 @@ function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: Who;
   const ntl = nextTrainerLevel(cls, level);
   const spells = ntl ? trainerAt(cls, ntl) : [];
   const dueNow = trainerAt(cls, level);
-  const profs = (CHAR_PROFS[who] ?? []).map((k: string) => PROFS.find((p: ProfDef) => p.key === k)).filter((p: ProfDef | undefined): p is ProfDef => !!p);
+  const profs = profKeys(who, skills).map((k: string) => PROFS.find((p: ProfDef) => p.key === k)).filter((p: ProfDef | undefined): p is ProfDef => !!p);
   const head = (t: string, icon: string) => (
     <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".12em", margin: "10px 0 6px" }}><Icon icon={icon} size={18} />{t}</div>
   );
@@ -2487,6 +2501,7 @@ function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: Who;
       <div style={{ fontSize: 10, color: MUTED, marginTop: 4 }}>Source: <a href={TRAIN_SRC[cls].url} target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>{TRAIN_SRC[cls].label}</a>. {who === "K" ? "Verify at the trainer." : TRAIN_NOTE}</div>
 
       {head("Professions", "trade_engraving")}
+      {!profs.length ? <div style={{ fontSize: 12, color: MUTED }}>No professions on the table yet. They fill in from the game sync.</div> : null}
       <div style={{ display: "grid", gap: 6 }}>
         {profs.map((p: ProfDef) => {
           const sk = skills[`${who}:${p.key}`] ?? 0;
@@ -3134,10 +3149,10 @@ export default function App() {
       </Section>
 
       <Section heading="Professions" id="profs" caption="Pick a character, then a profession. Skill uses the same numbers as the character cards; − / + or drag. Training thresholds warn when the character level is too low. Legacy points at 150, 225 and 300 in each crafting profession, once per account.">
-        {view === "K" ? <Text>{`${K_NAME}'s professions are not on the table yet. The research feed adds it; his rotations, Naga plates and macros are live.`}</Text> : <>
-        <ProfessionWindow skills={st.sk} setSkillFor={setSkill} lvV={lvV} lvC={lvC} view={view} />
+        {view === "K" && !profKeys("K", st.sk).length ? <Text>{`${K_NAME}'s professions are not on the table yet. They fill in from the game sync the next time he logs in; his rotations, Naga plates and macros are live.`}</Text> : <>
+        <ProfessionWindow skills={st.sk} setSkillFor={setSkill} lvV={lvV} lvC={lvC} lvK={lvK} view={view} />
         <Text>{PL.profs_note_skinning.text}</Text>
-        <Text>{PL.profs_note_tailoring.text}</Text>
+        {view === "K" ? null : <Text>{PL.profs_note_tailoring.text}</Text>}
         <Text>{PL.profs_note_trainers.text}</Text>
         <Text>{PL.profs_note_slider.text}</Text>
         </>}
