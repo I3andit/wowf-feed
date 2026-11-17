@@ -1788,7 +1788,23 @@ function gp(rows: string[][], pre: string, i: number, o?: { id?: string; lv?: st
   return { id: o?.id ?? `${pre}${i}`, lv, from, to, name, item: o?.item ?? name, alt: o?.alt, src: o?.src ?? r[3] };
 }
 const G_NONE = (slot: string, none?: string): GSlot => ({ slot, picks: [], none: none ?? "not in notes" });
-const GEAR_SHEETS: Record<string, { left: GSlot[]; right: GSlot[]; bottom: GSlot[] }> = WF_DATA.gear.GEAR_SHEETS;
+type GSheet = { left: GSlot[]; right: GSlot[]; bottom: GSlot[] };
+const GEAR_SHEETS: Record<string, GSheet> = WF_DATA.gear.GEAR_SHEETS;
+// Nov 17: Kestrik's sheet is GEAR_SHEETS.K (the shaman's is "sham", Corvin's "lock"). It is optional and counts only
+// when every slot and pick carries the fields the sheet reads, so a half-written sheet stays off the page.
+function sheetOk(sh: any): boolean {
+  if (!sh || typeof sh !== "object") return false;
+  const cols: unknown[] = [sh.left, sh.right, sh.bottom];
+  if (!cols.every((c: unknown) => Array.isArray(c))) return false;
+  const slots: any[] = ([] as any[]).concat(...(cols as any[][]));
+  return slots.length > 0 && slots.every((s: any) => !!s && typeof s.slot === "string" && Array.isArray(s.picks) && s.picks.every((p: any) =>
+    !!p && typeof p.id === "string" && typeof p.item === "string" && typeof p.name === "string" && typeof p.lv === "string" && typeof p.src === "string" && typeof p.from === "number" && typeof p.to === "number"));
+}
+const HAS_K_GEAR: boolean = HAS_K && sheetOk(GEAR_SHEETS.K);
+// Items on Kestrik's own sheet. ITEM_INFO mixes all three characters, so his "Your pick" tag in Dungeon gear uses this.
+const K_PICK_ITEMS: Record<string, boolean> = {};
+if (HAS_K_GEAR) [...GEAR_SHEETS.K.left, ...GEAR_SHEETS.K.right, ...GEAR_SHEETS.K.bottom].forEach((s: GSlot) => s.picks.forEach((p: GPick) => { K_PICK_ITEMS[p.item] = true; }));
+function sheetOf(who: Who): GSheet | null { return who === "K" ? (HAS_K_GEAR ? GEAR_SHEETS.K : null) : GEAR_SHEETS[who === "V" ? "sham" : "lock"]; }
 // Ticks added for the sheet (second ring, off-hands, the later item of "A → B" rows). Appended to the end of CHECK_IDS.
 const GEAR_EXTRA_IDS: string[] = WF_DATA.gear.GEAR_EXTRA_IDS;
 function gearPick(s: GSlot, lv: number): { p: GPick | null; i: number; state: "now" | "soon" | "past" } {
@@ -1808,7 +1824,7 @@ function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror, who, game }: { s: GSl
     return (
       <div style={{ display: "flex", flexDirection: mirror ? "row-reverse" : "row", gap: 8, alignItems: "center", padding: 6, borderRadius: 6, border: "1px dashed #4a3d22", background: "rgba(0,0,0,.25)", textAlign: mirror ? "right" : "left", minHeight: 48 }}>
         <span style={{ flex: "none", width: 36, height: 36, borderRadius: 4, border: "1px dashed #6b5a33", background: "repeating-linear-gradient(45deg, #15110d 0 6px, #1c1712 6px 12px)" }} />
-        <div style={{ minWidth: 0 }}>{label}<div style={{ fontSize: 11, color: MUTED, fontStyle: "italic" }}>{s.none}</div>{lv > 30 ? <span className="wf-pre wf-pre-sm" style={{ marginTop: 2 }}>{PRE_LABEL}</span> : null}</div>
+        <div style={{ minWidth: 0 }}>{label}<div style={{ fontSize: 11, color: MUTED, fontStyle: "italic" }}>{s.none ?? (who === "K" ? "no pick yet" : "")}</div>{lv > 30 && who !== "K" ? <span className="wf-pre wf-pre-sm" style={{ marginTop: 2 }}>{PRE_LABEL}</span> : null}</div>
       </div>
     );
   }
@@ -1835,21 +1851,23 @@ function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror, who, game }: { s: GSl
         <GearScore item={p.item} stats={p.stats} slot={s.slot} who={who} game={game} />
         <GearBadges p={p} />
         <div style={{ fontSize: 10, color: state === "soon" ? ORANGE : INK }}>Lv {p.lv}{state === "soon" ? ` · from ${p.from}` : state === "past" ? " · past its range" : ""}</div>
-        {prePick(p) ? <span className="wf-mark wf-mark-notes" style={{ fontSize: 9 }}>{NOTES_PRE}</span> : state === "past" && lv > 30 ? <span className="wf-pre wf-pre-sm" title="Your notes have no pick for this slot past 30">{PRE_LABEL}</span> : null}
+        {who === "K" ? null : prePick(p) ? <span className="wf-mark wf-mark-notes" style={{ fontSize: 9 }}>{NOTES_PRE}</span> : state === "past" && lv > 30 ? <span className="wf-pre wf-pre-sm" title="Your notes have no pick for this slot past 30">{PRE_LABEL}</span> : null}
       </div>
     </div>
   );
 }
-function GearSheet({ who, lv, ck, toggle, game }: { who: "sham" | "lock"; lv: number; ck: Record<string, boolean>; toggle: (id: string) => void; game: Record<string, GameChar> | null }) {
-  const gw: "V" | "C" = who === "sham" ? "V" : "C";
-  const sh = GEAR_SHEETS[who];
-  const c = who === "sham" ? CHARS[0] : CHARS[1];
+function GearSheet({ who, lv, ck, toggle, game }: { who: Who; lv: number; ck: Record<string, boolean>; toggle: (id: string) => void; game: Record<string, GameChar> | null }) {
+  const [sel, setSel] = useState<string>("");
+  const gw: Who = who;
+  const sh = sheetOf(who);
+  const c = CHARS[who === "V" ? 0 : who === "K" ? 2 : 1];
+  if (!sh || !c) return null;
+  const kNote = WF_DATA.page_lists.gear_note_druid;
   const all = [...sh.left, ...sh.right, ...sh.bottom];
   const picks = all.flatMap((s: GSlot) => s.picks);
   const gotN = picks.filter((p: GPick) => !!ck[p.id]).length;
   const chasing = all.filter((s: GSlot) => { const r = gearPick(s, lv); return !!r.p && r.state === "now" && !ck[r.p.id]; });
   const multi = all.filter((s: GSlot) => s.picks.length > 0); // Nov 7: every slot opens its how-to panel, not only 2+ item slots
-  const [sel, setSel] = useState<string>("");
   const cur = multi.find((s: GSlot) => s.slot === sel) ?? chasing.find((s: GSlot) => s.picks.length > 1) ?? chasing[0] ?? multi[0];
   const onSel = (slot: string) => setSel(slot);
   const slotEl = (s: GSlot, mirror?: boolean) => <GearSlot key={s.slot} s={s} lv={lv} ck={ck} toggle={toggle} sel={!!cur && cur.slot === s.slot} onSel={onSel} mirror={mirror} who={gw} game={game} />;
@@ -1899,7 +1917,7 @@ function GearSheet({ who, lv, ck, toggle, game }: { who: "sham" | "lock"; lv: nu
                       {gAlts(p).map((a: GAlt) => <div key={a.item} style={{ fontSize: 11, color: "#b3cbe8", lineHeight: 1.5 }}>{altLabelOf(a.label)} · <span style={{ color: ITEM_INFO[a.item] ? QUALITY[ITEM_INFO[a.item][1]][0] : INK, fontWeight: 600 }}>{a.item}</span> <GearScore item={a.item} stats={a.stats} slot={cur.slot} who={gw} game={game} /></div>)}
                       <GearBadges p={p} />
                       <GearAcq p={p} open={isNow && !got} />
-                      {prePick(p) ? <div style={{ marginTop: 2 }}><span className="wf-mark wf-mark-notes" style={{ fontSize: 9 }}>{NOTES_PRE}</span></div> : null}
+                      {prePick(p) && gw !== "K" ? <div style={{ marginTop: 2 }}><span className="wf-mark wf-mark-notes" style={{ fontSize: 9 }}>{NOTES_PRE}</span></div> : null}
                     </div>
                   </div>
                 );
@@ -1907,8 +1925,8 @@ function GearSheet({ who, lv, ck, toggle, game }: { who: "sham" | "lock"; lv: nu
             </div>
           </div>
         ) : null}
-        <div style={{ fontSize: 10, color: MUTED, marginTop: 8 }}>Picks: your Oct 22 gear notes, Horde-audited by the Bot on Nov 7 (feed v18): each item's steps, faction, sources and open questions are in its "How to get it" panel. Unofficial = a guide or database, not confirmed in the live game. Score = the item's stats times this character's stat priorities (an estimate); the coloured number is the change against what you are wearing in game. Item icon and quality colour: Wowhead's WoW Forever item database, read Oct 30.</div>
-        <PreLine lead="Gear past 30: your notes' picks are tagged “from notes, pre-launch, stats unconfirmed” (no stats shown). Past-30 slots your notes don't fill:" />
+        <div style={{ fontSize: 10, color: MUTED, marginTop: 8 }}>{gw === "K" ? (kNote && typeof kNote.text === "string" ? kNote.text : "Picks: the Bot's Feral gear research.") + " Each item's steps, faction, sources and open questions are in its \"How to get it\" panel." : "Picks: your Oct 22 gear notes, Horde-audited by the Bot on Nov 7 (feed v18): each item's steps, faction, sources and open questions are in its \"How to get it\" panel."} Unofficial = a guide or database, not confirmed in the live game. Score = the item's stats times this character's stat priorities (an estimate); the coloured number is the change against what you are wearing in game. Item icon and quality colour: Wowhead's WoW Forever item database, read Oct 30.</div>
+        {gw === "K" ? null : <PreLine lead="Gear past 30: your notes' picks are tagged “from notes, pre-launch, stats unconfirmed” (no stats shown). Past-30 slots your notes don't fill:" />}
       </Frame>
     </div>
   );
@@ -1932,7 +1950,21 @@ type DLoot = { dkey: string; item: string; id?: number; icon?: string; q?: numbe
 type EqItem = { id: number; name: string; q?: number; ilvl?: number; sub?: string; loc?: string; stats?: Record<string, number> };
 type GameChar = { name?: string; level?: number; equipped?: Record<string, EqItem>; received_at?: number };
 type DCmp = { kind: "nosync" | "have" | "nostats" | "eqnostats" | "cmp"; replaces: string[]; deltas: [string, number][]; score: number; empty: boolean };
-const DLOOT: DLoot[] = WF_DATA.dungeons.LOOT || [];
+const DLOOT: DLoot[] = (Array.isArray(WF_DATA.dungeons.LOOT) ? WF_DATA.dungeons.LOOT : []).filter((l: any) => !!l && typeof l.item === "string" && typeof l.slot === "string");
+// Who a loot row is for. A row with no `for` is from before Kestrik and means Corvin and the shaman; he needs "K" listed.
+function lootFor(l: DLoot, who: Who): boolean {
+  const f: unknown = l.for;
+  if (Array.isArray(f) || typeof f === "string") return f.indexOf(who) >= 0;
+  return who !== "K";
+}
+// Kestrik's dungeon notes, keyed by DKEYS key (the DUNGEONS rows keep their four positional columns).
+const DUN_NOTES_K: Record<string, string> = {};
+{
+  const n: any = WF_DATA.dungeons.DUN_NOTES_K;
+  if (n && typeof n === "object" && !Array.isArray(n)) Object.keys(n).forEach((k: string) => { if (typeof n[k] === "string" && n[k]) DUN_NOTES_K[k] = n[k]; });
+}
+const K_DUN_NOTES: boolean = Object.keys(DUN_NOTES_K).length > 0;
+const HAS_K_LOOT: boolean = HAS_K && (K_DUN_NOTES || DLOOT.some((l: DLoot) => lootFor(l, "K")));
 const STAT_LABEL: [string, string][] = [["dps", "DPS"], ["str", "Str"], ["agi", "Agi"], ["sta", "Sta"], ["int", "Int"], ["spi", "Spi"], ["sp", "Spell Power"], ["shadow", "Shadow dmg"], ["fire", "Fire dmg"], ["frost", "Frost dmg"], ["nature", "Nature dmg"], ["heal", "Healing"], ["ap", "Attack Power"], ["crit", "Crit"], ["hit", "Hit"], ["mp5", "Mp5"], ["hp5", "Hp5"], ["armor", "Armor"]];
 // Default stat priorities (points per 1 of a stat). The feed can replace them with sourced numbers (dungeons.STAT_WEIGHTS).
 const STAT_WEIGHTS: Record<string, Record<string, number>> = {
@@ -1940,9 +1972,15 @@ const STAT_WEIGHTS: Record<string, Record<string, number>> = {
   // and "wand" is the weight for a wand's DPS in the Ranged slot (assumes wanding about a third of a fight).
   V: { dps: 14, str: 2, agi: 1.5, ap: 1, sta: 1, crit: 25, hit: 20, int: 0.4, spi: 0.2, sp: 0.3, nature: 0.3, fire: 0.1, frost: 0.1, mp5: 1, armor: 0.02 },
   C: { sp: 1, shadow: 1, fire: 0.2, wand: 1.2, sta: 0.8, int: 0.6, spi: 0.3, crit: 8, hit: 10, mp5: 1.5, armor: 0.01 },
-  ...(WF_DATA.dungeons.STAT_WEIGHTS || {}),
+  // Nov 17, Kestrik (Feral): Classic-style feral values (1 Str = 2 AP, Agi = AP plus crit). The weapon DPS weight is a
+  // placeholder for the Bot's finding that Forever feral attacks scale with weapon DPS; the feed should replace this set.
+  K: { dps: 10, str: 2, agi: 2, ap: 1, sta: 1, crit: 20, hit: 12, int: 0.2, spi: 0.2, mp5: 0.3, hp5: 0.3, armor: 0.02 },
 };
-const DSLOT_ALIAS: Record<string, string> = { ring: "finger", cloak: "back", shoulders: "shoulder", bracers: "wrist", wrists: "wrist", gloves: "hands", belt: "waist", boots: "feet", "2h": "two-hand", "two-handed": "two-hand", "two hand": "two-hand", staff: "two-hand", "1h": "one-hand", "one hand": "one-hand", "one-handed": "one-hand", "main-hand": "main hand", "off-hand": "off hand", offhand: "off hand", "held in off-hand": "off hand", "held in off hand": "off hand", shield: "off hand", wand: "ranged", totem: "ranged", relic: "ranged", gun: "ranged", bow: "ranged" };
+{
+  const sw: any = WF_DATA.dungeons.STAT_WEIGHTS;
+  if (sw && typeof sw === "object" && !Array.isArray(sw)) Object.keys(sw).forEach((k: string) => { if (sw[k] && typeof sw[k] === "object" && !Array.isArray(sw[k])) STAT_WEIGHTS[k] = sw[k]; });
+}
+const DSLOT_ALIAS: Record<string, string> = { ring: "finger", cloak: "back", shoulders: "shoulder", bracers: "wrist", wrists: "wrist", gloves: "hands", belt: "waist", boots: "feet", "2h": "two-hand", "two-handed": "two-hand", "two hand": "two-hand", staff: "two-hand", "1h": "one-hand", "one hand": "one-hand", "one-handed": "one-hand", "main-hand": "main hand", "off-hand": "off hand", offhand: "off hand", "held in off-hand": "off hand", "held in off hand": "off hand", shield: "off hand", wand: "ranged", totem: "ranged", relic: "ranged", idol: "ranged", gun: "ranged", bow: "ranged", polearm: "two-hand" };
 const DSLOT_IDS: Record<string, number[]> = { head: [1], neck: [2], shoulder: [3], back: [15], chest: [5], wrist: [9], hands: [10], waist: [6], legs: [7], feet: [8], finger: [11, 12], trinket: [13, 14], "main hand": [16], "one-hand": [16], "two-hand": [16, 17], "off hand": [17], ranged: [18] };
 // Stand-in icons from the page's own sprite when a loot item's icon is not in it (the page cannot load remote images).
 const DSLOT_ICON: Record<string, string> = { head: "inv_helmet_15", neck: "inv_jewelry_necklace_06", shoulder: "inv_shoulder_18", back: "inv_misc_cape_11", chest: "inv_chest_cloth_48", wrist: "inv_bracer_02", hands: "inv_gauntlets_15", waist: "inv_belt_43", legs: "inv_pants_14", feet: "inv_boots_09", finger: "inv_jewelry_ring_09", trinket: "inv_misc_orb_02", "main hand": "inv_weapon_shortblade_07", "one-hand": "inv_weapon_shortblade_07", "two-hand": "inv_staff_07", "off hand": "inv_misc_orb_02", ranged: "inv_wand_04" };
@@ -1982,8 +2020,9 @@ function dunCompare(l: DLoot, eq: Record<string, EqItem> | null, w0: Record<stri
 // Gear picks already on the board whose how-to text names this dungeon (used until the dungeon has loot rows).
 function dunPicks(dname: string, who: Who): { slot: string; p: GPick }[] {
   const parts = dname.replace(/\s*\(new\)\s*$/, "").split(/\s*[→·]\s*/).map((x: string) => x.trim().toLowerCase()).filter((x: string) => x.length >= 5);
-  const sh = GEAR_SHEETS[who === "V" ? "sham" : "lock"];
+  const sh = sheetOf(who);
   const out: { slot: string; p: GPick }[] = [];
+  if (!sh) return out;
   [...sh.left, ...sh.right, ...sh.bottom].forEach((sl: GSlot) => sl.picks.forEach((p: GPick) => {
     const hay = `${p.how || ""} ${p.src || ""}`.toLowerCase();
     if (parts.some((x: string) => hay.indexOf(x) >= 0)) out.push({ slot: sl.slot, p });
@@ -1997,8 +2036,8 @@ function agoText(sec?: number): string {
 }
 type DRow = { i: number; key: string; name: string; lv: string; lo: number; hi: number; tip: string; loot: { l: DLoot; c: DCmp }[]; ups: number; later: number; picks: { slot: string; p: GPick }[]; inRange: boolean; done: boolean; tick: string };
 function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game: Record<string, GameChar> | null; ck: Record<string, boolean>; toggle: (id: string) => void }) {
-  const color = who === "V" ? SHAMAN : WARLOCK;
-  const name = who === "V" ? V_NAME : "Corvin";
+  const color = whoColor(who);
+  const name = whoName(who);
   const g = game && game[who] ? game[who] : null;
   const eq = g && g.equipped && Object.keys(g.equipped).length ? g.equipped : null;
   const w = STAT_WEIGHTS[who] || {};
@@ -2007,10 +2046,10 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game
     const key = DKEYS[i];
     const [lo, hi] = dunRange(r[1]);
     const rank = (c: DCmp) => (c.kind === "cmp" ? 0 : c.kind === "have" ? 2 : 1);
-    const loot = DLOOT.filter((l: DLoot) => (l.dkey === key || l.dkey === r[0]) && (!l.for || l.for.indexOf(who) >= 0)).map((l: DLoot) => ({ l, c: dunCompare(l, eq, w) }))
+    const loot = DLOOT.filter((l: DLoot) => (l.dkey === key || l.dkey === r[0]) && lootFor(l, who)).map((l: DLoot) => ({ l, c: dunCompare(l, eq, w) }))
       .sort((a: { c: DCmp }, b: { c: DCmp }) => rank(a.c) - rank(b.c) || b.c.score - a.c.score);
-    const tick = `d${who === "V" ? "v" : "c"}${key}`;
-    return { i, key, name: r[0], lv: r[1], lo, hi, tip: who === "V" ? r[2] : r[3], loot, ups: loot.filter((x: { l: DLoot; c: DCmp }) => x.c.kind === "cmp" && x.c.score >= 1 && (!x.l.req || x.l.req <= lv)).length, later: loot.filter((x: { l: DLoot; c: DCmp }) => x.c.kind === "cmp" && x.c.score >= 1 && !!x.l.req && x.l.req > lv).length, picks: loot.length ? [] : dunPicks(r[0], who), inRange: lv >= lo - 1 && lv <= hi, done: !!ck[tick], tick };
+    const tick = `d${who === "V" ? "v" : who === "K" ? "k" : "c"}${key}`;
+    return { i, key, name: r[0], lv: r[1], lo, hi, tip: who === "V" ? r[2] : who === "K" ? (DUN_NOTES_K[key] ?? "") : r[3], loot, ups: loot.filter((x: { l: DLoot; c: DCmp }) => x.c.kind === "cmp" && x.c.score >= 1 && (!x.l.req || x.l.req <= lv)).length, later: loot.filter((x: { l: DLoot; c: DCmp }) => x.c.kind === "cmp" && x.c.score >= 1 && !!x.l.req && x.l.req > lv).length, picks: loot.length ? [] : dunPicks(r[0], who), inRange: lv >= lo - 1 && lv <= hi, done: !!ck[tick], tick };
   }), [who, lv, game, ck]);
   const [pick, setPick] = useState<Record<string, string>>({});
   // Opens on the dungeon most worth running now: in range, not cleared, most upgrades, then closest to this level.
@@ -2036,7 +2075,7 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game
     );
   };
   return (
-    <Frame accent={color} title={`Dungeon gear · ${name}`} icon={who === "V" ? "classicon_shaman" : "classicon_warlock"} right={<span style={{ fontSize: 12, color: g ? INK : MUTED }}>{g ? `Gear read from the game ${agoText(g.received_at)}` : `No game sync for ${name} yet`}</span>}>
+    <Frame accent={color} title={`Dungeon gear · ${name}`} icon={whoIcon(who)} right={<span style={{ fontSize: 12, color: g ? INK : MUTED }}>{g ? `Gear read from the game ${agoText(g.received_at)}` : `No game sync for ${name} yet`}</span>}>
       <div className="wf-dun-chips">
         {rows.map((r: DRow) => (
           <button key={r.key} type="button" className={`wf-btn wf-dun-chip${r.inRange ? " wf-dun-chip-in" : ""}${r.key === cur.key ? " wf-dun-chip-on" : ""}`} aria-pressed={r.key === cur.key} onClick={() => setPick((p: Record<string, string>) => ({ ...p, [who]: r.key }))} title={`${r.name} · levels ${r.lv}${r.done ? " · cleared" : ""}`}>
@@ -2052,7 +2091,7 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game
             <span className="wf-dun-tag" style={{ color: cur.inRange ? FEL : cur.lo > lv ? ORANGE : MUTED }}>{cur.inRange ? "In range now" : cur.lo > lv ? `Opens around ${cur.lo}` : "Outleveled"}</span>
           </div>
           <div style={{ color: cur.ups ? FEL : INK, fontWeight: 600 }}>{cur.loot.length ? (cur.ups ? `Worth running: ${cur.ups} upgrade${cur.ups > 1 ? "s" : ""} for ${name} now${cur.later ? `, ${cur.later} more at a higher level` : ""}${sides ? `, ${sides} sidegrade${sides > 1 ? "s" : ""}` : ""}.` : cur.later ? `${cur.later} upgrade${cur.later > 1 ? "s" : ""} here once ${name} is a few levels higher.` : eqStats ? `Nothing listed here beats what ${name} is wearing.` : `${cur.loot.length} drop${cur.loot.length > 1 ? "s" : ""} listed for ${name}.`) : cur.picks.length ? `Loot table not researched yet. ${cur.picks.length} of your gear picks ${cur.picks.length === 1 ? "comes" : "come"} from here.` : "Loot table not researched yet, and none of your gear picks come from here."}</div>
-          <div style={{ color: INK, lineHeight: 1.45 }}><span style={{ color: GOLD, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase" }}>{name}'s notes · </span>{dunCell(cur.tip)}</div>
+          {cur.tip ? <div style={{ color: INK, lineHeight: 1.45 }}><span style={{ color: GOLD, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase" }}>{name}'s notes · </span>{dunCell(cur.tip)}</div> : null}
           <TickBox on={cur.done} onClick={() => toggle(cur.tick)} color={color} text={<span>Cleared on {name}</span>} small />
           {eq && !eqStats ? <div style={{ color: ORANGE, fontSize: 12, lineHeight: 1.4 }}>Upgrade numbers need the updated sync addon: log in on {name}, type /reload, and they fill in.</div> : null}
           <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.4 }}>Scores are estimates from stat priorities, not a simulation. Drop chances marked Classic are not confirmed for Forever.</div>
@@ -2067,7 +2106,7 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game
               <div key={`${l.dkey}-${l.item}`} className={`wf-dun-row${x.c.kind === "cmp" && x.c.score >= 1 ? " wf-dun-row-up" : ""}`} style={{ opacity: x.c.kind === "have" ? 0.6 : 1 }}>
                 <Icon icon={icon} size={36} ring={q[0]} name={l.item} tip={[l.slot, l.type].filter((t: string | undefined) => !!t).join(" · ")} />
                 <div style={{ minWidth: 0 }}>
-                  <div style={{ color: q[0], fontWeight: 600, fontSize: 13, lineHeight: 1.25 }}>{l.item}{ITEM_INFO[l.item] ? <a href="#gear" className="wf-macro wf-macro-sm" title="This item is one of your gear picks">Your pick</a> : null}</div>
+                  <div style={{ color: q[0], fontWeight: 600, fontSize: 13, lineHeight: 1.25 }}>{l.item}{(who === "K" ? K_PICK_ITEMS[l.item] : ITEM_INFO[l.item]) ? <a href="#gear" className="wf-macro wf-macro-sm" title="This item is one of your gear picks">Your pick</a> : null}</div>
                   <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.35 }}>{[l.slot, l.type, l.quest ? `Quest: ${l.quest}` : l.boss, l.rate].filter((t: string | undefined) => !!t).join(" · ")}{url ? <> · <a href={url[0]} target="_blank" rel="noreferrer" style={{ color: GOLD }}>{hostOf(url[0])}</a></> : null}</div>
                   {l.stats ? <div style={{ color: INK, fontSize: 12, lineHeight: 1.35 }}>{statLine(l.stats)}</div> : null}
                   {l.note ? <details className="wf-acq"><summary>Notes</summary><div className="wf-acq-body">{gtext(l.note)}</div></details> : null}
@@ -2102,7 +2141,7 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game
 // the change against what is equipped. Stats come from the pick itself (pick.stats) or its dungeons.LOOT row.
 const LOOT_BY_ITEM: Record<string, DLoot> = {};
 DLOOT.forEach((l: DLoot) => { if (!LOOT_BY_ITEM[l.item] || (!LOOT_BY_ITEM[l.item].stats && l.stats)) LOOT_BY_ITEM[l.item] = l; });
-const SHEET_SLOT: Record<string, string> = { "ring 1": "finger", "ring 2": "finger", "trinket 1": "trinket", "trinket 2": "trinket", "main hand (2h)": "two-hand", wand: "ranged", totem: "ranged" };
+const SHEET_SLOT: Record<string, string> = { "ring 1": "finger", "ring 2": "finger", "trinket 1": "trinket", "trinket 2": "trinket", "main hand (2h)": "two-hand", wand: "ranged", totem: "ranged", idol: "ranged" };
 function gearScore(item: string, stats: Record<string, number> | undefined, sheetSlot: string, who: Who, game: Record<string, GameChar> | null): { score: number; c: DCmp } | null {
   const row = LOOT_BY_ITEM[item];
   const st = stats || (row ? row.stats : undefined);
@@ -2281,6 +2320,7 @@ const CHECK_IDS: string[] = [
   ...DKEYS.map((k: string) => `dc${k}`),
   ...PROGRESS.flatMap((g: { items: Tick[] }) => g.items.map((t: Tick) => t.id)),
   ...GEAR_EXTRA_IDS,
+  ...DKEYS.map((k: string) => `dk${k}`), // Nov 17: Kestrik's dungeon clears (his gear picks are gk* ids inside GEAR_EXTRA_IDS)
 ];
 const DEFAULT_CHECKS: Record<string, boolean> = {};
 PROGRESS.forEach((g: { items: Tick[] }) => g.items.forEach((t: Tick) => { if (t.def) DEFAULT_CHECKS[t.id] = true; }));
@@ -2958,7 +2998,7 @@ export default function App() {
   const [nagaPick, setNagaSpec] = useState<string | null>(null);
   const nagaSpec = view === "V" ? "enh" : view === "K" ? (nagaPick && isK(nagaPick) ? nagaPick : kLead(lvK)) : nagaPick && ((nagaPick !== "enh" && !isK(nagaPick)) || view === "both") ? nagaPick : lockTab(lvC);
   const [stagePick, setStagePick] = useState<string | null>(null);
-  const [gearChar, setGearChar] = useState<string>("lock");
+  const [gearChar, setGearChar] = useState<string>(() => (view === "V" ? "sham" : view === "K" ? "K" : "lock"));
   const [presetOpen, setPresetOpen] = useState<number[]>([]);
   const togglePreset = (i: number) => setPresetOpen((o: number[]) => o.indexOf(i) >= 0 ? o.filter((x: number) => x !== i) : [...o, i]);
   const ssLv = SEQ.enh_lvl.indexOf("Stormstrike") + 10;
@@ -3000,6 +3040,7 @@ export default function App() {
     if (want && tDef.cls !== want) { setBuildKey(guideBuildKey(want)); setPreview(null); }
     if (view === "C") setGearChar("lock");
     if (view === "V") setGearChar("sham");
+    if (view === "K") setGearChar("K");
   }, [view]);
   const showC = shows(view, "C");
   useEffect(() => {
@@ -3017,7 +3058,17 @@ export default function App() {
     const t = setInterval(load, 120000);
     return () => { dead = true; clearInterval(t); };
   }, []);
-  const dCols = view === "C" ? [0, 1, 2, 5] : view === "V" ? [0, 1, 2, 3, 4] : [0, 1, 2, 3, 4, 5];
+  // Nov 17: Kestrik is the third gear character. His dungeon notes are a 7th table column, shown when the feed has them.
+  // In the All view he is only offered where his data exists, and a section without it falls back to Corvin.
+  const gearWhoFor = (has: boolean): Who => (gearChar === "K" && HAS_K && (view === "K" || has) ? "K" : gearChar === "sham" ? "V" : "C");
+  const runWho = gearWhoFor(HAS_K_LOOT);
+  const sheetWho = gearWhoFor(HAS_K_GEAR);
+  const lvOf = (w: Who): number => (w === "V" ? lvV : w === "K" ? lvK : lvC);
+  const gearVal = (w: Who): string => (w === "V" ? "sham" : w === "K" ? "K" : "lock");
+  const kCol = HAS_K && K_DUN_NOTES ? [6] : [];
+  const kTick = HAS_K && (HAS_K_LOOT || HAS_K_GEAR);
+  const gearOpts = (withK: boolean) => [{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: `${V_NAME} (Shaman) · Alt` }, ...(withK ? [{ value: "K", label: `${K_NAME} (Druid) · Alt` }] : [])];
+  const dCols = view === "C" ? [0, 1, 2, 5] : view === "V" ? [0, 1, 2, 3, 4] : view === "K" ? [0, 1, 2, ...kCol] : [0, 1, 2, 3, 4, 5, ...kCol];
   const showV = shows(view, "V");
 
   return (
@@ -3043,10 +3094,8 @@ export default function App() {
       </Section>
 
       <Section heading="Dungeon gear" id="runs" caption="Pick a dungeon: what it drops for this character and what each piece changes against the gear you are wearing in game. The list scrolls inside its own box, so the dungeon, its notes and the verdicts stay on one screen.">
-        {view === "K" ? <Text>{`${K_NAME}'s dungeon loot is not on the table yet. The research feed adds it; his rotations, Naga plates and macros are live.`}</Text> : <>
-        {view === "both" ? <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: `${V_NAME} (Shaman) · Alt` }]} value={gearChar} onChange={(v: string) => setGearChar(v)} /> : null}
-        <DungeonGear who={gearChar === "lock" ? "C" : "V"} lv={gearChar === "lock" ? lvC : lvV} game={game} ck={st.ck} toggle={toggle} />
-        </>}
+        {view === "both" ? <Segmented options={gearOpts(HAS_K_LOOT)} value={gearVal(runWho)} onChange={(v: string) => setGearChar(v)} /> : null}
+        {runWho === "K" && !HAS_K_LOOT ? <Text>{`${K_NAME}'s dungeon loot is not on the table yet. The research feed adds it; his rotations, Naga plates and macros are live.`}</Text> : <DungeonGear who={runWho} lv={lvOf(runWho)} game={game} ck={st.ck} toggle={toggle} />}
       </Section>
 
       <Section heading="Rotations" id="rotations" caption="Questing vs dungeon priorities per spec, as icon strips. Sources and dates under each.">
@@ -3135,16 +3184,18 @@ export default function App() {
       ) : null}
 
       <Section heading="Gear and dungeons" id="gear" caption="Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server.">
-        {view === "K" ? <Text>{`${K_NAME}'s gear list and dungeon notes are not on the table yet. The research feed adds it; his rotations, Naga plates and macros are live.`}</Text> : <>
-        {view === "both" ? <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: `${V_NAME} (Shaman) · Alt` }]} value={gearChar} onChange={(v: string) => setGearChar(v)} /> : null}
-        <GearSheet who={gearChar === "lock" ? "lock" : "sham"} lv={gearChar === "lock" ? lvC : lvV} ck={st.ck} toggle={toggle} game={game} />
-        <Table columns={dCols.map((k: number) => ["Cleared", "Dungeon", "Levels", V_NAME, `Preset (${V_NAME})`, "Corvin"][k])} rows={DUNGEONS.map((r: string[], i: number) => [
-          <span style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 11 }}>{showV ? <><TickBox on={!!st.ck[`dv${DKEYS[i]}`]} onClick={() => toggle(`dv${DKEYS[i]}`)} small color={SHAMAN} />V</> : null}{showC ? <><TickBox on={!!st.ck[`dc${DKEYS[i]}`]} onClick={() => toggle(`dc${DKEYS[i]}`)} small color={WARLOCK} />C</> : null}</span>,
-          r[0], dunTop(r[1]) > 30 ? <span style={{ display: "inline-flex", flexDirection: "column", gap: 2 }}>{r[1]}<span className="wf-pre wf-pre-sm" title={`${PRE_LABEL} · ${PRE_MARKS.notes[1]}`}>31+ pre-launch</span></span> : r[1], dunCell(r[2]), <PresetCell i={i} open={presetOpen.indexOf(i) >= 0} onToggle={togglePreset} />, dunCell(r[3])].filter((_c: ReactNode, k: number) => dCols.indexOf(k) >= 0))} />
+        {view === "K" && !HAS_K_GEAR && !K_DUN_NOTES ? <Text>{`${K_NAME}'s gear list and dungeon notes are not on the table yet. The research feed adds them; his rotations, Naga plates and macros are live.`}</Text> : <>
+        {view === "both" ? <Segmented options={gearOpts(HAS_K_GEAR)} value={gearVal(sheetWho)} onChange={(v: string) => setGearChar(v)} /> : null}
+        {sheetWho === "K" && !HAS_K_GEAR ? <Text>{`${K_NAME}'s gear list is not on the table yet. The research feed adds it.`}</Text> : <GearSheet who={sheetWho} lv={lvOf(sheetWho)} ck={st.ck} toggle={toggle} game={game} />}
+        <Table columns={dCols.map((k: number) => ["Cleared", "Dungeon", "Levels", V_NAME, `Preset (${V_NAME})`, "Corvin", K_NAME][k])} rows={DUNGEONS.map((r: string[], i: number) => [
+          <span style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 11 }}>{showV ? <><TickBox on={!!st.ck[`dv${DKEYS[i]}`]} onClick={() => toggle(`dv${DKEYS[i]}`)} small color={SHAMAN} />V</> : null}{showC ? <><TickBox on={!!st.ck[`dc${DKEYS[i]}`]} onClick={() => toggle(`dc${DKEYS[i]}`)} small color={WARLOCK} />C</> : null}{showK && kTick ? <><TickBox on={!!st.ck[`dk${DKEYS[i]}`]} onClick={() => toggle(`dk${DKEYS[i]}`)} small color={DRUID} />K</> : null}</span>,
+          r[0], dunTop(r[1]) > 30 ? <span style={{ display: "inline-flex", flexDirection: "column", gap: 2 }}>{r[1]}<span className="wf-pre wf-pre-sm" title={`${PRE_LABEL} · ${PRE_MARKS.notes[1]}`}>31+ pre-launch</span></span> : r[1], dunCell(r[2]), <PresetCell i={i} open={presetOpen.indexOf(i) >= 0} onToggle={togglePreset} />, dunCell(r[3]), DUN_NOTES_K[DKEYS[i]] ?? ""].filter((_c: ReactNode, k: number) => dCols.indexOf(k) >= 0))} />
+        {view === "K" ? null : <>
         <PreLine lead="Dungeon rows and totem presets marked 31+:" mark="notes" />
         <PresetPanel open={presetOpen} setOpen={setPresetOpen} />
         <Text>{PL.gear_raid_preview.text}</Text>
         <PreLine lead="Tier 1 and raid loot:" mark="datamined" />
+        </>}
         </>}
       </Section>
 
