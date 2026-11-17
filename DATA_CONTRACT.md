@@ -173,3 +173,22 @@ Write the same component calls you use on the canvas, imported from `./kit` inst
 ### Check before you commit (if your sandbox has Node)
 
 In a scratch folder outside the repo clone: `npm init -y && npm install react@18.3.1 react-dom@18.3.1 esbuild@0.24.2`, then copy the repo's `site/` and `wowf-data.json` into it and run the rule 3 command from that folder. If it compiles, the EliteDesk build will too. If you can't run Node, read your diff for missing imports, renamed components and broken JSX before committing; a failed build costs nothing but time, the page stays up.
+
+## Third character: Kestrik (added 2026-11-17)
+
+Kestrik Galecrest is a Feral druid. His internal key is `K` (Corvin is `C`, Zanjiro is `V`). The page shows him only when all of these exist, so never remove or rename them:
+
+- `characters.CHARS[2]` (his card; `CHARS[0]` stays Zanjiro and `CHARS[1]` stays Corvin) and `characters.CHAR_PROFS.K` (a list, may be empty).
+- `trainers.TRAINER_RAW.druid` and `trainers.TRAIN_SRC.druid`.
+- `rotations.ROT.cat`, `.bear`, `.caster`, each with `quest` and `dungeon`.
+- `naga.NAGA.cat`, `.bear`, `.caster` and `naga.NAGA12.cat`, `.bear`, `.caster`.
+
+His forms are his specs. Each form has its own main bar in game, so each has its own rotation and Naga plate. The spec keys are `cat`, `bear` and `caster`.
+
+**Fixed plates.** A druid plate does not follow rotation order. `naga.NAGA[form].auto` has `"fixed": true` and every `pool` entry has a `slot`: 1 to 6 are Naga 1 to 6, 7 to 12 are Shift+Naga 1 to 6 (Naga 7 to 12 on the 12-button plate), 13 to 18 are the 12-button plate's Shift layer. Two entries may share a slot: the newest one he has learned shows (`lvl`), and a slot with nothing learned shows its first entry greyed with its level. Keep the same job in the same slot across the three forms (heal on 6, Bear key on 7, Cat key on 8, travel on 12). `covers` works as on the other plates: it gives a rotation step its key number.
+
+**Macros.** `spec` is `cat`, `bear` or `caster` for one form, or `druid` for a macro that sits on every bar. `bind` names pool keys, as for the other characters.
+
+**Not on the page yet.** Talent trees, the gear sheet, dungeon notes and loot, and professions have no druid data. His view shows one line in those sections. Adding them needs new keys agreed with Claude first (for example `talents.TREES.druid` with builds whose `cls` is `druid`). `SKILL_KEYS` still never changes.
+
+**State.** His level is `st.lvK` (game sync writes it, like `lvV` and `lvC`). The view name is `K`, the link is `#kestrik`, and `#all` is the same as `#both`.

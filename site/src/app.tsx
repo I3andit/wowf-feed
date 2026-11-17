@@ -11,6 +11,7 @@ const INK = "#ece2c8";
 const MUTED = "#a99d82";
 const SHAMAN = "#0070DE";
 const WARLOCK = "#8788EE";
+const DRUID = "#FF7C0A";
 const SERIF = "'Friz Quadrata', 'Cinzel', 'Trajan Pro', Georgia, 'Times New Roman', serif";
 const ICON_CDN = "https://wow.zamimg.com/images/wow/icons/large/";
 // Icons: 145 Wowhead (zamimg) icons downloaded Oct 30 2026, packed into one 40px AVIF sprite (12 per row) and embedded below,
@@ -39,6 +40,11 @@ const SPRITE_C_PARTS: string[] = [
 ];
 const SPRITE_C_NAMES: string[] = "inv_axe_04,inv_axe_18,inv_hammer_09,inv_weapon_halbard_01,inv_mace_42,inv_helmet_15,inv_shoulder_18,inv_shirt_09,inv_bracer_02,inv_gauntlets_15,inv_belt_43,inv_pants_14,inv_boots_09,inv_jewelry_necklace_06,inv_jewelry_ring_09,inv_jewelry_ring_25,spell_shadow_evileye,inv_relics_totemofrage,inv_staff_02,inv_staff_07,inv_wand_04,inv_wand_06,inv_staff_goldfeathered_01,inv_staff_16,inv_staff_09,inv_staff_19,inv_misc_bone_06,spell_nature_crystalball,inv_weapon_shortblade_07,inv_misc_orb_02,inv_crown_01,inv_jewelry_necklace_04,inv_shoulder_05,inv_misc_cape_11,inv_chest_cloth_48,inv_chest_cloth_17,inv_bracer_10,inv_gauntlets_24,inv_belt_10,inv_pants_11,inv_pants_07,inv_boots_05,inv_jewelry_ring_28".split(",");
 const SPRITE_C_START = 168;
+// Sprite D: 38 druid icons for Kestrik (Wowhead icons, downloaded Nov 17 2026), 40px, 12 per row, from index 216.
+const SPRITE_D = "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";
+const SPRITE_D_NAMES: string[] = "ability_ambush,ability_bullrush,ability_druid_bash,ability_druid_berserk,ability_druid_catform,ability_druid_challangingroar,ability_druid_cower,ability_druid_dash,ability_druid_demoralizingroar,ability_druid_disembowel,ability_druid_enrage,ability_druid_ferociousbite,ability_druid_kingofthejungle,ability_druid_lacerate,ability_druid_mangle2,ability_druid_maul,ability_druid_rake,ability_druid_ravage,ability_druid_supriseattack,ability_druid_travelform,ability_hunter_pet_bear,ability_physical_taunt,ability_racial_bearform,classicon_druid,inv_misc_monsterclaw_03,inv_misc_questionmark,spell_arcane_teleportmoonglade,spell_holy_removecurse,spell_nature_abolishmagic,spell_nature_faeriefire,spell_nature_natureswrath,spell_nature_nullifypoison,spell_nature_regeneration,spell_nature_rejuvenation,spell_nature_resistnature,spell_nature_starfall,spell_nature_thorns,spell_shadow_vampiricaura".split(",");
+const SPRITE_D_START = 216;
+SPRITE_D_NAMES.forEach((n: string, i: number) => { if (ICON_POS[n] === undefined) ICON_POS[n] = SPRITE_D_START + i; });
 SPRITE_C_NAMES.forEach((n: string, i: number) => { if (ICON_POS[n] === undefined) ICON_POS[n] = SPRITE_C_START + i; });
 SPRITE_B_NAMES.forEach((n: string, i: number) => { if (ICON_POS[n] === undefined) ICON_POS[n] = SPRITE_B_START + i; });
 type SpriteSt = "wait" | "ok" | "bad";
@@ -81,15 +87,16 @@ function loadSprite(): void {
   const compose = (main: CanvasImageSource, extra: (CanvasImageSource | null)[]) => {
     spriteSrc = main;
     try {
-      if ((extra[0] || extra[1]) && typeof document !== "undefined") {
+      if ((extra[0] || extra[1] || extra[2]) && typeof document !== "undefined") {
         const c = document.createElement("canvas");
         c.width = SPRITE_COLS * SPRITE_PX;
-        c.height = Math.ceil((SPRITE_C_START + SPRITE_C_NAMES.length) / SPRITE_COLS) * SPRITE_PX;
+        c.height = Math.ceil((SPRITE_D_START + SPRITE_D_NAMES.length) / SPRITE_COLS) * SPRITE_PX;
         const ctx = c.getContext("2d");
         if (ctx) {
           ctx.drawImage(main, 0, 0);
           if (extra[0]) ctx.drawImage(extra[0], 0, Math.floor(SPRITE_B_START / SPRITE_COLS) * SPRITE_PX);
           if (extra[1]) ctx.drawImage(extra[1], 0, Math.floor(SPRITE_C_START / SPRITE_COLS) * SPRITE_PX);
+          if (extra[2]) ctx.drawImage(extra[2], 0, Math.floor(SPRITE_D_START / SPRITE_COLS) * SPRITE_PX);
           spriteSrc = c;
         }
       }
@@ -100,7 +107,7 @@ function loadSprite(): void {
   };
   const opt = (b64: string) => decodeSprite(b64, 4000).then((x: CanvasImageSource) => x, () => null);
   decodeSprite(SPRITE_PARTS.join(""), 8000).then(
-    (main) => Promise.all([opt(SPRITE_B), opt(SPRITE_C_PARTS.join(""))]).then((extra: (CanvasImageSource | null)[]) => compose(main, extra)),
+    (main) => Promise.all([opt(SPRITE_B), opt(SPRITE_C_PARTS.join("")), opt(SPRITE_D)]).then((extra: (CanvasImageSource | null)[]) => compose(main, extra)),
     () => finish("bad"),
   );
 }
@@ -219,7 +226,7 @@ const CSS = `
 .wf-dun-d { display: inline-block; margin-right: 8px; font-size: 12px; font-weight: 600; white-space: nowrap; }
 .wf-prelabel { padding: 8px 10px; border-radius: 8px; border: 1px dashed #ff9b3d; background: rgba(255,128,0,.06); font-size: 12px; color: #ece2c8; }
 .wf-nav { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; padding: 8px 12px; border: 1px solid #6b5a33; border-radius: 10px; background: linear-gradient(180deg, rgba(36,29,21,.97), rgba(13,12,10,.97)); box-shadow: inset 0 0 0 1px #000, 0 6px 18px rgba(0,0,0,.65); backdrop-filter: blur(6px); }
-.wf-nav-chars { display: flex; gap: 6px; flex: none; }
+.wf-nav-chars { display: flex; gap: 6px; flex: 0 1 auto; flex-wrap: wrap; max-width: 100%; }
 .wf-nav-char { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px 2px 3px; border-radius: 999px; border: 1px solid #4a3d22; background: #14110d; color: ${INK}; font-size: 13px; text-decoration: none; }
 .wf-nav-char:hover { border-color: ${GOLD}; }
 button.wf-nav-char, .wf-nav-both { font: inherit; font-size: 13px; cursor: pointer; }
@@ -385,9 +392,9 @@ function Slider({ value, min, max, onChange, color, label, marks, pins }: { valu
 }
 
 // MAIN / ALT (rules.md, Nov 2): Corvin is the guild main, Vorgash the alt. Display order only; data, saved state and WF1 bits unchanged.
-function RoleBadge({ who, note }: { who: "V" | "C"; note?: boolean }) {
+function RoleBadge({ who, note }: { who: Who; note?: boolean }) {
   const main = who === "C";
-  const text = main ? "Guild main (Warlock)" : "Alt (Shaman)";
+  const text = main ? "Guild main (Warlock)" : who === "K" ? "Alt (Druid)" : "Alt (Shaman)";
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: 6, verticalAlign: "middle" }}>
       <span className={main ? "wf-role wf-role-main" : "wf-role wf-role-alt"} title={text}>{main ? "Main" : "Alt"}</span>
@@ -420,7 +427,7 @@ function Hero({ view, setView }: { view: View; setView: (v: View) => void }) {
       <div className="wf-shimmer" style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 2 }} />
       <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
         <div style={{ display: "flex", gap: 8 }}>
-          {([["C", "classicon_warlock", WARLOCK, "Corvin Ashmourne", `${CHARS[1].line} · Guild main`], ["V", "classicon_shaman", SHAMAN, V_FULL, `${CHARS[0].line} · Alt`]] as [("C" | "V"), string, string, string, string][]).map((o: [("C" | "V"), string, string, string, string]) => (
+          {([["C", "classicon_warlock", WARLOCK, "Corvin Ashmourne", `${CHARS[1].line} · Guild main`], ["V", "classicon_shaman", SHAMAN, V_FULL, `${CHARS[0].line} · Alt`], ...(HAS_K ? [["K", "classicon_druid", DRUID, K_FULL, `${(K_CHAR as CharData).line} · Alt`]] : [])] as [Who, string, string, string, string][]).map((o: [Who, string, string, string, string]) => (
             <button key={o[0]} type="button" className={`wf-btn wf-portrait${view === o[0] ? " wf-portrait-on" : view === "both" ? "" : " wf-portrait-off"}`} aria-pressed={view === o[0]} onClick={() => setView(o[0])} title={`Show ${o[3].split(" ")[0]}'s page`}>
               <Icon icon={o[1]} size={52} ring={o[2]} name={o[3]} tip={`${o[4]} · click for ${o[3].split(" ")[0]}'s page`} />
             </button>
@@ -428,8 +435,8 @@ function Hero({ view, setView }: { view: View; setView: (v: View) => void }) {
         </div>
         <div style={{ flex: "1 1 260px" }}>
           <div style={{ fontSize: 12, color: GOLD, letterSpacing: ".12em", textTransform: "uppercase" }}>Horde · WoW Forever · Naga V2 Pro</div>
-          <div style={{ fontFamily: SERIF, fontSize: 30, color: GOLD_HI, lineHeight: 1.15, textShadow: "0 2px 0 #000" }}>{view === "C" ? "Corvin Ashmourne" : view === "V" ? V_FULL : `Corvin & ${V_NAME}`}</div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", margin: "4px 0 2px" }}>{shows(view, "C") ? <span><span style={{ color: WARLOCK, fontFamily: SERIF }}>Corvin</span> <RoleBadge who="C" note /></span> : null}{shows(view, "V") ? <span><span style={{ color: SHAMAN, fontFamily: SERIF }}>{V_NAME}</span> <RoleBadge who="V" note /></span> : null}<button type="button" className="wf-btn" onClick={() => setView(view === "both" ? "C" : "both")} style={{ padding: "1px 10px", borderRadius: 999, border: `1px solid #4a3d22`, background: "#14110d", color: MUTED, fontSize: 11 }}>{view === "both" ? "Just Corvin" : "Show both"}</button></div>
+          <div style={{ fontFamily: SERIF, fontSize: 30, color: GOLD_HI, lineHeight: 1.15, textShadow: "0 2px 0 #000" }}>{view === "C" ? "Corvin Ashmourne" : view === "V" ? V_FULL : view === "K" ? K_FULL : HAS_K ? `Corvin, ${V_NAME} & ${K_NAME}` : `Corvin & ${V_NAME}`}</div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", margin: "4px 0 2px" }}>{shows(view, "C") ? <span><span style={{ color: WARLOCK, fontFamily: SERIF }}>Corvin</span> <RoleBadge who="C" note /></span> : null}{shows(view, "V") ? <span><span style={{ color: SHAMAN, fontFamily: SERIF }}>{V_NAME}</span> <RoleBadge who="V" note /></span> : null}{HAS_K && shows(view, "K") ? <span><span style={{ color: DRUID, fontFamily: SERIF }}>{K_NAME}</span> <RoleBadge who="K" note /></span> : null}<button type="button" className="wf-btn" onClick={() => setView(view === "both" ? "C" : "both")} style={{ padding: "1px 10px", borderRadius: 999, border: `1px solid #4a3d22`, background: "#14110d", color: MUTED, fontSize: 11 }}>{view === "both" ? "Just Corvin" : HAS_K ? "Show all" : "Show both"}</button></div>
           <div style={{ fontSize: 13, color: MUTED }}>{left > 0 ? "Launch Wed Nov 4, 6:00 PM ET (3:00 PM PT)" : "Live since Wed Nov 4"} · level cap 60 · raids open Dec 9 (Hyjal Summit, Barrow Deeps, Onyxia)</div>
         </div>
       </div>
@@ -468,6 +475,21 @@ const CHARS: CharData[] = WF_DATA.characters.CHARS;
 // Nov 10: the shaman's name comes from the feed (planned as Vorgash, created as Zanjiro). "V" stays the internal key.
 const V_FULL: string = (CHARS[0] && CHARS[0].name) || "Vorgash Stormcleft";
 const V_NAME: string = V_FULL.split(" ")[0];
+// Nov 17: a third character, Kestrik (Feral druid, key "K"). His forms are his "specs": each has its own main bar in
+// game, so each gets its own rotation and Naga plate. He shows up only when the feed carries all of his data (HAS_K).
+type Who = "V" | "C" | "K";
+const K_SPECS: string[] = ["cat", "bear", "caster"];
+const K_LABEL: Record<string, string> = { cat: "Cat", bear: "Bear", caster: "Caster" };
+const K_CHAR: CharData | undefined = CHARS[2];
+const HAS_K: boolean = !!K_CHAR && !!(WF_DATA.trainers.TRAINER_RAW.druid && WF_DATA.trainers.TRAIN_SRC && WF_DATA.trainers.TRAIN_SRC.druid) && K_SPECS.every((x: string) => !!(WF_DATA.naga.NAGA[x] && WF_DATA.naga.NAGA12[x] && WF_DATA.rotations.ROT[x] && WF_DATA.rotations.ROT[x].quest && WF_DATA.rotations.ROT[x].dungeon));
+const K_FULL: string = K_CHAR ? K_CHAR.name : "Kestrik";
+const K_NAME: string = K_FULL.split(" ")[0];
+const isK = (spec: string): boolean => K_SPECS.indexOf(spec) >= 0;
+const isKm = (spec: string): boolean => spec === "druid" || isK(spec); // macro specs: one form, or "druid" for every form
+const specColor = (spec: string): string => spec === "enh" ? SHAMAN : isK(spec) ? DRUID : WARLOCK;
+const specName = (spec: string): string => spec === "enh" ? V_NAME : isK(spec) ? K_NAME : "Corvin";
+const specIcon = (spec: string): string => spec === "enh" ? "classicon_shaman" : isK(spec) ? "classicon_druid" : "classicon_warlock";
+const kLead = (lv: number): string => lv >= 20 ? "cat" : lv >= 10 ? "bear" : "caster"; // the form he fights in at this level
 
 function Bar({ value, max, color }: { value: number; max: number; color: string }) {
   const pct = Math.max(0, Math.min(100, (value / max) * 100));
@@ -478,7 +500,7 @@ function Bar({ value, max, color }: { value: number; max: number; color: string 
   );
 }
 
-function CharCard({ c, who, level, setLevel, skills, setSkill }: { c: CharData; who: "V" | "C"; level: number; setLevel: (n: number) => void; skills: Record<string, number>; setSkill: (k: string, n: number) => void }) {
+function CharCard({ c, who, level, setLevel, skills, setSkill }: { c: CharData; who: Who; level: number; setLevel: (n: number) => void; skills: Record<string, number>; setSkill: (k: string, n: number) => void }) {
   return (
     <div style={{ background: "linear-gradient(180deg, #1c1813 0%, #120f0c 100%)", border: `1px solid ${GOLD}`, borderLeft: `4px solid ${c.color}`, borderRadius: 10, padding: 16, color: INK }}>
       <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
@@ -589,8 +611,8 @@ type Stage = { id: string; label: string; base: Bind[] };
 type FKey = { k: string; spell: string; icon: string };
 type NagaSpec = { stages: Stage[]; shift: Bind[]; fkeys: FKey[]; auto?: NAuto };
 // Level-aware Naga (Nov 4): plates are built from the level-aware rotation (ROT quest steps) plus a utility pool, per level.
-type NPool = { key: string; spell: string; icon: string; kind: string; covers?: string[]; lvl?: number; talent?: string; at?: number; until?: number; untilTalent?: string; note?: string; alt?: boolean };
-type NAuto = { pool: NPool[]; skip?: string[]; mode?: string; src?: string };
+type NPool = { key: string; spell: string; icon: string; kind: string; covers?: string[]; lvl?: number; talent?: string; at?: number; until?: number; untilTalent?: string; note?: string; alt?: boolean; slot?: number };
+type NAuto = { pool: NPool[]; skip?: string[]; mode?: string; src?: string; fixed?: boolean };
 type NSlot = { key: string; spell: string; icon: string; note?: string; alt?: boolean; lv: number; locked: boolean; rot: boolean; ord: number; steps: string[] };
 function nagaAuto(spec: string): NAuto | undefined {
   const n: any = WF_DATA.naga.NAGA[spec];
@@ -600,6 +622,24 @@ function nagaSlots(spec: string, lv: number): NSlot[] {
   const a: NAuto | undefined = nagaAuto(spec);
   const r: Rot = rotOf(spec, a && a.mode ? a.mode : "quest");
   const seq = r.seq;
+  if (a && a.fixed) {
+    // Fixed plates (Nov 17, druid forms): every pool entry names its slot and the order never follows the rotation,
+    // so the same thumb does the same job in every form. Of the entries sharing a slot the newest learned one shows;
+    // a slot with nothing learned yet shows its first entry greyed with its level.
+    const bySlot: Record<number, NSlot> = {};
+    a.pool.forEach((p: NPool, i: number) => {
+      if (p.until && lv >= p.until) return;
+      const L = rotLv(p, seq) ?? 1;
+      const n = p.slot ?? i + 1;
+      const x: NSlot = { key: p.key, spell: p.spell, icon: p.icon, note: p.note, alt: p.alt, lv: L, locked: L > lv, rot: p.kind === "rot", ord: n, steps: p.covers ?? [] };
+      const cur = bySlot[n];
+      if (!cur || (x.locked ? cur.locked && x.lv < cur.lv : cur.locked || x.lv >= cur.lv)) bySlot[n] = x;
+    });
+    const top = Math.max(0, ...Object.keys(bySlot).map((k: string) => Number(k)));
+    const res: NSlot[] = [];
+    for (let n = 1; n <= top; n++) res.push(bySlot[n] ?? { key: `empty:${n}`, spell: "Empty", icon: "inv_misc_questionmark", lv: 1, locked: false, rot: false, ord: n, steps: [] });
+    return res;
+  }
   const steps = r.steps.map((st: RStep) => ({ ...st, lvl: rotLv(st, seq) })).filter((st: RStep) => !(st.until && lv >= st.until));
   const skip = a && a.skip ? a.skip : [];
   const covered: Record<string, boolean> = {};
@@ -670,7 +710,7 @@ const NAGA: Record<string, NagaSpec> = WF_DATA.naga.NAGA;
 // Spec-specific macros win over "both"; level-variant macros (lvl / until) pick the one for this level.
 function macroOn(spec: string, lv: number, key?: string, fkey?: string): Macro | undefined {
   const ok = (m: Macro) => !(m.lvl && m.lvl > lv) && !(m.until && lv >= m.until) && (key ? (m.bind ?? []).indexOf(key) >= 0 : !!fkey && m.fkey === fkey);
-  return MACROS.find((m: Macro) => m.spec === spec && ok(m)) ?? (spec !== "enh" ? MACROS.find((m: Macro) => m.spec === "both" && ok(m)) : undefined);
+  return MACROS.find((m: Macro) => m.spec === spec && ok(m)) ?? (isK(spec) ? MACROS.find((m: Macro) => m.spec === "druid" && ok(m)) : spec !== "enh" ? MACROS.find((m: Macro) => m.spec === "both" && ok(m)) : undefined);
 }
 function MacroTag({ m, small }: { m?: Macro; small?: boolean }) {
   if (!m) return null;
@@ -874,7 +914,7 @@ function guideOptions(cls: string): BuildDef[] {
 }
 // True when Corvin's picked guide is not the feed's primary plan: rotations, Naga pools and path nodes then use the
 // kept reference copies (quest_icy / dungeon_icy / auto_icy / PATH_NODES_ICY).
-function refMode(spec: string): boolean { return spec !== "enh" && GUIDE.warlock !== GUIDE_DEFAULT.warlock; }
+function refMode(spec: string): boolean { return spec !== "enh" && !isK(spec) && GUIDE.warlock !== GUIDE_DEFAULT.warlock; }
 // Levels a talent order cannot beat: points of a respec plan's main order exist from the respec level at the earliest.
 function respecFloor(seq?: string): number {
   const p = seq ? planOf(buildOfSeq(seq)) : null;
@@ -1188,7 +1228,7 @@ const PROF_WHY: Record<string, string> = WF_DATA.professions.PROF_WHY;
 
 function ProfessionWindow({ skills, setSkillFor, lvV, lvC, view }: { skills: Record<string, number>; setSkillFor: (k: string, n: number) => void; lvV: number; lvC: number; view: View }) {
   const [whoPick, setWho] = useState<"V" | "C">("C");
-  const who: "V" | "C" = view === "both" ? whoPick : view;
+  const who: Who = view === "both" ? whoPick : view;
   const [pk, setPk] = useState<string>("lw");
   const own = CHAR_PROFS[who];
   const p = PROFS.find((x: ProfDef) => x.key === (own.indexOf(pk) >= 0 ? pk : own[0])) ?? PROFS[0];
@@ -1337,24 +1377,24 @@ function lockTab(lvC: number): string {
   return p && p.pre && lvC >= p.at && !refMode("aff") ? "demo" : "aff";
 }
 
-function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: View }) {
+function RotationBoard({ lvV, lvC, lvK, view }: { lvV: number; lvC: number; lvK: number; view: View }) {
   const [specPick, setSpec] = useState<string | null>(null);
-  const allowed = view === "V" ? ["enh"] : view === "C" ? ["aff", "demo"] : ["aff", "demo", "enh"];
-  const lead = lockTab(lvC);
+  const allowed = view === "V" ? ["enh"] : view === "C" ? ["aff", "demo"] : view === "K" ? K_SPECS : ["aff", "demo", "enh", ...(HAS_K ? K_SPECS : [])];
+  const lead = view === "K" ? kLead(lvK) : lockTab(lvC);
   const spec = specPick && allowed.indexOf(specPick) >= 0 ? specPick : allowed.indexOf(lead) >= 0 ? lead : allowed[0];
   const [hideLocked, setHideLocked] = useState<boolean>(false);
-  const lv = spec === "enh" ? lvV : lvC;
+  const lv = spec === "enh" ? lvV : isK(spec) ? lvK : lvC;
   const [mode, setMode] = useState<string>("quest");
   const [sel, setSel] = useState<number>(-1);
   // The kept reference rotation shows when an older guide is picked in Next ding, or on request with the button.
   const [refPick, setRefPick] = useState<boolean>(false);
-  const refR: Rot | undefined = spec === "enh" ? undefined : ROT[spec][`${mode}_icy`];
+  const refR: Rot | undefined = spec === "enh" || isK(spec) ? undefined : ROT[spec][`${mode}_icy`];
   const forced = refMode(spec);
   const showRef = !!refR && (forced || refPick);
   const r = showRef && refR ? refR : ROT[spec][mode];
   const refName = refR && refR.src[0] ? refR.src[0].label.split(" ").slice(0, 2).join(" ") : "Earlier";
-  const color = spec === "enh" ? SHAMAN : WARLOCK;
-  const specs: [string, string, string][] = [["aff", refMode("aff") || refPick ? "Affliction" : lockLabel(), "spell_shadow_deathcoil"], ["demo", "Demonology", "spell_shadow_metamorphosis"], ["enh", "Enhancement", "spell_nature_lightningshield"]];
+  const color = specColor(spec);
+  const specs: [string, string, string][] = [["aff", refMode("aff") || refPick ? "Affliction" : lockLabel(), "spell_shadow_deathcoil"], ["demo", "Demonology", "spell_shadow_metamorphosis"], ["enh", "Enhancement", "spell_nature_lightningshield"], ["cat", "Cat", "ability_druid_catform"], ["bear", "Bear", "ability_racial_bearform"], ["caster", "Caster", "spell_nature_healingtouch"]];
   const rs = (st: RStep): RStep => ({ ...st, lvl: rotLv(st, r.seq) });
   const allPrep = r.prep.map(rs).filter((st: RStep) => !(st.until && lv >= st.until));
   const allSteps = r.steps.map(rs).filter((st: RStep) => !(st.until && lv >= st.until));
@@ -1400,7 +1440,7 @@ function RotationBoard({ lvV, lvC, view }: { lvV: number; lvC: number; view: Vie
         ))}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", fontSize: 12, color: MUTED, marginBottom: 4 }}>
-        <span>For <span style={{ color: spec === "enh" ? "#5fb0ff" : "#b9baff" }}>{spec === "enh" ? V_NAME : "Corvin"}</span> at level <span style={{ color: GOLD_HI }}>{lv}</span>: the priority uses the spells and talents learned by this level; later steps are grayed with their level.</span>
+        <span>For <span style={{ color: spec === "enh" ? "#5fb0ff" : isK(spec) ? "#ffb066" : "#b9baff" }}>{specName(spec)}</span> at level <span style={{ color: GOLD_HI }}>{lv}</span>: the priority uses the spells and talents learned by this level; later steps are grayed with their level.</span>
         <button type="button" className="wf-btn" onClick={() => setHideLocked(!hideLocked)} style={{ padding: "2px 10px", borderRadius: 999, border: `1px solid ${hideLocked ? GOLD : "#4a3d22"}`, background: hideLocked ? "rgba(245,215,122,.15)" : "transparent", color: hideLocked ? GOLD_HI : INK, fontSize: 12 }}>{hideLocked ? "Show locked steps" : "Hide locked steps"}</button>
         {refR && !forced ? <button type="button" className="wf-btn" onClick={() => { setRefPick(!refPick); setSel(-1); }} style={{ padding: "2px 10px", borderRadius: 999, border: `1px solid ${refPick ? ORANGE : "#4a3d22"}`, background: refPick ? "rgba(255,128,0,.15)" : "transparent", color: refPick ? ORANGE : INK, fontSize: 12 }}>{refPick ? "Back to the plan" : `${refName} reference`}</button> : null}
       </div>
@@ -1510,7 +1550,7 @@ function PathTimeline({ go, lv }: { go: (level: number, spec: number) => void; l
   );
 }
 
-type Macro = { title: string; icon: string; spec: "aff" | "demo" | "both" | "enh"; where: string; code: string; does: string; tag?: "NEW" | "FIXED"; lvl?: number; until?: number; src: string; url?: string; flag?: string; bind?: string[]; fkey?: string };
+type Macro = { title: string; icon: string; spec: string; where: string; code: string; does: string; tag?: "NEW" | "FIXED"; lvl?: number; until?: number; src: string; url?: string; flag?: string; bind?: string[]; fkey?: string };
 const WFDB_AFF = WF_DATA.macros.WFDB_AFF;
 const WFDB_DEMO = WF_DATA.macros.WFDB_DEMO;
 const WFDB_ENH = WF_DATA.macros.WFDB_ENH;
@@ -1521,7 +1561,7 @@ function MacroCard({ m, live }: { m: Macro; live?: string }) {
   const [open, setOpen] = useState<boolean>(false);
   const len = m.code.length;
   const over = len > 255;
-  const tone = m.spec === "enh" ? SHAMAN : WARLOCK;
+  const tone = m.spec === "enh" ? SHAMAN : isKm(m.spec) ? DRUID : WARLOCK;
   const doCopy = () => {
     const done = () => { setCopied("Copied"); setTimeout(() => setCopied(""), 1400); };
     const fail = () => { setCopied("Select the text and copy"); setTimeout(() => setCopied(""), 2200); };
@@ -1562,23 +1602,25 @@ function MacroCard({ m, live }: { m: Macro; live?: string }) {
   );
 }
 
-function MacroBook({ lvV, lvC, view }: { lvV: number; lvC: number; view: View }) {
+function MacroBook({ lvV, lvC, lvK, view }: { lvV: number; lvC: number; lvK: number; view: View }) {
   const [fPick, setF] = useState<string>("all");
   const [showAll, setShowAll] = useState<boolean>(false);
-  const lvOf = (m: Macro) => m.spec === "enh" ? lvV : lvC;
+  const lvOf = (m: Macro) => m.spec === "enh" ? lvV : isKm(m.spec) ? lvK : lvC;
   const replaced = (m: Macro) => !!m.until && lvOf(m) >= m.until;
   const locked = (m: Macro) => (!!m.lvl && m.lvl > lvOf(m)) || replaced(m);
   const liveWhere = (m: Macro): string | undefined => {
     if (!m.bind) return undefined;
-    const specs = m.spec === "enh" ? [["enh", V_NAME, lvV]] : m.spec === "both" ? [["aff", "Aff", lvC], ["demo", "Demo", lvC]] : [[m.spec, m.spec === "aff" ? "Aff" : "Demo", lvC]];
+    const specs = isKm(m.spec) ? (m.spec === "druid" ? K_SPECS : [m.spec]).map((x: string) => [x, K_LABEL[x], lvK]) : m.spec === "enh" ? [["enh", V_NAME, lvV]] : m.spec === "both" ? [["aff", "Aff", lvC], ["demo", "Demo", lvC]] : [[m.spec, m.spec === "aff" ? "Aff" : "Demo", lvC]];
     const parts = specs.map((x: any[]) => { const w = nagaWhere(x[0], x[2], m.bind!); return w ? `${x[1]} ${w}` : ""; }).filter((t: string) => !!t);
     return parts.length ? `At your level: ${parts.join(" · ")}` : undefined;
   };
-  const tabs: [string, string, string][] = [["all", "All", "inv_misc_book_09"], ["aff", "Affliction", "spell_shadow_deathcoil"], ["demo", "Demonology", "spell_shadow_metamorphosis"], ["enh", "Enhancement", "spell_nature_lightningshield"], ["new", "New + fixed", "spell_holy_borrowedtime"]];
-  const tabsV = tabs.filter((t: [string, string, string]) => view === "both" || (view === "V" ? t[0] !== "aff" && t[0] !== "demo" : t[0] !== "enh"));
+  const tabs: [string, string, string][] = [["all", "All", "inv_misc_book_09"], ["aff", "Affliction", "spell_shadow_deathcoil"], ["demo", "Demonology", "spell_shadow_metamorphosis"], ["enh", "Enhancement", "spell_nature_lightningshield"], ["druid", "Druid", "classicon_druid"], ["new", "New + fixed", "spell_holy_borrowedtime"]];
+  const forK = HAS_K && (view === "both" || view === "K");
+  const tabOk = (id: string): boolean => id === "all" || id === "new" || (id === "druid" ? forK : id === "enh" ? view === "both" || view === "V" : view === "both" || view === "C");
+  const tabsV = tabs.filter((t: [string, string, string]) => tabOk(t[0]));
   const f = tabsV.some((t: [string, string, string]) => t[0] === fPick) ? fPick : "all";
-  const all = MACROS.filter((m: Macro) => view === "both" || (view === "V" ? m.spec === "enh" : m.spec !== "enh")).filter((m: Macro) => f === "all" ? true : f === "new" ? !!m.tag : f === "enh" ? m.spec === "enh" : m.spec === f || m.spec === "both");
-  const ordered = [...all.filter((m: Macro) => m.spec !== "enh"), ...all.filter((m: Macro) => m.spec === "enh")];
+  const all = MACROS.filter((m: Macro) => isKm(m.spec) ? forK : view === "both" || (view === "V" ? m.spec === "enh" : view === "C" && m.spec !== "enh")).filter((m: Macro) => f === "all" ? true : f === "new" ? !!m.tag : f === "enh" ? m.spec === "enh" : f === "druid" ? isKm(m.spec) : m.spec === f || m.spec === "both");
+  const ordered = [...all.filter((m: Macro) => m.spec !== "enh" && !isKm(m.spec)), ...all.filter((m: Macro) => m.spec === "enh"), ...all.filter((m: Macro) => isKm(m.spec))];
   const list = showAll ? ordered : ordered.filter((m: Macro) => !locked(m));
   const hidden = all.length - list.length;
   return (
@@ -1711,7 +1753,7 @@ function gearPick(s: GSlot, lv: number): { p: GPick | null; i: number; state: "n
 }
 // Gear past 30 (rules.md SPLIT, clarified Oct 31 9:32 AM): notes picks that start at 30 or later and run past 30 (not exact level-30 items) stay, tagged NOTES_PRE. The pre-launch label is only for past-30 slots the notes don't fill.
 function prePick(p: GPick): boolean { return p.from > 30 || (p.from === 30 && p.to > 30 && p.lv.trim() !== "30"); }
-function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror, who, game }: { s: GSlot; lv: number; ck: Record<string, boolean>; toggle: (id: string) => void; sel: boolean; onSel: (slot: string) => void; mirror?: boolean; who: "V" | "C"; game: Record<string, GameChar> | null }) {
+function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror, who, game }: { s: GSlot; lv: number; ck: Record<string, boolean>; toggle: (id: string) => void; sel: boolean; onSel: (slot: string) => void; mirror?: boolean; who: Who; game: Record<string, GameChar> | null }) {
   const { p, i, state } = gearPick(s, lv);
   const label = <div style={{ fontSize: 9, letterSpacing: ".12em", textTransform: "uppercase", color: MUTED }}>{s.slot}</div>;
   if (!p) {
@@ -1890,7 +1932,7 @@ function dunCompare(l: DLoot, eq: Record<string, EqItem> | null, w0: Record<stri
   return { kind: "cmp", replaces, deltas, score, empty };
 }
 // Gear picks already on the board whose how-to text names this dungeon (used until the dungeon has loot rows).
-function dunPicks(dname: string, who: "V" | "C"): { slot: string; p: GPick }[] {
+function dunPicks(dname: string, who: Who): { slot: string; p: GPick }[] {
   const parts = dname.replace(/\s*\(new\)\s*$/, "").split(/\s*[→·]\s*/).map((x: string) => x.trim().toLowerCase()).filter((x: string) => x.length >= 5);
   const sh = GEAR_SHEETS[who === "V" ? "sham" : "lock"];
   const out: { slot: string; p: GPick }[] = [];
@@ -1906,7 +1948,7 @@ function agoText(sec?: number): string {
   return d < 90 ? "just now" : d < 5400 ? `${Math.round(d / 60)} min ago` : d < 129600 ? `${Math.round(d / 3600)} h ago` : `${Math.round(d / 86400)} d ago`;
 }
 type DRow = { i: number; key: string; name: string; lv: string; lo: number; hi: number; tip: string; loot: { l: DLoot; c: DCmp }[]; ups: number; later: number; picks: { slot: string; p: GPick }[]; inRange: boolean; done: boolean; tick: string };
-function DungeonGear({ who, lv, game, ck, toggle }: { who: "V" | "C"; lv: number; game: Record<string, GameChar> | null; ck: Record<string, boolean>; toggle: (id: string) => void }) {
+function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game: Record<string, GameChar> | null; ck: Record<string, boolean>; toggle: (id: string) => void }) {
   const color = who === "V" ? SHAMAN : WARLOCK;
   const name = who === "V" ? V_NAME : "Corvin";
   const g = game && game[who] ? game[who] : null;
@@ -2013,7 +2055,7 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: "V" | "C"; lv: number
 const LOOT_BY_ITEM: Record<string, DLoot> = {};
 DLOOT.forEach((l: DLoot) => { if (!LOOT_BY_ITEM[l.item] || (!LOOT_BY_ITEM[l.item].stats && l.stats)) LOOT_BY_ITEM[l.item] = l; });
 const SHEET_SLOT: Record<string, string> = { "ring 1": "finger", "ring 2": "finger", "trinket 1": "trinket", "trinket 2": "trinket", "main hand (2h)": "two-hand", wand: "ranged", totem: "ranged" };
-function gearScore(item: string, stats: Record<string, number> | undefined, sheetSlot: string, who: "V" | "C", game: Record<string, GameChar> | null): { score: number; c: DCmp } | null {
+function gearScore(item: string, stats: Record<string, number> | undefined, sheetSlot: string, who: Who, game: Record<string, GameChar> | null): { score: number; c: DCmp } | null {
   const row = LOOT_BY_ITEM[item];
   const st = stats || (row ? row.stats : undefined);
   if (!st) return null;
@@ -2024,7 +2066,7 @@ function gearScore(item: string, stats: Record<string, number> | undefined, shee
   const eq = g && g.equipped && Object.keys(g.equipped).length ? g.equipped : null;
   return { score: Math.round(dScore(st, w) * 10) / 10, c: dunCompare({ dkey: "", item, id: row ? row.id : undefined, slot, stats: st }, eq, w0) };
 }
-function GearScore({ item, stats, slot, who, game }: { item: string; stats?: Record<string, number>; slot: string; who: "V" | "C"; game: Record<string, GameChar> | null }) {
+function GearScore({ item, stats, slot, who, game }: { item: string; stats?: Record<string, number>; slot: string; who: Who; game: Record<string, GameChar> | null }) {
   const r = gearScore(item, stats, slot, who, game);
   if (!r) return null;
   const c = r.c;
@@ -2152,11 +2194,11 @@ const TRAINER_RAW: Record<string, Record<number, string>> = WF_DATA.trainers.TRA
 const TRAIN_SRC: Record<string, { label: string; url: string }> = WF_DATA.trainers.TRAIN_SRC;
 const TRAIN_NOTE = WF_DATA.trainers.TRAIN_NOTE;
 function trainerAt(cls: string, lv: number): string[] {
-  const raw = TRAINER_RAW[cls][lv];
+  const raw = (TRAINER_RAW[cls] ?? {})[lv];
   return raw ? raw.split("|") : [];
 }
 function nextTrainerLevel(cls: string, lv: number): number | null {
-  const ks = Object.keys(TRAINER_RAW[cls]).map((k: string) => parseInt(k, 10)).sort((a: number, b: number) => a - b);
+  const ks = Object.keys(TRAINER_RAW[cls] ?? {}).map((k: string) => parseInt(k, 10)).sort((a: number, b: number) => a - b);
   const k = ks.find((x: number) => x > lv);
   return k === undefined ? null : k;
 }
@@ -2185,7 +2227,7 @@ const CHECK_IDS: string[] = [
 const DEFAULT_CHECKS: Record<string, boolean> = {};
 PROGRESS.forEach((g: { items: Tick[] }) => g.items.forEach((t: Tick) => { if (t.def) DEFAULT_CHECKS[t.id] = true; }));
 
-type Saved = { lvV: number; lvC: number; sk: Record<string, number>; ck: Record<string, boolean> };
+type Saved = { lvV: number; lvC: number; lvK: number; sk: Record<string, number>; ck: Record<string, boolean> };
 const STORE_KEY = "wf-command-table";
 // If you send me an export code in chat, I paste it here so it becomes the page's starting state.
 const BAKED_CODE = "";
@@ -2199,7 +2241,7 @@ const b64u = (t: string) => btoa(unescape(encodeURIComponent(t))).replace(/=+$/,
 const unb64u = (t: string) => decodeURIComponent(escape(atob(t.replace(/-/g, "+").replace(/_/g, "/"))));
 function encodeState(s: Saved): string {
   const k = Object.keys(s.ck).filter((id: string) => s.ck[id]).sort();
-  return "WF2-" + b64u(JSON.stringify({ v: s.lvV, c: s.lvC, s: SKILL_KEYS.map((key: string) => s.sk[key] ?? 0), k }));
+  return "WF2-" + b64u(JSON.stringify({ v: s.lvV, c: s.lvC, d: s.lvK, s: SKILL_KEYS.map((key: string) => s.sk[key] ?? 0), k }));
 }
 function decodeState(code: string): Saved | null {
   const t = code.trim();
@@ -2211,7 +2253,7 @@ function decodeState(code: string): Saved | null {
       SKILL_KEYS.forEach((key: string, i: number) => { sk[key] = clampN(Number(o.s[i]) || 0, 0, 300); });
       const ck: Record<string, boolean> = {};
       o.k.forEach((id: unknown) => { if (typeof id === "string") ck[id] = true; });
-      return { lvV: clampN(o.v, 1, 60), lvC: clampN(o.c, 1, 60), sk, ck };
+      return { lvV: clampN(o.v, 1, 60), lvC: clampN(o.c, 1, 60), lvK: clampN(typeof o.d === "number" ? o.d : 1, 1, 60), sk, ck };
     } catch (e: unknown) { return null; }
   }
   const parts = t.split("-");
@@ -2229,7 +2271,7 @@ function decodeState(code: string): Saved | null {
     const n = parseInt(hex[i], 16);
     for (let j = 0; j < 4; j++) { const id = WF1_IDS[i * 4 + j]; if (id && (n >> (3 - j)) & 1) ck[id] = true; }
   }
-  return { lvV: clampN(lvV, 1, 60), lvC: clampN(lvC, 1, 60), sk, ck };
+  return { lvV: clampN(lvV, 1, 60), lvC: clampN(lvC, 1, 60), lvK: 1, sk, ck };
 }
 function probeStorage(): boolean {
   try {
@@ -2247,7 +2289,7 @@ function initialState(): Saved {
   if (baked) return baked;
   const sk: Record<string, number> = {};
   SKILL_KEYS.forEach((k: string) => { sk[k] = 0; });
-  return { lvV: 1, lvC: 1, sk, ck: { ...DEFAULT_CHECKS } };
+  return { lvV: 1, lvC: 1, lvK: 1, sk, ck: { ...DEFAULT_CHECKS } };
 }
 
 function TickBox({ on, onClick, text, meta, color, small }: { on: boolean; onClick: () => void; text?: ReactNode; meta?: string; color?: string; small?: boolean }) {
@@ -2318,7 +2360,7 @@ function nextTalent(cls: string, level: number): { lv: number; name: string; ran
   const gd = guideDefAt(cls, lv);
   const seq = (gd && gd.seq ? SEQ[gd.seq] : undefined) ?? SEQ[GUIDE[cls]] ?? SEQ[GUIDE_DEFAULT[cls]];
   const idx = lv - 10;
-  if (lv > 60 || idx >= seq.length) return null;
+  if (!seq || lv > 60 || idx >= seq.length) return null; // no talent order on the table yet (Kestrik)
   const name = seq[idx];
   const rank = seq.slice(0, idx + 1).filter((n: string) => n === name).length;
   const tal = TAL_INDEX[cls][name];
@@ -2326,14 +2368,14 @@ function nextTalent(cls: string, level: number): { lv: number; name: string; ran
   return { lv, name, rank, tal, why };
 }
 
-function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: "V" | "C"; level: number; setLevel: (n: number) => void; skills: Record<string, number>; guide: string; setGuide: (seq: string) => void }) {
-  const c = who === "V" ? CHARS[0] : CHARS[1];
-  const cls = who === "V" ? "shaman" : "warlock";
+function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: Who; level: number; setLevel: (n: number) => void; skills: Record<string, number>; guide: string; setGuide: (seq: string) => void }) {
+  const c = who === "V" ? CHARS[0] : who === "K" ? CHARS[2] : CHARS[1];
+  const cls = who === "V" ? "shaman" : who === "K" ? "druid" : "warlock";
   const nt = nextTalent(cls, level);
   const ntl = nextTrainerLevel(cls, level);
   const spells = ntl ? trainerAt(cls, ntl) : [];
   const dueNow = trainerAt(cls, level);
-  const profs = CHAR_PROFS[who].map((k: string) => PROFS.find((p: ProfDef) => p.key === k)).filter((p: ProfDef | undefined): p is ProfDef => !!p);
+  const profs = (CHAR_PROFS[who] ?? []).map((k: string) => PROFS.find((p: ProfDef) => p.key === k)).filter((p: ProfDef | undefined): p is ProfDef => !!p);
   const head = (t: string, icon: string) => (
     <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".12em", margin: "10px 0 6px" }}><Icon icon={icon} size={18} />{t}</div>
   );
@@ -2385,7 +2427,7 @@ function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: "V" 
             <div style={{ color: MUTED, fontSize: 11 }}>{buildLabel}; without Legacy Talented.</div>
           </div>
         </div>
-      ) : <div style={{ fontSize: 12, color: MUTED }}>All 51 points spent.</div>}
+      ) : <div style={{ fontSize: 12, color: MUTED }}>{SEQ[GUIDE[cls]] || SEQ[GUIDE_DEFAULT[cls]] ? "All 51 points spent." : `${c.name.split(" ")[0]}'s talent order is not on the table yet.`}</div>}
 
       {head(ntl ? `Trainer at level ${ntl}` : "Trainer", "inv_misc_book_09")}
       {dueNow.length ? <div style={{ fontSize: 11, color: ORANGE, marginBottom: 4 }}>Due now at {level}: {dueNow.join(", ")}</div> : null}
@@ -2395,7 +2437,7 @@ function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: "V" 
         </div>
       ) : <div style={{ fontSize: 12, color: MUTED }}>Nothing left to train.</div>}
       {ntl && ntl > 30 ? <div style={{ marginTop: 4 }}><PreTag mark="guide" small src="wowforever.one, read Oct 30" /></div> : null}
-      <div style={{ fontSize: 10, color: MUTED, marginTop: 4 }}>Source: <a href={TRAIN_SRC[cls].url} target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>{TRAIN_SRC[cls].label}</a>. {TRAIN_NOTE}</div>
+      <div style={{ fontSize: 10, color: MUTED, marginTop: 4 }}>Source: <a href={TRAIN_SRC[cls].url} target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>{TRAIN_SRC[cls].label}</a>. {who === "K" ? "Verify at the trainer." : TRAIN_NOTE}</div>
 
       {head("Professions", "trade_engraving")}
       <div style={{ display: "grid", gap: 6 }}>
@@ -2668,14 +2710,14 @@ function CorvinFirstSession({ level }: { level: number }) {
 
 // Character view (Nov 7): the page shows Corvin, Vorgash or both. Picked from the hero portraits or the sticky bar,
 // saved on the EliteDesk (state.view), and #corvin / #vorgash / #both links open straight into a view.
-type View = "C" | "V" | "both";
-const VIEW_HASH: Record<string, View> = { "#corvin": "C", "#vorgash": "V", [`#${V_NAME.toLowerCase()}`]: "V", "#both": "both" };
-const VIEW_NAME: Record<string, string> = { C: "corvin", V: V_NAME.toLowerCase(), both: "both" };
-const shows = (view: View, who: "C" | "V"): boolean => view === "both" || view === who;
+type View = "C" | "V" | "K" | "both";
+const VIEW_HASH: Record<string, View> = { "#corvin": "C", "#vorgash": "V", [`#${V_NAME.toLowerCase()}`]: "V", "#both": "both", "#all": "both", ...(HAS_K ? { [`#${K_NAME.toLowerCase()}`]: "K" as View } : {}) };
+const VIEW_NAME: Record<string, string> = { C: "corvin", V: V_NAME.toLowerCase(), K: K_NAME.toLowerCase(), both: "both" };
+const shows = (view: View, who: Who): boolean => view === "both" || view === who;
 function initialView(): View {
   try { const h = VIEW_HASH[(location.hash || "").toLowerCase()]; if (h) return h; } catch (e: unknown) { /* ignore */ }
   const s = WF_STORE.initial?.view;
-  return s === "C" || s === "V" || s === "both" ? s : "C";
+  return s === "C" || s === "V" || s === "both" || (s === "K" && HAS_K) ? s : "C";
 }
 function guideBuildKey(cls: string): string {
   const g = GUIDE[cls];
@@ -2687,7 +2729,7 @@ function guideBuildKey(cls: string): string {
 
 // Sticky jump bar (Nov 6 layout): the page is ~20 screens, so the levels and section links stay pinned.
 type NavGroup = { label: string; items: { label: string; id: string }[] };
-function StickyNav({ groups, lvC, lvV, view, setView }: { groups: NavGroup[]; lvC: number; lvV: number; view: View; setView: (v: View) => void }) {
+function StickyNav({ groups, lvC, lvV, lvK, view, setView }: { groups: NavGroup[]; lvC: number; lvV: number; lvK: number; view: View; setView: (v: View) => void }) {
   const [on, setOn] = useState<string>("");
   useEffect(() => {
     const ids = groups.flatMap((g: NavGroup) => g.items.map((i: { id: string }) => i.id));
@@ -2707,7 +2749,7 @@ function StickyNav({ groups, lvC, lvV, view, setView }: { groups: NavGroup[]; lv
     window.addEventListener("resize", pick);
     return () => { window.removeEventListener("scroll", pick); window.removeEventListener("resize", pick); };
   }, []);
-  const chip = (who: "C" | "V", name: string, lv: number, color: string, icon: string) => (
+  const chip = (who: Who, name: string, lv: number, color: string, icon: string) => (
     <button type="button" className={`wf-nav-char${view === who ? " wf-nav-char-on" : ""}${shows(view, who) ? "" : " wf-nav-char-off"}`} aria-pressed={view === who} onClick={() => setView(who)} title={`Show ${name}'s page (level ${lv}; change the level in Next ding)`} style={{ ["--cc" as any]: color }}>
       <Icon icon={icon} size={22} ring={color} /><span>{name}</span><b>{lv}</b>
     </button>
@@ -2717,7 +2759,8 @@ function StickyNav({ groups, lvC, lvV, view, setView }: { groups: NavGroup[]; lv
       <div className="wf-nav-chars">
         {chip("C", "Corvin", lvC, WARLOCK, "classicon_warlock")}
         {chip("V", V_NAME, lvV, SHAMAN, "classicon_shaman")}
-        <button type="button" className={`wf-nav-both${view === "both" ? " wf-nav-char-on" : ""}`} aria-pressed={view === "both"} onClick={() => setView("both")} title="Show both characters side by side">Both</button>
+        {HAS_K ? chip("K", K_NAME, lvK, DRUID, "classicon_druid") : null}
+        <button type="button" className={`wf-nav-both${view === "both" ? " wf-nav-char-on" : ""}`} aria-pressed={view === "both"} onClick={() => setView("both")} title={HAS_K ? "Show all three characters" : "Show both characters side by side"}>{HAS_K ? "All" : "Both"}</button>
       </div>
       <div className="wf-nav-groups">
         {groups.map((g: NavGroup) => (
@@ -2817,15 +2860,17 @@ export default function App() {
   useEffect(() => { if (storeOk !== null) WF_STORE.save("guide", guide); }, [guide, storeOk]);
   const lvV = st.lvV;
   const lvC = st.lvC;
+  const lvK = st.lvK ?? 1;
   const setLvV = (n: number) => setSt((s: Saved) => ({ ...s, lvV: clampN(n, 1, 60) }));
   const setLvC = (n: number) => setSt((s: Saved) => ({ ...s, lvC: clampN(n, 1, 60) }));
+  const setLvK = (n: number) => setSt((s: Saved) => ({ ...s, lvK: clampN(n, 1, 60) }));
   const setSkill = (k: string, n: number) => setSt((s: Saved) => ({ ...s, sk: { ...s.sk, [k]: clampN(n, 0, 300) } }));
   const toggle = (id: string) => setSt((s: Saved) => ({ ...s, ck: { ...s.ck, [id]: !s.ck[id] } }));
   const code = encodeState(st);
   // Self-hosted: progress lives on the EliteDesk (WF_STORE, set up in main.tsx). WF1 codes stay as import/export.
   useEffect(() => {
     const s = WF_STORE.initial?.st;
-    if (s && typeof s.lvV === "number") setSt({ lvV: clampN(s.lvV, 1, 60), lvC: clampN(s.lvC, 1, 60), sk: { ...initialState().sk, ...(s.sk || {}) }, ck: { ...(s.ck || {}) } });
+    if (s && typeof s.lvV === "number") setSt({ lvV: clampN(s.lvV, 1, 60), lvC: clampN(s.lvC, 1, 60), lvK: clampN(typeof s.lvK === "number" ? s.lvK : 1, 1, 60), sk: { ...initialState().sk, ...(s.sk || {}) }, ck: { ...(s.ck || {}) } });
     setStoreOk(WF_STORE.online);
     return WF_STORE.onStatus((ok: boolean) => setStoreOk(ok));
   }, []);
@@ -2834,7 +2879,7 @@ export default function App() {
     WF_STORE.save("st", st);
   }, [st]);
   const importCode = (c: string): string => { const s = decodeState(c); if (!s) return "That isn't a valid WF1 or WF2 code."; setSt(s); return ""; };
-  const resetAll = () => { const s = initialState(); setSt({ lvV: 1, lvC: 1, sk: s.sk, ck: { ...DEFAULT_CHECKS } }); };
+  const resetAll = () => { const s = initialState(); setSt({ lvV: 1, lvC: 1, lvK: 1, sk: s.sk, ck: { ...DEFAULT_CHECKS } }); };
 
   const tDef = BUILD_DEFS.find((b: BuildDef) => b.key === buildKey) ?? BUILD_DEFS[0];
   const charLevel = tDef.cls === "shaman" ? lvV : lvC;
@@ -2848,7 +2893,7 @@ export default function App() {
   useEffect(() => { if (level < 40 && pathSpec === 2) setPathSpec(1); }, [level, pathSpec]);
   // Nov 10: Corvin's Naga tab follows the plan (Demonology leads from the respec level) until one is picked by hand.
   const [nagaPick, setNagaSpec] = useState<string | null>(null);
-  const nagaSpec = view === "V" ? "enh" : nagaPick && (nagaPick !== "enh" || view === "both") ? nagaPick : lockTab(lvC);
+  const nagaSpec = view === "V" ? "enh" : view === "K" ? (nagaPick && isK(nagaPick) ? nagaPick : kLead(lvK)) : nagaPick && ((nagaPick !== "enh" && !isK(nagaPick)) || view === "both") ? nagaPick : lockTab(lvC);
   const [stagePick, setStagePick] = useState<string | null>(null);
   const [gearChar, setGearChar] = useState<string>("lock");
   const [presetOpen, setPresetOpen] = useState<number[]>([]);
@@ -2858,18 +2903,19 @@ export default function App() {
   const wrackIdx = (SEQ[guide.warlock] ?? SEQ.aff_lvl).indexOf("Wrack");
   const wrackLv = wrackIdx >= 0 ? wrackIdx + 10 : 99;
   const [nagaPrev, setNagaPrev] = useState<number | null>(null);
-  useEffect(() => { setStagePick(null); setNagaPrev(null); }, [lvV, lvC, nagaSpec]);
+  useEffect(() => { setStagePick(null); setNagaPrev(null); }, [lvV, lvC, lvK, nagaSpec]);
   const goPath = (lv: number, sp: number) => {
     setBuildKey(guideBuildKey("warlock")); setPreview(lv === lvC ? null : lv); setPathSpec(sp);
     try { const el = document.getElementById("builds"); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e: unknown) { /* ignore */ }
   };
 
   const spec = NAGA[nagaSpec];
-  const nagaChar = nagaSpec === "enh" ? lvV : lvC;
+  const nagaChar = nagaSpec === "enh" ? lvV : isK(nagaSpec) ? lvK : lvC;
   const nagaLv = nagaPrev ?? nagaChar;
-  const nagaColor = nagaSpec === "enh" ? SHAMAN : WARLOCK;
+  const nagaColor = specColor(nagaSpec);
   const [prev12V, setPrev12V] = useState<boolean>(false);
   const [prev12C, setPrev12C] = useState<boolean>(false);
+  const [prev12K, setPrev12K] = useState<boolean>(false);
   const n12raw = NAGA12[nagaSpec];
   const nAuto = nagaAuto(nagaSpec);
   const lockOld = refMode("aff");
@@ -2878,12 +2924,13 @@ export default function App() {
   const base6: Bind[] = plate.base.map((x: NSlot, i: number) => toB(x, i + 1));
   const shift6: Bind[] = plate.shift.map((x: NSlot, i: number) => toB(x, i + 1));
   const n12: Layout12 = { ...n12raw, auto: true, buttons: plate.base.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), shift: plate.shift.map((x: NSlot, i: number) => ({ ...toB(x, i + 1), alt: x.alt })), src: `${nAuto && nAuto.src ? nAuto.src : "ROT"}; ${n12raw.src}` };
-  const nagaWho = nagaSpec === "enh" ? V_NAME : "Corvin";
-  const prev12 = nagaSpec === "enh" ? prev12V : prev12C;
-  const setPrev12 = nagaSpec === "enh" ? setPrev12V : setPrev12C;
+  const nagaWho = specName(nagaSpec);
+  const prev12 = nagaSpec === "enh" ? prev12V : isK(nagaSpec) ? prev12K : prev12C;
+  const setPrev12 = nagaSpec === "enh" ? setPrev12V : isK(nagaSpec) ? setPrev12K : setPrev12C;
   const reached12 = nagaChar >= n12.from;
   const use12 = nagaLv >= n12.from;
-  const specOptions = [{ value: "aff", label: lockOld ? "Affliction" : lockLabel() }, { value: "demo", label: "Demonology" }, { value: "enh", label: "Enhancement" }];
+  const specOptions = [{ value: "aff", label: lockOld ? "Affliction" : lockLabel() }, { value: "demo", label: "Demonology" }, { value: "enh", label: "Enhancement" }, ...(HAS_K ? K_SPECS.map((x: string) => ({ value: x, label: K_LABEL[x] })) : [])];
+  const showK = HAS_K && shows(view, "K");
 
   useEffect(() => {
     const want = view === "C" ? "warlock" : view === "V" ? "shaman" : null;
@@ -2912,33 +2959,36 @@ export default function App() {
     >
       <Hero view={view} setView={setView} />
       {/* Layout Nov 6 (Claude, for Jason): in-session sections first, reference after, launch night folded at the bottom. Keep this order and the sticky bar. */}
-      <StickyNav lvC={lvC} lvV={lvV} view={view} setView={setView} groups={[
+      <StickyNav lvC={lvC} lvV={lvV} lvK={lvK} view={view} setView={setView} groups={[
         { label: "Play", items: [{ label: "Next ding", id: "ding" }, { label: "Dungeon gear", id: "runs" }, { label: "Rotations", id: "rotations" }, { label: "Naga binds", id: "naga" }, { label: "Talents", id: "builds" }] },
         { label: "Plan", items: [...(showC ? [{ label: "Leveling path", id: "path" }] : []), { label: "Gear and dungeons", id: "gear" }, { label: "Professions", id: "profs" }, ] },
         { label: "Reference", items: [{ label: "Macros", id: "macros" }, { label: "Addons", id: "addons" }, ...(view === "both" ? [{ label: "Characters", id: "chars" }] : []), { label: "Meta board", id: "meta" }, { label: "Patch feed", id: "feed" }, { label: "Saves", id: "progress" }, { label: "Launch night", id: "launch" }] },
       ]} />
-      <Section heading={view === "both" ? "Next ding" : `Next ding · ${view === "C" ? "Corvin" : V_NAME}`} id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
+      <Section heading={view === "both" ? "Next ding" : `Next ding · ${view === "C" ? "Corvin" : view === "K" ? K_NAME : V_NAME}`} id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
         <Grid columns={2} plain>
           {showC ? <NextDing who="C" level={lvC} setLevel={setLvC} skills={st.sk} guide={guide.warlock} setGuide={(v: string) => setGuide("warlock", v)} /> : null}
           {showV ? <NextDing who="V" level={lvV} setLevel={setLvV} skills={st.sk} guide={guide.shaman} setGuide={(v: string) => setGuide("shaman", v)} /> : null}
-          {view !== "both" ? <CharCard c={CHARS[view === "C" ? 1 : 0]} who={view} level={view === "C" ? lvC : lvV} setLevel={view === "C" ? setLvC : setLvV} skills={st.sk} setSkill={setSkill} /> : null}
+          {showK ? <NextDing who="K" level={lvK} setLevel={setLvK} skills={st.sk} guide={guide.druid ?? ""} setGuide={(v: string) => setGuide("druid", v)} /> : null}
+          {view !== "both" ? <CharCard c={CHARS[view === "C" ? 1 : view === "K" ? 2 : 0]} who={view} level={view === "C" ? lvC : view === "K" ? lvK : lvV} setLevel={view === "C" ? setLvC : view === "K" ? setLvK : setLvV} skills={st.sk} setSkill={setSkill} /> : null}
         </Grid>
       </Section>
 
       <Section heading="Dungeon gear" id="runs" caption="Pick a dungeon: what it drops for this character and what each piece changes against the gear you are wearing in game. The list scrolls inside its own box, so the dungeon, its notes and the verdicts stay on one screen.">
+        {view === "K" ? <Text>{`${K_NAME}'s dungeon loot is not on the table yet. The research feed adds it; his rotations, Naga plates and macros are live.`}</Text> : <>
         {view === "both" ? <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: `${V_NAME} (Shaman) · Alt` }]} value={gearChar} onChange={(v: string) => setGearChar(v)} /> : null}
         <DungeonGear who={gearChar === "lock" ? "C" : "V"} lv={gearChar === "lock" ? lvC : lvV} game={game} ck={st.ck} toggle={toggle} />
+        </>}
       </Section>
 
       <Section heading="Rotations" id="rotations" caption="Questing vs dungeon priorities per spec, as icon strips. Sources and dates under each.">
-        <RotationBoard lvV={lvV} lvC={lvC} view={view} />
+        <RotationBoard lvV={lvV} lvC={lvC} lvK={lvK} view={view} />
       </Section>
 
       <Section heading="Naga V2 Pro binds" id="naga" caption="From your notes: 6-button plate, Synapse Standard mode, Hypershift off. Shift+Naga is the second layer, so 12 combat binds.">
-        {view !== "V" ? <Segmented options={(use12 && nagaSpec !== "enh" && lockOld ? [{ value: "aff", label: "Spec 1 · Affliction" }, { value: "demo", label: "Spec 2 · Demonology" }, { value: "enh", label: "Enhancement" }] : specOptions).filter((o: { value: string }) => view === "both" || o.value !== "enh")} value={nagaSpec} onChange={(v: string) => { setNagaSpec(v); setStagePick(null); }} /> : null}
+        {view !== "V" ? <Segmented options={(use12 && nagaSpec !== "enh" && !isK(nagaSpec) && lockOld ? [{ value: "aff", label: "Spec 1 · Affliction" }, { value: "demo", label: "Spec 2 · Demonology" }, { value: "enh", label: "Enhancement" }] : specOptions).filter((o: { value: string }) => view === "both" || (view === "K" ? isK(o.value) : o.value !== "enh" && !isK(o.value)))} value={nagaSpec} onChange={(v: string) => { setNagaSpec(v); setStagePick(null); }} /> : null}
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${use12 && !reached12 ? ORANGE : "#4a3d22"}`, background: use12 && !reached12 ? "rgba(255,128,0,.08)" : "rgba(0,0,0,.25)", color: INK, fontSize: 13 }}>
-          <Icon icon={nagaSpec === "enh" ? "classicon_shaman" : "classicon_warlock"} size={24} ring={nagaColor} />
-          <span style={{ flex: "1 1 260px" }}>{nagaPrev !== null ? `Preview at level ${nagaLv} (${nagaWho} is ${nagaChar}). ` : `${nagaWho} is level ${nagaLv}. `}{use12 ? `12-button plate (from ${n12.from}).` : `6-button plate; the 12-button plate starts at ${n12.from}.`} Every rotation spell you have now gets a button, in rotation order; greyed buttons show the level they unlock.</span>
+          <Icon icon={specIcon(nagaSpec)} size={24} ring={nagaColor} />
+          <span style={{ flex: "1 1 260px" }}>{nagaPrev !== null ? `Preview at level ${nagaLv} (${nagaWho} is ${nagaChar}). ` : `${nagaWho} is level ${nagaLv}. `}{use12 ? `12-button plate (from ${n12.from}).` : `6-button plate; the 12-button plate starts at ${n12.from}.`} {nAuto && nAuto.fixed ? "Each form keeps the same job on the same button, so nothing moves as you level; greyed buttons show the level they unlock." : "Every rotation spell you have now gets a button, in rotation order; greyed buttons show the level they unlock."}</span>
           <label style={{ display: "flex", alignItems: "center", gap: 8, color: GOLD_HI, fontSize: 12 }}>Preview level
             <input type="range" min={1} max={60} value={nagaLv} onChange={(e: any) => { const v = Number(e.target.value); setNagaPrev(v === nagaChar ? null : v); }} style={{ accentColor: nagaColor }} />
             <b style={{ width: 22 }}>{nagaLv}</b>
@@ -2958,6 +3008,7 @@ export default function App() {
         ) : null}
         <Text>{(() => {
           const a: NAuto | undefined = nAuto;
+          if (a && a.fixed) return `Button order: ${a.src ? a.src : "fixed by hand"}. This plate is fixed: a button changes only when a better spell for the same job is learned, and the other forms keep the same job on the same button.`;
           const qseq = rotOf(nagaSpec, "quest").seq;
           const gs = guideSeq(qseq);
           const drops = (a ? a.pool : []).map((p: NPool) => {
@@ -2973,10 +3024,12 @@ export default function App() {
         <PreLine lead="12-button layouts (32+ / 40+) and binds past level 30:" mark="notes" />
         {use12 ? <Steps steps={SETUP12} /> : null}
         {use12 ? null : <Steps steps={PL.naga_setup6} />}
-        <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate)." : "The 12-button plate takes over at " + NAGA12.enh.from + " for " + V_NAME + " and " + NAGA12.aff.from + " for Corvin" + (lockOld ? " (Spec 1 Affliction and Spec 2 Demonology)" : "") + ". Drag the preview level to see it early."}</Text>
+        {isK(nagaSpec) && PL.naga_druid_note ? <Callout tone={PL.naga_druid_note.tone} lead={PL.naga_druid_note.lead}>{PL.naga_druid_note.text}</Callout> : null}
+        <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate)." : "The 12-button plate takes over at " + NAGA12.enh.from + " for " + V_NAME + " and " + NAGA12.aff.from + " for Corvin" + (lockOld ? " (Spec 1 Affliction and Spec 2 Demonology)" : "") + (HAS_K ? ", " + NAGA12.cat.from + " for " + K_NAME : "") + ". Drag the preview level to see it early."}</Text>
       </Section>
 
       <Section heading="Talent trees" id="builds" caption={"Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: " + V_NAME + ", Warlock builds: Corvin); moving it previews another level without changing the character. Corvin's path levels Spec 1 Affliction to 60; Spec 2 (Demonology, for groups) unlocks at 40."}>
+        {view === "K" ? <Text>{`${K_NAME}'s talent trees are not on the table yet. The research feed adds it; his rotations, Naga plates and macros are live.`}</Text> : <>
         {preview !== null ? (
           <div className="wf-pop" style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${ORANGE}`, background: "rgba(255,128,0,.08)", color: INK, fontSize: 13 }}>
             <span>Previewing level <b style={{ color: GOLD_HI }}>{preview}</b>. {charName} is level {charLevel}.</span>
@@ -2997,6 +3050,7 @@ export default function App() {
         {buildKey === "demo_lvl" || buildKey === "demo_raid" || buildKey === "path" || !!tDef.before || !!tDef.then ? (
           <Callout tone={PL.talents_brand.tone} lead={PL.talents_brand.lead}>{PL.talents_brand.text}</Callout>
         ) : null}
+        </>}
       </Section>
 
       {showC ? (
@@ -3006,6 +3060,7 @@ export default function App() {
       ) : null}
 
       <Section heading="Gear and dungeons" id="gear" caption="Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server.">
+        {view === "K" ? <Text>{`${K_NAME}'s gear list and dungeon notes are not on the table yet. The research feed adds it; his rotations, Naga plates and macros are live.`}</Text> : <>
         {view === "both" ? <Segmented options={[{ value: "lock", label: "Corvin (Warlock) · Main" }, { value: "sham", label: `${V_NAME} (Shaman) · Alt` }]} value={gearChar} onChange={(v: string) => setGearChar(v)} /> : null}
         <GearSheet who={gearChar === "lock" ? "lock" : "sham"} lv={gearChar === "lock" ? lvC : lvV} ck={st.ck} toggle={toggle} game={game} />
         <Table columns={dCols.map((k: number) => ["Cleared", "Dungeon", "Levels", V_NAME, `Preset (${V_NAME})`, "Corvin"][k])} rows={DUNGEONS.map((r: string[], i: number) => [
@@ -3015,18 +3070,21 @@ export default function App() {
         <PresetPanel open={presetOpen} setOpen={setPresetOpen} />
         <Text>{PL.gear_raid_preview.text}</Text>
         <PreLine lead="Tier 1 and raid loot:" mark="datamined" />
+        </>}
       </Section>
 
       <Section heading="Professions" id="profs" caption="Pick a character, then a profession. Skill uses the same numbers as the character cards; − / + or drag. Training thresholds warn when the character level is too low. Legacy points at 150, 225 and 300 in each crafting profession, once per account.">
+        {view === "K" ? <Text>{`${K_NAME}'s professions are not on the table yet. The research feed adds it; his rotations, Naga plates and macros are live.`}</Text> : <>
         <ProfessionWindow skills={st.sk} setSkillFor={setSkill} lvV={lvV} lvC={lvC} view={view} />
         <Text>{PL.profs_note_skinning.text}</Text>
         <Text>{PL.profs_note_tailoring.text}</Text>
         <Text>{PL.profs_note_trainers.text}</Text>
         <Text>{PL.profs_note_slider.text}</Text>
+        </>}
       </Section>
 
       <Section heading="Macros" id="macros" caption="Spell-book cards: copy, check length (255 max) and open “What it does”. NEW = added from Forever sources; FIXED = corrected from v1.">
-        <MacroBook lvV={lvV} lvC={lvC} view={view} />
+        <MacroBook lvV={lvV} lvC={lvC} lvK={lvK} view={view} />
         <Text>{PL.macros_skip.text}</Text>
       </Section>
 
@@ -3058,6 +3116,7 @@ export default function App() {
         <Grid columns={view === "both" ? 2 : 1} plain>
           {showC ? <CharCard c={CHARS[1]} who="C" level={lvC} setLevel={setLvC} skills={st.sk} setSkill={setSkill} /> : null}
           {showV ? <CharCard c={CHARS[0]} who="V" level={lvV} setLevel={setLvV} skills={st.sk} setSkill={setSkill} /> : null}
+          {showK ? <CharCard c={CHARS[2]} who="K" level={lvK} setLevel={setLvK} skills={st.sk} setSkill={setSkill} /> : null}
         </Grid>
       </Section>
       ) : null}
