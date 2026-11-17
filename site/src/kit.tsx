@@ -28,7 +28,7 @@ const captionFor = (id?: string, fallback?: string) => {
 export function Page({ title, summary, width, children }: { title: string; summary?: string; width?: string; children: ReactNode }) {
   useEffect(() => { document.title = title; }, [title]);
   return (
-    <main className="kit-page" title={summary} style={{ maxWidth: width === "wide" ? 1240 : 920 }}>
+    <main className="kit-page" aria-label={title} data-summary={summary} style={{ maxWidth: width === "wide" ? 1240 : 920 }}>
       {children}
     </main>
   );

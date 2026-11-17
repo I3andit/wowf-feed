@@ -192,3 +192,5 @@ His forms are his specs. Each form has its own main bar in game, so each has its
 **Not on the page yet.** Talent trees, the gear sheet, dungeon notes and loot, and professions have no druid data. His view shows one line in those sections. Adding them needs new keys agreed with Claude first (for example `talents.TREES.druid` with builds whose `cls` is `druid`). `SKILL_KEYS` still never changes.
 
 **State.** His level is `st.lvK` (game sync writes it, like `lvV` and `lvC`). The view name is `K`, the link is `#kestrik`, and `#all` is the same as `#both`.
+
+**Trainer source tag (optional, added 2026-11-17).** `trainers.TRAIN_SRC[cls].tag` is a short source line shown under trainer levels above 30, for example "talentsforever, read Nov 17". Without it Kestrik's card shows the full `label` and the other two keep "wowforever.one, read Oct 30".
