@@ -186,7 +186,7 @@
     "cogm": "S",
     "lfc": "A",
     "wowhead": "S",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "brokenNote": "#6, 1,067 DPS"
    },
@@ -195,14 +195,14 @@
     "icon": "spell_shadow_deathcoil",
     "mine": true,
     "mythic": 8,
-    "mythicNote": "1,012 DPS; All playstyles view #9 (tier A)",
+    "mythicNote": "1,004 DPS (was 1,012); All playstyles view #9 (tier A as of Nov 15)",
     "broken": "B",
     "brokenNote": "#4, 1,177 DPS (was S #1)",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "A",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15"
    },
    {
@@ -216,7 +216,7 @@
     "cogm": "A",
     "lfc": "B",
     "wowhead": "S",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "brokenNote": "#8, 1,033 DPS"
    },
@@ -231,7 +231,7 @@
     "cogm": "S",
     "lfc": "S",
     "wowhead": "A",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "mythicMove": "▼5 vs Nov 14 (#9, 983 DPS): MythicSim reference-gear swap (Silithus quest rewards removed until Forever confirms them, -1.4%) and Windfury Totem extra attack modelled as one main-hand strike with no Maelstrom stack (-0.8%); sim changes, not a game change",
     "brokenNote": "#10, 968 DPS (was B)"
@@ -247,7 +247,7 @@
     "cogm": "A",
     "lfc": "A",
     "wowhead": "C",
-    "_source": "MythicSim Nov 15 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes), 'Best of each spec' view (22 DPS specs), read Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "brokenNote": "#16, 859 DPS"
    }
@@ -2522,7 +2522,7 @@
    "Shamanistic Focus": "Shocks and Lightning Shield cost 45% less mana: you stop rationing shocks (wowfdb). Only applies once the point is actually spent, not automatically at 20 (Nicktew, Nov 4, read Nov 7). Levels · Icy Veins: 20 · Nicktew: 20 · Mobalytics (Yebb): 20 · Your notes: 20. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Improved Stormstrike": "Dodges and parries can reset Stormstrike; also 50% mana regen while casting (wowfdb). Levels · Icy Veins: 30–31 · Nicktew: 30–31 · Mobalytics (Yebb): 30–31 · Your notes: 30, 32.",
    "Water Shield": "Restoration talent: restores mana when you are struck or when you crit (Icy Veins, Nov 13: 46 in both its text and calculator). Nicktew: its value versus earlier deep Enhancement is untested (Nov 4, read Nov 7). Levels · Icy Veins: 46 · Nicktew: 46 (Nov 15 update). https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-   "Maelstrom Weapon": "Each stack cuts your next Lightning Bolt's cast time and mana by 20% at every rank, so 5 stacks make it free and instant; more ranks only raise the proc rate (6 to 10 a minute, Official Nov 10 hotfix). Icy Veins (Nov 13): one point is worth it, more delays the mana talents. Levels · Icy Veins: 43 · Nicktew: 35, 47–48, 53 (4/5, Nov 15 update) · Your notes: 36–40.",
+   "Maelstrom Weapon": "Each stack cuts your next Lightning Bolt's cast time and mana by 20% at every rank, so 5 stacks make it free and instant; more ranks only raise the proc rate (6 to 10 a minute, Official Nov 10 hotfix). Since the Nov 16 hotfix a full stack is spent on one cast only (it used to benefit two). Icy Veins (Nov 13): one point is worth it, more delays the mana talents. Levels · Icy Veins: 43 · Nicktew: 35, 47–48, 53 (4/5, Nov 15 update) · Your notes: 36–40.",
    "Rage of the Farseer": "+30% attack speed for 25 s on a 3-minute cooldown (wowfdb; marked unconfirmed there). Not in Icy Veins' build since Nov 13. Levels · Nicktew: 51 · Your notes: 41.",
    "Malevolence": "+1% Shadow crit per point (5% at 5/5); pairs with Pandemic. Crix's respec build takes 4/5 since Nov 15. Levels · Mobalytics respec 26: 57–60 (4/5) · Icy Veins Affliction: 27–29, 42–43 · Mobalytics Affliction 1-60: 48–52.",
    "Wrack": "Channel that makes your Siphon Life, Corruption and Bane of Agony on the target tick twice as fast while you channel (Official Nov 10 hotfix, damage cut 30%). Affliction's 31-point talent; needs Siphon Life. Not in the Mobalytics builds. Levels · Icy Veins Affliction: 51.",
@@ -2728,7 +2728,7 @@
       {
        "icon": "spell_nature_cyclone",
        "name": "Windfury Weapon",
-       "tip": "20% per swing for two extra hits; one hour, always on (Icy Veins, Nov 13). Stacks with Windfury Totem since the Nov 10 hotfix.",
+       "tip": "20% per swing for two extra hits; one hour, always on (Icy Veins, Nov 13). Stacks with Windfury Totem since the Nov 10 hotfix. Nov 16 hotfix (Official): Windfury Totem extra attacks now respect armor and have an internal cooldown (that was a bug), so the totem is a bit weaker than it was.",
        "lvl": 30
       },
       {
@@ -3874,7 +3874,7 @@
       {
        "icon": "spell_shadow_shadowbolt",
        "name": "Shadow Bolt",
-       "tip": "Early finisher; after about 30 it out-damages the wand but costs mana and threat. Rank 1 Shadow Bolt is a great cheap filler: almost the damage of max-rank Searing Pain for 25 mana (Crix, Nov 15)."
+       "tip": "Early finisher; after about 30 it out-damages the wand but costs mana and threat. Rank 1 Shadow Bolt is a great cheap filler: almost the damage of max-rank Searing Pain for 25 mana (Crix, Nov 15). Since Nov 16 Crix says Rank 1 is his main filler and he uses max rank on dungeon bosses and elites."
       },
       {
        "icon": "spell_shadow_lifedrain02",
@@ -4057,7 +4057,7 @@
       {
        "icon": "spell_shadow_shadowbolt",
        "name": "Shadow Bolt filler",
-       "tip": "Or wand when mana is low."
+       "tip": "Max rank on dungeon bosses and elites (Crix, Nov 16); Rank 1 on trash, or wand when mana is low."
       },
       {
        "icon": "spell_shadow_burningspirit",
@@ -5751,7 +5751,7 @@
     "title": "Enhancement · 12-button layout (32+)",
     "src": "Shaman - Enhancement.md › 12-button layout (32+)",
     "intro": "Rotation spells sit in rotation order from the level-aware Enhancement rotation; Call of the Elements available20 if trained; Windfury Weapon30; individual totems remain useful.",
-    "extra": "Windfury Totem stays inside your totem presets, not on a button. Since the Nov 10 hotfix (Official) it works with your own Windfury Weapon: both can proc.",
+    "extra": "Windfury Totem stays inside your totem presets, not on a button. Since the Nov 10 hotfix (Official) it works with your own Windfury Weapon: both can proc. Since the Nov 16 hotfix (Official) the totem's extra attacks respect armor and have an internal cooldown.",
     "buttons": [
      {
       "n": 1,
@@ -18063,18 +18063,18 @@
   "meta_raid_watch": {
    "lead": "Raid watch",
    "tone": "warning",
-   "text": "Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15 (Rank 1 Shadow Bolt filler, Felhunter option; respec unchanged). MythicSim Nov 15 (Best of each spec): Demo #7, Aff #8, Destro #10, Enh #14. voidsim Nov 13: Enh A, Demo/Aff/Destro B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
-   "_source": "Blizzard forum topics 2416343 (Nov 14), 2403040 (post 10) and 2415068; Mobalytics Crix Nov 15; Icy Veins Enhancement leveling Nov 13; MythicSim Nov 15; voidsim Nov 13; BrokenMeta Nov 10; Forever Logs Nov 15",
-   "_date": "Nov 15"
+   "text": "Official Nov 16 hotfixes: Windfury Totem extra attacks now respect armor and have an internal cooldown, and no longer give Rage; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes crit works without a weapon; Formula: Enchant Boots - Speed (reputation) is now bind-on-pickup; Vampiric Embrace heals 10% (Priest). Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15-16 (Rank 1 Shadow Bolt main filler, Felhunter option, Soul Harvest 46-47; respec unchanged). MythicSim Nov 17 (Best of each spec, not yet updated for the Nov 16 hotfix): Demo #7, Aff #8, Destro #10, Enh #14. voidsim Nov 16: Enh A, Demo/Aff/Destro B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
+   "_source": "Blizzard forum topics 2403040 (post 11, Nov 16), 2416343 (Nov 14) and 2415068; Mobalytics Crix Nov 16; Icy Veins Enhancement leveling Nov 13; MythicSim Nov 17; voidsim Nov 16; BrokenMeta Nov 10; Forever Logs Nov 17",
+   "_date": "Nov 17"
   },
   "meta_links": [
    {
-    "title": "MythicSim tier list (Nov 15 snapshot, 'Best of each spec' view)",
+    "title": "MythicSim tier list (Nov 17 snapshot, 'Best of each spec' view)",
     "site": "mythicsim.com",
-    "date": "Nov 15",
+    "date": "Nov 17",
     "href": "https://mythicsim.com/wow-forever/tier-list",
     "_source": "mythicsim.com",
-    "_date": "Nov 15"
+    "_date": "Nov 17"
    },
    {
     "title": "BrokenMeta tier list (updated Nov 9, build 70753 tables)",
@@ -18182,6 +18182,30 @@
    }
   ],
   "feed_rows": [
+   {
+    "lead": "Nov 16",
+    "title": "Zanjiro: Official hotfix fixes Windfury Totem, Maelstrom Weapon and Thundering Strikes bugs",
+    "detail": "Windfury Totem extra attacks were ignoring armor and had no internal cooldown; both fixed, so the totem hits for less and procs less often than before (it also no longer gives Rage, and Mutilate, Execute, Shield Slam, Shield Bash and Holy Strikes lost bonus proc attempts). Maelstrom Weapon could benefit two casts; now one. Thundering Strikes now gives its crit even with no weapon equipped. Enchanting: Formula: Enchant Boots - Speed from reputation is now bind-on-pickup. Nothing for Warlocks. Sims (MythicSim Nov 17) are not yet updated for this.",
+    "meta": "Blizzard forums, Kaivax, WoW: Forever Hotfixes - November 16, 2026 (topic 2403040 post 11, posted Nov 16 9:17 PM ET), read Nov 17. Official.",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-16-2026/2403040/11",
+    "_date": "2026-11-17"
+   },
+   {
+    "lead": "Nov 16",
+    "title": "Corvin: Crix now calls Rank 1 Shadow Bolt his main filler, max rank only on dungeon bosses and elites",
+    "detail": "Mobalytics Demonology rotation step 10 reworded: Rank 1 Shadow Bolt or wand as filler; max-rank Shadow Bolt pulls ahead after about 30 but costs mana and threat, so Crix uses it on dungeon bosses and elites only. Talents and the respec at 26 unchanged. Quest and dungeon rotation tips updated.",
+    "meta": "Mobalytics (Crix) Warlock Leveling Guide, Demonology Respec LV 26 variant, dateModified Nov 16 3:17 PM ET (header still 11/15), read Nov 17. Unofficial, single source (Corvin's primary guide).",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_date": "2026-11-17"
+   },
    {
     "lead": "Nov 15",
     "title": "Corvin: Crix moved 2 points into Soul Harvest (levels 46-47) in the Demonology respec build",
@@ -19209,7 +19233,7 @@
     "_date": "Nov 13 (read Nov 14)"
    },
    {
-    "text": "Official Nov 10 hotfix (live): Stormstrike 100% weapon damage on 8 s, Mental Dexterity 33/66/100% of Intellect, Maelstrom Weapon 20% a stack at every rank with 6-10 procs a minute, imbues and Windfury Totem now stack. Collect Strength and Attack Power gear; Intellect is worth less as Attack Power now.",
+    "text": "Official Nov 10 hotfix (live): Stormstrike 100% weapon damage on 8 s, Mental Dexterity 33/66/100% of Intellect, Maelstrom Weapon 20% a stack at every rank with 6-10 procs a minute, imbues and Windfury Totem now stack. Official Nov 16 hotfix: Windfury Totem extra attacks now respect armor and have an internal cooldown; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes now grants its crit without a weapon equipped. Collect Strength and Attack Power gear; Intellect is worth less as Attack Power now.",
     "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-10-2026/2403040/6",
     "_date": "Nov 10 (read Nov 11)"
    },
@@ -19495,17 +19519,17 @@
   }
  },
  "_meta": {
-  "version": 40,
-  "generated_at": "2026-11-16T08:52-05:00",
-  "source": "Grok, Nov 16 2026 daily meta watch",
-  "notes_commit": "f6e28e5",
-  "notes": "Nov 16: Crix Demo respec build adds Soul Harvest 46-47 (Suppression 4, Malevolence 4); Nicktew Enh alternative now 7/33/11."
+  "version": 41,
+  "generated_at": "2026-11-17T09:05-05:00",
+  "source": "Grok, Nov 17 2026 daily meta watch",
+  "notes_commit": "2f1ad6c",
+  "notes": "Nov 17: Official Nov 16 hotfix (Windfury Totem armor/ICD, Maelstrom Weapon, Thundering Strikes fixes); Crix Rank 1 Shadow Bolt main filler; MythicSim Nov 17."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16.",
   "macros": "Corvin: Mobalytics macros added or matched Nov 10 (Searing Pain + pet from 26, Succubus summon key, Fel Domination resummon, Imp sacrifice at 41, Torment + attack). Zanjiro: level-aware manual macros reviewed against Nicktew; Rank1 kick separate from damage. Native triggers are banks, not keyboard modifiers. Troll Berserking macro added Nov 10.",
   "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; Icy Veins rotation (Nov 13 update) drives auto layout, Nicktew alternative documented. No controller UI added. Nov 10: plate buttons follow each rotation's priority order at every level.",
-  "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking.",
+  "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option; Nov 16: Rank 1 is his main filler, max rank on dungeon bosses and elites) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking.",
   "path": "Mobalytics (Crix, plan since Nov 10, respec at 26 unchanged; Nov 15 talent change moves 2 points into Soul Harvest at 46-47): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build."
  }
 }
