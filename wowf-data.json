@@ -4559,7 +4559,7 @@
       {
        "icon": "ability_druid_cower",
        "name": "Cower",
-       "tip": "If you pull threat off the tank. Click bar.",
+       "tip": "If you pull threat off the tank. Shift+Naga 5.",
        "lvl": 28
       },
       {
@@ -6447,12 +6447,15 @@
       },
       {
        "slot": 11,
-       "key": "berserk",
-       "spell": "Free: Berserk was removed",
-       "icon": "ability_druid_berserk",
+       "key": "cower",
+       "spell": "Cower",
+       "icon": "ability_druid_cower",
        "kind": "util",
-       "lvl": 41,
-       "note": "Blizzard removed the Berserk talent on Nov 2 (Shifting Power and Primal Bite replaced it). Slot kept free for a Cat button of your choice."
+       "lvl": 28,
+       "covers": [
+        "Cower"
+       ],
+       "note": "Threat dump: press it when you pull threat off the tank. Jason's pick for the slot Berserk left free (Nov 17)."
       },
       {
        "slot": 12,
@@ -6493,14 +6496,12 @@
       },
       {
        "slot": 16,
-       "key": "cower",
-       "spell": "Cower",
-       "icon": "ability_druid_cower",
+       "key": "free16",
+       "spell": "Free: Cower moved to Cat Shift+5",
+       "icon": "inv_misc_questionmark",
        "kind": "util",
        "lvl": 28,
-       "covers": [
-        "Cower"
-       ]
+       "note": "Cower sits on the Cat bar (Shift+Naga 5) since Nov 17, so this Bottom Right button is free for anything you want in every form."
       },
       {
        "slot": 17,
@@ -6741,14 +6742,12 @@
       },
       {
        "slot": 16,
-       "key": "cower",
-       "spell": "Cower",
-       "icon": "ability_druid_cower",
+       "key": "free16",
+       "spell": "Free: Cower moved to Cat Shift+5",
+       "icon": "inv_misc_questionmark",
        "kind": "util",
        "lvl": 28,
-       "covers": [
-        "Cower"
-       ]
+       "note": "Cower sits on the Cat bar (Shift+Naga 5) since Nov 17, so this Bottom Right button is free for anything you want in every form."
       },
       {
        "slot": 17,
@@ -6993,14 +6992,12 @@
       },
       {
        "slot": 16,
-       "key": "cower",
-       "spell": "Cower",
-       "icon": "ability_druid_cower",
+       "key": "free16",
+       "spell": "Free: Cower moved to Cat Shift+5",
+       "icon": "inv_misc_questionmark",
        "kind": "util",
        "lvl": 28,
-       "covers": [
-        "Cower"
-       ]
+       "note": "Cower sits on the Cat bar (Shift+Naga 5) since Nov 17, so this Bottom Right button is free for anything you want in every form."
       },
       {
        "slot": 17,
@@ -7419,7 +7416,7 @@
     "title": "Kestrik · Cat · 12-button layout (32+)",
     "src": "Druid - Feral.md › On the 12-button plate",
     "intro": "Nothing moves: Naga 7 to 12 are the old Shift 1 to 6. The freed Shift layer is the Bottom Right bar, which does not change with your form.",
-    "extra": "Shift layer on this plate: Barkskin, Innervate, Rebirth, Cower, Hurricane, Mount.",
+    "extra": "Shift layer on this plate: Barkskin, Innervate, Rebirth, one free button, Hurricane, Mount. Cower is on the Cat bar (Naga 11).",
     "buttons": [],
     "shift": []
    },
@@ -7429,7 +7426,7 @@
     "title": "Kestrik · Bear · 12-button layout (32+)",
     "src": "Druid - Feral.md › On the 12-button plate",
     "intro": "Nothing moves: Naga 7 to 12 are the old Shift 1 to 6. The freed Shift layer is the Bottom Right bar, which does not change with your form.",
-    "extra": "Shift layer on this plate: Barkskin, Innervate, Rebirth, Cower, Hurricane, Mount.",
+    "extra": "Shift layer on this plate: Barkskin, Innervate, Rebirth, one free button, Hurricane, Mount. Cower is on the Cat bar (Naga 11).",
     "buttons": [],
     "shift": []
    },
@@ -7439,7 +7436,7 @@
     "title": "Kestrik · Caster · 12-button layout (32+)",
     "src": "Druid - Feral.md › On the 12-button plate",
     "intro": "Nothing moves: Naga 7 to 12 are the old Shift 1 to 6. The freed Shift layer is the Bottom Right bar, which does not change with your form.",
-    "extra": "Shift layer on this plate: Barkskin, Innervate, Rebirth, Cower, Hurricane, Mount.",
+    "extra": "Shift layer on this plate: Barkskin, Innervate, Rebirth, one free button, Hurricane, Mount. Cower is on the Cat bar (Naga 11).",
     "buttons": [],
     "shift": []
    }
@@ -21281,11 +21278,11 @@
   }
  },
  "_meta": {
-  "version": 43,
+  "version": 44,
   "generated_at": "2026-11-17T15:30-05:00",
-  "source": "Grok, Nov 17 2026 Kestrik data pass",
+  "source": "Claude at Jason's ask, Nov 17 2026: Cower on Kestrik's Cat Shift+5",
   "notes_commit": "2f1ad6c",
-  "notes": "Nov 17 (Kestrik data pass): TRAINER_RAW.druid all ranks (talentsforever + wowforever.one, Blizzard Nov 2 notes); Lacerate talent 25, Tiger's Fury and Berserk removed; CHARS[2].racials Windshaper Skyborne."
+  "notes": "Nov 17 (Jason's pick): Cower on Kestrik's Cat slot 11 (Shift+Naga 5), the slot Berserk left free; the Bottom Right slot 16 it used to sit on is free in all three forms. Earlier on Nov 17: TRAINER_RAW.druid all ranks (talentsforever + wowforever.one, Blizzard Nov 2 notes); Lacerate talent 25, Tiger's Fury and Berserk removed; CHARS[2].racials Windshaper Skyborne."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16.",
