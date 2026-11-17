@@ -146,6 +146,16 @@
       "detail": "Health and up to 35% mana"
      }
     ]
+   },
+   {
+    "name": "Kestrik Galecrest",
+    "color": "#FF7C0A",
+    "classIcon": "classicon_druid",
+    "line": "Skyborne · Druid · Feral",
+    "role": "Alt",
+    "level": 22,
+    "profs": [],
+    "racials": []
    }
   ],
   "CHAR_PROFS": {
@@ -160,7 +170,8 @@
     "ench",
     "fa",
     "cook"
-   ]
+   ],
+   "K": []
   },
   "SKILL_KEYS": [
    "V:lw",
@@ -4350,6 +4361,543 @@
      "caveat": "Mobalytics' priority is its level-60 2/31/18 boss rotation.",
      "seq": "demo_lvl"
     }
+   },
+   "cat": {
+    "quest": {
+     "prep": [
+      {
+       "icon": "spell_nature_regeneration",
+       "name": "Mark of the Wild",
+       "tip": "Always on. F1."
+      },
+      {
+       "icon": "spell_nature_thorns",
+       "name": "Thorns",
+       "tip": "Always on. Ctrl + F1.",
+       "lvl": 6
+      },
+      {
+       "icon": "spell_nature_rejuvenation",
+       "name": "Rejuvenation on yourself",
+       "tip": "In caster form before the pull, then shift.",
+       "lvl": 4
+      },
+      {
+       "icon": "ability_ambush",
+       "name": "Prowl",
+       "tip": "Press the Cat key twice: Cat Form, then Prowl. Walk behind the mob.",
+       "lvl": 20
+      }
+     ],
+     "steps": [
+      {
+       "icon": "spell_shadow_vampiricaura",
+       "name": "Shred from Prowl",
+       "tip": "The opener until Ravage. Needs you behind the mob.",
+       "lvl": 20,
+       "until": 32
+      },
+      {
+       "icon": "ability_druid_ravage",
+       "name": "Ravage from Prowl",
+       "tip": "The opener from 32. Needs you behind the mob.",
+       "lvl": 32
+      },
+      {
+       "icon": "spell_nature_faeriefire",
+       "name": "Faerie Fire",
+       "tip": "Right after the opener. Costs nothing in a form, 6 second cooldown.",
+       "lvl": 18
+      },
+      {
+       "icon": "ability_druid_disembowel",
+       "name": "Rake",
+       "tip": "If the mob will live more than about 6 seconds.",
+       "lvl": 24
+      },
+      {
+       "icon": "ability_druid_rake",
+       "name": "Claw",
+       "tip": "Build to 4 or 5 combo points.",
+       "lvl": 20
+      },
+      {
+       "icon": "ability_druid_ferociousbite",
+       "name": "Ferocious Bite",
+       "tip": "The finisher on most mobs.",
+       "lvl": 24
+      },
+      {
+       "icon": "ability_ghoulfrenzy",
+       "name": "Rip",
+       "tip": "Finisher when the mob has 10 seconds or more left. Hold Ctrl on the finisher key from 24.",
+       "lvl": 20
+      },
+      {
+       "icon": "ability_druid_kingofthejungle",
+       "name": "Shifting Power",
+       "tip": "When you drop under 50 Energy. Do not overuse it: it costs a lot of mana.",
+       "lvl": 40
+      }
+     ],
+     "notes": [
+      "A pack jumps you: Bear key, Enrage, Demoralizing Roar, Swipe.",
+      "Going badly: Bear and Bash, then the heal key during the stun.",
+      "Wait a few seconds in Cat Form to pool Energy before you open."
+     ],
+     "src": [
+      {
+       "label": "Method druid leveling (Birra)",
+       "date": "Nov 14",
+       "url": "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"
+      },
+      {
+       "label": "Warcraft Tavern druid leveling",
+       "date": "read Nov 16",
+       "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
+      }
+     ],
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+    },
+    "dungeon": {
+     "prep": [
+      {
+       "icon": "spell_nature_regeneration",
+       "name": "Mark of the Wild",
+       "tip": "Always on. F1."
+      },
+      {
+       "icon": "spell_nature_thorns",
+       "name": "Thorns",
+       "tip": "Always on. Ctrl + F1.",
+       "lvl": 6
+      },
+      {
+       "icon": "ability_ambush",
+       "name": "Prowl",
+       "tip": "Stealth in behind the tank's target.",
+       "lvl": 20
+      }
+     ],
+     "steps": [
+      {
+       "icon": "spell_shadow_vampiricaura",
+       "name": "Shred from Prowl",
+       "tip": "Opener until Ravage.",
+       "lvl": 20,
+       "until": 32
+      },
+      {
+       "icon": "ability_druid_ravage",
+       "name": "Ravage from Prowl",
+       "tip": "Opener from 32.",
+       "lvl": 32
+      },
+      {
+       "icon": "spell_nature_faeriefire",
+       "name": "Faerie Fire",
+       "tip": "On the tank's target.",
+       "lvl": 18
+      },
+      {
+       "icon": "ability_druid_disembowel",
+       "name": "Rake",
+       "tip": "Keep the bleed up on bosses.",
+       "lvl": 24
+      },
+      {
+       "icon": "spell_shadow_vampiricaura",
+       "name": "Shred from behind",
+       "tip": "Hold Ctrl on the main attack key. In a group you are behind the mob, so Shred replaces Claw.",
+       "lvl": 20
+      },
+      {
+       "icon": "ability_ghoulfrenzy",
+       "name": "Rip",
+       "tip": "Finisher on bosses and anything that lives 10 seconds or more.",
+       "lvl": 20
+      },
+      {
+       "icon": "ability_druid_ferociousbite",
+       "name": "Ferocious Bite",
+       "tip": "Finisher on trash that dies fast.",
+       "lvl": 24
+      },
+      {
+       "icon": "ability_druid_cower",
+       "name": "Cower",
+       "tip": "If you pull threat off the tank. Click bar.",
+       "lvl": 28
+      },
+      {
+       "icon": "ability_druid_kingofthejungle",
+       "name": "Shifting Power",
+       "tip": "Under 50 Energy.",
+       "lvl": 40
+      }
+     ],
+     "notes": [
+      "If the tank drops: Bear key, Growl, and you are the tank.",
+      "Rebirth is on F3 for a dead healer or tank."
+     ],
+     "src": [
+      {
+       "label": "Method druid leveling (Birra)",
+       "date": "Nov 14",
+       "url": "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"
+      },
+      {
+       "label": "Warcraft Tavern druid leveling",
+       "date": "read Nov 16",
+       "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
+      }
+     ],
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+    }
+   },
+   "bear": {
+    "quest": {
+     "prep": [
+      {
+       "icon": "spell_nature_regeneration",
+       "name": "Mark of the Wild",
+       "tip": "Always on. F1."
+      },
+      {
+       "icon": "spell_nature_thorns",
+       "name": "Thorns",
+       "tip": "Always on. Ctrl + F1.",
+       "lvl": 6
+      },
+      {
+       "icon": "spell_nature_abolishmagic",
+       "name": "Wrath and Moonfire on the way in",
+       "tip": "Two Wraths and a Moonfire in caster form, then the Bear key as it reaches you."
+      }
+     ],
+     "steps": [
+      {
+       "icon": "ability_druid_enrage",
+       "name": "Enrage",
+       "tip": "Press the Bear key a second time for starting Rage.",
+       "lvl": 12
+      },
+      {
+       "icon": "spell_nature_faeriefire",
+       "name": "Faerie Fire",
+       "tip": "Right after you shift. Costs nothing in a form.",
+       "lvl": 18
+      },
+      {
+       "icon": "ability_druid_demoralizingroar",
+       "name": "Demoralizing Roar",
+       "tip": "On melee mobs. Skip it on casters.",
+       "lvl": 10
+      },
+      {
+       "icon": "inv_misc_monsterclaw_03",
+       "name": "Swipe",
+       "tip": "Two or more mobs.",
+       "lvl": 16
+      },
+      {
+       "icon": "ability_druid_maul",
+       "name": "Maul",
+       "tip": "Single target Rage spender.",
+       "lvl": 10
+      },
+      {
+       "icon": "ability_druid_bash",
+       "name": "Bash",
+       "tip": "On a cast or a runner, or to buy time for a heal.",
+       "lvl": 14
+      },
+      {
+       "icon": "ability_druid_lacerate",
+       "name": "Lacerate",
+       "tip": "Stack to 5 on anything that lives long enough.",
+       "lvl": 42
+      },
+      {
+       "icon": "ability_druid_mangle2",
+       "name": "Primal Bite",
+       "tip": "On cooldown once you take the talent.",
+       "lvl": 40
+      },
+      {
+       "icon": "ability_bullrush",
+       "name": "Frenzied Regeneration",
+       "tip": "Panic heal with Rage to spend.",
+       "lvl": 36
+      }
+     ],
+     "notes": [
+      "Levels 10 to 19 this is your main form. From 20 it is for packs and emergencies.",
+      "After the fight: heal key (drops the form and casts)."
+     ],
+     "src": [
+      {
+       "label": "Method druid leveling (Birra)",
+       "date": "Nov 14",
+       "url": "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"
+      },
+      {
+       "label": "Warcraft Tavern druid leveling",
+       "date": "read Nov 16",
+       "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
+      }
+     ],
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them. Lacerate: Blizzard's deep dive says baseline at 42, Warcraft Tavern's table says 25."
+    },
+    "dungeon": {
+     "prep": [
+      {
+       "icon": "spell_nature_regeneration",
+       "name": "Mark of the Wild",
+       "tip": "Always on. F1."
+      },
+      {
+       "icon": "spell_nature_thorns",
+       "name": "Thorns",
+       "tip": "Always on. Ctrl + F1.",
+       "lvl": 6
+      },
+      {
+       "icon": "ability_druid_enrage",
+       "name": "Enrage",
+       "tip": "Before the pull for starting Rage.",
+       "lvl": 12
+      }
+     ],
+     "steps": [
+      {
+       "icon": "spell_nature_faeriefire",
+       "name": "Faerie Fire",
+       "tip": "The pull.",
+       "lvl": 18
+      },
+      {
+       "icon": "inv_misc_monsterclaw_03",
+       "name": "Swipe",
+       "tip": "Packs: this is your threat on everything.",
+       "lvl": 16
+      },
+      {
+       "icon": "ability_druid_maul",
+       "name": "Maul",
+       "tip": "On the skull.",
+       "lvl": 10
+      },
+      {
+       "icon": "ability_druid_lacerate",
+       "name": "Lacerate",
+       "tip": "To 5 stacks on bosses.",
+       "lvl": 42
+      },
+      {
+       "icon": "ability_druid_mangle2",
+       "name": "Primal Bite",
+       "tip": "On cooldown: very high threat.",
+       "lvl": 40
+      },
+      {
+       "icon": "ability_druid_demoralizingroar",
+       "name": "Demoralizing Roar",
+       "tip": "Keep it up on melee packs and bosses.",
+       "lvl": 10
+      },
+      {
+       "icon": "ability_physical_taunt",
+       "name": "Growl",
+       "tip": "When something leaves you. Mouseover works.",
+       "lvl": 10
+      },
+      {
+       "icon": "ability_druid_challangingroar",
+       "name": "Challenging Roar",
+       "tip": "Ctrl on the Growl key: the whole pack for 6 seconds.",
+       "lvl": 28
+      },
+      {
+       "icon": "ability_druid_bash",
+       "name": "Bash",
+       "tip": "Interrupt a heal or a big cast.",
+       "lvl": 14
+      },
+      {
+       "icon": "ability_bullrush",
+       "name": "Frenzied Regeneration",
+       "tip": "When the healer is behind.",
+       "lvl": 36
+      }
+     ],
+     "notes": [
+      "Mark the skull and let it take one Swipe before the damage dealers start."
+     ],
+     "src": [
+      {
+       "label": "Method druid leveling (Birra)",
+       "date": "Nov 14",
+       "url": "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"
+      },
+      {
+       "label": "Warcraft Tavern druid leveling",
+       "date": "read Nov 16",
+       "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
+      }
+     ],
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+    }
+   },
+   "caster": {
+    "quest": {
+     "prep": [
+      {
+       "icon": "spell_nature_regeneration",
+       "name": "Mark of the Wild",
+       "tip": "Always on. F1."
+      },
+      {
+       "icon": "spell_nature_thorns",
+       "name": "Thorns",
+       "tip": "Always on. Ctrl + F1.",
+       "lvl": 6
+      }
+     ],
+     "steps": [
+      {
+       "icon": "spell_nature_abolishmagic",
+       "name": "Wrath",
+       "tip": "The pull. Levels 1 to 9 it is your main attack."
+      },
+      {
+       "icon": "spell_nature_starfall",
+       "name": "Moonfire",
+       "tip": "As the mob runs in.",
+       "lvl": 4
+      },
+      {
+       "icon": "spell_nature_stranglevines",
+       "name": "Entangling Roots",
+       "tip": "Hold one mob while you kill another, or to walk away.",
+       "lvl": 8
+      },
+      {
+       "icon": "spell_nature_rejuvenation",
+       "name": "Rejuvenation",
+       "tip": "Before every pull, and whenever you are hurt.",
+       "lvl": 4
+      },
+      {
+       "icon": "spell_nature_resistnature",
+       "name": "Regrowth",
+       "tip": "The heal key: your in-combat heal from 12.",
+       "lvl": 12
+      },
+      {
+       "icon": "spell_nature_healingtouch",
+       "name": "Healing Touch",
+       "tip": "Big slow heal between pulls. Ctrl on the heal key from 12."
+      }
+     ],
+     "notes": [
+      "From 10 you shift to Bear as the mob arrives, from 20 you open as a Cat instead."
+     ],
+     "src": [
+      {
+       "label": "Method druid leveling (Birra)",
+       "date": "Nov 14",
+       "url": "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"
+      },
+      {
+       "label": "Warcraft Tavern druid leveling",
+       "date": "read Nov 16",
+       "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
+      }
+     ],
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+    },
+    "dungeon": {
+     "prep": [
+      {
+       "icon": "spell_nature_regeneration",
+       "name": "Mark of the Wild",
+       "tip": "Always on. F1."
+      },
+      {
+       "icon": "spell_nature_thorns",
+       "name": "Thorns",
+       "tip": "Always on. Ctrl + F1.",
+       "lvl": 6
+      }
+     ],
+     "steps": [
+      {
+       "icon": "spell_nature_rejuvenation",
+       "name": "Rejuvenation",
+       "tip": "Top off the tank or yourself between pulls.",
+       "lvl": 4
+      },
+      {
+       "icon": "spell_nature_resistnature",
+       "name": "Regrowth",
+       "tip": "Mouseover heal when the healer needs help.",
+       "lvl": 12
+      },
+      {
+       "icon": "spell_nature_nullifypoison",
+       "name": "Cure Poison",
+       "tip": "Mouseover. Abolish Poison from 26.",
+       "lvl": 14
+      },
+      {
+       "icon": "spell_holy_removecurse",
+       "name": "Remove Curse",
+       "tip": "Ctrl on the cure key.",
+       "lvl": 24
+      },
+      {
+       "icon": "spell_nature_sleep",
+       "name": "Hibernate",
+       "tip": "Ctrl on the Roots key: sleeps a beast or dragonkin.",
+       "lvl": 18
+      },
+      {
+       "icon": "spell_nature_reincarnation",
+       "name": "Rebirth",
+       "tip": "F3 in combat on a dead healer or tank.",
+       "lvl": 20
+      },
+      {
+       "icon": "spell_nature_tranquility",
+       "name": "Tranquility",
+       "tip": "Group-wide emergency heal.",
+       "lvl": 30
+      },
+      {
+       "icon": "spell_nature_lightning",
+       "name": "Innervate",
+       "tip": "F4: mana for the healer.",
+       "lvl": 40
+      }
+     ],
+     "notes": [
+      "You are the backup healer and the combat rez. Drop out of Cat for these, then go back in."
+     ],
+     "src": [
+      {
+       "label": "Method druid leveling (Birra)",
+       "date": "Nov 14",
+       "url": "https://www.method.gg/wow-forever/wow-forever-druid-leveling-guide-and-talents"
+      },
+      {
+       "label": "Warcraft Tavern druid leveling",
+       "date": "read Nov 16",
+       "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
+      }
+     ],
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+    }
    }
   }
  },
@@ -5694,6 +6242,748 @@
       }
      ]
     }
+   },
+   "cat": {
+    "stages": [],
+    "shift": [],
+    "fkeys": [
+     {
+      "k": "F1",
+      "spell": "Mark of the Wild · Ctrl Thorns",
+      "icon": "spell_nature_regeneration"
+     },
+     {
+      "k": "F2",
+      "spell": "Mount (40)",
+      "icon": "spell_nature_swiftness"
+     },
+     {
+      "k": "F3",
+      "spell": "Rebirth in combat · Revive out of combat",
+      "icon": "spell_nature_reincarnation"
+     },
+     {
+      "k": "F4",
+      "spell": "Innervate (40)",
+      "icon": "spell_nature_lightning"
+     },
+     {
+      "k": "F5",
+      "spell": "Teleport: Moonglade",
+      "icon": "spell_arcane_teleportmoonglade"
+     }
+    ],
+    "auto": {
+     "fixed": true,
+     "mode": "quest",
+     "src": "Your Druid - Feral note: same job on the same button in every form",
+     "pool": [
+      {
+       "slot": 1,
+       "key": "claw",
+       "spell": "Claw · Ctrl Shred · opener from Prowl",
+       "icon": "ability_druid_rake",
+       "kind": "rot",
+       "lvl": 20,
+       "covers": [
+        "Claw",
+        "Shred from Prowl",
+        "Ravage from Prowl",
+        "Shred from behind"
+       ],
+       "note": "From Prowl it opens with Shred (Ravage from 32). In a fight it is Claw; hold Ctrl for Shred when you are behind the mob."
+      },
+      {
+       "slot": 2,
+       "key": "rake",
+       "spell": "Rake",
+       "icon": "ability_druid_disembowel",
+       "kind": "rot",
+       "lvl": 24,
+       "covers": [
+        "Rake"
+       ]
+      },
+      {
+       "slot": 3,
+       "key": "rip",
+       "spell": "Rip",
+       "icon": "ability_ghoulfrenzy",
+       "kind": "rot",
+       "lvl": 20,
+       "covers": [
+        "Rip"
+       ]
+      },
+      {
+       "slot": 3,
+       "key": "fb",
+       "spell": "Ferocious Bite · Ctrl Rip",
+       "icon": "ability_druid_ferociousbite",
+       "kind": "rot",
+       "lvl": 24,
+       "covers": [
+        "Ferocious Bite",
+        "Rip"
+       ]
+      },
+      {
+       "slot": 4,
+       "key": "ff",
+       "spell": "Faerie Fire",
+       "icon": "spell_nature_faeriefire",
+       "kind": "rot",
+       "lvl": 18,
+       "covers": [
+        "Faerie Fire"
+       ],
+       "note": "Same slot in every form. Costs nothing in Bear or Cat."
+      },
+      {
+       "slot": 5,
+       "key": "charge_cat",
+       "spell": "Feral Charge (talent)",
+       "icon": "ability_hunter_pet_bear",
+       "kind": "util",
+       "lvl": 20,
+       "note": "Drag it from the spellbook. Check the cat version's name there."
+      },
+      {
+       "slot": 5,
+       "key": "pounce",
+       "spell": "Feral Charge · Pounce from Prowl",
+       "icon": "ability_druid_supriseattack",
+       "kind": "util",
+       "lvl": 36,
+       "note": "From Prowl it stuns with Pounce, otherwise it charges."
+      },
+      {
+       "slot": 6,
+       "key": "heal",
+       "spell": "Heal: Regrowth · Ctrl Healing Touch",
+       "icon": "spell_nature_resistnature",
+       "kind": "util",
+       "lvl": 12,
+       "note": "Drops the form and starts the heal in one press."
+      },
+      {
+       "slot": 7,
+       "key": "bearkey",
+       "spell": "Bear Form",
+       "icon": "ability_racial_bearform",
+       "kind": "util",
+       "lvl": 10,
+       "note": "Same slot on the caster and Cat bars."
+      },
+      {
+       "slot": 7,
+       "key": "direbear",
+       "spell": "Dire Bear Form",
+       "icon": "ability_racial_bearform",
+       "kind": "util",
+       "lvl": 40,
+       "note": "Same key, new name in the macro at 40."
+      },
+      {
+       "slot": 8,
+       "key": "prowl",
+       "spell": "Prowl",
+       "icon": "ability_ambush",
+       "kind": "util",
+       "lvl": 20,
+       "note": "The Cat key's slot on the Cat bar: Cat key twice is Cat, then Prowl."
+      },
+      {
+       "slot": 9,
+       "key": "dash",
+       "spell": "Dash",
+       "icon": "ability_druid_dash",
+       "kind": "util",
+       "lvl": 26
+      },
+      {
+       "slot": 10,
+       "key": "shiftpow",
+       "spell": "Shifting Power (talent)",
+       "icon": "ability_druid_kingofthejungle",
+       "kind": "rot",
+       "lvl": 40,
+       "covers": [
+        "Shifting Power"
+       ]
+      },
+      {
+       "slot": 11,
+       "key": "berserk",
+       "spell": "Berserk (talent)",
+       "icon": "ability_druid_berserk",
+       "kind": "util",
+       "lvl": 41
+      },
+      {
+       "slot": 12,
+       "key": "travel",
+       "spell": "Travel key: Aquatic · Cat indoors · Travel (30)",
+       "icon": "ability_druid_travelform",
+       "kind": "util",
+       "lvl": 16,
+       "note": "Water: Aquatic Form. Indoors: Cat Form (20). Outside: Travel Form (30). Ctrl: back to caster form."
+      },
+      {
+       "slot": 13,
+       "key": "bark",
+       "spell": "Barkskin",
+       "icon": "spell_nature_stoneclawtotem",
+       "kind": "util",
+       "lvl": 44,
+       "note": "Bottom Right on the 12-button plate (does not change with your form); click bar before that."
+      },
+      {
+       "slot": 14,
+       "key": "innervate",
+       "spell": "Innervate",
+       "icon": "spell_nature_lightning",
+       "kind": "util",
+       "lvl": 40
+      },
+      {
+       "slot": 15,
+       "key": "rebirth",
+       "spell": "Rebirth",
+       "icon": "spell_nature_reincarnation",
+       "kind": "util",
+       "lvl": 20,
+       "covers": [
+        "Rebirth"
+       ]
+      },
+      {
+       "slot": 16,
+       "key": "cower",
+       "spell": "Cower",
+       "icon": "ability_druid_cower",
+       "kind": "util",
+       "lvl": 28,
+       "covers": [
+        "Cower"
+       ]
+      },
+      {
+       "slot": 17,
+       "key": "hurricane",
+       "spell": "Hurricane",
+       "icon": "spell_nature_cyclone",
+       "kind": "util",
+       "lvl": 40
+      },
+      {
+       "slot": 18,
+       "key": "mount",
+       "spell": "Mount",
+       "icon": "spell_nature_swiftness",
+       "kind": "util",
+       "lvl": 40
+      }
+     ]
+    }
+   },
+   "bear": {
+    "stages": [],
+    "shift": [],
+    "fkeys": [
+     {
+      "k": "F1",
+      "spell": "Mark of the Wild · Ctrl Thorns",
+      "icon": "spell_nature_regeneration"
+     },
+     {
+      "k": "F2",
+      "spell": "Mount (40)",
+      "icon": "spell_nature_swiftness"
+     },
+     {
+      "k": "F3",
+      "spell": "Rebirth in combat · Revive out of combat",
+      "icon": "spell_nature_reincarnation"
+     },
+     {
+      "k": "F4",
+      "spell": "Innervate (40)",
+      "icon": "spell_nature_lightning"
+     },
+     {
+      "k": "F5",
+      "spell": "Teleport: Moonglade",
+      "icon": "spell_arcane_teleportmoonglade"
+     }
+    ],
+    "auto": {
+     "fixed": true,
+     "mode": "quest",
+     "src": "Your Druid - Feral note: same job on the same button in every form",
+     "pool": [
+      {
+       "slot": 1,
+       "key": "maul",
+       "spell": "Maul",
+       "icon": "ability_druid_maul",
+       "kind": "rot",
+       "lvl": 10,
+       "covers": [
+        "Maul"
+       ]
+      },
+      {
+       "slot": 2,
+       "key": "swipe",
+       "spell": "Swipe",
+       "icon": "inv_misc_monsterclaw_03",
+       "kind": "rot",
+       "lvl": 16,
+       "covers": [
+        "Swipe"
+       ]
+      },
+      {
+       "slot": 3,
+       "key": "demo",
+       "spell": "Demoralizing Roar",
+       "icon": "ability_druid_demoralizingroar",
+       "kind": "rot",
+       "lvl": 10,
+       "covers": [
+        "Demoralizing Roar"
+       ]
+      },
+      {
+       "slot": 3,
+       "key": "lacerate",
+       "spell": "Lacerate · Ctrl Demoralizing Roar",
+       "icon": "ability_druid_lacerate",
+       "kind": "rot",
+       "lvl": 42,
+       "covers": [
+        "Lacerate",
+        "Demoralizing Roar"
+       ]
+      },
+      {
+       "slot": 4,
+       "key": "ff",
+       "spell": "Faerie Fire",
+       "icon": "spell_nature_faeriefire",
+       "kind": "rot",
+       "lvl": 18,
+       "covers": [
+        "Faerie Fire"
+       ],
+       "note": "Same slot in every form. Costs nothing in Bear or Cat."
+      },
+      {
+       "slot": 5,
+       "key": "bash",
+       "spell": "Bash",
+       "icon": "ability_druid_bash",
+       "kind": "rot",
+       "lvl": 14,
+       "covers": [
+        "Bash"
+       ]
+      },
+      {
+       "slot": 5,
+       "key": "bashcharge",
+       "spell": "Bash · Feral Charge (talent)",
+       "icon": "ability_druid_bash",
+       "kind": "rot",
+       "lvl": 20,
+       "covers": [
+        "Bash"
+       ],
+       "note": "At range it charges, up close it stuns. If you have not taken Feral Charge yet, keep plain Bash here."
+      },
+      {
+       "slot": 6,
+       "key": "heal",
+       "spell": "Heal: Regrowth · Ctrl Healing Touch",
+       "icon": "spell_nature_resistnature",
+       "kind": "util",
+       "lvl": 12,
+       "note": "Drops the form and starts the heal in one press."
+      },
+      {
+       "slot": 7,
+       "key": "enrage",
+       "spell": "Enrage",
+       "icon": "ability_druid_enrage",
+       "kind": "rot",
+       "lvl": 12,
+       "covers": [
+        "Enrage"
+       ],
+       "note": "The Bear key's slot on the Bear bar: Bear key twice is Bear, then Enrage."
+      },
+      {
+       "slot": 8,
+       "key": "catkey",
+       "spell": "Cat Form",
+       "icon": "ability_druid_catform",
+       "kind": "util",
+       "lvl": 20,
+       "note": "Same slot on the caster and Bear bars."
+      },
+      {
+       "slot": 9,
+       "key": "frenzy",
+       "spell": "Frenzied Regeneration",
+       "icon": "ability_bullrush",
+       "kind": "rot",
+       "lvl": 36,
+       "covers": [
+        "Frenzied Regeneration"
+       ]
+      },
+      {
+       "slot": 10,
+       "key": "growl",
+       "spell": "Growl · Ctrl Challenging Roar",
+       "icon": "ability_physical_taunt",
+       "kind": "rot",
+       "lvl": 10,
+       "covers": [
+        "Growl",
+        "Challenging Roar"
+       ]
+      },
+      {
+       "slot": 11,
+       "key": "primal",
+       "spell": "Primal Bite · Ctrl Berserk (talents)",
+       "icon": "ability_druid_mangle2",
+       "kind": "rot",
+       "lvl": 40,
+       "covers": [
+        "Primal Bite"
+       ]
+      },
+      {
+       "slot": 12,
+       "key": "travel",
+       "spell": "Travel key: Aquatic · Cat indoors · Travel (30)",
+       "icon": "ability_druid_travelform",
+       "kind": "util",
+       "lvl": 16,
+       "note": "Water: Aquatic Form. Indoors: Cat Form (20). Outside: Travel Form (30). Ctrl: back to caster form."
+      },
+      {
+       "slot": 13,
+       "key": "bark",
+       "spell": "Barkskin",
+       "icon": "spell_nature_stoneclawtotem",
+       "kind": "util",
+       "lvl": 44,
+       "note": "Bottom Right on the 12-button plate (does not change with your form); click bar before that."
+      },
+      {
+       "slot": 14,
+       "key": "innervate",
+       "spell": "Innervate",
+       "icon": "spell_nature_lightning",
+       "kind": "util",
+       "lvl": 40
+      },
+      {
+       "slot": 15,
+       "key": "rebirth",
+       "spell": "Rebirth",
+       "icon": "spell_nature_reincarnation",
+       "kind": "util",
+       "lvl": 20,
+       "covers": [
+        "Rebirth"
+       ]
+      },
+      {
+       "slot": 16,
+       "key": "cower",
+       "spell": "Cower",
+       "icon": "ability_druid_cower",
+       "kind": "util",
+       "lvl": 28,
+       "covers": [
+        "Cower"
+       ]
+      },
+      {
+       "slot": 17,
+       "key": "hurricane",
+       "spell": "Hurricane",
+       "icon": "spell_nature_cyclone",
+       "kind": "util",
+       "lvl": 40
+      },
+      {
+       "slot": 18,
+       "key": "mount",
+       "spell": "Mount",
+       "icon": "spell_nature_swiftness",
+       "kind": "util",
+       "lvl": 40
+      }
+     ]
+    }
+   },
+   "caster": {
+    "stages": [],
+    "shift": [],
+    "fkeys": [
+     {
+      "k": "F1",
+      "spell": "Mark of the Wild · Ctrl Thorns",
+      "icon": "spell_nature_regeneration"
+     },
+     {
+      "k": "F2",
+      "spell": "Mount (40)",
+      "icon": "spell_nature_swiftness"
+     },
+     {
+      "k": "F3",
+      "spell": "Rebirth in combat · Revive out of combat",
+      "icon": "spell_nature_reincarnation"
+     },
+     {
+      "k": "F4",
+      "spell": "Innervate (40)",
+      "icon": "spell_nature_lightning"
+     },
+     {
+      "k": "F5",
+      "spell": "Teleport: Moonglade",
+      "icon": "spell_arcane_teleportmoonglade"
+     }
+    ],
+    "auto": {
+     "fixed": true,
+     "mode": "quest",
+     "src": "Your Druid - Feral note: same job on the same button in every form",
+     "pool": [
+      {
+       "slot": 1,
+       "key": "wrath",
+       "spell": "Wrath",
+       "icon": "spell_nature_abolishmagic",
+       "kind": "rot",
+       "lvl": 1,
+       "covers": [
+        "Wrath",
+        "Wrath and Moonfire on the way in"
+       ]
+      },
+      {
+       "slot": 2,
+       "key": "moonfire",
+       "spell": "Moonfire",
+       "icon": "spell_nature_starfall",
+       "kind": "rot",
+       "lvl": 4,
+       "covers": [
+        "Moonfire"
+       ]
+      },
+      {
+       "slot": 3,
+       "key": "rejuv",
+       "spell": "Rejuvenation",
+       "icon": "spell_nature_rejuvenation",
+       "kind": "rot",
+       "lvl": 4,
+       "covers": [
+        "Rejuvenation",
+        "Rejuvenation on yourself"
+       ]
+      },
+      {
+       "slot": 4,
+       "key": "thorns",
+       "spell": "Thorns",
+       "icon": "spell_nature_thorns",
+       "kind": "util",
+       "lvl": 6
+      },
+      {
+       "slot": 4,
+       "key": "ff",
+       "spell": "Faerie Fire",
+       "icon": "spell_nature_faeriefire",
+       "kind": "rot",
+       "lvl": 18,
+       "covers": [
+        "Faerie Fire"
+       ],
+       "note": "Same slot in every form. Costs nothing in Bear or Cat."
+      },
+      {
+       "slot": 5,
+       "key": "roots",
+       "spell": "Entangling Roots · Ctrl Hibernate",
+       "icon": "spell_nature_stranglevines",
+       "kind": "rot",
+       "lvl": 8,
+       "covers": [
+        "Entangling Roots",
+        "Hibernate"
+       ]
+      },
+      {
+       "slot": 6,
+       "key": "ht",
+       "spell": "Healing Touch (drops the form)",
+       "icon": "spell_nature_healingtouch",
+       "kind": "rot",
+       "lvl": 1,
+       "covers": [
+        "Healing Touch"
+       ]
+      },
+      {
+       "slot": 6,
+       "key": "heal",
+       "spell": "Heal: Regrowth · Ctrl Healing Touch",
+       "icon": "spell_nature_resistnature",
+       "kind": "rot",
+       "lvl": 12,
+       "covers": [
+        "Regrowth",
+        "Healing Touch"
+       ],
+       "note": "One macro on every bar. In Bear or Cat it drops the form and starts the heal."
+      },
+      {
+       "slot": 7,
+       "key": "bearkey",
+       "spell": "Bear Form",
+       "icon": "ability_racial_bearform",
+       "kind": "util",
+       "lvl": 10,
+       "note": "Same slot on the caster and Cat bars."
+      },
+      {
+       "slot": 7,
+       "key": "direbear",
+       "spell": "Dire Bear Form",
+       "icon": "ability_racial_bearform",
+       "kind": "util",
+       "lvl": 40,
+       "note": "Same key, new name in the macro at 40."
+      },
+      {
+       "slot": 8,
+       "key": "catkey",
+       "spell": "Cat Form",
+       "icon": "ability_druid_catform",
+       "kind": "util",
+       "lvl": 20,
+       "note": "Same slot on the caster and Bear bars."
+      },
+      {
+       "slot": 9,
+       "key": "grasp",
+       "spell": "Nature's Grasp",
+       "icon": "spell_nature_natureswrath",
+       "kind": "util",
+       "lvl": 10
+      },
+      {
+       "slot": 10,
+       "key": "cure",
+       "spell": "Cure Poison · Ctrl Remove Curse",
+       "icon": "spell_nature_nullifypoison",
+       "kind": "rot",
+       "lvl": 14,
+       "covers": [
+        "Cure Poison",
+        "Remove Curse"
+       ],
+       "note": "Abolish Poison replaces Cure Poison in the macro at 26."
+      },
+      {
+       "slot": 11,
+       "key": "tranq",
+       "spell": "Tranquility",
+       "icon": "spell_nature_tranquility",
+       "kind": "rot",
+       "lvl": 30,
+       "covers": [
+        "Tranquility"
+       ]
+      },
+      {
+       "slot": 12,
+       "key": "travel",
+       "spell": "Travel key: Aquatic · Cat indoors · Travel (30)",
+       "icon": "ability_druid_travelform",
+       "kind": "util",
+       "lvl": 16,
+       "note": "Water: Aquatic Form. Indoors: Cat Form (20). Outside: Travel Form (30). Ctrl: back to caster form."
+      },
+      {
+       "slot": 13,
+       "key": "bark",
+       "spell": "Barkskin",
+       "icon": "spell_nature_stoneclawtotem",
+       "kind": "util",
+       "lvl": 44,
+       "note": "Bottom Right on the 12-button plate (does not change with your form); click bar before that."
+      },
+      {
+       "slot": 14,
+       "key": "innervate",
+       "spell": "Innervate",
+       "icon": "spell_nature_lightning",
+       "kind": "util",
+       "lvl": 40
+      },
+      {
+       "slot": 15,
+       "key": "rebirth",
+       "spell": "Rebirth",
+       "icon": "spell_nature_reincarnation",
+       "kind": "util",
+       "lvl": 20,
+       "covers": [
+        "Rebirth"
+       ]
+      },
+      {
+       "slot": 16,
+       "key": "cower",
+       "spell": "Cower",
+       "icon": "ability_druid_cower",
+       "kind": "util",
+       "lvl": 28,
+       "covers": [
+        "Cower"
+       ]
+      },
+      {
+       "slot": 17,
+       "key": "hurricane",
+       "spell": "Hurricane",
+       "icon": "spell_nature_cyclone",
+       "kind": "util",
+       "lvl": 40
+      },
+      {
+       "slot": 18,
+       "key": "mount",
+       "spell": "Mount",
+       "icon": "spell_nature_swiftness",
+       "kind": "util",
+       "lvl": 40
+      }
+     ]
+    }
    }
   },
   "KEYS12": [
@@ -6086,6 +7376,36 @@
       "icon": "inv_stone_04"
      }
     ]
+   },
+   "cat": {
+    "from": 32,
+    "who": "Kestrik",
+    "title": "Kestrik · Cat · 12-button layout (32+)",
+    "src": "Druid - Feral.md › On the 12-button plate",
+    "intro": "Nothing moves: Naga 7 to 12 are the old Shift 1 to 6. The freed Shift layer is the Bottom Right bar, which does not change with your form.",
+    "extra": "Shift layer on this plate: Barkskin, Innervate, Rebirth, Cower, Hurricane, Mount.",
+    "buttons": [],
+    "shift": []
+   },
+   "bear": {
+    "from": 32,
+    "who": "Kestrik",
+    "title": "Kestrik · Bear · 12-button layout (32+)",
+    "src": "Druid - Feral.md › On the 12-button plate",
+    "intro": "Nothing moves: Naga 7 to 12 are the old Shift 1 to 6. The freed Shift layer is the Bottom Right bar, which does not change with your form.",
+    "extra": "Shift layer on this plate: Barkskin, Innervate, Rebirth, Cower, Hurricane, Mount.",
+    "buttons": [],
+    "shift": []
+   },
+   "caster": {
+    "from": 32,
+    "who": "Kestrik",
+    "title": "Kestrik · Caster · 12-button layout (32+)",
+    "src": "Druid - Feral.md › On the 12-button plate",
+    "intro": "Nothing moves: Naga 7 to 12 are the old Shift 1 to 6. The freed Shift layer is the Bottom Right bar, which does not change with your form.",
+    "extra": "Shift layer on this plate: Barkskin, Innervate, Rebirth, Cower, Hurricane, Mount.",
+    "buttons": [],
+    "shift": []
    }
   },
   "SETUP12": [
@@ -6912,6 +8232,320 @@
     "src": "Mobalytics Crix, Voidwalker Taunt macro, read Nov 10 2026",
     "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
     "flag": "Only useful while the Voidwalker is out (10-19, or if you swap back to it)."
+   },
+   {
+    "title": "Druid heal (every form)",
+    "icon": "spell_nature_resistnature",
+    "spec": "druid",
+    "where": "Naga 6 on all three bars",
+    "code": "#showtooltip\n/cancelform\n/cast [mod:ctrl,@mouseover,help,nodead][mod:ctrl,help,nodead][mod:ctrl,@player] Healing Touch; [@mouseover,help,nodead][help,nodead][@player] Regrowth",
+    "does": "Plain: Regrowth. Ctrl: Healing Touch. Heals the frame under your mouse, else a friendly target, else you. In Bear or Cat it leaves the form first. Before 12 put plain Healing Touch on 6.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "heal"
+    ],
+    "lvl": 12
+   },
+   {
+    "title": "Bear key",
+    "icon": "ability_racial_bearform",
+    "spec": "druid",
+    "where": "Shift+Naga 1 on the caster and Cat bars",
+    "code": "#showtooltip\n/cast !Bear Form",
+    "does": "The ! stops a second press from dropping you out of the form. On the Bear bar this slot holds Enrage.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "bearkey"
+    ],
+    "lvl": 10,
+    "until": 40,
+    "flag": "Swaps to Dire Bear Form at 40."
+   },
+   {
+    "title": "Bear key (40+)",
+    "icon": "ability_racial_bearform",
+    "spec": "druid",
+    "where": "Shift+Naga 1 on the caster and Cat bars",
+    "code": "#showtooltip\n/cast !Dire Bear Form",
+    "does": "Same key, Dire Bear Form from 40.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "direbear"
+    ],
+    "lvl": 40
+   },
+   {
+    "title": "Cat key",
+    "icon": "ability_druid_catform",
+    "spec": "druid",
+    "where": "Shift+Naga 2 on the caster and Bear bars",
+    "code": "#showtooltip\n/cast !Cat Form",
+    "does": "On the Cat bar this slot holds the Prowl macro, so Cat key twice is Cat, then Prowl.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "catkey"
+    ],
+    "lvl": 20
+   },
+   {
+    "title": "Prowl",
+    "icon": "ability_ambush",
+    "spec": "cat",
+    "where": "Shift+Naga 2 on the Cat bar",
+    "code": "#showtooltip\n/cast !Prowl",
+    "does": "Mashing it never takes you out of stealth.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "prowl"
+    ],
+    "lvl": 20
+   },
+   {
+    "title": "Travel key (16 to 19)",
+    "icon": "ability_druid_travelform",
+    "spec": "druid",
+    "where": "Shift+Naga 6 on all three bars",
+    "code": "#showtooltip\n/cancelform [mod:ctrl]\n/cast [nomod:ctrl] !Aquatic Form",
+    "does": "Aquatic Form. Ctrl: back to caster form.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "travel"
+    ],
+    "lvl": 16,
+    "until": 20,
+    "flag": "Swaps to the 20 to 29 version at 20."
+   },
+   {
+    "title": "Travel key (20 to 29)",
+    "icon": "ability_druid_travelform",
+    "spec": "druid",
+    "where": "Shift+Naga 6 on all three bars",
+    "code": "#showtooltip\n/cancelform [mod:ctrl]\n/cast [nomod:ctrl,swimming] !Aquatic Form; [nomod:ctrl] !Cat Form",
+    "does": "Water: Aquatic Form. Anywhere else: Cat Form. Ctrl: back to caster form. Travel Form is level 30, so this is the version for now.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "travel"
+    ],
+    "lvl": 20,
+    "until": 30,
+    "flag": "Swaps to the 30+ version at 30."
+   },
+   {
+    "title": "Travel key (30+)",
+    "icon": "ability_druid_travelform",
+    "spec": "druid",
+    "where": "Shift+Naga 6 on all three bars",
+    "code": "#showtooltip\n/cancelform [mod:ctrl]\n/cast [nomod:ctrl,swimming] !Aquatic Form; [nomod:ctrl,indoors] !Cat Form; [nomod:ctrl] !Travel Form",
+    "does": "Water: Aquatic. Indoors: Cat. Outside: Travel. Ctrl: back to caster form.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet; shape from kami-labs",
+    "tag": "NEW",
+    "bind": [
+     "travel"
+    ],
+    "lvl": 30,
+    "url": "https://kami-labs.fr/en/macros-wow-forever/?classe=druid"
+   },
+   {
+    "title": "Cat main attack (20 to 31)",
+    "icon": "ability_druid_rake",
+    "spec": "cat",
+    "where": "Naga 1 on the Cat bar",
+    "code": "#showtooltip\n/startattack [nostealth]\n/cast [stealth][mod:ctrl] Shred; Claw",
+    "does": "From Prowl: Shred. In a fight: Claw, or Shred with Ctrl when you are behind the mob.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "claw"
+    ],
+    "lvl": 20,
+    "until": 32,
+    "flag": "Swaps to the Ravage version at 32."
+   },
+   {
+    "title": "Cat main attack (32+)",
+    "icon": "ability_druid_rake",
+    "spec": "cat",
+    "where": "Naga 1 on the Cat bar",
+    "code": "#showtooltip\n/startattack [nostealth]\n/cast [stealth,nomod:ctrl] Ravage; [mod:ctrl] Shred; Claw",
+    "does": "From Prowl: Ravage. In a fight: Claw, or Shred with Ctrl.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "claw"
+    ],
+    "lvl": 32
+   },
+   {
+    "title": "Cat finisher",
+    "icon": "ability_druid_ferociousbite",
+    "spec": "cat",
+    "where": "Naga 3 on the Cat bar",
+    "code": "#showtooltip\n/cast [mod:ctrl] Rip; Ferocious Bite",
+    "does": "Plain: Ferocious Bite. Ctrl: Rip when the mob has 10 seconds or more left. Before 24 put Rip itself on 3.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "fb"
+    ],
+    "lvl": 24
+   },
+   {
+    "title": "Cat charge and Pounce",
+    "icon": "ability_druid_supriseattack",
+    "spec": "cat",
+    "where": "Naga 5 on the Cat bar",
+    "code": "#showtooltip\n/cast [stealth] Pounce; Feral Charge",
+    "does": "From Prowl: Pounce. Otherwise Feral Charge. Use the cat version's exact name from your spellbook if it differs.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "pounce"
+    ],
+    "lvl": 36,
+    "flag": "Check the cat Feral Charge name in the spellbook."
+   },
+   {
+    "title": "Bear main attack",
+    "icon": "ability_druid_maul",
+    "spec": "bear",
+    "where": "Naga 1 on the Bear bar",
+    "code": "#showtooltip\n/startattack\n/cast Maul",
+    "does": "Starts auto-attack and queues Maul. Same shape for Swipe on 2.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "maul"
+    ],
+    "lvl": 10
+   },
+   {
+    "title": "Bash and Feral Charge",
+    "icon": "ability_druid_bash",
+    "spec": "bear",
+    "where": "Naga 5 on the Bear bar",
+    "code": "#showtooltip\n/cast Feral Charge\n/cast Bash",
+    "does": "At range it charges, up close it stuns. Needs the Feral Charge talent. If one press only ever charges, split them.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "bashcharge"
+    ],
+    "lvl": 20,
+    "flag": "Test in game."
+   },
+   {
+    "title": "Bear spender",
+    "icon": "ability_druid_lacerate",
+    "spec": "bear",
+    "where": "Naga 3 on the Bear bar",
+    "code": "#showtooltip\n/cast [mod:ctrl] Demoralizing Roar; Lacerate",
+    "does": "Plain: Lacerate. Ctrl: Demoralizing Roar. Before Lacerate put Demoralizing Roar itself on 3.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "lacerate"
+    ],
+    "lvl": 42
+   },
+   {
+    "title": "Growl",
+    "icon": "ability_physical_taunt",
+    "spec": "bear",
+    "where": "Shift+Naga 4 on the Bear bar",
+    "code": "#showtooltip\n/cast [mod:ctrl] Challenging Roar; [@mouseover,harm,nodead][] Growl",
+    "does": "Taunts the mob under your mouse, else your target. Ctrl: Challenging Roar (28) for the whole pack.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "growl"
+    ],
+    "lvl": 10
+   },
+   {
+    "title": "Primal Bite and Berserk",
+    "icon": "ability_druid_mangle2",
+    "spec": "bear",
+    "where": "Shift+Naga 5 on the Bear bar",
+    "code": "#showtooltip\n/cast [mod:ctrl] Berserk; Primal Bite",
+    "does": "Plain: Primal Bite. Ctrl: Berserk. Both are talents.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "primal"
+    ],
+    "lvl": 40
+   },
+   {
+    "title": "Roots and Hibernate",
+    "icon": "spell_nature_stranglevines",
+    "spec": "caster",
+    "where": "Naga 5 on the caster bar",
+    "code": "#showtooltip\n/cast [mod:ctrl,@mouseover,harm,nodead][mod:ctrl] Hibernate; [@mouseover,harm,nodead][] Entangling Roots",
+    "does": "Plain: Entangling Roots. Ctrl: Hibernate (18), beasts and dragonkin only. Mouseover first.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "roots"
+    ],
+    "lvl": 8
+   },
+   {
+    "title": "Rejuvenation, mouseover",
+    "icon": "spell_nature_rejuvenation",
+    "spec": "caster",
+    "where": "Naga 3 on the caster bar",
+    "code": "#showtooltip\n/cast [@mouseover,help,nodead][help,nodead][@player] Rejuvenation",
+    "does": "Friendly mouseover, then a friendly target, otherwise you.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "rejuv"
+    ],
+    "lvl": 4
+   },
+   {
+    "title": "Cure Poison and Remove Curse",
+    "icon": "spell_nature_nullifypoison",
+    "spec": "caster",
+    "where": "Shift+Naga 4 on the caster bar",
+    "code": "#showtooltip\n/cast [mod:ctrl,@mouseover,help,nodead][mod:ctrl,@player] Remove Curse; [@mouseover,help,nodead][@player] Cure Poison",
+    "does": "Plain: Cure Poison. Ctrl: Remove Curse (24). At 26 change Cure Poison to Abolish Poison.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "bind": [
+     "cure"
+    ],
+    "lvl": 14
+   },
+   {
+    "title": "Druid buffs",
+    "icon": "spell_nature_regeneration",
+    "spec": "druid",
+    "where": "F1",
+    "code": "#showtooltip\n/cast [mod:ctrl,@mouseover,help,nodead][mod:ctrl,@player] Thorns; [@mouseover,help,nodead][@player] Mark of the Wild",
+    "does": "Plain: Mark of the Wild. Ctrl: Thorns. Mouseover or yourself.",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "fkey": "F1"
+   },
+   {
+    "title": "Rebirth and Revive",
+    "icon": "spell_nature_reincarnation",
+    "spec": "druid",
+    "where": "F3",
+    "code": "#showtooltip\n/cast [combat,@mouseover,help,dead][combat,help,dead] Rebirth; [@mouseover,help,dead][help,dead] Revive",
+    "does": "In combat: Rebirth (20). Out of combat: Revive (12).",
+    "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
+    "tag": "NEW",
+    "fkey": "F3",
+    "lvl": 12
    }
   ]
  },
@@ -17327,6 +18961,28 @@
     "56": "Curse of Recklessness R4|Fear R3|Life Tap R6|Create Firestone R4|Shadowburn R6|Soul Fire R2",
     "58": "Bane of Agony R6|Death Coil R3|Siphon Life R4|Create Healthstone R5|Subjugate Demon R3|Rain of Fire R4|Searing Pain R6",
     "60": "Bane of Doom|Corruption R7|Create Soulstone R5|Create Spellstone R3|Demon Armor R5|Health Funnel R7|Ritual of Doom|Shadow Ward R4|Conflagrate R6|Immolate R7|Immolate R8|Incinerate R3 (new) (Destruction only, Official Nov 9)|Shadow Bolt R10|Shadow Bolt R9"
+   },
+   "druid": {
+    "1": "Wrath|Healing Touch|Mark of the Wild",
+    "4": "Moonfire|Rejuvenation",
+    "6": "Thorns",
+    "8": "Entangling Roots",
+    "10": "Bear Form (quest, Zephras Isle)|Growl|Maul|Demoralizing Roar|Nature's Grasp|Teleport: Moonglade",
+    "12": "Enrage|Regrowth|Revive (new)",
+    "14": "Bash|Cure Poison (quest)",
+    "16": "Aquatic Form (quest)|Swipe",
+    "18": "Faerie Fire|Hibernate",
+    "20": "Cat Form (quest)|Claw|Prowl|Rip|Shred|Rebirth|Omen of Clarity|Starfire",
+    "22": "Soothe Animal",
+    "24": "Rake|Ferocious Bite|Remove Curse",
+    "26": "Dash|Abolish Poison",
+    "28": "Challenging Roar|Cower",
+    "30": "Travel Form|Tranquility",
+    "32": "Ravage|Track Humanoids",
+    "36": "Frenzied Regeneration|Pounce",
+    "40": "Dire Bear Form|Hurricane|Innervate",
+    "42": "Lacerate (new)",
+    "44": "Barkskin"
    }
   },
   "TRAIN_SRC": {
@@ -17337,6 +18993,10 @@
    "warlock": {
     "label": "wowforever.one Warlock spells by level",
     "url": "https://wowforever.one/classes/warlock/spells/"
+   },
+   "druid": {
+    "label": "Warcraft Tavern druid leveling milestones (new spells only, rank upgrades not listed)",
+    "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
    }
   },
   "TRAIN_NOTE": "Fan-run site, read Oct 30. Talent spells are left out of its list. Verify at the trainer or with What's Training? Shaman review Nov7: beta trainer list still contains obsolete Lava Burst/Totemic Projection entries; verify live spellbook before purchase/binding. Nicktew level20: Ghost Wolf/Frost Shock/Lesser Healing Wave/Recall/Elements; Water quest for Healing Stream. No assumption of trained skills. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
@@ -19516,20 +21176,25 @@
    "lead": null,
    "tone": null,
    "text": "Install only files tagged for Forever (game version 1.60.1). The game also has its own damage meter, Cooldown Manager and swing timer, so you may not need every tracker."
+  },
+  "naga_druid_note": {
+   "lead": "Three bars, one set of keys",
+   "tone": "info",
+   "text": "The game swaps your main bar in Bear Form and Cat Form, so fill each bar once: shift into the form, then drag the spells in. The Heal, Bear, Cat and Travel macros go in the same slot on every bar. If the bar changes again when you Prowl, fill it the same as the Cat bar. Travel and Aquatic Form show the caster bar."
   }
  },
  "_meta": {
-  "version": 41,
+  "version": 42,
   "generated_at": "2026-11-17T09:05-05:00",
   "source": "Grok, Nov 17 2026 daily meta watch",
   "notes_commit": "2f1ad6c",
-  "notes": "Nov 17: Official Nov 16 hotfix (Windfury Totem armor/ICD, Maelstrom Weapon, Thundering Strikes fixes); Crix Rank 1 Shadow Bolt main filler; MythicSim Nov 17."
+  "notes": "Nov 17: Official Nov 16 hotfix (Windfury Totem armor/ICD, Maelstrom Weapon, Thundering Strikes fixes); Crix Rank 1 Shadow Bolt main filler; MythicSim Nov 17. Nov 17 (Claude, Jason's ask): Kestrik Galecrest (Feral druid, key K) added: CHARS[2], ROT/NAGA/NAGA12 cat, bear, caster (fixed plates), druid macros, TRAINER_RAW.druid."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16.",
-  "macros": "Corvin: Mobalytics macros added or matched Nov 10 (Searing Pain + pet from 26, Succubus summon key, Fel Domination resummon, Imp sacrifice at 41, Torment + attack). Zanjiro: level-aware manual macros reviewed against Nicktew; Rank1 kick separate from damage. Native triggers are banks, not keyboard modifiers. Troll Berserking macro added Nov 10.",
-  "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; Icy Veins rotation (Nov 13 update) drives auto layout, Nicktew alternative documented. No controller UI added. Nov 10: plate buttons follow each rotation's priority order at every level.",
-  "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option; Nov 16: Rank 1 is his main filler, max rank on dungeon bosses and elites) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking.",
+  "macros": "Corvin: Mobalytics macros added or matched Nov 10 (Searing Pain + pet from 26, Succubus summon key, Fel Domination resummon, Imp sacrifice at 41, Torment + attack). Zanjiro: level-aware manual macros reviewed against Nicktew; Rank1 kick separate from damage. Native triggers are banks, not keyboard modifiers. Troll Berserking macro added Nov 10. Kestrik: form, heal and travel macros from your Druid - Feral note (Nov 16), not run in game yet.",
+  "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; Icy Veins rotation (Nov 13 update) drives auto layout, Nicktew alternative documented. No controller UI added. Nov 10: plate buttons follow each rotation's priority order at every level. Kestrik: fixed plates per form (Cat, Bear, Caster) from your Druid - Feral note; same job on the same button in every form.",
+  "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option; Nov 16: Rank 1 is his main filler, max rank on dungeon bosses and elites) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking. Kestrik: Feral leveling from Method (Birra, Nov 14) and Warcraft Tavern; one rotation per form.",
   "path": "Mobalytics (Crix, plan since Nov 10, respec at 26 unchanged; Nov 15 talent change moves 2 points into Soul Harvest at 46-47): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build."
  }
 }
