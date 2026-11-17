@@ -1273,7 +1273,7 @@ const PIN_TRAIN: Pin[] = WF_DATA.professions.PIN_TRAIN;
 const PROF_PINS: Record<string, Pin[]> = WF_DATA.professions.PROF_PINS;
 const PROF_WHY: Record<string, string> = WF_DATA.professions.PROF_WHY;
 
-function ProfessionWindow({ skills, setSkillFor, lvV, lvC, lvK, view }: { skills: Record<string, number>; setSkillFor: (k: string, n: number) => void; lvV: number; lvC: number; lvK: number; view: View }) {
+function ProfessionWindow({ skills, setSkillFor, lvV, lvC, lvK, view, caps }: { skills: Record<string, number>; setSkillFor: (k: string, n: number) => void; lvV: number; lvC: number; lvK: number; view: View; caps: Caps }) {
   const [whoPick, setWho] = useState<Who>("C");
   const kOwn = HAS_K ? profKeys("K", skills) : [];
   const who: Who = view === "both" ? (whoPick === "K" && !kOwn.length ? "C" : whoPick) : view;
@@ -1286,9 +1286,11 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC, lvK, view }: { skills
   const s = Math.max(1, skill);
   const idx = p.steps.findIndex((st: PStepRaw) => s >= st[0] && s < st[1]);
   const cur = p.steps.length ? p.steps[idx >= 0 ? idx : p.steps.length - 1] : undefined;
-  const nextTrain = p.train.find((t: [number, string]) => t[0] > skill);
-  const cap = skill < 50 ? 75 : skill < 125 ? 150 : skill < 200 ? 225 : 300;
-  const rankName = skill < 50 ? "Apprentice" : skill < 125 ? "Journeyman" : skill < 200 ? "Expert" : "Artisan";
+  const ts = trainState(p, skill, caps[`${who}:${p.key}`]);
+  const nextTrain = ts.next;
+  const cap = ts.cap;
+  const rankName = ts.rankName;
+  const trainHot = ts.due || (!!nextTrain && skill >= nextTrain[0] - 5);
   const mob = skinMobLevel(s);
   const leathers = LEATHER.filter((l: [string, number, number]) => mob >= l[1] && mob <= l[2] + 3).map((l: [string, number, number]) => l[0]);
   const zone = SKIN_ZONES.find((z: [number, number, string]) => s >= z[0] && s < z[1]) ?? SKIN_ZONES[SKIN_ZONES.length - 1];
@@ -1319,8 +1321,8 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC, lvK, view }: { skills
         <PreLine lead="Skill 200+ needs Artisan at character level 35; those milestones:" mark="notes" />
       </div>
       {nextTrain ? (
-        <div style={{ display: "flex", gap: 8, alignItems: "center", fontSize: 12, padding: "6px 10px", borderRadius: 6, border: `1px solid ${skill >= nextTrain[0] - 5 ? ORANGE : "#3a3020"}`, marginBottom: 12, color: INK }} className={skill >= nextTrain[0] - 5 ? "wf-glow" : undefined}>
-          <span style={{ color: GOLD_HI, fontWeight: 700 }}>Train at {nextTrain[0]}</span><span>{nextTrain[1]}</span>{trainReqLevel(nextTrain) !== null && charLv < (trainReqLevel(nextTrain) ?? 0) ? <span style={{ color: ORANGE }}>· {whoName(who)} is level {charLv}, needs {trainReqLevel(nextTrain)}</span> : null}
+        <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", fontSize: 12, padding: "6px 10px", borderRadius: 6, border: `1px solid ${trainHot ? ORANGE : "#3a3020"}`, marginBottom: 12, color: INK }} className={trainHot ? "wf-glow" : undefined}>
+          <span style={{ color: ts.due ? ORANGE : GOLD_HI, fontWeight: 700 }}>{ts.due ? "Train now" : `Train at ${nextTrain[0]}`}</span><span>{nextTrain[1]}</span>{ts.due ? <span style={{ color: MUTED }}>· open since skill {nextTrain[0]}; the game shows the cap at {cap}{skill >= cap ? ", so skill-ups have stopped" : ""}</span> : null}{trainReqLevel(nextTrain) !== null && charLv < (trainReqLevel(nextTrain) ?? 0) ? <span style={{ color: ORANGE }}>· {whoName(who)} is level {charLv}, needs {trainReqLevel(nextTrain)}</span> : null}
         </div>
       ) : <div style={{ fontSize: 12, color: GOLD_HI, marginBottom: 12 }}>Max rank. Reaching 300 also earns a Legacy point and the account-wide certification title (your notes).</div>}
       {p.key === "skin" ? (
@@ -1948,7 +1950,7 @@ const DKEYS: string[] = WF_DATA.dungeons.DKEYS;
 // The upgrade score is stat priorities times stat changes: an estimate, not a simulation.
 type DLoot = { dkey: string; item: string; id?: number; icon?: string; q?: number; slot: string; type?: string; req?: number; boss?: string; quest?: string; rate?: string; stats?: Record<string, number>; for?: string[]; note?: string; _source?: string; _date?: string };
 type EqItem = { id: number; name: string; q?: number; ilvl?: number; sub?: string; loc?: string; stats?: Record<string, number> };
-type GameChar = { name?: string; level?: number; equipped?: Record<string, EqItem>; received_at?: number };
+type GameChar = { name?: string; level?: number; equipped?: Record<string, EqItem>; professions?: { name?: string; rank?: number; max?: number }[]; received_at?: number };
 type DCmp = { kind: "nosync" | "have" | "nostats" | "eqnostats" | "cmp"; replaces: string[]; deltas: [string, number][]; score: number; empty: boolean };
 const DLOOT: DLoot[] = (Array.isArray(WF_DATA.dungeons.LOOT) ? WF_DATA.dungeons.LOOT : []).filter((l: any) => !!l && typeof l.item === "string" && typeof l.slot === "string");
 // Who a loot row is for. A row with no `for` is from before Kestrik and means Corvin and the shaman; he needs "K" listed.
@@ -2303,6 +2305,37 @@ function profKeys(who: Who, skills: Record<string, number>): string[] {
 }
 const EXTRA_SKILL = /^[A-Z]:[a-z0-9_]{1,12}$/; // skills outside SKILL_KEYS that a WF2 code may carry
 
+// Nov 17: which trainer rank a profession is on. The page used to guess it from the skill number alone (63 means
+// Journeyman is trained), so a rank that was never trained read as "train at 125". The game sync sends each
+// profession's cap, and that cap wins: 75 Apprentice, 150 Journeyman, 225 Expert, 300 Artisan. A skill above the
+// synced cap can only be a moved slider or a rank trained since the last sync, so the guess applies again there.
+type Cap = { rank: number; max: number };
+type Caps = Record<string, Cap>;
+function syncedCaps(game: Record<string, GameChar> | null): Caps {
+  const out: Caps = {};
+  if (!game || typeof game !== "object") return out;
+  Object.keys(game).forEach((who: string) => {
+    const list = game[who] ? (game[who] as any).professions : null;
+    if (!Array.isArray(list)) return;
+    list.forEach((g: any) => {
+      const pd = g && typeof g.name === "string" ? PROFS.find((p: ProfDef) => p.name === g.name) : undefined;
+      if (pd && typeof g.rank === "number" && typeof g.max === "number" && g.max > 0) out[`${who}:${pd.key}`] = { rank: g.rank, max: g.max };
+    });
+  });
+  return out;
+}
+const RANK_NAMES = ["Apprentice", "Journeyman", "Expert", "Artisan"];
+type TrainState = { cap: number; rankName: string; next?: [number, string]; due: boolean; synced: boolean };
+function trainState(p: ProfDef, skill: number, c?: Cap): TrainState {
+  if (c && skill <= c.max) {
+    const trained = c.max >= 300 ? 3 : c.max >= 225 ? 2 : c.max >= 150 ? 1 : 0;
+    const next = p.train[trained];
+    return { cap: c.max, rankName: RANK_NAMES[trained], next, due: !!next && skill >= next[0], synced: true };
+  }
+  const g = skill < 50 ? 0 : skill < 125 ? 1 : skill < 200 ? 2 : 3;
+  return { cap: 75 + 75 * g, rankName: RANK_NAMES[g], next: p.train.find((t: [number, string]) => t[0] > skill), due: false, synced: false };
+}
+
 type Tick = { id: string; text: string; meta?: string; def?: boolean };
 const LAUNCH_ITEMS: { group: string; icon: string; items: Tick[] }[] = WF_DATA.launch_night.LAUNCH_ITEMS;
 type Route = { id: string; who: string; zone: string; color: string; icon: string; steps: string[]; flag: string; src: { label: string; url: string }[] };
@@ -2469,7 +2502,7 @@ function nextTalent(cls: string, level: number): { lv: number; name: string; ran
   return { lv, name, rank, tal, why };
 }
 
-function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: Who; level: number; setLevel: (n: number) => void; skills: Record<string, number>; guide: string; setGuide: (seq: string) => void }) {
+function NextDing({ who, level, setLevel, skills, guide, setGuide, caps }: { who: Who; level: number; setLevel: (n: number) => void; skills: Record<string, number>; guide: string; setGuide: (seq: string) => void; caps: Caps }) {
   const c = who === "V" ? CHARS[0] : who === "K" ? CHARS[2] : CHARS[1];
   const cls = CLS_OF[who];
   const nt = nextTalent(cls, level);
@@ -2545,14 +2578,15 @@ function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: Who;
       <div style={{ display: "grid", gap: 6 }}>
         {profs.map((p: ProfDef) => {
           const sk = skills[`${who}:${p.key}`] ?? 0;
-          const t = p.train.find((x: [number, string]) => x[0] > sk);
+          const ts = trainState(p, sk, caps[`${who}:${p.key}`]);
+          const t = ts.next;
           const req = t ? trainReqLevel(t) : null;
           const st = profStep(p, sk);
           return (
             <div key={p.key} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12 }}>
               <Icon icon={p.icon} size={24} />
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div><span style={{ color: "#fff" }}>{p.name}</span> <span style={{ color: MUTED }}>{sk}/300</span>{t ? <span> · train at <span style={{ color: GOLD_HI }}>{t[0]}</span>{req ? <span style={{ color: level >= req ? MUTED : ORANGE }}> (character level {req}{level >= req ? "" : `, you're ${level}`})</span> : null}</span> : <span style={{ color: GOLD_HI }}> · max rank</span>}</div>
+                <div><span style={{ color: "#fff" }}>{p.name}</span> <span style={{ color: MUTED }}>{sk}/300</span>{t ? <span> · {ts.due ? <span style={{ color: ORANGE }}>train now, capped at {ts.cap}</span> : <>train at <span style={{ color: GOLD_HI }}>{t[0]}</span></>}{req ? <span style={{ color: level >= req ? MUTED : ORANGE }}> (character level {req}{level >= req ? "" : `, you're ${level}`})</span> : null}</span> : <span style={{ color: GOLD_HI }}> · max rank</span>}</div>
                 {req && req > 30 ? <div style={{ marginTop: 2 }}><PreTag mark="guide" small src="ForeverArtisan, Oct 10" /></div> : null}
                 {st ? <div style={{ color: MUTED }}>Next craft: <span style={{ color: DIFF[diffAt(st, Math.max(1, sk))] }}>{st[2]}</span> ({st[3]}) to {st[1]} · {st[4]}</div> : p.key === "skin" ? <div style={{ color: MUTED }}>Skin mobs up to level {skinMobLevel(Math.max(1, sk))}</div> : null}
               </div>
@@ -3058,6 +3092,7 @@ export default function App() {
     const t = setInterval(load, 120000);
     return () => { dead = true; clearInterval(t); };
   }, []);
+  const caps = syncedCaps(game); // profession caps as the game reports them, for the "train" hints
   // Nov 17: Kestrik is the third gear character. His dungeon notes are a 7th table column, shown when the feed has them.
   // In the All view he is only offered where his data exists, and a section without it falls back to Corvin.
   const gearWhoFor = (has: boolean): Who => (gearChar === "K" && HAS_K && (view === "K" || has) ? "K" : gearChar === "sham" ? "V" : "C");
@@ -3086,9 +3121,9 @@ export default function App() {
       ]} />
       <Section heading={view === "both" ? "Next ding" : `Next ding · ${view === "C" ? "Corvin" : view === "K" ? K_NAME : V_NAME}`} id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
         <Grid columns={2} plain>
-          {showC ? <NextDing who="C" level={lvC} setLevel={setLvC} skills={st.sk} guide={guide.warlock} setGuide={(v: string) => setGuide("warlock", v)} /> : null}
-          {showV ? <NextDing who="V" level={lvV} setLevel={setLvV} skills={st.sk} guide={guide.shaman} setGuide={(v: string) => setGuide("shaman", v)} /> : null}
-          {showK ? <NextDing who="K" level={lvK} setLevel={setLvK} skills={st.sk} guide={guide.druid ?? ""} setGuide={(v: string) => setGuide("druid", v)} /> : null}
+          {showC ? <NextDing who="C" level={lvC} setLevel={setLvC} skills={st.sk} guide={guide.warlock} setGuide={(v: string) => setGuide("warlock", v)} caps={caps} /> : null}
+          {showV ? <NextDing who="V" level={lvV} setLevel={setLvV} skills={st.sk} guide={guide.shaman} setGuide={(v: string) => setGuide("shaman", v)} caps={caps} /> : null}
+          {showK ? <NextDing who="K" level={lvK} setLevel={setLvK} skills={st.sk} guide={guide.druid ?? ""} setGuide={(v: string) => setGuide("druid", v)} caps={caps} /> : null}
           {view !== "both" ? <CharCard c={CHARS[view === "C" ? 1 : view === "K" ? 2 : 0]} who={view} level={view === "C" ? lvC : view === "K" ? lvK : lvV} setLevel={view === "C" ? setLvC : view === "K" ? setLvK : setLvV} skills={st.sk} setSkill={setSkill} /> : null}
         </Grid>
       </Section>
@@ -3201,7 +3236,7 @@ export default function App() {
 
       <Section heading="Professions" id="profs" caption="Pick a character, then a profession. Skill uses the same numbers as the character cards; − / + or drag. Training thresholds warn when the character level is too low. Legacy points at 150, 225 and 300 in each crafting profession, once per account.">
         {view === "K" && !profKeys("K", st.sk).length ? <Text>{`${K_NAME}'s professions are not on the table yet. They fill in from the game sync the next time he logs in; his rotations, Naga plates and macros are live.`}</Text> : <>
-        <ProfessionWindow skills={st.sk} setSkillFor={setSkill} lvV={lvV} lvC={lvC} lvK={lvK} view={view} />
+        <ProfessionWindow skills={st.sk} setSkillFor={setSkill} lvV={lvV} lvC={lvC} lvK={lvK} view={view} caps={caps} />
         <Text>{PL.profs_note_skinning.text}</Text>
         {view === "K" ? null : <Text>{PL.profs_note_tailoring.text}</Text>}
         <Text>{PL.profs_note_trainers.text}</Text>

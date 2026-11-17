@@ -31,6 +31,8 @@ The same sections and constant names as `research-data.json` from the Nov 3 expo
 | `captions` | Optional. Section id → caption string, overrides the built-in caption (e.g. replace "Pre-launch only" on `meta` after launch). Ids: ding, first, launch, chars, meta, feed, path, builds, rotations, naga, profs, gear, macros, addons, progress |
 | `_meta` | `version` (integer, bump on every push), `generated_at` (ISO date or date-time ET), `source` (short text), `notes_commit` (vault commit the notes were read at, or null), optional `notes` (one short line shown in the page header) |
 
+**Profession trainer ranks (2026-11-17).** Every `professions.PROFS[].train` list keeps exactly three rows in rank order: Journeyman, Expert, Artisan, each `[skill it opens at, text]`. The page picks the row from the cap the game sync reports (75 means Journeyman is still untrained, 150 Expert, 225 Artisan) and shows "Train now" when the skill has reached that row's number. A missing or reordered row would point the hint at the wrong rank. Every list already has this shape, so nothing changes. Without a game sync the page still guesses the rank from the skill number.
+
 ### page_lists
 
 | Key | Type | Where it shows |
