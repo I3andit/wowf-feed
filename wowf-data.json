@@ -155,7 +155,40 @@
     "role": "Alt",
     "level": 22,
     "profs": [],
-    "racials": []
+    "racials": [
+     {
+      "name": "Skysight",
+      "icon": "spell_nature_eyeofthestorm",
+      "detail": "Horde (Windshaper) racial: +15% movement speed for 15 s (Official Oct 26). Used at an elemental convergence it also grants Charged for 1 hour, which makes it +30%; Charged lasts through death and drops when you enter a raid (Official Oct 26–27). Castable while moving (Official Oct 15). 2 min cooldown: Unofficial, client. The client tooltip says 30 s and mounted speed too, where Blizzard's notes say 15 s: both kept until checked in game",
+      "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/7 ; https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/8 ; https://wowforeverbuilds.com/races/skyborne ; https://wow-forever.gg/races/windshaper-skyborne/",
+      "_date": "2026-11-17",
+      "_tag": "Forever-confirmed (speed, Charged); Unofficial (cooldown, 30 s client tooltip)"
+     },
+     {
+      "name": "Walk on Air",
+      "icon": "spell_frost_windwalkon",
+      "detail": "Glide downward for 10 s while you steer (Official Sep 22). 90 s cooldown (was 2 min, Official Oct 15). Usable without leaving Cat or Bear Form: Blizzard's druid deep dive names it among racials now usable while shapeshifted",
+      "_source": "https://news.blizzard.com/en-us/article/24302071/wow-forever-meet-the-new-skyborne ; https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/6 ; https://news.blizzard.com/en-us/article/24301515/world-of-warcraft-forever-class-deep-dives-hunter-and-druid",
+      "_date": "2026-11-17",
+      "_tag": "Forever-confirmed"
+     },
+     {
+      "name": "Wind Blessed",
+      "icon": "spell_nature_cyclone",
+      "detail": "Passive: +2% melee, ranged and spellcasting Haste (was 1% at reveal, 3% on Oct 15, 2% since the Oct 26 notes, restated Nov 2; Official)",
+      "_source": "https://news.blizzard.com/en-us/article/24302071/wow-forever-meet-the-new-skyborne ; https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/6 ; https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/7 ; https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/9",
+      "_date": "2026-11-17",
+      "_tag": "Forever-confirmed"
+     },
+     {
+      "name": "Elemental Insight",
+      "icon": "spell_nature_elementalabsorption",
+      "detail": "Passive: +5% damage to Elementals (Official Sep 22 reveal; no change in later notes)",
+      "_source": "https://news.blizzard.com/en-us/article/24302071/wow-forever-meet-the-new-skyborne ; https://www.wowhead.com/forever/guide/new-race-class-combinations",
+      "_date": "2026-11-17",
+      "_tag": "Forever-confirmed"
+     }
+    ]
    }
   ],
   "CHAR_PROFS": {
@@ -4457,7 +4490,7 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
     },
     "dungeon": {
      "prep": [
@@ -4552,7 +4585,7 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
     }
    },
    "bear": {
@@ -4615,8 +4648,8 @@
       {
        "icon": "ability_druid_lacerate",
        "name": "Lacerate",
-       "tip": "Stack to 5 on anything that lives long enough.",
-       "lvl": 42
+       "tip": "Stack to 5 on anything that lives long enough. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58.",
+       "lvl": 25
       },
       {
        "icon": "ability_druid_mangle2",
@@ -4647,7 +4680,7 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them. Lacerate: Blizzard's deep dive says baseline at 42, Warcraft Tavern's table says 25."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
     },
     "dungeon": {
      "prep": [
@@ -4691,8 +4724,8 @@
       {
        "icon": "ability_druid_lacerate",
        "name": "Lacerate",
-       "tip": "To 5 stacks on bosses.",
-       "lvl": 42
+       "tip": "To 5 stacks on bosses. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58.",
+       "lvl": 25
       },
       {
        "icon": "ability_druid_mangle2",
@@ -4746,7 +4779,7 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
     }
    },
    "caster": {
@@ -4815,7 +4848,7 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
     },
     "dungeon": {
      "prep": [
@@ -4896,7 +4929,7 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Shifting Power, Primal Bite and Berserk are talents: their levels are the earliest the guides take them."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
     }
    }
   }
@@ -6415,10 +6448,11 @@
       {
        "slot": 11,
        "key": "berserk",
-       "spell": "Berserk (talent)",
+       "spell": "Free: Berserk was removed",
        "icon": "ability_druid_berserk",
        "kind": "util",
-       "lvl": 41
+       "lvl": 41,
+       "note": "Blizzard removed the Berserk talent on Nov 2 (Shifting Power and Primal Bite replaced it). Slot kept free for a Cat button of your choice."
       },
       {
        "slot": 12,
@@ -6561,11 +6595,12 @@
        "spell": "Lacerate · Ctrl Demoralizing Roar",
        "icon": "ability_druid_lacerate",
        "kind": "rot",
-       "lvl": 42,
+       "lvl": 25,
        "covers": [
         "Lacerate",
         "Demoralizing Roar"
-       ]
+       ],
+       "note": "Lacerate is a talent from 25 (Blizzard Nov 2 notes). Until you take it, Demoralizing Roar sits here."
       },
       {
        "slot": 4,
@@ -6658,13 +6693,14 @@
       {
        "slot": 11,
        "key": "primal",
-       "spell": "Primal Bite · Ctrl Berserk (talents)",
+       "spell": "Primal Bite (talent)",
        "icon": "ability_druid_mangle2",
        "kind": "rot",
        "lvl": 40,
        "covers": [
         "Primal Bite"
-       ]
+       ],
+       "note": "Berserk was removed (Blizzard Nov 2 notes), so this key has no Ctrl spell."
       },
       {
        "slot": 12,
@@ -8446,13 +8482,13 @@
     "spec": "bear",
     "where": "Naga 3 on the Bear bar",
     "code": "#showtooltip\n/cast [mod:ctrl] Demoralizing Roar; Lacerate",
-    "does": "Plain: Lacerate. Ctrl: Demoralizing Roar. Before Lacerate put Demoralizing Roar itself on 3.",
+    "does": "Plain: Lacerate. Ctrl: Demoralizing Roar. Lacerate is a talent from 25 (Blizzard Nov 2 notes); before you take it put Demoralizing Roar itself on 3.",
     "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
     "tag": "NEW",
     "bind": [
      "lacerate"
     ],
-    "lvl": 42
+    "lvl": 25
    },
    {
     "title": "Growl",
@@ -8469,12 +8505,12 @@
     "lvl": 10
    },
    {
-    "title": "Primal Bite and Berserk",
+    "title": "Primal Bite",
     "icon": "ability_druid_mangle2",
     "spec": "bear",
     "where": "Shift+Naga 5 on the Bear bar",
-    "code": "#showtooltip\n/cast [mod:ctrl] Berserk; Primal Bite",
-    "does": "Plain: Primal Bite. Ctrl: Berserk. Both are talents.",
+    "code": "#showtooltip\n/cast Primal Bite",
+    "does": "Primal Bite, a talent from 40. Your note had Berserk on Ctrl; Blizzard removed Berserk on Nov 2, so there is no Ctrl spell.",
     "src": "Your notes (Druid - Feral.md, Nov 16 2026); not run in game yet",
     "tag": "NEW",
     "bind": [
@@ -18963,26 +18999,37 @@
     "60": "Bane of Doom|Corruption R7|Create Soulstone R5|Create Spellstone R3|Demon Armor R5|Health Funnel R7|Ritual of Doom|Shadow Ward R4|Conflagrate R6|Immolate R7|Immolate R8|Incinerate R3 (new) (Destruction only, Official Nov 9)|Shadow Bolt R10|Shadow Bolt R9"
    },
    "druid": {
-    "1": "Wrath|Healing Touch|Mark of the Wild",
-    "4": "Moonfire|Rejuvenation",
-    "6": "Thorns",
-    "8": "Entangling Roots",
-    "10": "Bear Form (quest, Zephras Isle)|Growl|Maul|Demoralizing Roar|Nature's Grasp|Teleport: Moonglade",
-    "12": "Enrage|Regrowth|Revive (new)",
-    "14": "Bash|Cure Poison (quest)",
-    "16": "Aquatic Form (quest)|Swipe",
-    "18": "Faerie Fire|Hibernate",
-    "20": "Cat Form (quest)|Claw|Prowl|Rip|Shred|Rebirth|Omen of Clarity|Starfire",
-    "22": "Soothe Animal",
-    "24": "Rake|Ferocious Bite|Remove Curse",
-    "26": "Dash|Abolish Poison",
-    "28": "Challenging Roar|Cower",
-    "30": "Travel Form|Tranquility",
-    "32": "Ravage|Track Humanoids",
-    "36": "Frenzied Regeneration|Pounce",
-    "40": "Dire Bear Form|Hurricane|Innervate",
-    "42": "Lacerate (new)",
-    "44": "Barkskin"
+    "1": "Wrath R1|Healing Touch R1|Mark of the Wild R1",
+    "4": "Moonfire R1|Rejuvenation R1",
+    "6": "Wrath R2|Thorns R1",
+    "8": "Healing Touch R2|Entangling Roots R1",
+    "10": "Mark of the Wild R2|Moonfire R2|Rejuvenation R2|Nature's Grasp R1|Teleport: Moonglade|Bear Form (quest, Zephras Isle)|Demoralizing Roar R1|Growl|Maul R1",
+    "12": "Enrage|Regrowth R1|Revive R1 (new)",
+    "14": "Wrath R3|Healing Touch R3|Thorns R2|Bash R1|Cure Poison (quest)",
+    "16": "Moonfire R3|Rejuvenation R3|Aquatic Form (quest)|Swipe R1",
+    "18": "Entangling Roots R2|Nature's Grasp R2|Maul R2|Regrowth R2|Faerie Fire R1|Hibernate R1",
+    "20": "Healing Touch R4|Mark of the Wild R3|Demoralizing Roar R2|Omen of Clarity (passive)|Starfire R1|Cat Form (quest)|Claw R1|Prowl R1|Rip R1|Shred R1|Rebirth R1|Feral Charge (talent)",
+    "22": "Wrath R4|Moonfire R4|Rejuvenation R4|Soothe Animal R1",
+    "24": "Thorns R3|Regrowth R3|Revive R2 (new)|Swipe R2|Rake R1|Remove Curse|Ferocious Bite R1 (new)",
+    "25": "Lacerate R1 (new, talent)",
+    "26": "Healing Touch R5|Maul R3|Starfire R2|Dash R1|Abolish Poison",
+    "28": "Moonfire R5|Rejuvenation R5|Entangling Roots R3|Nature's Grasp R3|Claw R2|Rip R2|Challenging Roar|Cower R1",
+    "30": "Wrath R5|Mark of the Wild R4|Regrowth R4|Bash R2|Faerie Fire R2|Shred R2|Rebirth R2|Insect Swarm R2 (if talented)|Travel Form|Tranquility R1",
+    "32": "Healing Touch R6|Demoralizing Roar R3|Ferocious Bite R2|Ravage R1|Track Humanoids|Poised (new, passive)",
+    "34": "Moonfire R6|Rejuvenation R6|Thorns R4|Maul R4|Swipe R3|Starfire R3|Rake R2|Lacerate R2 (new, if talented)",
+    "36": "Regrowth R5|Revive R3 (new)|Rip R3|Frenzied Regeneration|Pounce R1",
+    "38": "Wrath R6|Healing Touch R7|Entangling Roots R4|Nature's Grasp R4|Hibernate R2|Claw R3|Shred R3|Soothe Animal R2",
+    "40": "Mark of the Wild R5|Moonfire R7|Rejuvenation R7|Prowl R2|Rebirth R3|Cower R2|Insect Swarm R3 (if talented)|Tranquility R2|Ferocious Bite R3|Primal Bite R1 (new, talent)|Hurricane R1|Dire Bear Form|Feline Grace (passive)|Innervate|Shifting Power (talent)",
+    "42": "Demoralizing Roar R4|Maul R5|Regrowth R6|Faerie Fire R3|Starfire R4|Ravage R2|Lacerate R3 (new, if talented)",
+    "44": "Healing Touch R8|Thorns R5|Swipe R4|Rip R4|Rake R3|Barkskin",
+    "46": "Wrath R7|Moonfire R8|Rejuvenation R8|Bash R3|Shred R4|Dash R2|Pounce R2",
+    "48": "Entangling Roots R5|Nature's Grasp R5|Regrowth R7|Revive R4 (new)|Claw R4|Ferocious Bite R4",
+    "50": "Healing Touch R9|Mark of the Wild R6|Maul R6|Starfire R5|Rebirth R4|Insect Swarm R4 (if talented)|Tranquility R3|Ravage R3|Primal Bite R2 (new, if talented)|Hurricane R2|Lacerate R4 (new, if talented)|Gift of the Wild R1|Wild Growth R2 (new, if talented)",
+    "52": "Moonfire R9|Rejuvenation R9|Demoralizing Roar R5|Rip R5|Cower R3",
+    "54": "Wrath R8|Thorns R6|Regrowth R8|Swipe R5|Faerie Fire R4|Shred R5|Soothe Animal R3|Rake R4",
+    "56": "Healing Touch R10|Ferocious Bite R5|Pounce R3",
+    "58": "Moonfire R10|Rejuvenation R10|Entangling Roots R6|Nature's Grasp R6|Maul R7|Hibernate R3|Starfire R6|Claw R5|Ravage R4|Lacerate R5 (new, if talented)",
+    "60": "Healing Touch R11|Mark of the Wild R7|Rejuvenation R11|Regrowth R9|Revive R5 (new)|Starfire R7|Prowl R3|Rip R6|Rebirth R5|Insect Swarm R5 (if talented)|Tranquility R4|Ferocious Bite R6|Primal Bite R3 (new, if talented)|Hurricane R3|Gift of the Wild R2|Wild Growth R3 (new, if talented)"
    }
   },
   "TRAIN_SRC": {
@@ -18995,8 +19042,17 @@
     "url": "https://wowforever.one/classes/warlock/spells/"
    },
    "druid": {
-    "label": "Warcraft Tavern druid leveling milestones (new spells only, rank upgrades not listed)",
-    "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
+    "label": "Druid trainer ranks: talentsforever spellbook (beta client 1.60.1.70755, checked Nov 10) and wowforever.one (client 1.60.1.70532); Lacerate, Ferocious Bite, Primal Bite, Poised per Blizzard's Nov 2 notes. Read Nov 17",
+    "url": "https://talentsforever.com/druid/abilities",
+    "_sources": [
+     "https://talentsforever.com/druid/abilities",
+     "https://wowforever.one/classes/druid/spells/",
+     "https://www.warcrafttavern.com/forever/guides/druid-leveling/",
+     "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/9",
+     "https://news.blizzard.com/en-us/article/24301515/world-of-warcraft-forever-class-deep-dives-hunter-and-druid"
+    ],
+    "_date": "2026-11-17",
+    "_was": "Warcraft Tavern druid leveling milestones (new spells only, rank upgrades not listed)"
    }
   },
   "TRAIN_NOTE": "Fan-run site, read Oct 30. Talent spells are left out of its list. Verify at the trainer or with What's Training? Shaman review Nov7: beta trainer list still contains obsolete Lava Burst/Totemic Projection entries; verify live spellbook before purchase/binding. Nicktew level20: Ghost Wolf/Frost Shock/Lesser Healing Wave/Recall/Elements; Water quest for Healing Stream. No assumption of trained skills. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew"
@@ -19839,9 +19895,45 @@
     "value": "Unchanged",
     "_source": null,
     "_date": null
+   },
+   {
+    "label": "Skyborne · Skysight",
+    "value": "+15% run speed for 15 s; at an elemental convergence also Charged for 1 h (+30%), kept through death, gone in raids (Official Oct 26–27). 2 min cooldown and 30 s client tooltip are Unofficial",
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/7",
+    "_date": "2026-11-17"
+   },
+   {
+    "label": "Skyborne · Walk on Air",
+    "value": "10 s glide, 90 s cooldown (Official Oct 15); usable in forms (deep dive)",
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/6",
+    "_date": "2026-11-17"
+   },
+   {
+    "label": "Skyborne · Wind Blessed",
+    "value": "+2% Haste (was 3%; Official Oct 26, restated Nov 2)",
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/9",
+    "_date": "2026-11-17"
+   },
+   {
+    "label": "Skyborne · Elemental Insight",
+    "value": "+5% damage to Elementals (Official Sep 22)",
+    "_source": "https://news.blizzard.com/en-us/article/24302071/wow-forever-meet-the-new-skyborne",
+    "_date": "2026-11-17"
    }
   ],
   "feed_rows": [
+   {
+    "lead": "Nov 17",
+    "title": "Kestrik: trainer list now has every rank, Skyborne racials filled, Lacerate is a talent at 25, Tiger's Fury and Berserk are gone",
+    "detail": "Druid trainer list rebuilt with all ranks 1–60 from two spellbook sources that agree on every shared level. Lacerate: Blizzard's Sep 30 deep dive made it baseline at 42, but the Nov 2 notes made it a 1-point Feral talent (rank 1 at 25, trainer ranks 34, 42, 50, 58). Ferocious Bite has a new Rank 1 at 24. Tiger's Fury was removed in the deep dive (replaced by Shifting Power) and Berserk in the Nov 2 notes. Poised arrives at 32. Windshaper racials: Skysight, Walk on Air, Wind Blessed, Elemental Insight.",
+    "meta": "Blizzard druid deep dive (Sep 30) and Development Notes post 9 (Nov 2), talentsforever (client 70755, checked Nov 10), wowforever.one (client 70532), Warcraft Tavern; read Nov 17. Official where Blizzard speaks.",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/9",
+    "_date": "2026-11-17"
+   },
    {
     "lead": "Nov 16",
     "title": "Zanjiro: Official hotfix fixes Windfury Totem, Maelstrom Weapon and Thundering Strikes bugs",
@@ -20802,6 +20894,11 @@
     "text": "Shaman - Enhancement (lines 187 and 191-202): Maelstrom Weapon 5/5 then Rage of the Farseer for 31-41 points. Icy Veins' Nov 13 build takes one Maelstrom point (43), no Rage of the Farseer, and goes Restoration (Mindfulness, Totemic Focus, Water Shield 46) then Elemental (Elemental Focus 57). Vault notes not edited.",
     "_source": "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling",
     "_date": "2026-11-14"
+   },
+   {
+    "text": "Druid - Feral (The plate: Bear and Cat Shift+5; Macros: 'Primal Bite and Berserk'): Berserk was removed on Nov 2 (official), so those slots have no Berserk. Same note's 'Lacerate when learned': Lacerate is a Feral talent from 25, not trained at 42 (Nov 2 notes, official).",
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/9",
+    "_date": "2026-11-17"
    }
   ],
   "feed_links": [
@@ -21184,11 +21281,11 @@
   }
  },
  "_meta": {
-  "version": 42,
-  "generated_at": "2026-11-17T09:05-05:00",
-  "source": "Grok, Nov 17 2026 daily meta watch",
+  "version": 43,
+  "generated_at": "2026-11-17T15:30-05:00",
+  "source": "Grok, Nov 17 2026 Kestrik data pass",
   "notes_commit": "2f1ad6c",
-  "notes": "Nov 17: Official Nov 16 hotfix (Windfury Totem armor/ICD, Maelstrom Weapon, Thundering Strikes fixes); Crix Rank 1 Shadow Bolt main filler; MythicSim Nov 17. Nov 17 (Claude, Jason's ask): Kestrik Galecrest (Feral druid, key K) added: CHARS[2], ROT/NAGA/NAGA12 cat, bear, caster (fixed plates), druid macros, TRAINER_RAW.druid."
+  "notes": "Nov 17 (Kestrik data pass): TRAINER_RAW.druid all ranks (talentsforever + wowforever.one, Blizzard Nov 2 notes); Lacerate talent 25, Tiger's Fury and Berserk removed; CHARS[2].racials Windshaper Skyborne."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16.",
