@@ -503,6 +503,11 @@ const isKm = (spec: string): boolean => spec === "druid" || isK(spec); // macro 
 const specColor = (spec: string): string => spec === "enh" ? SHAMAN : isK(spec) ? DRUID : WARLOCK;
 const specName = (spec: string): string => spec === "enh" ? V_NAME : isK(spec) ? K_NAME : "Corvin";
 const specIcon = (spec: string): string => spec === "enh" ? "classicon_shaman" : isK(spec) ? "classicon_druid" : "classicon_warlock";
+const whoColor = (w: Who): string => w === "V" ? SHAMAN : w === "K" ? DRUID : WARLOCK;
+const whoName = (w: Who): string => w === "V" ? V_NAME : w === "K" ? K_NAME : "Corvin";
+const whoIcon = (w: Who): string => w === "V" ? "classicon_shaman" : w === "K" ? "classicon_druid" : "classicon_warlock";
+const CLS_OF: Record<string, string> = { V: "shaman", C: "warlock", K: "druid" };
+const WHO_OF: Record<string, Who> = { shaman: "V", warlock: "C", druid: "K" };
 const kLead = (lv: number): string => lv >= 20 ? "cat" : lv >= 10 ? "bear" : "caster"; // the form he fights in at this level
 
 function Bar({ value, max, color }: { value: number; max: number; color: string }) {
@@ -866,12 +871,20 @@ type Tal = { name: string; row: number; col: number; max: number; icon: string; 
 const TAL_INDEX: Record<string, Record<string, Tal>> = {};
 const TAL_LIST: Record<string, Tal[][]> = {};
 for (const ck of Object.keys(TREES)) {
-  TAL_INDEX[ck] = {};
-  TAL_LIST[ck] = TREES[ck].map((tr: TreeRaw, ti: number) => tr.t.map((r: TalRaw) => {
-    const tal: Tal = { name: r[0], row: r[1], col: r[2], max: r[3], icon: r[4], need: r[5], isNew: r[6] === 1, r1: r[7], rm: r[8] || r[7], tree: ti };
-    TAL_INDEX[ck][tal.name] = tal;
-    return tal;
-  }));
+  try {
+    TAL_INDEX[ck] = {};
+    TAL_LIST[ck] = TREES[ck].map((tr: TreeRaw, ti: number) => tr.t.map((r: TalRaw) => {
+      const tal: Tal = { name: r[0], row: r[1], col: r[2], max: r[3], icon: r[4], need: r[5], isNew: r[6] === 1, r1: r[7], rm: r[8] || r[7], tree: ti };
+      if (typeof tal.name !== "string" || typeof tal.row !== "number" || typeof tal.col !== "number" || typeof tal.max !== "number") throw new Error("talent row");
+      TAL_INDEX[ck][tal.name] = tal;
+      return tal;
+    }));
+    if (ck === "druid" && TAL_LIST[ck].length !== 3) throw new Error("three trees");
+  } catch (e: unknown) {
+    // Nov 17: the shaman and warlock trees are required; a broken extra class (Kestrik's druid trees) just stays off the page.
+    if (ck === "shaman" || ck === "warlock") throw e;
+    delete TAL_INDEX[ck]; delete TAL_LIST[ck];
+  }
 }
 
 function expand(steps: Step[]): string[] {
@@ -880,10 +893,26 @@ function expand(steps: Step[]): string[] {
   return out;
 }
 const SEQ: Record<string, string[]> = {};
-Object.keys(ORDERS).forEach((k: string) => { SEQ[k] = expand(ORDERS[k]); });
+Object.keys(ORDERS).forEach((k: string) => { try { SEQ[k] = expand(ORDERS[k]); } catch (err: unknown) { /* a malformed order is skipped; builds that name it drop out */ } });
 
-type BuildDef = { key: string; label: string; cls: "shaman" | "warlock"; seq?: string; fixed?: string; path?: boolean; src: string; date: string; url: string; blurb: string; tag?: string; respec_at?: number; before?: string; then?: string; primary?: boolean };
-const BUILD_DEFS: BuildDef[] = WF_DATA.talents.BUILD_DEFS;
+type BuildDef = { key: string; label: string; cls: "shaman" | "warlock" | "druid"; short?: string; seq?: string; fixed?: string; path?: boolean; src: string; date: string; url: string; blurb: string; tag?: string; respec_at?: number; before?: string; then?: string; primary?: boolean };
+// Nov 17: druid builds (Kestrik) count only when their order exists and every talent it names is in TREES.druid,
+// so a typo in the feed hides that build instead of crashing the planner. Shaman and warlock builds are untouched.
+function buildUsable(b: BuildDef): boolean {
+  if (!b || b.cls !== "druid") return true;
+  const idx = TAL_INDEX.druid;
+  if (!idx || b.path || typeof b.key !== "string" || typeof b.label !== "string") return false;
+  const steps: Step[] | undefined = b.fixed ? STATIC[b.fixed] : b.seq ? ORDERS[b.seq] : undefined;
+  return Array.isArray(steps) && steps.length > 0 && steps.every((x: Step) => Array.isArray(x) && !!idx[x[0]]);
+}
+const BUILD_DEFS: BuildDef[] = (WF_DATA.talents.BUILD_DEFS as BuildDef[]).filter(buildUsable);
+// The druid order Kestrik follows: the build marked primary, else the first leveling order in the feed.
+const K_LEVELING = (b: BuildDef): boolean => b.cls === "druid" && !b.fixed && !b.then && !!b.seq && !!SEQ[b.seq];
+const PRIMARY_K = BUILD_DEFS.find((b: BuildDef) => K_LEVELING(b) && !!b.primary) ?? BUILD_DEFS.find(K_LEVELING);
+const HAS_K_TAL: boolean = HAS_K && !!PRIMARY_K;
+const TREE_SRC: Record<string, string> = (WF_DATA.talents as any).TREE_SRC || {};
+// Why-text for a talent. Druid entries are keyed "druid:<talent>" because names repeat across classes (Nature's Swiftness).
+function whyOf(cls: string, name: string): string | undefined { return cls === "druid" ? WHY[`druid:${name}`] : WHY[name]; }
 
 // Respec plans (Nov 10, Bot request): a build with `before` only starts at `respec_at`; until then its `before` build's
 // order is the one in force (that build points back with `then`). `primary` marks the plan a class follows by default.
@@ -913,7 +942,7 @@ function seqSteps(seq: string[], n: number): string {
 // Nov 10: the warlock default is the feed's primary plan when it names one (Mobalytics' Demonology respec at 26).
 const GUIDE_OLD_LOCK = "aff_lvl"; // the order the kept reference rotations (quest_icy / dungeon_icy) name
 const PRIMARY_LOCK = BUILD_DEFS.find((b: BuildDef) => b.cls === "warlock" && !!b.primary && !b.fixed && !b.path && !!b.seq && !!SEQ[b.seq]);
-const GUIDE_DEFAULT: Record<string, string> = { shaman: "enh_lvl", warlock: PRIMARY_LOCK ? (PRIMARY_LOCK.seq as string) : GUIDE_OLD_LOCK };
+const GUIDE_DEFAULT: Record<string, string> = { shaman: "enh_lvl", warlock: PRIMARY_LOCK ? (PRIMARY_LOCK.seq as string) : GUIDE_OLD_LOCK, ...(PRIMARY_K ? { druid: PRIMARY_K.seq as string } : {}) };
 let GUIDE: Record<string, string> = { ...GUIDE_DEFAULT };
 const GUIDE_SHORT: Record<string, string> = { enh_lvl: "Icy Veins", enh_notes: "Your notes", enh_mob: "Mobalytics", enh_nicktew: "Nicktew", aff_lvl: "Icy Veins", aff_icy: "Mobalytics Affliction" };
 function guideOptions(cls: string): BuildDef[] {
@@ -937,6 +966,7 @@ function respecFloor(seq?: string): number {
 function guideShort(seq: string): string {
   if (GUIDE_SHORT[seq]) return GUIDE_SHORT[seq];
   const b = BUILD_DEFS.find((x: BuildDef) => x.seq === seq);
+  if (b && b.short) return b.short;
   if (b && b.before && b.respec_at) return `${b.label.split(" ")[0]} respec ${b.respec_at}`;
   return b ? b.label.split(" (")[0] : seq;
 }
@@ -944,7 +974,7 @@ function cleanGuide(g: any): Record<string, string> {
   const out: Record<string, string> = { ...GUIDE_DEFAULT };
   // A warlock pick saved before the feed named this primary plan belongs to the old plan: it resets once to the new one.
   const stale = !g || g.plan !== GUIDE_DEFAULT.warlock;
-  ["shaman", "warlock"].forEach((cls: string) => {
+  ["shaman", "warlock", "druid"].forEach((cls: string) => {
     const v = g && typeof g[cls] === "string" ? g[cls] : "";
     if (cls === "warlock" && stale) return;
     if (guideOptions(cls).some((b: BuildDef) => b.seq === v)) out[cls] = v;
@@ -955,6 +985,7 @@ function cleanGuide(g: any): Record<string, string> {
 function guideSeq(seq?: string): string | undefined {
   if (seq === GUIDE_DEFAULT.shaman) return GUIDE.shaman;
   if (seq === GUIDE_DEFAULT.warlock) return GUIDE.warlock;
+  if (GUIDE_DEFAULT.druid && seq === GUIDE_DEFAULT.druid) return GUIDE.druid ?? seq;
   if (seq === GUIDE_OLD_LOCK && GUIDE.warlock !== GUIDE_DEFAULT.warlock) return GUIDE.warlock; // reference rotations follow the picked Affliction order
   return seq;
 }
@@ -1004,8 +1035,10 @@ function TreeGrid({ cls, ti, ranks, nextName }: { cls: string; ti: number; ranks
   const tals = TAL_LIST[cls][ti];
   const pts = tals.reduce((s: number, t: Tal) => s + (ranks[t.name] ?? 0), 0);
   const ptsBelowRow = (row: number) => tals.filter((t: Tal) => t.row < row).reduce((s: number, t: Tal) => s + (ranks[t.name] ?? 0), 0);
-  const W = 4 * CELL + 3 * GAP;
-  const H = 7 * CELL + 6 * GAP;
+  const nCols = Math.max(4, ...tals.map((t: Tal) => t.col + 1));
+  const nRows = Math.max(7, ...tals.map((t: Tal) => t.row + 1));
+  const W = nCols * CELL + (nCols - 1) * GAP;
+  const H = nRows * CELL + (nRows - 1) * GAP;
   const stateOf = (t: Tal): "max" | "part" | "open" | "lock" => {
     const r = ranks[t.name] ?? 0;
     if (r >= t.max) return "max";
@@ -1063,7 +1096,7 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
   const respecAt = plan && plan.pre ? plan.at : 0;
   const cur = plan ? planDefAt(plan, level) : def;
   const litKey = respecAt ? cur.key : buildKey;
-  const accent = def.cls === "shaman" ? SHAMAN : WARLOCK;
+  const accent = whoColor(WHO_OF[def.cls] || "C");
   const cls: string = def.cls;
   useEffect(() => { setTabOverride(null); }, [buildKey, pathSpec]);
   const shift = legacy ? 5 : 0;
@@ -1092,11 +1125,11 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
     ? [...mapStrip(SEQ[plan.pre.seq as string], true).filter((x: { lv: number }) => x.lv < respecAt), ...mapStrip(SEQ[plan.main.seq as string], false).filter((x: { lv: number }) => x.lv >= respecAt)]
     : mapStrip(seq, false);
   return (
-    <Frame accent={accent} title="Talents" icon={def.cls === "shaman" ? "classicon_shaman" : "classicon_warlock"} right={<span style={{ fontSize: 12, color: MUTED }}>0hp.com talent data · build 1.60.1.70707 · read Oct 30</span>}>
+    <Frame accent={accent} title="Talents" icon={whoIcon(WHO_OF[def.cls] || "C")} right={<span style={{ fontSize: 12, color: MUTED }}>{TREE_SRC[def.cls] ?? (def.cls === "druid" ? "Forever talent data from the research feed" : "0hp.com talent data · build 1.60.1.70707 · read Oct 30")}</span>}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 10 }}>
-        {[{ k: "warlock", label: "Corvin · Warlock", icon: "classicon_warlock", c: WARLOCK }, { k: "shaman", label: `${V_NAME} · Shaman`, icon: "classicon_shaman", c: SHAMAN }].filter((o: { k: string }) => view === "both" || o.k === (view === "C" ? "warlock" : "shaman")).map((o: { k: string; label: string; icon: string; c: string }) => (
+        {[{ k: "warlock", label: "Corvin · Warlock", icon: "classicon_warlock", c: WARLOCK }, { k: "shaman", label: `${V_NAME} · Shaman`, icon: "classicon_shaman", c: SHAMAN }, ...(HAS_K_TAL ? [{ k: "druid", label: `${K_NAME} · Druid`, icon: "classicon_druid", c: DRUID }] : [])].filter((o: { k: string }) => view === "both" || o.k === CLS_OF[view]).map((o: { k: string; label: string; icon: string; c: string }) => (
           <button key={o.k} type="button" className="wf-tab" onClick={() => { pickBuild(guideBuildKey(o.k)); }} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 12px", borderRadius: 8, border: `1px solid ${cls === o.k ? o.c : "#4a3d22"}`, background: cls === o.k ? `${o.c}33` : "#14110d", color: cls === o.k ? "#fff" : MUTED, fontFamily: SERIF, fontSize: 14 }}>
-            <Icon icon={o.icon} size={22} ring={o.c} />{o.label}<RoleBadge who={o.k === "warlock" ? "C" : "V"} />
+            <Icon icon={o.icon} size={22} ring={o.c} />{o.label}<RoleBadge who={WHO_OF[o.k] || "C"} />
           </button>
         ))}
       </div>
@@ -1114,7 +1147,7 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
         <div style={{ padding: "8px 12px", border: "1px dashed #6b5a33", borderRadius: 8, color: MUTED, fontSize: 12, marginBottom: 12 }}>Level 60 build: all 51 points shown. Pick a ▲ build to use the level slider. <PreTag mark="guide" src={`${cur.src}, ${cur.date}`} /></div>
       ) : (
         <div style={{ marginBottom: 12 }}>
-          <Slider value={level} min={1} max={60} onChange={(v: number) => { setLevel(v); setTabOverride(null); }} color={accent} label={def.cls === "shaman" ? `Level · follows ${V_NAME}` : "Level · follows Corvin"} marks={[{ at: 10, label: "10 first point" }, respecAt ? { at: respecAt, label: `${respecAt} respec` } : { at: 30, label: "30" }, { at: 40, label: "40 Dual Spec" }, { at: 60, label: "60" }]} />
+          <Slider value={level} min={1} max={60} onChange={(v: number) => { setLevel(v); setTabOverride(null); }} color={accent} label={`Level · follows ${whoName(WHO_OF[def.cls] || "C")}`} marks={[{ at: 10, label: "10 first point" }, respecAt ? { at: respecAt, label: `${respecAt} respec` } : { at: 30, label: "30" }, { at: 40, label: "40 Dual Spec" }, { at: 60, label: "60" }]} />
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", marginTop: 8, fontSize: 12, color: MUTED }}>
             <span>Points spent: <b style={{ color: GOLD_HI }}>{pts}</b>/51 · split <b style={{ color: INK }}>{split.join("/")}</b></span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}><Toggle label="Legacy Talented maxed: points up to 5 levels early" value={legacy} onChange={(v: boolean) => setLegacy(v)} /></span>
@@ -1145,7 +1178,7 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: 11, color: GOLD, letterSpacing: ".1em", textTransform: "uppercase" }}>Next point · level {Math.max(1, nextLevel)}</div>
             <div style={{ fontFamily: SERIF, fontSize: 18, color: "#fff" }}>{nextTal.name} <span style={{ color: FEL, fontSize: 14 }}>{nextRank}/{nextTal.max}</span> <span style={{ color: MUTED, fontSize: 12 }}>· {TREES[def.cls][nextTal.tree].name}</span></div>
-            <div style={{ fontSize: 12, color: "#ffd100" }}>{WHY[nextTal.name] ?? (nextRank >= nextTal.max ? nextTal.rm : nextTal.r1)}</div>
+            <div style={{ fontSize: 12, color: "#ffd100" }}>{whyOf(def.cls, nextTal.name) ?? (nextRank >= nextTal.max ? nextTal.rm : nextTal.r1)}</div>
             {nextLevel > 30 ? <div style={{ marginTop: 4 }}><PreTag mark="guide" src={`${cur.src}, ${cur.date}`} /></div> : null}
           </div>
           {lastName ? <div style={{ fontSize: 11, color: MUTED, textAlign: "right" }}>Last taken<br /><span style={{ color: INK }}>{lastName}</span></div> : null}
@@ -2377,14 +2410,14 @@ function nextTalent(cls: string, level: number): { lv: number; name: string; ran
   if (!seq || lv > 60 || idx >= seq.length) return null; // no talent order on the table yet (Kestrik)
   const name = seq[idx];
   const rank = seq.slice(0, idx + 1).filter((n: string) => n === name).length;
-  const tal = TAL_INDEX[cls][name];
-  const why = WHY[name] ?? (tal ? `Talent text: ${rank > 1 ? tal.rm : tal.r1}` : "");
+  const tal = (TAL_INDEX[cls] || {})[name];
+  const why = whyOf(cls, name) ?? (tal ? `Talent text: ${rank > 1 ? tal.rm : tal.r1}` : "");
   return { lv, name, rank, tal, why };
 }
 
 function NextDing({ who, level, setLevel, skills, guide, setGuide }: { who: Who; level: number; setLevel: (n: number) => void; skills: Record<string, number>; guide: string; setGuide: (seq: string) => void }) {
   const c = who === "V" ? CHARS[0] : who === "K" ? CHARS[2] : CHARS[1];
-  const cls = who === "V" ? "shaman" : who === "K" ? "druid" : "warlock";
+  const cls = CLS_OF[who];
   const nt = nextTalent(cls, level);
   const ntl = nextTrainerLevel(cls, level);
   const spells = ntl ? trainerAt(cls, ntl) : [];
@@ -2738,6 +2771,7 @@ function guideBuildKey(cls: string): string {
   // The old Icy Veins plan opens its paired build (Spec 2 toggle); every other guide opens its own build.
   if (cls === "warlock" && g === GUIDE_OLD_LOCK && BUILD_DEFS.some((x: BuildDef) => x.key === "path")) return "path";
   const b = buildOfSeq(g, cls);
+  if (!b && cls === "druid") { const d = BUILD_DEFS.find((x: BuildDef) => x.cls === "druid"); return d ? d.key : BUILD_DEFS[0].key; }
   return b ? b.key : cls === "shaman" ? "enh_lvl" : "path";
 }
 
@@ -2869,7 +2903,7 @@ export default function App() {
   }, []);
   const [guide, setGuideAll] = useState<Record<string, string>>(() => cleanGuide(WF_STORE.initial?.guide));
   GUIDE = guide; // read during this render by rotLv, nextTalent and the Naga plate
-  const [buildKey, setBuildKey] = useState<string>(() => guideBuildKey("warlock"));
+  const [buildKey, setBuildKey] = useState<string>(() => guideBuildKey(view === "V" ? "shaman" : view === "K" && HAS_K_TAL ? "druid" : "warlock"));
   const setGuide = (cls: string, seq: string) => setGuideAll((g: Record<string, string>) => cleanGuide({ ...g, [cls]: seq }));
   useEffect(() => { if (storeOk !== null) WF_STORE.save("guide", guide); }, [guide, storeOk]);
   const lvV = st.lvV;
@@ -2896,11 +2930,11 @@ export default function App() {
   const resetAll = () => { const s = initialState(); setSt({ lvV: 1, lvC: 1, lvK: 1, sk: s.sk, ck: { ...DEFAULT_CHECKS } }); };
 
   const tDef = BUILD_DEFS.find((b: BuildDef) => b.key === buildKey) ?? BUILD_DEFS[0];
-  const charLevel = tDef.cls === "shaman" ? lvV : lvC;
-  const setCharLevel = tDef.cls === "shaman" ? setLvV : setLvC;
-  const charName = tDef.cls === "shaman" ? V_NAME : "Corvin";
+  const charLevel = tDef.cls === "shaman" ? lvV : tDef.cls === "druid" ? lvK : lvC;
+  const setCharLevel = tDef.cls === "shaman" ? setLvV : tDef.cls === "druid" ? setLvK : setLvC;
+  const charName = whoName(WHO_OF[tDef.cls] || "C");
   const [preview, setPreview] = useState<number | null>(null);
-  useEffect(() => { setPreview(null); }, [lvV, lvC]);
+  useEffect(() => { setPreview(null); }, [lvV, lvC, lvK]);
   const level = preview ?? charLevel;
   const setLevel = (n: number) => setPreview(n === charLevel ? null : n);
   const [pathSpec, setPathSpec] = useState<number>(1);
@@ -2947,7 +2981,7 @@ export default function App() {
   const showK = HAS_K && shows(view, "K");
 
   useEffect(() => {
-    const want = view === "C" ? "warlock" : view === "V" ? "shaman" : null;
+    const want = view === "C" ? "warlock" : view === "V" ? "shaman" : view === "K" && HAS_K_TAL ? "druid" : null;
     if (want && tDef.cls !== want) { setBuildKey(guideBuildKey(want)); setPreview(null); }
     if (view === "C") setGearChar("lock");
     if (view === "V") setGearChar("sham");
@@ -3049,7 +3083,7 @@ export default function App() {
       </Section>
 
       <Section heading="Talent trees" id="builds" caption={"Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: " + V_NAME + ", Warlock builds: Corvin); moving it previews another level without changing the character. Corvin's path levels Spec 1 Affliction to 60; Spec 2 (Demonology, for groups) unlocks at 40."}>
-        {view === "K" ? <Text>{`${K_NAME}'s talent trees are not on the table yet. The research feed adds it; his rotations, Naga plates and macros are live.`}</Text> : <>
+        {view === "K" && !HAS_K_TAL ? <Text>{`${K_NAME}'s talent trees are not on the table yet. The research feed adds them; his rotations, Naga plates and macros are live.`}</Text> : <>
         {preview !== null ? (
           <div className="wf-pop" style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", padding: "8px 12px", borderRadius: 8, border: `1px solid ${ORANGE}`, background: "rgba(255,128,0,.08)", color: INK, fontSize: 13 }}>
             <span>Previewing level <b style={{ color: GOLD_HI }}>{preview}</b>. {charName} is level {charLevel}.</span>
@@ -3064,10 +3098,16 @@ export default function App() {
             <div style={{ marginTop: 8 }}><BulletList items={PL.talents_enh_bullets} /></div>
           </details>
         ) : null}
-        {buildKey === "aff_lvl" || buildKey === "aff_icy" || buildKey === "aff_raid" || !!tDef.before || !!tDef.then ? (
+        {tDef.cls === "druid" && PL.talents_druid_bullets && PL.talents_druid_bullets.length ? (
+          <details className="wf-acq wf-more">
+            <summary>Feral notes ({PL.talents_druid_bullets.length})</summary>
+            <div style={{ marginTop: 8 }}><BulletList items={PL.talents_druid_bullets} /></div>
+          </details>
+        ) : null}
+        {buildKey === "aff_lvl" || buildKey === "aff_icy" || buildKey === "aff_raid" || (tDef.cls === "warlock" && (!!tDef.before || !!tDef.then)) ? (
           <Callout tone={PL.talents_level60.tone} lead={PL.talents_level60.lead}>{PL.talents_level60.text}</Callout>
         ) : null}
-        {buildKey === "demo_lvl" || buildKey === "demo_raid" || buildKey === "path" || !!tDef.before || !!tDef.then ? (
+        {buildKey === "demo_lvl" || buildKey === "demo_raid" || buildKey === "path" || (tDef.cls === "warlock" && (!!tDef.before || !!tDef.then)) ? (
           <Callout tone={PL.talents_brand.tone} lead={PL.talents_brand.lead}>{PL.talents_brand.text}</Callout>
         ) : null}
         </>}
