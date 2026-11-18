@@ -260,7 +260,7 @@
     "cogm": "S",
     "lfc": "A",
     "wowhead": "S",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "brokenNote": "#6, 1,067 DPS"
    },
@@ -276,7 +276,7 @@
     "cogm": "A",
     "lfc": "B",
     "wowhead": "A",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15"
    },
    {
@@ -290,7 +290,7 @@
     "cogm": "A",
     "lfc": "B",
     "wowhead": "S",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "brokenNote": "#8, 1,033 DPS"
    },
@@ -305,7 +305,7 @@
     "cogm": "S",
     "lfc": "S",
     "wowhead": "A",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "mythicMove": "▼5 vs Nov 14 (#9, 983 DPS): MythicSim reference-gear swap (Silithus quest rewards removed until Forever confirms them, -1.4%) and Windfury Totem extra attack modelled as one main-hand strike with no Maelstrom stack (-0.8%); sim changes, not a game change",
     "brokenNote": "#10, 968 DPS (was B)"
@@ -321,7 +321,7 @@
     "cogm": "A",
     "lfc": "A",
     "wowhead": "C",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 16 (engine 9e73a04, read Nov 16; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
     "_date": "Nov 15",
     "brokenNote": "#16, 859 DPS"
    }
@@ -2585,16 +2585,16 @@
      2
     ],
     [
-     "Earthbound",
-     1
-    ],
-    [
      "Tidal Focus",
      5
     ],
     [
      "Mindfulness",
      3
+    ],
+    [
+     "Maelstrom Weapon",
+     1
     ]
    ],
    "enh_nicktew": [
@@ -3287,16 +3287,16 @@
      2
     ],
     [
-     "Earthbound",
-     1
-    ],
-    [
      "Tidal Focus",
      5
     ],
     [
      "Mindfulness",
      3
+    ],
+    [
+     "Maelstrom Weapon",
+     1
     ]
    ]
   },
@@ -3324,12 +3324,12 @@
    },
    {
     "key": "enh_mob",
-    "label": "Enhancement 18/25/8",
+    "label": "Enhancement 17/26/8",
     "cls": "shaman",
-    "src": "Mobalytics (Yebb), traditional leveling build, updated Nov 4, read Nov 5",
-    "date": "Nov 4",
+    "src": "Mobalytics (Yebb), traditional leveling build, updated Nov 16, read Nov 18",
+    "date": "Nov 16",
     "url": "https://mobalytics.gg/wow-forever/classes/enhancement-shaman-guide",
-    "blurb": "Enhancement to Spirit Weapons at 34 (Improved Lightning Shield 18–24, Stormstrike 25, Improved Stormstrike 30–31), then Elemental for AoE (Concussion, Call of Flame, Convection, Trial by Fire), then Tidal Focus and Mindfulness. Ends 18/25/8.",
+    "blurb": "Enhancement to Spirit Weapons at 34 (Improved Lightning Shield 18–24, Stormstrike 25, Improved Stormstrike 30–31), then Elemental for AoE (Concussion, Call of Flame, Convection, Trial by Fire), then Tidal Focus 52–56, Mindfulness 57–59 and one Maelstrom Weapon point at 60. Ends 17/26/8.",
     "seq": "enh_mob"
    },
    {
@@ -3457,7 +3457,7 @@
     "cls": "druid",
     "seq": "feral_iv",
     "src": "Icy Veins Feral Druid Leveling Guide (Meyra), its talent calculator order (client 70755), updated Nov 4 2026, read Nov 17 2026 (Unofficial, single source)",
-    "date": "Nov 4; read Nov 17",
+    "date": "Nov 15 (talents unchanged since Nov 4); read Nov 18",
     "url": "https://www.icy-veins.com/wow-forever/feral-druid-leveling",
     "blurb": "Ferocity 5 at 10-14, Feral Instinct 15-17, Feral Swiftness 18-19, Feral Charge 20 (the day Cat Form opens), Savage Fury 21-22, Sharpened Claws 23-24, Lacerate 25, Blood Frenzy 26-27, Predatory Discipline 28, Leader of the Pack 30, Rend and Tear 35-39, Primal Bite 40, Shifting Power 41, then Heart of the Wild, Naturalist, Genesis, Nature's Reach and Nature's Majesty. Never takes Furor.",
     "tag": "Unofficial, single source"
@@ -3487,7 +3487,7 @@
    "Shamanistic Focus": "Shocks and Lightning Shield cost 45% less mana: you stop rationing shocks (wowfdb). Only applies once the point is actually spent, not automatically at 20 (Nicktew, Nov 4, read Nov 7). Levels · Icy Veins: 20 · Nicktew: 20 · Mobalytics (Yebb): 20 · Your notes: 20. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Improved Stormstrike": "Dodges and parries can reset Stormstrike; also 50% mana regen while casting (wowfdb). Levels · Icy Veins: 30–31 · Nicktew: 30–31 · Mobalytics (Yebb): 30–31 · Your notes: 30, 32.",
    "Water Shield": "Restoration talent: restores mana when you are struck or when you crit (Icy Veins, Nov 13: 46 in both its text and calculator). Nicktew: its value versus earlier deep Enhancement is untested (Nov 4, read Nov 7). Levels · Icy Veins: 46 · Nicktew: 46 (Nov 15 update). https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
-   "Maelstrom Weapon": "Each stack cuts your next Lightning Bolt's cast time and mana by 20% at every rank, so 5 stacks make it free and instant; more ranks only raise the proc rate (6 to 10 a minute, Official Nov 10 hotfix). Since the Nov 16 hotfix a full stack is spent on one cast only (it used to benefit two). Icy Veins (Nov 13): one point is worth it, more delays the mana talents. Levels · Icy Veins: 43 · Nicktew: 35, 47–48, 53 (4/5, Nov 15 update) · Your notes: 36–40.",
+   "Maelstrom Weapon": "Each stack cuts your next Lightning Bolt's cast time and mana by 20% at every rank, so 5 stacks make it free and instant; more ranks only raise the proc rate (6 to 10 a minute, Official Nov 10 hotfix). Since the Nov 16 hotfix a full stack is spent on one cast only (it used to benefit two). Icy Veins (Nov 13): one point is worth it, more delays the mana talents. Levels · Icy Veins: 43 · Nicktew: 35, 47–48, 53 (4/5, Nov 15 update) · Mobalytics (Yebb): 60 (Nov 16) · Your notes: 36–40.",
    "Rage of the Farseer": "+30% attack speed for 25 s on a 3-minute cooldown (wowfdb; marked unconfirmed there). Not in Icy Veins' build since Nov 13. Levels · Nicktew: 51 · Your notes: 41.",
    "Malevolence": "+1% Shadow crit per point (5% at 5/5); pairs with Pandemic. Crix's respec build takes 4/5 since Nov 15. Levels · Mobalytics respec 26: 57–60 (4/5) · Icy Veins Affliction: 27–29, 42–43 · Mobalytics Affliction 1-60: 48–52.",
    "Wrack": "Channel that makes your Siphon Life, Corruption and Bane of Agony on the target tick twice as fast while you channel (Official Nov 10 hotfix, damage cut 30%). Affliction's 31-point talent; needs Siphon Life. Not in the Mobalytics builds. Levels · Icy Veins Affliction: 51.",
@@ -3518,7 +3518,7 @@
    "druid:Natural Instinct": "Melee crits deal 20% more bonus damage, and your heals gain 25% of your Intellect (2/2). Mobalytics: 31-32; Icy Veins: 31-32.",
    "druid:Rend and Tear": "+15% melee ability damage on bleeding targets at 5/5 (Rake and Rip keep it on). Mobalytics: 35-39; Icy Veins: 35-39.",
    "druid:Shifting Power": "Cat Form: turn 55% of base mana into 40 Energy, 8 sec cooldown. Use it under 50 Energy. Mobalytics: 40; Icy Veins: 41; Wowhead: 40.",
-   "druid:Genesis": "Periodic damage and healing +10% at 5/5: Rake, Rip, Moonfire and your HoTs. Mobalytics: 41-45; Icy Veins: 52-56; Wowhead: not taken.",
+   "druid:Genesis": "Periodic damage and healing +10% at 5/5: Rake, Rip, Moonfire and your HoTs. Since the Official Nov 16 hotfix it also raises Pounce's bleed damage. Mobalytics: 41-45; Icy Veins: 52-56; Wowhead: not taken.",
    "druid:Nature's Majesty": "+4% crit with spells and melee at 2/2. Mobalytics: 46-47; Icy Veins: 59-60; Wowhead: not taken.",
    "druid:Nature's Reach": "+4% hit at 2/2 (and 20% range on Balance spells). Mobalytics: 48-49; Icy Veins: 57-58; Wowhead: not taken.",
    "druid:Heart of the Wild": "+10% Intellect; in Cat Form +10% Strength, in Bear Form +20% Stamina (5/5). Mobalytics: 50-54; Icy Veins: 42-46; Wowhead: 42-46.",
@@ -11693,6 +11693,58 @@
    "Idol of Shifting Tides": [
     "inv_relics_totemofrage",
     2
+   ],
+   "Defender's Leather Helm": [
+    "inv_helmet_15",
+    3
+   ],
+   "Embrace of the Lycan": [
+    "inv_helmet_15",
+    3
+   ],
+   "Barbaric Shoulders": [
+    "inv_shoulder_05",
+    2
+   ],
+   "Fleshhide Shoulders": [
+    "inv_shoulder_18",
+    3
+   ],
+   "Harpoon of Command": [
+    "inv_spear_04",
+    3
+   ],
+   "Mograine's Might": [
+    "inv_hammer_09",
+    3
+   ],
+   "Bigger Rock on Bigger Stick": [
+    "inv_mace_42",
+    3
+   ],
+   "The Rockpounder": [
+    "inv_hammer_09",
+    3
+   ],
+   "Diabolic Skiver": [
+    "inv_weapon_halbard_01",
+    3
+   ],
+   "The Chief's Enforcer": [
+    "inv_staff_07",
+    3
+   ],
+   "Princess Theradras' Scepter": [
+    "inv_mace_42",
+    3
+   ],
+   "Flame Wrath": [
+    "inv_spear_04",
+    3
+   ],
+   "Lavastone Hammer": [
+    "inv_hammer_09",
+    3
    ]
   },
   "GEAR_SHEETS": {
@@ -14290,7 +14342,7 @@
         "id": "gk1",
         "lv": "20-29",
         "from": 20,
-        "to": 29,
+        "to": 24,
         "name": "Brawler's Leather Hood (20)",
         "item": "Brawler's Leather Hood",
         "src": "Crafted · Leatherworking 100 · Icy Veins Feral leveling (Meyra, Nov 4), read Nov 17",
@@ -14322,6 +14374,54 @@
           }
          }
         ]
+       },
+       {
+        "id": "gk26",
+        "lv": "20-29",
+        "from": 25,
+        "to": 43,
+        "name": "Defender's Leather Helm (25)",
+        "item": "Defender's Leather Helm",
+        "src": "Crafted · Leatherworking 125 · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "Leatherworking 125 (orange to 130); 12 Medium Leather, 3 Elixir of Minor Fortitude, 2 Cured Medium Hide; learned from Pattern: Defender's Leather Helm (where to buy it is not on the pages read). Bind on pickup, so you craft it yourself. Requires level 25. Icy Veins: the best Feral head option, lasts well past 40.",
+        "faction": "Horde",
+        "faction_basis": "Crafted, bind on pickup",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/252455",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 84,
+         "str": 12,
+         "sta": 13
+        }
+       },
+       {
+        "id": "gk27",
+        "lv": "30+",
+        "from": 44,
+        "to": 60,
+        "name": "Embrace of the Lycan (44)",
+        "item": "Embrace of the Lycan",
+        "src": "Dungeon · Zul'Farrak · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "Zul'Farrak, Ruuzlu, 32.1% (Icy Veins DB; Icy Veins guide says the final boss). Requires level 44. +32 attack power.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon in Tanaris",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/9479",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 117,
+         "str": 8,
+         "sta": 16,
+         "spi": 5,
+         "ap": 32
+        }
        }
       ]
      },
@@ -14428,6 +14528,54 @@
         ],
         "_date": "2026-11-17",
         "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       },
+       {
+        "id": "gk28",
+        "lv": "30+",
+        "from": 30,
+        "to": 36,
+        "name": "Barbaric Shoulders (30)",
+        "item": "Barbaric Shoulders",
+        "src": "Crafted · Leatherworking 170 · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "Leatherworking 170 (8 Heavy Leather, 2 Fine Thread, 1 Cured Heavy Hide). Bind on equip, so the auction house works too. Requires level 30.",
+        "faction": "Horde",
+        "faction_basis": "Crafted, bind on equip",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/5964",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 76,
+         "str": 5,
+         "agi": 5,
+         "sta": 6
+        }
+       },
+       {
+        "id": "gk29",
+        "lv": "30+",
+        "from": 37,
+        "to": 60,
+        "name": "Fleshhide Shoulders (37)",
+        "item": "Fleshhide Shoulders",
+        "src": "Dungeon · Razorfen Downs · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "Razorfen Downs, Glutton, 34.3% (Icy Veins DB). Requires level 37.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon in the Barrens",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/10774",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 95,
+         "str": 5,
+         "agi": 6,
+         "sta": 15
+        }
        }
       ]
      },
@@ -15030,6 +15178,173 @@
           }
          }
         ]
+       },
+       {
+        "id": "gk30",
+        "lv": "30+",
+        "from": 35,
+        "to": 38,
+        "name": "Harpoon of Command (35)",
+        "item": "Harpoon of Command",
+        "src": "Dungeon · The Drowned City · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "The Drowned City, Var'Taka (second boss), 32.7% (Icy Veins DB). Requires level 35. 35.7 DPS polearm, +1% dodge, +0.5% hit.",
+        "faction": "Horde",
+        "faction_basis": "Dungeon open to both factions",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/274601",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "dps": 35.7,
+         "sta": 15,
+         "hit": 0.5
+        }
+       },
+       {
+        "id": "gk31",
+        "lv": "30+",
+        "from": 39,
+        "to": 39,
+        "name": "Mograine's Might (39)",
+        "item": "Mograine's Might",
+        "src": "Dungeon · Scarlet Monastery Cathedral · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "Scarlet Monastery Cathedral, Scarlet Commander Mograine, 25.8% (Icy Veins DB). Requires level 39. Short wing, efficient to farm (Icy Veins).",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon in Tirisfal Glades",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/7723",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "dps": 38.8,
+         "str": 8,
+         "int": 16,
+         "sta": 14
+        }
+       },
+       {
+        "id": "gk32",
+        "lv": "30+",
+        "from": 40,
+        "to": 43,
+        "name": "Bigger Rock on Bigger Stick (40)",
+        "item": "Bigger Rock on Bigger Stick",
+        "src": "Quest · Krol'dok Stronghold · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "Eye of Mugg (Horde), reward choice, needs a Krol'dok Stronghold clear; quest opens at 40 (Icy Veins). 41.2 DPS, +14 Str, chance on hit: 14 Physical damage every 2 sec for 20 sec.",
+        "faction": "Horde",
+        "faction_basis": "Horde quest version",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/279480",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "dps": 41.2,
+         "str": 14
+        }
+       },
+       {
+        "id": "gk33",
+        "lv": "30+",
+        "from": 44,
+        "to": 48,
+        "name": "The Rockpounder (44)",
+        "item": "The Rockpounder",
+        "src": "Dungeon · Uldaman · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "Uldaman, Archaedas (final boss), 31.5% (Icy Veins DB). Requires level 44. 42.7 DPS, +2% crit.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon in the Badlands",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/9413",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "dps": 42.7,
+         "str": 5,
+         "crit": 2
+        },
+        "alts": [
+         {
+          "item": "Diabolic Skiver",
+          "label": "Alt — polearm, Zul'Farrak",
+          "how": "Zul'Farrak, Shadowpriest Sezz'ziz, 22.6% (Icy Veins DB). Requires level 44. 42.8 DPS, chance on hit 174 Physical damage.",
+          "stats": {
+           "dps": 42.8
+          }
+         },
+         {
+          "item": "The Chief's Enforcer",
+          "label": "Alt — staff, Zul'Farrak",
+          "how": "Zul'Farrak, Chief Ukorz Sandscalp, 31.2% (Icy Veins DB). Requires level 45. 43.5 DPS, chance on hit 294 damage and a 1.5 sec stun.",
+          "stats": {
+           "dps": 43.5
+          }
+         }
+        ]
+       },
+       {
+        "id": "gk34",
+        "lv": "30+",
+        "from": 49,
+        "to": 50,
+        "name": "Princess Theradras' Scepter (49)",
+        "item": "Princess Theradras' Scepter",
+        "src": "Dungeon · Maraudon · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "Maraudon, Princess Theradras (final boss), 18.5% (Icy Veins DB). Requires level 49. 46.5 DPS, chance on hit 168 damage and -100 armor.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon in Desolace",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/17766",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "dps": 46.5
+        }
+       },
+       {
+        "id": "gk35",
+        "lv": "30+",
+        "from": 51,
+        "to": 60,
+        "name": "Flame Wrath (51)",
+        "item": "Flame Wrath",
+        "src": "Dungeon · Blackrock Depths · Icy Veins Feral leveling (Meyra, Nov 15), read Nov 18",
+        "how": "Blackrock Depths, Ambassador Flamelash, 28% (Icy Veins DB). Requires level 51. 48.2 DPS polearm, chance on hit: ring of fire for 154 and a Fire Shield.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon in Blackrock Mountain",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/11809",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-18",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "dps": 48.2,
+         "str": 10,
+         "sta": 17
+        },
+        "alts": [
+         {
+          "item": "Lavastone Hammer",
+          "label": "Alt — mace, Blackrock Depths",
+          "how": "Blackrock Depths, Magmus, 13.8% (Icy Veins DB). Requires level 53. 49.7 DPS, +13 Str, +12 Int, +14 Sta, +20 spell power.",
+          "stats": {
+           "dps": 49.7,
+           "str": 13,
+           "int": 12,
+           "sta": 14
+          }
+         }
+        ]
        }
       ]
      },
@@ -15117,7 +15432,17 @@
    "gk22",
    "gk23",
    "gk24",
-   "gk25"
+   "gk25",
+   "gk26",
+   "gk27",
+   "gk28",
+   "gk29",
+   "gk30",
+   "gk31",
+   "gk32",
+   "gk33",
+   "gk34",
+   "gk35"
   ],
   "GEAR_ACQUISITION": {
    "Axe of Orgrimmar": {
@@ -22153,7 +22478,7 @@
   "meta_raid_watch": {
    "lead": "Raid watch",
    "tone": "warning",
-   "text": "Official Nov 16 hotfixes: Windfury Totem extra attacks now respect armor and have an internal cooldown, and no longer give Rage; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes crit works without a weapon; Formula: Enchant Boots - Speed (reputation) is now bind-on-pickup; Vampiric Embrace heals 10% (Priest). Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15-16 (Rank 1 Shadow Bolt main filler, Felhunter option, Soul Harvest 46-47; respec unchanged). MythicSim Nov 17 (Best of each spec, not yet updated for the Nov 16 hotfix): Demo #7, Aff #8, Destro #10, Enh #14. voidsim Nov 16: Enh A, Demo/Aff/Destro B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
+   "text": "Official Nov 17 hotfixes: Flurry no longer loses stacks when Windfury Totem attacks land; Upper Blackrock Spire enemy health and damage restored (much harder again); Might of Stormwind and Warchief's Blessing cancel on death; skinners can no longer skin a few creatures that aren't normally skinnable; Alterac Valley quests need level 58. Official Nov 16 hotfixes: Windfury Totem extra attacks now respect armor and have an internal cooldown, and no longer give Rage; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes crit works without a weapon; Formula: Enchant Boots - Speed (reputation) is now bind-on-pickup; Vampiric Embrace heals 10% (Priest). Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15-16 (Rank 1 Shadow Bolt main filler, Felhunter option, Soul Harvest 46-47; respec unchanged). MythicSim Nov 17 (Best of each spec, not yet updated for the Nov 16 hotfix): Demo #7, Aff #8, Destro #10, Enh #14. voidsim Nov 16: Enh A, Demo/Aff/Destro B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
    "_source": "Blizzard forum topics 2403040 (post 11, Nov 16), 2416343 (Nov 14) and 2415068; Mobalytics Crix Nov 16; Icy Veins Enhancement leveling Nov 13; MythicSim Nov 17; voidsim Nov 16; BrokenMeta Nov 10; Forever Logs Nov 17",
    "_date": "Nov 17"
   },
@@ -22177,10 +22502,10 @@
    {
     "title": "voidsim.io tier list",
     "site": "voidsim.io",
-    "date": "Nov 16",
+    "date": "Nov 18",
     "href": "https://voidsim.io/forever/tier-list",
     "_source": "voidsim.io",
-    "_date": "Nov 16"
+    "_date": "Nov 18"
    },
    {
     "title": "CoGM DPS tier list",
@@ -22296,6 +22621,42 @@
    }
   ],
   "feed_rows": [
+   {
+    "lead": "Nov 17",
+    "title": "Official hotfix: Flurry no longer loses stacks to Windfury Totem attacks; Upper Blackrock Spire back to full difficulty",
+    "detail": "Shaman: Flurry was wrongly losing stacks when Windfury Totem attacks landed; fixed (Zanjiro keeps Flurry up longer). Might of Stormwind and Warchief's Blessing now always cancel on death and no longer apply to non-players. Upper Blackrock Spire enemy health and damage were far too low; corrected, it needs a full, careful group again. Skinning: skinners can no longer skin a few creatures that normally aren't skinnable. Alterac Valley quests now need level 58. Bronze Mace is now bind-on-equip. Nothing for Warlocks or Feral. Also, from the Nov 16 post (first noted for Kestrik here): Genesis now raises Pounce's bleed damage, a talent both Mobalytics and Icy Veins take 5/5. Sims are not yet updated for either post.",
+    "meta": "Blizzard forums, Kaivax, WoW: Forever Hotfixes (topic 2403040 post 12, posted Nov 17 10:24 PM ET; post 11 Nov 16 9:17 PM ET), read Nov 18. Official.",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-16-2026/2403040/12",
+    "_date": "2026-11-18"
+   },
+   {
+    "lead": "Nov 16",
+    "title": "Kestrik: Icy Veins Feral leveling gear now runs past 30; Defender's Leather Helm at 25, then Embrace of the Lycan",
+    "detail": "Icy Veins' Feral leveling page (Meyra, updated Nov 15) now lists gear to 60: Defender's Leather Helm (Leatherworking 125, level 25) as the head pick well past 40, then Embrace of the Lycan (Zul'Farrak); Dark Leather Shoulders (23), Barbaric Shoulders (30), Fleshhide Shoulders (Razorfen Downs, 37); two-handers Harpoon of Command (Drowned City, 35), Mograine's Might (Scarlet Monastery Cathedral, 39), Bigger Rock on Bigger Stick (Krol'dok quest, 40), The Rockpounder (Uldaman, 44), Princess Theradras' Scepter (Maraudon, 49), Flame Wrath (Blackrock Depths, 51). Talent calculator unchanged (9/32/10). Added to his gear sheet as gk26-gk35. Icy Veins' Affliction and Demonology leveling pages (Nov 16) also gained zones, dungeons and gear past 30, with the same talent calculators; Corvin's sheet is not changed by this run.",
+    "meta": "Icy Veins Feral Druid leveling (Meyra), dateModified Nov 15 3 PM ET; item data Icy Veins DB; read Nov 18. Unofficial, single source.",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+    "_date": "2026-11-18"
+   },
+   {
+    "lead": "Nov 16",
+    "title": "Mobalytics Yebb Enhancement leveling build now ends 17/26/8: Earthbound dropped, one Maelstrom Weapon point at 60",
+    "detail": "Yebb's Traditional Enhance Leveling order is the same to 51; then Tidal Focus 52-56, Mindfulness 57-59 and Maelstrom Weapon at 60 (Earthbound at 52 is gone). Reference build only; Zanjiro stays on Icy Veins (Nov 13, 11/29/11). Yebb also notes new Windfury Totem + imbue stacking and changed stat priorities.",
+    "meta": "Mobalytics Enhancement Shaman Guide (Yebb), dateModified Nov 16 11:07 AM ET, read Nov 18. Unofficial, single source.",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://mobalytics.gg/wow-forever/classes/enhancement-shaman-guide",
+    "_date": "2026-11-18"
+   },
    {
     "lead": "Nov 17",
     "title": "Kestrik: trainer list now has every rank, Skyborne racials filled, Lacerate is a talent at 25, Tiger's Fury and Berserk are gone",
@@ -23671,15 +24032,15 @@
    }
   ],
   "gear_note_druid": {
-   "text": "Kestrik's picks are Horde-reachable Feral items from Icy Veins' Feral leveling guide (Meyra), wowhandbook's level-20 Feral sheet and the Forever item data on Icy Veins DB and 1mw, read Nov 17, scored with weapon DPS first as both guides rank it."
+   "text": "Kestrik's picks are Horde-reachable Feral items from Icy Veins' Feral leveling guide (Meyra; gear past 30 added from its Nov 15 update, read Nov 18), wowhandbook's level-20 Feral sheet and the Forever item data on Icy Veins DB and 1mw, scored with weapon DPS first as both guides rank it."
   }
  },
  "_meta": {
-  "version": 47,
-  "generated_at": "2026-11-17T22:21-05:00",
-  "source": "WoW Forever bot, Nov 17 2026: Kestrik Wowhead Feral order (Lexolas, calculator Talent Order); plus Claude, on Jason's go: Kestrik's own profession texts (PROFS by_char)",
-  "notes_commit": "2f1ad6c",
-  "notes": "Nov 17: added Wowhead's Feral leveling order (Lexolas, Nov 17, 0/34/17) as feral_wh with WHY clauses; primary stays on Mobalytics until Jason confirms his points. Also: Kestrik's Leatherworking, First Aid and Cooking texts are now his own (Brawler's patterns from Pawani, First Aid low priority for a druid)."
+  "version": 48,
+  "generated_at": "2026-11-18T08:56-05:00",
+  "source": "WoW Forever bot, Nov 18 2026 daily meta watch: Official Nov 17 hotfix, Icy Veins Feral gear past 30, Mobalytics Yebb Enhancement order",
+  "notes_commit": "70f0959",
+  "notes": "Nov 18: Official Nov 17 hotfix (Flurry keeps stacks with Windfury Totem, UBRS harder again); Kestrik gets Icy Veins' gear picks past 30 (Defender's Leather Helm at 25); Yebb's Enhancement reference build now 17/26/8."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default, with Icy Veins (Meyra, Nov 4) 9/32/10 and Wowhead (Lexolas, Nov 17) 0/34/17 as alternatives; which one his 13 points follow is not known yet, so pick it in Next ding.",
@@ -23687,6 +24048,6 @@
   "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; Icy Veins rotation (Nov 13 update) drives auto layout, Nicktew alternative documented. No controller UI added. Nov 10: plate buttons follow each rotation's priority order at every level. Kestrik: fixed plates per form (Cat, Bear, Caster) from your Druid - Feral note; same job on the same button in every form.",
   "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option; Nov 16: Rank 1 is his main filler, max rank on dungeon bosses and elites) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking. Kestrik: Feral leveling from Method (Birra, Nov 14) and Warcraft Tavern; one rotation per form.",
   "path": "Mobalytics (Crix, plan since Nov 10, respec at 26 unchanged; Nov 15 talent change moves 2 points into Soul Harvest at 46-47): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build.",
-  "gear": "Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server. Kestrik: Horde Feral picks from Icy Veins and the Forever item data, scored with weapon DPS first."
+  "gear": "Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server. Kestrik: Horde Feral picks from Icy Veins (gear to 60 since its Nov 15 update) and the Forever item data, scored with weapon DPS first."
  }
 }
