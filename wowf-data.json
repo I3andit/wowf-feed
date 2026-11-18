@@ -9563,7 +9563,7 @@
     "key": "lw",
     "name": "Leatherworking",
     "icon": "trade_leatherworking",
-    "who": "Zanjiro",
+    "who": "Zanjiro, Kestrik",
     "color": "#0070DE",
     "url": "https://foreverartisan.app/guides/leatherworking/",
     "checked": "Checked on the Forever beta Oct 10 (early trainer steps); Nicktew Nov4/readNov7 endorses LW crafted filler, not a replacement1–300 recipe route. Keep LW/Skinning, no profession change: https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
@@ -9800,13 +9800,53 @@
       "Sewing Machine",
       "300"
      ]
-    ]
+    ],
+    "by_char": {
+     "K": {
+      "notes_extra": [
+       "Feral Brawler's patterns are sold by Pawani, The Barrens 49.6, 29.7 (Icy Veins DB, read Nov 17, not checked in game): Belt 60, Gloves 75, Boots 85, Hood 100, Tunic 110, Legguards 125. His gear sheet picks the Hood, Tunic, Boots and Legguards."
+      ],
+      "checked": "Trainer route checked on the Forever beta Oct 10 (early trainer steps) and shared with Zanjiro. Brawler's pattern levels: Icy Veins DB, read Nov 17, not checked in game",
+      "pins": [
+       {
+        "at": 60,
+        "label": "Brawler's Belt",
+        "tip": "Leatherworking 60: Brawler's Belt pattern from Pawani, The Barrens 49.6, 29.7 (Icy Veins DB, read Nov 17)"
+       },
+       {
+        "at": 75,
+        "label": "Brawler's Gloves",
+        "tip": "Leatherworking 75: Brawler's Gloves pattern from Pawani, The Barrens 49.6, 29.7 (Icy Veins DB, read Nov 17)"
+       },
+       {
+        "at": 85,
+        "label": "Brawler's Boots",
+        "tip": "Leatherworking 85: Brawler's Boots pattern from Pawani, The Barrens 49.6, 29.7 (Icy Veins DB, read Nov 17)"
+       },
+       {
+        "at": 100,
+        "label": "Brawler's Hood",
+        "tip": "Leatherworking 100: Brawler's Hood pattern from Pawani, The Barrens 49.6, 29.7 (Icy Veins DB, read Nov 17)"
+       },
+       {
+        "at": 110,
+        "label": "Brawler's Tunic",
+        "tip": "Leatherworking 110: Brawler's Tunic pattern from Pawani, The Barrens 49.6, 29.7 (Icy Veins DB, read Nov 17)"
+       },
+       {
+        "at": 125,
+        "label": "Brawler's Legguards",
+        "tip": "Leatherworking 125: Brawler's Legguards pattern from Pawani, The Barrens 49.6, 29.7 (Icy Veins DB, read Nov 17)"
+       }
+      ]
+     }
+    }
    },
    {
     "key": "skin",
     "name": "Skinning",
     "icon": "inv_misc_pelt_wolf_01",
-    "who": "Zanjiro",
+    "who": "Zanjiro, Kestrik",
     "color": "#0070DE",
     "url": "https://foreverartisan.app/guides/skinning/",
     "checked": "Built from Forever game data, Oct 10",
@@ -10270,7 +10310,7 @@
     "key": "fa",
     "name": "First Aid",
     "icon": "spell_holy_sealofsacrifice",
-    "who": "Both",
+    "who": "All three",
     "color": "#c9a44c",
     "url": "https://foreverartisan.app/guides/first-aid/",
     "checked": "Trainer steps to 150 checked on the beta",
@@ -10429,13 +10469,22 @@
       "Laboratory",
       "300"
      ]
-    ]
+    ],
+    "by_char": {
+     "K": {
+      "notes": [
+       "Healing Potions moved here from Alchemy: usable in combat, no shared cooldown with Healthstones (your notes).",
+       "29 recipes, 14 new, including poultices. Learn levels past 150 are estimates.",
+       "Low priority on Kestrik: Mobalytics' druid leveling guide (yumytv, Nov 14, read Nov 17) says druids generally don't need First Aid."
+      ]
+     }
+    }
    },
    {
     "key": "cook",
     "name": "Cooking",
     "icon": "inv_misc_food_15",
-    "who": "Both",
+    "who": "All three",
     "color": "#c9a44c",
     "url": "https://foreverartisan.app/guides/cooking/",
     "checked": "Several steps checked on Horde beta characters",
@@ -10572,7 +10621,12 @@
       "Expert Campfire",
       "holds 10"
      ]
-    ]
+    ],
+    "by_char": {
+     "K": {
+      "why": "Campfire powers camping; most food gives +5% XP for 15 min."
+     }
+    }
    }
   ],
   "SKIN_ZONES": [
@@ -23621,11 +23675,11 @@
   }
  },
  "_meta": {
-  "version": 46,
-  "generated_at": "2026-11-17T22:20-05:00",
-  "source": "WoW Forever bot, Nov 17 2026: Kestrik Wowhead Feral order (Lexolas, calculator Talent Order)",
+  "version": 47,
+  "generated_at": "2026-11-17T22:21-05:00",
+  "source": "WoW Forever bot, Nov 17 2026: Kestrik Wowhead Feral order (Lexolas, calculator Talent Order); plus Claude, on Jason's go: Kestrik's own profession texts (PROFS by_char)",
   "notes_commit": "2f1ad6c",
-  "notes": "Nov 17: added Wowhead's Feral leveling order (Lexolas, Nov 17, 0/34/17) as feral_wh with WHY clauses; primary stays on Mobalytics until Jason confirms his points."
+  "notes": "Nov 17: added Wowhead's Feral leveling order (Lexolas, Nov 17, 0/34/17) as feral_wh with WHY clauses; primary stays on Mobalytics until Jason confirms his points. Also: Kestrik's Leatherworking, First Aid and Cooking texts are now his own (Brawler's patterns from Pawani, First Aid low priority for a druid)."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default, with Icy Veins (Meyra, Nov 4) 9/32/10 and Wowhead (Lexolas, Nov 17) 0/34/17 as alternatives; which one his 13 points follow is not known yet, so pick it in Next ding.",
