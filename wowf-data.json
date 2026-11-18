@@ -154,7 +154,32 @@
     "line": "Skyborne · Druid · Feral",
     "role": "Alt",
     "level": 22,
-    "profs": [],
+    "profs": [
+     {
+      "name": "Leatherworking",
+      "icon": "trade_leatherworking",
+      "skill": 63,
+      "next": "Embossed Leather Gloves 51–84, then Fine Leather Belt to 105; Brawler's patterns at Pawani (Barrens) from 60"
+     },
+     {
+      "name": "Skinning",
+      "icon": "inv_misc_pelt_wolf_01",
+      "skill": 127,
+      "next": "Train Expert now (opens at 125, cap 150); skin beasts near your level"
+     },
+     {
+      "name": "First Aid",
+      "icon": "spell_holy_sealofsacrifice",
+      "skill": 80,
+      "next": "Heavy Linen Bandage to 81, then Wool Bandage 81–115"
+     },
+     {
+      "name": "Cooking",
+      "icon": "inv_misc_food_15",
+      "skill": 6,
+      "next": "Charred Wolf Meat 1–35"
+     }
+    ],
     "racials": [
      {
       "name": "Skysight",
@@ -204,7 +229,12 @@
     "fa",
     "cook"
    ],
-   "K": []
+   "K": [
+    "lw",
+    "skin",
+    "fa",
+    "cook"
+   ]
   },
   "SKILL_KEYS": [
    "V:lw",
@@ -1460,6 +1490,598 @@
       ]
      ]
     }
+   ],
+   "druid": [
+    {
+     "name": "Balance",
+     "icon": "spell_nature_starfall",
+     "t": [
+      [
+       "Improved Wrath",
+       0,
+       1,
+       5,
+       "spell_nature_abolishmagic",
+       "",
+       0,
+       "Reduces the cast time of your Wrath spell by 0.1 sec and its Mana cost by 10%.",
+       "Reduces the cast time of your Wrath spell by 0.5 sec and its Mana cost by 50%."
+      ],
+      [
+       "Genesis",
+       0,
+       2,
+       5,
+       "spell_nature_natureswrath",
+       "",
+       1,
+       "Increases the periodic damage and healing done by your spells and abilities by 2%.",
+       "Increases the periodic damage and healing done by your spells and abilities by 10%."
+      ],
+      [
+       "Moonglow",
+       1,
+       0,
+       3,
+       "spell_nature_moonglow",
+       "",
+       0,
+       "Reduces the Mana cost of your damaging spells by 8%.",
+       "Reduces the Mana cost of your damaging spells by 25%."
+      ],
+      [
+       "Improved Moonfire",
+       1,
+       1,
+       2,
+       "spell_nature_starfall",
+       "",
+       0,
+       "Increases the damage and critical strike chance of your Moonfire spell by 5%.",
+       "Increases the damage and critical strike chance of your Moonfire spell by 10%."
+      ],
+      [
+       "Nature's Majesty",
+       1,
+       2,
+       2,
+       "spell_nature_crystalball",
+       "",
+       1,
+       "Increases your critical strike chance with spells and melee attacks by 2%.",
+       "Increases your critical strike chance with spells and melee attacks by 4%."
+      ],
+      [
+       "Nature's Reach",
+       1,
+       3,
+       2,
+       "spell_nature_stormreach",
+       "",
+       0,
+       "Increases the range of your offensive Balance spells by 10% and improves your chance to hit by 2%.",
+       "Increases the range of your offensive Balance spells by 20% and improves your chance to hit by 4%."
+      ],
+      [
+       "Improved Entangling Roots",
+       2,
+       0,
+       3,
+       "spell_nature_stranglevines",
+       "",
+       0,
+       "Increases the damage done by your Entangling Roots spell by 25%, and its victims can take up to 25% more damage without interrupting the effect.",
+       "Increases the damage done by your Entangling Roots spell by 75%, and its victims can take up to 75% more damage without interrupting the effect."
+      ],
+      [
+       "Nature's Splendor",
+       2,
+       2,
+       1,
+       "spell_nature_natureresistancetotem",
+       "Nature's Majesty",
+       1,
+       "Increases the duration of your Moonfire and Rejuvenation spells by 3 sec, your Regrowth spell by 6 sec, and your Insect Swarm spell by 2 sec.",
+       "Increases the duration of your Moonfire and Rejuvenation spells by 3 sec, your Regrowth spell by 6 sec, and your Insect Swarm spell by 2 sec."
+      ],
+      [
+       "Insect Swarm",
+       3,
+       0,
+       1,
+       "spell_nature_cyclone",
+       "",
+       0,
+       "The enemy target is swarmed by insects, decreasing their chance to hit with attacks by 2% and causing 48 Nature damage over 12 sec.",
+       "The enemy target is swarmed by insects, decreasing their chance to hit with attacks by 2% and causing 48 Nature damage over 12 sec."
+      ],
+      [
+       "Vengeance",
+       3,
+       1,
+       5,
+       "spell_nature_purge",
+       "Improved Moonfire",
+       0,
+       "Increases the critical strike damage bonus of your Arcane and Nature spells by 20%.",
+       "Increases the critical strike damage bonus of your Arcane and Nature spells by 100%."
+      ],
+      [
+       "Improved Starfire",
+       3,
+       2,
+       5,
+       "spell_nature_starfall",
+       "",
+       0,
+       "Reduces the cast time of Starfire by 0.1 sec and Starfire has a 3% chance to stun its target for 3 sec.",
+       "Reduces the cast time of Starfire by 0.5 sec and Starfire has a 15% chance to stun its target for 3 sec."
+      ],
+      [
+       "Overgrowth",
+       4,
+       0,
+       2,
+       "spell_nature_regenerate",
+       "",
+       1,
+       "Increases the maximum number of targets you may have affected by Entangling Roots by 1.",
+       "Increases the maximum number of targets you may have affected by Entangling Roots by 2."
+      ],
+      [
+       "Nature's Grace",
+       4,
+       1,
+       1,
+       "spell_nature_mentalquickness",
+       "",
+       0,
+       "All non-periodic spell criticals grace you with a blessing of nature, increasing your spellcasting speed and reducing your global cooldown by 10% for 3 sec.",
+       "All non-periodic spell criticals grace you with a blessing of nature, increasing your spellcasting speed and reducing your global cooldown by 10% for 3 sec."
+      ],
+      [
+       "Eclipse",
+       4,
+       2,
+       3,
+       "spell_shadow_twilight",
+       "",
+       1,
+       "Your Wrath spell reduces the cast time of your next 2 Starfire spells by 0.17 sec. Stores up to 4 charges. Lasts 15 sec.",
+       "Your Wrath spell reduces the cast time of your next 2 Starfire spells by 0.50 sec. Stores up to 4 charges. Lasts 15 sec."
+      ],
+      [
+       "Moonfury",
+       5,
+       1,
+       5,
+       "spell_nature_moonglow",
+       "",
+       0,
+       "Increases the damage done by your Arcane and Nature spells by 2%.",
+       "Increases the damage done by your Arcane and Nature spells by 10%."
+      ],
+      [
+       "Moonkin Form",
+       6,
+       1,
+       1,
+       "spell_nature_eyeofthestorm",
+       "",
+       0,
+       "Shapeshift into Moonkin Form, increasing Omen of Clarity's chance to trigger by 100%, Armor contribution from items by 360%, and all party or raid members within 45 yards have their Critical Strike chance increased by 3%. Also protects the caster from Polymorph effects and prevents the use of healing spells. · The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+       "Shapeshift into Moonkin Form, increasing Omen of Clarity's chance to trigger by 100%, Armor contribution from items by 360%, and all party or raid members within 45 yards have their Critical Strike chance increased by 3%. Also protects the caster from Polymorph effects and prevents the use of healing spells. · The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
+      ]
+     ]
+    },
+    {
+     "name": "Feral Combat",
+     "icon": "ability_racial_bearform",
+     "t": [
+      [
+       "Ferocity",
+       0,
+       1,
+       5,
+       "ability_druid_mangle2",
+       "",
+       0,
+       "Reduces the cost of your Maul, Primal Bite, Swipe, Claw, and Rake abilities by 1 Rage or Energy.",
+       "Reduces the cost of your Maul, Primal Bite, Swipe, Claw, and Rake abilities by 5 Rage or Energy."
+      ],
+      [
+       "Furor",
+       0,
+       2,
+       5,
+       "ability_warrior_innerrage",
+       "",
+       0,
+       "Gives you a 20% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 20% of the Energy you had when last in Cat Form, plus 2 Energy per second spent outside Bear Form or Dire Bear Form, up to 20 Energy.",
+       "Gives you a 100% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores 100% of the Energy you had when last in Cat Form, plus 10 Energy per second spent outside Bear Form or Dire Bear Form, up to 100 Energy."
+      ],
+      [
+       "Feral Swiftness",
+       1,
+       0,
+       2,
+       "spell_nature_spiritwolf",
+       "",
+       0,
+       "Increases your movement speed while in Cat Form by 15%, and increases your chance to Dodge by 2%.",
+       "Increases your movement speed while in Cat Form by 30%, and increases your chance to Dodge by 4%."
+      ],
+      [
+       "Feral Instinct",
+       1,
+       1,
+       3,
+       "ability_ambush",
+       "",
+       0,
+       "Increases damage done by your Swipe ability by 10% and reduces the chance enemies have to detect you while Prowling as if you were 1 level higher.",
+       "Increases damage done by your Swipe ability by 30% and reduces the chance enemies have to detect you while Prowling as if you were 3 levels higher."
+      ],
+      [
+       "Brutal Impact",
+       1,
+       2,
+       2,
+       "ability_druid_bash",
+       "",
+       0,
+       "Increases the stun duration of your Bash and Pounce abilities by 0.5 sec and reduces the cooldown of Bash by 15 sec.",
+       "Increases the stun duration of your Bash and Pounce abilities by 1 sec and reduces the cooldown of Bash by 30 sec."
+      ],
+      [
+       "Thick Hide",
+       1,
+       3,
+       3,
+       "inv_misc_pelt_bear_ruin_02",
+       "",
+       0,
+       "While in Bear Form, Cat Form, Dire Bear Form, or Moonkin Form, you gain 1 additional base Armor per level and another 0.67 base Armor for each point of defense skill beyond five times your level. This amount can be further increased by multipliers from those forms.",
+       "While in Bear Form, Cat Form, Dire Bear Form, or Moonkin Form, you gain 3 additional base Armor per level and another 2.00 base Armor for each point of defense skill beyond five times your level. This amount can be further increased by multipliers from those forms."
+      ],
+      [
+       "Shredding Attacks",
+       2,
+       0,
+       3,
+       "spell_shadow_vampiricaura",
+       "",
+       0,
+       "Reduces the Energy cost of your Shred ability by 6 and reduces the Rage cost of your Lacerate ability by 1.",
+       "Reduces the Energy cost of your Shred ability by 18 and reduces the Rage cost of your Lacerate ability by 3."
+      ],
+      [
+       "Savage Fury",
+       2,
+       1,
+       2,
+       "ability_druid_ravage",
+       "",
+       0,
+       "Increases the damage caused by your Claw, Rake, Shred, Maul, and Swipe abilities by 5%.",
+       "Increases the damage caused by your Claw, Rake, Shred, Maul, and Swipe abilities by 10%."
+      ],
+      [
+       "Feral Charge",
+       2,
+       2,
+       1,
+       "ability_hunter_pet_bear",
+       "",
+       0,
+       "Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec. · Feral Charge (Cat): 8-25 yd range, Instant, 30 sec cooldown, Requires Cat Form. Leap behind an enemy.",
+       "Charge an enemy, immobilizing them and interrupting any spell they are casting for 4 sec. · Feral Charge (Cat): 8-25 yd range, Instant, 30 sec cooldown, Requires Cat Form. Leap behind an enemy."
+      ],
+      [
+       "Sharpened Claws",
+       2,
+       3,
+       2,
+       "inv_misc_monsterclaw_03",
+       "",
+       0,
+       "Increases your critical strike chance while in Bear Form, Dire Bear Form, or Cat Form by 3%.",
+       "Increases your critical strike chance while in Bear Form, Dire Bear Form, or Cat Form by 6%."
+      ],
+      [
+       "Predatory Strikes",
+       3,
+       0,
+       3,
+       "ability_druid_supriseattack",
+       "",
+       0,
+       "Increases your melee Attack Power in Cat Form, Bear Form, and Dire Bear Form by 50% of your level.",
+       "Increases your melee Attack Power in Cat Form, Bear Form, and Dire Bear Form by 150% of your level."
+      ],
+      [
+       "Lacerate",
+       3,
+       1,
+       1,
+       "ability_druid_lacerate",
+       "Savage Fury",
+       1,
+       "Lacerates the enemy target, making them bleed for 20 damage over 15 sec plus 10% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to 5 times on the same target.",
+       "Lacerates the enemy target, making them bleed for 20 damage over 15 sec plus 10% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to 5 times on the same target."
+      ],
+      [
+       "Predatory Discipline",
+       3,
+       2,
+       1,
+       "ability_druid_ferociousbite",
+       "",
+       1,
+       "Your Ferocious Bite ability no longer converts extra Energy into damage, but still deals extra damage based on your excess Energy.",
+       "Your Ferocious Bite ability no longer converts extra Energy into damage, but still deals extra damage based on your excess Energy."
+      ],
+      [
+       "Blood Frenzy",
+       3,
+       3,
+       2,
+       "ability_ghoulfrenzy",
+       "Sharpened Claws",
+       0,
+       "Gives you a 50% chance to gain an additional 5 Rage any time you get a critical strike while in Bear Form or Dire Bear Form. In addition, your non-periodic critical strikes from Cat Form abilities that generate Combo Points have a 50% chance to add an additional Combo Point.",
+       "Gives you a 100% chance to gain an additional 5 Rage any time you get a critical strike while in Bear Form or Dire Bear Form. In addition, your non-periodic critical strikes from Cat Form abilities that generate Combo Points have a 100% chance to add an additional Combo Point."
+      ],
+      [
+       "Leader of the Pack",
+       4,
+       1,
+       1,
+       "ability_warrior_warcry",
+       "",
+       0,
+       "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the Critical Strike chance of all party or raid members within 45 yards by 3%.",
+       "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the Critical Strike chance of all party or raid members within 45 yards by 3%."
+      ],
+      [
+       "Natural Instinct",
+       4,
+       3,
+       2,
+       "ability_druid_enrage",
+       "",
+       1,
+       "Increases the critical strike damage bonus of your melee abilities by 10% and increases your spell healing by 12% of your Intellect.",
+       "Increases the critical strike damage bonus of your melee abilities by 20% and increases your spell healing by 25% of your Intellect."
+      ],
+      [
+       "Rend and Tear",
+       5,
+       0,
+       5,
+       "ability_druid_disembowel",
+       "Predatory Strikes",
+       1,
+       "Increases damage done by your melee abilities on Bleeding targets by 3%.",
+       "Increases damage done by your melee abilities on Bleeding targets by 15%."
+      ],
+      [
+       "Natural Reaction",
+       5,
+       3,
+       5,
+       "ability_bullrush",
+       "",
+       1,
+       "Increases your dodge chance by 1%, and gives you a 20% chance to gain 5 Rage each time you dodge.",
+       "Increases your dodge chance by 5%, and gives you a 100% chance to gain 5 Rage each time you dodge."
+      ],
+      [
+       "Primal Bite",
+       6,
+       1,
+       1,
+       "ability_racial_cannibalize",
+       "Leader of the Pack",
+       1,
+       "Bite the target, dealing 100% normal damage plus 42 and generating a high amount of threat.",
+       "Bite the target, dealing 100% normal damage plus 42 and generating a high amount of threat."
+      ],
+      [
+       "Shifting Power",
+       6,
+       2,
+       1,
+       "ability_druid_kingofthejungle",
+       "Predatory Discipline",
+       1,
+       "Instantly convert 55% of base Mana into 40 Energy. Shifting Power's cost is reduced by effects that reduce the cost of Shapeshifting.",
+       "Instantly convert 55% of base Mana into 40 Energy. Shifting Power's cost is reduced by effects that reduce the cost of Shapeshifting."
+      ]
+     ]
+    },
+    {
+     "name": "Restoration",
+     "icon": "spell_nature_healingtouch",
+     "t": [
+      [
+       "Nature's Focus",
+       0,
+       1,
+       5,
+       "spell_nature_healingwavelesser",
+       "",
+       0,
+       "Gives your Arcane and Nature spells a 14% chance to not lose casting time when you take damage.",
+       "Gives your Arcane and Nature spells a 70% chance to not lose casting time when you take damage."
+      ],
+      [
+       "Heart of the Wild",
+       0,
+       2,
+       5,
+       "spell_nature_regeneration",
+       "",
+       0,
+       "Increases your Intellect by 2%. In addition, while in Bear Form or Dire Bear Form your Stamina is increased by 4% and while in Cat Form your Strength is increased by 2%.",
+       "Increases your Intellect by 10%. In addition, while in Bear Form or Dire Bear Form your Stamina is increased by 20% and while in Cat Form your Strength is increased by 10%."
+      ],
+      [
+       "Naturalist",
+       1,
+       0,
+       5,
+       "spell_nature_healingtouch",
+       "",
+       0,
+       "Reduces the cast time of your Healing Touch and Wild Growth spells by 0.1 sec and increases all damage you deal by 2%.",
+       "Reduces the cast time of your Healing Touch and Wild Growth spells by 0.5 sec and increases all damage you deal by 10%."
+      ],
+      [
+       "Reflection",
+       1,
+       1,
+       3,
+       "spell_frost_windwalkon",
+       "",
+       0,
+       "Allows 17% of your Mana regeneration to continue while casting.",
+       "Allows 50% of your Mana regeneration to continue while casting."
+      ],
+      [
+       "Natural Shapeshifter",
+       1,
+       2,
+       3,
+       "spell_nature_wispsplode",
+       "",
+       0,
+       "Reduces the mana cost of all shapeshifting by 10%.",
+       "Reduces the mana cost of all shapeshifting by 30%."
+      ],
+      [
+       "Subtlety",
+       2,
+       1,
+       3,
+       "spell_nature_mirrorimage",
+       "",
+       0,
+       "Reduces the threat generated by your Nature and Arcane spells by 10%.",
+       "Reduces the threat generated by your Nature and Arcane spells by 30%."
+      ],
+      [
+       "Gift of Nature",
+       2,
+       2,
+       5,
+       "spell_nature_healingway",
+       "",
+       0,
+       "Increases the effect of all your healing spells by 2%.",
+       "Increases the effect of all your healing spells by 10%."
+      ],
+      [
+       "Bloom",
+       2,
+       3,
+       1,
+       "spell_nature_riptide",
+       "",
+       1,
+       "When your Rejuvenation or Regrowth spell expires due to its duration, the target is instantly healed for an amount equal to 100% of your Spirit. If either spell expires due to being dispelled, the target is healed for 50% of your Spirit instead.",
+       "When your Rejuvenation or Regrowth spell expires due to its duration, the target is instantly healed for an amount equal to 100% of your Spirit. If either spell expires due to being dispelled, the target is healed for 50% of your Spirit instead."
+      ],
+      [
+       "Tranquil Spirit",
+       3,
+       1,
+       5,
+       "spell_holy_devotion",
+       "",
+       0,
+       "Reduces the mana cost of your Healing Touch and Tranquility spells by 2%.",
+       "Reduces the mana cost of your Healing Touch and Tranquility spells by 10%."
+      ],
+      [
+       "Improved Rejuvenation",
+       3,
+       2,
+       3,
+       "spell_nature_rejuvenation",
+       "",
+       0,
+       "Increases the effect of your Rejuvenation spell by 5%.",
+       "Increases the effect of your Rejuvenation spell by 15%."
+      ],
+      [
+       "Swiftmend",
+       3,
+       3,
+       1,
+       "spell_nature_wispheal",
+       "",
+       0,
+       "Instantly heals a target with your active Rejuvenation or Regrowth effect for an amount equal to the full duration of the periodic effect.",
+       "Instantly heals a target with your active Rejuvenation or Regrowth effect for an amount equal to the full duration of the periodic effect."
+      ],
+      [
+       "Nature's Swiftness",
+       4,
+       0,
+       1,
+       "spell_nature_ravenform",
+       "Naturalist",
+       0,
+       "When activated, your next Nature spell becomes an instant cast spell.",
+       "When activated, your next Nature spell becomes an instant cast spell."
+      ],
+      [
+       "Living Spirit",
+       4,
+       1,
+       3,
+       "spell_nature_undyingstrength",
+       "",
+       1,
+       "Increases your Spirit by 5%.",
+       "Increases your Spirit by 15%."
+      ],
+      [
+       "Improved Tranquility",
+       4,
+       3,
+       2,
+       "spell_nature_tranquility",
+       "",
+       0,
+       "Reduces threat caused by Tranquility by 50% and its cooldown by 30%.",
+       "Reduces threat caused by Tranquility by 100% and its cooldown by 60%."
+      ],
+      [
+       "Improved Regrowth",
+       5,
+       2,
+       5,
+       "spell_nature_resistnature",
+       "Improved Rejuvenation",
+       0,
+       "Increases the critical effect chance of your Regrowth spell by 10%.",
+       "Increases the critical effect chance of your Regrowth spell by 50%."
+      ],
+      [
+       "Wild Growth",
+       6,
+       1,
+       1,
+       "spell_nature_spiritarmor",
+       "Living Spirit",
+       1,
+       "Heals the target and their party for 336 over 7 sec. Party members must be within 43.5 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.",
+       "Heals the target and their party for 336 over 7 sec. Party members must be within 43.5 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration."
+      ]
+     ]
+    }
    ]
   },
   "ORDERS": {
@@ -2194,6 +2816,178 @@
      "Malevolence",
      4
     ]
+   ],
+   "feral_moba": [
+    [
+     "Ferocity",
+     3
+    ],
+    [
+     "Furor",
+     5
+    ],
+    [
+     "Feral Swiftness",
+     2
+    ],
+    [
+     "Sharpened Claws",
+     2
+    ],
+    [
+     "Savage Fury",
+     2
+    ],
+    [
+     "Feral Charge",
+     1
+    ],
+    [
+     "Predatory Discipline",
+     1
+    ],
+    [
+     "Blood Frenzy",
+     2
+    ],
+    [
+     "Predatory Strikes",
+     2
+    ],
+    [
+     "Leader of the Pack",
+     1
+    ],
+    [
+     "Natural Instinct",
+     2
+    ],
+    [
+     "Predatory Strikes",
+     1
+    ],
+    [
+     "Ferocity",
+     1
+    ],
+    [
+     "Rend and Tear",
+     5
+    ],
+    [
+     "Shifting Power",
+     1
+    ],
+    [
+     "Genesis",
+     5
+    ],
+    [
+     "Nature's Majesty",
+     2
+    ],
+    [
+     "Nature's Reach",
+     2
+    ],
+    [
+     "Heart of the Wild",
+     5
+    ],
+    [
+     "Naturalist",
+     5
+    ],
+    [
+     "Natural Shapeshifter",
+     1
+    ]
+   ],
+   "feral_iv": [
+    [
+     "Ferocity",
+     5
+    ],
+    [
+     "Feral Instinct",
+     3
+    ],
+    [
+     "Feral Swiftness",
+     2
+    ],
+    [
+     "Feral Charge",
+     1
+    ],
+    [
+     "Savage Fury",
+     2
+    ],
+    [
+     "Sharpened Claws",
+     2
+    ],
+    [
+     "Lacerate",
+     1
+    ],
+    [
+     "Blood Frenzy",
+     2
+    ],
+    [
+     "Predatory Discipline",
+     1
+    ],
+    [
+     "Predatory Strikes",
+     1
+    ],
+    [
+     "Leader of the Pack",
+     1
+    ],
+    [
+     "Natural Instinct",
+     2
+    ],
+    [
+     "Predatory Strikes",
+     2
+    ],
+    [
+     "Rend and Tear",
+     5
+    ],
+    [
+     "Primal Bite",
+     1
+    ],
+    [
+     "Shifting Power",
+     1
+    ],
+    [
+     "Heart of the Wild",
+     5
+    ],
+    [
+     "Naturalist",
+     5
+    ],
+    [
+     "Genesis",
+     5
+    ],
+    [
+     "Nature's Reach",
+     2
+    ],
+    [
+     "Nature's Majesty",
+     2
+    ]
    ]
   },
   "STATIC": {
@@ -2552,6 +3346,31 @@
     "before": "aff_moba26",
     "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
     "_date": "2026-11-16"
+   },
+   {
+    "key": "feral_moba",
+    "label": "Mobalytics Feral leveling 9/31/11 (yumytv)",
+    "short": "Mobalytics",
+    "cls": "druid",
+    "seq": "feral_moba",
+    "primary": true,
+    "src": "Mobalytics Druid Leveling Guide (yumytv), Leveling Path calculator, updated Nov 14 2026, read Nov 17 2026 (Unofficial, single source)",
+    "date": "Nov 14; read Nov 17",
+    "url": "https://mobalytics.gg/wow-forever/classes/druid-leveling-guide",
+    "blurb": "Ferocity 3 at 10-12 and Furor 5 by 17 (Cat keeps its Energy across a heal), Feral Swiftness 18-19, Sharpened Claws 20-21, Savage Fury 22-23, Feral Charge 24, Predatory Discipline 25, Blood Frenzy 26-27, Leader of the Pack 30, Rend and Tear 35-39, Shifting Power 40, then Genesis, Nature's Majesty, Nature's Reach, Heart of the Wild and Naturalist; Natural Shapeshifter at 60. Takes neither Lacerate nor Primal Bite. Default for Kestrik until his own points are known.",
+    "tag": "Unofficial, single source"
+   },
+   {
+    "key": "feral_iv",
+    "label": "Icy Veins Feral leveling 9/32/10 (Meyra)",
+    "short": "Icy Veins",
+    "cls": "druid",
+    "seq": "feral_iv",
+    "src": "Icy Veins Feral Druid Leveling Guide (Meyra), its talent calculator order (client 70755), updated Nov 4 2026, read Nov 17 2026 (Unofficial, single source)",
+    "date": "Nov 4; read Nov 17",
+    "url": "https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+    "blurb": "Ferocity 5 at 10-14, Feral Instinct 15-17, Feral Swiftness 18-19, Feral Charge 20 (the day Cat Form opens), Savage Fury 21-22, Sharpened Claws 23-24, Lacerate 25, Blood Frenzy 26-27, Predatory Discipline 28, Leader of the Pack 30, Rend and Tear 35-39, Primal Bite 40, Shifting Power 41, then Heart of the Wild, Naturalist, Genesis, Nature's Reach and Nature's Majesty. Never takes Furor.",
+    "tag": "Unofficial, single source"
    }
   ],
   "WHY": {
@@ -2583,7 +3402,26 @@
    "Pandemic": "Bigger crits on your DoTs and Drains; better the more crit you have (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 52–54 · Icy Veins Affliction: 22–24 · Icy Veins Demonology: 53–55 · Mobalytics Affliction 1-60: 33–34, 40.",
    "Improved Bane of Agony": "Up to 10% more Bane of Agony damage (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 55–56 · Icy Veins Affliction: 20–21 · Icy Veins Demonology: 51–52 · Mobalytics Affliction 1-60: 56–57.",
    "Elemental Focus": "10% chance on a spell cast to make your next spell free (Icy Veins, Nov 13). Levels · Icy Veins: 57 · Mobalytics (Yebb): 45.",
-   "Soul Harvest": "A Drain Soul kill raises your Mana regeneration by 100% for 10 sec and keeps 100% of normal regen going while casting (2/2, talent tree). Crix (Nov 15): drinking while the buff is up gives a huge amount of mana, possibly a bug. Levels · Mobalytics respec 26: 46–47 · Mobalytics Affliction 1-60: 58–59."
+   "Soul Harvest": "A Drain Soul kill raises your Mana regeneration by 100% for 10 sec and keeps 100% of normal regen going while casting (2/2, talent tree). Crix (Nov 15): drinking while the buff is up gives a huge amount of mana, possibly a bug. Levels · Mobalytics respec 26: 46–47 · Mobalytics Affliction 1-60: 58–59.",
+   "druid:Ferocity": "Claw, Rake, Swipe, Maul and Primal Bite cost 1 less Energy or Rage per point (5 at 5/5). Mobalytics: 10-12, 34; Icy Veins: 10-14.",
+   "druid:Furor": "At 5/5, Cat Form gives back all the Energy you had when you left it plus 10 per second spent outside Bear, so a heal in caster form costs no Energy; Bear always starts with 10 Rage. Mobalytics: 13-17; Icy Veins: not taken.",
+   "druid:Feral Swiftness": "Cat Form runs 30% faster and you dodge 4% more at 2/2. Mobalytics: 18-19; Icy Veins: 18-19.",
+   "druid:Sharpened Claws": "+6% crit in Cat and Bear Form at 2/2. Mobalytics: 20-21; Icy Veins: 23-24.",
+   "druid:Savage Fury": "Claw, Rake, Shred, Maul and Swipe deal 10% more damage at 2/2. Mobalytics: 22-23; Icy Veins: 21-22.",
+   "druid:Feral Charge": "Bear: charge, root and interrupt a cast for 4 sec. Cat: leap behind the target (30 sec cooldown). Mobalytics: 24; Icy Veins: 20.",
+   "druid:Predatory Discipline": "Ferocious Bite keeps its bonus damage from excess Energy without spending that Energy. Opens the path to Shifting Power. Mobalytics: 25; Icy Veins: 28.",
+   "druid:Blood Frenzy": "Cat crits on combo-point moves add an extra combo point; Bear crits give 5 Rage (2/2). Mobalytics: 26-27; Icy Veins: 26-27.",
+   "druid:Predatory Strikes": "+150% of your level as Attack Power in Cat and Bear Form at 3/3. Mobalytics: 28-29, 33; Icy Veins: 29, 33-34.",
+   "druid:Leader of the Pack": "+3% crit for your party while you are in Cat or Bear Form. Mobalytics: 30; Icy Veins: 30.",
+   "druid:Natural Instinct": "Melee crits deal 20% more bonus damage, and your heals gain 25% of your Intellect (2/2). Mobalytics: 31-32; Icy Veins: 31-32.",
+   "druid:Rend and Tear": "+15% melee ability damage on bleeding targets at 5/5 (Rake and Rip keep it on). Mobalytics: 35-39; Icy Veins: 35-39.",
+   "druid:Shifting Power": "Cat Form: turn 55% of base mana into 40 Energy, 8 sec cooldown. Use it under 50 Energy. Mobalytics: 40; Icy Veins: 41.",
+   "druid:Genesis": "Periodic damage and healing +10% at 5/5: Rake, Rip, Moonfire and your HoTs. Mobalytics: 41-45; Icy Veins: 52-56.",
+   "druid:Nature's Majesty": "+4% crit with spells and melee at 2/2. Mobalytics: 46-47; Icy Veins: 59-60.",
+   "druid:Nature's Reach": "+4% hit at 2/2 (and 20% range on Balance spells). Mobalytics: 48-49; Icy Veins: 57-58.",
+   "druid:Heart of the Wild": "+10% Intellect; in Cat Form +10% Strength, in Bear Form +20% Stamina (5/5). Mobalytics: 50-54; Icy Veins: 42-46.",
+   "druid:Naturalist": "+10% to all damage you deal at 5/5, and faster Healing Touch. Mobalytics: 55-59; Icy Veins: 47-51.",
+   "druid:Natural Shapeshifter": "Shapeshifting costs 30% less mana at 3/3 (1 point here). Mobalytics: 60; Icy Veins: not taken."
   },
   "PATH_NODES": [
    {
@@ -2755,7 +3593,10 @@
     "src": "Mobalytics class guides (Crix), Oct 30",
     "url": "https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide"
    }
-  ]
+  ],
+  "TREE_SRC": {
+   "druid": "talentsforever calculator (beta client 1.60.1.70755 plus the server hotfixes of Nov 3 and Nov 6), layout cross-checked with Icy Veins' calculator data for build 70959 (Nov 17); read Nov 17. Talents without a sprite icon use a stand-in icon"
+  }
  },
  "rotations": {
   "ROT": {
@@ -4470,7 +5311,8 @@
        "icon": "ability_druid_kingofthejungle",
        "name": "Shifting Power",
        "tip": "When you drop under 50 Energy. Do not overuse it: it costs a lot of mana.",
-       "lvl": 40
+       "lvl": 40,
+       "talent": "Shifting Power"
       }
      ],
      "notes": [
@@ -4490,7 +5332,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_moba"
     },
     "dungeon": {
      "prep": [
@@ -4566,7 +5409,8 @@
        "icon": "ability_druid_kingofthejungle",
        "name": "Shifting Power",
        "tip": "Under 50 Energy.",
-       "lvl": 40
+       "lvl": 40,
+       "talent": "Shifting Power"
       }
      ],
      "notes": [
@@ -4585,7 +5429,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_moba"
     }
    },
    "bear": {
@@ -4648,14 +5493,16 @@
       {
        "icon": "ability_druid_lacerate",
        "name": "Lacerate",
-       "tip": "Stack to 5 on anything that lives long enough. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58.",
-       "lvl": 25
+       "tip": "Stack to 5 on anything that lives long enough. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58. Mobalytics (yumytv) skips it; Icy Veins takes it at 25.",
+       "lvl": 25,
+       "talent": "Lacerate"
       },
       {
        "icon": "ability_druid_mangle2",
        "name": "Primal Bite",
-       "tip": "On cooldown once you take the talent.",
-       "lvl": 40
+       "tip": "On cooldown once you take the talent. Mobalytics (yumytv) skips it; Icy Veins takes it at 40.",
+       "lvl": 40,
+       "talent": "Primal Bite"
       },
       {
        "icon": "ability_bullrush",
@@ -4680,7 +5527,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_moba"
     },
     "dungeon": {
      "prep": [
@@ -4724,14 +5572,16 @@
       {
        "icon": "ability_druid_lacerate",
        "name": "Lacerate",
-       "tip": "To 5 stacks on bosses. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58.",
-       "lvl": 25
+       "tip": "To 5 stacks on bosses. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58. Mobalytics (yumytv) skips it; Icy Veins takes it at 25.",
+       "lvl": 25,
+       "talent": "Lacerate"
       },
       {
        "icon": "ability_druid_mangle2",
        "name": "Primal Bite",
-       "tip": "On cooldown: very high threat.",
-       "lvl": 40
+       "tip": "On cooldown: very high threat. Mobalytics (yumytv) skips it; Icy Veins takes it at 40.",
+       "lvl": 40,
+       "talent": "Primal Bite"
       },
       {
        "icon": "ability_druid_demoralizingroar",
@@ -4779,7 +5629,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_moba"
     }
    },
    "caster": {
@@ -4848,7 +5699,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_moba"
     },
     "dungeon": {
      "prep": [
@@ -4929,7 +5781,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels are the earliest you can take them. Berserk and Tiger's Fury are gone in Forever (Blizzard)."
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_moba"
     }
    }
   }
@@ -10558,6 +11411,126 @@
    "Crescent Staff": [
     "inv_staff_07",
     3
+   ],
+   "Brawler's Leather Hood": [
+    "inv_helmet_15",
+    3
+   ],
+   "Defender's Leather Hood": [
+    "inv_helmet_15",
+    3
+   ],
+   "Mark of the Pack Leader": [
+    "inv_jewelry_necklace_04",
+    3
+   ],
+   "Archmagister's Faceted Pendant": [
+    "inv_jewelry_necklace_06",
+    3
+   ],
+   "Dark Leather Shoulders": [
+    "inv_shoulder_05",
+    2
+   ],
+   "Unstable Crystalline Shoulderpads": [
+    "inv_shoulder_05",
+    3
+   ],
+   "Glowing Lizardscale Cloak": [
+    "inv_misc_cape_11",
+    3
+   ],
+   "Drape of Shifting Energy": [
+    "inv_misc_cape_11",
+    3
+   ],
+   "Brawler's Leather Tunic": [
+    "inv_chest_cloth_17",
+    3
+   ],
+   "Bloodied Chestwraps": [
+    "inv_chest_cloth_48",
+    3
+   ],
+   "Brawler's Leather Armor": [
+    "inv_chest_cloth_17",
+    3
+   ],
+   "Black Wolf Bracers": [
+    "inv_bracer_02",
+    3
+   ],
+   "Fletcher's Gloves": [
+    "inv_gauntlets_24",
+    2
+   ],
+   "Gloves of the Fang": [
+    "inv_gauntlets_15",
+    3
+   ],
+   "Heat Resistant Mitts": [
+    "inv_gauntlets_15",
+    2
+   ],
+   "Cartilage Shapers": [
+    "inv_gauntlets_15",
+    3
+   ],
+   "Belt of the Fang": [
+    "inv_belt_43",
+    3
+   ],
+   "Brawler's Leather Belt": [
+    "inv_belt_10",
+    3
+   ],
+   "Slitherwrap Girdle": [
+    "inv_belt_43",
+    3
+   ],
+   "Brawler's Leather Legguards": [
+    "inv_pants_14",
+    3
+   ],
+   "Footpads of the Fang": [
+    "inv_boots_09",
+    3
+   ],
+   "Ring of Precision": [
+    "inv_jewelry_ring_09",
+    3
+   ],
+   "Silverlaine's Family Seal": [
+    "inv_jewelry_ring_28",
+    3
+   ],
+   "Bonebinder's Signet": [
+    "inv_jewelry_ring_28",
+    3
+   ],
+   "Hammerbone": [
+    "inv_hammer_09",
+    3
+   ],
+   "Segmented Spider Leg": [
+    "inv_staff_02",
+    3
+   ],
+   "Felbough Arm": [
+    "inv_weapon_halbard_01",
+    3
+   ],
+   "Striking Staff": [
+    "inv_staff_07",
+    3
+   ],
+   "Manual Crowd Pummeler": [
+    "inv_hammer_09",
+    3
+   ],
+   "Idol of Shifting Tides": [
+    "inv_relics_totemofrage",
+    2
    ]
   },
   "GEAR_SHEETS": {
@@ -13145,6 +14118,789 @@
       ]
      }
     ]
+   },
+   "K": {
+    "left": [
+     {
+      "slot": "Head",
+      "picks": [
+       {
+        "id": "gk1",
+        "lv": "20-29",
+        "from": 20,
+        "to": 29,
+        "name": "Brawler's Leather Hood (20)",
+        "item": "Brawler's Leather Hood",
+        "src": "Crafted · Leatherworking 100 · Icy Veins Feral leveling (Meyra, Nov 4), read Nov 17",
+        "how": "Leatherworking 100 (orange to 125), pattern Pattern: Brawler's Leather Hood sold by Pawani in The Barrens at 49.6, 29.7. Bind on pickup, so you craft it yourself. Requires level 20. You are at 63 Leatherworking, so this waits for 100.",
+        "faction": "Horde",
+        "faction_basis": "Horde vendor pattern; crafted, bind on pickup",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/252504",
+         "https://db.icy-veins.com/wow-forever/items/252798",
+         "https://db.icy-veins.com/wow-forever/npcs/248201",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 76,
+         "agi": 8,
+         "sta": 10
+        },
+        "alts": [
+         {
+          "item": "Defender's Leather Hood",
+          "label": "Alt — same score, Strength instead of Agility",
+          "how": "Leatherworking 100, Pattern: Defender's Leather Hood from Pawani, The Barrens 49.6, 29.7. Icy Veins names this one.",
+          "stats": {
+           "armor": 76,
+           "str": 8,
+           "sta": 10
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "slot": "Neck",
+      "picks": [
+       {
+        "id": "gk2",
+        "lv": "20-29",
+        "from": 20,
+        "to": 29,
+        "name": "Mark of the Pack Leader (20)",
+        "item": "Mark of the Pack Leader",
+        "src": "World drop · Humar the Pridelord · wowhandbook level-20 Feral pick, read Nov 17",
+        "how": "Drops from Humar the Pridelord, a level 23 rare elite lion in The Barrens, seen around 60.3, 32.7 to 62.2, 34.0 (Icy Veins DB). Drop rate not published. Part of Blessing of Kalimdor (2 pieces: +5% speed in The Barrens and Stonetalon). Requires level 20.",
+        "faction": "Horde",
+        "faction_basis": "Horde-zone rare (The Barrens)",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/285331",
+         "https://db.icy-veins.com/wow-forever/npcs/5828",
+         "https://wowhandbook.com/bis/druid/feral/"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "str": 5,
+         "int": 5
+        },
+        "alts": [
+         {
+          "item": "Snake Eye Kaleidoscope",
+          "label": "Alt — dungeon drop",
+          "how": "Wailing Caverns, Lady Anacondra, 26.9% (Icy Veins DB). +1 to every stat and resistance. Requires level 17."
+         }
+        ]
+       },
+       {
+        "id": "gk3",
+        "lv": "30+",
+        "from": 30,
+        "to": 40,
+        "name": "Archmagister's Faceted Pendant (30)",
+        "item": "Archmagister's Faceted Pendant",
+        "src": "Dungeon · City of Dalaran · 1mw + Icy Veins DB, read Nov 17",
+        "how": "City of Dalaran, Shade of the Archmage, 31.7% (Icy Veins DB). Requires level 30.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon; Horde reaches it from Tarren Mill",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273049",
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       }
+      ]
+     },
+     {
+      "slot": "Shoulder",
+      "picks": [
+       {
+        "id": "gk4",
+        "lv": "20-29",
+        "from": 18,
+        "to": 27,
+        "name": "Serpent's Shoulders (18)",
+        "item": "Serpent's Shoulders",
+        "src": "Dungeon · Wailing Caverns · Icy Veins Feral leveling (Meyra, Nov 4), read Nov 17",
+        "how": "Wailing Caverns, Lady Anacondra: 27.4% (1mw) or 28.6% (Icy Veins DB). Requires level 18. Icy Veins names it for Horde druids.",
+        "faction": "Horde",
+        "faction_basis": "Horde-side dungeon (The Barrens)",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/5404",
+         "https://1mw.io/en/dungeons/wailing-caverns/loot",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "alts": [
+         {
+          "item": "Dark Leather Shoulders",
+          "label": "Alt — crafted, +7 Agi",
+          "how": "Leatherworking 115 (pattern is a rare world and dungeon drop, about 1% or less per Icy Veins DB). Bind on equip, so also the auction house. Requires level 23. Icy Veins' guide calls it easy to get; its DB lists no vendor (conflict).",
+          "stats": {
+           "armor": 68,
+           "agi": 7
+          }
+         }
+        ]
+       },
+       {
+        "id": "gk5",
+        "lv": "20-29",
+        "from": 28,
+        "to": 33,
+        "name": "Unstable Crystalline Shoulderpads (28)",
+        "item": "Unstable Crystalline Shoulderpads",
+        "src": "Dungeon · City of Dalaran · 1mw + Icy Veins DB, read Nov 17",
+        "how": "City of Dalaran, Unstable Sentinel, 32.4% (Icy Veins DB). Requires level 28.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon; Horde reaches it from Tarren Mill",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273047",
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       }
+      ]
+     },
+     {
+      "slot": "Back",
+      "picks": [
+       {
+        "id": "gk6",
+        "lv": "20-29",
+        "from": 18,
+        "to": 26,
+        "name": "Glowing Lizardscale Cloak (18)",
+        "item": "Glowing Lizardscale Cloak",
+        "src": "Dungeon · Wailing Caverns · wowhandbook level-20 Feral pick, read Nov 17",
+        "how": "Wailing Caverns, Skum: 52.2% (1mw) or 30.6% (Icy Veins DB). Requires level 18.",
+        "faction": "Horde",
+        "faction_basis": "Horde-side dungeon (The Barrens)",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/6449",
+         "https://1mw.io/en/dungeons/wailing-caverns/loot",
+         "https://wowhandbook.com/bis/druid/feral/"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "alts": [
+         {
+          "item": "Wolfmaster Cape",
+          "label": "Alt — +10 AP",
+          "how": "Shadowfang Keep, Wolf Master Nandos: 37.2% (1mw) or 32.5% (Icy Veins DB). Requires level 22."
+         },
+         {
+          "item": "Fenrus' Hide",
+          "label": "Alt — Agi and Sta",
+          "how": "Shadowfang Keep, Fenrus the Devourer: 75.7% (1mw) or 30.9% (Icy Veins DB). Requires level 22."
+         }
+        ]
+       },
+       {
+        "id": "gk7",
+        "lv": "20-29",
+        "from": 27,
+        "to": 35,
+        "name": "Drape of Shifting Energy (27)",
+        "item": "Drape of Shifting Energy",
+        "src": "Dungeon · City of Dalaran · 1mw + Icy Veins DB, read Nov 17",
+        "how": "City of Dalaran, Arcanic Enigma, 35.7% (Icy Veins DB). Requires level 27.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon; Horde reaches it from Tarren Mill",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273045",
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       }
+      ]
+     },
+     {
+      "slot": "Chest",
+      "picks": [
+       {
+        "id": "gk8",
+        "lv": "20-29",
+        "from": 22,
+        "to": 29,
+        "name": "Brawler's Leather Tunic (22)",
+        "item": "Brawler's Leather Tunic",
+        "src": "Crafted · Leatherworking 110 · Icy Veins DB, read Nov 17",
+        "how": "Leatherworking 110 (orange to 135), Pattern: Brawler's Leather Tunic sold by Pawani, The Barrens 49.6, 29.7. Bind on pickup. Requires level 22.",
+        "faction": "Horde",
+        "faction_basis": "Horde vendor pattern; crafted, bind on pickup",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/252508",
+         "https://db.icy-veins.com/wow-forever/npcs/248201"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 98,
+         "str": 6,
+         "agi": 8,
+         "sta": 6,
+         "spi": 5
+        },
+        "alts": [
+         {
+          "item": "Bloodied Chestwraps",
+          "label": "Alt — dungeon drop",
+          "how": "Ruins of Lordaeron, Viktor the Vile: 38.1% (1mw) or 32.5% (Icy Veins DB). Requires level 17."
+         },
+         {
+          "item": "Dreamer's Chestguard",
+          "label": "Alt — quest",
+          "how": "Blackfathom Deeps quest Baron Aquanis (Horde), reward choice; turn in to Je'neu Sancrea, Zoram'gar Outpost, Ashenvale 11.6, 34.3."
+         },
+         {
+          "item": "Brawler's Leather Armor",
+          "label": "Alt — crafted at 75",
+          "how": "Leatherworking 75; the pattern is a rare dungeon boss drop (about 0.5-1.2% per Icy Veins DB). Requires level 15.",
+          "stats": {
+           "armor": 85,
+           "str": 5,
+           "agi": 7,
+           "sta": 3,
+           "spi": 3
+          }
+         }
+        ]
+       },
+       {
+        "id": "gk9",
+        "lv": "20-29",
+        "from": 29,
+        "to": 35,
+        "name": "Garb of Fallen Felbark (29)",
+        "item": "Garb of Fallen Felbark",
+        "src": "Dungeon · City of Dalaran · 1mw + Icy Veins DB, read Nov 17",
+        "how": "City of Dalaran, Fel Ancient, 34.7% (Icy Veins DB). Requires level 29.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon; Horde reaches it from Tarren Mill",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273038",
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       }
+      ]
+     },
+     {
+      "slot": "Shirt / Tabard",
+      "picks": [],
+      "none": "No stat shirt or tabard on the Feral guides read"
+     },
+     {
+      "slot": "Wrist",
+      "picks": [
+       {
+        "id": "gk10",
+        "lv": "20-29",
+        "from": 22,
+        "to": 29,
+        "name": "Bands of Serra'kis (22)",
+        "item": "Bands of Serra'kis",
+        "src": "Dungeon · Blackfathom Deeps · 1mw + Icy Veins DB, read Nov 17",
+        "how": "Blackfathom Deeps, Old Serra'kis: 36.1% (1mw) or 33.7% (Icy Veins DB). Requires level 22.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon in Ashenvale; Horde quests start at Zoram'gar Outpost",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/6902",
+         "https://1mw.io/en/dungeons/blackfathom-deeps/loot"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "alts": [
+         {
+          "item": "Cultist's Armguards",
+          "label": "Alt — quest, +10 AP",
+          "how": "Blackfathom Villainy (Horde), reward choice; turn in to Bashana Runetotem, Thunder Bluff 70.9, 33.8."
+         },
+         {
+          "item": "Black Wolf Bracers",
+          "label": "Alt — dungeon drop",
+          "how": "Shadowfang Keep, Fenrus the Devourer: 19.2% (1mw) or 32% (Icy Veins DB). Requires level 22."
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "slot": "Hands",
+      "picks": [
+       {
+        "id": "gk11",
+        "lv": "20-29",
+        "from": 20,
+        "to": 29,
+        "name": "Fletcher's Gloves (20)",
+        "item": "Fletcher's Gloves",
+        "src": "Crafted · Leatherworking 125 · wowhandbook level-20 Feral pick, read Nov 17",
+        "how": "Leatherworking 125. Icy Veins DB lists no pattern item, so it should be a trainer recipe (not checked in game). Bind on equip, so also on the auction house. Requires level 20. +1% crit, -1% parry.",
+        "faction": "Horde",
+        "faction_basis": "Crafted, bind on equip",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/7348",
+         "https://wowhandbook.com/bis/druid/feral/"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 53,
+         "crit": 1
+        },
+        "alts": [
+         {
+          "item": "Gloves of the Fang",
+          "label": "Alt — Fang set piece",
+          "how": "Wailing Caverns trash, Druid of the Fang, 2.73% (Icy Veins DB); bind on equip, so also the auction house. Requires level 14."
+         },
+         {
+          "item": "Brawler's Leather Gloves",
+          "label": "Alt — crafted at 75",
+          "how": "Leatherworking 75, Pattern: Brawler's Leather Gloves from Pawani, The Barrens 49.6, 29.7. Bind on pickup. Requires level 15.",
+          "stats": {
+           "armor": 53,
+           "str": 4,
+           "agi": 4,
+           "sta": 3
+          }
+         },
+         {
+          "item": "Heat Resistant Mitts",
+          "label": "Alt — quest",
+          "how": "Serpentbloom (Wailing Caverns), reward choice; quest from Apothecary Zamah, Thunder Bluff 23.0, 21.0."
+         }
+        ]
+       },
+       {
+        "id": "gk12",
+        "lv": "20-29",
+        "from": 28,
+        "to": 35,
+        "name": "Cartilage Shapers (28)",
+        "item": "Cartilage Shapers",
+        "src": "Dungeon · City of Dalaran · 1mw + Icy Veins DB, read Nov 17",
+        "how": "City of Dalaran, Lyn the Ignored, 32.9% (Icy Veins DB). Requires level 28. +4 Skinning.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon; Horde reaches it from Tarren Mill",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273054",
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       }
+      ]
+     },
+     {
+      "slot": "Waist",
+      "picks": [
+       {
+        "id": "gk13",
+        "lv": "20-29",
+        "from": 18,
+        "to": 27,
+        "name": "Deviate Scale Belt (18)",
+        "item": "Deviate Scale Belt",
+        "src": "Crafted · Leatherworking 90 · wowhandbook level-20 Feral pick, read Nov 17",
+        "how": "Leatherworking 90 (orange to 115). Pattern: Deviate Scale Belt is a reward choice from the Wailing Caverns quest Deviate Eradication, from Ebru at about 46, 36 in The Barrens. Bind on equip, so also the auction house. Requires level 18.",
+        "faction": "Horde",
+        "faction_basis": "Horde-side dungeon quest pattern; crafted, bind on equip",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/6468",
+         "https://db.icy-veins.com/wow-forever/items/6476",
+         "https://db.icy-veins.com/wow-forever/quests/1487",
+         "https://wowhandbook.com/bis/druid/feral/"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 51,
+         "str": 3,
+         "agi": 5,
+         "sta": 6
+        },
+        "alts": [
+         {
+          "item": "Belt of the Fang",
+          "label": "Alt — Fang set piece",
+          "how": "Wailing Caverns, Lady Anacondra, 11% (1mw). Requires level 16."
+         },
+         {
+          "item": "Brawler's Leather Belt",
+          "label": "Alt — crafted at 60",
+          "how": "Leatherworking 60, Pattern: Brawler's Leather Belt from Pawani, The Barrens 49.6, 29.7. Bind on pickup. Requires level 12.",
+          "stats": {
+           "armor": 45,
+           "str": 4,
+           "agi": 4,
+           "sta": 3
+          }
+         }
+        ]
+       },
+       {
+        "id": "gk14",
+        "lv": "20-29",
+        "from": 28,
+        "to": 35,
+        "name": "Slitherwrap Girdle (28)",
+        "item": "Slitherwrap Girdle",
+        "src": "Dungeon · City of Dalaran · 1mw + Icy Veins DB, read Nov 17",
+        "how": "City of Dalaran, Mana Devourer, 31% (Icy Veins DB). Requires level 28.",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon; Horde reaches it from Tarren Mill",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273041",
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       }
+      ]
+     },
+     {
+      "slot": "Legs",
+      "picks": [
+       {
+        "id": "gk15",
+        "lv": "20-29",
+        "from": 21,
+        "to": 24,
+        "name": "Worgpelt Leggings (21)",
+        "item": "Worgpelt Leggings",
+        "src": "Dungeon · Shadowfang Keep · 1mw + Icy Veins DB, read Nov 17",
+        "how": "Shadowfang Keep, Wolf Master Nandos, 30.8% (Icy Veins DB). Requires level 21.",
+        "faction": "Horde",
+        "faction_basis": "Horde-side dungeon (Silverpine Forest)",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273647",
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "alts": [
+         {
+          "item": "Leggings of the Fang",
+          "label": "Alt — Fang set piece",
+          "how": "Wailing Caverns, Lord Cobrahn, 16.6% (1mw). Requires level 17."
+         }
+        ]
+       },
+       {
+        "id": "gk16",
+        "lv": "20-29",
+        "from": 25,
+        "to": 33,
+        "name": "Brawler's Leather Legguards (25)",
+        "item": "Brawler's Leather Legguards",
+        "src": "Crafted · Leatherworking 125 · Icy Veins DB, read Nov 17",
+        "how": "Leatherworking 125 (orange to 150), Pattern: Brawler's Leather Legguards sold by Pawani, The Barrens 49.6, 29.7; made at a Tanning Rack. Bind on pickup. Requires level 25.",
+        "faction": "Horde",
+        "faction_basis": "Horde vendor pattern; crafted, bind on pickup",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/252516",
+         "https://db.icy-veins.com/wow-forever/npcs/248201"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 90,
+         "str": 7,
+         "agi": 9,
+         "sta": 7,
+         "spi": 6
+        }
+       }
+      ]
+     },
+     {
+      "slot": "Feet",
+      "picks": [
+       {
+        "id": "gk17",
+        "lv": "20-29",
+        "from": 17,
+        "to": 29,
+        "name": "Brawler's Leather Boots (17)",
+        "item": "Brawler's Leather Boots",
+        "src": "Crafted · Leatherworking 85 · wowhandbook level-20 Feral pick, read Nov 17",
+        "how": "Leatherworking 85 (orange to 110), Pattern: Brawler's Leather Boots sold by Pawani, The Barrens 49.6, 29.7. Bind on pickup. Requires level 17.",
+        "faction": "Horde",
+        "faction_basis": "Horde vendor pattern; crafted, bind on pickup",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/252439",
+         "https://db.icy-veins.com/wow-forever/items/252786",
+         "https://db.icy-veins.com/wow-forever/npcs/248201",
+         "https://wowhandbook.com/bis/druid/feral/"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "armor": 61,
+         "str": 5,
+         "agi": 5,
+         "sta": 4
+        },
+        "alts": [
+         {
+          "item": "Footpads of the Fang",
+          "label": "Alt — Fang set piece",
+          "how": "Wailing Caverns, Lord Serpentis, 15.6% (1mw). Requires level 17."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "slot": "Ring 1",
+      "picks": [
+       {
+        "id": "gk18",
+        "lv": "20-29",
+        "from": 22,
+        "to": 30,
+        "name": "Band of the Fist (22)",
+        "item": "Band of the Fist",
+        "src": "Quest · Blackfathom Deeps · 1mw + Icy Veins DB, read Nov 17",
+        "how": "Allegiance to the Old Gods (Part 2), reward choice: from Je'neu Sancrea at Zoram'gar Outpost, Ashenvale 11.6, 34.3, kill Lorgus Jett in Blackfathom Deeps and return.",
+        "faction": "Horde",
+        "faction_basis": "Horde quest giver (Zoram'gar Outpost)",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/17694",
+         "https://db.icy-veins.com/wow-forever/quests/6565",
+         "https://1mw.io/en/dungeons/blackfathom-deeps/quests"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "alts": [
+         {
+          "item": "Ring of Precision",
+          "label": "Alt — trash drop",
+          "how": "Blackfathom Deeps trash: Snapping Crustacean 0.167%, lower off other Blindlight mobs (Icy Veins DB). Bind on equip, so also the auction house. Requires level 22."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "slot": "Ring 2",
+      "picks": [
+       {
+        "id": "gk19",
+        "lv": "20-29",
+        "from": 21,
+        "to": 30,
+        "name": "Silverlaine's Family Seal (21)",
+        "item": "Silverlaine's Family Seal",
+        "src": "Dungeon · Shadowfang Keep · Icy Veins Feral leveling (Meyra, Nov 4), read Nov 17",
+        "how": "Shadowfang Keep, Baron Silverlaine: 16.4% (1mw) or 32.5% (Icy Veins DB). Requires level 21. Icy Veins names it for Horde druids.",
+        "faction": "Horde",
+        "faction_basis": "Horde-side dungeon (Silverpine Forest)",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/6321",
+         "https://1mw.io/en/dungeons/shadowfang-keep/loot",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "alts": [
+         {
+          "item": "Seal of Sylvanas",
+          "label": "Alt — quest, Icy Veins' easy Horde ring",
+          "how": "Arugal Must Die (Shadowfang Keep): kill Arugal, turn in to Dalar Dawnweaver at the Sepulcher, Silverpine Forest 44.2, 39.9."
+         },
+         {
+          "item": "Bonebinder's Signet",
+          "label": "Alt — City of Dalaran",
+          "how": "City of Dalaran, Atrexis the Grave Knight, 33.6% (Icy Veins DB). Requires level 25."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "slot": "Trinket 1",
+      "picks": [],
+      "none": "No Feral trinket in his range on the guides read"
+     },
+     {
+      "slot": "Trinket 2",
+      "picks": [],
+      "none": "No Feral trinket in his range on the guides read"
+     }
+    ],
+    "bottom": [
+     {
+      "slot": "Main hand (2H)",
+      "picks": [
+       {
+        "id": "gk20",
+        "lv": "20-29",
+        "from": 20,
+        "to": 22,
+        "name": "Hammerbone (20)",
+        "item": "Hammerbone",
+        "src": "Quest · Wailing Caverns · Icy Veins Feral leveling (Meyra, Nov 4), read Nov 17",
+        "how": "Leaders of the Fang (Wailing Caverns, kill the four Fang druid lords), reward choice; Nara Wildmane, Thunder Bluff 75.8, 31.2. 20.4 DPS, +7 Str. Icy Veins names it the easy Horde druid weapon.",
+        "faction": "Horde",
+        "faction_basis": "Horde quest giver (Thunder Bluff)",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/270018",
+         "https://db.icy-veins.com/wow-forever/quests/914",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "alts": [
+         {
+          "item": "Segmented Spider Leg",
+          "label": "Alt — staff, +9 Agi",
+          "how": "Ruins of Lordaeron, Witherfang, 32.3% (Icy Veins DB). Requires level 15."
+         }
+        ]
+       },
+       {
+        "id": "gk21",
+        "lv": "20-29",
+        "from": 23,
+        "to": 24,
+        "name": "Twilight Maul (23)",
+        "item": "Twilight Maul",
+        "src": "Dungeon · Blackfathom Deeps · Icy Veins Feral leveling (Meyra, Nov 4), read Nov 17",
+        "how": "Blackfathom Deeps, Lorgus Jett, 34.3% (Icy Veins DB). Requires level 23. Chance on hit: 70 Nature damage (weapon procs work in form, Blizzard).",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon in Ashenvale",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273841",
+         "https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+         "https://news.blizzard.com/en-us/article/24301515/world-of-warcraft-forever-class-deep-dives-hunter-and-druid"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       },
+       {
+        "id": "gk22",
+        "lv": "20-29",
+        "from": 24,
+        "to": 29,
+        "name": "Heavehammer (24)",
+        "item": "Heavehammer",
+        "src": "Quest · Excavation Site · 1mw + Icy Veins DB, read Nov 17",
+        "how": "Earthen Echo (Horde), reward choice, for the Excavation Site dungeon: from Bashana Runetotem, Thunder Bluff 70.9, 33.8, turn in to Muln Earthfury, Mulgore 33.4, 22.5. Requires level 24 to start. 27.7 DPS, +32 AP.",
+        "faction": "Horde",
+        "faction_basis": "Horde quest (Thunder Bluff)",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/271766",
+         "https://db.icy-veins.com/wow-forever/quests/98823",
+         "https://1mw.io/en/dungeons/excavation-site/quests"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       },
+       {
+        "id": "gk23",
+        "lv": "20-29",
+        "from": 29,
+        "to": 33,
+        "name": "Felbough Arm (29)",
+        "item": "Felbough Arm",
+        "src": "Dungeon · City of Dalaran · 1mw + Icy Veins DB, read Nov 17",
+        "how": "City of Dalaran, Fel Ancient, 33% (Icy Veins DB). Requires level 29 and the Polearms skill (Horde weapon master: Archibald, Undercity; trainable from 20 per the client, not confirmed by Blizzard).",
+        "faction": "Horde",
+        "faction_basis": "Neutral dungeon; Horde reaches it from Tarren Mill",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/273037",
+         "https://1mw.io/en/dungeons/city-of-dalaran/loot",
+         "https://senseos.gg/guides/wow-forever/weapon-skills/",
+         "https://wowforever.wiki.fextralife.com/Druid"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       },
+       {
+        "id": "gk24",
+        "lv": "30+",
+        "from": 30,
+        "to": 37,
+        "name": "Striking Staff (30)",
+        "item": "Striking Staff",
+        "src": "Quest · City of Dalaran · Icy Veins Feral leveling (Meyra, Nov 4), read Nov 17",
+        "how": "Heart of Disruption (Horde), reward choice: from the Image of Archmage Modera inside City of Dalaran, turn in to Magus Wordeen Voidglare in Tarren Mill, Hillsbrad Foothills 61.6, 20.8. Requires level 24 to start.",
+        "faction": "Horde",
+        "faction_basis": "Horde quest (Tarren Mill)",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/279844",
+         "https://db.icy-veins.com/wow-forever/quests/96984",
+         "https://www.icy-veins.com/wow-forever/feral-druid-leveling"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard",
+        "stats": {
+         "dps": 31.3,
+         "str": 9,
+         "int": 14,
+         "sta": 6
+        },
+        "alts": [
+         {
+          "item": "Manual Crowd Pummeler",
+          "label": "Alt — Alliance territory, long trip",
+          "how": "Gnomeregan (Dun Morogh), Crowd Pummeler 9-60, 32.9% (Icy Veins DB). Requires level 29. Use: +50% attack speed for 30 sec (3 min cooldown, 3 charges).",
+          "stats": {
+           "dps": 29.0,
+           "str": 16,
+           "agi": 5
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "slot": "Off hand",
+      "picks": [],
+      "none": "The two-hander fills both hands"
+     },
+     {
+      "slot": "Idol",
+      "picks": [
+       {
+        "id": "gk25",
+        "lv": "20-29",
+        "from": 16,
+        "to": 60,
+        "name": "Idol of Shifting Tides (16)",
+        "item": "Idol of Shifting Tides",
+        "src": "Quest · Aquatic Form · Icy Veins DB + class quest guide, read Nov 17",
+        "how": "Reward from the Horde Aquatic Form chain (from 16): A Lesson to Learn from your Thunder Bluff druid trainer, Dendrite Starblaze in Moonglade (56.2, 30.5), the Bauble in Moonglade's lake, Trial of the Sea Lion (pendant halves at the Sludge Fen chest, The Barrens 57, 8, and off Silverpine Forest 30, 29), then Aquatic Form to Turak Runetotem, Thunder Bluff 76.1, 28.6. Shapeshifting costs 40 less mana.",
+        "faction": "Horde",
+        "faction_basis": "Horde druid class quest",
+        "_source": [
+         "https://db.icy-veins.com/wow-forever/items/263411",
+         "https://db.icy-veins.com/wow-forever/quests/31",
+         "https://www.icy-veins.com/wow-forever/druid-class-quests"
+        ],
+        "_date": "2026-11-17",
+        "confirmation": "Unofficial; not Forever-confirmed by live observation or Blizzard"
+       }
+      ]
+     }
+    ]
    }
   },
   "GEAR_EXTRA_IDS": [
@@ -13174,7 +14930,32 @@
    "gld10",
    "gld11",
    "gld12",
-   "gld13"
+   "gld13",
+   "gk1",
+   "gk2",
+   "gk3",
+   "gk4",
+   "gk5",
+   "gk6",
+   "gk7",
+   "gk8",
+   "gk9",
+   "gk10",
+   "gk11",
+   "gk12",
+   "gk13",
+   "gk14",
+   "gk15",
+   "gk16",
+   "gk17",
+   "gk18",
+   "gk19",
+   "gk20",
+   "gk21",
+   "gk22",
+   "gk23",
+   "gk24",
+   "gk25"
   ],
   "GEAR_ACQUISITION": {
    "Axe of Orgrimmar": {
@@ -16463,7 +18244,8 @@
      "hp5": 5
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Source conflict: 1mw beta omits the 5 hp5 that Icy Veins DB lists. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/14149 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
@@ -16531,7 +18313,8 @@
     },
     "for": [
      "C",
-     "V"
+     "V",
+     "K"
     ],
     "note": "+3 Fire Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/273005 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
@@ -16553,7 +18336,8 @@
      "ap": 4
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/273007 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
@@ -16614,7 +18398,8 @@
      "sta": 3
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/15453 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
@@ -16656,7 +18441,8 @@
      "spi": 3
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/15450 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
@@ -16723,7 +18509,8 @@
     },
     "for": [
      "C",
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/15444 ; https://1mw.io/en/dungeons/ragefire-chasm/quests",
@@ -16746,7 +18533,8 @@
      "heal": 5
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271202 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
@@ -16768,7 +18556,8 @@
      "dps": 17.5
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271203 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
@@ -16814,7 +18603,8 @@
      "spi": 9
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271212 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
@@ -16928,7 +18718,8 @@
      "frost": 32
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "+13 Frost Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271215 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
@@ -16971,7 +18762,8 @@
      "sta": 3
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/279875 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
@@ -17035,7 +18827,8 @@
      "heal": 26
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/251534 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
@@ -17055,7 +18848,8 @@
      "sta": 3
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/279865 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
@@ -17074,7 +18868,8 @@
     },
     "for": [
      "C",
-     "V"
+     "V",
+     "K"
     ],
     "note": "Increased Defense +1. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/279867 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/quests",
@@ -17097,7 +18892,8 @@
      "spi": 7
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/5404 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17120,7 +18916,8 @@
      "sta": 5
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/10412 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17144,7 +18941,8 @@
     },
     "for": [
      "C",
-     "V"
+     "V",
+     "K"
     ],
     "note": "+1 Fire Resistance; +1 Frost Resistance; +1 Shadow Resistance; +1 Nature Resistance; +1 Arcane Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/273088 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17193,7 +18991,8 @@
      "sta": 4
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/10410 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17217,7 +19016,8 @@
      "spi": 10
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6473 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17259,7 +19059,8 @@
      "agi": 6
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "+2 Nature Resistance. Source conflict: +2 Nature Resistance only on Icy Veins DB. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6449 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17328,7 +19129,8 @@
      "sta": 6
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/10411 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17353,7 +19155,8 @@
      "sp": 15
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "+9 Nature Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6631 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17375,7 +19178,8 @@
     },
     "for": [
      "C",
-     "V"
+     "V",
+     "K"
     ],
     "note": "When struck in combat, inflicts 1 Nature damage to the attacker. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6629 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17419,7 +19223,8 @@
     },
     "for": [
      "C",
-     "V"
+     "V",
+     "K"
     ],
     "note": "Your spells pierce 2 Magical Resistance. Source conflict: spell pierce line only on Icy Veins DB. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6463 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
@@ -17440,7 +19245,8 @@
      "sta": 4
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Source conflict: armor 68 (Icy Veins DB) vs 75 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6480 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
@@ -17525,7 +19331,8 @@
      "sta": 1
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/270008 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
@@ -17550,7 +19357,8 @@
     },
     "for": [
      "C",
-     "V"
+     "V",
+     "K"
     ],
     "note": "Horde quest; 1mw says the chain start is still to verify in game. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6505 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
@@ -17571,7 +19379,8 @@
      "dps": 20.4
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Horde quest; 1mw says the chain start is still to verify in game. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/270018 ; https://1mw.io/en/dungeons/wailing-caverns/quests",
@@ -17612,7 +19421,8 @@
      "dps": 18.3
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "+2 Shadow Resistance; Chance on hit: Sends a shadowy bolt at the enemy causing 70 Shadow damage. Source conflict: proc 70 Shadow (Icy Veins DB) vs 55-85 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/3194 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
@@ -17633,7 +19443,8 @@
      "sta": 2
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Increases movement speed by 2% in Tirisfal Glades, Silverpine Forest, and Shadowfang Keep. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6321 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
@@ -17765,7 +19576,8 @@
      "heal": 7
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Increases your effective stealth detection level by 1. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6319 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
@@ -17790,7 +19602,8 @@
      "sp": 17
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6318 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
@@ -17812,7 +19625,8 @@
      "sta": 6
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6340 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
@@ -17835,7 +19649,8 @@
      "ap": 4
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Source conflict: 1mw beta adds +20 bonus armor that Icy Veins DB does not list. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/3230 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
@@ -17882,7 +19697,8 @@
      "ap": 10
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "+9 Attack Power against Beasts. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6314 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
@@ -17904,7 +19720,8 @@
      "agi": 10
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "+7 Fire Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/273647 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
@@ -17998,7 +19815,8 @@
      "shadow": 27
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "Trash drop anywhere in the dungeon. +8 Shadow Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/1484 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
@@ -18063,7 +19881,8 @@
      "fire": 34
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/15109 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
@@ -18105,7 +19924,8 @@
      "sta": 7
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Source conflict: armor 62 vs 68 +20 bonus (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6335 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
@@ -18148,7 +19968,8 @@
      "int": 6
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Source conflict: armor 67 vs 73 (1mw beta). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/270023 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
@@ -18167,7 +19988,8 @@
      "ap": 6
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6414 ; https://1mw.io/en/dungeons/shadowfang-keep/quests",
@@ -18211,7 +20033,8 @@
     },
     "for": [
      "C",
-     "V"
+     "V",
+     "K"
     ],
     "note": "When struck in combat, inflicts 2 Nature damage to the attacker. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/273839 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
@@ -18236,7 +20059,8 @@
      "heal": 28
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/2271 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
@@ -18261,7 +20085,8 @@
      "sp": 5
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/888 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
@@ -18324,7 +20149,8 @@
      "heal": 12
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Chance on hit: Blasts a target for 70 Nature damage. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/273841 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
@@ -18370,7 +20196,8 @@
      "sta": 3
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6902 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
@@ -18394,7 +20221,8 @@
      "heal": 32
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "Reduces the hit chance of Sleep effects against you by 5%. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/1155 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
@@ -18467,7 +20295,8 @@
      "sp": 12
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/6911 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
@@ -18492,7 +20321,8 @@
      "sp": 17
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "Trash drop anywhere in the dungeon. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/3415 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
@@ -18512,7 +20342,8 @@
      "spi": 3
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Trash drop anywhere in the dungeon. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/1491 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
@@ -18555,7 +20386,8 @@
      "heal": 14
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Horde version from Thunder Bluff (1mw: both factions). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/270031 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
@@ -18576,7 +20408,8 @@
      "ap": 10
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Horde version from Thunder Bluff (1mw: both factions). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/270032 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
@@ -18618,7 +20451,8 @@
      "fire": 34
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "Warlock-only quest (Doan Karhan, Barrens 49.2, 57.2 per 1mw): 3 Soran'ruk Fragments (BFD) + 1 Large Soran'ruk Fragment (SFK Shadowfang Darksouls); from 20; listed under both dungeons. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/15109 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
@@ -18637,7 +20471,8 @@
      "agi": 4
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/17694 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
@@ -18701,7 +20536,8 @@
      "spi": 11
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/270043 ; https://1mw.io/en/dungeons/blackfathom-deeps/quests",
@@ -18747,7 +20583,8 @@
      "sta": 14
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/273022 ; https://1mw.io/en/dungeons/excavation-site/loot",
@@ -18769,7 +20606,8 @@
      "int": 15
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/273026 ; https://1mw.io/en/dungeons/excavation-site/loot",
@@ -18856,7 +20694,8 @@
      "ap": 10
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271732 ; https://1mw.io/en/dungeons/excavation-site/quests",
@@ -18878,7 +20717,8 @@
     },
     "for": [
      "C",
-     "V"
+     "V",
+     "K"
     ],
     "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271719 ; https://1mw.io/en/dungeons/excavation-site/quests",
@@ -18898,7 +20738,8 @@
      "ap": 32
     },
     "for": [
-     "V"
+     "V",
+     "K"
     ],
     "note": "Source conflict: 1mw beta adds +60 bonus armor that Icy Veins DB does not list. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271766 ; https://1mw.io/en/dungeons/excavation-site/quests",
@@ -18921,13 +20762,387 @@
      "mp5": 5
     },
     "for": [
-     "C"
+     "C",
+     "K"
     ],
     "note": "Source conflict: 5 mp5 only on Icy Veins DB. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
     "_source": "https://db.icy-veins.com/wow-forever/items/271767 ; https://1mw.io/en/dungeons/excavation-site/quests",
     "_date": "2026-11-10"
+   },
+   {
+    "dkey": "0",
+    "item": "Trogg Scepter",
+    "id": 272996,
+    "icon": "inv_misc_bone_10",
+    "q": 3,
+    "slot": "Main Hand",
+    "type": "Mace",
+    "req": 13,
+    "boss": "Oggleflint",
+    "rate": "32.8% (Forever, Icy Veins DB)",
+    "stats": {
+     "dps": 8.1,
+     "spi": 4,
+     "heal": 33,
+     "sp": 11
+    },
+    "for": [
+     "K"
+    ],
+    "note": "One-hand caster mace: low weapon DPS for Cat or Bear. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/272996 ; https://1mw.io/en/dungeons/ragefire-chasm/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "1",
+    "item": "Scepter of the Abandoned",
+    "id": 271216,
+    "icon": "inv_misc_bone_dwarfskull_01",
+    "q": 3,
+    "slot": "Main Hand",
+    "type": "Mace",
+    "req": 17,
+    "boss": "The Abandoned",
+    "rate": "32.4% (Forever beta, 1mw); 34% (Forever, Icy Veins DB)",
+    "stats": {
+     "dps": 9.6,
+     "sp": 24
+    },
+    "for": [
+     "K"
+    ],
+    "note": "One-hand caster mace: low weapon DPS for Cat or Bear. +5 Shadow Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/271216 ; https://1mw.io/en/dungeons/ruins-of-lordaeron/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "2",
+    "item": "Stinging Viper",
+    "id": 6472,
+    "icon": "inv_wand_10",
+    "q": 3,
+    "slot": "One-Hand",
+    "type": "Mace",
+    "req": 19,
+    "boss": "Lord Pythas",
+    "rate": "32.4% (Forever beta, 1mw); 29.3% (Forever, Icy Veins DB)",
+    "stats": {
+     "dps": 15.5
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Chance on hit: poisons the target for 7 Nature damage every 3 sec for 12 sec (weapon procs work in form, Blizzard). One-hander: a two-hander gives more weapon DPS. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6472 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "2",
+    "item": "Gloves of the Fang",
+    "id": 10413,
+    "icon": "inv_gauntlets_18",
+    "q": 3,
+    "slot": "Hands",
+    "type": "Leather",
+    "req": 14,
+    "boss": "Druid of the Fang (trash)",
+    "rate": "2.73% (Forever, Icy Veins DB)",
+    "stats": {
+     "str": 4,
+     "agi": 6,
+     "armor": 52
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Bind on equip, so also on the auction house. Embrace of the Viper set (Belt, Footpads, Gloves, Leggings, Armor of the Fang): 3 pieces +10 Attack Power, 5 pieces a melee chance to stun for 1 sec. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/10413 ; https://1mw.io/en/dungeons/wailing-caverns/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "3",
+    "item": "Baron's Scepter",
+    "id": 6323,
+    "icon": "inv_mace_02",
+    "q": 3,
+    "slot": "Main Hand",
+    "type": "Mace",
+    "req": 21,
+    "boss": "Baron Silverlaine",
+    "rate": "40.6% (Forever beta, 1mw); 33% (Forever, Icy Veins DB)",
+    "stats": {
+     "dps": 16.7,
+     "str": 2,
+     "sta": 3
+    },
+    "for": [
+     "K"
+    ],
+    "note": "One-hander. Party members within 30 yd regenerate 4 health every 5 sec. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/6323 ; https://1mw.io/en/dungeons/shadowfang-keep/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "4",
+    "item": "Crested Scepter",
+    "id": 3414,
+    "icon": "inv_mace_08",
+    "q": 3,
+    "slot": "Main Hand",
+    "type": "Mace",
+    "req": 24,
+    "boss": "Aku'mai",
+    "stats": {
+     "dps": 12.1,
+     "sta": 6,
+     "int": 2,
+     "sp": 32
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Source conflict: 1mw lists it under Aku'mai; Icy Veins DB lists it as a bind-on-equip drop from Aku'mai Servant (0.103%). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/3414 ; https://1mw.io/en/dungeons/blackfathom-deeps/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "6",
+    "item": "Cartilage Shapers",
+    "id": 273054,
+    "icon": "inv_gauntlets_18",
+    "q": 3,
+    "slot": "Hands",
+    "type": "Leather",
+    "req": 28,
+    "boss": "Lyn the Ignored",
+    "rate": "32.9% (Forever, Icy Veins DB)",
+    "stats": {
+     "agi": 9,
+     "spi": 8,
+     "armor": 68
+    },
+    "for": [
+     "K"
+    ],
+    "note": "+4 Skinning. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273054 ; https://1mw.io/en/dungeons/city-of-dalaran/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "6",
+    "item": "Unstable Crystalline Shoulderpads",
+    "id": 273047,
+    "icon": "inv_shoulder_07",
+    "q": 3,
+    "slot": "Shoulder",
+    "type": "Leather",
+    "req": 28,
+    "boss": "Unstable Sentinel",
+    "rate": "32.4% (Forever, Icy Veins DB)",
+    "stats": {
+     "agi": 9,
+     "sta": 6,
+     "mp5": 2,
+     "armor": 81
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Source conflict: +2 mana per 5 sec only on Icy Veins DB. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273047 ; https://1mw.io/en/dungeons/city-of-dalaran/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "6",
+    "item": "Garb of Fallen Felbark",
+    "id": 273038,
+    "icon": "inv_shirt_09",
+    "q": 3,
+    "slot": "Chest",
+    "type": "Leather",
+    "req": 29,
+    "boss": "Fel Ancient",
+    "rate": "34.7% (Forever, Icy Veins DB)",
+    "stats": {
+     "agi": 9,
+     "sta": 7,
+     "int": 13,
+     "armor": 110
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273038 ; https://1mw.io/en/dungeons/city-of-dalaran/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "6",
+    "item": "Slitherwrap Girdle",
+    "id": 273041,
+    "icon": "inv_belt_15",
+    "q": 3,
+    "slot": "Waist",
+    "type": "Leather",
+    "req": 28,
+    "boss": "Mana Devourer",
+    "rate": "31% (Forever, Icy Veins DB)",
+    "stats": {
+     "agi": 9,
+     "sta": 6,
+     "armor": 61
+    },
+    "for": [
+     "K"
+    ],
+    "note": "When struck, drains 2 mana from the attacker. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273041 ; https://1mw.io/en/dungeons/city-of-dalaran/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "6",
+    "item": "Felbough Arm",
+    "id": 273037,
+    "icon": "inv_spear_08",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Polearm",
+    "req": 29,
+    "boss": "Fel Ancient",
+    "rate": "33% (Forever, Icy Veins DB)",
+    "stats": {
+     "dps": 28.8,
+     "agi": 10,
+     "hit": 1
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Polearm: druids can learn Polearms from level 20 (client data; Blizzard has not confirmed). +9 Nature Resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273037 ; https://1mw.io/en/dungeons/city-of-dalaran/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "6",
+    "item": "Spine of the Devourer",
+    "id": 273040,
+    "icon": "inv_staff_07",
+    "q": 3,
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "req": 28,
+    "boss": "Mana Devourer",
+    "rate": "33.5% (Forever, Icy Veins DB)",
+    "stats": {
+     "dps": 20.7,
+     "sta": 14,
+     "sp": 36
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Caster staff; spells pierce 3 resistance. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273040 ; https://1mw.io/en/dungeons/city-of-dalaran/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "6",
+    "item": "Drape of Shifting Energy",
+    "id": 273045,
+    "icon": "inv_misc_cape_18",
+    "q": 3,
+    "slot": "Back",
+    "type": null,
+    "req": 27,
+    "boss": "Arcanic Enigma",
+    "rate": "35.7% (Forever, Icy Veins DB)",
+    "stats": {
+     "spi": 7,
+     "ap": 12,
+     "armor": 24
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273045 ; https://1mw.io/en/dungeons/city-of-dalaran/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "6",
+    "item": "Bonebinder's Signet",
+    "id": 273032,
+    "icon": "inv_jewelry_ring_28",
+    "q": 3,
+    "slot": "Finger",
+    "type": null,
+    "req": 25,
+    "boss": "Atrexis the Grave Knight",
+    "rate": "33.6% (Forever, Icy Veins DB)",
+    "stats": {
+     "str": 5,
+     "spi": 6,
+     "armor": 40
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Unique-equipped. +40 armor. Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273032 ; https://1mw.io/en/dungeons/city-of-dalaran/loot",
+    "_date": "2026-11-17"
+   },
+   {
+    "dkey": "6",
+    "item": "Archmagister's Faceted Pendant",
+    "id": 273049,
+    "icon": "inv_misc_necklacea8",
+    "q": 3,
+    "slot": "Neck",
+    "type": null,
+    "req": 30,
+    "boss": "Shade of the Archmage",
+    "rate": "31.7% (Forever, Icy Veins DB)",
+    "stats": {
+     "int": 6,
+     "ap": 12
+    },
+    "for": [
+     "K"
+    ],
+    "note": "Use: +10% experience from Undead for 5 min (6 hr cooldown). Unofficial: Forever DB data (Icy Veins DB, client 1.60.1), checked against 1mw beta.",
+    "_source": "https://db.icy-veins.com/wow-forever/items/273049 ; https://1mw.io/en/dungeons/city-of-dalaran/loot",
+    "_date": "2026-11-17"
    }
-  ]
+  ],
+  "STAT_WEIGHTS": {
+   "K": {
+    "dps": 14,
+    "ap": 1,
+    "str": 2,
+    "agi": 2,
+    "crit": 21,
+    "hit": 21,
+    "sta": 0.4
+   }
+  },
+  "STAT_WEIGHTS_SRC": {
+   "K": {
+    "text": "Leveling weights in Attack Power units. dps 14: Method's Forever Feral page says 14 Attack Power adds 1 weapon DPS, and Blizzard made Cat and Bear auto attacks hit for the weapon's DPS, so 1 weapon DPS is worth 14 AP. str 2, agi 2, ap 1, crit 21, hit 21: Mobalytics (yumytv) says that while leveling 1 Strength = 1 Agility = 2 Attack Power and 1% hit or crit is worth roughly 10-11 Strength. sta 0.4: wowhandbook's Feral leveling weights (client 70938). Spirit, Intellect, mp5, hp5 and armor have no published Feral number, so they count 0.",
+    "conflicts": "Level-60 sim sets are higher on crit: wowforeverbislist (WoWSims Cat preset) crit 29.04, hit 21.38, agi 2.69, str 2.44 per 1 AP; wowhandbook leveling crit 25.13, hit 20.56, agi 2.47, str 2.42; foreverdb's sim shows weapon DPS 0.00, which contradicts Blizzard's form change and is not used.",
+    "_source": "https://www.method.gg/wow-forever/class-guides/feral-tank-druid/bis-gear-and-stats ; https://news.blizzard.com/en-us/article/24301515/world-of-warcraft-forever-class-deep-dives-hunter-and-druid ; https://mobalytics.gg/wow-forever/classes/druid-leveling-guide ; https://wowhandbook.com/bis/druid/feral/ ; https://wowforeverbislist.com/preraid/druid/feral-dps/ ; https://foreverdb.net/sim/druid/feral",
+    "_date": "2026-11-17"
+   }
+  },
+  "DUN_NOTES_K": {
+   "0": "Hidden Enemies: Hammer of Orgrimmar (12.4 DPS mace); Subterranean Cape off Taragaman",
+   "1": "Segmented Spider Leg (17.5 DPS, +9 Agi) off Witherfang; Bear Feral Charge interrupts Rath'mael's Flamestrike",
+   "2": "Leaders of the Fang: Hammerbone (20.4 DPS); Fang leather set, 3 pieces +10 AP; Deviate Eradication gives Pattern: Deviate Scale Belt",
+   "3": "Worgpelt Leggings and Wolfmaster Cape off Nandos; Arugal Must Die: Seal of Sylvanas",
+   "4": "Twilight Maul (22.9 DPS) off Lorgus Jett; Bands of Serra'kis; Band of the Fist from Allegiance to the Old Gods",
+   "5": "Earthen Echo (Horde, from 24): Heavehammer, 27.7 DPS +32 AP; Garb of Florid Feathers off Shadetooth",
+   "6": "Felbough Arm polearm (28.8 DPS, +10 Agi, 1% hit) off the Fel Ancient; Heart of Disruption (Horde): Striking Staff, 31.3 DPS",
+   "gnomer": "Manual Crowd Pummeler (29.0 DPS) off Crowd Pummeler 9-60; Alliance territory, long trip"
+  }
  },
  "trainers": {
   "TRAINER_RAW": {
@@ -21275,20 +23490,41 @@
    "lead": "Three bars, one set of keys",
    "tone": "info",
    "text": "The game swaps your main bar in Bear Form and Cat Form, so fill each bar once: shift into the form, then drag the spells in. The Heal, Bear, Cat and Travel macros go in the same slot on every bar. If the bar changes again when you Prowl, fill it the same as the Cat bar. Travel and Aquatic Form show the caster bar."
+  },
+  "talents_druid_bullets": [
+   {
+    "text": "The two guides split at level 10: Mobalytics (yumytv) puts 5 points in Furor by 17 so Cat keeps its Energy through a caster-form heal; Icy Veins (Meyra) takes Ferocity 5 and Feral Instinct and has Feral Charge at 20. Mobalytics waits until 24 for Feral Charge and never takes Lacerate or Primal Bite.",
+    "_source": "https://mobalytics.gg/wow-forever/classes/druid-leveling-guide ; https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+    "_date": "2026-11-17"
+   },
+   {
+    "text": "In Forever your Cat and Bear auto attacks hit for your weapon's DPS (Cat swings every 1.0 sec, Bear every 2.5 sec), and weapon-damage moves use the same numbers, so weapon DPS is the stat both guides rank first (Official).",
+    "_source": "https://news.blizzard.com/en-us/article/24301515/world-of-warcraft-forever-class-deep-dives-hunter-and-druid ; https://mobalytics.gg/wow-forever/classes/druid-leveling-guide ; https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+    "_date": "2026-11-17"
+   },
+   {
+    "text": "Which guide your 13 points follow is not on the table: at 22 Mobalytics has Ferocity 3, Furor 5, Feral Swiftness 2, Sharpened Claws 2, Savage Fury 1; Icy Veins has Ferocity 5, Feral Instinct 3, Feral Swiftness 2, Feral Charge 1, Savage Fury 2. Pick yours in Next ding.",
+    "_source": "https://mobalytics.gg/wow-forever/classes/druid-leveling-guide ; https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+    "_date": "2026-11-17"
+   }
+  ],
+  "gear_note_druid": {
+   "text": "Kestrik's picks are Horde-reachable Feral items from Icy Veins' Feral leveling guide (Meyra), wowhandbook's level-20 Feral sheet and the Forever item data on Icy Veins DB and 1mw, read Nov 17, scored with weapon DPS first as both guides rank it."
   }
  },
  "_meta": {
-  "version": 44,
-  "generated_at": "2026-11-17T15:30-05:00",
-  "source": "Claude at Jason's ask, Nov 17 2026: Cower on Kestrik's Cat Shift+5",
+  "version": 45,
+  "generated_at": "2026-11-17T21:14-05:00",
+  "source": "WoW Forever bot, Nov 17 2026: Kestrik sections data (talents, loot, gear sheet, professions)",
   "notes_commit": "2f1ad6c",
-  "notes": "Nov 17 (Jason's pick): Cower on Kestrik's Cat slot 11 (Shift+Naga 5), the slot Berserk left free; the Bottom Right slot 16 it used to sit on is free in all three forms. Earlier on Nov 17: TRAINER_RAW.druid all ranks (talentsforever + wowforever.one, Blizzard Nov 2 notes); Lacerate talent 25, Tiger's Fury and Berserk removed; CHARS[2].racials Windshaper Skyborne."
+  "notes": "Nov 17: Kestrik's druid talent trees (talentsforever, client 70755 + hotfixes) with Mobalytics (default) and Icy Veins Feral orders, K on Feral loot rows plus 15 new rows, Feral stat weights (1 weapon DPS = 14 AP), dungeon notes, his gear sheet gk1-gk25 and profession order."
  },
  "captions": {
-  "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16.",
+  "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default and Icy Veins (Meyra, Nov 4) 9/32/10 the alternative; which one his 13 points follow is not known yet, so pick it in Next ding.",
   "macros": "Corvin: Mobalytics macros added or matched Nov 10 (Searing Pain + pet from 26, Succubus summon key, Fel Domination resummon, Imp sacrifice at 41, Torment + attack). Zanjiro: level-aware manual macros reviewed against Nicktew; Rank1 kick separate from damage. Native triggers are banks, not keyboard modifiers. Troll Berserking macro added Nov 10. Kestrik: form, heal and travel macros from your Druid - Feral note (Nov 16), not run in game yet.",
   "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; Icy Veins rotation (Nov 13 update) drives auto layout, Nicktew alternative documented. No controller UI added. Nov 10: plate buttons follow each rotation's priority order at every level. Kestrik: fixed plates per form (Cat, Bear, Caster) from your Druid - Feral note; same job on the same button in every form.",
   "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option; Nov 16: Rank 1 is his main filler, max rank on dungeon bosses and elites) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking. Kestrik: Feral leveling from Method (Birra, Nov 14) and Warcraft Tavern; one rotation per form.",
-  "path": "Mobalytics (Crix, plan since Nov 10, respec at 26 unchanged; Nov 15 talent change moves 2 points into Soul Harvest at 46-47): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build."
+  "path": "Mobalytics (Crix, plan since Nov 10, respec at 26 unchanged; Nov 15 talent change moves 2 points into Soul Harvest at 46-47): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build.",
+  "gear": "Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server. Kestrik: Horde Feral picks from Icy Veins and the Forever item data, scored with weapon DPS first."
  }
 }
