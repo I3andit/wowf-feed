@@ -2988,6 +2988,96 @@
      "Nature's Majesty",
      2
     ]
+   ],
+   "feral_wh": [
+    [
+     "Ferocity",
+     5
+    ],
+    [
+     "Feral Swiftness",
+     2
+    ],
+    [
+     "Feral Instinct",
+     3
+    ],
+    [
+     "Feral Charge",
+     1
+    ],
+    [
+     "Savage Fury",
+     2
+    ],
+    [
+     "Sharpened Claws",
+     2
+    ],
+    [
+     "Predatory Discipline",
+     1
+    ],
+    [
+     "Blood Frenzy",
+     2
+    ],
+    [
+     "Lacerate",
+     1
+    ],
+    [
+     "Predatory Strikes",
+     1
+    ],
+    [
+     "Leader of the Pack",
+     1
+    ],
+    [
+     "Natural Instinct",
+     2
+    ],
+    [
+     "Predatory Strikes",
+     2
+    ],
+    [
+     "Rend and Tear",
+     5
+    ],
+    [
+     "Shifting Power",
+     1
+    ],
+    [
+     "Primal Bite",
+     1
+    ],
+    [
+     "Heart of the Wild",
+     5
+    ],
+    [
+     "Natural Shapeshifter",
+     3
+    ],
+    [
+     "Reflection",
+     3
+    ],
+    [
+     "Naturalist",
+     5
+    ],
+    [
+     "Swiftmend",
+     1
+    ],
+    [
+     "Brutal Impact",
+     2
+    ]
    ]
   },
   "STATIC": {
@@ -3371,6 +3461,18 @@
     "url": "https://www.icy-veins.com/wow-forever/feral-druid-leveling",
     "blurb": "Ferocity 5 at 10-14, Feral Instinct 15-17, Feral Swiftness 18-19, Feral Charge 20 (the day Cat Form opens), Savage Fury 21-22, Sharpened Claws 23-24, Lacerate 25, Blood Frenzy 26-27, Predatory Discipline 28, Leader of the Pack 30, Rend and Tear 35-39, Primal Bite 40, Shifting Power 41, then Heart of the Wild, Naturalist, Genesis, Nature's Reach and Nature's Majesty. Never takes Furor.",
     "tag": "Unofficial, single source"
+   },
+   {
+    "key": "feral_wh",
+    "label": "Wowhead Feral leveling 0/34/17 (Lexolas)",
+    "short": "Wowhead",
+    "cls": "druid",
+    "seq": "feral_wh",
+    "src": "Wowhead Feral Druid DPS Leveling Guide for WoW: Forever (Lexolas), Talent Order of the talent calculator build embedded in the guide, updated Nov 17 2026, read Nov 17 2026 (Unofficial, single source)",
+    "date": "Nov 17; read Nov 17",
+    "url": "https://www.wowhead.com/forever/guide/classes/druid/feral/dps-leveling-tips",
+    "blurb": "Ferocity 5 at 10-14, Feral Swiftness 15-16, Feral Instinct 17-19, Feral Charge 20, Savage Fury 21-22, Sharpened Claws 23-24, Predatory Discipline 25, Blood Frenzy 26-27, Lacerate 28, Predatory Strikes 29, Leader of the Pack 30, Natural Instinct 31-32, Predatory Strikes 33-34, Rend and Tear 35-39, Shifting Power 40, Primal Bite 41, then Heart of the Wild, Natural Shapeshifter, Reflection, Naturalist, Swiftmend 58 and Brutal Impact 59-60. Never takes Furor or any Balance talent.",
+    "tag": "Unofficial, single source"
    }
   ],
   "WHY": {
@@ -3403,25 +3505,31 @@
    "Improved Bane of Agony": "Up to 10% more Bane of Agony damage (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 55–56 · Icy Veins Affliction: 20–21 · Icy Veins Demonology: 51–52 · Mobalytics Affliction 1-60: 56–57.",
    "Elemental Focus": "10% chance on a spell cast to make your next spell free (Icy Veins, Nov 13). Levels · Icy Veins: 57 · Mobalytics (Yebb): 45.",
    "Soul Harvest": "A Drain Soul kill raises your Mana regeneration by 100% for 10 sec and keeps 100% of normal regen going while casting (2/2, talent tree). Crix (Nov 15): drinking while the buff is up gives a huge amount of mana, possibly a bug. Levels · Mobalytics respec 26: 46–47 · Mobalytics Affliction 1-60: 58–59.",
-   "druid:Ferocity": "Claw, Rake, Swipe, Maul and Primal Bite cost 1 less Energy or Rage per point (5 at 5/5). Mobalytics: 10-12, 34; Icy Veins: 10-14.",
-   "druid:Furor": "At 5/5, Cat Form gives back all the Energy you had when you left it plus 10 per second spent outside Bear, so a heal in caster form costs no Energy; Bear always starts with 10 Rage. Mobalytics: 13-17; Icy Veins: not taken.",
-   "druid:Feral Swiftness": "Cat Form runs 30% faster and you dodge 4% more at 2/2. Mobalytics: 18-19; Icy Veins: 18-19.",
-   "druid:Sharpened Claws": "+6% crit in Cat and Bear Form at 2/2. Mobalytics: 20-21; Icy Veins: 23-24.",
-   "druid:Savage Fury": "Claw, Rake, Shred, Maul and Swipe deal 10% more damage at 2/2. Mobalytics: 22-23; Icy Veins: 21-22.",
-   "druid:Feral Charge": "Bear: charge, root and interrupt a cast for 4 sec. Cat: leap behind the target (30 sec cooldown). Mobalytics: 24; Icy Veins: 20.",
-   "druid:Predatory Discipline": "Ferocious Bite keeps its bonus damage from excess Energy without spending that Energy. Opens the path to Shifting Power. Mobalytics: 25; Icy Veins: 28.",
+   "druid:Ferocity": "Claw, Rake, Swipe, Maul and Primal Bite cost 1 less Energy or Rage per point (5 at 5/5). Mobalytics: 10-12, 34; Icy Veins: 10-14; Wowhead: 10-14.",
+   "druid:Furor": "At 5/5, Cat Form gives back all the Energy you had when you left it plus 10 per second spent outside Bear, so a heal in caster form costs no Energy; Bear always starts with 10 Rage. Mobalytics: 13-17; Icy Veins: not taken; Wowhead: not taken.",
+   "druid:Feral Swiftness": "Cat Form runs 30% faster and you dodge 4% more at 2/2. Mobalytics: 18-19; Icy Veins: 18-19; Wowhead: 15-16.",
+   "druid:Sharpened Claws": "+6% crit in Cat and Bear Form at 2/2. Mobalytics: 20-21; Icy Veins: 23-24; Wowhead: 23-24.",
+   "druid:Savage Fury": "Claw, Rake, Shred, Maul and Swipe deal 10% more damage at 2/2. Mobalytics: 22-23; Icy Veins: 21-22; Wowhead: 21-22.",
+   "druid:Feral Charge": "Bear: charge, root and interrupt a cast for 4 sec. Cat: leap behind the target (30 sec cooldown). Mobalytics: 24; Icy Veins: 20; Wowhead: 20.",
+   "druid:Predatory Discipline": "Ferocious Bite keeps its bonus damage from excess Energy without spending that Energy. Opens the path to Shifting Power. Mobalytics: 25; Icy Veins: 28; Wowhead: 25.",
    "druid:Blood Frenzy": "Cat crits on combo-point moves add an extra combo point; Bear crits give 5 Rage (2/2). Mobalytics: 26-27; Icy Veins: 26-27.",
-   "druid:Predatory Strikes": "+150% of your level as Attack Power in Cat and Bear Form at 3/3. Mobalytics: 28-29, 33; Icy Veins: 29, 33-34.",
+   "druid:Predatory Strikes": "+150% of your level as Attack Power in Cat and Bear Form at 3/3. Mobalytics: 28-29, 33; Icy Veins: 29, 33-34; Wowhead: 29, 33-34.",
    "druid:Leader of the Pack": "+3% crit for your party while you are in Cat or Bear Form. Mobalytics: 30; Icy Veins: 30.",
    "druid:Natural Instinct": "Melee crits deal 20% more bonus damage, and your heals gain 25% of your Intellect (2/2). Mobalytics: 31-32; Icy Veins: 31-32.",
    "druid:Rend and Tear": "+15% melee ability damage on bleeding targets at 5/5 (Rake and Rip keep it on). Mobalytics: 35-39; Icy Veins: 35-39.",
-   "druid:Shifting Power": "Cat Form: turn 55% of base mana into 40 Energy, 8 sec cooldown. Use it under 50 Energy. Mobalytics: 40; Icy Veins: 41.",
-   "druid:Genesis": "Periodic damage and healing +10% at 5/5: Rake, Rip, Moonfire and your HoTs. Mobalytics: 41-45; Icy Veins: 52-56.",
-   "druid:Nature's Majesty": "+4% crit with spells and melee at 2/2. Mobalytics: 46-47; Icy Veins: 59-60.",
-   "druid:Nature's Reach": "+4% hit at 2/2 (and 20% range on Balance spells). Mobalytics: 48-49; Icy Veins: 57-58.",
-   "druid:Heart of the Wild": "+10% Intellect; in Cat Form +10% Strength, in Bear Form +20% Stamina (5/5). Mobalytics: 50-54; Icy Veins: 42-46.",
-   "druid:Naturalist": "+10% to all damage you deal at 5/5, and faster Healing Touch. Mobalytics: 55-59; Icy Veins: 47-51.",
-   "druid:Natural Shapeshifter": "Shapeshifting costs 30% less mana at 3/3 (1 point here). Mobalytics: 60; Icy Veins: not taken."
+   "druid:Shifting Power": "Cat Form: turn 55% of base mana into 40 Energy, 8 sec cooldown. Use it under 50 Energy. Mobalytics: 40; Icy Veins: 41; Wowhead: 40.",
+   "druid:Genesis": "Periodic damage and healing +10% at 5/5: Rake, Rip, Moonfire and your HoTs. Mobalytics: 41-45; Icy Veins: 52-56; Wowhead: not taken.",
+   "druid:Nature's Majesty": "+4% crit with spells and melee at 2/2. Mobalytics: 46-47; Icy Veins: 59-60; Wowhead: not taken.",
+   "druid:Nature's Reach": "+4% hit at 2/2 (and 20% range on Balance spells). Mobalytics: 48-49; Icy Veins: 57-58; Wowhead: not taken.",
+   "druid:Heart of the Wild": "+10% Intellect; in Cat Form +10% Strength, in Bear Form +20% Stamina (5/5). Mobalytics: 50-54; Icy Veins: 42-46; Wowhead: 42-46.",
+   "druid:Naturalist": "+10% to all damage you deal at 5/5, and faster Healing Touch. Mobalytics: 55-59; Icy Veins: 47-51; Wowhead: 53-57.",
+   "druid:Natural Shapeshifter": "Shapeshifting costs 30% less mana at 3/3 (1 point here). Mobalytics: 60; Icy Veins: not taken; Wowhead: 47-49.",
+   "druid:Feral Instinct": "Swipe deals 30% more damage and Prowl is harder to spot (3/3). Mobalytics: not taken; Icy Veins: 15-17; Wowhead: 17-19.",
+   "druid:Lacerate": "Bear bleed that stacks up to 5 times, adds weapon damage per stack and causes high threat. Mobalytics: not taken; Icy Veins: 25; Wowhead: 28.",
+   "druid:Primal Bite": "Bear bite for 100% weapon damage plus 42, with high threat. Mobalytics: not taken; Icy Veins: 40; Wowhead: 41.",
+   "druid:Reflection": "50% of your mana regeneration continues while casting (3/3). Mobalytics: not taken; Icy Veins: not taken; Wowhead: 50-52.",
+   "druid:Swiftmend": "Instantly heals a target with your Rejuvenation or Regrowth on it for that effect's full amount. Mobalytics: not taken; Icy Veins: not taken; Wowhead: 58.",
+   "druid:Brutal Impact": "Bash and Pounce stun 1 sec longer and Bash's cooldown is 30 sec shorter (2/2). Mobalytics: not taken; Icy Veins: not taken; Wowhead: 59-60."
   },
   "PATH_NODES": [
    {
@@ -23513,14 +23621,14 @@
   }
  },
  "_meta": {
-  "version": 45,
-  "generated_at": "2026-11-17T21:14-05:00",
-  "source": "WoW Forever bot, Nov 17 2026: Kestrik sections data (talents, loot, gear sheet, professions)",
+  "version": 46,
+  "generated_at": "2026-11-17T22:20-05:00",
+  "source": "WoW Forever bot, Nov 17 2026: Kestrik Wowhead Feral order (Lexolas, calculator Talent Order)",
   "notes_commit": "2f1ad6c",
-  "notes": "Nov 17: Kestrik's druid talent trees (talentsforever, client 70755 + hotfixes) with Mobalytics (default) and Icy Veins Feral orders, K on Feral loot rows plus 15 new rows, Feral stat weights (1 weapon DPS = 14 AP), dungeon notes, his gear sheet gk1-gk25 and profession order."
+  "notes": "Nov 17: added Wowhead's Feral leveling order (Lexolas, Nov 17, 0/34/17) as feral_wh with WHY clauses; primary stays on Mobalytics until Jason confirms his points."
  },
  "captions": {
-  "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default and Icy Veins (Meyra, Nov 4) 9/32/10 the alternative; which one his 13 points follow is not known yet, so pick it in Next ding.",
+  "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default, with Icy Veins (Meyra, Nov 4) 9/32/10 and Wowhead (Lexolas, Nov 17) 0/34/17 as alternatives; which one his 13 points follow is not known yet, so pick it in Next ding.",
   "macros": "Corvin: Mobalytics macros added or matched Nov 10 (Searing Pain + pet from 26, Succubus summon key, Fel Domination resummon, Imp sacrifice at 41, Torment + attack). Zanjiro: level-aware manual macros reviewed against Nicktew; Rank1 kick separate from damage. Native triggers are banks, not keyboard modifiers. Troll Berserking macro added Nov 10. Kestrik: form, heal and travel macros from your Druid - Feral note (Nov 16), not run in game yet.",
   "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; Icy Veins rotation (Nov 13 update) drives auto layout, Nicktew alternative documented. No controller UI added. Nov 10: plate buttons follow each rotation's priority order at every level. Kestrik: fixed plates per form (Cat, Bear, Caster) from your Druid - Feral note; same job on the same button in every form.",
   "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option; Nov 16: Rank 1 is his main filler, max rank on dungeon bosses and elites) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking. Kestrik: Feral leveling from Method (Birra, Nov 14) and Warcraft Tavern; one rotation per form.",
