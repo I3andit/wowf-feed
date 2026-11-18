@@ -33,6 +33,18 @@ The same sections and constant names as `research-data.json` from the Nov 3 expo
 
 **Profession trainer ranks (2026-11-17).** Every `professions.PROFS[].train` list keeps exactly three rows in rank order: Journeyman, Expert, Artisan, each `[skill it opens at, text]`. The page picks the row from the cap the game sync reports (75 means Journeyman is still untrained, 150 Expert, 225 Artisan) and shows "Train now" when the skill has reached that row's number. A missing or reordered row would point the hint at the wrong rank. Every list already has this shape, so nothing changes. Without a game sync the page still guesses the rank from the skill number.
 
+**Per-character profession texts (2026-11-17).** A profession's route (`steps`), trainer rows (`train`) and camp items (`perks`) are shared by everyone who has it. Its texts can differ per character through the optional `professions.PROFS[].by_char`, an object keyed by `"C"`, `"V"` or `"K"`. Each entry may hold only these keys, all optional:
+
+| Key | Shape | What it does for that character |
+|---|---|---|
+| `notes` | `[string]`, not empty | Replaces the shared `notes` list ("Forever changes"). Copy the shared lines you want to keep; they do not follow later edits to the shared list. |
+| `notes_extra` | `[string]`, not empty | Added after the notes (the shared ones, or the replacement). Use this when the shared notes are fine and one line is missing. |
+| `why` | string | Replaces `PROF_WHY[<key>]` under the slider. |
+| `checked` | string | Replaces `checked` in the "Route: ForeverArtisan · ..." line. No full stop at the end, the page adds it. |
+| `pins` | `[{at, label, tip}]`, `at` a number from 0 to 300 | Added to the shared `PROF_PINS[<key>]` chips and slider diamonds, sorted by `at`. |
+
+A character with no entry sees the shared texts, so adding `by_char.K` changes nothing for Corvin or Zanjiro. There is no per-character `steps` yet: a craft that only one character wants goes in `notes_extra` and `pins`, not in the shared route. `PROFS[].who` is a label the page does not show; who has a profession is `characters.CHAR_PROFS`. The checker rejects an unknown key or a wrong shape here (rule 6).
+
 ### page_lists
 
 | Key | Type | Where it shows |
@@ -126,6 +138,7 @@ Section captions were already data: `captions.path`, `captions.builds`, `caption
    - DKEYS has exactly one key per DUNGEONS row, in the same order.
 4. `SKILL_KEYS` never changes.
 5. **Kestrik's optional keys, when present, have the shape in "Kestrik's talents, professions, gear and dungeons".** Checked: `talents.TREES.druid` is 3 well-formed trees and every prerequisite names a druid talent; every `BUILD_DEFS` entry with `cls: "druid"` has a key, a label and an order that exists, spends only talents from `TREES.druid`, never more points than a talent has ranks and never more than 51; `gear.GEAR_SHEETS.K` has `left`, `right`, `bottom`, every pick has its required fields and a `gk` id that is unique and listed in `GEAR_EXTRA_IDS`; `dungeons.DUN_NOTES_K` is an object whose keys are all in `DKEYS`; `dungeons.STAT_WEIGHTS` is `{character: {stat: number}}`; every `LOOT[].for` is a list made of `"C"`, `"V"`, `"K"`; `characters.CHAR_PROFS.K` lists only `PROFS` keys. The reason for a rejected feed is in `/api/status` under `feed.last_error`.
+6. **`professions.PROFS[].by_char`, when present, has the shape in "Per-character profession texts".** Checked: it is an object keyed only by `"C"`, `"V"`, `"K"`; each entry holds only `notes`, `notes_extra`, `why`, `checked`, `pins`; the two note lists are non-empty lists of non-empty strings; `why` and `checked` are non-empty strings; every pin has a number `at` from 0 to 300, a `label` and a `tip`.
 
 ## Writing rules (the checker can't see these, so they're on you)
 
@@ -223,7 +236,7 @@ What the page does with them: Kestrik gets his own class button and build pills 
 - Game sync saves his skills as `st.sk["K:lw"]`, `st.sk["K:skin"]`, `st.sk["K:fa"]`, `st.sk["K:cook"]`. They sit outside `SKILL_KEYS`, which still never changes. For Kestrik the server saves every profession the game reports that has a `professions.PROFS` entry.
 - `characters.CHAR_PROFS.K`: a list of `PROFS` keys in display order. While it is empty the page shows every profession he has a synced skill for, so the section works without it. `["lw", "skin", "fa", "cook"]` fixes the order.
 - `characters.CHARS[2].profs`: optional, `[{name, icon, skill, next}]` as for the other two (`name` must equal a `PROFS` name). While it is empty his character card builds the list from `PROFS`.
-- His Leatherworking, Skinning, First Aid and Cooking use the existing `PROFS` routes, pins and notes, the same data Zanjiro's use. There is no per-character route yet. If one of those texts is wrong for a druid, report it and Claude adds a per-character field first.
+- His Leatherworking, Skinning, First Aid and Cooking use the existing `PROFS` routes and trainer rows, the same data Zanjiro's use. Texts that are wrong for a druid are fixed in `PROFS[].by_char.K` (see "Per-character profession texts"): since 2026-11-17 his Leatherworking has the Brawler's patterns as a note and pins, his First Aid has its own notes and his Cooking its own "why". There is no per-character route yet; if a shared step itself is wrong for him, report it.
 - A profession without a `PROFS` entry (Fishing, Herbalism) is neither saved nor shown.
 
 WF2 backup codes carry skills outside `SKILL_KEYS` in an optional `x` object, for example `{"K:lw": 63}`. Codes without it import as before.

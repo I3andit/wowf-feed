@@ -1235,7 +1235,7 @@ function TalentPlanner({ buildKey, setBuildKey, level, setLevel, pathSpec, setPa
 // Routes: ForeverArtisan guides (beta-checked Oct 10, 2026; Skinning built from game data Oct 10).
 // [from, to, make, materials per craft, where to learn, orange-to, yellow-to, gray-at (-1 = none), checked in game]
 type PStepRaw = [number, number, string, string, string, number, number, number, number];
-type ProfDef = { key: string; name: string; icon: string; who: string; color: string; url: string; checked: string; steps: PStepRaw[]; train: [number, string][]; notes: string[]; perks: [string, string][] };
+type ProfDef = { key: string; name: string; icon: string; who: string; color: string; url: string; checked: string; steps: PStepRaw[]; train: [number, string][]; notes: string[]; perks: [string, string][]; by_char?: Record<string, ProfOver> };
 const TRAIN_STD: [number, string][] = WF_DATA.professions.TRAIN_STD;
 const PROFS: ProfDef[] = WF_DATA.professions.PROFS;
 
@@ -1272,6 +1272,32 @@ type Pin = { at: number; label: string; tip: string };
 const PIN_TRAIN: Pin[] = WF_DATA.professions.PIN_TRAIN;
 const PROF_PINS: Record<string, Pin[]> = WF_DATA.professions.PROF_PINS;
 const PROF_WHY: Record<string, string> = WF_DATA.professions.PROF_WHY;
+// Nov 17: a profession's route, steps and trainer rows are shared by everyone who has it, but its texts were written
+// for the first owner (Leatherworking for a shaman). PROFS[].by_char[<C|V|K>] lets one character swap the notes, add
+// notes, swap the "why" and "checked" lines and add slider pins. A character with no entry gets the shared lists
+// themselves, so nothing changes for him. Anything in the wrong shape is ignored piece by piece.
+type ProfOver = { notes?: string[]; notes_extra?: string[]; why?: string; checked?: string; pins?: Pin[] };
+type ProfView = { notes: string[]; why?: string; checked: string; pins?: Pin[] };
+function strList(x: unknown): string[] {
+  return Array.isArray(x) ? x.filter((s: unknown) => typeof s === "string" && !!s) as string[] : [];
+}
+function profFor(p: ProfDef, who: Who): ProfView {
+  const base: ProfView = { notes: Array.isArray(p.notes) ? p.notes : [], why: PROF_WHY[p.key], checked: p.checked, pins: PROF_PINS[p.key] };
+  const o: any = p.by_char && typeof p.by_char === "object" ? (p.by_char as any)[who] : null;
+  if (!o || typeof o !== "object") return base;
+  const notes = strList(o.notes);
+  const extra = strList(o.notes_extra);
+  const pins: Pin[] = Array.isArray(o.pins) ? o.pins.filter((m: any) => !!m && typeof m.at === "number" && typeof m.label === "string" && typeof m.tip === "string") : [];
+  const merged = pins.length
+    ? (base.pins ?? []).concat(pins).map((m: Pin, i: number) => [m, i] as [Pin, number]).sort((a: [Pin, number], b: [Pin, number]) => a[0].at - b[0].at || a[1] - b[1]).map((x: [Pin, number]) => x[0])
+    : base.pins;
+  return {
+    notes: (notes.length ? notes : base.notes).concat(extra),
+    why: typeof o.why === "string" && o.why ? o.why : base.why,
+    checked: typeof o.checked === "string" && o.checked ? o.checked : base.checked,
+    pins: merged,
+  };
+}
 
 function ProfessionWindow({ skills, setSkillFor, lvV, lvC, lvK, view, caps }: { skills: Record<string, number>; setSkillFor: (k: string, n: number) => void; lvV: number; lvC: number; lvK: number; view: View; caps: Caps }) {
   const [whoPick, setWho] = useState<Who>("C");
@@ -1287,6 +1313,7 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC, lvK, view, caps }: { 
   const idx = p.steps.findIndex((st: PStepRaw) => s >= st[0] && s < st[1]);
   const cur = p.steps.length ? p.steps[idx >= 0 ? idx : p.steps.length - 1] : undefined;
   const ts = trainState(p, skill, caps[`${who}:${p.key}`]);
+  const pf = profFor(p, who);
   const nextTrain = ts.next;
   const cap = ts.cap;
   const rankName = ts.rankName;
@@ -1316,8 +1343,8 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC, lvK, view, caps }: { 
         <div style={{ height: 14, borderRadius: 7, border: "1px solid #6b5a33", background: "#0b0a08", overflow: "hidden", marginBottom: 10 }}>
           <div style={{ width: `${(skill / cap) * 100}%`, height: "100%", background: `linear-gradient(180deg, #4d7bd8, #1d3f8f)`, transition: "width .2s ease" }} />
         </div>
-        <Slider value={skill} min={0} max={300} onChange={setSkill} color={p.color === GOLD ? GOLD : p.color} label="Skill" pins={PROF_PINS[p.key]} />
-        {PROF_WHY[p.key] ? <div style={{ fontSize: 11, color: MUTED, marginTop: 6 }}>Why (your notes): {PROF_WHY[p.key]}</div> : null}
+        <Slider value={skill} min={0} max={300} onChange={setSkill} color={p.color === GOLD ? GOLD : p.color} label="Skill" pins={pf.pins} />
+        {pf.why ? <div style={{ fontSize: 11, color: MUTED, marginTop: 6 }}>Why (your notes): {pf.why}</div> : null}
         <PreLine lead="Skill 200+ needs Artisan at character level 35; those milestones:" mark="notes" />
       </div>
       {nextTrain ? (
@@ -1382,14 +1409,14 @@ function ProfessionWindow({ skills, setSkillFor, lvV, lvC, lvK, view, caps }: { 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10, marginTop: 12 }}>
         <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020" }}>
           <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", marginBottom: 6 }}>Forever changes</div>
-          {p.notes.map((n: string) => <div key={n} style={{ fontSize: 12, color: INK, marginBottom: 4 }}>◆ {n}</div>)}
+          {pf.notes.map((n: string) => <div key={n} style={{ fontSize: 12, color: INK, marginBottom: 4 }}>◆ {n}</div>)}
         </div>
         <div style={{ padding: 10, borderRadius: 8, border: "1px solid #3a3020" }}>
           <div style={{ fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: ".1em", marginBottom: 6 }}>Camp items</div>
           {p.perks.map((k: [string, string]) => (
             <div key={k[0]} style={{ display: "flex", justifyContent: "space-between", fontSize: 12, marginBottom: 4 }}><span style={{ color: "#fff" }}>{k[0]}</span><span style={{ color: MUTED }}>{k[1]}</span></div>
           ))}
-          <div style={{ fontSize: 11, color: MUTED, marginTop: 6 }}>Route: <a href={p.url} target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>ForeverArtisan</a> · {p.checked}. Exact counts: your SkillUp Forever addon builds the shopping list.</div>
+          <div style={{ fontSize: 11, color: MUTED, marginTop: 6 }}>Route: <a href={p.url} target="_blank" rel="noreferrer" style={{ color: GOLD_HI }}>ForeverArtisan</a> · {pf.checked}. Exact counts: your SkillUp Forever addon builds the shopping list.</div>
         </div>
       </div>
     </Frame>
