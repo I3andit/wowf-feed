@@ -6039,8 +6039,13 @@
      },
      {
       "k": "F5",
-      "spell": "Water Walking · Far Sight · Astral Recall",
+      "spell": "Water Walking · Ctrl Far Sight · Shift Astral Recall",
       "icon": "spell_frost_windwalkon"
+     },
+     {
+      "k": "F6",
+      "spell": "Ancestral Spirit",
+      "icon": "spell_nature_reincarnation"
      }
     ],
     "auto": {
@@ -6209,6 +6214,23 @@
        "kind": "util",
        "lvl": 1,
        "note": "Troll racial: 15 s haste burst, 3 min cooldown (Unofficial). In game you already have it on key 9 (Nov 9 notes); appended last so no existing Naga slot moves."
+      },
+      {
+       "key": "stoneclaw",
+       "spell": "Stoneclaw Totem",
+       "icon": "spell_nature_stoneclawtotem",
+       "kind": "util",
+       "lvl": 8,
+       "note": "Panic button: it pulls mobs off you for a few seconds when a solo pull goes wrong. Click it. Jason's pick, Nov 19."
+      },
+      {
+       "key": "curedis",
+       "spell": "Cure Disease",
+       "icon": "spell_nature_diseasecleansingtotem",
+       "alt": true,
+       "kind": "util",
+       "lvl": 22,
+       "note": "Your Purge macro only cures poison, so diseases need this one. Click it. Jason's pick, Nov 19."
       }
      ]
     }
@@ -9163,14 +9185,15 @@
    },
    {
     "tag": "NEW",
-    "where": "Bottom Right (click)",
+    "where": "F6",
     "title": "Ancestral Spirit, mouseover",
     "icon": "spell_nature_reincarnation",
     "spec": "enh",
     "lvl": 12,
     "code": "#showtooltip Ancestral Spirit\n/cast [@mouseover,help,dead][help,dead] Ancestral Spirit",
     "does": "Resurrects the dead player under your mouse or targeted.",
-    "src": "Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)"
+    "src": "Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
+    "fkey": "F6"
    },
    {
     "title": "Berserking (Troll burst)",
@@ -9187,6 +9210,18 @@
      "bers"
     ],
     "flag": "wowfdb's burst macro casts Berserking with trinkets and Rage of the Farseer (40/52). Merge it into the Ctrl press of Stormstrike + Rage at 52 only after you check in game that Berserking does not trigger the global cooldown."
+   },
+   {
+    "tag": "NEW",
+    "where": "F5",
+    "title": "Water Walking / Far Sight / Astral Recall",
+    "icon": "spell_frost_windwalkon",
+    "spec": "enh",
+    "lvl": 30,
+    "fkey": "F5",
+    "code": "#showtooltip\n/cast [mod:shift] Astral Recall; [mod:ctrl] Far Sight; [help,nodead][@player] Water Walking",
+    "does": "Plain: Water Walking on your friendly target, else yourself. Ctrl: Far Sight. Shift: Astral Recall, your second hearthstone.",
+    "src": "Claude at Jason's ask, Nov 19 2026 (from his level 31 spellbook)"
    },
    {
     "tag": "NEW",
@@ -24036,11 +24071,11 @@
   }
  },
  "_meta": {
-  "version": 48,
+  "version": 49,
   "generated_at": "2026-11-18T08:56-05:00",
-  "source": "WoW Forever bot, Nov 18 2026 daily meta watch: Official Nov 17 hotfix, Icy Veins Feral gear past 30, Mobalytics Yebb Enhancement order",
+  "source": "Claude at Jason's ask, Nov 19 2026: six off-bar spells onto Zanjiro's bars",
   "notes_commit": "70f0959",
-  "notes": "Nov 18: Official Nov 17 hotfix (Flurry keeps stacks with Windfury Totem, UBRS harder again); Kestrik gets Icy Veins' gear picks past 30 (Defender's Leather Helm at 25); Yebb's Enhancement reference build now 17/26/8."
+  "notes": "Nov 19 (Jason's pick, from his level 31 spellbook): Zanjiro gets an F5 macro (Water Walking, Ctrl Far Sight, Shift Astral Recall), Ancestral Spirit on F6, and Stoneclaw Totem and Cure Disease as click buttons. Earlier, Nov 18: Official Nov 17 hotfix (Flurry keeps stacks with Windfury Totem, UBRS harder again); Kestrik gets Icy Veins' gear picks past 30 (Defender's Leather Helm at 25); Yebb's Enhancement reference build now 17/26/8."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default, with Icy Veins (Meyra, Nov 4) 9/32/10 and Wowhead (Lexolas, Nov 17) 0/34/17 as alternatives; which one his 13 points follow is not known yet, so pick it in Next ding.",
