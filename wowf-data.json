@@ -254,14 +254,14 @@
     "icon": "spell_shadow_metamorphosis",
     "mine": true,
     "mythic": 7,
-    "mythicNote": "1,022 DPS; All playstyles view #8 (tier A)",
+    "mythicNote": "1,022 DPS; All playstyles view #9 (tier A)",
     "broken": "C",
     "tVoid": "B",
     "cogm": "S",
     "lfc": "A",
     "wowhead": "S",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 15",
+    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 19",
     "brokenNote": "#6, 1,067 DPS"
    },
    {
@@ -269,45 +269,46 @@
     "icon": "spell_shadow_deathcoil",
     "mine": true,
     "mythic": 8,
-    "mythicNote": "1,004 DPS (was 1,012); All playstyles view #9 (tier A as of Nov 15)",
+    "mythicNote": "1,004 DPS; All playstyles view #10 (tier A)",
     "broken": "B",
     "brokenNote": "#4, 1,177 DPS (was S #1)",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "A",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 15"
+    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 19"
    },
    {
     "spec": "Destruction Warlock",
     "icon": "spell_shadow_rainoffire",
     "mine": false,
-    "mythic": 10,
-    "mythicNote": "965 DPS; All playstyles view #13 (tier A)",
+    "mythic": 12,
+    "mythicNote": "965 DPS; All playstyles view #15 (tier B, was A)",
     "broken": "C",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "S",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 15",
-    "brokenNote": "#8, 1,033 DPS"
+    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 19",
+    "brokenNote": "#8, 1,033 DPS",
+    "mythicMove": "▼2 vs Nov 17 (#10): its 965 DPS did not change; Assassination Rogue (973) and Enhancement (968) passed it, and the tier bands moved with the median; sim change, not a game change"
    },
    {
     "spec": "Enhancement Shaman",
     "icon": "ability_shaman_stormstrike",
     "mine": true,
-    "mythic": 14,
-    "mythicNote": "960 DPS; All playstyles view #17 (tier B, was A)",
+    "mythic": 11,
+    "mythicNote": "968 DPS (was 960); All playstyles view #14 (tier A, was B)",
     "broken": "D",
     "tVoid": "A",
     "cogm": "S",
     "lfc": "S",
     "wowhead": "A",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 15",
-    "mythicMove": "▼5 vs Nov 14 (#9, 983 DPS): MythicSim reference-gear swap (Silithus quest rewards removed until Forever confirms them, -1.4%) and Windfury Totem extra attack modelled as one main-hand strike with no Maelstrom stack (-0.8%); sim changes, not a game change",
+    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 19",
+    "mythicMove": "▲3 vs Nov 17 (#14, 960 DPS): MythicSim's reference trinkets are now Heart of Wyrmthalak and Adaptive Combat Assistant (were Adaptive Combat Assistant and Hand of Justice); without trinkets 942 DPS (was 941), +0.1% from the Nov 17 Flurry fix; sim change, not a game change",
     "brokenNote": "#10, 968 DPS (was B)"
    },
    {
@@ -321,8 +322,8 @@
     "cogm": "A",
     "lfc": "A",
     "wowhead": "C",
-    "_source": "MythicSim Nov 17 snapshot (engine a667dce, client 70938, up to date with the 10 to 13 November hotfixes, not yet the Nov 16 hotfix), 'Best of each spec' view (22 DPS specs), read Nov 17; ranks unchanged since Nov 15. voidsim Nov 18 (engine fe63e25, read Nov 18; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 15",
+    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 19",
     "brokenNote": "#16, 859 DPS"
    }
   ]
@@ -22513,18 +22514,18 @@
   "meta_raid_watch": {
    "lead": "Raid watch",
    "tone": "warning",
-   "text": "Official Nov 17 hotfixes: Flurry no longer loses stacks when Windfury Totem attacks land; Upper Blackrock Spire enemy health and damage restored (much harder again); Might of Stormwind and Warchief's Blessing cancel on death; skinners can no longer skin a few creatures that aren't normally skinnable; Alterac Valley quests need level 58. Official Nov 16 hotfixes: Windfury Totem extra attacks now respect armor and have an internal cooldown, and no longer give Rage; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes crit works without a weapon; Formula: Enchant Boots - Speed (reputation) is now bind-on-pickup; Vampiric Embrace heals 10% (Priest). Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15-16 (Rank 1 Shadow Bolt main filler, Felhunter option, Soul Harvest 46-47; respec unchanged). MythicSim Nov 17 (Best of each spec, not yet updated for the Nov 16 hotfix): Demo #7, Aff #8, Destro #10, Enh #14. voidsim Nov 16: Enh A, Demo/Aff/Destro B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
-   "_source": "Blizzard forum topics 2403040 (post 11, Nov 16), 2416343 (Nov 14) and 2415068; Mobalytics Crix Nov 16; Icy Veins Enhancement leveling Nov 13; MythicSim Nov 17; voidsim Nov 16; BrokenMeta Nov 10; Forever Logs Nov 17",
-   "_date": "Nov 17"
+   "text": "Official Nov 17 hotfixes: Flurry no longer loses stacks when Windfury Totem attacks land; Upper Blackrock Spire enemy health and damage restored (much harder again); Might of Stormwind and Warchief's Blessing cancel on death; skinners can no longer skin a few creatures that aren't normally skinnable; Alterac Valley quests need level 58. Official Nov 16 hotfixes: Windfury Totem extra attacks now respect armor and have an internal cooldown, and no longer give Rage; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes crit works without a weapon; Formula: Enchant Boots - Speed (reputation) is now bind-on-pickup; Vampiric Embrace heals 10% (Priest). Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15-16 (Rank 1 Shadow Bolt main filler, Felhunter option, Soul Harvest 46-47; respec unchanged). MythicSim Nov 18 (Best of each spec; Enhancement card now models the Nov 17 Flurry fix): Demo #7, Aff #8, Enh #11 (tier A), Destro #12 (tier B). voidsim Nov 16: Enh A, Demo/Aff/Destro B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
+   "_source": "Blizzard forum topics 2403040 (post 11, Nov 16), 2416343 (Nov 14) and 2415068; Mobalytics Crix Nov 16; Icy Veins Enhancement leveling Nov 13; MythicSim Nov 18 (read Nov 19); voidsim Nov 18; BrokenMeta Nov 10; Forever Logs Nov 19",
+   "_date": "Nov 19"
   },
   "meta_links": [
    {
-    "title": "MythicSim tier list (Nov 17 snapshot, 'Best of each spec' view)",
+    "title": "MythicSim tier list (Nov 18 snapshot, 'Best of each spec' view)",
     "site": "mythicsim.com",
-    "date": "Nov 17",
+    "date": "Nov 18",
     "href": "https://mythicsim.com/wow-forever/tier-list",
     "_source": "mythicsim.com",
-    "_date": "Nov 17"
+    "_date": "Nov 18"
    },
    {
     "title": "BrokenMeta tier list (updated Nov 9, build 70753 tables)",
@@ -22656,6 +22657,18 @@
    }
   ],
   "feed_rows": [
+   {
+    "lead": "Nov 18",
+    "title": "MythicSim: Enhancement #14 → #11 (tier B → A); Destruction #10 → #12 (tier A → B); Demonology and Affliction unchanged",
+    "detail": "MythicSim, Best of each spec (Nov 18 snapshot, client 70938): Demonology #7 (1,022 DPS), Affliction #8 (1,004), Enhancement #11 (968, was #14 at 960), Destruction #12 (965, was #10), Elemental #18 (867). All playstyles: Demo 9, Aff 10, Enh 14, Destro 15, Ele 23. Enhancement's rise is from the sim's reference trinkets (Heart of Wyrmthalak and Adaptive Combat Assistant, were Adaptive Combat Assistant and Hand of Justice); without trinkets it is 942 (was 941), and the card now models the Nov 17 hotfix (a Windfury Totem strike no longer spends a Flurry charge, +0.1%). Destruction's DPS did not change; Assassination Rogue (973) and Enhancement passed it. Kestrik: Feral (Cat) stays #5 (1,048, tier S). Survival Hunter still #1 (1,379). Sims, pre-launch gear assumptions; no level-60 Forever Logs yet.",
+    "meta": "MythicSim tier list snapshot Nov 18 2026, read Nov 19",
+    "status": {
+     "label": "Sim, pre-launch",
+     "tone": "warning"
+    },
+    "_source": "https://mythicsim.com/wow-forever/tier-list",
+    "_date": "2026-11-19"
+   },
    {
     "lead": "Nov 17",
     "title": "Official hotfix: Flurry no longer loses stacks to Windfury Totem attacks; Upper Blackrock Spire back to full difficulty",
@@ -24071,11 +24084,11 @@
   }
  },
  "_meta": {
-  "version": 49,
-  "generated_at": "2026-11-18T08:56-05:00",
-  "source": "Claude at Jason's ask, Nov 19 2026: six off-bar spells onto Zanjiro's bars",
-  "notes_commit": "70f0959",
-  "notes": "Nov 19 (Jason's pick, from his level 31 spellbook): Zanjiro gets an F5 macro (Water Walking, Ctrl Far Sight, Shift Astral Recall), Ancestral Spirit on F6, and Stoneclaw Totem and Cure Disease as click buttons. Earlier, Nov 18: Official Nov 17 hotfix (Flurry keeps stacks with Windfury Totem, UBRS harder again); Kestrik gets Icy Veins' gear picks past 30 (Defender's Leather Helm at 25); Yebb's Enhancement reference build now 17/26/8."
+  "version": 50,
+  "generated_at": "2026-11-19T08:52-05:00",
+  "source": "WoW Forever bot, Nov 19 2026 daily meta watch (Thursday full set): MythicSim Nov 18 snapshot",
+  "notes_commit": "d2bbd4c",
+  "notes": "Nov 19: MythicSim Nov 18 snapshot moves Enhancement #14 → #11 (tier A) and Destruction #10 → #12; Demonology #7 and Affliction #8 unchanged. Nov 19 earlier: Zanjiro F5 macro, Ancestral Spirit on F6, Stoneclaw and Cure Disease click buttons."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default, with Icy Veins (Meyra, Nov 4) 9/32/10 and Wowhead (Lexolas, Nov 17) 0/34/17 as alternatives; which one his 13 points follow is not known yet, so pick it in Next ding.",
