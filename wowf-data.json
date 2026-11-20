@@ -260,8 +260,8 @@
     "cogm": "S",
     "lfc": "A",
     "wowhead": "S",
-    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 19",
+    "_source": "MythicSim Nov 20 snapshot (engine a667dce, client 70959; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 20; Enhancement #11 to #12 (tier A to B) and Destruction #12 to #13, Demonology and Affliction unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 20",
     "brokenNote": "#6, 1,067 DPS"
    },
    {
@@ -269,62 +269,63 @@
     "icon": "spell_shadow_deathcoil",
     "mine": true,
     "mythic": 8,
-    "mythicNote": "1,004 DPS; All playstyles view #10 (tier A)",
+    "mythicNote": "1,008 DPS (was 1,004); All playstyles view #10 (tier A)",
     "broken": "B",
     "brokenNote": "#4, 1,177 DPS (was S #1)",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "A",
-    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 19"
+    "_source": "MythicSim Nov 20 snapshot (engine a667dce, client 70959; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 20; Enhancement #11 to #12 (tier A to B) and Destruction #12 to #13, Demonology and Affliction unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 20"
    },
    {
     "spec": "Destruction Warlock",
     "icon": "spell_shadow_rainoffire",
     "mine": false,
-    "mythic": 12,
-    "mythicNote": "965 DPS; All playstyles view #15 (tier B, was A)",
+    "mythic": 13,
+    "mythicNote": "965 DPS; All playstyles view #16 (tier B)",
     "broken": "C",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "S",
-    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 19",
+    "_source": "MythicSim Nov 20 snapshot (engine a667dce, client 70959; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 20; Enhancement #11 to #12 (tier A to B) and Destruction #12 to #13, Demonology and Affliction unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 20",
     "brokenNote": "#8, 1,033 DPS",
-    "mythicMove": "▼2 vs Nov 17 (#10): its 965 DPS did not change; Assassination Rogue (973) and Enhancement (968) passed it, and the tier bands moved with the median; sim change, not a game change"
+    "mythicMove": "▼1 vs Nov 18 (#12): its 965 DPS did not change; Arcane Mage (986) and Fire Mage (985) passed it after MythicSim changed their reference gear; sim change, not a game change"
    },
    {
     "spec": "Enhancement Shaman",
     "icon": "ability_shaman_stormstrike",
     "mine": true,
-    "mythic": 11,
-    "mythicNote": "968 DPS (was 960); All playstyles view #14 (tier A, was B)",
+    "mythic": 12,
+    "mythicNote": "966 DPS (was 968); All playstyles view #15 (tier B, was A)",
     "broken": "D",
     "tVoid": "A",
     "cogm": "S",
     "lfc": "S",
     "wowhead": "A",
-    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 19",
-    "mythicMove": "▲3 vs Nov 17 (#14, 960 DPS): MythicSim's reference trinkets are now Heart of Wyrmthalak and Adaptive Combat Assistant (were Adaptive Combat Assistant and Hand of Justice); without trinkets 942 DPS (was 941), +0.1% from the Nov 17 Flurry fix; sim change, not a game change",
-    "brokenNote": "#10, 968 DPS (was B)"
+    "_source": "MythicSim Nov 20 snapshot (engine a667dce, client 70959; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 20; Enhancement #11 to #12 (tier A to B) and Destruction #12 to #13, Demonology and Affliction unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 20",
+    "brokenNote": "#10, 968 DPS (was B)",
+    "mythicMove": "▼1 vs Nov 18 (#11, 968 DPS): MythicSim swapped its reference weapon to The Unstoppable Force (High Warlord's War Staff needs PvP rank 14, so it is not pre-raid gear) with new enchants, -0.1% (no trinkets 941, was 942); Arcane and Fire Mage passed it on new reference gear and the tier bands moved; sim change, not a game change"
    },
    {
     "spec": "Elemental Shaman",
     "icon": "spell_nature_lightning",
     "mine": false,
-    "mythic": 18,
-    "mythicNote": "867 DPS; All playstyles view #23 (tier B)",
+    "mythic": 20,
+    "mythicNote": "871 DPS (was 867); All playstyles view #25 (tier B)",
     "broken": "D",
     "tVoid": "B",
     "cogm": "A",
     "lfc": "A",
     "wowhead": "C",
-    "_source": "MythicSim Nov 18 snapshot (engine a667dce, client 70938; header still 'up to date with the 10 to 13 November hotfixes', Enhancement card adds the Nov 17 Flurry fix as a sim update), 'Best of each spec' view (22 DPS specs), read Nov 19; Enhancement #14 to #11 and Destruction #10 to #12, others unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 19",
-    "brokenNote": "#16, 859 DPS"
+    "_source": "MythicSim Nov 20 snapshot (engine a667dce, client 70959; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 20; Enhancement #11 to #12 (tier A to B) and Destruction #12 to #13, Demonology and Affliction unchanged. voidsim Nov 18 (engine fe63e25, read Nov 19; DPS and Shaman/Warlock places unchanged; Warlock tiers unchanged, Enhancement A 783 DPS); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 20",
+    "brokenNote": "#16, 859 DPS",
+    "mythicMove": "▼2 vs Nov 18 (#18): Frostfire (experimental) and Frost Mage passed it; sim change, not a game change"
    }
   ]
  },
@@ -4038,7 +4039,7 @@
       {
        "icon": "spell_shadow_psychicscream",
        "name": "Sacrifice the Imp, then Succubus",
-       "tip": "From 41 (Demonic Pact): summon Imp, Demonic Sacrifice for 15% Shadow damage, then summon the Succubus.",
+       "tip": "From 41 (Demonic Pact): summon Imp, Demonic Sacrifice for 15% Shadow damage, then summon the Succubus for 10% more (25% total). Option (Crix, Nov 20): sacrifice the Felhunter instead to heal 3% health every 4 s, then keep Imp or Succubus out.",
        "lvl": 41
       }
      ],
@@ -4070,7 +4071,7 @@
       {
        "icon": "spell_shadow_chilltouch",
        "name": "Curse of the Elements",
-       "tip": "If the target won't die right away: up to 10% more spell damage taken.",
+       "tip": "If the target won't die right away: up to 10% more spell damage taken (by rank). Crix's Nov 20 order casts it after Immolate and Corruption; skip it on mobs about to die.",
        "lvl": 20
       },
       {
@@ -4081,7 +4082,7 @@
       {
        "icon": "spell_shadow_abominationexplosion",
        "name": "Corruption",
-       "tip": "Keep it up.",
+       "tip": "Keep it up. Press it near the end of the Immolate cast so the spell queue fires it right after (Crix, Nov 20).",
        "lvl": 4,
        "ups": [
         {
@@ -4101,13 +4102,13 @@
       {
        "icon": "ability_shootwand",
        "name": "Wand",
-       "tip": "Free filler; great damage until about 30. Let DoTs and the demon finish the mob.",
+       "tip": "Levels 1-25 (Crix, Nov 20): demon attacks, Bane of Agony, Immolate, Corruption, then wand to finish; it costs no mana and keeps threat on the demon. Lesser Magic Wand early, Greater Magic Wand at 13.",
        "lvl": 5
       },
       {
        "icon": "spell_shadow_shadowbolt",
        "name": "Shadow Bolt",
-       "tip": "Early finisher; after about 30 it out-damages the wand but costs mana and threat."
+       "tip": "Early finisher; Rank 1 Shadow Bolt is the filler from 26 on: 1.5 s cast, 25 mana, more damage than max-rank Searing Pain and rarely pulls threat. Max rank only on dungeon bosses, elites or a target that must die fast (Crix, Nov 15-20)."
       },
       {
        "icon": "spell_shadow_lifedrain02",
@@ -4124,7 +4125,7 @@
       {
        "icon": "spell_shadow_haunting",
        "name": "Drain Soul (shards)",
-       "tip": "Finish with it when you need shards (demons, Healthstones, Soulstones, summons). Blizzard Nov 2/3: shards come reliably only from the kill.",
+       "tip": "Be channeling it when the mob dies if you need shards (demons, Healthstones, Soulstones, summons) or are low on mana: with Soul Harvest (46-47) sit and drink during the buff for very fast mana (Crix, Nov 20). Blizzard Nov 2/3: shards come reliably only from the kill.",
        "lvl": 10
       }
      ],
@@ -4193,7 +4194,7 @@
      "src": [
       {
        "label": "Mobalytics Warlock leveling, Demonology Respec LV 26 (Crix)",
-       "date": "Nov 10",
+       "date": "Nov 10; re-read Nov 20",
        "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10"
       },
       {
@@ -4208,7 +4209,7 @@
       }
      ],
      "caveat": "Mobalytics guide theorycraft (Forever beta-based), single source. Levels come from the guide and trainer table; your actual spent talents and trained ranks aren't read by the page.",
-     "_date": "2026-11-10"
+     "_date": "2026-11-20"
     },
     "dungeon": {
      "seq": "demo_moba",
@@ -4799,7 +4800,7 @@
       {
        "icon": "spell_shadow_psychicscream",
        "name": "Sacrifice the Imp, then Succubus",
-       "tip": "From 41 (Demonic Pact): summon Imp, Demonic Sacrifice for 15% Shadow damage, then summon the Succubus.",
+       "tip": "From 41 (Demonic Pact): summon Imp, Demonic Sacrifice for 15% Shadow damage, then summon the Succubus for 10% more (25% total). Option (Crix, Nov 20): sacrifice the Felhunter instead to heal 3% health every 4 s, then keep Imp or Succubus out.",
        "lvl": 41
       }
      ],
@@ -4831,7 +4832,7 @@
       {
        "icon": "spell_shadow_chilltouch",
        "name": "Curse of the Elements",
-       "tip": "If the target won't die right away: up to 10% more spell damage taken.",
+       "tip": "If the target won't die right away: up to 10% more spell damage taken (by rank). Crix's Nov 20 order casts it after Immolate and Corruption; skip it on mobs about to die.",
        "lvl": 20
       },
       {
@@ -4842,7 +4843,7 @@
       {
        "icon": "spell_shadow_abominationexplosion",
        "name": "Corruption",
-       "tip": "Keep it up.",
+       "tip": "Keep it up. Press it near the end of the Immolate cast so the spell queue fires it right after (Crix, Nov 20).",
        "lvl": 4,
        "ups": [
         {
@@ -4862,13 +4863,13 @@
       {
        "icon": "ability_shootwand",
        "name": "Wand",
-       "tip": "Free filler; great damage until about 30. Let DoTs and the demon finish the mob.",
+       "tip": "Levels 1-25 (Crix, Nov 20): demon attacks, Bane of Agony, Immolate, Corruption, then wand to finish; it costs no mana and keeps threat on the demon. Lesser Magic Wand early, Greater Magic Wand at 13.",
        "lvl": 5
       },
       {
        "icon": "spell_shadow_shadowbolt",
        "name": "Shadow Bolt",
-       "tip": "Early finisher; after about 30 it out-damages the wand but costs mana and threat. Rank 1 Shadow Bolt is a great cheap filler: almost the damage of max-rank Searing Pain for 25 mana (Crix, Nov 15). Since Nov 16 Crix says Rank 1 is his main filler and he uses max rank on dungeon bosses and elites."
+       "tip": "Early finisher; Rank 1 Shadow Bolt is the filler from 26 on: 1.5 s cast, 25 mana, more damage than max-rank Searing Pain and rarely pulls threat. Max rank only on dungeon bosses, elites or a target that must die fast (Crix, Nov 15-20)."
       },
       {
        "icon": "spell_shadow_lifedrain02",
@@ -4885,7 +4886,7 @@
       {
        "icon": "spell_shadow_haunting",
        "name": "Drain Soul (shards)",
-       "tip": "Finish with it when you need shards (demons, Healthstones, Soulstones, summons). Blizzard Nov 2/3: shards come reliably only from the kill.",
+       "tip": "Be channeling it when the mob dies if you need shards (demons, Healthstones, Soulstones, summons) or are low on mana: with Soul Harvest (46-47) sit and drink during the buff for very fast mana (Crix, Nov 20). Blizzard Nov 2/3: shards come reliably only from the kill.",
        "lvl": 10
       }
      ],
@@ -4949,12 +4950,13 @@
       "Demonology after the 26 respec (Mobalytics Crix, Nov 10). Before 26 Corvin uses the pre-respec talents (see the Affliction tab).",
       "Conflict kept: Icy Veins' Demonology order (Improved Voidwalker, Demonic Aegis, Demonic Pact at 40, Nightfall) and Voidwalker-tank play are in the 'Demonology leveling (Icy Veins)' reference build.",
       "Two mobs at a time: brand and DoT mob 1, pull mob 2 at about 50% with Bane of Agony or Curse of the Elements (low threat), brand it and send the demon over, let DoTs or the wand finish mob 1. Fear when three are up. Bandages (First Aid) top the demon up between pulls.",
-      "Blizzard Nov 2: pets get 2 Health per Stamina (was 7.5), so watch the demon's bar."
+      "Blizzard Nov 2: pets get 2 Health per Stamina (was 7.5), so watch the demon's bar.",
+      "Crix, Nov 20: if the Succubus loses threat early, turn off her Soothing Kiss autocast (spellbook, pet tab, right-click) and wait to cast Immolate until she has a few Demonic Brand stacks."
      ],
      "src": [
       {
        "label": "Mobalytics Warlock leveling, Demonology Respec LV 26 (Crix)",
-       "date": "Nov 10; re-read Nov 15",
+       "date": "Nov 10; re-read Nov 15 and Nov 20",
        "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10"
       },
       {
@@ -4969,7 +4971,7 @@
       }
      ],
      "caveat": "Mobalytics guide theorycraft (Forever beta-based), single source. Levels come from the guide and trainer table; your actual spent talents and trained ranks aren't read by the page.",
-     "_date": "2026-11-15"
+     "_date": "2026-11-20"
     },
     "dungeon": {
      "seq": "demo_moba",
@@ -4989,7 +4991,7 @@
       {
        "icon": "spell_shadow_psychicscream",
        "name": "Sacrifice the Imp, then Succubus",
-       "tip": "From 41 (Demonic Pact): 15% Shadow damage, buff stays.",
+       "tip": "From 41 (Demonic Pact): 15% Shadow damage, buff stays. Hellfire packs (Crix, Nov 20): sacrifice the Succubus (+15% Fire) and fight with the Imp (+10% Fire) for 25% Fire; swap back (Imp sacrificed, Succubus out) for 25% Shadow on bosses, using Fel Domination and Master Summoner for quick summons.",
        "lvl": 41
       },
       {
@@ -5098,7 +5100,7 @@
      "src": [
       {
        "label": "Mobalytics Warlock leveling, Demonology Respec LV 26 (Crix)",
-       "date": "Nov 10",
+       "date": "Nov 10; re-read Nov 20",
        "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10"
       },
       {
@@ -5112,8 +5114,8 @@
        "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling"
       }
      ],
-     "caveat": "Conflict kept: Mobalytics' Oct 30 level-60 Demonology guide sacrifices the Succubus and keeps the Imp; its Nov 10 leveling guide sacrifices the Imp and keeps the Succubus.",
-     "_date": "2026-11-10"
+     "caveat": "Crix's Nov 20 leveling guide uses both sacrifices: Imp sacrificed with the Succubus out for Shadow (bosses, questing), Succubus sacrificed with the Imp out for Fire (Hellfire AoE), which matches his Oct 30 level-60 Demonology guide's Succubus sacrifice for AoE.",
+     "_date": "2026-11-20"
     },
     "quest_icy": {
      "prep": [
@@ -22514,18 +22516,18 @@
   "meta_raid_watch": {
    "lead": "Raid watch",
    "tone": "warning",
-   "text": "Official Nov 17 hotfixes: Flurry no longer loses stacks when Windfury Totem attacks land; Upper Blackrock Spire enemy health and damage restored (much harder again); Might of Stormwind and Warchief's Blessing cancel on death; skinners can no longer skin a few creatures that aren't normally skinnable; Alterac Valley quests need level 58. Official Nov 16 hotfixes: Windfury Totem extra attacks now respect armor and have an internal cooldown, and no longer give Rage; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes crit works without a weapon; Formula: Enchant Boots - Speed (reputation) is now bind-on-pickup; Vampiric Embrace heals 10% (Priest). Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15-16 (Rank 1 Shadow Bolt main filler, Felhunter option, Soul Harvest 46-47; respec unchanged). MythicSim Nov 18 (Best of each spec; Enhancement card now models the Nov 17 Flurry fix): Demo #7, Aff #8, Enh #11 (tier A), Destro #12 (tier B). voidsim Nov 16: Enh A, Demo/Aff/Destro B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
-   "_source": "Blizzard forum topics 2403040 (post 11, Nov 16), 2416343 (Nov 14) and 2415068; Mobalytics Crix Nov 16; Icy Veins Enhancement leveling Nov 13; MythicSim Nov 18 (read Nov 19); voidsim Nov 18; BrokenMeta Nov 10; Forever Logs Nov 19",
-   "_date": "Nov 19"
+   "text": "Official Nov 19 hotfixes: nothing for Shaman, Warlock or Feral; Skyborne riding discount fixed. Official Nov 17 hotfixes: Flurry no longer loses stacks when Windfury Totem attacks land; Upper Blackrock Spire enemy health and damage restored (much harder again); Might of Stormwind and Warchief's Blessing cancel on death; skinners can no longer skin a few creatures that aren't normally skinnable; Alterac Valley quests need level 58. Official Nov 16 hotfixes: Windfury Totem extra attacks now respect armor and have an internal cooldown, and no longer give Rage; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes crit works without a weapon; Formula: Enchant Boots - Speed (reputation) is now bind-on-pickup; Vampiric Embrace heals 10% (Priest). Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15-16 (Rank 1 Shadow Bolt main filler, Felhunter option, Soul Harvest 46-47) and Nov 20 (rotation rewritten: levels 1-25 and 26-60, Curse of the Elements after the DoTs, Felhunter sacrifice option, Imp/Succubus swap for Hellfire; talents and respec 26 unchanged). MythicSim Nov 20 (Best of each spec): Demo #7, Aff #8, Enh #12 (tier B, was A), Destro #13 (tier B). voidsim Nov 16: Enh A, Demo/Aff/Destro B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
+   "_source": "Blizzard forum topics 2403040 (posts 11-13, Nov 16-19), 2416343 (Nov 14) and 2415068; Mobalytics Crix Nov 20; Icy Veins Enhancement leveling Nov 13; MythicSim Nov 20; voidsim Nov 18; BrokenMeta Nov 10; Forever Logs Nov 20",
+   "_date": "Nov 20"
   },
   "meta_links": [
    {
-    "title": "MythicSim tier list (Nov 18 snapshot, 'Best of each spec' view)",
+    "title": "MythicSim tier list (Nov 20 snapshot, 'Best of each spec' view)",
     "site": "mythicsim.com",
-    "date": "Nov 18",
+    "date": "Nov 20",
     "href": "https://mythicsim.com/wow-forever/tier-list",
     "_source": "mythicsim.com",
-    "_date": "Nov 18"
+    "_date": "Nov 20"
    },
    {
     "title": "BrokenMeta tier list (updated Nov 9, build 70753 tables)",
@@ -22657,6 +22659,42 @@
    }
   ],
   "feed_rows": [
+   {
+    "lead": "Nov 20",
+    "title": "Corvin: Mobalytics Crix rewrote the Demonology leveling rotation; talents and respec 26 unchanged",
+    "detail": "Crix (UPDATED NOV. 20TH, changelog '11/20/26 - Updated all Leveling builds with new information'): levels 1-25 are demon in, Bane of Agony, Immolate, Corruption queued at the end of Immolate, wand, Life Tap, and be channeling Drain Soul as the mob dies when low on mana or shards. From 26: Searing Pain (Demonic Brand), Bane of Agony, Immolate, Corruption, then Curse of the Elements (moved after the DoTs), Rank 1 Shadow Bolt filler; max rank only on dungeon bosses or a must-die target. New: Felhunter sacrifice option (3% health every 4 s), Imp/Succubus sacrifice swap for 25% Fire on Hellfire packs, Soothing Kiss off if the Succubus loses threat early. 20/31/0 respec talents, macros and level list unchanged. Rotations card updated.",
+    "meta": "Mobalytics Warlock leveling guide (Crix), dateModified Nov 20 2026 4:26 AM ET, read Nov 20",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_date": "2026-11-20"
+   },
+   {
+    "lead": "Nov 20",
+    "title": "MythicSim: Enhancement #11 → #12 (tier A → B); Destruction #12 → #13; Demonology and Affliction unchanged",
+    "detail": "MythicSim, Best of each spec (Nov 20 snapshot, client 70959): Demonology #7 (1,022 DPS), Affliction #8 (1,008, was 1,004), Enhancement #12 (966, was #11 at 968, tier B), Destruction #13 (965), Elemental #20 (871). All playstyles: Demo 9, Aff 10, Enh 15, Destro 16, Ele 25. Enhancement's drop is the sim's reference weapon (The Unstoppable Force in place of High Warlord's War Staff, which needs PvP rank 14) with new enchants, -0.1%; Arcane Mage (986) and Fire Mage (985) passed Enhancement and Destruction after MythicSim gave them new reference gear. Kestrik: Feral (Cat) stays #5 (1,048, tier S). Survival Hunter still #1 (1,392). Sims, pre-launch gear assumptions; no level-60 Forever Logs yet.",
+    "meta": "MythicSim tier list snapshot Nov 20 2026, read Nov 20",
+    "status": {
+     "label": "Sim, pre-launch",
+     "tone": "warning"
+    },
+    "_source": "https://mythicsim.com/wow-forever/tier-list",
+    "_date": "2026-11-20"
+   },
+   {
+    "lead": "Nov 19",
+    "title": "Official hotfixes Nov 19: Seed Hybridizer back, Retribution Two-Handed Weapon Specialization fixed, Skyborne riding discount fixed",
+    "detail": "Blizzard (Kaivax, Nov 19, posted 11:00 PM ET): Seed Hybridizer re-enabled with adjusted values and a chance to fail, Scarce Herb Seeds no longer usable in it; Retribution Two-Handed Weapon Specialization now raises all Holy damage with a two-hander; City of Dalaran Shade of the Archmage no longer despawns on pull; Shaper's Terrace Vitrix's Poison Shock deals less damage; Motes of Unstable Magic now soulbound; Riverglades Mosh'gra can drop rare loot again; quest fixes (Rift Away, Stormpike's Deciphering, Hunting for Ectoplasm); Tauren Cultivation more reliable. Kestrik: Skyborne now get the Honored 10% discount on Apprentice and Journeyman Riding from Genn Fairweather on Zephras Isle. Nothing for Shaman, Warlock, Feral Druid, Troll or Undead.",
+    "meta": "Blizzard forums, hotfix topic 2403040 post 13, read Nov 20",
+    "status": {
+     "label": "Official",
+     "tone": "success"
+    },
+    "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-19-2026/2403040/13",
+    "_date": "2026-11-20"
+   },
    {
     "lead": "Nov 18",
     "title": "MythicSim: Enhancement #14 → #11 (tier B → A); Destruction #10 → #12 (tier A → B); Demonology and Affliction unchanged",
@@ -24084,11 +24122,11 @@
   }
  },
  "_meta": {
-  "version": 50,
-  "generated_at": "2026-11-19T08:52-05:00",
-  "source": "WoW Forever bot, Nov 19 2026 daily meta watch (Thursday full set): MythicSim Nov 18 snapshot",
-  "notes_commit": "d2bbd4c",
-  "notes": "Nov 19: MythicSim Nov 18 snapshot moves Enhancement #14 → #11 (tier A) and Destruction #10 → #12; Demonology #7 and Affliction #8 unchanged. Nov 19 earlier: Zanjiro F5 macro, Ancestral Spirit on F6, Stoneclaw and Cure Disease click buttons."
+  "version": 51,
+  "generated_at": "2026-11-20T08:56-05:00",
+  "source": "WoW Forever bot, Nov 20 2026 daily meta watch: MythicSim Nov 20 snapshot, Crix rotation rewrite, Nov 19 hotfixes",
+  "notes_commit": "79fc482",
+  "notes": "Nov 20: MythicSim Enhancement #11 → #12 (tier A → B, sim gear change); Crix rewrote Corvin's Demonology leveling rotation (talents unchanged); Nov 19 hotfixes touch nothing of ours."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default, with Icy Veins (Meyra, Nov 4) 9/32/10 and Wowhead (Lexolas, Nov 17) 0/34/17 as alternatives; which one his 13 points follow is not known yet, so pick it in Next ding.",
