@@ -9453,15 +9453,31 @@
     "tag": "NEW",
     "where": "F1",
     "fkey": "F1",
-    "title": "Summon any pet (20+, Succubus default)",
+    "title": "Summon any pet (20 to 29, Succubus default)",
     "icon": "spell_shadow_summonsuccubus",
     "spec": "both",
     "lvl": 20,
-    "code": "#showtooltip\n/cast [mod:alt] Summon Imp; [mod:shift] Summon Voidwalker; [mod:ctrl] Summon Felhunter; Summon Succubus",
-    "does": "Every demon on one key; plain press is the Succubus, your leveling demon. The icon changes with the held modifier. Felhunter from 30.",
+    "code": "#showtooltip\n/cast [mod:shift] Summon Voidwalker; [mod:ctrl][mod:alt] Summon Imp; Summon Succubus",
+    "does": "Plain press is the Succubus, your leveling demon. Shift is the Voidwalker, Ctrl (or Alt) the Imp. The icon changes with the held modifier. The Felhunter joins at 30, when the trainer sells it: until then a Felhunter key would cast nothing.",
     "src": "Mobalytics Crix, All in one Demon Summoning Macro, read Nov 10 2026",
     "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
-    "flag": "Modifiers work on the keyboard and Naga, not on the native gamepad (no [mod:] there). If your spellbook says Sayaad or Incubus, swap the name."
+    "flag": "Modifiers work on the keyboard and Naga, not on the native gamepad (no [mod:] there). If your spellbook says Sayaad or Incubus, swap the name.",
+    "until": 30,
+    "_date": "2026-11-21"
+   },
+   {
+    "where": "F1",
+    "fkey": "F1",
+    "title": "Summon any pet (30+, Succubus default)",
+    "icon": "spell_shadow_summonsuccubus",
+    "spec": "both",
+    "lvl": 30,
+    "code": "#showtooltip\n/cast [mod:alt] Summon Imp; [mod:shift] Summon Voidwalker; [mod:ctrl] Summon Felhunter; Summon Succubus",
+    "does": "Every demon on one key; plain press is the Succubus, your leveling demon. Alt is the Imp, Shift the Voidwalker, Ctrl the Felhunter. The icon changes with the held modifier.",
+    "src": "Mobalytics Crix, All in one Demon Summoning Macro, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "flag": "Modifiers work on the keyboard and Naga, not on the native gamepad (no [mod:] there). If your spellbook says Sayaad or Incubus, swap the name.",
+    "_date": "2026-11-21"
    },
    {
     "tag": "NEW",
@@ -24415,11 +24431,11 @@
   }
  },
  "_meta": {
-  "version": 56,
-  "generated_at": "2026-11-21T11:01-05:00",
-  "source": "WoW Forever bot, Nov 21 2026: Drazhul Fellbrand (4th character, key D) data for Claude's page ca2ff2f",
+  "version": 57,
+  "generated_at": "2026-11-21T12:40-05:00",
+  "source": "Claude at Jason's report, Nov 21 2026: the warlock's summon macro had a dead Ctrl key before 30",
   "notes_commit": "dd6fea4",
-  "notes": "Nov 21: Drazhul Fellbrand (Orc Warlock, key D) added: card, Orc racials, professions, his pre-26 build, Blood Fury macro, leveling path and captions."
+  "notes": "Nov 21 (Jason's report): the warlock's F1 summon macro no longer casts Summon Felhunter on Ctrl before level 30, where the trainer does not sell it yet; Ctrl is the Imp from 20 to 29. Earlier, Nov 21: Drazhul Fellbrand (Orc Warlock, key D) added: card, Orc racials, professions, his pre-26 build, Blood Fury macro, leveling path and captions."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Wowhead (Lexolas, Nov 17) Feral 0/34/17 is his default since Nov 21, the guide he follows; Mobalytics (yumytv, Nov 14) 9/31/11 and Icy Veins (Meyra, Nov 4) 9/32/10 are the alternatives in Next ding.",
