@@ -2269,10 +2269,14 @@
     ],
     [
      "Suppression",
-     5
+     4
     ],
     [
-     "Grim Reach",
+     "Soul Harvest",
+     2
+    ],
+    [
+     "Improved Bane of Agony",
      2
     ],
     [
@@ -2280,39 +2284,35 @@
      3
     ],
     [
-     "Nightfall",
-     2
-    ],
-    [
      "Fel Concentration",
      3
+    ],
+    [
+     "Grim Reach",
+     1
+    ],
+    [
+     "Siphon Life",
+     1
     ],
     [
      "Soul Siphon",
      3
     ],
     [
-     "Pandemic",
-     2
+     "Grim Reach",
+     1
     ],
     [
      "Shadow Mastery",
      5
     ],
     [
-     "Pandemic",
+     "Wrack",
      1
     ],
     [
-     "Unholy Power",
-     5
-    ],
-    [
-     "Demonic Energies",
-     2
-    ],
-    [
-     "Malevolence",
+     "Demonic Embrace",
      5
     ],
     [
@@ -2320,16 +2320,28 @@
      3
     ],
     [
-     "Improved Bane of Agony",
+     "Demonic Aegis",
      2
     ],
     [
-     "Soul Harvest",
-     2
-    ],
-    [
-     "Siphon Life",
+     "Demonic Sacrifice",
      1
+    ],
+    [
+     "Amplify Curse",
+     1
+    ],
+    [
+     "Curse of Exhaustion",
+     1
+    ],
+    [
+     "Pandemic",
+     3
+    ],
+    [
+     "Malevolence",
+     4
     ]
    ],
    "enh_lvl": [
@@ -3367,13 +3379,16 @@
    },
    {
     "key": "aff_icy",
-    "label": "Affliction alt (Mobalytics)",
+    "label": "Affliction 1-60 (Mobalytics, Crix) · reference",
     "cls": "warlock",
     "seq": "aff_icy",
-    "src": "Mobalytics (Crix), Warlock leveling guide, updated Nov 4, read Nov 5",
-    "date": "Nov 4",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Affliction 1-60 tab, updated Nov 20 2026 (page re-dated Nov 21), read Nov 21 2026; matches Crix's Nov 21 video",
+    "date": "Nov 20; read Nov 21",
     "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide",
-    "blurb": "Drain-tank Affliction: Improved Corruption first, all 5 Suppression by 19, Soul Siphon at 30, Shadow Mastery 35–39, then a Demonology splash for pet sustain; Soul Harvest moved to 58–59. Ends 41/10/0. No Wrack in this build. Same Mobalytics guide's Affliction 1-60 tab; not Corvin's plan since Nov 10 (he takes its Demonology respec at 26). Tab not re-read Nov 10 (its calculator wasn't exposed in the fetched text)."
+    "blurb": "Wrack Affliction, no respec: Improved Corruption 10–14, Suppression 15–18 (4/5), Soul Harvest 19–20, Improved Bane of Agony 21–22, Improved Drains 23–25, Fel Concentration 26–28 (mandatory for channeling), Grim Reach 29 and 34, Siphon Life 30, Soul Siphon 31–33, Shadow Mastery 35–39, Wrack 40, then Demonology: Demonic Embrace 41–45, Fel Vitality 46–48, Demonic Aegis 49–50 (filler to reach Sacrifice), Demonic Sacrifice 51, Amplify Curse 52, Curse of Exhaustion 53 (both optional), Pandemic 54–56, Malevolence 57–60 (4/5). Ends 40/11/0. Nightfall dropped and the Destruction branch swapped for Demonic Sacrifice (Crix video, Nov 21). Was 41/10/0 with no Wrack (Nov 4). Not Corvin's plan (he follows the Demonology respec at 26); kept so you can compare if you stay Affliction.",
+    "tag": "Unofficial, single source (guide theorycraft, Forever-based)",
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide",
+    "_date": "2026-11-21"
    },
    {
     "key": "aff_raid",
@@ -3427,10 +3442,10 @@
     "label": "Mobalytics Demo respec at 26 (Crix) · Corvin's plan",
     "cls": "warlock",
     "seq": "demo_moba",
-    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 15 2026 (page re-dated Nov 16), read Nov 16 2026",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 15 2026 (header Nov 20, page re-dated Nov 21), read Nov 21 2026; Crix video Nov 21",
     "date": "Nov 15; read Nov 16",
     "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
-    "blurb": "Corvin's leveling plan since Nov 10. After the 26 respec the points go back in this order from level 10: Unholy Power 5, Demonic Energies 2, Fel Vitality 3, Master Summoner 2, Improved Sayaad 3, Demonic Brand 3 (25-27, so 2/3 right after the respec), Fel Domination 28, Demonic Sacrifice 29, Soul Link 30, Improved Corruption 31, Demonic Knowledge 32-34, Demonic Embrace 35, Master Demonologist 36-40, Demonic Pact 41, Improved Corruption 42-45 (instant again at 45), Soul Harvest 46-47, Suppression 48-51 (4/5), Pandemic 52-54, Improved Bane of Agony 55-56, Malevolence 57-60 (4/5) (Crix change of Nov 15). Ends 20/31/0. Succubus is the demon.",
+    "blurb": "Corvin's leveling plan since Nov 10. After the 26 respec the points go back in this order from level 10: Unholy Power 5, Demonic Energies 2, Fel Vitality 3, Master Summoner 2, Improved Sayaad 3, Demonic Brand 3 (25-27, so 2/3 right after the respec), Fel Domination 28, Demonic Sacrifice 29, Soul Link 30, Improved Corruption 31, Demonic Knowledge 32-34, Demonic Embrace 35, Master Demonologist 36-40, Demonic Pact 41, Improved Corruption 42-45 (instant again at 45), Soul Harvest 46-47, Suppression 48-51 (4/5), Pandemic 52-54, Improved Bane of Agony 55-56, Malevolence 57-60 (4/5) (Crix change of Nov 15). Ends 20/31/0. Succubus is the demon. Crix's Nov 21 video walks through this same build; spoken tweaks not in the guide order: he'd take Improved Bane of Agony before Pandemic, Improved Sayaad is 3 flex points (on a PvP server he puts them in Improved Voidwalker), a 5th Suppression is optional (then Malevolence 3/5).",
     "tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
     "primary": true,
     "respec_at": 26,
@@ -3478,34 +3493,34 @@
   ],
   "WHY": {
    "Improved Corruption": "Cuts Corruption's cast time (instant at 5/5) and adds up to 10% damage. Between the 26 respec and 5/5 again, Corvin's Corruption has a cast time again (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 14–18 before the respec; 31, 42–45 after it · Icy Veins Affliction: 14–18 · Icy Veins Demonology: 45–49 · Mobalytics Affliction 1-60: 10–14.",
-   "Soul Siphon": "Mobalytics' drain-tank core: Drain Life heals more for each of your Corruption, Siphon Life and Bane of Agony on the target (Official Nov 10 hotfix). Levels · Icy Veins Affliction: 55–57 · Mobalytics Affliction 1-60: 30–32.",
+   "Soul Siphon": "Mobalytics' drain-tank core: Drain Life heals more for each of your Corruption, Siphon Life and Bane of Agony on the target (Official Nov 10 hotfix). Levels · Icy Veins Affliction: 55–57 · Mobalytics Affliction 1-60: 31–33.",
    "Shadow Mastery": "Your biggest Shadow damage boost: up to 10% more Shadow damage and life drained. Not in the Mobalytics respec build. Levels · Icy Veins Affliction: 46–50 · Mobalytics Affliction 1-60: 35–39.",
    "Soul Link": "The pet takes 30% of all damage you take and you deal 3% more; keep it on at all times (Mobalytics Crix, Nov 10). wowfdb: until you have it, Demonology is “a worse Affliction”. Levels · Mobalytics respec 26: 30 · Icy Veins Demonology: 30.",
    "Demonic Pact": "The 31-point talent: your Sacrifice buff survives summoning a new demon (wowfdb). Mobalytics: summon the Imp, sacrifice it for 15% Shadow damage, then summon the Succubus. Levels · Mobalytics respec 26: 41 · Icy Veins Demonology: 40.",
    "Demonic Brand": "Searing Pain marks the target for your pet's next 6 attacks (wording changed Oct 9) and halves Searing Pain's threat. Mobalytics: keep it up with the Searing Pain + /petattack macro; it gives the Succubus the threat to tank. Levels · Mobalytics respec 26: 26–27 · Icy Veins Demonology: 25–27.",
-   "Demonic Sacrifice": "Sacrifice your demon for a 2-hour buff that depends on the demon; summoning a demon removes it until Demonic Pact. Mobalytics and Icy Veins Demonology take it on the way to Soul Link and use it from Demonic Pact (Mobalytics sacrifices the Imp); Icy Veins' Affliction plan ends its Demonology dip with it and sacrifices the Felhunter. Levels · Mobalytics respec 26: 29 · Icy Veins Affliction: 41 · Icy Veins Demonology: 29.",
+   "Demonic Sacrifice": "Sacrifice your demon for a 2-hour buff that depends on the demon; summoning a demon removes it until Demonic Pact. Mobalytics and Icy Veins Demonology take it on the way to Soul Link and use it from Demonic Pact (Mobalytics sacrifices the Imp); Icy Veins' Affliction plan ends its Demonology dip with it and sacrifices the Felhunter. Levels · Mobalytics respec 26: 29 · Icy Veins Affliction: 41 · Icy Veins Demonology: 29 · Mobalytics Affliction 1-60: 51.",
    "Stormstrike": "The spec starts here (Icy Veins, wowfdb). Nicktew: keep Earth Shock separate for interrupts (Nov 4, read Nov 7). Levels · Icy Veins: 25 · Nicktew: 25 · Mobalytics (Yebb): 25 · Your notes: 25. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Shamanistic Focus": "Shocks and Lightning Shield cost 45% less mana: you stop rationing shocks (wowfdb). Only applies once the point is actually spent, not automatically at 20 (Nicktew, Nov 4, read Nov 7). Levels · Icy Veins: 20 · Nicktew: 20 · Mobalytics (Yebb): 20 · Your notes: 20. https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Improved Stormstrike": "Dodges and parries can reset Stormstrike; also 50% mana regen while casting (wowfdb). Levels · Icy Veins: 30–31 · Nicktew: 30–31 · Mobalytics (Yebb): 30–31 · Your notes: 30, 32.",
    "Water Shield": "Restoration talent: restores mana when you are struck or when you crit (Icy Veins, Nov 13: 46 in both its text and calculator). Nicktew: its value versus earlier deep Enhancement is untested (Nov 4, read Nov 7). Levels · Icy Veins: 46 · Nicktew: 46 (Nov 15 update). https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
    "Maelstrom Weapon": "Each stack cuts your next Lightning Bolt's cast time and mana by 20% at every rank, so 5 stacks make it free and instant; more ranks only raise the proc rate (6 to 10 a minute, Official Nov 10 hotfix). Since the Nov 16 hotfix a full stack is spent on one cast only (it used to benefit two). Icy Veins (Nov 13): one point is worth it, more delays the mana talents. Levels · Icy Veins: 43 · Nicktew: 35, 47–48, 53 (4/5, Nov 15 update) · Mobalytics (Yebb): 60 (Nov 16) · Your notes: 36–40.",
    "Rage of the Farseer": "+30% attack speed for 25 s on a 3-minute cooldown (wowfdb; marked unconfirmed there). Not in Icy Veins' build since Nov 13. Levels · Nicktew: 51 · Your notes: 41.",
-   "Malevolence": "+1% Shadow crit per point (5% at 5/5); pairs with Pandemic. Crix's respec build takes 4/5 since Nov 15. Levels · Mobalytics respec 26: 57–60 (4/5) · Icy Veins Affliction: 27–29, 42–43 · Mobalytics Affliction 1-60: 48–52.",
-   "Wrack": "Channel that makes your Siphon Life, Corruption and Bane of Agony on the target tick twice as fast while you channel (Official Nov 10 hotfix, damage cut 30%). Affliction's 31-point talent; needs Siphon Life. Not in the Mobalytics builds. Levels · Icy Veins Affliction: 51.",
-   "Suppression": "+1% hit and 4% less threat per rank (5% and 20% at 5/5). Corvin already has 4/5 (spent at 10–13). Levels · Mobalytics respec 26: 10–13 before the respec; 48–51 after it (4/5: 100% hit against your level; Crix Nov 15) · Icy Veins Affliction: 10–13 · Icy Veins Demonology: 41–44 · Mobalytics Affliction 1-60: 15–19.",
-   "Unholy Power": "+10% damage for all your demons (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 19–23 before the respec; 26 after it · Icy Veins Demonology: 10–14 · Mobalytics Affliction 1-60: 41–45.",
-   "Demonic Energies": "Keeps your demon alive and in mana: you heal it for part of your spell damage and Life Tap feeds it (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 24–25 before the respec; 26 after it · Icy Veins Demonology: 15–16 · Mobalytics Affliction 1-60: 46–47.",
-   "Fel Vitality": "+15% demon Health and Mana and +15% of your own Mana (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 26 (re-spent at the 26 respec) · Icy Veins Affliction: 38–40 · Icy Veins Demonology: 17–19 · Mobalytics Affliction 1-60: 53–55.",
+   "Malevolence": "+1% Shadow crit per point (5% at 5/5); pairs with Pandemic. Crix's respec build takes 4/5 since Nov 15. Levels · Mobalytics respec 26: 57–60 (4/5) · Icy Veins Affliction: 27–29, 42–43 · Mobalytics Affliction 1-60: 57–60 (4/5).",
+   "Wrack": "Channel that makes your Siphon Life, Corruption and Bane of Agony on the target tick twice as fast while you channel (Official Nov 10 hotfix, damage cut 30%). Affliction's 31-point talent; needs Siphon Life. Crix (video, Nov 21): rush it, then 'dots up, Wrack'; Improved Drains no longer boosts it. Not in the Mobalytics respec build. Levels · Icy Veins Affliction: 51 · Mobalytics Affliction 1-60: 40.",
+   "Suppression": "+1% hit and 4% less threat per rank (5% and 20% at 5/5). Corvin already has 4/5 (spent at 10–13). Crix (video, Nov 21) takes 5/5 himself; the guide calls the 5th point optional (then Malevolence 3/5). Levels · Mobalytics respec 26: 10–13 before the respec; 48–51 after it (4/5: 100% hit against your level; Crix Nov 15) · Icy Veins Affliction: 10–13 · Icy Veins Demonology: 41–44 · Mobalytics Affliction 1-60: 15–18 (4/5).",
+   "Unholy Power": "+10% damage for all your demons (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 19–23 before the respec; 26 after it · Icy Veins Demonology: 10–14.",
+   "Demonic Energies": "Keeps your demon alive and in mana: you heal it for part of your spell damage and Life Tap feeds it (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 24–25 before the respec; 26 after it · Icy Veins Demonology: 15–16.",
+   "Fel Vitality": "+15% demon Health and Mana and +15% of your own Mana (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 26 (re-spent at the 26 respec) · Icy Veins Affliction: 38–40 · Icy Veins Demonology: 17–19 · Mobalytics Affliction 1-60: 46–48.",
    "Master Summoner": "Demon summons 4 sec faster (and cheaper) (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 26 (re-spent at the 26 respec) · Icy Veins Demonology: 23–24.",
-   "Improved Sayaad": "A little more Lash of Pain damage and pet threat; Mobalytics says these 3 points can go elsewhere in Demonology. Levels · Mobalytics respec 26: 26 (re-spent at the 26 respec).",
+   "Improved Sayaad": "A little more Lash of Pain damage and pet threat; Mobalytics says these 3 points can go elsewhere in Demonology. Crix (video, Nov 21) calls it a weak talent taken only for a bit more Lash of Pain threat; on a PvP server he puts the points in Improved Voidwalker for a stronger Voidwalker sacrifice. Levels · Mobalytics respec 26: 26 (re-spent at the 26 respec).",
    "Fel Domination": "Near-instant resummon: when the Succubus drops below about 20%, Fel Domination + a new Succubus beats Health Funnel (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 28 · Icy Veins Demonology: 28.",
    "Demonic Knowledge": "Spell damage equal to your level for you and your demon while a demon is out (30 at level 30, 45 at 45) (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 32–34 · Icy Veins Demonology: 31–33.",
-   "Demonic Embrace": "More Stamina; Mobalytics says this 1 point can go anywhere in Demonology. Levels · Mobalytics respec 26: 35 · Icy Veins Affliction: 31–35.",
+   "Demonic Embrace": "More Stamina; Mobalytics says this 1 point can go anywhere in Demonology. Levels · Mobalytics respec 26: 35 · Icy Veins Affliction: 31–35 · Mobalytics Affliction 1-60: 41–45.",
    "Master Demonologist": "A bonus for you and your demon depending on which demon is out; Mobalytics takes it for the Succubus' 10% Shadow damage. Levels · Mobalytics respec 26: 36–40 · Icy Veins Demonology: 35–39.",
-   "Pandemic": "Bigger crits on your DoTs and Drains; better the more crit you have (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 52–54 · Icy Veins Affliction: 22–24 · Icy Veins Demonology: 53–55 · Mobalytics Affliction 1-60: 33–34, 40.",
-   "Improved Bane of Agony": "Up to 10% more Bane of Agony damage (Mobalytics Crix, Nov 10). Levels · Mobalytics respec 26: 55–56 · Icy Veins Affliction: 20–21 · Icy Veins Demonology: 51–52 · Mobalytics Affliction 1-60: 56–57.",
+   "Pandemic": "Bigger crits on your DoTs and Drains; better the more crit you have (Mobalytics Crix, Nov 10). Crix (video, Nov 21) says he'd take Improved Bane of Agony before Pandemic; the guide still lists Pandemic first. Levels · Mobalytics respec 26: 52–54 · Icy Veins Affliction: 22–24 · Icy Veins Demonology: 53–55 · Mobalytics Affliction 1-60: 54–56.",
+   "Improved Bane of Agony": "Up to 10% more Bane of Agony damage (Mobalytics Crix, Nov 10). Crix (video, Nov 21): take it before Pandemic (spoken only; the guide order still has 55–56). Levels · Mobalytics respec 26: 55–56 · Icy Veins Affliction: 20–21 · Icy Veins Demonology: 51–52 · Mobalytics Affliction 1-60: 21–22.",
    "Elemental Focus": "10% chance on a spell cast to make your next spell free (Icy Veins, Nov 13). Levels · Icy Veins: 57 · Mobalytics (Yebb): 45.",
-   "Soul Harvest": "A Drain Soul kill raises your Mana regeneration by 100% for 10 sec and keeps 100% of normal regen going while casting (2/2, talent tree). Crix (Nov 15): drinking while the buff is up gives a huge amount of mana, possibly a bug. Levels · Mobalytics respec 26: 46–47 · Mobalytics Affliction 1-60: 58–59.",
+   "Soul Harvest": "A Drain Soul kill raises your Mana regeneration by 100% for 10 sec and keeps 100% of normal regen going while casting (2/2, talent tree). Crix (Nov 15): drinking while the buff is up gives a huge amount of mana, possibly a bug. Crix (video, Nov 21): the drink bonus fades around 55 because the buff lasts 10 s and you drink longer; you'll get lots of shards, so use a shard-cap addon (he keeps 16 with Warlock Kit). Levels · Mobalytics respec 26: 46–47 · Mobalytics Affliction 1-60: 19–20.",
    "druid:Ferocity": "Claw, Rake, Swipe, Maul and Primal Bite cost 1 less Energy or Rage per point (5 at 5/5). Mobalytics: 10-12, 34; Icy Veins: 10-14; Wowhead: 10-14.",
    "druid:Furor": "At 5/5, Cat Form gives back all the Energy you had when you left it plus 10 per second spent outside Bear, so a heal in caster form costs no Energy; Bear always starts with 10 Rage. Mobalytics: 13-17; Icy Veins: not taken; Wowhead: not taken.",
    "druid:Feral Swiftness": "Cat Form runs 30% faster and you dodge 4% more at 2/2. Mobalytics: 18-19; Icy Veins: 18-19; Wowhead: 15-16.",
@@ -3530,7 +3545,9 @@
    "druid:Primal Bite": "Bear bite for 100% weapon damage plus 42, with high threat. Mobalytics: not taken; Icy Veins: 40; Wowhead: 41.",
    "druid:Reflection": "50% of your mana regeneration continues while casting (3/3). Mobalytics: not taken; Icy Veins: not taken; Wowhead: 50-52.",
    "druid:Swiftmend": "Instantly heals a target with your Rejuvenation or Regrowth on it for that effect's full amount. Mobalytics: not taken; Icy Veins: not taken; Wowhead: 58.",
-   "druid:Brutal Impact": "Bash and Pounce stun 1 sec longer and Bash's cooldown is 30 sec shorter (2/2). Mobalytics: not taken; Icy Veins: not taken; Wowhead: 59-60."
+   "druid:Brutal Impact": "Bash and Pounce stun 1 sec longer and Bash's cooldown is 30 sec shorter (2/2). Mobalytics: not taken; Icy Veins: not taken; Wowhead: 59-60.",
+   "Improved Drains": "+20% to Drain Life, Drain Soul and Drain Mana at 3/3; Wrack no longer benefits (Oct 30 hotfix). Crix (video, Nov 21): good before Wrack at 40; respec out later if you want, he keeps it for Drain Life heals. Levels · Mobalytics Affliction 1-60: 23–25.",
+   "Fel Concentration": "70% chance to avoid pushback while channeling. Crix (video, Nov 21): mandatory for a Drain Life and Wrack build. Levels · Icy Veins Affliction: 58–60 · Mobalytics Affliction 1-60: 26–28."
   },
   "PATH_NODES": [
    {
@@ -4812,13 +4829,13 @@
       {
        "icon": "spell_fire_soulburn",
        "name": "Searing Pain (Demonic Brand)",
-       "tip": "After the 26 respec: Searing Pain + /petattack macro brands the pet's target. Watch the Brand timer and stacks and recast when needed.",
+       "tip": "After the 26 respec: Searing Pain + /petattack macro brands the pet's target. Watch the Brand timer and stacks and recast when needed. Crix (video, Nov 21): Brand lasts 10 s with 6 stacks; the Succubus usually uses 4 (5 with a lucky Lash of Pain), so from about 40 expect two brands per mob and recast before it fades.",
        "lvl": 26
       },
       {
        "icon": "spell_shadow_curseofsargeras",
        "name": "Bane of Agony",
-       "tip": "Press it near the end of the Searing Pain cast; the spell queue fires it right after. Low threat, good for pulling the next mob.",
+       "tip": "Press it near the end of the Searing Pain cast; the spell queue fires it right after. Low threat, good for pulling the next mob. It ramps up, so skip it on mobs that die fast (Crix, Nov 21 video).",
        "lvl": 8
       },
       {
@@ -4837,7 +4854,7 @@
       {
        "icon": "spell_fire_immolation",
        "name": "Immolate",
-       "tip": "One of your two early workhorse DoTs; keep it up on mobs that live."
+       "tip": "One of your two early workhorse DoTs; keep it up on mobs that live. Never open with it before Brand: its burst is what usually rips threat off the Succubus (Crix, Nov 21 video)."
       },
       {
        "icon": "spell_shadow_abominationexplosion",
@@ -4868,12 +4885,12 @@
       {
        "icon": "spell_shadow_shadowbolt",
        "name": "Shadow Bolt",
-       "tip": "Early finisher; Rank 1 Shadow Bolt is the filler from 26 on: 1.5 s cast, 25 mana, more damage than max-rank Searing Pain and rarely pulls threat. Max rank only on dungeon bosses, elites or a target that must die fast (Crix, Nov 15-20)."
+       "tip": "Early finisher; Rank 1 Shadow Bolt is the filler from 26 on: 1.5 s cast, 25 mana, more damage than max-rank Searing Pain and rarely pulls threat. Max rank only on dungeon bosses, elites or a target that must die fast (Crix, Nov 15-20). Crix (video, Nov 21): Rank 2 is a 2.2 s cast (about 2 s with a Spellstone); also go max rank on a Revelation proc or when the demon is about to die."
       },
       {
        "icon": "spell_shadow_lifedrain02",
        "name": "Drain Life",
-       "tip": "Whenever you need health.",
+       "tip": "Whenever you need health. From Rank 5 (46) one or two ticks bring back about half your health (Crix, Nov 21 video).",
        "lvl": 14
       },
       {
@@ -4950,7 +4967,8 @@
       "Conflict kept: Icy Veins' Demonology order (Improved Voidwalker, Demonic Aegis, Demonic Pact at 40, Nightfall) and Voidwalker-tank play are in the 'Demonology leveling (Icy Veins)' reference build.",
       "Two mobs at a time: brand and DoT mob 1, pull mob 2 at about 50% with Bane of Agony or Curse of the Elements (low threat), brand it and send the demon over, let DoTs or the wand finish mob 1. Fear when three are up. Bandages (First Aid) top the demon up between pulls.",
       "Blizzard Nov 2: pets get 2 Health per Stamina (was 7.5), so watch the demon's bar.",
-      "Crix, Nov 20: if the Succubus loses threat early, turn off her Soothing Kiss autocast (spellbook, pet tab, right-click) and wait to cast Immolate until she has a few Demonic Brand stacks."
+      "Crix, Nov 20: if the Succubus loses threat early, turn off her Soothing Kiss autocast (spellbook, pet tab, right-click) and wait to cast Immolate until she has a few Demonic Brand stacks.",
+      "Crix video, Nov 21 (power spikes): Warlock is weak until 30; Demonic Brand (26–27), Soul Link (30), Demonic Pact (41) and Death Coil (42) are the big jumps. Use the spell queue: press the next instant near the end of every cast. Felhunter is his pick against Mages; Master Summoner and Fel Domination make pet swaps cheap."
      ],
      "src": [
       {
@@ -4967,10 +4985,15 @@
        "label": "Blizzard beta development notes",
        "date": "Nov 2 + Nov 3",
        "url": "https://us.forums.blizzard.com/en/wow/t/latest-warlock-changes/2399400"
+      },
+      {
+       "label": "Crix video: The BEST Warlock Leveling Builds in WoW Forever (1-60)",
+       "date": "Nov 21",
+       "url": "https://www.youtube.com/watch?v=SNxFmVvLw7I"
       }
      ],
      "caveat": "Mobalytics guide theorycraft (Forever beta-based), single source. Levels come from the guide and trainer table; your actual spent talents and trained ranks aren't read by the page.",
-     "_date": "2026-11-20"
+     "_date": "2026-11-21"
     },
     "dungeon": {
      "seq": "demo_moba",
@@ -22693,6 +22716,18 @@
   ],
   "feed_rows": [
    {
+    "lead": "Nov 21",
+    "title": "Crix video: Demonology is his top leveling spec, Affliction the easiest; Mobalytics Affliction now has Wrack at 40",
+    "detail": "Crix (author of Corvin's Mobalytics guide), video published Nov 21 8:03 AM ET after leveling all three specs to 59. Verdict (2:27): both specs are strong after 40; he calls Demonology stronger, safer and better in dungeons but busier (Brand timers, pet swaps), and Affliction the easiest with strong single target but more mana trouble. He says he is biased (PvP server). Warlock is weak until 30; hold out to 40 (4:01). Affliction 1-60 (11:31): no Nightfall, Demonic Sacrifice in place of the Destruction branch, Wrack at 40, Soul Harvest at 19 (drink bug), Improved Drains to 40, Fel Concentration mandatory; board's 'Affliction 1-60 (Mobalytics)' build updated to 40/11/0. Demo respec at 26 (25:14): same order as Corvin's plan; spoken tweaks: Improved Bane of Agony before Pandemic, Improved Sayaad flex (Improved Voidwalker on PvP servers), optional 5th Suppression. Rotation (36:57, 38:31): demon in, Searing Pain brand, Bane into Immolate with Corruption queued, Curse of the Elements, Rank 1 Shadow Bolt filler; turn off the Succubus's Soothing Kiss autocast. Also (8:33, 9:38): cheap Shadow Wrath gear is a big help (he had 400+ spell power from about 48); lesser elixirs (Lesser Arcane, Mageblood, Troll's Blood, Intellect), Sagefish and Lesser Wizard Oil; First Aid bandages; Revelation enchant is worth it for Demonology. PvP server build (40:56) and a no-respec Demonology tab exist on Mobalytics but their orders weren't captured. Order left unchanged: Corvin stays on the Mobalytics respec at 26; spoken tweaks are noted on the talents only.",
+    "meta": "YouTube, Crix Forever, published Nov 21 2026, 43 min; read Nov 21 with Mobalytics Affliction 1-60 tab",
+    "status": {
+     "label": "Unofficial, single source",
+     "tone": "warning"
+    },
+    "_source": "https://www.youtube.com/watch?v=SNxFmVvLw7I",
+    "_date": "2026-11-21"
+   },
+   {
     "lead": "Nov 20",
     "title": "Official hotfixes Nov 20: Demonic Aegis snapshot exploit fixed (Demonology), dungeon resets capped at 5 an hour",
     "detail": "Blizzard (Kaivax, Nov 20, posted 7:18 PM ET): Demonology: the Demonic Aegis bonus can no longer be snapshotted into Demon Armor or Demon Skin and kept after untalenting; Demonic Aegis and Demon Skin are removed when talents are unlearned. Players can reset and enter each dungeon at most 5 times an hour (was 10). Also: Combat Rogue Blade Flurry now makes Shank hit a second target; Blackrock Spire stone pillar trap fixed; Stormshroud Armor 3-piece now 3% for 18 energy (was 4% for 30); Summit of Eternity forge and anvil usable; quest fixes (Witch Doctor Ti'ik, Perfect Yeti Hide, The Dunemaul Compound, Dunston Checks Out); LFG list shows all groups. Corvin: his Mobalytics respec build takes Demonic Embrace, not Demonic Aegis, so nothing changes for him; it touches Icy Veins' reference Demonology order (Demonic Aegis). Nothing for Shaman, Feral Druid, Troll, Undead or Skyborne.",
@@ -24076,6 +24111,14 @@
   ],
   "addons_links_warlock": [
    {
+    "title": "Warlock Kit (Shuklock): shard cap with auto-delete, stones, curses, demon flyout, summons (Crix's pick, Nov 21 video)",
+    "site": "CurseForge · Forever",
+    "date": "Nov 20",
+    "href": "https://www.curseforge.com/wow/addons/warlock-kit",
+    "_source": "CurseForge · Forever; Crix video Nov 21",
+    "_date": "Nov 21"
+   },
+   {
     "title": "Warlock Tools Forever: auto-deletes extra shards, stone buttons, multi-mob DoT tracker, Fear and Banish bar",
     "site": "CurseForge · Forever",
     "date": "Oct 26",
@@ -24191,11 +24234,11 @@
   }
  },
  "_meta": {
-  "version": 53,
-  "generated_at": "2026-11-21T08:56-05:00",
-  "source": "WoW Forever bot, Nov 21 2026 daily meta watch: Nov 20 hotfixes, voidsim Nov 20, MythicSim Nov 21",
+  "version": 54,
+  "generated_at": "2026-11-21T09:17-05:00",
+  "source": "WoW Forever bot, Nov 21 2026: Crix Warlock leveling video + Mobalytics Affliction 1-60 tab",
   "notes_commit": "dd6fea4",
-  "notes": "Nov 21: Official Nov 20 hotfix fixes a Demonic Aegis exploit (Corvin's build skips Aegis); voidsim Demonology and Destruction B → A, Enhancement A → B; MythicSim Destro #12, Enh #13."
+  "notes": "Nov 21: Crix's Warlock leveling video added (Corvin's plan unchanged); Mobalytics Affliction 1-60 now 40/11/0 with Wrack at 40."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default, with Icy Veins (Meyra, Nov 4) 9/32/10 and Wowhead (Lexolas, Nov 17) 0/34/17 as alternatives; which one his 13 points follow is not known yet, so pick it in Next ding.",
