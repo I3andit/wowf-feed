@@ -6405,9 +6405,9 @@
      },
      {
       "k": "F3",
-      "spell": "Soul Link (30+)",
-      "icon": "spell_shadow_gathershadows",
-      "note": "Keep it on at all times (Mobalytics)"
+      "spell": "Rain of Fire (20+)",
+      "icon": "spell_shadow_rainoffire",
+      "note": "AoE where your mouse points, for packs the tank holds. Jason's pick, Nov 20. Soul Link is a click button now."
      },
      {
       "k": "F4",
@@ -6599,6 +6599,14 @@
        "icon": "spell_shadow_deathcoil",
        "kind": "util",
        "lvl": 42
+      },
+      {
+       "key": "soullink",
+       "spell": "Soul Link",
+       "icon": "spell_shadow_gathershadows",
+       "kind": "util",
+       "lvl": 30,
+       "note": "Keep it on at all times (Mobalytics). Click it after you summon. Moved off F3 for Rain of Fire, Jason's pick Nov 20."
       }
      ]
     },
@@ -6777,6 +6785,14 @@
        "kind": "util",
        "talent": "Amplify Curse",
        "note": "Pull opener"
+      },
+      {
+       "key": "soullink",
+       "spell": "Soul Link",
+       "icon": "spell_shadow_gathershadows",
+       "kind": "util",
+       "lvl": 30,
+       "note": "Keep it on at all times (Mobalytics). Click it after you summon. Moved off F3 for Rain of Fire, Jason's pick Nov 20."
       }
      ]
     }
@@ -6904,8 +6920,9 @@
      },
      {
       "k": "F3",
-      "spell": "Soul Link (once talented)",
-      "icon": "spell_shadow_gathershadows"
+      "spell": "Rain of Fire (20+)",
+      "icon": "spell_shadow_rainoffire",
+      "note": "AoE where your mouse points, for packs the tank holds. Jason's pick, Nov 20. Soul Link is a click button now."
      },
      {
       "k": "F4",
@@ -7097,6 +7114,14 @@
        "icon": "spell_shadow_deathcoil",
        "kind": "util",
        "lvl": 42
+      },
+      {
+       "key": "soullink",
+       "spell": "Soul Link",
+       "icon": "spell_shadow_gathershadows",
+       "kind": "util",
+       "lvl": 30,
+       "note": "Keep it on at all times (Mobalytics). Click it after you summon. Moved off F3 for Rain of Fire, Jason's pick Nov 20."
       }
      ]
     },
@@ -7258,6 +7283,14 @@
        "kind": "util",
        "lvl": 40,
        "alt": true
+      },
+      {
+       "key": "soullink",
+       "spell": "Soul Link",
+       "icon": "spell_shadow_gathershadows",
+       "kind": "util",
+       "lvl": 30,
+       "note": "Keep it on at all times (Mobalytics). Click it after you summon. Moved off F3 for Rain of Fire, Jason's pick Nov 20."
       }
      ]
     }
@@ -8887,7 +8920,7 @@
    },
    {
     "tag": "NEW",
-    "where": "Bottom Right (click)",
+    "where": "F3",
     "title": "Rain of Fire at cursor",
     "icon": "spell_shadow_rainoffire",
     "spec": "both",
@@ -8895,7 +8928,8 @@
     "code": "#showtooltip Rain of Fire\n/cast [@cursor] Rain of Fire",
     "does": "Drops Rain of Fire under your mouse with no targeting click, for packs the tank is holding.",
     "src": "Affliction dungeon rotation; Claude macro audit, Nov 7 2026 (vault: Macro Audit 2026-11-07)",
-    "flag": "[@cursor] is unconfirmed in Forever. If it doesn't drop, use the plain spell."
+    "flag": "[@cursor] is unconfirmed in Forever. If it doesn't drop, use the plain spell.",
+    "fkey": "F3"
    },
    {
     "tag": "NEW",
@@ -24122,11 +24156,11 @@
   }
  },
  "_meta": {
-  "version": 51,
+  "version": 52,
   "generated_at": "2026-11-20T08:56-05:00",
-  "source": "WoW Forever bot, Nov 20 2026 daily meta watch: MythicSim Nov 20 snapshot, Crix rotation rewrite, Nov 19 hotfixes",
+  "source": "Claude at Jason's ask, Nov 20 2026: Rain of Fire on the warlock's F3",
   "notes_commit": "79fc482",
-  "notes": "Nov 20: MythicSim Enhancement #11 → #12 (tier A → B, sim gear change); Crix rewrote Corvin's Demonology leveling rotation (talents unchanged); Nov 19 hotfixes touch nothing of ours."
+  "notes": "Nov 20 (Jason's pick): the warlock's F3 is Rain of Fire at the cursor from level 20, and Soul Link moves to a click button. Earlier, Nov 20: MythicSim Enhancement #11 → #12 (tier A → B, sim gear change); Crix rewrote Corvin's Demonology leveling rotation (talents unchanged); Nov 19 hotfixes touch nothing of ours."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default, with Icy Veins (Meyra, Nov 4) 9/32/10 and Wowhead (Lexolas, Nov 17) 0/34/17 as alternatives; which one his 13 points follow is not known yet, so pick it in Next ding.",
