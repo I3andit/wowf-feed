@@ -3459,11 +3459,10 @@
     "short": "Mobalytics",
     "cls": "druid",
     "seq": "feral_moba",
-    "primary": true,
     "src": "Mobalytics Druid Leveling Guide (yumytv), Leveling Path calculator, updated Nov 14 2026, read Nov 17 2026 (Unofficial, single source)",
     "date": "Nov 14; read Nov 17",
     "url": "https://mobalytics.gg/wow-forever/classes/druid-leveling-guide",
-    "blurb": "Ferocity 3 at 10-12 and Furor 5 by 17 (Cat keeps its Energy across a heal), Feral Swiftness 18-19, Sharpened Claws 20-21, Savage Fury 22-23, Feral Charge 24, Predatory Discipline 25, Blood Frenzy 26-27, Leader of the Pack 30, Rend and Tear 35-39, Shifting Power 40, then Genesis, Nature's Majesty, Nature's Reach, Heart of the Wild and Naturalist; Natural Shapeshifter at 60. Takes neither Lacerate nor Primal Bite. Default for Kestrik until his own points are known.",
+    "blurb": "Ferocity 3 at 10-12 and Furor 5 by 17 (Cat keeps its Energy across a heal), Feral Swiftness 18-19, Sharpened Claws 20-21, Savage Fury 22-23, Feral Charge 24, Predatory Discipline 25, Blood Frenzy 26-27, Leader of the Pack 30, Rend and Tear 35-39, Shifting Power 40, then Genesis, Nature's Majesty, Nature's Reach, Heart of the Wild and Naturalist; Natural Shapeshifter at 60. Takes neither Lacerate nor Primal Bite. Kestrik's default until Nov 21; he follows Wowhead now.",
     "tag": "Unofficial, single source"
    },
    {
@@ -3487,8 +3486,9 @@
     "src": "Wowhead Feral Druid DPS Leveling Guide for WoW: Forever (Lexolas), Talent Order of the talent calculator build embedded in the guide, updated Nov 17 2026, read Nov 17 2026 (Unofficial, single source)",
     "date": "Nov 17; read Nov 17",
     "url": "https://www.wowhead.com/forever/guide/classes/druid/feral/dps-leveling-tips",
-    "blurb": "Ferocity 5 at 10-14, Feral Swiftness 15-16, Feral Instinct 17-19, Feral Charge 20, Savage Fury 21-22, Sharpened Claws 23-24, Predatory Discipline 25, Blood Frenzy 26-27, Lacerate 28, Predatory Strikes 29, Leader of the Pack 30, Natural Instinct 31-32, Predatory Strikes 33-34, Rend and Tear 35-39, Shifting Power 40, Primal Bite 41, then Heart of the Wild, Natural Shapeshifter, Reflection, Naturalist, Swiftmend 58 and Brutal Impact 59-60. Never takes Furor or any Balance talent.",
-    "tag": "Unofficial, single source"
+    "blurb": "Ferocity 5 at 10-14, Feral Swiftness 15-16, Feral Instinct 17-19, Feral Charge 20, Savage Fury 21-22, Sharpened Claws 23-24, Predatory Discipline 25, Blood Frenzy 26-27, Lacerate 28, Predatory Strikes 29, Leader of the Pack 30, Natural Instinct 31-32, Predatory Strikes 33-34, Rend and Tear 35-39, Shifting Power 40, Primal Bite 41, then Heart of the Wild, Natural Shapeshifter, Reflection, Naturalist, Swiftmend 58 and Brutal Impact 59-60. Never takes Furor or any Balance talent. Kestrik's default since Nov 21: his 13 points at 22 match it (his talent window).",
+    "tag": "Unofficial, single source",
+    "primary": true
    }
   ],
   "WHY": {
@@ -5465,8 +5465,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
-     "seq": "feral_moba"
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Wowhead by default: Lacerate 28, Shifting Power 40, Primal Bite 41). Mobalytics never takes Lacerate or Primal Bite, so with Mobalytics picked those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_wh"
     },
     "dungeon": {
      "prep": [
@@ -5562,8 +5562,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
-     "seq": "feral_moba"
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Wowhead by default: Lacerate 28, Shifting Power 40, Primal Bite 41). Mobalytics never takes Lacerate or Primal Bite, so with Mobalytics picked those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_wh"
     }
    },
    "bear": {
@@ -5626,14 +5626,14 @@
       {
        "icon": "ability_druid_lacerate",
        "name": "Lacerate",
-       "tip": "Stack to 5 on anything that lives long enough. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58. Mobalytics (yumytv) skips it; Icy Veins takes it at 25.",
+       "tip": "Stack to 5 on anything that lives long enough. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58. Mobalytics (yumytv) skips it; Icy Veins takes it at 25, Wowhead at 28.",
        "lvl": 25,
        "talent": "Lacerate"
       },
       {
        "icon": "ability_druid_mangle2",
        "name": "Primal Bite",
-       "tip": "On cooldown once you take the talent. Mobalytics (yumytv) skips it; Icy Veins takes it at 40.",
+       "tip": "On cooldown once you take the talent. Mobalytics (yumytv) skips it; Icy Veins takes it at 40, Wowhead at 41.",
        "lvl": 40,
        "talent": "Primal Bite"
       },
@@ -5660,8 +5660,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
-     "seq": "feral_moba"
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Wowhead by default: Lacerate 28, Shifting Power 40, Primal Bite 41). Mobalytics never takes Lacerate or Primal Bite, so with Mobalytics picked those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_wh"
     },
     "dungeon": {
      "prep": [
@@ -5705,14 +5705,14 @@
       {
        "icon": "ability_druid_lacerate",
        "name": "Lacerate",
-       "tip": "To 5 stacks on bosses. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58. Mobalytics (yumytv) skips it; Icy Veins takes it at 25.",
+       "tip": "To 5 stacks on bosses. Talent from 25 (Blizzard Nov 2 notes); trainer ranks at 34, 42, 50, 58. Mobalytics (yumytv) skips it; Icy Veins takes it at 25, Wowhead at 28.",
        "lvl": 25,
        "talent": "Lacerate"
       },
       {
        "icon": "ability_druid_mangle2",
        "name": "Primal Bite",
-       "tip": "On cooldown: very high threat. Mobalytics (yumytv) skips it; Icy Veins takes it at 40.",
+       "tip": "On cooldown: very high threat. Mobalytics (yumytv) skips it; Icy Veins takes it at 40, Wowhead at 41.",
        "lvl": 40,
        "talent": "Primal Bite"
       },
@@ -5762,8 +5762,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
-     "seq": "feral_moba"
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Wowhead by default: Lacerate 28, Shifting Power 40, Primal Bite 41). Mobalytics never takes Lacerate or Primal Bite, so with Mobalytics picked those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_wh"
     }
    },
    "caster": {
@@ -5832,8 +5832,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
-     "seq": "feral_moba"
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Wowhead by default: Lacerate 28, Shifting Power 40, Primal Bite 41). Mobalytics never takes Lacerate or Primal Bite, so with Mobalytics picked those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_wh"
     },
     "dungeon": {
      "prep": [
@@ -5914,8 +5914,8 @@
        "url": "https://www.warcrafttavern.com/forever/guides/druid-leveling/"
       }
      ],
-     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Mobalytics by default). Mobalytics never takes Lacerate or Primal Bite, so those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
-     "seq": "feral_moba"
+     "caveat": "Built Nov 16 from the Forever guides and your Druid - Feral note. Not run in game yet. Feral Charge, Lacerate, Shifting Power and Primal Bite are talents: their levels follow the guide picked in Next ding (Wowhead by default: Lacerate 28, Shifting Power 40, Primal Bite 41). Mobalytics never takes Lacerate or Primal Bite, so with Mobalytics picked those two show Icy Veins' levels (25 and 40). Berserk and Tiger's Fury are gone in Forever (Blizzard).",
+     "seq": "feral_wh"
     }
    }
   }
@@ -24224,9 +24224,9 @@
     "_date": "2026-11-17"
    },
    {
-    "text": "Which guide your 13 points follow is not on the table: at 22 Mobalytics has Ferocity 3, Furor 5, Feral Swiftness 2, Sharpened Claws 2, Savage Fury 1; Icy Veins has Ferocity 5, Feral Instinct 3, Feral Swiftness 2, Feral Charge 1, Savage Fury 2. Pick yours in Next ding.",
-    "_source": "https://mobalytics.gg/wow-forever/classes/druid-leveling-guide ; https://www.icy-veins.com/wow-forever/feral-druid-leveling",
-    "_date": "2026-11-17"
+    "text": "You follow Wowhead (Lexolas), the default since Nov 21: your 13 points at 22 were Ferocity 5, Feral Swiftness 2, Feral Instinct 3, Feral Charge 1, Savage Fury 2, which is Wowhead's spread (Icy Veins has the same 13 points at 22 and splits from it later). Mobalytics would have had Ferocity 3, Furor 5, Feral Swiftness 2, Sharpened Claws 2, Savage Fury 1. You can still pick another guide in Next ding.",
+    "_source": "https://www.wowhead.com/forever/guide/classes/druid/feral/dps-leveling-tips ; Jason's talent window, Nov 21 ; https://mobalytics.gg/wow-forever/classes/druid-leveling-guide ; https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+    "_date": "2026-11-21"
    }
   ],
   "gear_note_druid": {
@@ -24234,14 +24234,14 @@
   }
  },
  "_meta": {
-  "version": 54,
-  "generated_at": "2026-11-21T09:17-05:00",
-  "source": "WoW Forever bot, Nov 21 2026: Crix Warlock leveling video + Mobalytics Affliction 1-60 tab",
+  "version": 55,
+  "generated_at": "2026-11-21T10:05-05:00",
+  "source": "WoW Forever bot, Nov 21 2026: Crix Warlock leveling video + Mobalytics Affliction 1-60 tab; plus Claude, on Jason's go: Kestrik's default talent order is Wowhead (feral_wh)",
   "notes_commit": "dd6fea4",
-  "notes": "Nov 21: Crix's Warlock leveling video added (Corvin's plan unchanged); Mobalytics Affliction 1-60 now 40/11/0 with Wrack at 40."
+  "notes": "Nov 21: Crix's Warlock leveling video added (Corvin's plan unchanged); Mobalytics Affliction 1-60 now 40/11/0 with Wrack at 40. Also: Kestrik's default talent guide is now Wowhead (Lexolas), the one he follows."
  },
  "captions": {
-  "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Mobalytics (yumytv, Nov 14) Feral 9/31/11 is his default, with Icy Veins (Meyra, Nov 4) 9/32/10 and Wowhead (Lexolas, Nov 17) 0/34/17 as alternatives; which one his 13 points follow is not known yet, so pick it in Next ding.",
+  "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Wowhead (Lexolas, Nov 17) Feral 0/34/17 is his default since Nov 21, the guide he follows; Mobalytics (yumytv, Nov 14) 9/31/11 and Icy Veins (Meyra, Nov 4) 9/32/10 are the alternatives in Next ding.",
   "macros": "Corvin: Mobalytics macros added or matched Nov 10 (Searing Pain + pet from 26, Succubus summon key, Fel Domination resummon, Imp sacrifice at 41, Torment + attack). Zanjiro: level-aware manual macros reviewed against Nicktew; Rank1 kick separate from damage. Native triggers are banks, not keyboard modifiers. Troll Berserking macro added Nov 10. Kestrik: form, heal and travel macros from your Druid - Feral note (Nov 16), not run in game yet.",
   "naga": "Corvin: plates follow the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Zanjiro: learned-skill level20 options corrected; Icy Veins rotation (Nov 13 update) drives auto layout, Nicktew alternative documented. No controller UI added. Nov 10: plate buttons follow each rotation's priority order at every level. Kestrik: fixed plates per form (Cat, Bear, Caster) from your Druid - Feral note; same job on the same button in every form.",
   "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option; Nov 16: Rank 1 is his main filler, max rank on dungeon bosses and elites) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking. Kestrik: Feral leveling from Method (Birra, Nov 14) and Warcraft Tavern; one rotation per form.",
