@@ -214,6 +214,52 @@
       "_tag": "Forever-confirmed"
      }
     ]
+   },
+   {
+    "name": "Drazhul Fellbrand",
+    "color": "#8788EE",
+    "classIcon": "classicon_warlock",
+    "line": "Orc · Warlock · Demonology (Mobalytics respec at 26; Affliction talents until then)",
+    "role": "Alt",
+    "level": 21,
+    "profs": [],
+    "racials": [
+     {
+      "name": "Blood Fury",
+      "icon": "racial_orc_berserkerstrength",
+      "detail": "+10% Attack Power and Spell Power for 15 s, instant, 2 min cooldown (Blizzard Oct 27, repeated Nov 2: was 3 min). No Classic healing penalty. Press it with Demonic Brand up on elites and dangerous pulls",
+      "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/7 ; https://sktools.gg/forever/races/orc ; https://forevermastery.com/en/races/orc",
+      "_date": "2026-11-21",
+      "_tag": "Official (cooldown); Unofficial, client data (effect text, client 71037)"
+     },
+     {
+      "name": "Shatter Curse",
+      "icon": "spell_nature_removecurse",
+      "detail": "New in Forever: instantly removes all Curses and Banes on you and cuts magic damage taken by 5% for 8 s, 3 min cooldown",
+      "_source": "https://sktools.gg/forever/races/orc ; https://forevermastery.com/en/races/orc",
+      "_date": "2026-11-21",
+      "_tag": "Unofficial, client data (client 71037 / 70888)"
+     },
+     {
+      "name": "Command",
+      "icon": "ability_warrior_warcry",
+      "detail": "Passive: Warlock (and Hunter) pets deal 5% more damage; re-added Oct 26 in place of Savage. Blizzard's Nov 6 hotfix stopped some Warlock pet abilities benefiting too much; MythicSim reads it as the Imp's Firebolt and the Succubus' Lash of Pain only",
+      "_source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696/7 ; https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-6-2026 ; https://sktools.gg/forever/races/orc ; https://mythicsim.com/wow-forever/tier-list",
+      "_date": "2026-11-21",
+      "_tag": "Official (re-added; Nov 6 fix); Unofficial (which abilities, MythicSim)"
+     },
+     {
+      "name": "Hardiness",
+      "icon": "inv_helmet_15",
+      "detail": "Passive: stuns on you last 20% shorter (Classic was a 25% resist chance)",
+      "_source": "https://sktools.gg/forever/races/orc ; https://forevermastery.com/en/races/orc ; https://wowforevertierlist.com/races/orc",
+      "_date": "2026-11-21",
+      "_tag": "Unofficial, client data (one beta guide says 35%; Blizzard's figure is 20%)"
+     }
+    ],
+    "_source": "Jason's chat answer, Nov 21 2026 (name, Orc, level 21, Crix Demonology respec at 26)",
+    "_date": "2026-11-21",
+    "_note": "Level comes from game sync (lvD). Talents at 21 (Jason's screenshot, Nov 21): Improved Corruption 5/5, Suppression 1/5, Unholy Power 5/5, Demonic Energies 1/2. Axe Specialization no longer exists in Forever (Savage replaced it Oct 15; Savage removed Oct 26)."
    }
   ],
   "CHAR_PROFS": {
@@ -233,6 +279,11 @@
     "lw",
     "skin",
     "fa",
+    "cook"
+   ],
+   "D": [
+    "tail",
+    "ench",
     "cook"
    ]
   },
@@ -3489,6 +3540,23 @@
     "blurb": "Ferocity 5 at 10-14, Feral Swiftness 15-16, Feral Instinct 17-19, Feral Charge 20, Savage Fury 21-22, Sharpened Claws 23-24, Predatory Discipline 25, Blood Frenzy 26-27, Lacerate 28, Predatory Strikes 29, Leader of the Pack 30, Natural Instinct 31-32, Predatory Strikes 33-34, Rend and Tear 35-39, Shifting Power 40, Primal Bite 41, then Heart of the Wild, Natural Shapeshifter, Reflection, Naturalist, Swiftmend 58 and Brutal Impact 59-60. Never takes Furor or any Balance talent. Kestrik's default since Nov 21: his 13 points at 22 match it (his talent window).",
     "tag": "Unofficial, single source",
     "primary": true
+   },
+   {
+    "key": "aff_moba26_guide",
+    "label": "Mobalytics pre-26 as written (respec at 26)",
+    "cls": "warlock",
+    "for": "D",
+    "seq": "moba_pre26_guide",
+    "respec_at": 26,
+    "then": "demo_moba",
+    "short": "Mobalytics",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, pre-26 order as written (updated Nov 15 2026, page re-dated Nov 21, read Nov 21 2026)",
+    "date": "Nov 15; read Nov 21",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "blurb": "Drazhul's levels 10-25 before the respec, the guide's order as written: Improved Corruption 5 (10-14), Suppression 2 (15-16), Unholy Power 5 (17-21), Demonic Energies 2 (22-23), Suppression 2 (24-25). At 21 he has Improved Corruption 5, Suppression 1, Unholy Power 5 and Demonic Energies 1 (one point moved from Suppression to Demonic Energies); the 26 respec resets it all. Then Mobalytics Demo respec at 26.",
+    "tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_source": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10 ; Jason's War Table screenshot, Nov 21 2026 (level 21: Affliction 6, Demonology 6, Destruction 0)",
+    "_date": "2026-11-21"
    }
   ],
   "WHY": {
@@ -3722,7 +3790,106 @@
   ],
   "TREE_SRC": {
    "druid": "talentsforever calculator (beta client 1.60.1.70755 plus the server hotfixes of Nov 3 and Nov 6), layout cross-checked with Icy Veins' calculator data for build 70959 (Nov 17); read Nov 17. Talents without a sprite icon use a stand-in icon"
-  }
+  },
+  "PATH_NODES_D": [
+   {
+    "lv": "1–9",
+    "at": 9,
+    "spec": 1,
+    "icon": "spell_shadow_shadowbolt",
+    "title": "No talents yet",
+    "body": "Imp quest right away; Corruption and Immolate do the work, Shadow Bolt and a wand finish. Lesser Magic Wand at 5. Voidwalker class quest at 10 (Drain Soul at 10: start saving shards). Official Nov 6: Voidwalker base health +~40 live; Official Nov 10 hotfix: Imp, Voidwalker, Succubus and Incubus base health +~15%, Imp Firebolt ranks 1-4 hit harder.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026; Kaivax Nov 6 hotfixes",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "10–16",
+    "at": 16,
+    "spec": 1,
+    "icon": "spell_shadow_abominationexplosion",
+    "title": "Improved Corruption 10-14, Suppression 15-16",
+    "body": "The guide's order as written: Improved Corruption 5 at 10-14 (instant Corruption from 14), then Suppression 2 at 15-16. Spent at 21 (your screenshot, Nov 21): Improved Corruption 5/5 and Suppression 1/5, so one of these two Suppression points went to Demonic Energies instead. The 26 respec resets all of this, so there is nothing to fix.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, read Nov 21 2026; Jason's War Table screenshot, Nov 21 2026 (level 21: Affliction 6, Demonology 6, Destruction 0)",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-21"
+   },
+   {
+    "lv": "17–25",
+    "at": 25,
+    "spec": 1,
+    "icon": "spell_shadow_summonsuccubus",
+    "title": "Unholy Power, Succubus at 20, Demonic Energies, Suppression",
+    "body": "Guide as written: Unholy Power 17-21 (+10% demon damage), Demonic Energies 22-23, Suppression 24-25. You have Unholy Power 5/5 and Demonic Energies 1/2 at 21. Levels 22-25: Demonic Energies 2/2, then Suppression to 4/5 lands you on the guide's level-25 total (Improved Corruption 5, Suppression 4, Unholy Power 5, Demonic Energies 2); any order is fine because 26 resets it. Succubus class quest at 20 (also Staff of Soran'ruk, Orb and a Soul Pouch); she is the leveling demon from here. Demon Armor at 20.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, read Nov 21 2026; Jason's War Table screenshot, Nov 21 2026 (level 21: Affliction 6, Demonology 6, Destruction 0)",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-21"
+   },
+   {
+    "lv": "26",
+    "at": 26,
+    "spec": 1,
+    "icon": "spell_fire_soulburn",
+    "title": "Respec to Demonology (Mobalytics)",
+    "body": "Before you respec: visit the Warlock trainer and learn Searing Pain Rank 2 (the same visit also has Curse of Tongues R1, Life Tap R3 and Detect Invisibility R1). Then reset your talents (all 16 points: Improved Corruption, Suppression, Unholy Power and Demonic Energies) and spend 17 points in the Mobalytics Demonology order: Unholy Power 5, Demonic Energies 2, Fel Vitality 3, Master Summoner 2, Improved Sayaad 3, Demonic Brand 2/3 (3/3 at 27). From now on the Succubus is your demon: Searing Pain + /petattack brands her target and lets her tank. Corruption has a cast time again until Improved Corruption is back to 5/5 at 45 (1/5 at 31). Next: Fel Domination 28, Demonic Sacrifice 29, Soul Link 30; ends 20/31/0 at 60. Cost: a respec costs gold and the fee climbs with each use (TechRadar, Oct 10); the exact amount isn't published. Orc: press Blood Fury (+10% spell power, 2 min) on dangerous pulls; Command adds 5% pet damage on its own.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026; trainer table (TRAINER_RAW 26); TechRadar Oct 10 (respec cost); Orc racials: Blizzard notes Oct 27 / Nov 2, sktools.gg client 71037",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-21",
+    "quote": "Once you reach Level 26, you will need to go to the Warlock trainer to learn Rank 2 Searing Pain and then respec"
+   },
+   {
+    "lv": "28–30",
+    "at": 30,
+    "spec": 1,
+    "icon": "spell_shadow_gathershadows",
+    "title": "Fel Domination, Demonic Sacrifice, Soul Link",
+    "body": "Fel Domination 28 for instant resummons, Demonic Sacrifice 29 (not used yet), Soul Link 30: your demon takes 30% of your damage, keep it on. Felhunter class quest at 30.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "31–40",
+    "at": 40,
+    "spec": 1,
+    "icon": "spell_shadow_metamorphosis",
+    "title": "Demonic Knowledge, Master Demonologist",
+    "body": "Improved Corruption 1 (31), Demonic Knowledge 32-34 (spell damage = your level while a demon is out), Demonic Embrace 35, Master Demonologist 36-40 (Succubus: +10% Shadow damage). Felsteed at 40. Dual Spec at 40 is optional now: the guide doesn't cover it.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "41",
+    "at": 41,
+    "spec": 1,
+    "icon": "spell_shadow_psychicscream",
+    "title": "Demonic Pact",
+    "body": "Summon the Imp, Demonic Sacrifice it for 15% Shadow damage, then summon the Succubus; the buff stays.",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 10 2026, read Nov 10 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-10"
+   },
+   {
+    "lv": "42–60",
+    "at": 60,
+    "spec": 1,
+    "icon": "spell_shadow_focusedpower",
+    "title": "Affliction finish",
+    "body": "Improved Corruption 42-45 (instant Corruption again at 45), Soul Harvest 46-47 (Crix: sit and drink while its mana buff from a Drain Soul kill is up for huge regen, possibly a bug), Suppression 48-51 (4/5 = 100% hit against your level), Pandemic 52-54, Improved Bane of Agony 55-56, Malevolence 57-60 (4/5; or a 5th Suppression point and 3 Malevolence). Ends 20/31/0. Raid builds at 60 stay in the planner: Affliction 30/0/21 or Demonology 2/31/18 (Mobalytics class guides, Oct 30).",
+    "src": "Mobalytics Warlock Leveling Guide (Crix), Demonology Respec LV 26 variant, updated Nov 15 2026 (page re-dated Nov 16), read Nov 16 2026",
+    "url": "https://mobalytics.gg/wow-forever/classes/warlock-leveling-guide?ws-ngf5-25=activeVariantId%2C10",
+    "_tag": "Unofficial, single source (guide theorycraft, Forever beta-based)",
+    "_date": "2026-11-16"
+   }
+  ]
  },
  "rotations": {
   "ROT": {
@@ -9634,6 +9801,20 @@
     "tag": "NEW",
     "fkey": "F3",
     "lvl": 12
+   },
+   {
+    "title": "Blood Fury (Orc burst)",
+    "icon": "racial_orc_berserkerstrength",
+    "spec": "both",
+    "for": "D",
+    "where": "Spare key (no Naga button yet)",
+    "code": "#showtooltip Blood Fury\n/cast Blood Fury",
+    "does": "Orc racial: +10% Attack Power and Spell Power for 15 s, 2 min cooldown. Press it on elites, dangerous pulls and dungeon packs; from 26 press it after Demonic Brand is on the target. Command (+5% pet damage) is passive and needs no key.",
+    "lvl": 1,
+    "tag": "NEW",
+    "src": "Blizzard dev notes Oct 27 / Nov 2 (Official, 2 min cooldown); effect text from client data (sktools.gg client 71037, forevermastery.com client 70888; Unofficial), read Nov 21 2026",
+    "url": "https://sktools.gg/forever/races/orc",
+    "flag": "Kept on its own key, not folded into a damage macro, until it is confirmed off the global cooldown in game."
    }
   ]
  },
@@ -24234,11 +24415,11 @@
   }
  },
  "_meta": {
-  "version": 55,
-  "generated_at": "2026-11-21T10:05-05:00",
-  "source": "WoW Forever bot, Nov 21 2026: Crix Warlock leveling video + Mobalytics Affliction 1-60 tab; plus Claude, on Jason's go: Kestrik's default talent order is Wowhead (feral_wh)",
+  "version": 56,
+  "generated_at": "2026-11-21T11:01-05:00",
+  "source": "WoW Forever bot, Nov 21 2026: Drazhul Fellbrand (4th character, key D) data for Claude's page ca2ff2f",
   "notes_commit": "dd6fea4",
-  "notes": "Nov 21: Crix's Warlock leveling video added (Corvin's plan unchanged); Mobalytics Affliction 1-60 now 40/11/0 with Wrack at 40. Also: Kestrik's default talent guide is now Wowhead (Lexolas), the one he follows."
+  "notes": "Nov 21: Drazhul Fellbrand (Orc Warlock, key D) added: card, Orc racials, professions, his pre-26 build, Blood Fury macro, leveling path and captions."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Wowhead (Lexolas, Nov 17) Feral 0/34/17 is his default since Nov 21, the guide he follows; Mobalytics (yumytv, Nov 14) 9/31/11 and Icy Veins (Meyra, Nov 4) 9/32/10 are the alternatives in Next ding.",
@@ -24247,5 +24428,12 @@
   "rotations": "Corvin: Mobalytics (Crix, Nov 10; Nov 15 update adds the Rank 1 Shadow Bolt filler and the Felhunter option; Nov 16: Rank 1 is his main filler, max rank on dungeon bosses and elites) leveling rotation, Affliction-style to 25 and Demonic Brand Demonology from the 26 respec; Icy Veins rotations kept in the data as reference. Zanjiro: Icy Veins rotation (updated Nov 13: Windfury Weapon always from 30, Water Shield between pulls, no Rage of the Farseer) with Nicktew level20/25+ and dungeon alternatives in notes; learned ranks/talents require checking. Kestrik: Feral leveling from Method (Birra, Nov 14) and Warcraft Tavern; one rotation per form.",
   "path": "Mobalytics (Crix, plan since Nov 10, respec at 26 unchanged; Nov 15 talent change moves 2 points into Soul Harvest at 46-47): your 4 Suppression points stay, Affliction-style talents to 25, then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). Unofficial, single source. Previous Icy Veins plan kept as a reference build.",
   "gear": "Best pick per slot from your notes. Stats past level 30 stay hidden until an item drops on the server. Kestrik: Horde Feral picks from Icy Veins (gear to 60 since its Nov 15 update) and the Forever item data, scored with weapon DPS first."
+ },
+ "captions_D": {
+  "path": "Mobalytics (Crix), the same plan as Corvin: the guide's pre-26 order as written (Improved Corruption, Suppression, Unholy Power, Demonic Energies), then train Searing Pain Rank 2 and respec to Demonology at 26 (Soul Link 30, Demonic Pact 41, 20/31/0 at 60). At 21 you have Affliction 6 / Demonology 6 (screenshot, Nov 21). Unofficial, single source.",
+  "builds": "Drazhul: Mobalytics' Demonology respec at 26, Corvin's plan ('Mobalytics pre-26 as written' to 25, 'Mobalytics Demo respec at 26' after; Crix updated Nov 15, read Nov 21). Icy Veins' Affliction and Demonology orders and Crix's Affliction 1-60 stay as references.",
+  "rotations": "Drazhul: Mobalytics (Crix) leveling rotation, the same as Corvin's: Affliction-style to 25, Demonic Brand Demonology from the 26 respec (Searing Pain, Bane, Immolate, Corruption, Curse of the Elements, Rank 1 Shadow Bolt filler; max rank on bosses and elites). Icy Veins rotations kept as reference.",
+  "naga": "Drazhul: the warlock plates at your level, following the Mobalytics leveling rotation (Brand button from 26, Fel Domination 28, no Wrack). Blood Fury has no Naga button yet; it is in the Macro book.",
+  "macros": "Drazhul: the shared warlock macros (Mobalytics, Nov 10: Searing Pain + pet from 26, Succubus summon, Fel Domination resummon, Imp sacrifice at 41, Torment + attack) plus your Orc Blood Fury macro."
  }
 }
