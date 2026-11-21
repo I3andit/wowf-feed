@@ -974,12 +974,17 @@ function cleanGuide(g: any): Record<string, string> {
   const out: Record<string, string> = { ...GUIDE_DEFAULT };
   // A warlock pick saved before the feed named this primary plan belongs to the old plan: it resets once to the new one.
   const stale = !g || g.plan !== GUIDE_DEFAULT.warlock;
+  // Nov 21: the same for Kestrik. planK is the druid default his pick was saved under; when the feed moves `primary`
+  // to another druid order, or the pick was saved before planK existed, it resets once to the new default.
+  const staleK = !g || g.planK !== GUIDE_DEFAULT.druid;
   ["shaman", "warlock", "druid"].forEach((cls: string) => {
     const v = g && typeof g[cls] === "string" ? g[cls] : "";
     if (cls === "warlock" && stale) return;
+    if (cls === "druid" && staleK) return;
     if (guideOptions(cls).some((b: BuildDef) => b.seq === v)) out[cls] = v;
   });
   out.plan = GUIDE_DEFAULT.warlock;
+  if (GUIDE_DEFAULT.druid) out.planK = GUIDE_DEFAULT.druid;
   return out;
 }
 function guideSeq(seq?: string): string | undefined {
