@@ -24432,7 +24432,7 @@
  },
  "_meta": {
   "version": 57,
-  "generated_at": "2026-11-21T12:40-05:00",
+  "generated_at": "2026-11-21T11:40-05:00",
   "source": "Claude at Jason's report, Nov 21 2026: the warlock's summon macro had a dead Ctrl key before 30",
   "notes_commit": "dd6fea4",
   "notes": "Nov 21 (Jason's report): the warlock's F1 summon macro no longer casts Summon Felhunter on Ctrl before level 30, where the trainer does not sell it yet; Ctrl is the Imp from 20 to 29. Earlier, Nov 21: Drazhul Fellbrand (Orc Warlock, key D) added: card, Orc racials, professions, his pre-26 build, Blood Fury macro, leveling path and captions."
