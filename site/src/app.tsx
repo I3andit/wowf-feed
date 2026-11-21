@@ -47,19 +47,41 @@ const SPRITE_D_START = 216;
 SPRITE_D_NAMES.forEach((n: string, i: number) => { if (ICON_POS[n] === undefined) ICON_POS[n] = SPRITE_D_START + i; });
 SPRITE_C_NAMES.forEach((n: string, i: number) => { if (ICON_POS[n] === undefined) ICON_POS[n] = SPRITE_C_START + i; });
 SPRITE_B_NAMES.forEach((n: string, i: number) => { if (ICON_POS[n] === undefined) ICON_POS[n] = SPRITE_B_START + i; });
-// Nov 17 (Jason's screenshot): hover cards near the page edge were cut off by the page's overflow clip. One listener in
-// App calls this for the hovered cell: it nudges the card sideways until it sits inside the page.
-function fitHover(host: HTMLElement): void {
-  const tip = host.querySelector(":scope > .wf-tt, :scope > .wf-tip") as HTMLElement | null;
-  if (!tip) return;
-  tip.style.translate = "";
-  const page = host.closest("main");
-  const b = page ? page.getBoundingClientRect() : null;
-  const lo = Math.max(b ? b.left : 0, 0) + 6;
-  const hi = Math.min(b ? b.right : window.innerWidth, window.innerWidth) - 6;
-  const r = tip.getBoundingClientRect();
-  const dx = r.left < lo ? lo - r.left : r.right > hi ? hi - r.right : 0;
-  if (dx) tip.style.translate = `${Math.round(dx)}px 0`;
+// Nov 17 (Jason's screenshot): hover cards near the page edge were cut off by the page's overflow clip, so they were
+// nudged sideways. Nov 21 (his second screenshot): cards inside a list that scrolls in its own box (Dungeon gear) were
+// still cut off, because a box that scrolls or clips also clips everything drawn inside it. So a hover card is no
+// longer drawn inside its cell at all. The card in the cell is only the template (never shown); one listener in App
+// copies it into a single floating card on top of the page and places it against the window: above the cell when
+// there is room, below it when there is not, and always inside the left and right edges.
+const HOVER_HOSTS = ".wf-cell, .wf-tipwrap";
+let hoverEl: HTMLElement | null = null;
+let hoverHost: HTMLElement | null = null;
+function hoverSrc(host: HTMLElement): HTMLElement | null {
+  const all = host.querySelectorAll(".wf-tt, .wf-tip");
+  for (let i = 0; i < all.length; i++) { const t = all[i] as HTMLElement; if (t.closest(HOVER_HOSTS) === host) return t; }
+  return null;
+}
+function hideHover(): void { if (hoverEl) hoverEl.style.display = "none"; hoverHost = null; }
+function showHover(host: HTMLElement): void {
+  const tip = hoverSrc(host);
+  if (!tip || !document.body) { hideHover(); return; }
+  if (!hoverEl) { hoverEl = document.createElement("div"); hoverEl.setAttribute("aria-hidden", "true"); document.body.appendChild(hoverEl); }
+  const f = hoverEl;
+  hoverHost = host;
+  f.className = `${tip.className} wf-float`;
+  f.innerHTML = tip.innerHTML; // the template's own rendered content, copied as it is
+  f.style.cssText = "";
+  if (tip.style.width) f.style.width = tip.style.width;
+  f.style.display = "block";
+  const h = host.getBoundingClientRect();
+  const r = f.getBoundingClientRect();
+  const vw = document.documentElement.clientWidth || window.innerWidth;
+  const vh = window.innerHeight;
+  const left = Math.max(6, Math.min(h.left + h.width / 2 - r.width / 2, vw - r.width - 6));
+  let top = h.top - r.height - 8;
+  if (top < 6) top = Math.max(6, Math.min(h.bottom + 8, vh - r.height - 6));
+  f.style.left = `${Math.round(left)}px`;
+  f.style.top = `${Math.round(top)}px`;
 }
 type SpriteSt = "wait" | "ok" | "bad";
 let spriteState: SpriteSt = "wait";
@@ -156,9 +178,12 @@ const CSS = `
 .wf-tip { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); min-width: 140px; max-width: 240px; background: #0a0b14; color: #fff; border: 1px solid ${GOLD}; border-radius: 4px; padding: 6px 8px; font-size: 12px; line-height: 1.35; opacity: 0; pointer-events: none; transition: opacity .15s ease; z-index: 30; text-align: left; }
 .wf-tip b { display: block; color: #fff; font-weight: 600; }
 .wf-tip i { display: block; color: #ffd100; font-style: normal; margin-top: 2px; }
-.wf-tipwrap:hover .wf-tip { opacity: 1; }
+.wf-tip em { display: block; color: #e9e4d6; font-style: normal; }
+.wf-tip em:first-of-type { margin-top: 4px; padding-top: 4px; border-top: 1px solid #3a3020; }
+.wf-tip u { display: block; color: #9a8f78; text-decoration: none; font-size: 11px; margin-top: 3px; }
+.wf-tipwrap .wf-tip, .wf-cell .wf-tt { display: none; }
+body > .wf-float { position: fixed; left: 0; top: 0; bottom: auto; right: auto; transform: none; translate: none; opacity: 1; display: block; z-index: 1000; transition: none; }
 .wf-tt { position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translateX(-50%); width: 260px; background: rgba(8,9,20,.97); border: 1px solid #6b5a33; border-radius: 6px; padding: 8px 10px; color: #fff; font-size: 12px; line-height: 1.4; text-align: left; opacity: 0; pointer-events: none; transition: opacity .12s ease; z-index: 40; box-shadow: 0 6px 18px rgba(0,0,0,.6); }
-.wf-cell:hover .wf-tt { opacity: 1; }
 .wf-cell:hover { z-index: 41; }
 .wf-cell img, .wf-cell canvas { transition: transform .12s ease, filter .12s ease; }
 .wf-cell:hover img, .wf-cell:hover canvas { transform: scale(1.08); }
@@ -284,7 +309,8 @@ function PreLine({ lead, mark, src }: { lead: string; mark?: "notes" | "guide" |
   return <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 11, color: MUTED, marginTop: 6 }}><span>{lead}</span><PreTag mark={mark} src={src} /></div>;
 }
 
-function Icon({ icon, size = 36, name, tip, ring, dim }: { icon: string; size?: number; name?: string; tip?: string; ring?: string; dim?: boolean }) {
+// Nov 21: `rows` are extra lines in the hover card, one per line (an item's stats), and `foot` a small last line.
+function Icon({ icon, size = 36, name, tip, ring, dim, rows, foot }: { icon: string; size?: number; name?: string; tip?: string; ring?: string; dim?: boolean; rows?: string[]; foot?: string }) {
   const st = useSprite();
   const [el, setEl] = useState<HTMLCanvasElement | null>(null);
   const pos = ICON_POS[icon];
@@ -309,7 +335,7 @@ function Icon({ icon, size = 36, name, tip, ring, dim }: { icon: string; size?: 
       ) : (
         <canvas ref={(c: HTMLCanvasElement | null) => setEl(c)} width={px} height={px} role="img" aria-label={name ?? icon} style={{ display: "block", width: size, height: size, boxSizing: "border-box", borderRadius: 4, border, background: "#221c14", filter: dim ? "grayscale(1) brightness(.55)" : undefined }} />
       )}
-      {name ? (<span className="wf-tip"><b>{name}</b>{tip ? <i>{tip}</i> : null}</span>) : null}
+      {name ? (<span className="wf-tip"><b>{name}</b>{tip ? <i>{tip}</i> : null}{(rows ?? []).map((x: string, k: number) => <em key={k}>{x}</em>)}{foot ? <u>{foot}</u> : null}</span>) : null}
     </span>
   );
 }
@@ -1922,7 +1948,7 @@ function GearSlot({ s, lv, ck, toggle, sel, onSel, mirror, who, game }: { s: GSl
   return (
     <div className={chase ? "wf-glow" : undefined} role="button" tabIndex={0} onClick={() => onSel(s.slot)} style={{ position: "relative", display: "flex", flexDirection: mirror ? "row-reverse" : "row", gap: 8, alignItems: "flex-start", padding: 6, borderRadius: 6, border: `1px solid ${chase ? ORANGE : sel ? GOLD_HI : "#3a3020"}`, background: chase ? "linear-gradient(180deg, rgba(255,128,0,.14), rgba(0,0,0,.35))" : "rgba(0,0,0,.35)", textAlign: mirror ? "right" : "left", cursor: s.picks.length > 1 ? "pointer" : "default", opacity: state === "soon" ? 0.78 : 1 }}>
       <div style={{ flex: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
-        <span style={{ display: "block", borderRadius: 5, boxShadow: `0 0 0 1px #000, 0 0 8px ${q[0]}88` }}><Icon icon={info ? info[0] : ""} size={36} ring={q[0]} name={p.name} tip={`${q[1]}${p.faction ? ` · ${p.faction}` : ""} · ${shortHow(p)}`} /></span>
+        <span style={{ display: "block", borderRadius: 5, boxShadow: `0 0 0 1px #000, 0 0 8px ${q[0]}88` }}><Icon icon={info ? info[0] : ""} size={36} ring={q[0]} name={p.name} tip={`${q[1]}${p.faction ? ` · ${p.faction}` : ""} · ${shortHow(p)}`} rows={itemRows(p.item, p.stats)} foot={itemRows(p.item, p.stats).length ? `Levels ${p.lv}` : NO_STATS} /></span>
         <span onClick={(e: { stopPropagation: () => void }) => e.stopPropagation()} style={{ display: "flex", alignItems: "center", gap: 2, fontSize: 9, color: got ? FEL : MUTED }}><TickBox on={got} onClick={() => toggle(p.id)} small color={q[0]} />Got</span>
       </div>
       <div style={{ minWidth: 0, flex: 1 }}>
@@ -1994,7 +2020,7 @@ function GearSheet({ who, lv, ck, toggle, game }: { who: Who; lv: number; ck: Re
                 return (
                   <div key={`${p.id}-${k}`} style={{ display: "flex", gap: 8, alignItems: "center", padding: "4px 6px", borderRadius: 6, border: `1px solid ${isNow && !got ? ORANGE : "transparent"}`, background: isNow ? "rgba(255,128,0,.08)" : "transparent" }}>
                     <TickBox on={got} onClick={() => toggle(p.id)} small color={q[0]} />
-                    <Icon icon={info ? info[0] : ""} size={28} ring={q[0]} name={p.name} tip={`${q[1]}${p.faction ? ` · ${p.faction}` : ""} · ${shortHow(p)}`} />
+                    <Icon icon={info ? info[0] : ""} size={28} ring={q[0]} name={p.name} tip={`${q[1]}${p.faction ? ` · ${p.faction}` : ""} · ${shortHow(p)}`} rows={itemRows(p.item, p.stats)} foot={itemRows(p.item, p.stats).length ? `Levels ${p.lv}` : NO_STATS} />
                     <div style={{ minWidth: 0, flex: 1, fontSize: 12 }}>
                       <span style={{ color: q[0], fontWeight: 600 }}>{p.name}</span>{p.alt && !p.alt_label && !p.alts ? <span style={{ color: MUTED }}> or <span style={{ color: ITEM_INFO[p.alt] ? QUALITY[ITEM_INFO[p.alt][1]][0] : INK, fontWeight: 600 }}>{p.alt}</span></span> : null}
                       {isNow && !got ? <span style={{ marginLeft: 6, fontSize: 9, fontWeight: 700, padding: "0 5px", borderRadius: 3, background: ORANGE, color: "#1a0d00" }}>CHASE</span> : null}
@@ -2078,6 +2104,21 @@ function dScore(stats: Record<string, number> | undefined, w: Record<string, num
   return Object.keys(stats || {}).reduce((t: number, k: string) => t + (w[k] || 0) * ((stats as Record<string, number>)[k] || 0), 0);
 }
 function dunRange(lv: string): [number, number] { const m = lv.match(/\d+/g) || []; return [Number(m[0] || 0), Number(m[m.length - 1] || 0)]; }
+// Nov 21 (Jason): hovering a gear item shows its stats, one per line like the game's own tooltip. A gear pick uses its
+// own stats when it has them, else the stats of the dungeon loot row with the same item name (as the score does).
+const STAT_FULL: Record<string, string> = { str: "Strength", agi: "Agility", sta: "Stamina", int: "Intellect", spi: "Spirit", sp: "Spell Power", shadow: "Shadow damage", fire: "Fire damage", frost: "Frost damage", nature: "Nature damage", heal: "Healing", ap: "Attack Power", crit: "Crit", hit: "Hit", mp5: "Mana per 5 s", hp5: "Health per 5 s" };
+function statRows(stats?: Record<string, number>): string[] {
+  if (!stats) return [];
+  const has = (k: string) => typeof stats[k] === "number" && stats[k] !== 0;
+  const top = [has("dps") ? `${stats.dps} DPS` : "", has("armor") ? `${stats.armor} Armor` : ""].filter((t: string) => !!t);
+  const rest = STAT_LABEL.filter((x: [string, string]) => x[0] !== "dps" && x[0] !== "armor" && has(x[0])).map((x: [string, string]) => `${stats[x[0]] > 0 ? "+" : ""}${stats[x[0]]} ${STAT_FULL[x[0]] ?? x[1]}`);
+  return [...top, ...rest];
+}
+function itemRows(item: string, own?: Record<string, number>): string[] {
+  const row = LOOT_BY_ITEM[item];
+  return statRows(own || (row ? row.stats : undefined));
+}
+const NO_STATS = "No stats on the table for this item yet";
 function statLine(stats?: Record<string, number>): string {
   if (!stats) return "";
   return STAT_LABEL.filter((x: [string, string]) => !!stats[x[0]]).map((x: [string, string]) => `${stats[x[0]]} ${x[1]}`).join(" · ");
@@ -2193,7 +2234,7 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game
             const url = (l._source || "").match(/https?:\/\/[^\s;]+/);
             return (
               <div key={`${l.dkey}-${l.item}`} className={`wf-dun-row${x.c.kind === "cmp" && x.c.score >= 1 ? " wf-dun-row-up" : ""}`} style={{ opacity: x.c.kind === "have" ? 0.6 : 1 }}>
-                <Icon icon={icon} size={36} ring={q[0]} name={l.item} tip={[l.slot, l.type].filter((t: string | undefined) => !!t).join(" · ")} />
+                <Icon icon={icon} size={36} ring={q[0]} name={l.item} tip={[l.slot, l.type].filter((t: string | undefined) => !!t).join(" · ")} rows={statRows(l.stats)} foot={[l.stats ? "" : NO_STATS, l.req ? `Requires level ${l.req}` : "", l.quest ? `Quest: ${l.quest}` : l.boss ?? ""].filter((t: string) => !!t).join(" · ")} />
                 <div style={{ minWidth: 0 }}>
                   <div style={{ color: q[0], fontWeight: 600, fontSize: 13, lineHeight: 1.25 }}>{l.item}{(who === "K" ? K_PICK_ITEMS[l.item] : ITEM_INFO[l.item]) ? <a href="#gear" className="wf-macro wf-macro-sm" title="This item is one of your gear picks">Your pick</a> : null}</div>
                   <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.35 }}>{[l.slot, l.type, l.quest ? `Quest: ${l.quest}` : l.boss, l.rate].filter((t: string | undefined) => !!t).join(" · ")}{url ? <> · <a href={url[0]} target="_blank" rel="noreferrer" style={{ color: GOLD }}>{hostOf(url[0])}</a></> : null}</div>
@@ -2209,7 +2250,7 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game
             const q = info ? QUALITY[info[1]] : [GOLD, ""];
             return (
               <div key={x.p.id} className="wf-dun-row">
-                <Icon icon={info ? info[0] : "inv_misc_orb_02"} size={36} ring={q[0]} name={x.p.item} tip={x.slot} />
+                <Icon icon={info ? info[0] : "inv_misc_orb_02"} size={36} ring={q[0]} name={x.p.item} tip={x.slot} rows={itemRows(x.p.item, x.p.stats)} foot={itemRows(x.p.item, x.p.stats).length ? `Levels ${x.p.lv}` : NO_STATS} />
                 <div style={{ minWidth: 0 }}>
                   <div style={{ color: q[0], fontWeight: 600, fontSize: 13, lineHeight: 1.25 }}>{x.p.name}<a href="#gear" className="wf-macro wf-macro-sm" title="Open the gear sheet for the full how-to">Your pick</a></div>
                   <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.35 }}>{x.slot} · levels {x.p.lv}</div>
@@ -3180,10 +3221,26 @@ export default function App() {
   useEffect(() => { if (tDef.cls === "warlock") { setBuildKey(guideBuildKey("warlock")); setPreview(null); } }, [lockWho]);
   const showC = shows(view, "C");
   useEffect(() => {
-    const fit = (e: Event) => { let el = e.target as HTMLElement | null; while (el && el.matches) { if (el.matches(".wf-cell, .wf-tipwrap")) fitHover(el); el = el.parentElement; } };
-    document.addEventListener("mouseover", fit);
-    document.addEventListener("focusin", fit);
-    return () => { document.removeEventListener("mouseover", fit); document.removeEventListener("focusin", fit); };
+    // Nov 21: the innermost hovered cell that has a hover card gets the one floating card (showHover).
+    const over = (e: Event) => {
+      let el = e.target as HTMLElement | null;
+      while (el && el.matches) { if (el.matches(HOVER_HOSTS) && hoverSrc(el)) break; el = el.parentElement; }
+      const host = el && el.matches ? el : null;
+      if (!host) hideHover(); else if (host !== hoverHost) showHover(host);
+    };
+    // A click can change what the card says (a level, a tick): redraw it from the cell, or drop it if the cell is gone.
+    const again = () => { setTimeout(() => { if (hoverHost) { if (document.body.contains(hoverHost)) showHover(hoverHost); else hideHover(); } }, 60); };
+    document.addEventListener("mouseover", over);
+    document.addEventListener("focusin", over);
+    document.addEventListener("click", again);
+    document.addEventListener("scroll", hideHover, true);
+    document.documentElement.addEventListener("mouseleave", hideHover);
+    window.addEventListener("blur", hideHover);
+    return () => {
+      document.removeEventListener("mouseover", over); document.removeEventListener("focusin", over); document.removeEventListener("click", again);
+      document.removeEventListener("scroll", hideHover, true); document.documentElement.removeEventListener("mouseleave", hideHover); window.removeEventListener("blur", hideHover);
+      hideHover();
+    };
   }, []);
   // Nov 10: equipped gear from the game sync (the addon's last snapshot), refreshed every 2 minutes.
   const [game, setGame] = useState<Record<string, GameChar> | null>(null);
@@ -3222,9 +3279,9 @@ export default function App() {
       <Hero view={view} setView={setView} />
       {/* Layout Nov 6 (Claude, for Jason): in-session sections first, reference after, launch night folded at the bottom. Keep this order and the sticky bar. */}
       <StickyNav lvC={lvC} lvV={lvV} lvK={lvK} lvD={lvD} view={view} setView={setView} groups={[
-        { label: "Play", items: [{ label: "Next ding", id: "ding" }, { label: "Dungeon gear", id: "runs" }, { label: "Rotations", id: "rotations" }, { label: "Naga binds", id: "naga" }, { label: "Talents", id: "builds" }] },
+        { label: "Play", items: [{ label: "Next ding", id: "ding" }, { label: "Dungeon gear", id: "runs" }, { label: "Rotations", id: "rotations" }, { label: "Naga binds", id: "naga" }, { label: "Macros", id: "macros" }, { label: "Talents", id: "builds" }] },
         { label: "Plan", items: [...(showC || view === "D" ? [{ label: "Leveling path", id: "path" }] : []), { label: "Gear and dungeons", id: "gear" }, { label: "Professions", id: "profs" }, ] },
-        { label: "Reference", items: [{ label: "Macros", id: "macros" }, { label: "Addons", id: "addons" }, ...(view === "both" ? [{ label: "Characters", id: "chars" }] : []), { label: "Meta board", id: "meta" }, { label: "Patch feed", id: "feed" }, { label: "Saves", id: "progress" }, { label: "Launch night", id: "launch" }] },
+        { label: "Reference", items: [{ label: "Addons", id: "addons" }, ...(view === "both" ? [{ label: "Characters", id: "chars" }] : []), { label: "Meta board", id: "meta" }, { label: "Patch feed", id: "feed" }, { label: "Saves", id: "progress" }, { label: "Launch night", id: "launch" }] },
       ]} />
       <Section heading={view === "both" ? "Next ding" : `Next ding · ${view === "C" ? "Corvin" : view === "K" ? K_NAME : view === "D" ? D_NAME : V_NAME}`} id="ding" caption="Set each character's level here (or on the character cards). Talents, rotations, Naga stage, macros and these cards all follow it.">
         <Grid columns={2} plain>
@@ -3289,6 +3346,12 @@ export default function App() {
         <Text>{use12 ? "Setup steps above are from the Class Hub note (12-button plate)." : "The 12-button plate takes over at " + NAGA12.enh.from + " for " + V_NAME + " and " + NAGA12.aff.from + " for " + whoName(lockWho) + (lockOld ? " (Spec 1 Affliction and Spec 2 Demonology)" : "") + (HAS_K ? ", " + NAGA12.cat.from + " for " + K_NAME : "") + ". Drag the preview level to see it early."}</Text>
       </Section>
 
+      {/* Nov 21 (Jason): Macros sit right under the Naga binds, so a bind and its macro are one scroll apart. */}
+      <Section heading="Macros" id="macros" caption="Spell-book cards: copy, check length (255 max) and open “What it does”. NEW = added from Forever sources; FIXED = corrected from v1.">
+        <MacroBook lvV={lvV} lvC={lvL} lvK={lvK} view={view} />
+        <Text>{PL.macros_skip.text}</Text>
+      </Section>
+
       <Section heading="Talent trees" id="builds" caption={"Current Forever talent data (build 1.60.1.70707) with values from Blizzard's Nov 2 notes where they changed. The slider follows the character's level (Shaman builds: " + V_NAME + ", Warlock builds: " + whoName(lockWho) + "); moving it previews another level without changing the character. " + whoName(lockWho) + "'s path levels Spec 1 Affliction to 60; Spec 2 (Demonology, for groups) unlocks at 40."}>
         {view === "K" && !HAS_K_TAL ? <Text>{`${K_NAME}'s talent trees are not on the table yet. The research feed adds them; his rotations, Naga plates and macros are live.`}</Text> : <>
         {preview !== null ? (
@@ -3350,11 +3413,6 @@ export default function App() {
         <Text>{PL.profs_note_trainers.text}</Text>
         <Text>{PL.profs_note_slider.text}</Text>
         </>}
-      </Section>
-
-      <Section heading="Macros" id="macros" caption="Spell-book cards: copy, check length (255 max) and open “What it does”. NEW = added from Forever sources; FIXED = corrected from v1.">
-        <MacroBook lvV={lvV} lvC={lvL} lvK={lvK} view={view} />
-        <Text>{PL.macros_skip.text}</Text>
       </Section>
 
       <Section heading="Addons" id="addons">

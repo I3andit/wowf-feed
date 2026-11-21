@@ -95,6 +95,8 @@ Each pick in `gear.GEAR_SHEETS` may carry two more optional fields.
 
 The sheet shows "Score N" on every pick and alternate that has stats, plus the change against the item worn in game when the game sync has that item's stats. Keep any score you write into how-to text in step with these stats, because the page number is computed and yours is typed.
 
+**Hover boxes (page behaviour since 2026-11-21).** Hovering a gear icon on the sheet, in an upgrade path or in Dungeon gear lists the item's stats one per line, from the same place the score reads them: the pick's own `stats`, else the `LOOT` row with the same item name. An item with neither says "No stats on the table for this item yet", so a missing `stats` is now visible to Jason. A `LOOT` row's hover box also shows `req` and the boss or quest. Nothing to add for this; it is one more reason to give every pick stats. The Macros section sits right under Naga binds since the same day (Jason's ask); section ids did not change.
+
 ### Respec plans and reference copies (optional, added 2026-11-10)
 
 A class's leveling plan can change talent order part way up. The page reads these optional fields on `talents.BUILD_DEFS` entries:
