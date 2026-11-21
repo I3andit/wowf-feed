@@ -21,8 +21,13 @@ const THEME = {
 export function useGrokTheme() { return THEME; }
 
 declare const WF_DATA: any;
+// Nov 21: in the second warlock's own view (app.tsx sets WF_LOCK to "D") a caption in captions_D replaces the shared one.
 const captionFor = (id?: string, fallback?: string) => {
-  try { const c = id ? WF_DATA?.captions?.[id] : undefined; return typeof c === "string" ? c : fallback; } catch { return fallback; }
+  try {
+    const own = id && (globalThis as any).WF_LOCK === "D" ? WF_DATA?.captions_D?.[id] : undefined;
+    if (typeof own === "string") return own;
+    const c = id ? WF_DATA?.captions?.[id] : undefined; return typeof c === "string" ? c : fallback;
+  } catch { return fallback; }
 };
 
 export function Page({ title, summary, width, children }: { title: string; summary?: string; width?: string; children: ReactNode }) {

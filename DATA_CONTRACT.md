@@ -131,14 +131,15 @@ Section captions were already data: `captions.path`, `captions.builds`, `caption
 ## Rules the checker enforces (a push that breaks one is ignored)
 
 1. Valid JSON, under 2 MB, every section and key in the table above present.
-2. Tick ids stay unique across launch items, route steps, gear rows, dungeons, progress and gear extras. Since 2026-11-17 the page also builds `dk<DKEYS key>` for Kestrik's dungeon clears, so no other id may start with `dk`.
+2. Tick ids stay unique across launch items, route steps, gear rows, dungeons, progress and gear extras. Since 2026-11-17 the page also builds `dk<DKEYS key>` for Kestrik's dungeon clears, so no other id may start with `dk`. Since 2026-11-21 it also builds `dd<DKEYS key>` for Drazhul's dungeon clears and `D.<pick id>` for his gear ticks, so no other id may start with `dd` or `D.`.
 3. **Ids keep their meaning.** Saved progress is stored by tick id:
    - Explicit ids (`la*` in LAUNCH_ITEMS, `p*` in PROGRESS, GEAR_EXTRA_IDS, DKEYS) can be added anywhere but never removed or reused for something else.
    - Numbered rows mean "row n": ROUTES steps, SHAM_GEAR rows and LOCK_GEAR rows can only grow AT THE END. Changing the text of an existing row is fine; inserting or deleting a row is not.
    - DKEYS has exactly one key per DUNGEONS row, in the same order.
 4. `SKILL_KEYS` never changes.
-5. **Kestrik's optional keys, when present, have the shape in "Kestrik's talents, professions, gear and dungeons".** Checked: `talents.TREES.druid` is 3 well-formed trees and every prerequisite names a druid talent; every `BUILD_DEFS` entry with `cls: "druid"` has a key, a label and an order that exists, spends only talents from `TREES.druid`, never more points than a talent has ranks and never more than 51; `gear.GEAR_SHEETS.K` has `left`, `right`, `bottom`, every pick has its required fields and a `gk` id that is unique and listed in `GEAR_EXTRA_IDS`; `dungeons.DUN_NOTES_K` is an object whose keys are all in `DKEYS`; `dungeons.STAT_WEIGHTS` is `{character: {stat: number}}`; every `LOOT[].for` is a list made of `"C"`, `"V"`, `"K"`; `characters.CHAR_PROFS.K` lists only `PROFS` keys. The reason for a rejected feed is in `/api/status` under `feed.last_error`.
-6. **`professions.PROFS[].by_char`, when present, has the shape in "Per-character profession texts".** Checked: it is an object keyed only by `"C"`, `"V"`, `"K"`; each entry holds only `notes`, `notes_extra`, `why`, `checked`, `pins`; the two note lists are non-empty lists of non-empty strings; `why` and `checked` are non-empty strings; every pin has a number `at` from 0 to 300, a `label` and a `tip`.
+5. **Kestrik's optional keys, when present, have the shape in "Kestrik's talents, professions, gear and dungeons".** Checked: `talents.TREES.druid` is 3 well-formed trees and every prerequisite names a druid talent; every `BUILD_DEFS` entry with `cls: "druid"` has a key, a label and an order that exists, spends only talents from `TREES.druid`, never more points than a talent has ranks and never more than 51; `gear.GEAR_SHEETS.K` has `left`, `right`, `bottom`, every pick has its required fields and a `gk` id that is unique and listed in `GEAR_EXTRA_IDS`; `dungeons.DUN_NOTES_K` is an object whose keys are all in `DKEYS`; `dungeons.STAT_WEIGHTS` is `{character: {stat: number}}`; every `LOOT[].for` is a list made of `"C"`, `"V"`, `"K"`, `"D"`; `characters.CHAR_PROFS.K` lists only `PROFS` keys. The reason for a rejected feed is in `/api/status` under `feed.last_error`.
+6. **`professions.PROFS[].by_char`, when present, has the shape in "Per-character profession texts".** Checked: it is an object keyed only by `"C"`, `"V"`, `"K"`, `"D"`; each entry holds only `notes`, `notes_extra`, `why`, `checked`, `pins`; the two note lists are non-empty lists of non-empty strings; `why` and `checked` are non-empty strings; every pin has a number `at` from 0 to 300, a `label` and a `tip`.
+7. **Drazhul's optional keys, when present, have the shape in "Fourth character: Drazhul".** Checked: `characters.CHARS[3]` and `characters.CHAR_PROFS.D` come together (one without the other is rejected); `CHARS[3]` has a `name` and a `line`, and `color`, `classIcon`, `role`, `profs`, `racials` are well formed when present; `CHAR_PROFS.D` lists only `PROFS` keys; a `for` on a `BUILD_DEFS` entry is `"C"` or `"D"` and sits on a warlock build; a `for: "D"` build is not `primary`, its `then` names a build key and its order exists; a `for` on a `MACROS` entry is `"C"` or `"D"` and sits on a macro with spec `aff`, `demo` or `both`; `talents.PATH_NODES_D` is a non-empty list of `{lv, at, spec, icon, title, body}`.
 
 ## Writing rules (the checker can't see these, so they're on you)
 
@@ -274,3 +275,39 @@ Tick ids: every pick id on his sheet starts with `gk` (`gk1`, `gk2`, ...), is us
 | Professions | `CHAR_PROFS.K` has entries, or game sync has saved a skill for him |
 | Dungeon gear | At least one `LOOT` row lists `"K"`, or `DUN_NOTES_K` has an entry |
 | Gear and dungeons | `GEAR_SHEETS.K` is valid, or `DUN_NOTES_K` has an entry |
+
+## Fourth character: Drazhul (added 2026-11-21)
+
+Drazhul Fellbrand is an Orc warlock, the second warlock next to Corvin. His internal key is `D`. He follows Corvin's plan (the one `primary` warlock build), so he reuses the warlock data and needs almost nothing of his own. The page shows him only when both of these exist, so add them together and never remove or rename them:
+
+- `characters.CHARS[3]`: his card, the same shape as the other three (`name`, `color`, `classIcon`, `line`, `role`, `level`, `profs`, `racials`). `CHARS[0]` stays Zanjiro, `CHARS[1]` Corvin, `CHARS[2]` Kestrik. `name` and `line` are required; `color` defaults to the warlock colour, `classIcon` to `classicon_warlock`, `role` to "Alt". `profs` may be `[]`: his professions then come from `CHAR_PROFS.D` or the game sync, as for Kestrik.
+- `characters.CHAR_PROFS.D`: a list of `PROFS` keys. It may be empty; while it is empty the page shows every profession the game sync has reported a skill for.
+
+Until both are in the feed, the page is the three-character page: no chip, no card, `#drazhul` does nothing.
+
+**What he reuses, with nothing to add.** `talents.TREES.warlock`, the warlock orders and builds, `rotations.ROT.aff` and `.demo`, `naga.NAGA` and `naga.NAGA12` `aff` and `demo`, every macro with spec `aff`, `demo` or `both`, `trainers.TRAINER_RAW.warlock` and `TRAIN_SRC.warlock`, the gear sheet `gear.GEAR_SHEETS.lock`, the Corvin column of `DUNGEONS` (the fourth), and Corvin's `LOOT` rows.
+
+**One warlock at a time on the shared boards.** Talents, Rotations, Naga binds, Macros and the leveling path are one board per class. In Drazhul's view (`#drazhul`) they read his level, his picked guide and his plan. In every other view, All included, they show Corvin, the main. Next ding, the character card, Dungeon gear, the gear sheet and Professions are per character in every view.
+
+**`for` on a warlock build.** A `talents.BUILD_DEFS` entry with `cls: "warlock"` may carry `for: "C"` or `for: "D"` (a string, not a list). Left out, both warlocks use the build: that is every warlock build in the feed today, and none of them needs an edit.
+
+- A `for: "D"` build is his alone: Corvin never sees it in the talent planner or in Next ding. A `for: "C"` build is Corvin's alone.
+- His own first half of the plan: add a build with `for: "D"`, `then: "<key of the main build>"`, a `respec_at` and its own `seq`. It replaces the shared first half for him, in Next ding, the talent planner and the talent levels on Rotations and Naga, and the shared first half disappears from his planner. The main build keeps its `before` pointing at the shared (Corvin's) first half; nothing on the main build changes.
+- `primary` stays on the one build both follow. A `for: "D"` build cannot be `primary`: the checker rejects it. If he should ever follow a different plan than Corvin, ask Claude first.
+- The in-game War Table addon goes by class, so it keeps showing Corvin's plan on the warlock board for both. `for: "D"` builds are left out of the addon's data.
+
+**`for` on a warlock macro.** A `macros.MACROS` entry with spec `aff`, `demo` or `both` may carry `for: "C"` or `for: "D"` (a string). Left out, both warlocks get the macro. A `for: "D"` macro (an Orc racial, for example) shows in the Macro book and on Naga buttons only in his view; a `for: "C"` macro never shows in his view. `for: "D"` macros are left out of the in-game addon's data, so Corvin's bars never get one.
+
+**Leveling path.** He reads `talents.PATH_NODES` at his own level; "Corvin" in a node's title or body reads "Drazhul" for him. Text that is Corvin's alone (the 4 Suppression points he already spent) still shows, so send `talents.PATH_NODES_D` when a node should read differently for him: optional, the same shape as `PATH_NODES`, and it replaces the whole list for him. The respec banner in his Next ding takes its text from the node whose `at` equals the respec level.
+
+**Section captions.** `captions_D` is an optional top-level object, section id to caption string, like `captions`. In his view a caption there replaces the shared one; a section without an entry keeps the shared caption. Today's shared captions for `path`, `builds`, `rotations`, `naga` and `macros` name Corvin.
+
+**Build labels.** A build label that says "Corvin's plan" reads "Drazhul's plan" in his view; the page swaps the name. Labels need no edit.
+
+**Gear and loot.** His sheet is `GEAR_SHEETS.lock` with his own ticks. A `dungeons.LOOT` row is his when its `for` lists `"D"` or `"C"`, or when it has no `for`; so Corvin's rows need no edit, and `"D"` alone is for a row only he should see. He scores with `dungeons.STAT_WEIGHTS.D` when it exists, else with Corvin's set (`STAT_WEIGHTS.C` or the page's warlock defaults). Equipped gear comes from his own game sync.
+
+**Professions.** `professions.PROFS[].by_char.D` holds his own texts, the same five optional fields as for the others.
+
+**State.** His level is `st.lvD`, his profession skills are `st.sk["D:<PROFS key>"]` (outside `SKILL_KEYS`, which never changes), his guide pick is `guide.warlockD`. His dungeon ticks are `dd<DKEYS key>` and his gear ticks `D.<pick id>`; the page builds both, so there is nothing to add. In a WF2 save code his level is the short field `w` (left out while he is level 1; a code without it loads him at level 1). The view name is `D` and the link is `#drazhul`.
+
+**Game sync.** The PC1 watcher tells characters apart by name only, never by class: a character whose name starts with "Drazhul" is sent as `D`, one whose name starts with "Corvin" as `C`. The server saves his level, his equipped gear and every profession that has a `PROFS` entry.
