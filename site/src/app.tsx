@@ -2108,14 +2108,18 @@ function dunMore(key: string, who: Who): DunMore | undefined {
   const row = DUN_MORE[key];
   return row ? row[who] || (who === "D" ? row.C : undefined) : undefined;
 }
+// Nov 23 (Jason): no em dashes on his page. The Bot's longer notes are full of them, so they are shown with a colon
+// (" — " between two clauses) or a comma (anywhere else) until the feed text itself is rewritten. Display only:
+// the feed is not changed, and an en dash in a level range ("17–24") is left alone.
+function noDash(t: string): string { return t.replace(/\s+—\s+/g, ": ").replace(/\s*—\s*/g, ", "); }
 function MoreBody({ m }: { m: DunMore }) {
   const body = { fontSize: 12, color: INK, lineHeight: 1.45, whiteSpace: "pre-line" as const };
   if (m.subs) return (
     <div style={{ display: "grid", gap: 8 }}>
-      {m.subs.map((s: DunSub) => <div key={s.name}><div style={{ fontFamily: SERIF, color: GOLD_HI, fontSize: 13 }}>{s.name}</div><div style={body}>{s.text}</div></div>)}
+      {m.subs.map((s: DunSub) => <div key={s.name}><div style={{ fontFamily: SERIF, color: GOLD_HI, fontSize: 13 }}>{noDash(s.name)}</div><div style={body}>{noDash(s.text)}</div></div>)}
     </div>
   );
-  return <div style={body}>{m.text}</div>;
+  return <div style={body}>{noDash(m.text as string)}</div>;
 }
 // The button in a note cell, in the look of the shaman's Preset cell.
 function MoreCell({ id, m, open, onToggle, tag }: { id: string; m: DunMore; open: boolean; onToggle: (id: string) => void; tag?: string }) {
