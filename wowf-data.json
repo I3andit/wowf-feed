@@ -17787,100 +17787,100 @@
    [
     "Ragefire Chasm",
     "13–18",
-    "Default totems; Cure Poison for Bazzalan",
-    "Easy; three Horde quests at 9"
+    "Default totems; Cure Poison for Bazzalan; Earth Shock Healing Wave from Ragefire Shamans (Icy Veins 19 Oct 2026)",
+    "Easy; three Horde quests at 9; VW or Imp; Bane of Agony; Weakness if the tank is hurting; no Fear (lava). Bazzalan is a satyr but Banish and Subjugate are later (Icy Veins 19 Oct 2026)"
    ],
    [
     "Ruins of Lordaeron (new)",
     "15–22",
-    "Interrupt Rath'mael's Flamestrike",
-    "No Fear; wand through Bjork's 3 s shield"
+    "Interrupt Rath'mael's Flamestrike; Cure Poison for Leech Poison (Witherfang, Viktor); Cure Disease (22) for Ghoul Plague; you cannot Remove Curse (banshee hit-curse) (Tavern, read 23 Nov 2026)",
+    "No Fear; wand through Bjork's 3 s shield; VW; most packs Undead or Beast so Seduce often fails; interrupt Drain Life and Flamestrike (Tavern, read 23 Nov 2026)"
    ],
    [
     "Wailing Caverns",
     "17–24",
-    "Tremor for the whole run",
-    "Fear is a wipe; Cobrahn pattern"
+    "Tremor for the whole run; Poison Cleansing (22) for vipers; Earth Shock Shambler Wild Regeneration and Cobrahn Healing Touch; Sleep is on you, not a Purge (Icy Veins 19 Oct 2026)",
+    "Fear is a wipe; Cobrahn pattern; VW; CoE from 20 on Fang casters; Seduce Fang Druids only in a cleared room (Icy Veins 19 Oct 2026)"
    ],
    [
     "Shadowfang Keep",
     "20–26",
-    "Purge Moonwalker's shield",
-    "Belt of Arugal; Soran'ruk fragment; Black Tome"
+    "Purge Moonwalker's shield; Fenrus poison (Cure Poison); Earth Shock Rethilgore Soul Drain and Springvale Holy Light; you cannot decurse Silverlaine's Veil of Shadow (curse; Wowhead Forever 23 Nov 2026)",
+    "Belt of Arugal; Soran'ruk fragment; Black Tome; Succubus for worgen; no Fear in tight rooms; Veil of Shadow is a curse (druid, not Devour Magic); Fenrus voidwalkers are demons if you are 28–30 (Icy Veins 19 Oct 2026; Wowhead Forever Veil of Shadow 23 Nov 2026)"
    ],
    [
     "Blackfathom Deeps",
     "22–28",
-    "Tremor (Kelris sleeps)",
-    "Gravestone Scepter quest; no Fear"
+    "Tremor (Kelris sleeps); Purge Lorgus Jett's Lightning Shield; Earth Shock Kelris Mind Blast and Hellcaller Mana Burn; Grounding at 30 (Icy Veins 19 Oct 2026)",
+    "Gravestone Scepter quest; no Fear; Succubus for naga; Banish elementals and satyrs from 28; Unending Breath for Serra'kis (Icy Veins 19 Oct 2026)"
    ],
    [
     "Excavation Site (new)",
     "24–29",
-    "Tremor; cure disease and poison",
-    "Never stand in the grass"
+    "Tremor; cure disease and poison; Cure Disease for Infected Wound, Muculent Rot and Highland Venom (disease despite the name); you cannot Remove Curse (Thaumaturgist Weakness); Earthbind the Relic Guardian; never Fear into the grass (Tavern / Icy Veins, read 23 Nov 2026)",
+    "Never stand in the grass; Succubus for Dragonmaw casters; never Fear toward the grass; Banish summoned fire elementals at 28 (Tavern / Icy Veins, read 23 Nov 2026)"
    ],
    [
     "City of Dalaran (new)",
     "28–33",
-    "Grounding at 30; shocks can reflect",
-    "Tap to full first; Mana Burn and silences"
+    "Grounding at 30; shocks can reflect; Purge Unholy Frenzy and Manamorph; Earth Shock Mana Phantom Mana Burn; Tremor for Mindless Horror fears; you cannot cleanse Lyn's Curse of Thorns (curse) (Tavern, read 23 Nov 2026)",
+    "Tap to full first; Mana Burn and silences; Felhunter from 30; CoE on casters and elementals; Banish arcane elementals; Devour Unholy Frenzy; Spell Lock is 36 (Tavern, read 23 Nov 2026)"
    ],
    [
     "Gnomeregan",
     "29–38",
-    "Poison Cleansing; go for the Pummeler",
-    "Skip as Horde unless already in Dun Morogh (one quest, Rig Wars)"
+    "Poison Cleansing; go for the Pummeler; Earth Shock Dark Iron Ambassador Fireball; Grounding for lightning packs (Icy Veins 21 Oct 2026)",
+    "Skip as Horde unless already in Dun Morogh (one quest, Rig Wars); Felhunter once Spell Lock is close; Booty Bay transponder; don't count on Fear vs mechanicals (Icy Veins 21 Oct 2026)"
    ],
    [
     "Razorfen Kraul",
     "29–38",
-    "Poison Cleansing; Charlga for the Air quest",
-    "Zealot's Robe, Berylline Pads quests"
+    "Poison Cleansing; Charlga for the Air quest; Earth Shock Charlga and quilboar healers; Earthbind or Frost Shock on runners (Icy Veins 20 Oct 2026)",
+    "Zealot's Robe, Berylline Pads quests; Succubus for quilboar healers; Banish Roogug/Halmgar earth elementals; Spell Lock Charlga (Icy Veins 20 Oct 2026)"
    ],
    [
     "Scarlet Monastery",
     "30–46",
-    "Tremor for Cathedral",
-    "Bloodmage Mantle, Orb of the Forgotten Seer"
+    "Tremor for Cathedral; Earth Shock Thalnos, Doan, Whitemane and Scarlet healers; you cannot decurse Fairbanks Curse of Blood or GY rares (curse) (Icy Veins 17–21 Oct/Nov 2026)",
+    "Bloodmage Mantle, Orb of the Forgotten Seer; Succubus in cleared rooms; Felhunter in Library and Cathedral; Spell Lock Doan and Whitemane; Devour Doan's Polymorph and Silence (Icy Veins 17–21 Oct/Nov 2026)"
    ],
    [
     "Drowned City (new)",
     "35–40",
-    "Poison Cleansing, Tremor",
-    "Tight naga packs: Rain of Fire"
+    "Poison Cleansing, Tremor; Earth Shock Waterbolts and Brinescale Priestess heals; Grounding for naga casters (Tavern, read 23 Nov 2026)",
+    "Tight naga packs: Rain of Fire; Succubus for naga/troll Seduce; Banish Deathless Marrow and the Primeval Elemental (or adds if the bosses are immune); Spell Lock Waterbolts; Unending Breath (Tavern, read 23 Nov 2026)"
    ],
    [
     "Uldaman → BRD",
     "36–60",
-    "Disease Cleansing for RFD; Grounding for BRD",
-    "Stats hidden until items drop"
+    "Disease Cleansing for RFD; Grounding for BRD; also Poison Cleansing for ZF, Mara, Antu'sul and Noxxion; Cure Disease or Poison as seen; Earth Shock casters; you cannot Remove Curse. Sub-dungeons: click the preset. Classic rows unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026); Krol'dok and Alcaz from Wowhead/Mobalytics 21–23 Nov 2026",
+    "Stats hidden until items drop; Felhunter for casters; Banish Uldaman earth elementals, Mara Noxxion and BRD fire elementals; Succubus for Krol'dok ogres and Alcaz naga/Defias; Spell Lock Nar'gurk, Ca'zass Polymorph and Dark Iron casters. Classic rows unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026); Krol'dok Wowhead 23 Nov 2026, Alcaz Mobalytics 21 Nov 2026"
    ],
    [
     "Blackmaw Hold (new)",
     "55–60",
-    "Corrupted furbolg; loot: Pre-launch: no Forever data past 30 yet",
-    "not in notes (listed only: Azshara, new, 55-60); Pre-launch: no Forever data past 30 yet"
+    "Corrupted furbolg; loot: Pre-launch: no Forever data past 30 yet; Tremor for Withermaw and Varrox fears; Earth Shock Impaan and Varrox Shadow Bolt Volley; Grounding for demon casters (Mobalytics 21 Nov 2026)",
+    "not in notes (listed only: Azshara, new, 55-60); Pre-launch: no Forever data past 30 yet; Felhunter; Impaan and Varrox are Demons — Banish or Subjugate (rank 3 at 58 for the level cap); Spell Lock Impaan and Varrox Shadow Bolt Volley; no Fear near uncleared packs (Mobalytics 21 Nov 2026)"
    ],
    [
     "Strat · Scholo · LBRS/UBRS · DM",
     "55–60",
-    "Purge Gandling's Shadow Shield",
-    "Dreadmist set; Felcloth Bag pattern"
+    "Purge Gandling's Shadow Shield; Disease Cleansing and Poison Cleansing (Strat); Tremor for Strat fears; Earth Shock casters; you cannot Remove Curse (banshee curses). Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)",
+    "Dreadmist set; Felcloth Bag pattern; Felhunter default; Devour Gandling's Shadow Shield; Succubus only on Strat Live; Balnazzar and Immol'thar are Subjugate/Banish if still Demons. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
    ],
    [
     "Shaper's Terrace (new)",
     "58–60",
-    "Titan facility, constructs don't fear; loot: Pre-launch: no Forever data past 30 yet",
-    "not in notes (listed only: Un'Goro, new, 58-60); Pre-launch: no Forever data past 30 yet"
+    "Titan facility, constructs don't fear; loot: Pre-launch: no Forever data past 30 yet; Poison Cleansing for Venomridge and Vitrix; Earth Shock Thunderhoof lightning and Bolt Chain Lightning; Grounding for Nanaya; Fire Resistance for Cinder (Mobalytics 21 Nov 2026)",
+    "not in notes (listed only: Un'Goro, new, 58-60); Pre-launch: no Forever data past 30 yet; Felhunter; CoE; Banish fire elementals at Cinder's red panel; Spell Lock Thunderhoof and Bolt Chain Lightning; don't Fear Titan constructs; Bolt is Nature-immune, Shadow still works (Mobalytics 21 Nov 2026)"
    ]
   ],
   "DUN_NOTES_LOOT": [
-   "Poison Cleansing; go for the Pummeler",
-   "Zealot's Robe, Berylline Pads quests",
-   "Bloodmage Mantle, Orb of the Forgotten Seer",
-   "Stats hidden until items drop",
-   "Dreadmist set; Felcloth Bag pattern"
+   "Poison Cleansing; go for the Pummeler; Earth Shock Dark Iron Ambassador Fireball; Grounding for lightning packs (Icy Veins 21 Oct 2026)",
+   "Zealot's Robe, Berylline Pads quests; Succubus for quilboar healers; Banish Roogug/Halmgar earth elementals; Spell Lock Charlga (Icy Veins 20 Oct 2026)",
+   "Bloodmage Mantle, Orb of the Forgotten Seer; Succubus in cleared rooms; Felhunter in Library and Cathedral; Spell Lock Doan and Whitemane; Devour Doan's Polymorph and Silence (Icy Veins 17–21 Oct/Nov 2026)",
+   "Stats hidden until items drop; Felhunter for casters; Banish Uldaman earth elementals, Mara Noxxion and BRD fire elementals; Succubus for Krol'dok ogres and Alcaz naga/Defias; Spell Lock Nar'gurk, Ca'zass Polymorph and Dark Iron casters. Classic rows unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026); Krol'dok Wowhead 23 Nov 2026, Alcaz Mobalytics 21 Nov 2026",
+   "Dreadmist set; Felcloth Bag pattern; Felhunter default; Devour Gandling's Shadow Shield; Succubus only on Strat Live; Balnazzar and Immol'thar are Subjugate/Banish if still Demons. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
   ],
   "DKEYS": [
    "0",
@@ -18001,7 +18001,7 @@
        }
       }
      ],
-     "click": "Cure Poison (spell) on Bazzalan"
+     "click": "Cure Poison (spell) on Bazzalan. Utility (23 Nov 2026): Earth Shock Ragefire Shaman Healing Wave. Troggs Lightning Bolt around corners. No Purge called out. You cannot Remove Curse. (Icy Veins 19 Oct 2026)"
     }
    ],
    [
@@ -18065,7 +18065,7 @@
        }
       }
      ],
-     "click": "Cure Poison (spell) for Leech Poison"
+     "click": "Cure Poison (spell) for Leech Poison. Utility (23 Nov 2026): Cure Disease (22) for Ghoul Plague. You cannot Remove Curse (Wailing Banshee hit-curse). Earth Shock Rath'mael's Flamestrike and The Abandoned's Drain Life. Purge Skeletal Mage Frost Armor (enemy buff). Wait out Bjork's Anti-Magic Shield. No Fear. (Tavern, read 23 Nov 2026)"
     }
    ],
    [
@@ -18127,7 +18127,7 @@
       }
      ],
      "change": "Earth = Tremor for the whole run (sleeps and fears everywhere): at 18-19 click Tremor instead of the macro's Strength of Earth; from 20 put Tremor in Elements' Earth slot and swap Strength of Earth back after",
-     "click": "Poison Cleansing (22) for vipers"
+     "click": "Poison Cleansing (22) for vipers. Utility (23 Nov 2026): Earth Shock Shambler Wild Regeneration and Cobrahn Healing Touch. Sleep and Fear are on you (Tremor), not a Purge. Earthbind or Frost Shock on runners in a cleared tunnel only. (Icy Veins 19 Oct 2026)"
     }
    ],
    [
@@ -18161,7 +18161,7 @@
        }
       }
      ],
-     "click": "Purge Moonwalker's shield"
+     "click": "Purge Moonwalker's shield. Utility (23 Nov 2026): Cure Poison for Fenrus Toxic Saliva (board treats it as poison; school not restated in Icy Veins 19 Oct 2026). Earth Shock Rethilgore Soul Drain and Springvale Holy Light. You cannot decurse Silverlaine's Veil of Shadow (Wowhead Forever: Curse, 23 Nov 2026). Frost Shock/Earthbind only in a cleared room."
     }
    ],
    [
@@ -18194,7 +18194,8 @@
        }
       }
      ],
-     "change": "Earth = Tremor (Kelris sleeps)"
+     "change": "Earth = Tremor (Kelris sleeps)",
+     "click": "Utility (23 Nov 2026): Purge Lorgus Jett's Lightning Shield. Earth Shock Kelris Mind Blast and Hellcaller Mana Burn. Grounding (30) for caster packs. Cure Poison if Aku'mai's cloud applies a poison (Icy Veins only says to dodge it). (Icy Veins 19 Oct 2026)"
     }
    ],
    [
@@ -18228,7 +18229,7 @@
       }
      ],
      "change": "Earth = Tremor (Shadetooth)",
-     "click": "Poison Cleansing, Cure Disease (spell)"
+     "click": "Poison Cleansing, Cure Disease (spell). Utility (23 Nov 2026): Cure Disease for Infected Wound, Muculent Rot and Highland Venom (disease despite the name). You cannot Remove Curse (Dragonmaw Thaumaturgist Weakness). Earthbind the Relic Guardian. Never Fear or get feared into the grass. (Tavern / Icy Veins, read 23 Nov 2026)"
     }
    ],
    [
@@ -18261,7 +18262,8 @@
        }
       }
      ],
-     "change": "Air = Grounding from 30 (it is already the Air slot)"
+     "change": "Air = Grounding from 30 (it is already the Air slot)",
+     "click": "Utility (23 Nov 2026): Purge Unholy Frenzy (Atrexis, necromancers) and Manamorph. Earth Shock Mana Phantom Mana Burn. Tremor for Mindless Horror fears. Grounding already in the Air slot from 30. You cannot cleanse Lyn's Curse of Thorns (curse). Shocks can reflect off Phantasm Reflection Field. (Tavern, read 23 Nov 2026)"
     }
    ],
    [
@@ -18295,7 +18297,7 @@
        }
       }
      ],
-     "click": "Poison Cleansing"
+     "click": "Poison Cleansing. Utility (23 Nov 2026): Earth Shock Dark Iron Ambassador Fireball. Grounding for lightning packs (Electrocutioner). Cleanse poisons you actually see. Mechanical mobs are poor Earthbind/Fear targets. (Icy Veins 21 Oct 2026)"
     }
    ],
    [
@@ -18329,7 +18331,7 @@
        }
       }
      ],
-     "click": "Poison Cleansing"
+     "click": "Poison Cleansing. Utility (23 Nov 2026): Earth Shock Charlga and quilboar healers. Earthbind or Frost Shock on runners. Roogug/Halmgar Earth Elementals are a warlock Banish, not a Purge. (Icy Veins 20 Oct 2026)"
     }
    ],
    [
@@ -18387,7 +18389,8 @@
         "inh": true
        }
       }
-     ]
+     ],
+     "click": "Utility (23 Nov 2026): Earth Shock Thalnos Shadow Bolt, Doan, Whitemane, Fairbanks heals and Scarlet healers. Grounding for Library and Cathedral casters. You cannot decurse Fairbanks Curse of Blood, Azshir Call of the Grave or Ironspine Weakness (curse). Tremor for Cathedral. (Icy Veins 17–21 Oct/Nov 2026)"
     }
    ],
    [
@@ -18447,7 +18450,7 @@
       }
      ],
      "change": "Unpublished, adjust after the first run",
-     "click": "Poison Cleansing for naga"
+     "click": "Poison Cleansing for naga. Utility (23 Nov 2026): Earth Shock Waterbolt Volley (Dreadrise), Waterbolt (Primeval Elemental) and Brinescale Priestess heals. Grounding for naga casters. Frost Shock or Earthbind only in a cleared room — packs are tight. Min'loth Fears in phase 2 (Tremor already on the row). (Tavern, read 23 Nov 2026)"
     }
    ],
    [
@@ -18482,7 +18485,7 @@
       }
      ],
      "change": "Air stays Grounding, then Grace of Air at 42",
-     "click": "Nature Resistance (Air) only if an earth-elemental boss is hurting the group; swap Air back after"
+     "click": "Nature Resistance (Air) only if an earth-elemental boss is hurting the group; swap Air back after. Utility (23 Nov 2026): Earth Shock caster dwarves and scryers. Grounding stays in Air unless an earth-elemental boss is hurting the group (then Nature Resistance, swap back). Earth elementals are a warlock Banish. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     },
     {
      "name": "Razorfen Downs",
@@ -18538,7 +18541,8 @@
        }
       }
      ],
-     "change": "Elements: Water = Disease Cleansing (38), swap Healing Stream back after. Ancestors: Water = Disease Cleansing"
+     "change": "Elements: Water = Disease Cleansing (38), swap Healing Stream back after. Ancestors: Water = Disease Cleansing",
+     "click": "Utility (23 Nov 2026): Cure Disease and Disease Cleansing (38) for Glutton, Plaguemaw and undead packs. Cure/Poison Cleansing on spiders. Earth Shock Amnennar and Mordresh. You cannot Remove Curse. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     },
     {
      "name": "Krol'dok Stronghold",
@@ -18571,7 +18575,7 @@
       }
      ],
      "change": "Unpublished",
-     "click": "Tremor if anything fears"
+     "click": "Tremor if anything fears. Utility (23 Nov 2026): Earth Shock Nar'gurk Shadow Bolt Volley and Krol'dok Shaman Lightning Bolt. Grounding for warlock/shaman packs. Purge Bloodlust if it is a magic buff (unverified school; try it). Hooked Net from Twilight Outriders is a root, not a curse. You cannot Remove Curse if a Curseweaver lands one — have a druid. (Wowhead Forever overview, read 23 Nov 2026; Mobalytics 21 Nov 2026)"
     },
     {
      "name": "Zul'Farrak",
@@ -18628,7 +18632,7 @@
        }
       }
      ],
-     "click": "Poison Cleansing (Antu'sul)"
+     "click": "Poison Cleansing (Antu'sul). Utility (23 Nov 2026): Earth Shock witch doctors and Hydromancer. Grounding for caster rooms. You cannot Remove Curse. No Fear on the stair event. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     },
     {
      "name": "Maraudon",
@@ -18685,7 +18689,7 @@
        }
       }
      ],
-     "click": "Poison Cleansing (Noxxion)"
+     "click": "Poison Cleansing (Noxxion). Utility (23 Nov 2026): Earth Shock caster trash and Celebras. Grounding for caster packs. Noxxion is a warlock Banish. Theradras fears (Tremor). Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     },
     {
      "name": "Alcaz Prison",
@@ -18717,7 +18721,8 @@
        }
       }
      ],
-     "change": "Unpublished"
+     "change": "Unpublished",
+     "click": "Utility (23 Nov 2026): Earth Shock and Grounding for Tidemistress Ca'zass and naga Enchantress Polymorph/Blizzard. Purge magic buffs on Defias or naga if you see them. You cannot Remove Curse. Frost Shock/Earthbind only in a cleared hall. Blazeroar is a fire-immune red dragon (Mobalytics 21 Nov 2026)"
     },
     {
      "name": "Sunken Temple",
@@ -18749,7 +18754,8 @@
         "inh": true
        }
       }
-     ]
+     ],
+     "click": "Utility (23 Nov 2026): Earth Shock Atal'ai prophets and Jammal'an. Grounding for caster rooms. Tremor for Eranikus Deep Slumber (already the preset). You cannot Remove Curse. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     },
     {
      "name": "Blackrock Depths",
@@ -18779,7 +18785,8 @@
        }
       }
      ],
-     "change": "Water = Fire Resistance, Air = Grounding"
+     "change": "Water = Fire Resistance, Air = Grounding",
+     "click": "Utility (23 Nov 2026): Earth Shock Dark Iron casters, Moira and flamekeepers. Grounding already in Air. Fire Resistance already in Water. Purge Fire Shields and magic buffs. You cannot Remove Curse. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     }
    ],
    [
@@ -18813,7 +18820,8 @@
        }
       }
      ],
-     "change": "Unpublished"
+     "change": "Unpublished",
+     "click": "Utility (23 Nov 2026): Earth Shock Impaan's casts and Varrox Shadow Bolt Volley. Grounding for demon casters. Tremor for Withermaw and Varrox fears. Purge satyr/imp magic buffs. You cannot Remove Curse. Don't Fear near uncleared packs. (Mobalytics 21 Nov 2026)"
     }
    ],
    [
@@ -18872,7 +18880,7 @@
       }
      ],
      "change": "Water = Disease Cleansing",
-     "click": "Poison Cleansing"
+     "click": "Poison Cleansing. Utility (23 Nov 2026): Earth Shock Crimson and undead casters. Grounding for caster rooms. Tremor for fears (Anastari, Classic). You cannot Remove Curse (banshee curses — the druid's job). Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     },
     {
      "name": "Scholomance",
@@ -18904,7 +18912,7 @@
       }
      ],
      "change": "Water = Disease Cleansing",
-     "click": "Purge Gandling's Shadow Shield"
+     "click": "Purge Gandling's Shadow Shield. Utility (23 Nov 2026): Keep Purge for Gandling's Shadow Shield. Earth Shock Darkmasters and student heals or shadow bolts. Grounding for caster rooms. You cannot Remove Curse (the druid's job). Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     },
     {
      "name": "LBRS / UBRS",
@@ -18934,7 +18942,8 @@
        }
       }
      ],
-     "change": "Water = Mana Spring, Air = Grounding (casters all run)"
+     "change": "Water = Mana Spring, Air = Grounding (casters all run)",
+     "click": "Utility (23 Nov 2026): Earth Shock orc and dragonkin casters (Vosh'gajin, Jed). Grounding already in Air. Cure Poison for Mother Smolderweb and spire spiders. You cannot Remove Curse. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     },
     {
      "name": "Dire Maul",
@@ -18967,7 +18976,7 @@
       }
      ],
      "change": "Nothing lasts the whole run (Classic knowledge, unverified in Forever)",
-     "click": "Tremor or Grounding for a single boss if the first run shows one needs it"
+     "click": "Tremor or Grounding for a single boss if the first run shows one needs it. Utility (23 Nov 2026): East: Earth Shock satyr casters; Purge magic buffs. West: Earth Shock Lethtendris and Kalendris; Grounding; Immol'thar is a warlock Subjugate/Banish if still a Demon. North: Earth Shock Cho'Rush; Earthbind or Frost Shock on ogre runners in a cleared room. You cannot Remove Curse. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)"
     }
    ],
    [
@@ -19001,7 +19010,8 @@
        }
       }
      ],
-     "change": "Constructs don't fear, so never Spirits"
+     "change": "Constructs don't fear, so never Spirits",
+     "click": "Utility (23 Nov 2026): Poison Cleansing for Venomridge Poison Volley and Vitrix Poison Shock. Earth Shock Thunderhoof lightning and Bolt Chain Lightning. Grounding for Nanaya's caster phases. Fire Resistance for Cinder; stay off Snowtalon's silencing blue crystals. Constructs don't fear (never Spirits). (Mobalytics 21 Nov 2026)"
     }
    ]
   ],
@@ -21912,14 +21922,21 @@
    }
   },
   "DUN_NOTES_K": {
-   "0": "Hidden Enemies: Hammer of Orgrimmar (12.4 DPS mace); Subterranean Cape off Taragaman",
-   "1": "Segmented Spider Leg (17.5 DPS, +9 Agi) off Witherfang; Bear Feral Charge interrupts Rath'mael's Flamestrike",
-   "2": "Leaders of the Fang: Hammerbone (20.4 DPS); Fang leather set, 3 pieces +10 AP; Deviate Eradication gives Pattern: Deviate Scale Belt",
-   "3": "Worgpelt Leggings and Wolfmaster Cape off Nandos; Arugal Must Die: Seal of Sylvanas",
-   "4": "Twilight Maul (22.9 DPS) off Lorgus Jett; Bands of Serra'kis; Band of the Fist from Allegiance to the Old Gods",
-   "5": "Earthen Echo (Horde, from 24): Heavehammer, 27.7 DPS +32 AP; Garb of Florid Feathers off Shadetooth",
-   "6": "Felbough Arm polearm (28.8 DPS, +10 Agi, 1% hit) off the Fel Ancient; Heart of Disruption (Horde): Striking Staff, 31.3 DPS",
-   "gnomer": "Manual Crowd Pummeler (29.0 DPS) off Crowd Pummeler 9-60; Alliance territory, long trip"
+   "0": "Hidden Enemies: Hammer of Orgrimmar (12.4 DPS mace); Subterranean Cape off Taragaman; Cure Poison on Bazzalan; Jergosh Curse of Weakness needs Remove Curse 24 (Icy Veins 19 Oct 2026)",
+   "1": "Segmented Spider Leg (17.5 DPS, +9 Agi) off Witherfang; Bear Feral Charge interrupts Rath'mael's Flamestrike; Cure Poison on spiders, Witherfang and Viktor; Ghoul Plague is a disease (you cannot cleanse); banshee curse needs Remove Curse 24; Hibernate spiders from 18; Bash Rath'mael and The Abandoned (Tavern, read 23 Nov 2026)",
+   "2": "Leaders of the Fang: Hammerbone (20.4 DPS); Fang leather set, 3 pieces +10 AP; Deviate Eradication gives Pattern: Deviate Scale Belt; Cure Poison on vipers; Sleep is magic (you cannot dispel); Hibernate beasts; rare Faerie Dragon is Dragonkin; interrupt Fang-druid heals; Fear is a wipe (Icy Veins 19 Oct 2026)",
+   "3": "Worgpelt Leggings and Wolfmaster Cape off Nandos; Arugal Must Die: Seal of Sylvanas; Remove Curse 24 on Silverlaine Veil of Shadow (Wowhead Forever: Curse, −75% healing, 23 Nov 2026); Fenrus Toxic Saliva treated as poison on the board (school not restated in Icy Veins 19 Oct 2026); Hibernate Nandos's worgs",
+   "4": "Twilight Maul (22.9 DPS) off Lorgus Jett; Bands of Serra'kis; Band of the Fist from Allegiance to the Old Gods; Dodge Aku'mai poison clouds; Hibernate turtle/crab waves; shapeshift off Gelihast Net and Sarevess Frost Nova; Kelris Sleep is magic (Icy Veins 19 Oct 2026)",
+   "5": "Earthen Echo (Horde, from 24): Heavehammer, 27.7 DPS +32 AP; Garb of Florid Feathers off Shadetooth; Remove Curse on Thaumaturgist Weakness; spider poison yes; Infected Wound, Muculent Rot and Highland Venom are diseases (you cannot cleanse); Hibernate crocs, turtles, raptors; stay out of the grass (Tavern / Icy Veins, read 23 Nov 2026)",
+   "6": "Felbough Arm polearm (28.8 DPS, +10 Agi, 1% hit) off the Fel Ancient; Heart of Disruption (Horde): Striking Staff, 31.3 DPS; Remove Curse on Lyn's Curse of Thorns (try it; school not independently confirmed); shapeshift breaks Fel Ancient Entangle and the Shade's Mass Polymorph (Tavern, read 23 Nov 2026)",
+   "gnomer": "Manual Crowd Pummeler (29.0 DPS) off Crowd Pummeler 9-60; Alliance territory, long trip; Cleanse poisons you see (Icy Veins 21 Oct 2026 does not name a boss poison); no Hibernate on machines",
+   "7": "Poison on quilboar packs as seen; Hibernate or root boar adds; don't kill Jargba's mind-controlled player; Earth elementals are the warlock's Banish (Icy Veins 20 Oct 2026)",
+   "8": "GY: decurse Azshir Call of the Grave and Ironspine Weakness; Cathedral: Fairbanks Curse of Blood. Hibernate Loksey's hounds. Shapeshift off Doan's Polymorph. Innervate (40) in time for Cathedral (Icy Veins 17–21 Oct/Nov 2026)",
+   "9": "Abolish Poison on Min'loth Poison Bolt Volley (P2). Zul'Alai Rotted Strike school unverified (may be a disease). Min'loth also Fears in P2 (Tavern, read 23 Nov 2026)",
+   "10": "Combined: possible Uldaman, ZF and Mara poisons; RFD is a disease dungeon (you cannot cleanse disease). Krol'dok: Remove Curse ready for Curseweavers (school unverified); Hibernate or root Ashka's wolves. Alcaz: shapeshift breaks Ca'zass Polymorph; Blazeroar is a fire-immune red dragon (boss CC unverified). Classic rows unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026); Krol'dok Wowhead 23 Nov 2026, Alcaz Mobalytics 21 Nov 2026",
+   "blackmaw": "No named curse or poison in the 21 Nov 2026 Mobalytics guide. Withermaw is a Beast and AoE Fears — clear first. Bonesnout is undead, not a Beast",
+   "11": "Remove Curse on Strat banshees and throughout Scholo (you cannot cleanse disease or Gandling's Shadow Shield, which is magic). LBRS spiders: poison. Worgs and non-boss dragonkin: Hibernate. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)",
+   "shaper": "Abolish Poison on Venomridge and Vitrix. Hibernate or root one non-elite Ravasaur Hunter and kill the other. Titanosaur Fears — clear first. Shapeshift off Snowtalon Frost Nova; stay off silencing blue crystals. Bolt is Nature-immune; Feral physical is fine. Nanaya and constructs don't Fear (Mobalytics 21 Nov 2026)"
   }
  },
  "trainers": {
@@ -24455,11 +24472,11 @@
   }
  },
  "_meta": {
-  "version": 60,
-  "generated_at": "2026-11-23T08:59-05:00",
-  "source": "WoW Forever bot, Nov 23 2026 weekly meta watch: voidsim Nov 23; no new Blizzard post since the Nov 20 hotfixes",
+  "version": 61,
+  "generated_at": "2026-11-23T11:37-05:00",
+  "source": "WoW Forever bot, Nov 23 2026: per-dungeon cleanse, CC, Purge/interrupt and demon/curse notes for Kestrik, Corvin, Drazhul and Zanjiro (added to existing dungeon note keys; Classic rows tagged unverified)",
   "notes_commit": "228e37e",
-  "notes": "Nov 23: voidsim Enhancement B → A (#5) and Destruction A → B; no new hotfix since Nov 20; Crix, Icy Veins, MythicSim and all three Feral guides unchanged."
+  "notes": "Nov 23: dungeon utility notes added for Kestrik (DUN_NOTES_K), warlocks (DUNGEONS column 4, shared C/D) and Zanjiro (DUNGEONS column 3 plus PRESETS click, hidden until the preset is opened). Existing totem, loot and mechanic text kept."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Wowhead (Lexolas, Nov 17) Feral 0/34/17 is his default since Nov 21, the guide he follows; Mobalytics (yumytv, Nov 14) 9/31/11 and Icy Veins (Meyra, Nov 4) 9/32/10 are the alternatives in Next ding.",
