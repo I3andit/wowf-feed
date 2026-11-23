@@ -142,6 +142,7 @@ Section captions were already data: `captions.path`, `captions.builds`, `caption
 5. **Kestrik's optional keys, when present, have the shape in "Kestrik's talents, professions, gear and dungeons".** Checked: `talents.TREES.druid` is 3 well-formed trees and every prerequisite names a druid talent; every `BUILD_DEFS` entry with `cls: "druid"` has a key, a label and an order that exists, spends only talents from `TREES.druid`, never more points than a talent has ranks and never more than 51; `gear.GEAR_SHEETS.K` has `left`, `right`, `bottom`, every pick has its required fields and a `gk` id that is unique and listed in `GEAR_EXTRA_IDS`; `dungeons.DUN_NOTES_K` is an object whose keys are all in `DKEYS`; `dungeons.STAT_WEIGHTS` is `{character: {stat: number}}`; every `LOOT[].for` is a list made of `"C"`, `"V"`, `"K"`, `"D"`; `characters.CHAR_PROFS.K` lists only `PROFS` keys. The reason for a rejected feed is in `/api/status` under `feed.last_error`.
 6. **`professions.PROFS[].by_char`, when present, has the shape in "Per-character profession texts".** Checked: it is an object keyed only by `"C"`, `"V"`, `"K"`, `"D"`; each entry holds only `notes`, `notes_extra`, `why`, `checked`, `pins`; the two note lists are non-empty lists of non-empty strings; `why` and `checked` are non-empty strings; every pin has a number `at` from 0 to 300, a `label` and a `tip`.
 7. **Drazhul's optional keys, when present, have the shape in "Fourth character: Drazhul".** Checked: `characters.CHARS[3]` and `characters.CHAR_PROFS.D` come together (one without the other is rejected); `CHARS[3]` has a `name` and a `line`, and `color`, `classIcon`, `role`, `profs`, `racials` are well formed when present; `CHAR_PROFS.D` lists only `PROFS` keys; a `for` on a `BUILD_DEFS` entry is `"C"` or `"D"` and sits on a warlock build; a `for: "D"` build is not `primary`, its `then` names a build key and its order exists; a `for` on a `MACROS` entry is `"C"` or `"D"` and sits on a macro with spec `aff`, `demo` or `both`; `talents.PATH_NODES_D` is a non-empty list of `{lv, at, spec, icon, title, body}`.
+8. **`dungeons.DUN_MORE`, when present, has the shape in "Longer dungeon notes".** Checked: it is an object whose keys are all in `DKEYS`; each value is a non-empty object keyed only by `"C"`, `"V"`, `"K"`, `"D"`; each of those is a non-empty text, or a non-empty list of `{name, text}` with non-empty strings, no dungeon named twice, and no other keys except ones that start with an underscore (`_source`, `_date`).
 
 ## Writing rules (the checker can't see these, so they're on you)
 
@@ -313,3 +314,32 @@ Until both are in the feed, the page is the three-character page: no chip, no ca
 **State.** His level is `st.lvD`, his profession skills are `st.sk["D:<PROFS key>"]` (outside `SKILL_KEYS`, which never changes), his guide pick is `guide.warlockD`. His dungeon ticks are `dd<DKEYS key>` and his gear ticks `D.<pick id>`; the page builds both, so there is nothing to add. In a WF2 save code his level is the short field `w` (left out while he is level 1; a code without it loads him at level 1). The view name is `D` and the link is `#drazhul`.
 
 **Game sync.** The PC1 watcher tells characters apart by name only, never by class: a character whose name starts with "Drazhul" is sent as `D`, one whose name starts with "Corvin" as `C`. The server saves his level, his equipped gear and every profession that has a `PROFS` entry.
+
+## Longer dungeon notes, hidden until clicked (added 2026-11-23)
+
+The one-line dungeon notes stay exactly where and as they are: `DUNGEONS` keeps its four columns (name, levels, Zanjiro's note, the warlocks' note) and `DUN_NOTES_K` stays `{DKEYS key: one line}`. Never put a list or an object in either, and never add a fifth column. Longer notes go in one new optional key, and the page shows them only after a click.
+
+`dungeons.DUN_MORE` is an object keyed by `DKEYS` key, then by character letter:
+
+```json
+"DUN_MORE": {
+  "2": {
+    "K": "Abolish Poison on the Fang packs.\nSleep is a magic effect: you cannot remove it.",
+    "C": "Fear is a wipe here. Seduce the Druids of the Fang only."
+  },
+  "10": {
+    "K": [
+      { "name": "Uldaman", "text": "Poison on the scorpids." },
+      { "name": "Zul'Farrak", "text": "Remove Curse on the witch doctors.", "_source": "https://...", "_date": "2026-11-23" }
+    ],
+    "C": [ { "name": "Uldaman", "text": "Banish the earth elementals." } ]
+  }
+}
+```
+
+- **Letters.** `K` is Kestrik, `C` Corvin, `D` Drazhul, `V` Zanjiro. Drazhul reads his own entry when a row has one, else Corvin's, so write `C` once for both warlocks and add `D` only where his note differs.
+- **Two shapes.** A text is one block. A list of `{name, text}` is for a row that groups several dungeons ("Uldaman → BRD", key `10`, and "Strat · Scholo · LBRS/UBRS · DM", key `11`): one entry per sub-dungeon, shown under its name. This is how those rows get per-dungeon notes; there are no new `DKEYS` and the rows are not split. `name` is free text (use the dungeon's name as the shaman's `PRESETS` sub-entries do, so the three read alike), each name once per list.
+- **Text.** Plain text. A line break (`\n`) in the text is a line break on the page. No HTML, no Markdown. Keys that start with an underscore (`_source`, `_date`) are allowed on a list entry and are not shown.
+- **What the page does.** In "Gear and dungeons" the note cell keeps its one-liner and gets a small button under it ("More", or "3 dungeons" for a list); a click opens a card under the table and "Hide" closes it. In "Dungeon gear" the same text sits behind "More notes" under the dungeon's one-line note. A row and character with no entry looks exactly as before.
+- **Keep the one-liner.** The button sits under the one-line note, it does not replace it. A row with only a `DUN_MORE` entry and an empty one-liner shows just the button. For Kestrik a row needs at least one `DUN_NOTES_K` entry somewhere in the feed for his column to exist at all.
+- **Size.** The feed limit is 2 MB in total. These notes are text, so there is room, but keep each one to what he reads at the instance door.

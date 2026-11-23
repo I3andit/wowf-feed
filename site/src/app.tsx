@@ -2077,6 +2077,88 @@ const DUN_NOTES_K: Record<string, string> = {};
   if (n && typeof n === "object" && !Array.isArray(n)) Object.keys(n).forEach((k: string) => { if (typeof n[k] === "string" && n[k]) DUN_NOTES_K[k] = n[k]; });
 }
 const K_DUN_NOTES: boolean = Object.keys(DUN_NOTES_K).length > 0;
+// Nov 23 (Bot request): longer dungeon notes, hidden until clicked. The one-line notes stay where they are
+// (DUNGEONS columns 3 and 4, DUN_NOTES_K) and render as before. dungeons.DUN_MORE is optional and adds to them:
+//   { "<DKEYS key>": { "K": <more>, "C": <more>, "D": <more>, "V": <more> } }
+// <more> is one text, or a list of { name, text } for a row that groups several dungeons ("Uldaman → BRD"), so
+// such a row needs no new DKEYS and DUNGEONS keeps its four columns. A row and character without an entry shows
+// exactly what it showed before. Anything malformed is skipped.
+type DunSub = { name: string; text: string };
+type DunMore = { text?: string; subs?: DunSub[] };
+const DUN_MORE: Record<string, Record<string, DunMore>> = {};
+{
+  const raw: any = WF_DATA.dungeons.DUN_MORE;
+  if (raw && typeof raw === "object" && !Array.isArray(raw)) Object.keys(raw).forEach((key: string) => {
+    const row: any = raw[key];
+    if (!row || typeof row !== "object" || Array.isArray(row)) return;
+    Object.keys(row).forEach((who: string) => {
+      const v: any = row[who];
+      let m: DunMore | null = null;
+      if (typeof v === "string" && v.trim()) m = { text: v };
+      else if (Array.isArray(v)) {
+        const subs: DunSub[] = v.filter((x: any) => !!x && typeof x.name === "string" && !!x.name.trim() && typeof x.text === "string" && !!x.text.trim()).map((x: any) => ({ name: x.name, text: x.text }));
+        if (subs.length) m = { subs };
+      }
+      if (m) { if (!DUN_MORE[key]) DUN_MORE[key] = {}; DUN_MORE[key][who] = m; }
+    });
+  });
+}
+// Drazhul shares Corvin's dungeon notes: his own entry when the feed has one, else Corvin's.
+function dunMore(key: string, who: Who): DunMore | undefined {
+  const row = DUN_MORE[key];
+  return row ? row[who] || (who === "D" ? row.C : undefined) : undefined;
+}
+function MoreBody({ m }: { m: DunMore }) {
+  const body = { fontSize: 12, color: INK, lineHeight: 1.45, whiteSpace: "pre-line" as const };
+  if (m.subs) return (
+    <div style={{ display: "grid", gap: 8 }}>
+      {m.subs.map((s: DunSub) => <div key={s.name}><div style={{ fontFamily: SERIF, color: GOLD_HI, fontSize: 13 }}>{s.name}</div><div style={body}>{s.text}</div></div>)}
+    </div>
+  );
+  return <div style={body}>{m.text}</div>;
+}
+// The button in a note cell, in the look of the shaman's Preset cell.
+function MoreCell({ id, m, open, onToggle, tag }: { id: string; m: DunMore; open: boolean; onToggle: (id: string) => void; tag?: string }) {
+  const label = (m.subs ? `${m.subs.length} dungeon${m.subs.length === 1 ? "" : "s"}` : "More") + (tag ? ` · ${tag}` : "");
+  return (
+    <button type="button" className="wf-btn" aria-expanded={open} onClick={() => onToggle(id)} style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 8px", borderRadius: 6, border: `1px solid ${open ? GOLD_HI : "#4a3d22"}`, background: open ? "rgba(245,215,122,.12)" : "#14110d", color: INK, fontSize: 12, whiteSpace: "nowrap" }}>
+      <span>{label}</span><span style={{ color: GOLD_HI, fontSize: 10 }}>{open ? "▾" : "▸"}</span>
+    </button>
+  );
+}
+// A note cell: the one-line note as it always was, plus one button per character that has more for this row.
+function noteCell(note: ReactNode, key: string, whos: Who[], open: string[], onToggle: (id: string) => void): ReactNode {
+  const has = whos.filter((w: Who) => !!dunMore(key, w));
+  if (!has.length) return note;
+  return (
+    <span style={{ display: "inline-flex", flexDirection: "column", alignItems: "flex-start", gap: 4 }}>
+      {note}
+      {has.map((w: Who) => <MoreCell key={w} id={`${key}|${w}`} m={dunMore(key, w) as DunMore} open={open.indexOf(`${key}|${w}`) >= 0} onToggle={onToggle} tag={whos.length > 1 ? whoName(w) : undefined} />)}
+    </span>
+  );
+}
+// The opened notes, as cards under the dungeon table (the shaman's presets open the same way).
+function MorePanel({ open, onToggle, view }: { open: string[]; onToggle: (id: string) => void; view: View }) {
+  const cards = open.map((id: string) => {
+    const cut = id.lastIndexOf("|");
+    const key = id.slice(0, cut), who = id.slice(cut + 1) as Who;
+    const i = DKEYS.indexOf(key);
+    const m = i >= 0 && shows(view, who) ? dunMore(key, who) : undefined;
+    if (!m) return null;
+    const color = whoColor(who);
+    return (
+      <div key={id} className="wf-pop" style={{ padding: 10, borderRadius: 10, border: `1px solid ${color}88`, borderLeft: `4px solid ${color}`, background: "linear-gradient(180deg,#17130e,#0b0a08)" }}>
+        <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap", marginBottom: 6 }}>
+          <span style={{ fontFamily: SERIF, color: GOLD_HI, fontSize: 15 }}>{DUNGEONS[i][0]}</span>
+          <span style={{ fontSize: 11, color: MUTED }}>{DUNGEONS[i][1]} · {whoName(who)}'s notes</span>
+          <button type="button" className="wf-btn" onClick={() => onToggle(id)} style={{ marginLeft: "auto", padding: "2px 10px", borderRadius: 6, border: "1px solid #4a3d22", background: "transparent", color: MUTED, fontSize: 11 }}>Hide</button>
+        </div>
+        <MoreBody m={m} />
+      </div>
+    );
+  }).filter((c: ReactNode) => !!c);
+  return cards.length ? <div style={{ display: "grid", gap: 8 }}>{cards}</div> : null;
+}
 const HAS_K_LOOT: boolean = HAS_K && (K_DUN_NOTES || DLOOT.some((l: DLoot) => lootFor(l, "K")));
 const STAT_LABEL: [string, string][] = [["dps", "DPS"], ["str", "Str"], ["agi", "Agi"], ["sta", "Sta"], ["int", "Int"], ["spi", "Spi"], ["sp", "Spell Power"], ["shadow", "Shadow dmg"], ["fire", "Fire dmg"], ["frost", "Frost dmg"], ["nature", "Nature dmg"], ["heal", "Healing"], ["ap", "Attack Power"], ["crit", "Crit"], ["hit", "Hit"], ["mp5", "Mp5"], ["hp5", "Hp5"], ["armor", "Armor"]];
 // Default stat priorities (points per 1 of a stat). The feed can replace them with sourced numbers (dungeons.STAT_WEIGHTS).
@@ -2222,6 +2304,7 @@ function DungeonGear({ who, lv, game, ck, toggle }: { who: Who; lv: number; game
           </div>
           <div style={{ color: cur.ups ? FEL : INK, fontWeight: 600 }}>{cur.loot.length ? (cur.ups ? `Worth running: ${cur.ups} upgrade${cur.ups > 1 ? "s" : ""} for ${name} now${cur.later ? `, ${cur.later} more at a higher level` : ""}${sides ? `, ${sides} sidegrade${sides > 1 ? "s" : ""}` : ""}.` : cur.later ? `${cur.later} upgrade${cur.later > 1 ? "s" : ""} here once ${name} is a few levels higher.` : eqStats ? `Nothing listed here beats what ${name} is wearing.` : `${cur.loot.length} drop${cur.loot.length > 1 ? "s" : ""} listed for ${name}.`) : cur.picks.length ? `Loot table not researched yet. ${cur.picks.length} of your gear picks ${cur.picks.length === 1 ? "comes" : "come"} from here.` : "Loot table not researched yet, and none of your gear picks come from here."}</div>
           {cur.tip ? <div style={{ color: INK, lineHeight: 1.45 }}><span style={{ color: GOLD, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase" }}>{name}'s notes · </span>{dunCell(cur.tip)}</div> : null}
+          {dunMore(cur.key, who) ? <details className="wf-acq"><summary>More notes</summary><div className="wf-acq-body"><MoreBody m={dunMore(cur.key, who) as DunMore} /></div></details> : null}
           <TickBox on={cur.done} onClick={() => toggle(cur.tick)} color={color} text={<span>Cleared on {name}</span>} small />
           {eq && !eqStats ? <div style={{ color: ORANGE, fontSize: 12, lineHeight: 1.4 }}>Upgrade numbers need the updated sync addon: log in on {name}, type /reload, and they fill in.</div> : null}
           <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.4 }}>Scores are estimates from stat priorities, not a simulation. Drop chances marked Classic are not confirmed for Forever.</div>
@@ -3174,6 +3257,8 @@ export default function App() {
   const [gearChar, setGearChar] = useState<string>(() => (view === "V" ? "sham" : view === "K" ? "K" : view === "D" ? "D" : "lock"));
   const [presetOpen, setPresetOpen] = useState<number[]>([]);
   const togglePreset = (i: number) => setPresetOpen((o: number[]) => o.indexOf(i) >= 0 ? o.filter((x: number) => x !== i) : [...o, i]);
+  const [moreOpen, setMoreOpen] = useState<string[]>([]);
+  const toggleMore = (id: string) => setMoreOpen((o: string[]) => o.indexOf(id) >= 0 ? o.filter((x: string) => x !== id) : [...o, id]);
   const ssLv = SEQ.enh_lvl.indexOf("Stormstrike") + 10;
   const brandLv = SEQ.demo_lvl.indexOf("Demonic Brand") + 10;
   const wrackIdx = (SEQ[lockGuide()] ?? SEQ.aff_lvl).indexOf("Wrack");
@@ -3395,7 +3480,8 @@ export default function App() {
         {sheetWho === "K" && !HAS_K_GEAR ? <Text>{`${K_NAME}'s gear list is not on the table yet. The research feed adds it.`}</Text> : <GearSheet who={sheetWho} lv={lvOf(sheetWho)} ck={sheetWho === "D" ? ckD : st.ck} toggle={sheetWho === "D" ? toggleD : toggle} game={game} />}
         <Table columns={dCols.map((k: number) => ["Cleared", "Dungeon", "Levels", V_NAME, `Preset (${V_NAME})`, view === "D" ? D_NAME : showD ? `Corvin & ${D_NAME}` : "Corvin", K_NAME][k])} rows={DUNGEONS.map((r: string[], i: number) => [
           <span style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 11 }}>{showV ? <><TickBox on={!!st.ck[`dv${DKEYS[i]}`]} onClick={() => toggle(`dv${DKEYS[i]}`)} small color={SHAMAN} />V</> : null}{showC ? <><TickBox on={!!st.ck[`dc${DKEYS[i]}`]} onClick={() => toggle(`dc${DKEYS[i]}`)} small color={WARLOCK} />C</> : null}{showK && kTick ? <><TickBox on={!!st.ck[`dk${DKEYS[i]}`]} onClick={() => toggle(`dk${DKEYS[i]}`)} small color={DRUID} />K</> : null}{showD ? <><TickBox on={!!st.ck[`dd${DKEYS[i]}`]} onClick={() => toggle(`dd${DKEYS[i]}`)} small color={WARLOCK} />D</> : null}</span>,
-          r[0], dunTop(r[1]) > 30 ? <span style={{ display: "inline-flex", flexDirection: "column", gap: 2 }}>{r[1]}<span className="wf-pre wf-pre-sm" title={`${PRE_LABEL} · ${PRE_MARKS.notes[1]}`}>31+ pre-launch</span></span> : r[1], dunCell(r[2]), <PresetCell i={i} open={presetOpen.indexOf(i) >= 0} onToggle={togglePreset} />, dunCell(r[3]), DUN_NOTES_K[DKEYS[i]] ?? ""].filter((_c: ReactNode, k: number) => dCols.indexOf(k) >= 0))} />
+          r[0], dunTop(r[1]) > 30 ? <span style={{ display: "inline-flex", flexDirection: "column", gap: 2 }}>{r[1]}<span className="wf-pre wf-pre-sm" title={`${PRE_LABEL} · ${PRE_MARKS.notes[1]}`}>31+ pre-launch</span></span> : r[1], noteCell(dunCell(r[2]), DKEYS[i], ["V"], moreOpen, toggleMore), <PresetCell i={i} open={presetOpen.indexOf(i) >= 0} onToggle={togglePreset} />, noteCell(dunCell(r[3]), DKEYS[i], view === "D" ? ["D"] : showD && !!DUN_MORE[DKEYS[i]] && !!DUN_MORE[DKEYS[i]].D ? ["C", "D"] : ["C"], moreOpen, toggleMore), noteCell(DUN_NOTES_K[DKEYS[i]] ?? "", DKEYS[i], ["K"], moreOpen, toggleMore)].filter((_c: ReactNode, k: number) => dCols.indexOf(k) >= 0))} />
+        <MorePanel open={moreOpen} onToggle={toggleMore} view={view} />
         {view === "K" ? null : <>
         <PreLine lead="Dungeon rows and totem presets marked 31+:" mark="notes" />
         <PresetPanel open={presetOpen} setOpen={setPresetOpen} />
