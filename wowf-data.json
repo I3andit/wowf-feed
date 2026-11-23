@@ -311,8 +311,8 @@
     "cogm": "S",
     "lfc": "A",
     "wowhead": "S",
-    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 20 (engine 3b42bde, read Nov 21; Demonology B to A #6 800 DPS (was 705), Destruction B to A #7 800 (was 713), Enhancement A to B #9 783 (unchanged DPS; the median rose), Affliction B #14 742 (was 659), Elemental B #13 772 (was 678); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 22",
+    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 23 (engine 1215e1c, read Nov 23; Enhancement B to A #5 853 DPS (was #9, 783), Destruction A to B #11 800 (DPS unchanged; the median rose), Demonology A #10 800 (was #6), Affliction B #16 742 (was #14), Elemental B #14 777 (was #13, 772); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 23",
     "brokenNote": "#6, 1,067 DPS"
    },
    {
@@ -327,8 +327,8 @@
     "cogm": "A",
     "lfc": "B",
     "wowhead": "A",
-    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 20 (engine 3b42bde, read Nov 21; Demonology B to A #6 800 DPS (was 705), Destruction B to A #7 800 (was 713), Enhancement A to B #9 783 (unchanged DPS; the median rose), Affliction B #14 742 (was 659), Elemental B #13 772 (was 678); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 22"
+    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 23 (engine 1215e1c, read Nov 23; Enhancement B to A #5 853 DPS (was #9, 783), Destruction A to B #11 800 (DPS unchanged; the median rose), Demonology A #10 800 (was #6), Affliction B #16 742 (was #14), Elemental B #14 777 (was #13, 772); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 23"
    },
    {
     "spec": "Destruction Warlock",
@@ -337,12 +337,12 @@
     "mythic": 13,
     "mythicNote": "978 DPS (unchanged); All playstyles view #16 (tier B)",
     "broken": "C",
-    "tVoid": "A",
+    "tVoid": "B",
     "cogm": "A",
     "lfc": "B",
     "wowhead": "S",
-    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 20 (engine 3b42bde, read Nov 21; Demonology B to A #6 800 DPS (was 705), Destruction B to A #7 800 (was 713), Enhancement A to B #9 783 (unchanged DPS; the median rose), Affliction B #14 742 (was 659), Elemental B #13 772 (was 678); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 22",
+    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 23 (engine 1215e1c, read Nov 23; Enhancement B to A #5 853 DPS (was #9, 783), Destruction A to B #11 800 (DPS unchanged; the median rose), Demonology A #10 800 (was #6), Affliction B #16 742 (was #14), Elemental B #14 777 (was #13, 772); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 23",
     "brokenNote": "#8, 1,033 DPS",
     "mythicMove": "▼1 vs Nov 21 (#12): its DPS held at 978, but Assassination Rogue (983, was 972) passed it on new reference gear (Stormshroud 3-piece); sim change, not a game change"
    },
@@ -353,12 +353,12 @@
     "mythic": 14,
     "mythicNote": "973 DPS (unchanged); All playstyles view #17 (tier B)",
     "broken": "D",
-    "tVoid": "B",
+    "tVoid": "A",
     "cogm": "S",
     "lfc": "S",
     "wowhead": "A",
-    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 20 (engine 3b42bde, read Nov 21; Demonology B to A #6 800 DPS (was 705), Destruction B to A #7 800 (was 713), Enhancement A to B #9 783 (unchanged DPS; the median rose), Affliction B #14 742 (was 659), Elemental B #13 772 (was 678); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 22",
+    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 23 (engine 1215e1c, read Nov 23; Enhancement B to A #5 853 DPS (was #9, 783), Destruction A to B #11 800 (DPS unchanged; the median rose), Demonology A #10 800 (was #6), Affliction B #16 742 (was #14), Elemental B #14 777 (was #13, 772); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 23",
     "brokenNote": "#10, 968 DPS (was B)",
     "mythicMove": "▼1 vs Nov 21 (#13): its DPS held at 973, but Assassination Rogue (983, was 972) passed it on new reference gear (Stormshroud 3-piece); sim change, not a game change"
    },
@@ -373,8 +373,8 @@
     "cogm": "A",
     "lfc": "A",
     "wowhead": "C",
-    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 20 (engine 3b42bde, read Nov 21; Demonology B to A #6 800 DPS (was 705), Destruction B to A #7 800 (was 713), Enhancement A to B #9 783 (unchanged DPS; the median rose), Affliction B #14 742 (was 659), Elemental B #13 772 (was 678); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
-    "_date": "Nov 22",
+    "_source": "MythicSim Nov 22 snapshot (engine a667dce, client 71037; header still 'up to date with the 10 to 13 November hotfixes'), 'Best of each spec' view (22 DPS specs), read Nov 22; Destruction #12 to #13 and Enhancement #13 to #14 (both tier B) as Assassination Rogue (983, was 972) passed both on new reference gear; Demonology, Affliction and Elemental unchanged. voidsim Nov 23 (engine 1215e1c, read Nov 23; Enhancement B to A #5 853 DPS (was #9, 783), Destruction A to B #11 800 (DPS unchanged; the median rose), Demonology A #10 800 (was #6), Affliction B #16 742 (was #14), Elemental B #14 777 (was #13, 772); reason not published); BrokenMeta updated Nov 10 (last read Nov 14; tiers from its thresholds: S 95%, A 88%, B 80%, C 72% of the best); Wowhead Nov 3 level-60 update (last read Nov 9); CoGM Oct 21 and LFCarry unchanged",
+    "_date": "Nov 23",
     "brokenNote": "#16, 859 DPS"
    }
   ]
@@ -22769,9 +22769,9 @@
   "meta_raid_watch": {
    "lead": "Raid watch",
    "tone": "warning",
-   "text": "Official Nov 20 hotfixes: Demonology's Demonic Aegis can no longer be snapshotted into Demon Armor/Demon Skin and kept after untalenting (Corvin's build skips Aegis); dungeons can be reset and entered 5 times an hour (was 10). Official Nov 19 hotfixes: nothing for Shaman, Warlock or Feral; Skyborne riding discount fixed. Official Nov 17 hotfixes: Flurry no longer loses stacks when Windfury Totem attacks land; Upper Blackrock Spire enemy health and damage restored (much harder again); Might of Stormwind and Warchief's Blessing cancel on death; skinners can no longer skin a few creatures that aren't normally skinnable; Alterac Valley quests need level 58. Official Nov 16 hotfixes: Windfury Totem extra attacks now respect armor and have an internal cooldown, and no longer give Rage; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes crit works without a weapon; Formula: Enchant Boots - Speed (reputation) is now bind-on-pickup; Vampiric Embrace heals 10% (Priest). Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15-16 (Rank 1 Shadow Bolt main filler, Felhunter option, Soul Harvest 46-47) and Nov 20 (rotation rewritten: levels 1-25 and 26-60, Curse of the Elements after the DoTs, Felhunter sacrifice option, Imp/Succubus swap for Hellfire; talents and respec 26 unchanged). MythicSim Nov 22 (Best of each spec): Demo #7, Aff #8, Destro #13, Enh #14 (both tier B). voidsim Nov 20: Demo A, Destro A (both were B), Enh B (was A), Aff B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
-   "_source": "Blizzard forum topics 2403040 (posts 11-14, Nov 16-20), 2416343 (Nov 14) and 2415068; Mobalytics Crix Nov 20; Icy Veins Enhancement leveling Nov 13; MythicSim Nov 22; voidsim Nov 20; BrokenMeta Nov 10; Forever Logs Nov 22",
-   "_date": "Nov 22"
+   "text": "Official Nov 20 hotfixes: Demonology's Demonic Aegis can no longer be snapshotted into Demon Armor/Demon Skin and kept after untalenting (Corvin's build skips Aegis); dungeons can be reset and entered 5 times an hour (was 10). Official Nov 19 hotfixes: nothing for Shaman, Warlock or Feral; Skyborne riding discount fixed. Official Nov 17 hotfixes: Flurry no longer loses stacks when Windfury Totem attacks land; Upper Blackrock Spire enemy health and damage restored (much harder again); Might of Stormwind and Warchief's Blessing cancel on death; skinners can no longer skin a few creatures that aren't normally skinnable; Alterac Valley quests need level 58. Official Nov 16 hotfixes: Windfury Totem extra attacks now respect armor and have an internal cooldown, and no longer give Rage; Maelstrom Weapon can no longer benefit two casts; Thundering Strikes crit works without a weapon; Formula: Enchant Boots - Speed (reputation) is now bind-on-pickup; Vampiric Embrace heals 10% (Priest). Official Nov 14: dungeon enemies give no XP only when the top player is more than 12 levels above them. Official Nov 13 hotfixes: Windfury Totem now procs from every melee ability's main-hand strike (Stormstrike included); Siphon Life Rank 1 can't be cast while silenced; trivial dungeon mobs give no XP to the whole party; Action Bar settings no longer reset for characters with Secondary Talents. Lost Nov 9 training refunded by mail. Official Nov 12 note: the Nov 10 Shaman changes only went live on all realms Nov 12, 1:45 PM ET. Official Nov 11 hotfixes: Flametongue Totem Rank 2 fixed; Woolen, Silk and Mageweave bags need more bolts but hold more slots; Auction House changes moved to the Nov 17 maintenance. Official Nov 10 hotfixes: Enhancement rework (Stormstrike 100% weapon damage on 8 s, Maelstrom Weapon 20% a stack with 6-10 procs a minute, Mental Dexterity 33/66/100%, imbues and Windfury Totem now stack, Rage of the Storm now Strength); Warlock demons +~15% health; Affliction Wrack now speeds up your DoTs. Icy Veins Enhancement leveling updated Nov 13 (one Maelstrom point, no Rage of the Farseer). Mobalytics Crix Warlock guide updated Nov 15-16 (Rank 1 Shadow Bolt main filler, Felhunter option, Soul Harvest 46-47) and Nov 20 (rotation rewritten: levels 1-25 and 26-60, Curse of the Elements after the DoTs, Felhunter sacrifice option, Imp/Succubus swap for Hellfire; talents and respec 26 unchanged). MythicSim Nov 22 (Best of each spec): Demo #7, Aff #8, Destro #13, Enh #14 (both tier B). voidsim Nov 23: Enh A (was B, #9 → #5), Demo A, Destro B (was A), Aff B. BrokenMeta Nov 10: Aff B, Demo C, Destro C, Enh D. Forever Logs: no confirmed level-60 DPS boards.",
+   "_source": "Blizzard forum topics 2403040 (posts 11-14, Nov 16-20), 2416343 (Nov 14) and 2415068; Mobalytics Crix Nov 20; Icy Veins Enhancement leveling Nov 13; MythicSim Nov 22; voidsim Nov 23; BrokenMeta Nov 10; Forever Logs Nov 23",
+   "_date": "Nov 23"
   },
   "meta_links": [
    {
@@ -22791,12 +22791,12 @@
     "_date": "Nov 10 (read Nov 14)"
    },
    {
-    "title": "voidsim.io tier list (Nov 20, engine 3b42bde)",
+    "title": "voidsim.io tier list (Nov 23, engine 1215e1c)",
     "site": "voidsim.io",
-    "date": "Nov 20",
+    "date": "Nov 23",
     "href": "https://voidsim.io/forever/tier-list",
     "_source": "voidsim.io",
-    "_date": "Nov 20 (read Nov 21)"
+    "_date": "Nov 23 (read Nov 23)"
    },
    {
     "title": "CoGM DPS tier list",
@@ -22912,6 +22912,18 @@
    }
   ],
   "feed_rows": [
+   {
+    "lead": "Nov 23",
+    "title": "voidsim: Enhancement B → A (#9 → #5), Destruction A → B",
+    "detail": "voidsim tier list updated Nov 23 (engine 1215e1c, was 3b42bde): Enhancement #5 853 DPS (was #9, 783, tier B → A), Demonology #10 800 (was #6, still A, DPS unchanged), Destruction #11 800 (was #7, DPS unchanged, tier A → B as the median rose), Affliction #16 742 (was #14, B), Elemental #14 777 (was #13, 772, B). Marksmanship Hunter (874), Combat Rogue (821) and Subtlety Rogue (743) also rose; Survival Hunter #1 976 (was 1,006), Beast Mastery #2 969. Kestrik: Feral (Cat) stays #3 886 (A); Bear tank board unchanged (2,916 TPS). voidsim did not publish why. MythicSim Nov 23 has Enhancement unchanged (#14, 973), so the two sims disagree. Sims, pre-raid reference gear; no level-60 Forever Logs yet.",
+    "meta": "voidsim tier list, updated Nov 23 2026, read Nov 23",
+    "status": {
+     "label": "Sim, pre-launch",
+     "tone": "warning"
+    },
+    "_source": "https://voidsim.io/forever/tier-list",
+    "_date": "2026-11-23"
+   },
    {
     "lead": "Nov 22",
     "title": "MythicSim: Destruction #12 → #13, Enhancement #13 → #14; Demonology and Affliction unchanged",
@@ -24443,11 +24455,11 @@
   }
  },
  "_meta": {
-  "version": 59,
-  "generated_at": "2026-11-22T08:53-05:00",
-  "source": "WoW Forever bot, Nov 22 2026 daily meta watch: MythicSim Nov 22; no new Blizzard post since the Nov 20 hotfixes",
+  "version": 60,
+  "generated_at": "2026-11-23T08:59-05:00",
+  "source": "WoW Forever bot, Nov 23 2026 weekly meta watch: voidsim Nov 23; no new Blizzard post since the Nov 20 hotfixes",
   "notes_commit": "228e37e",
-  "notes": "Nov 22: MythicSim Destruction #13 and Enhancement #14 (one place each, Assassination Rogue passed on new reference gear); no new hotfix since Nov 20; Crix, Icy Veins and all three Feral guides unchanged."
+  "notes": "Nov 23: voidsim Enhancement B → A (#5) and Destruction A → B; no new hotfix since Nov 20; Crix, Icy Veins, MythicSim and all three Feral guides unchanged."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Wowhead (Lexolas, Nov 17) Feral 0/34/17 is his default since Nov 21, the guide he follows; Mobalytics (yumytv, Nov 14) 9/31/11 and Icy Veins (Meyra, Nov 4) 9/32/10 are the alternatives in Next ding.",
