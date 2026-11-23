@@ -21937,6 +21937,305 @@
    "blackmaw": "No named curse or poison in the 21 Nov 2026 Mobalytics guide. Withermaw is a Beast and AoE Fears — clear first. Bonesnout is undead, not a Beast",
    "11": "Remove Curse on Strat banshees and throughout Scholo (you cannot cleanse disease or Gandling's Shadow Shield, which is magic). LBRS spiders: poison. Worgs and non-boss dragonkin: Hibernate. Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026)",
    "shaper": "Abolish Poison on Venomridge and Vitrix. Hibernate or root one non-elite Ravasaur Hunter and kill the other. Titanosaur Fears — clear first. Shapeshift off Snowtalon Frost Nova; stay off silencing blue crystals. Bolt is Nature-immune; Feral physical is fine. Nanaya and constructs don't Fear (Mobalytics 21 Nov 2026)"
+  },
+  "DUN_MORE": {
+   "0": {
+    "K": "Cure Poison (14) on Bazzalan (Deadly Poison).\nJergosh's Curse of Weakness is a curse, but Remove Curse is 24 — you cannot cleanse it on a first run. His Immolate is magic (you cannot dispel).\nNo good Beast or Dragonkin targets called out. Roots a runner if needed.\n(Icy Veins, 19 Oct 2026)",
+    "C": "Voidwalker if you are short a tank or lava knockbacks are messy; Imp for Blood Pact if someone else tanks. Succubus is not trained yet on a first run.\nBane of Agony. Curse of Weakness on Bazzalan or melee if the tank is hurting; Recklessness (14) if anything flees. CoE is 20, after this bracket.\nNo Fear in tight lava rooms.\nBazzalan is a satyr (Demon type in Classic; Forever type not re-checked). Banish and Subjugate are both later.\nFelhunter is not trained, so you cannot dispel Jergosh's Immolate.\n(Icy Veins, 19 Oct 2026)",
+    "V": "Cleanse: Cure Poison on Bazzalan (Deadly Poison). You cannot Remove Curse, so Jergosh's Curse of Weakness stays up on a first run.\nInterrupt: Earth Shock Ragefire Shaman Healing Wave. Troggs can Lightning Bolt around corners.\nPurge: none called out.\nKiting: tight lava rooms — no Fear, and don't Earthbind into the next pack. Grounding is 30, after this bracket.\n(Icy Veins, 19 Oct 2026)"
+   },
+   "1": {
+    "K": "Cure Poison on spider trash, Witherfang and Viktor.\nGhoul Plague is a disease (30 min, slower and weaker) — you cannot cleanse it; a Priest or Shaman must.\nWailing Banshees apply a curse that cuts hit chance; Remove Curse is 24, so only if you come back later. Skeletal Mage Frost Armor is magic (you cannot purge it).\nSpiders are Beasts: Hibernate from 18, Soothe from 22, on Deep Widows or Venom Lurkers if a pack is too wide.\nDense and patrol-heavy. Bash (14) interrupts The Abandoned's Drain Life and Rath'mael's Flamestrike. Shapeshift breaks Frost Nova on you.\n(Tavern, read 23 Nov 2026)",
+    "C": "Voidwalker for the dense undead and Viktor / Abandoned waves. Succubus from 20 only if you want Seduction on a Humanoid — most of this instance is Undead or Beast, so Seduction will often fail.\nBane of Agony. CoE from 20 on Rath'mael and The Abandoned. Weakness on The Baron if melee is heavy.\nNo Fear. Dense and patrol-heavy.\nNo demons or elementals named. Stone Watchers are gargoyles (physical-immune during Stone Slumber; Shadow still works).\nFelhunter is not trained. You cannot eat The Abandoned's Frost Armor (undispellable). Interrupt Drain Life and Flamestrike instead. Wand through Bjork's 3 s Anti-Magic Shield.\n(Tavern, read 23 Nov 2026)",
+    "V": "Cleanse: Cure Poison for Leech Poison (Witherfang, Viktor, early spiders). Cure Disease (22) for Ghoul Plague. You cannot Remove Curse (Wailing Banshee hit-curse).\nInterrupt: Earth Shock Rath'mael's Flamestrike and The Abandoned's Drain Life.\nPurge: Skeletal Mage Frost Armor (enemy buff). Wait out Bjork's Anti-Magic Shield — do not waste a Purge on it.\nKiting: no Fear. Dense and patrol-heavy; don't Earthbind or Frost Shock into the next pack. Grounding is 30, after this bracket.\n(Tavern, read 23 Nov 2026)"
+   },
+   "2": {
+    "K": "Cure Poison on viper and serpent trash. Fang-druid Sleep is magic — you cannot dispel it.\nThis is a Beast dungeon: raptors, pythons, turtles (Kresh), basilisks. Hibernate freely on non-boss Beasts. The rare Deviate Faerie Dragon is Dragonkin — Hibernate is the right CC if it is not immune. Roots a runner, or hold a pack while you burn a Fang Druid.\nFear is a wipe (Mutanus Terrify, tight tunnels). Interrupt Healing Touch and Sleep on Anacondra, Cobrahn, Pythas and Serpentis. Verdan's Grasping Vines root the melee — shapeshift to break them on yourself. Rebirth is trained at 20.\n(Icy Veins, 19 Oct 2026)",
+    "C": "Voidwalker for the winding tunnels. Succubus from 20 can Seduce Fang Druids (Humanoids) if you have a safe corner — still risky.\nBane of Agony. CoE from 20 on Fang Druid bosses. Recklessness if something flees.\nFear is a wipe. Sleep and patrols everywhere; Mutanus Terrifies.\nVerdan may be an elemental (unverified type). No reliable Banish until 28, after this bracket. Seduce Fang Druids only in cleared rooms.\nFelhunter is not trained. You cannot dispel Sleep.\n(Icy Veins, 19 Oct 2026)",
+    "V": "Cleanse: Poison Cleansing (22) or Cure Poison for vipers and serpent trash. Sleep is magic — it is on you (Tremor), not a Purge. You cannot Remove Curse.\nInterrupt: Earth Shock Shambler Wild Regeneration and Cobrahn Healing Touch (also Anacondra, Pythas, Serpentis heals and Sleep).\nKiting: Earthbind or Frost Shock on runners in a cleared tunnel only. Fear is a wipe.\nTotem: Tremor for the whole run (sleeps and fears). At 18-19 click Tremor instead of the macro's Strength of Earth; from 20 put Tremor in Elements' Earth slot and swap Strength of Earth back after.\n(Icy Veins, 19 Oct 2026)"
+   },
+   "3": {
+    "K": "Remove Curse (24) on Baron Silverlaine's Veil of Shadow. Wowhead Forever lists it as Dispel type Curse; it cuts healing by 75% for 15 s.\nFenrus's Toxic Saliva is treated as poison on the War Table shaman notes; the 19 Oct Icy Veins guide does not restate the school — cleanse it as poison until proven otherwise.\nWorgs and Fenrus are Beasts: Hibernate or Soothe the non-boss wolves in Nandos's room (pull them separately). Odo's Vile Bats — type not re-checked; do not assume Hibernate.\nTight rooms; don't root into unpulled packs. Bash Rethilgore's Soul Drain and Springvale's Holy Light. The Wailing Guardsman's AoE silence is magic (you cannot dispel it). Moonwalker Anti-Magic Shield is a shaman Purge. A 10 s mind control on Arugal is on the board but not in Icy Veins (19 Oct) — treat it as unverified in the current guide.\n(Icy Veins, 19 Oct 2026; Wowhead Forever Veil of Shadow, 23 Nov 2026)",
+    "C": "Succubus for Humanoid worgen and officers (Seduction). Voidwalker if the group is shaky in the tight rooms.\nBane of Agony plus CoE on Arugal and other casters. Weakness on melee bosses (Razorclaw, Springvale) if the tank needs it.\nTight rooms and patrols: Fear is a pull risk. Skip it.\nFenrus summons Voidwalkers at 50% (demons). Banish is 28 and Subjugate is 30, at the end of or after the board's 20-26 range (Icy Veins lists 20-30). If you have them, Banish or Subjugate a leftover voidwalker — unverified whether they accept it mid-fight. Fel Steeds may be Demons (unverified).\nFelhunter is not quite online on a first run. Veil of Shadow is a Curse in Forever, so it is the druid's job, not Devour Magic.\n(Icy Veins, 19 Oct 2026; Wowhead Forever Veil of Shadow, 23 Nov 2026)",
+    "V": "Cleanse: Cure Poison for Fenrus Toxic Saliva (board treats it as poison; school not restated in Icy Veins 19 Oct 2026). You cannot decurse Silverlaine's Veil of Shadow (Wowhead Forever: Curse, -75% healing, 23 Nov 2026) — that is the druid's job.\nInterrupt: Earth Shock Rethilgore Soul Drain and Springvale Holy Light.\nPurge: Moonwalker's Anti-Magic Shield.\nKiting: Frost Shock or Earthbind only in a cleared room. Tight rooms — no Fear.\nGrounding is 30, just after this bracket on a first run.\n(Icy Veins, 19 Oct 2026; Wowhead Forever Veil of Shadow, 23 Nov 2026)"
+   },
+   "4": {
+    "K": "Cure Poison or Abolish Poison (26) if Aku'mai's Poison Clouds apply a poison; Icy Veins only says to dodge the clouds, so the debuff school is unverified. Sarevess's Frost Nova is typically magic (you cannot dispel it).\nGhamoo-ra and the Snapjaw / Softshell / Crustacean waves, plus Old Serra'kis, are Beasts. Hibernate the brazier-wave turtles and crabs. Soothe a Beast patrol if you need to walk past.\nKelris Sleep is magic and melee-range; stand out. Shapeshift breaks Gelihast's Net and Sarevess's Frost Nova on you. Water pulls: Rebirth if someone drowns.\n(Icy Veins, 19 Oct 2026)",
+    "C": "Succubus for naga (Humanoids) and Twilight humanoids. Voidwalker for Ghamoo-ra's melee and Aku'mai. Swap toward Felhunter only if you already dinged 30 (Icy Veins lists 24-32).\nBane of Agony plus CoE on Sarevess, Lorgus, Kelris. Tongues (26) on Kelris and other casters.\nWater pulls and Kelris Sleep: no Fear.\nTwilight and water elementals, plus satyrs (Demons): Banish comes online at 28, at the top of the board's range. Subjugate satyrs from 30 if you stay late. Old Serra'kis is underwater — Unending Breath.\nFrom 30: Devour Magic on Lorgus Jett's Lightning Shield and on magic buffs. Spell Lock is 36, after this bracket; interrupt Kelris Mind Blast with whatever you have.\n(Icy Veins, 19 Oct 2026)",
+    "V": "Cleanse: Cure Poison if Aku'mai's cloud applies a poison (Icy Veins only says to dodge it). You cannot Remove Curse. Kelris Sleep is magic — Tremor, not a Purge.\nInterrupt: Earth Shock Kelris Mind Blast and Twilight Lord Kelris-adjacent Hellcaller Mana Burn, plus Sarevess and Lorgus casts.\nPurge: Lorgus Jett's Lightning Shield.\nKiting: no Fear in the water rooms. Don't Earthbind into unpulled naga.\nGrounding (30) for caster packs, at the top of this bracket.\nTotem: Tremor in Earth for Kelris sleeps.\n(Icy Veins, 19 Oct 2026)"
+   },
+   "5": {
+    "K": "Remove Curse on Dragonmaw Thaumaturgists' Curse of Weakness. Cure or Abolish Poison on Highland Spiders.\nDo not confuse diseases with poisons: Infected Wound, Muculent Rot and Highland Venom are diseases (Tavern). You cannot cleanse them — the group needs a Shaman or Priest. Thicket Hunter bleeds are not dispellable.\nCrocolisks, turtles and raptors are Beasts. Hibernate or Soothe in the marsh and the thicket. Shadetooth's two Thicket Hunter adds can be CC'd (Icy Veins). Roots help if a raptor pack starts to run.\nShadetooth AoE fear: never stand in the grass. Highland Horror's Entangling Roots — shapeshift off yourself. Relic Guardian is mechanical; Icy Veins says it is still susceptible to most CC (unverified which). This is a heal-check; Innervate is not up yet.\n(Tavern / Icy Veins, read 23 Nov 2026)",
+    "C": "Succubus for Dragonmaw orcs (Seduce the Thaumaturgists). Voidwalker if Shadetooth or Relic Guardian is flattening the tank.\nBane of Agony plus CoE. Weakness already comes from the Thaumaturgists — don't stack a second Weakness unless you replace it with CoE. Tongues on Thaumaturgists.\nNever Fear toward the grass. Shadetooth's Terrifying Roar already does that.\nThaumaturgists summon fire elementals — Banish at 28. Relic Guardian is mechanical (Icy Veins); Banish does not apply. Subjugate is not useful here.\nIf you are 30: Devour Magic on magic buffs, and you still cannot cure the diseases. Spell Lock is 36.\n(Tavern / Icy Veins, read 23 Nov 2026)",
+    "V": "Cleanse: Cure Disease for Infected Wound, Muculent Rot and Highland Venom (disease despite the name). Cure Poison or Poison Cleansing on Highland Spiders. You cannot Remove Curse (Dragonmaw Thaumaturgist Weakness) — that is the druid's job.\nInterrupt: Earth Shock Thaumaturgist casts.\nKiting: Earthbind the Relic Guardian. Never Fear or get feared into the grass.\nTotem: Tremor in Earth for Shadetooth. Grounding is 30, just after this bracket on a first run.\n(Tavern / Icy Veins, read 23 Nov 2026)"
+   },
+   "6": {
+    "K": "Remove Curse on Lyn the Ignored's Curse of Thorns (50% chance to take damage on attack; Tavern). Try it; the dispel school was not independently confirmed on Wowhead this pass. No poisons called out.\nUnholy Frenzy, Manamorph, Mass Polymorph and Frost Armor-type buffs are magic — you cannot dispel them.\nFel Ancient is a corrupted ancient, not a Beast; Hibernate does not apply. No Beast or Dragonkin packs were named in the Tavern or Icy Veins guides.\nShapeshift breaks Fel Ancient's Entangle and the Shade of the Archmage's Mass Polymorph on you. Mindless Horrors fear — don't stand so a fear pulls the next pack. Stay out of Arcanic Enigma's AoE silence.\n(Tavern, read 23 Nov 2026)",
+    "C": "Felhunter from 30 is the pick. The streets are arcane elementals, golems and caster undead. Succubus only for a Humanoid in the sewers if you still need Seduction.\nBane of Agony plus CoE on every caster and elemental boss (Mana Devourer, Arcane Anomaly, Arcanic Enigma, Shade of the Archmage). Tongues on the Shade and Enigma.\nMindless Horrors already fear; tight sewer and citadel rooms. Fear is a pull risk.\nArcane elementals and anomalies are Banish targets (28). Unstable Sentry is a golem (not a Demon or Elemental — no Banish). Fel Ancient's type is unverified (fel-corrupted ancient); do not assume Banish or Subjugate until you see the tooltip.\nDevour Magic is huge here: Unholy Frenzy on Atrexis and necromancers, enemy magic buffs, and magic debuffs on allies (Manamorph or polymorph if they are magic). Spell Lock is 36, just after this bracket — until then, interrupt Mana Burn and Flamestrike-style casts with party kicks. Reflection Field can bounce DoTs: watch your own dots.\n(Tavern, read 23 Nov 2026)",
+    "V": "Cleanse: you cannot cleanse Lyn's Curse of Thorns (curse — the druid's job). No poisons called out. Tremor for Mindless Horror fears.\nInterrupt: Earth Shock Mana Phantom Mana Burn, and other caster packs.\nPurge: Unholy Frenzy (Atrexis, necromancers) and Manamorph.\nKiting: no Fear in tight sewer and citadel rooms. Don't Earthbind into the next street pull.\nGrounding is already the Air slot from 30. Shocks can reflect off Phantasm Reflection Field — watch what you throw.\n(Tavern, read 23 Nov 2026)"
+   },
+   "gnomer": {
+    "K": "Poison Cleansing is the shaman default, so expect irradiated or poison debuffs on troggs and slimes; Forever Icy Veins (21 Oct 2026) does not name a specific poison on the bosses. Cleanse whatever poison you actually see.\nAlmost everything after the troggs is mechanical. Do not Hibernate machines.\nFar Alliance trip; Horde use the Booty Bay transponder (Rig Wars / Scooty). Crowd Pummeler interrupts casters who stand too close.\n(Icy Veins, 21 Oct 2026)",
+    "C": "Felhunter once Spell Lock is close (36). Succubus does little here; most targets are mechanical. Voidwalker if the group is thin. Imp for Blood Pact.\nBane of Agony plus CoE on Electrocutioner and the Ambassador. Tongues on the Ambassador (Fireball).\nMechanical mobs often resist or ignore Fear — unverified in Forever, but do not count on Fear. Tight bomb rooms.\nViscous Fallout may be an elemental or ooze (unverified). Dark Iron Ambassador summons Burning Servants (type unverified). No good Subjugate targets named.\nSpell Lock the Ambassador's Fireball and any caster troggs. Devour Magic on magic shields (Fire Shield is a fire immunity, not necessarily a magic buff — try it, unverified).\n(Icy Veins, 21 Oct 2026)",
+    "V": "Cleanse: Poison Cleansing, plus Cure Poison on poisons you actually see. Icy Veins (21 Oct 2026) does not name a boss poison. You cannot Remove Curse.\nInterrupt: Earth Shock Dark Iron Ambassador Fireball.\nPurge: try magic shields if they appear (Fire Shield may not be a magic buff — unverified).\nKiting: mechanical mobs are poor Earthbind and Fear targets. Tight bomb rooms — don't kite into bombs.\nGrounding for lightning packs (Electrocutioner).\n(Icy Veins, 21 Oct 2026)"
+   },
+   "7": {
+    "K": "Poison Cleansing is the shaman default for the run; Forever Icy Veins (20 Oct 2026) does not name a specific poison on the bosses. Cleanse poisons you see on quilboar packs.\nAgathelos is a boar (Beast); Hibernate on the boss is unlikely to stick, but boars and the Boar Spirit from Aggem are the right type. Roogug and Halmgar's Earth Elementals are not Beasts (warlock Banish).\nJargba Dominate Mind: do not kill the mind-controlled player. Interrupt Charlga. Roots or Hibernate to hold an add while you burn a healer.\n(Icy Veins, 20 Oct 2026)",
+    "C": "Succubus for quilboar Humanoids (Seduce healers and Jargba's caster adds). Felhunter once you want Spell Lock on Charlga.\nBane of Agony plus CoE or Tongues on Jargba and Charlga. Recklessness if boars flee.\nPacks are tight; Fear is a pull risk.\nRoogug and Earthcaller Halmgar summon Earth Elementals — Banish them. No demons named.\nSpell Lock (36) on Charlga and Death Speaker packs. Devour Magic on Bloodlust-style magic buffs if they appear.\n(Icy Veins, 20 Oct 2026)",
+    "V": "Cleanse: Poison Cleansing, plus Cure Poison on quilboar packs you actually see. Icy Veins (20 Oct 2026) does not name a boss poison. You cannot Remove Curse.\nInterrupt: Earth Shock Charlga and quilboar healers.\nPurge: try Bloodlust-style magic buffs if they appear.\nKiting: Earthbind or Frost Shock on runners, in a cleared room only. Tight packs — no Fear into the next pull.\nRoogug and Halmgar Earth Elementals are a warlock Banish, not a Purge. Grounding for Charlga's caster room if you have it (30).\n(Icy Veins, 20 Oct 2026)"
+   },
+   "8": {
+    "K": "Graveyard: Remove Curse on Azshir's Call of the Grave and Ironspine's Curse of Weakness; dodge or cleanse around Ironspine's Poison Cloud if it applies a poison.\nCathedral: Remove Curse on Fairbanks's Curse of Blood (increases physical damage taken; Icy Veins, 17 Nov 2026). Library and Armory: no curse or poison called out on the bosses.\nLoksey's three Scarlet Tracking Hounds are Beasts — Hibernate one or two and kill the pack safely. Scarlet humanoids are not Beasts.\nVishas Immolate, Doan's Polymorph and Silence, and Whitemane's Deep Sleep are magic (you cannot dispel them). Shapeshift breaks Doan's Polymorph on you. Cathedral fears are a shaman Tremor job; Whitemane's Deep Sleep is a sleep, not a fear. Rebirth is valuable on the Mograine/Whitemane double phase. Innervate (40) lands in time for Cathedral.\n(Icy Veins, 17-21 Oct/Nov 2026)",
+    "C": "Succubus for Seduction on Scarlet Humanoids in every wing, in cleared rooms only. Felhunter is the Library and Cathedral caster pet (Doan, Whitemane, Fairbanks, Scarlet casters). Swap as the wing changes.\nBane of Agony plus CoE on Thalnos, Doan, Whitemane, Fairbanks. Tongues on those casters. Recklessness if a Scarlet flees. Weakness on Herod if needed.\nFear works on Humanoids, but every wing is pack-after-pack. Graveyard has Azshir AoE Fear. Use Fear only in a cleared room.\nNo demons or elementals named. Seduce Scarlet casters and healers. Loksey is Humanoid; the hounds are Beasts — Seduction fails on the dogs.\nLibrary: Spell Lock Doan's casts; Devour Magic on Doan's Polymorph and Silence if they are magic (Icy Veins, 21 Oct 2026, says both can be magic-dispelled). Graveyard: Spell Lock Thalnos Shadow Bolt; Devour Immolate on Vishas. Cathedral: Spell Lock Whitemane; Devour Magic will not remove Fairbanks's Curse of Blood (that's a curse). Deep Sleep may be magic — try Devour Magic, unverified.\n(Icy Veins, 17-21 Oct/Nov 2026)",
+    "V": "Cleanse: you cannot decurse Fairbanks Curse of Blood, Azshir Call of the Grave or Ironspine Weakness (curse — the druid's job). Cure Poison around Ironspine's cloud if it applies a poison. Whitemane's Deep Sleep is a sleep, not a fear.\nInterrupt: Earth Shock Thalnos Shadow Bolt, Doan, Whitemane, Fairbanks heals and Scarlet healers in every wing.\nPurge: Doan's magic buffs if you see them; Devour Magic from the warlock also covers Doan's Polymorph and Silence if they are magic.\nKiting: Frost Shock or Earthbind only in a cleared hall. Fear only in a cleared room (Azshir AoE Fear in Graveyard).\nGrounding for Library and Cathedral casters. Tremor for Cathedral fears.\n(Icy Veins, 17-21 Oct/Nov 2026)"
+   },
+   "9": {
+    "K": "Abolish Poison on Min'loth's Poison Bolt Volley (whole party, phase 2; Tavern).\nZul'Alai's Rotted Strike \"should be dispelled\" (Tavern) — school unverified; \"Rotted\" sounds like a disease, which you cannot cleanse. Try a cleanse only if the debuff tooltip says Poison or Curse.\nMakrura and crabs may be Beasts (unverified type). Min'loth's serpent form is likely a Beast or Dragonkin in the second phase — Hibernate is unverified on the boss.\nMin'loth also Fears in phase 2; don't get feared into tight naga packs. Shapeshift breaks movement effects. Bring a Water Breathing potion if you don't have a lock for the underwater Primeval Elemental room. Innervate the healer on Deathless Marrow (large health pool, add waves).\n(Tavern, read 23 Nov 2026)",
+    "C": "Succubus for naga, trolls and pirates (Seduce the Brinescale Priestess heals). Felhunter for caster packs and the elemental bosses. Unending Breath for the underwater room.\nBane of Agony plus CoE on Deathless Marrow, Primeval Elemental, Captain Dreadrise, Min'loth. Tongues on priestesses, sorcerers and Waterbolt casters.\nTight naga packs. Min'loth Fears in phase 2. Fear only in a cleared room.\nDeathless Marrow and Primeval Elemental are Elementals — Banish them (or Banish an add if the boss is immune; unverified on the bosses themselves). Naga and trolls Seduce. No demons named.\nSpell Lock Waterbolt Volley (Dreadrise), Waterbolt (Primeval), priestess heals, and Deathless Sorcerer Fireballs. Devour Magic on magic buffs and on Rotted Strike only if that debuff is magic (school unverified).\n(Tavern, read 23 Nov 2026)",
+    "V": "Cleanse: Poison Cleansing for naga, plus Abolish or Cure Poison on Min'loth's Poison Bolt Volley (phase 2). Zul'Alai's Rotted Strike school is unverified — \"Rotted\" may be a disease (Cure Disease if the tooltip says so). You cannot Remove Curse.\nInterrupt: Earth Shock Waterbolt Volley (Dreadrise), Waterbolt (Primeval Elemental) and Brinescale Priestess heals.\nPurge: magic buffs on naga or troll casters if you see them.\nKiting: Frost Shock or Earthbind only in a cleared room — packs are tight. No Fear.\nGrounding for naga casters. Tremor already on the row for Min'loth's phase 2 Fear.\n(Tavern, read 23 Nov 2026)"
+   },
+   "blackmaw": {
+    "K": "No curse or poison was named in the PhaseShifter Mobalytics guide (21 Nov 2026). Satyrs and imps are magic/fel; you cannot dispel those buffs.\nWithermaw is a large Beast (summons maggots, AoE Fear) — Hibernate is the right type, but this is a boss, so treat CC as unverified. Bloodmane's two spectral wolves are the right type if they are Beasts (likely; unverified). Bonesnout is an undead furbolg, not a Beast.\nDo not Fear, and don't get feared, near uncleared packs (Withermaw and Varrox both Fear). Furbolg are Humanoids if they are not tagged Undead. Innervate on Varrox (final: Fear + Shadow Bolt Volley + mind control).\n(Mobalytics, 21 Nov 2026)",
+    "C": "Felhunter for the demon side (Impaan, Varrox, satyrs and imps). Succubus for uncorrupted Humanoid furbolg if Seduction works on them (Bonesnout is Undead — Seduction fails).\nBane of Agony plus CoE on Impaan and Varrox. Tongues on those two and on Legashi Ritualists (casters around Bonesnout).\nNo Fear near uncleared packs. Withermaw and Varrox both Fear.\nImpaan the Imprisoner and Varrox Bleakhoof are Demons — Banish or Subjugate (rank 2 Subjugate, 44, caps at 59, so a 55-60 demon boss may be over the cap until rank 3 at 58, which caps at 64). Imps and satyrs in the trash are also Demon targets. Withermaw is a Beast, not a Demon.\nSpell Lock Impaan's casts and Varrox's Shadow Bolt Volley. Devour Magic on satyr/imp magic buffs and on magic debuffs from Crimson Wrest if any.\n(Mobalytics, 21 Nov 2026)",
+    "V": "Cleanse: no curse or poison was named (Mobalytics, 21 Nov 2026). You cannot Remove Curse. Tremor for Withermaw and Varrox fears.\nInterrupt: Earth Shock Impaan's casts and Varrox Shadow Bolt Volley.\nPurge: satyr and imp magic buffs.\nKiting: don't Fear near uncleared packs. Don't Earthbind into the next furbolg or demon room.\nGrounding for demon casters.\n(Mobalytics, 21 Nov 2026)"
+   },
+   "shaper": {
+    "K": "Abolish Poison on Venomridge's Poison Volley (whole group) and on Vitrix (Poison Shock and a heavy 10-yard AoE). No curses were named.\nThis is a Beast-heavy instance. Titanosaur, the Ravasaur Hunters, Venomridge, Cinder, Snowtalon and Vitrix are Beasts. The Ravasaur Hunters (Tor'Rel and Izha'Rel) are not elite — Hibernate or Roots one and kill the other. Do not count on Hibernate sticking on elite bosses. Thunderhoof is a \"thunder beast\" (Beast-type likely; unverified). Nanaya is a giant in Titan armour — not a Beast, and constructs here do not fear.\nTitanosaur AoE Fear: clear the room first. Shapeshift breaks Snowtalon's Frost Nova and roots on you; stay off the blue crystals (they silence). Bolt is immune to Nature — your physical Feral damage is fine; do not bother with Wrath. Cinder is a fire raptor; clear the fire elementals before you click the red panel. Innervate the healer on Nanaya (elemental phases as health drops).\n(Mobalytics, 21 Nov 2026)",
+    "C": "Felhunter for Thunderhoof, Bolt, Nanaya and the crystal-panel casters. Succubus does little on Beasts. Imp Blood Pact is fine if the group already has interrupts.\nBane of Agony or Bane of Doom plus CoE (heavy elemental damage). Tongues on Nanaya if she is casting.\nTitanosaur AoE Fear — clear first, then do not Fear yourself into the next pack. Titan constructs don't fear; do not Fear Nanaya or other Titan constructs.\nFire elementals around Cinder's red panel are Banish targets. Cinder, Snowtalon, Bolt, Vitrix and the dinosaurs are Beasts, not Banish. Nanaya is a giant in Titan armour — no Banish unless the tooltip says Demon or Elemental (unverified; assume not).\nSpell Lock Thunderhoof's lightning and Bolt's Chain Lightning. Devour Magic on magic buffs if Nanaya or the panels apply any. Nature damage does not work on Bolt; your Shadow and Bane still do.\n(Mobalytics, 21 Nov 2026)",
+    "V": "Cleanse: Poison Cleansing for Venomridge Poison Volley and Vitrix Poison Shock. You cannot Remove Curse. No curses were named.\nInterrupt: Earth Shock Thunderhoof lightning and Bolt Chain Lightning.\nPurge: magic buffs if Nanaya or the crystal panels apply any.\nKiting: constructs don't fear (never Spirits). Don't Fear into the next pack after Titanosaur's AoE Fear. Stay off Snowtalon's silencing blue crystals.\nGrounding for Nanaya's caster phases. Fire Resistance for Cinder. Bolt is Nature-immune — your physical damage is fine; don't waste Nature shocks on him if they do nothing.\n(Mobalytics, 21 Nov 2026)"
+   },
+   "10": {
+    "K": [
+     {
+      "name": "Uldaman",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nScorpids and some troggs historically poison; cleanse those if the tooltip says Poison. Stone Keepers and golems do not.\nEarth elementals are not Beasts — they are a warlock Banish job. Bats, scorpids and jaguars in the earlier tunnels take Hibernate or Soothe. Constructs and dwarves do not.\nNature damage shows up on some elemental packs (shaman Nature Resistance note).",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Razorfen Downs",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nThis is a disease dungeon (Glutton, Plaguemaw, and more). You cannot cleanse disease — bring a Shaman or Priest. Spiders may also poison (Cure or Abolish Poison).\nSpiders and boars are Beasts. Most of the instance is Undead.\nAmnennar is a caster lich; you have no magic dispel.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Krol'dok Stronghold",
+      "text": "No poison or curse was named on the bosses in the Wowhead Forever overview or the PhaseShifter Mobalytics guide (both current as of 21 Nov 2026).\nShadowhide Curseweaver trash and the Curseweaver add on Nar'gurk are named \"Curseweaver\" — have Remove Curse ready and use it if a Curse actually appears. School unverified until you see the tooltip. Twilight Warlocks are magic, not your cleanse.\nWar Handler Ashka's wolves Snarlfang and Terrorhowl are Beasts — Hibernate or Roots them (Mobalytics recommends killing or stunning the wolves first). Twilight Outriders ride warhounds (Beasts, unverified as independent CC targets).\nOgres, Twilight's Hammer and gnolls are Humanoids. Hooked Net from Outriders — shapeshift to break it on yourself. Innervate is up. Peons flee to pull; Roots help.\n(Wowhead Forever overview, read 23 Nov 2026; Mobalytics 21 Nov 2026)",
+      "_source": "Wowhead Forever overview; Mobalytics PhaseShifter",
+      "_date": "2026-11-23"
+     },
+     {
+      "name": "Zul'Farrak",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nAntu'sul poison toads and poison; other troll hex or poisons historically. The shaman table still carries Poison Cleansing for Antu'sul.\nScarabs, basilisks and hydras (if present) are Beasts. Trolls are Humanoid.\nHydromancer sleep (Classic) is magic — you cannot dispel it. Witch doctors and healers are interrupt or CC targets, not your cleanse.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Maraudon",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nNoxxion Toxic Volley (poison) is the shaman \"click Poison Cleansing\" note. Satyrs and elementals may add more poisons or curses — confirm in the run.\nCrocolisks (Rotgrip) and some tunnel beasts take Hibernate or Soothe. Noxxion and elementals are not Beasts. Princess Theradras is not a Beast.\nTheradras Repulsive Gaze is a fear (Classic). Shapeshift to break roots on yourself. Innervate on the longer bosses.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Alcaz Prison",
+      "text": "No curse or poison was named in the PhaseShifter Mobalytics guide (updated 21 Nov 2026). Ca'zass's Polymorph is magic — you cannot dispel it, but shapeshift breaks it on you.\nBlazeroar is a red dragon (Zarla Ober transforms). Hibernate is the right type for Dragonkin, but this is a boss — treat CC as unverified and do not count on it. No other Beast packs were named.\nDefias and naga are Humanoids. Leave chained prisoners alone in Katerina's room. Blazeroar is fire-immune (Mobalytics); your Feral physical damage is fine. Innervate the healer on The Questioner (large health pool) and Katerina.\n(Mobalytics, 21 Nov 2026)",
+      "_source": "Mobalytics PhaseShifter",
+      "_date": "2026-11-21"
+     },
+     {
+      "name": "Sunken Temple",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nAtal'ai and Hakkari packs historically poison or curse; confirm in the run.\nThe dragonkin bosses (Dreamscythe, Weaver, Morphaz, Hazzas, Shade of Eranikus) are the right type for Hibernate — bosses are often immune; use it on non-boss dragonkin if they appear.\nEranikus Deep Slumber is why the shaman table carries Tremor. You cannot dispel that sleep. Rebirth and Innervate matter on a 50-60 run.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Blackrock Depths",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nSome Dark Iron and dog or beast packs historically poison; fire-heavy otherwise. Confirm tooltips.\nCore hounds and some beasts in the detention or kennel areas (Classic). Golems and Dark Iron dwarves are not Beasts.\nLong instance. Innervate the healer often. Shapeshift off movement-impairing effects only if they are roots (a knockback or a ground fire is not a cleanse).",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     }
+    ],
+    "C": [
+     {
+      "name": "Uldaman",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nFelhunter for caster dwarves and scryers; Succubus for Humanoid troggs or dwarves in safe pulls.\nCoE on caster and elemental packs; Tongues on casters.\nConstructs and some elementals may ignore Fear. Don't Fear into the Hall of the Keepers.\nEarth elementals are Banish targets (Classic; the shaman Nature Resistance note agrees they are elementals). Stone golems are constructs, not Banish.\nSpell Lock healers and Shadowcasters. Devour Magic on stone or magic shields if they appear.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Razorfen Downs",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nFelhunter for undead casters (Mordresh, Amnennar). Succubus will often fail on Undead (Seduction is Humanoid-only).\nCoE and Tongues on Mordresh and Amnennar.\nUndead fear immunity is inconsistent in Classic; don't count on Fear.\nFew demons or elementals.\nSpell Lock Amnennar and caster trash. Devour Magic on magic buffs and on sleep or charm if they are magic. You cannot Devour diseases.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Krol'dok Stronghold",
+      "text": "Succubus for ogres, Twilight Humanoids and gnolls (Seduce shamans, Curseweavers and the Twilight Warlocks on Nar'gurk — Mobalytics lists Fear and other CC for those adds). Felhunter if you would rather Spell Lock Nar'gurk's Shadow Bolt Volley and the shamans' Lightning Bolt or Bloodlust.\nBane of Agony plus CoE or Tongues on Nar'gurk and Krol'dok Shamans. Weakness or Recklessness on Bossman Toof and Overlord Mugg (physical).\nFear is usable on Humanoids in a cleared room. Peons run to pull — Recklessness or a stun, not a Fear into the next room.\nNo demons or elementals named. Seduce shamans, warlocks, Curseweavers, the two shamans on Toof and the two centurions on Mugg.\nSpell Lock Shadow Bolt Volley (Nar'gurk), Lightning Bolt, and Bloodlust if it is a kickable cast. Devour Magic on Bloodlust if it is a magic buff (unverified school; try it).\n(Wowhead Forever overview, read 23 Nov 2026; Mobalytics 21 Nov 2026)",
+      "_source": "Wowhead Forever overview; Mobalytics PhaseShifter",
+      "_date": "2026-11-23"
+     },
+     {
+      "name": "Zul'Farrak",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nSuccubus for troll Humanoids (Seduce witch doctors). Felhunter for caster-heavy rooms (Zum'rah, Sezz'ziz, Hydromancer).\nCoE and Tongues on caster bosses. Recklessness if trolls flee (the stair event especially).\nThe stair or graveyard event is a Fear-wipe risk. Hydromancer sleep is why the shaman table carries Tremor.\nNo famous demon or elemental bosses.\nSpell Lock witch doctors and Hydromancer. Devour Magic on magic buffs and sleep if magic.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Maraudon",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nSuccubus for satyr and centaur Humanoids? Satyrs are usually Demons — if they are, Seduction fails and you want Felhunter or Banish instead. Confirm the tooltip. Felhunter for Celebras and Princess casters.\nCoE on elemental and caster bosses.\nTheradras fears (Classic). Tight purple and orange tunnels.\nNoxxion and the elemental packs are Banish targets. Satyrs (Vyletongue) are Subjugate or Banish targets if they are Demons.\nSpell Lock caster trash. Devour Magic on magic buffs.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Alcaz Prison",
+      "text": "Succubus for Defias and naga Humanoids (Seduce Ca'zass's naga adds and jailers). Felhunter for Ca'zass (Polymorph, Blizzard) and any caster packs.\nBane of Agony plus CoE on Ca'zass, Katerina and Blazeroar. Tongues on Ca'zass and enchantresses.\nTight prison halls; Fear is a pull risk. Blazeroar is a dragon — Fear often fails on Dragonkin bosses (unverified here).\nNaga and Defias Seduce. No elementals or demons named. Blazeroar is a red dragon, not a Banish target.\nSpell Lock Polymorph from the naga adds (Mobalytics). Devour Magic on Polymorph if it is magic. Katerina is a fire-damage heal-check, not a dispel fight. Blazeroar is fire-immune — do not rely on Imp Firebolt or Immolate; Shadow and the Bane still work.\n(Mobalytics, 21 Nov 2026)",
+      "_source": "Mobalytics PhaseShifter",
+      "_date": "2026-11-21"
+     },
+     {
+      "name": "Sunken Temple",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nFelhunter for Atal'ai casters and Jammal'an. Succubus for troll Humanoids in safe rooms.\nCoE on dragonkin and caster bosses; Tongues on Jammal'an and prophets. Bane of Doom (60) if you are at cap on a long dragon fight.\nDragon rooms and Eranikus Sleep: Fear is messy.\nAtal'alrion or Hakkari types vary. Dragonkin are not Banish targets.\nSpell Lock prophets and Jammal'an. Devour Magic on magic buffs and on Deep Slumber if it is magic (unverified).",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Blackrock Depths",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nFelhunter is the Dark Iron caster pet. Succubus for Humanoid dwarves in safe rooms. Voidwalker only if a tank falls over.\nCoE almost always (fire and shadow everywhere). Tongues on Shadowforge casters, Moira, and flamekeepers.\nSome rooms are tight (rings, vaults). Fireguard Destroyers and golems may ignore Fear.\nFire elementals (Incendius, Fireguard Destroyers, Flamelash adds) are Banish targets. Ambassador Flamelash may be a Demon (Classic pattern — confirm type, then Subjugate or Banish). Golems are constructs.\nSpell Lock relentlessly. Devour Magic on Fire Shields, power-up magic buffs, and magic debuffs on the party.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     }
+    ],
+    "V": [
+     {
+      "name": "Uldaman",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: scorpids and some troggs historically poison — Cure Poison if the tooltip says so. You cannot Remove Curse. You cannot cleanse golem effects.\nInterrupt: Earth Shock caster dwarves and scryers.\nPurge: magic shields if they appear.\nKiting: don't Fear into the Hall of the Keepers. Constructs are poor Earthbind targets.\nGrounding stays in Air unless an earth-elemental boss is hurting the group (then Nature Resistance, swap Air back after). Earth elementals are a warlock Banish, not a Purge.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Razorfen Downs",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: Cure Disease and Disease Cleansing (38) for Glutton, Plaguemaw and undead packs. Cure Poison or Poison Cleansing on spiders. You cannot Remove Curse.\nInterrupt: Earth Shock Amnennar and Mordresh.\nPurge: magic buffs on caster undead if you see them.\nKiting: most of the instance is Undead — don't count on Fear. Don't Earthbind into the next undead room.\nTotem: put Disease Cleansing in Water (Elements from 38, or Ancestors) and swap Healing Stream back after.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Krol'dok Stronghold",
+      "text": "Cleanse: no poison or curse was named on the bosses. Hooked Net from Twilight Outriders is a root, not a curse. You cannot Remove Curse if a Curseweaver lands one — have a druid. Tremor if anything fears.\nInterrupt: Earth Shock Nar'gurk Shadow Bolt Volley and Krol'dok Shaman Lightning Bolt.\nPurge: Bloodlust if it is a magic buff (unverified school; try it).\nKiting: peons flee to pull — Frost Shock or Earthbind in a cleared room, not a Fear into the next room.\nGrounding for warlock and shaman packs.\n(Wowhead Forever overview, read 23 Nov 2026; Mobalytics 21 Nov 2026)",
+      "_source": "Wowhead Forever overview; Mobalytics PhaseShifter",
+      "_date": "2026-11-23"
+     },
+     {
+      "name": "Zul'Farrak",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: Poison Cleansing for Antu'sul (toads and poison). You cannot Remove Curse. Hydromancer sleep is magic — Tremor, not a Purge.\nInterrupt: Earth Shock witch doctors and Hydromancer.\nPurge: magic buffs if troll casters apply them.\nKiting: no Fear on the stair or graveyard event. Frost Shock or Earthbind only in a cleared room.\nGrounding for caster rooms.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Maraudon",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: Poison Cleansing for Noxxion Toxic Volley. Confirm any further poisons or curses on satyr and elemental trash. You cannot Remove Curse.\nInterrupt: Earth Shock caster trash and Celebras.\nPurge: magic buffs if they appear.\nKiting: tight purple and orange tunnels — no Fear into the next pack. Frost Shock or Earthbind only in a cleared room.\nGrounding for caster packs. Noxxion is a warlock Banish. Theradras fears — keep Tremor ready.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Alcaz Prison",
+      "text": "Cleanse: no curse or poison was named (Mobalytics, 21 Nov 2026). You cannot Remove Curse. Ca'zass Polymorph is magic — you cannot dispel it (the warlock can Devour it if it is magic).\nInterrupt: Earth Shock Tidemistress Ca'zass and naga Enchantress Polymorph or Blizzard.\nPurge: magic buffs on Defias or naga if you see them.\nKiting: Frost Shock or Earthbind only in a cleared hall. Tight prison — no Fear.\nGrounding for Ca'zass's caster room. Blazeroar is a fire-immune red dragon — physical damage is fine.\n(Mobalytics, 21 Nov 2026)",
+      "_source": "Mobalytics PhaseShifter",
+      "_date": "2026-11-21"
+     },
+     {
+      "name": "Sunken Temple",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: Atal'ai and Hakkari packs historically poison or curse — confirm tooltips. You cannot Remove Curse. Eranikus Deep Slumber is why Tremor is already on the preset; you cannot Purge that sleep unless it is a magic buff (unverified).\nInterrupt: Earth Shock Atal'ai prophets and Jammal'an.\nPurge: magic buffs on prophets if you see them.\nKiting: dragon rooms are messy — no Fear. Frost Shock or Earthbind only in a cleared room.\nGrounding for caster rooms.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Blackrock Depths",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: some Dark Iron and dog or beast packs historically poison — Cure Poison if you see it. You cannot Remove Curse.\nInterrupt: Earth Shock Dark Iron casters, Moira and flamekeepers.\nPurge: Fire Shields and magic buffs.\nKiting: some rooms are tight (rings, vaults). Don't Fear Fireguard Destroyers or golems; they may ignore it. Frost Shock or Earthbind only in a cleared room.\nGrounding already in Air. Fire Resistance already in Water. Fire elementals are a warlock Banish.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     }
+    ]
+   },
+   "11": {
+    "K": [
+     {
+      "name": "Stratholme",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nBanshee and mage curses (Remove Curse). Living and undead sides also carry poisons and, more often, diseases you cannot cleanse.\nBaroness Anastari and other banshees (Classic curses). Plague and ghoul packs for disease.\nScarabs, bats and some living-side beasts take Hibernate or Soothe. Most of the instance is Undead or Humanoid.\nYou are the curse cleaner, not the disease cleaner (that's the shaman). Rebirth is a raid-quality tool here.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Scholomance",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nThis is the curse-and-disease school. Remove Curse is one of the best things you bring. You still cannot cleanse disease or magic.\nGandling's Shadow Shield is magic (the shaman Purge note) — you cannot remove it.\nDarkmasters, Kirtonos, Ras and student packs (Classic curses). Necromancer and plague packs for disease.\nVery few Beasts. Kirtonos in gargoyle form is not a Beast. Stay in range to decurse the tank and melee. Innervate and Rebirth on a long clear.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "LBRS / UBRS",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nMother Smolderweb and spire spiders: poison (Cure or Abolish Poison). Some orc casters may curse — confirm.\nWorgs, Gizrul, The Beast (UBRS core hound) and Gyth or dragonkin in UBRS are the right types for Hibernate or Soothe on non-boss packs. Boss immunity unverified.\nOrcs are Humanoids. Drakkisath and Gyth are Dragonkin. Tight stairs — Roots can stop a runner.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Dire Maul",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nEast: satyr and plant poisons or curses possible. West: Lethtendris is a warlock (curses, Classic). North: mostly physical ogres.\nEast has some beasts and plants (plants are not Beasts). Hydrospawn is an elemental. North ogres are Humanoids.\nEast satyrs and Immol'thar (West) are the warlock's Banish or Subjugate targets. Innervate on long West and North clears.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     }
+    ],
+    "C": [
+     {
+      "name": "Stratholme",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nFelhunter is the default. Succubus on the Live / Crimson Humanoid side for Seduction in cleared rooms.\nCoE and Tongues on caster bosses (Willey, Galford, Maleki, Balnazzar). Weakness on melee (Ramstein, Rivendare) if the tank is struggling. Bane of Doom on long bosses at 60.\nAnastari and others Fear or mind-control (Classic; shaman Tremor note). Don't Fear the undead side blindly.\nBalnazzar is a Demon — Subjugate or Banish (Classic; confirm type in Forever). Some guardian-style demons may appear on the undead side.\nSpell Lock Crimson and undead casters. Devour Magic on magic shields, charms and heals. Curses still go to the druid.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Scholomance",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nFelhunter is mandatory. Seduction rarely applies (Undead and not Humanoid).\nCoE and Tongues on Ras, Gandling, and caster students. Bane of Doom on Gandling at 60.\nTight rooms, lots of patrols, some fears.\nOccasional demon-type summons (Classic, confirm).\nDevour Magic on Gandling's Shadow Shield (the shaman Purge note; magic). Spell Lock every Darkmaster and student heal or shadow bolt. You cannot Devour curses or diseases.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "LBRS / UBRS",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nSuccubus for orc Humanoids (Seduce casters and Shadow Hunter packs). Felhunter in UBRS caster rooms (Jed, dragonkin caster adds).\nCoE on dragonkin and caster bosses. Tongues on Vosh'gajin and casters. Recklessness if orcs flee.\nStairs and rooms full of patrols. The Beast and dragonkin may ignore Fear.\nFew Banish targets. Dragonkin are Hibernate (druid), not Banish.\nSpell Lock orc and dragonkin casters. Devour Magic on magic buffs (Bloodlust, shields).",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Dire Maul",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nEast: Felhunter or Banish-pet for satyrs; Succubus fails if they are Demons. West: Felhunter, and Subjugate Immol'thar if he is still a Demon. North: Succubus for ogre Humanoids (Seduce Mage or Shaman ogres, Cho'Rush).\nCoE on residual caster bosses (Lethtendris, Kalendris, Immol'thar). Tongues on those casters. Recklessness or Weakness on North ogre melee.\nEast and West can be tight. North ogres Fear-able in Classic, in a cleared room only.\nEast satyrs and Immol'thar (West) are the Subjugate or Banish prizes (Classic). Hydrospawn is an elemental (Banish). Pusillin is a Demon (Classic imp).\nSpell Lock Lethtendris, Kalendris, Cho'Rush. Devour Magic on magic shields and buffs, including Immol'thar's if any.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     }
+    ],
+    "V": [
+     {
+      "name": "Stratholme",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: Disease Cleansing for plague and ghoul packs. Poison Cleansing or Cure Poison on living-side poisons. You cannot Remove Curse (banshee curses — the druid's job). Tremor for fears (Anastari, Classic).\nInterrupt: Earth Shock Crimson and undead casters (Willey, Galford, Maleki, Balnazzar).\nPurge: magic shields, charms and heals if they are magic.\nKiting: don't Fear the undead side blindly. Frost Shock or Earthbind only in a cleared hall.\nGrounding for caster rooms. Water stays Disease Cleansing.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Scholomance",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: Disease Cleansing for necromancer and plague packs. You cannot Remove Curse (the druid's job for Darkmasters, Kirtonos, Ras and student curses).\nInterrupt: Earth Shock Darkmasters and student heals or shadow bolts.\nPurge: keep Purge for Gandling's Shadow Shield (magic).\nKiting: tight rooms and patrols — no Fear into the next classroom. Frost Shock or Earthbind only in a cleared room.\nGrounding for caster rooms. Water stays Disease Cleansing.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "LBRS / UBRS",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: Cure Poison for Mother Smolderweb and spire spiders. You cannot Remove Curse (confirm any orc caster curses with the tooltip and call the druid).\nInterrupt: Earth Shock orc and dragonkin casters (Vosh'gajin, Jed).\nPurge: Bloodlust and magic shields if they appear.\nKiting: tight stairs and rooms full of patrols. The Beast and dragonkin may ignore Fear. Frost Shock or Earthbind only on a cleared landing.\nGrounding already in Air. Water can stay Mana Spring.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     },
+     {
+      "name": "Dire Maul",
+      "text": "Classic, unverified in Forever (Icy Veins Coming Soon, 16 Nov 2026).\nCleanse: East may have satyr or plant poisons or curses — confirm tooltips. West: Lethtendris curses are the druid's job. You cannot Remove Curse. North is mostly physical ogres.\nInterrupt: East, Earth Shock satyr casters. West, Earth Shock Lethtendris and Kalendris. North, Earth Shock Cho'Rush.\nPurge: East magic buffs. West magic shields on Immol'thar if any.\nKiting: North, Earthbind or Frost Shock on ogre runners in a cleared room only. East and West can be tight — no Fear into the next pack.\nGrounding for West caster rooms. Tremor or Grounding for a single boss if the first run shows one needs it. Immol'thar is a warlock Subjugate or Banish if still a Demon. Nothing lasts the whole run.",
+      "_source": "Classic knowledge; Icy Veins Coming Soon",
+      "_date": "2026-11-16"
+     }
+    ]
+   }
   }
  },
  "trainers": {
@@ -24472,11 +24771,11 @@
   }
  },
  "_meta": {
-  "version": 61,
-  "generated_at": "2026-11-23T11:37-05:00",
-  "source": "WoW Forever bot, Nov 23 2026: per-dungeon cleanse, CC, Purge/interrupt and demon/curse notes for Kestrik, Corvin, Drazhul and Zanjiro (added to existing dungeon note keys; Classic rows tagged unverified)",
+  "version": 62,
+  "generated_at": "2026-11-23T12:25-05:00",
+  "source": "WoW Forever bot, Nov 23 2026: expanded dungeon notes in dungeons.DUN_MORE (hidden until clicked) for Kestrik, warlocks and Zanjiro; one-line notes unchanged; Classic rows tagged unverified",
   "notes_commit": "228e37e",
-  "notes": "Nov 23: dungeon utility notes added for Kestrik (DUN_NOTES_K), warlocks (DUNGEONS column 4, shared C/D) and Zanjiro (DUNGEONS column 3 plus PRESETS click, hidden until the preset is opened). Existing totem, loot and mechanic text kept."
+  "notes": "Nov 23: DUN_MORE filled for every DKEYS key (K, C, V). Grouped rows 10 and 11 use the list form with PRESETS sub-dungeon names. Drazhul shares Corvin's C notes (no D entries). One-liners, PRESETS click, site/ and RULE ONE keys unchanged."
  },
  "captions": {
   "builds": "Corvin: Mobalytics' Demonology respec at 26 is the plan since Nov 10 ('Mobalytics pre-26' to 25, 'Mobalytics Demo respec at 26' after); Icy Veins' Affliction and Demonology orders stay as references. Zanjiro: Icy Veins (updated Nov 13: one Maelstrom point, no Rage of the Farseer, 11/29/11) and Nicktew Recommended 7/33/11 selectable; disagreements sourced, no automatic respec. Nicktew updated Nov 15 (Flurry 4/5 by 34, one Maelstrom point at 35, Mindfulness 41-43, Water Shield 46, Rage 51, ends 7/33/11), read Nov 16. Crix updated Nov 15 (Soul Harvest 46-47, Suppression 4, Malevolence 4), read Nov 16. Kestrik: Wowhead (Lexolas, Nov 17) Feral 0/34/17 is his default since Nov 21, the guide he follows; Mobalytics (yumytv, Nov 14) 9/31/11 and Icy Veins (Meyra, Nov 4) 9/32/10 are the alternatives in Next ding.",
